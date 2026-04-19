@@ -36,3 +36,6 @@ def load_quiz_by_id(quiz_id: str) -> Quiz | None:
         if quiz.id == quiz_id:
             return quiz
     return None
+
+print("QUIZ DIR:", settings.quiz_data_dir)
+print("FILES:", list(Path(settings.quiz_data_dir).glob("*.json")))
