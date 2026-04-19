@@ -1,0 +1,21 @@
+{
+  "id": "history-poland-basics",
+  "title": "Historia Polski — podstawy",
+  "description": "Krótki quiz powtórkowy z historii dla dzieci.",
+  "category": "history",
+  "age_group": "10-12",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Kto był pierwszym koronowanym królem Polski?",
+      "image": null,
+      "explanation": "Bolesław Chrobry został koronowany w 1025 roku.",
+      "answers": [
+        { "text": "Bolesław Chrobry", "is_correct": true },
+        { "text": "Mieszko I", "is_correct": false },
+        { "text": "Kazimierz Wielki", "is_correct": false },
+        { "text": "Władysław Jagiełło", "is_correct": false }
+      ]
+    }
+  ]
+}

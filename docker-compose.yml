@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    container_name: quiz-backend
+    env_file:
+      - .env.example
+    volumes:
+      - ./backend/app/data:/app/app/data
+      - ./backend/app/static:/app/app/static
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    container_name: quiz-nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
