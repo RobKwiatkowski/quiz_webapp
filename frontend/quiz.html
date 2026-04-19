@@ -21,6 +21,20 @@
         <h2 id="question-text"></h2>
         <img id="question-image" class="hidden question-image" alt="Obrazek do pytania" />
         <div id="answers" class="answers"></div>
+
+        <div id="feedback" class="feedback hidden"></div>
+
+        <div class="actions">
+          <button id="next-button" class="hidden">Dalej</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <div class="question-card">
+        <h2>Koniec quizu</h2>
+        <p id="final-score"></p>
+        <button onclick="window.location.reload()">Zagraj jeszcze raz</button>
       </div>
     </section>
   </main>

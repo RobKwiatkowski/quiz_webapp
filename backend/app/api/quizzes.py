@@ -1,28 +1,17 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
+from app.services.quiz_loader import load_quiz_by_id, load_quiz_list
 
 router = APIRouter(prefix="/api/quizzes", tags=["quizzes"])
 
 
 @router.get("")
 def get_quizzes():
-    return [
-        {
-            "id": "history-poland-basics",
-            "title": "Historia Polski — podstawy",
-            "description": "Krótki quiz powtórkowy z historii dla dzieci.",
-            "category": "history",
-            "age_group": "10-12",
-        }
-    ]
+    return load_quiz_list()
 
 
 @router.get("/{quiz_id}")
 def get_quiz(quiz_id: str):
-    return {
-        "id": quiz_id,
-        "title": "Historia Polski — podstawy",
-        "description": "Krótki quiz powtórkowy z historii dla dzieci.",
-        "category": "history",
-        "age_group": "10-12",
-        "questions": []
-    }
+    quiz = load_quiz_by_id(quiz_id)
+    if not quiz:
+        raise HTTPException(status_code=404, detail="Quiz not found")
+    return quiz

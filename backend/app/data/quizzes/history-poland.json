@@ -7,14 +7,50 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Kto był pierwszym koronowanym królem Polski?",
+      "text": "Kto był dowódcą Legionów Polskich w Pierwszej Wojnie Światowej?",
       "image": null,
-      "explanation": "Bolesław Chrobry został koronowany w 1025 roku.",
+      "explanation": "Józef Piłsudski.",
       "answers": [
-        { "text": "Bolesław Chrobry", "is_correct": true },
-        { "text": "Mieszko I", "is_correct": false },
-        { "text": "Kazimierz Wielki", "is_correct": false },
-        { "text": "Władysław Jagiełło", "is_correct": false }
+        { "text": "Józef Piłsudski", "is_correct": true },
+        { "text": "Władysław Anders", "is_correct": false },
+        { "text": "Henryk Dąbrowski", "is_correct": false },
+        { "text": "Włodzimierz Lenin", "is_correct": false }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Jakie stanowisko objął Józef Piłsudski po odzyskaniu przez Polskę niepodległości?",
+      "image": null,
+      "explanation": "Naczelnik Państwa.",
+      "answers": [
+        { "text": "Naczelnik Państwa", "is_correct": true },
+        { "text": "Prezydent", "is_correct": false },
+        { "text": "Premier", "is_correct": false },
+        { "text": "Minister Spraw Wojny", "is_correct": false }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "W którym roku odbyła się Bitwa Warszawska z Rosja Bolszewicką?",
+      "image": null,
+      "explanation": "Bitwa Warszawska miała miejsce latem 1920.",
+      "answers": [
+        {
+          "text": "1919",
+          "is_correct": false
+        },
+        {
+          "text": "1920",
+          "is_correct": true
+        },
+        {
+          "text": "1923",
+          "is_correct": false
+        },
+        {
+          "text": "1925",
+          "is_correct": false
+        }
       ]
     }
   ]

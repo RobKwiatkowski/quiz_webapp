@@ -43,9 +43,23 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
 .answer-btn {
   width: 100%;
   text-align: left;
+  background: #eef2ff;
+}
+
+.answer-btn.correct {
+  background: #d1fae5;
+}
+
+.answer-btn.incorrect {
+  background: #fee2e2;
 }
 
 .question-image {
@@ -53,4 +67,25 @@ button {
   height: auto;
   margin-top: 16px;
   border-radius: 8px;
+}
+
+.feedback {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.correct-feedback {
+  background: #d1fae5;
+}
+
+.incorrect-feedback {
+  background: #fee2e2;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
 }
