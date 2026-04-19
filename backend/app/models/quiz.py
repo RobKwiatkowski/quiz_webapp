@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Literal, Optional
 from pydantic import BaseModel
 
 
@@ -12,6 +12,7 @@ class Question(BaseModel):
     text: str
     image: Optional[str] = None
     explanation: Optional[str] = None
+    selection_type: Literal["single", "multiple"] = "single"
     answers: List[Answer]
 
 

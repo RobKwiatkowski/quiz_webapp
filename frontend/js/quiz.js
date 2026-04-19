@@ -3,6 +3,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let hasAnswered = false;
 
+
 function showElement(elementId) {
   document.getElementById(elementId).classList.remove("hidden");
 }
@@ -11,8 +12,16 @@ function hideElement(elementId) {
   document.getElementById(elementId).classList.add("hidden");
 }
 
+function getCurrentQuestion() {
+  return currentQuiz.questions[currentQuestionIndex];
+}
+
+function isMultipleChoice(question) {
+  return question.selection_type === "multiple";
+}
+
 function renderQuestion() {
-  const question = currentQuiz.questions[currentQuestionIndex];
+  const question = getCurrentQuestion();
   hasAnswered = false;
 
   hideElement("status");
@@ -20,6 +29,7 @@ function renderQuestion() {
   hideElement("result-screen");
   hideElement("feedback");
   hideElement("next-button");
+  hideElement("check-button");
 
   document.getElementById("question-counter").textContent =
     `Pytanie ${currentQuestionIndex + 1} z ${currentQuiz.questions.length}`;
@@ -38,61 +48,117 @@ function renderQuestion() {
   const shuffledAnswers = shuffleArray(question.answers);
   const answersEl = document.getElementById("answers");
 
-  answersEl.innerHTML = shuffledAnswers.map((answer) => `
+  answersEl.innerHTML = shuffledAnswers.map((answer, index) => `
     <button
       class="answer-btn"
       data-correct="${answer.is_correct}"
-      data-text="${answer.text.replace(/"/g, "&quot;")}"
+      data-index="${index}"
+      type="button"
     >
       ${answer.text}
     </button>
   `).join("");
 
-  document.querySelectorAll(".answer-btn").forEach((button) => {
-    button.addEventListener("click", handleAnswerClick);
+  const buttons = document.querySelectorAll(".answer-btn");
+
+  if (isMultipleChoice(question)) {
+    showElement("check-button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (hasAnswered) return;
+        button.classList.toggle("selected");
+      });
+    });
+  } else {
+    buttons.forEach((button) => {
+      button.addEventListener("click", handleSingleAnswerClick);
+    });
+  }
+}
+
+function lockAnswers() {
+  document.querySelectorAll(".answer-btn").forEach((btn) => {
+    btn.disabled = true;
   });
 }
 
-function handleAnswerClick(event) {
-  if (hasAnswered) {
+function showCorrectAndIncorrectStates(selectedButtons = []) {
+  document.querySelectorAll(".answer-btn").forEach((btn) => {
+    const isCorrect = btn.dataset.correct === "true";
+    const isSelected = selectedButtons.includes(btn);
+
+    if (isCorrect) {
+      btn.classList.add("correct");
+    } else if (isSelected) {
+      btn.classList.add("incorrect");
+    }
+  });
+}
+
+function showFeedback(isCorrectOverall, explanation) {
+  const feedbackEl = document.getElementById("feedback");
+
+  if (isCorrectOverall) {
+    feedbackEl.textContent = "Dobrze";
+    feedbackEl.className = "feedback correct-feedback";
+  } else {
+    feedbackEl.textContent = explanation
+      ? `Niepoprawna odpowiedź. ${explanation}`
+      : "Niepoprawna odpowiedź.";
+    feedbackEl.className = "feedback incorrect-feedback";
+  }
+
+  feedbackEl.classList.remove("hidden");
+  showElement("next-button");
+  hideElement("check-button");
+}
+
+function handleSingleAnswerClick(event) {
+  if (hasAnswered) return;
+
+  hasAnswered = true;
+  const button = event.currentTarget;
+  const question = getCurrentQuestion();
+  const isCorrect = button.dataset.correct === "true";
+
+  if (isCorrect) {
+    score += 1;
+  }
+
+  showCorrectAndIncorrectStates([button]);
+  lockAnswers();
+  showFeedback(isCorrect, question.explanation);
+}
+
+function handleCheckMultipleAnswers() {
+  if (hasAnswered) return;
+
+  const question = getCurrentQuestion();
+  const selectedButtons = Array.from(document.querySelectorAll(".answer-btn.selected"));
+
+  if (selectedButtons.length === 0) {
     return;
   }
 
   hasAnswered = true;
-  const button = event.currentTarget;
-  const isCorrect = button.dataset.correct === "true";
-  const question = currentQuiz.questions[currentQuestionIndex];
-  const feedbackEl = document.getElementById("feedback");
 
-  if (isCorrect) {
+  const selectedPattern = selectedButtons.map((btn) => btn.dataset.correct === "true");
+  const allSelectedAreCorrect = selectedPattern.every(Boolean);
+
+  const correctButtons = Array.from(document.querySelectorAll('.answer-btn[data-correct="true"]'));
+  const selectedCorrectCount = selectedButtons.filter((btn) => btn.dataset.correct === "true").length;
+  const allCorrectSelected = selectedCorrectCount === correctButtons.length;
+
+  const isCorrectOverall = allSelectedAreCorrect && allCorrectSelected;
+
+  if (isCorrectOverall) {
     score += 1;
-    button.classList.add("correct");
-    feedbackEl.textContent = "Dobrze";
-    feedbackEl.className = "feedback correct-feedback";
-  } else {
-    button.classList.add("incorrect");
-
-    const correctButton = Array.from(document.querySelectorAll(".answer-btn")).find(
-      (btn) => btn.dataset.correct === "true"
-    );
-    if (correctButton) {
-      correctButton.classList.add("correct");
-    }
-
-    const explanation = question.explanation
-      ? ` ${question.explanation}`
-      : "";
-
-    feedbackEl.textContent = `Niepoprawna odpowiedź.${explanation}`;
-    feedbackEl.className = "feedback incorrect-feedback";
   }
 
-  document.querySelectorAll(".answer-btn").forEach((btn) => {
-    btn.disabled = true;
-  });
-
-  feedbackEl.classList.remove("hidden");
-  showElement("next-button");
+  showCorrectAndIncorrectStates(selectedButtons);
+  lockAnswers();
+  showFeedback(isCorrectOverall, question.explanation);
 }
 
 function showFinalResult() {
@@ -135,6 +201,7 @@ async function initQuizPage() {
     document.getElementById("quiz-description").textContent = currentQuiz.description;
 
     document.getElementById("next-button").addEventListener("click", goToNextQuestion);
+    document.getElementById("check-button").addEventListener("click", handleCheckMultipleAnswers);
 
     renderQuestion();
   } catch (error) {

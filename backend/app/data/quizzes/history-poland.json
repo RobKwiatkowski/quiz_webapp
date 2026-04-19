@@ -10,6 +10,7 @@
       "text": "Kto był dowódcą Legionów Polskich w Pierwszej Wojnie Światowej?",
       "image": null,
       "explanation": "Józef Piłsudski.",
+      "selection_type": "single",
       "answers": [
         { "text": "Józef Piłsudski", "is_correct": true },
         { "text": "Władysław Anders", "is_correct": false },
@@ -22,6 +23,7 @@
       "text": "Jakie stanowisko objął Józef Piłsudski po odzyskaniu przez Polskę niepodległości?",
       "image": null,
       "explanation": "Naczelnik Państwa.",
+      "selection_type": "single",
       "answers": [
         { "text": "Naczelnik Państwa", "is_correct": true },
         { "text": "Prezydent", "is_correct": false },
@@ -34,6 +36,7 @@
       "text": "W którym roku odbyła się Bitwa Warszawska z Rosja Bolszewicką?",
       "image": null,
       "explanation": "Bitwa Warszawska miała miejsce latem 1920.",
+      "selection_type": "single",
       "answers": [
         {
           "text": "1919",
@@ -49,6 +52,31 @@
         },
         {
           "text": "1925",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Jakie dwa powstania pomogły w ustaleniu granic Polski po I WŚ? (2 odpowiedzi)",
+      "image": null,
+      "explanation": "Były dwa powstania: Śląskie (1921) i Wielkopolskie (1918).",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Powstanie Śląskie",
+          "is_correct": true
+        },
+        {
+          "text": "Powstanie Wielkopolskie",
+          "is_correct": true
+        },
+        {
+          "text": "Powstanie Kościuszkowskie",
+          "is_correct": false
+        },
+        {
+          "text": "Powstanie Styczniowe",
           "is_correct": false
         }
       ]
