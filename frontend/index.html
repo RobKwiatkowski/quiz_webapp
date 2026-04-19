@@ -4,14 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edu Quiz</title>
-  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Edu Quiz</h1>
-    <p>Wybierz quiz i rozpocznij naukę.</p>
-    <div id="quiz-list"></div>
-  </main>
-  <script src="/js/api.js"></script>
+  <h1>Edu Quiz</h1>
+  <button id="load-btn">Załaduj quizy</button>
+  <pre id="output"></pre>
+
+  <script src="./js/api.js"></script>
+  <script>
+    document.getElementById("load-btn").addEventListener("click", async () => {
+      const output = document.getElementById("output");
+      try {
+        const quizzes = await getQuizzes();
+        output.textContent = JSON.stringify(quizzes, null, 2);
+      } catch (error) {
+        output.textContent = `Błąd: ${error.message}`;
+      }
+    });
+  </script>
 </body>
 </html>
