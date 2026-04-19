@@ -12,8 +12,10 @@ class Question(BaseModel):
     text: str
     image: Optional[str] = None
     explanation: Optional[str] = None
-    selection_type: Literal["single", "multiple"] = "single"
-    answers: List[Answer]
+    selection_type: Literal["single", "multiple", "open"] = "single"
+    answers: List[Answer] = []
+    accepted_answers: List[str] = []
+    case_sensitive: bool = False
 
 
 class Quiz(BaseModel):

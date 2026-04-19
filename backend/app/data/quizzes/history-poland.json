@@ -80,6 +80,16 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q5",
+      "text": "W którym roku był chrzest Polski?",
+      "image": null,
+      "explanation": "Chrzest Polski przyjmuje się na rok 966.",
+      "selection_type": "open",
+      "accepted_answers": ["966", "rok 966"],
+      "case_sensitive": false,
+      "answers": []
     }
   ]
 }

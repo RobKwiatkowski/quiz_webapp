@@ -93,3 +93,16 @@ button:disabled {
 .answer-btn.selected {
   outline: 3px solid #94a3b8;
 }
+
+.open-answer-box {
+  margin-top: 20px;
+}
+
+#open-answer-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
