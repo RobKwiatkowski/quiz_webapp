@@ -3,6 +3,8 @@ let currentQuestionIndex = 0;
 let score = 0;
 let hasAnswered = false;
 
+
+
 function isOpenQuestion(question) {
   return question.selection_type === "open";
 }
@@ -72,6 +74,7 @@ function renderQuestion() {
   const answersEl = document.getElementById("answers");
   const openAnswerInputEl = document.getElementById("open-answer-input");
   const imageEl = document.getElementById("question-image");
+  const imageWrapperEl = document.getElementById("question-image-wrapper");
 
   showElement("quiz-screen");
   hideElement("result-screen");
@@ -86,10 +89,12 @@ function renderQuestion() {
 
   if (question.image) {
     imageEl.src = `${CONFIG.API_BASE_URL}${question.image}`;
+    imageWrapperEl.classList.remove("hidden");
     imageEl.classList.remove("hidden");
   } else {
-    imageEl.classList.add("hidden");
     imageEl.removeAttribute("src");
+    imageEl.classList.add("hidden");
+    imageWrapperEl.classList.add("hidden");
   }
 
   answersEl.innerHTML = "";
@@ -103,11 +108,21 @@ function renderQuestion() {
   hideElement("feedback");
   hideElement("open-answer-box");
 
+  openAnswerInputEl.onkeydown = null;
+
   if (isOpenQuestion(question)) {
     answersEl.classList.add("hidden");
     showElement("open-answer-box");
     showElement("check-button");
     openAnswerInputEl.focus();
+
+    openAnswerInputEl.onkeydown = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        handleCheckAction();
+      }
+    };
+
     return;
   }
 

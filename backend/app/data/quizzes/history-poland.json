@@ -107,8 +107,8 @@
     },
     {
       "id": "q6",
-      "text": "Kto stał na czele polskiego dowództwa podczas wojny polsko-bolszewickiej opisanej na ilustracji?",
-      "image": "20260419_184518.jpg",
+      "text": "Kto stał na czele polskiego dowództwa podczas wojny polsko-bolszewickiej opisanej?",
+      "image": null,
       "explanation": "Na czele polskiego dowództwa stał Józef Piłsudski.",
       "selection_type": "open",
       "accepted_answers": [
@@ -154,7 +154,8 @@
       "selection_type": "open",
       "accepted_answers": [
         "święto wojska polskiego",
-        "swieto wojska polskiego"
+        "swieto wojska polskiego",
+        "wojska polskiego"
       ],
       "case_sensitive": false,
       "answers": []
@@ -202,16 +203,45 @@
     },
     {
       "id": "q13",
-      "text": "Kto rozpoczął budowę Centralnego Okręgu Przemysłowego jako wicepremier i minister skarbu?",
-      "image": null,
-      "explanation": "Budowę rozpoczął Eugeniusz Kwiatkowski.",
-      "selection_type": "open",
+      "text": "Kogo przedstawia ilustracja?",
+      "image": "/static/images/history/jozef_pilsudski.webp",
+      "explanation": "Jest to naczelnik państwa Józef Piłsudski.",
+      "selection_type": "single",
       "accepted_answers": [
-        "eugeniusz kwiatkowski",
-        "kwiatkowski"
+        "jozef piłsudski",
+        "piłsudski"
       ],
       "case_sensitive": false,
-      "answers": []
+      "answers": [
+        {
+          "text": "Józef Piłsudski",
+          "is_correct": true
+        },
+        {
+          "text": "Eugeniusz Kwiatkowski",
+          "is_correct": false
+        },
+        {
+          "text": "Adolf Hitler",
+          "is_correct": false
+        },
+        {
+          "text": "Włodzimierz Lenin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "text": "Kogo przedstawia ilustracja?",
+      "image": "/static/images/history/lenin_poster.jpg",
+      "explanation": "Plakat przedstawia przywódcę bolszewików - Włodzimierza Lenina.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "lenin",
+        "wlodzimierz lenin"
+      ],
+      "case_sensitive": false
     }
   ]
 }
