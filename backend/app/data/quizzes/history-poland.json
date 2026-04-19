@@ -12,10 +12,22 @@
       "explanation": "Józef Piłsudski.",
       "selection_type": "single",
       "answers": [
-        { "text": "Józef Piłsudski", "is_correct": true },
-        { "text": "Władysław Anders", "is_correct": false },
-        { "text": "Henryk Dąbrowski", "is_correct": false },
-        { "text": "Włodzimierz Lenin", "is_correct": false }
+        {
+          "text": "Józef Piłsudski",
+          "is_correct": true
+        },
+        {
+          "text": "Władysław Anders",
+          "is_correct": false
+        },
+        {
+          "text": "Henryk Dąbrowski",
+          "is_correct": false
+        },
+        {
+          "text": "Włodzimierz Lenin",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -25,10 +37,22 @@
       "explanation": "Naczelnik Państwa.",
       "selection_type": "single",
       "answers": [
-        { "text": "Naczelnik Państwa", "is_correct": true },
-        { "text": "Prezydent", "is_correct": false },
-        { "text": "Premier", "is_correct": false },
-        { "text": "Minister Spraw Wojny", "is_correct": false }
+        {
+          "text": "Naczelnik Państwa",
+          "is_correct": true
+        },
+        {
+          "text": "Prezydent",
+          "is_correct": false
+        },
+        {
+          "text": "Premier",
+          "is_correct": false
+        },
+        {
+          "text": "Minister Spraw Wojny",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -82,12 +106,110 @@
       ]
     },
     {
-      "id": "q5",
-      "text": "W którym roku był chrzest Polski?",
-      "image": null,
-      "explanation": "Chrzest Polski przyjmuje się na rok 966.",
+      "id": "q6",
+      "text": "Kto stał na czele polskiego dowództwa podczas wojny polsko-bolszewickiej opisanej na ilustracji?",
+      "image": "20260419_184518.jpg",
+      "explanation": "Na czele polskiego dowództwa stał Józef Piłsudski.",
       "selection_type": "open",
-      "accepted_answers": ["966", "rok 966"],
+      "accepted_answers": [
+        "józef piłsudski",
+        "piłsudski"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q7",
+      "text": "W którym roku bolszewicy zagrozili Warszawie?",
+      "image": null,
+      "explanation": "W podręczniku podano, że stało się to latem 1920 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1920",
+        "1920 rok",
+        "rok 1920"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q8",
+      "text": "W którym roku zawarto pokój kończący wojnę Polski z Rosją Sowiecką?",
+      "image": null,
+      "explanation": "Pokój kończący wojnę zawarto w 1921 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1921",
+        "1921 rok",
+        "rok 1921"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q9",
+      "text": "Jak nazywa się święto obchodzone 15 sierpnia na pamiątkę zwycięstwa w Bitwie Warszawskiej?",
+      "image": null,
+      "explanation": "To Święto Wojska Polskiego.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "święto wojska polskiego",
+        "swieto wojska polskiego"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q10",
+      "text": "W którym roku rozpoczęto budowę portu w Gdyni?",
+      "image": null,
+      "explanation": "Budowę portu w Gdyni rozpoczęto w 1921 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1921",
+        "1921 rok",
+        "rok 1921"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q11",
+      "text": "Kto został ministrem przemysłu i handlu w 1926 roku?",
+      "image": null,
+      "explanation": "Był to Eugeniusz Kwiatkowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "eugeniusz kwiatkowski",
+        "kwiatkowski"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q12",
+      "text": "W którym roku rozpoczęto budowę Centralnego Okręgu Przemysłowego?",
+      "image": null,
+      "explanation": "Budowę Centralnego Okręgu Przemysłowego rozpoczęto w 1937 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1937",
+        "1937 rok",
+        "rok 1937"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q13",
+      "text": "Kto rozpoczął budowę Centralnego Okręgu Przemysłowego jako wicepremier i minister skarbu?",
+      "image": null,
+      "explanation": "Budowę rozpoczął Eugeniusz Kwiatkowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "eugeniusz kwiatkowski",
+        "kwiatkowski"
+      ],
       "case_sensitive": false,
       "answers": []
     }
