@@ -7,3 +7,11 @@ async function getQuizzes() {
   }
   return response.json();
 }
+
+async function getQuizById(quizId) {
+  const response = await fetch(`${CONFIG.API_BASE_URL}/api/quizzes/${quizId}`);
+  if (!response.ok) {
+    throw new Error("Failed to load quiz");
+  }
+  return response.json();
+}

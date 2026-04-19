@@ -4,24 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edu Quiz</title>
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-  <h1>Edu Quiz</h1>
-  <button id="load-btn">Załaduj quizy</button>
-  <pre id="output"></pre>
+  <main class="container">
+    <h1>Edu Quiz</h1>
+    <p>Wybierz quiz i rozpocznij naukę.</p>
+
+    <div id="status">Ładowanie quizów...</div>
+    <div id="quiz-list" class="quiz-list"></div>
+  </main>
 
   <script src="./js/config.js"></script>
   <script src="./js/api.js"></script>
   <script>
-    document.getElementById("load-btn").addEventListener("click", async () => {
-      const output = document.getElementById("output");
+    async function renderQuizList() {
+      const statusEl = document.getElementById("status");
+      const listEl = document.getElementById("quiz-list");
+
       try {
         const quizzes = await getQuizzes();
-        output.textContent = JSON.stringify(quizzes, null, 2);
+
+        statusEl.textContent = "";
+
+        if (!quizzes.length) {
+          statusEl.textContent = "Brak dostępnych quizów.";
+          return;
+        }
+
+        listEl.innerHTML = quizzes.map((quiz) => `
+          <article class="quiz-card">
+            <h2>${quiz.title}</h2>
+            <p>${quiz.description}</p>
+            <p><strong>Kategoria:</strong> ${quiz.category}</p>
+            <button onclick="window.location.href='quiz.html?id=${quiz.id}'">
+              Start
+            </button>
+          </article>
+        `).join("");
       } catch (error) {
-        output.textContent = `Błąd: ${error.message}`;
+        statusEl.textContent = `Błąd: ${error.message}`;
       }
-    });
+    }
+
+    renderQuizList();
   </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <a href="./index.html">← Powrót do listy quizów</a>
+
+    <div id="status">Ładowanie quizu...</div>
+
+    <section id="quiz-screen" class="hidden">
+      <h1 id="quiz-title"></h1>
+      <p id="quiz-description"></p>
+
+      <div class="question-card">
+        <p id="question-counter"></p>
+        <h2 id="question-text"></h2>
+        <img id="question-image" class="hidden question-image" alt="Obrazek do pytania" />
+        <div id="answers" class="answers"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/quiz.js"></script>
+</body>
+</html>

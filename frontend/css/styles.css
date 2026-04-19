@@ -10,3 +10,47 @@ body {
   margin: 0 auto;
   padding: 24px;
 }
+
+.hidden {
+  display: none;
+}
+
+.quiz-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.quiz-card,
+.question-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.answer-btn {
+  width: 100%;
+  text-align: left;
+}
+
+.question-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 8px;
+}
