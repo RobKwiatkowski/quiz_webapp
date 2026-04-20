@@ -1,0 +1,124 @@
+{
+  "topic_id": "druga_wojna_swiatowa",
+  "topic_title": "Druga Wojna Światowa",
+  "questions": [
+    {
+      "id": "druga-wojna-start-data",
+      "text": "Kiedy dokładnie rozpoczęła się Druga Wojna Światowa?",
+      "image": null,
+      "explanation": "1 września 1939.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1 września 1939",
+        "1 wrzesnia 1939",
+        "1.09.1939",
+        "1/09/1939",
+        "01.09.1939",
+        "01/09/1939"
+      ]
+    },
+    {
+      "id": "okupacja-definicja",
+      "text": "Podbicie terytorium innego państwa i ustanowienie tam własnych rządów to:",
+      "image": null,
+      "explanation": "Nazywamy to okupacją.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "okupacja", "is_correct": true },
+        { "text": "wykupienie", "is_correct": false },
+        { "text": "okupienie", "is_correct": false },
+        { "text": "przekupienie", "is_correct": false }
+      ]
+    },
+    {
+      "id": "hitler-photo",
+      "text": "Kto to?",
+      "image": "/static/images/history/hitler_photo.jpg",
+      "explanation": "Jest to kanclerz Trzeciej Rzeszy Adolf Hitler.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "adolf hitler",
+        "hitler"
+      ]
+    },
+    {
+      "id": "lapanki",
+      "text": "Czym jest 'łapanka'?",
+      "image": null,
+      "explanation": "Łapanki to masowe aresztowania przypadkowych przechodniów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "masowe aresztowania przypadkowych przechodniów", "is_correct": true },
+        { "text": "wyłapywanie partyzanów walczących z niemcami", "is_correct": false },
+        { "text": "aresztowania polityków przeciwnych rządowi", "is_correct": false },
+        { "text": "masowe aresztowania wybranych grup społecznych", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kraje_atakujące",
+      "text": "Jakie kraje zaatakowały Polskę w 1939?",
+      "image": null,
+      "explanation": "1 września zaatakowała Rzesza Niemiecka, a kilka tygodni później Związek Sowiecki",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Federacja Niemiecka", "is_correct": false },
+        { "text": "Rzesza Niemiecka", "is_correct": true },
+        { "text": "Rosja Sowiecka", "is_correct": false },
+        { "text": "Związek Sowiecki", "is_correct": true }
+      ]
+    },
+    {
+      "id": "podziemie",
+      "text": "Jak nazywały się dwie polskie organizacje podziemne walczące z Niemcami?",
+      "image": null,
+      "explanation": "Armia Krajowa (AK), Szare Szeregi",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Armia Krajowa", "is_correct": true },
+        { "text": "Armia Polska", "is_correct": false },
+        { "text": "Szare Szeregi", "is_correct": true },
+        { "text": "Szara Armia", "is_correct": false }
+      ]
+    },
+    {
+      "id": "harcerze",
+      "text": "Jak nazywali się sławni harcerze z Akcji pod Arsenałem?",
+      "image": null,
+      "explanation": "Zośka, Alek i Rudy",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Zośka", "is_correct": true },
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rudy", "is_correct": true },
+        { "text": "Antek", "is_correct": false }
+      ]
+    },
+    {
+      "id": "arsenał_ratunek",
+      "text": "Kogo ratowano w Akcji pod Arsenałem?",
+      "image": null,
+      "explanation": "Odbijano pojmanego przez niemców Rudego",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rudego", "is_correct": true },
+        { "text": "Alka", "is_correct": false },
+        { "text": "Łysego", "is_correct": false },
+        { "text": "Zośkę", "is_correct": false }
+      ]
+    }
+    ,
+    {
+      "id": "arsenał_smierc",
+      "text": "Kto z harcerzy z Akcji pod Arsenałem zginął od ran postrzałowych?",
+      "image": null,
+      "explanation": "Kilka dni po akcji od ran zginał Alek.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rusy", "is_correct": false },
+        { "text": "Łysy", "is_correct": false },
+        { "text": "Zośka", "is_correct": false }
+      ]
+    }
+  ]
+}

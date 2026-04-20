@@ -1,6 +1,6 @@
 {
-  "topic_id": "legiony",
-  "topic_title": "Legiony Polskie",
+  "topic_id": "odrodzenie",
+  "topic_title": "Odrodzenie państwa polskiego",
   "questions": [
     {
       "id": "legiony-dowodca",
@@ -157,6 +157,32 @@
         "wlodzimierz lenin"
       ],
       "answers": []
+    },
+    {
+      "id": "komunizm",
+      "text": "Co zakłada komunizm (2 odpowiedzi)?",
+      "image": null,
+      "explanation": "Komunizm zakłada równość ludzi i brak własności prywatnej.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "równość wszystkich ludzi", "is_correct": true },
+        { "text": "brak własności prywatnej", "is_correct": true },
+        { "text": "brak prywatności", "is_correct": false },
+        { "text": "likwidację pieniędzy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "lwów",
+      "text": "O jakie miasto walczyliśmy z Ukraińcami po odzyskaniu niepodległości?",
+      "image": null,
+      "explanation": "Walczyliśmy o Lwów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Lwów", "is_correct": true },
+        { "text": "Kijów", "is_correct": false },
+        { "text": "Częstochowę", "is_correct": false },
+        { "text": "Zbaraż", "is_correct": false }
+      ]
     }
   ]
 }

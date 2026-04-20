@@ -1,13 +1,13 @@
 {
-  "id": "history-chapter-1",
-  "title": "Historia Polski — rozdział 1",
-  "description": "Powtórka z rozdziału 1.",
+  "id": "history-chapter-6",
+  "title": "Historia Polski — rozdział 6",
+  "description": "Powtórka z rozdziału 6.",
   "category": "history",
   "age_group": "10-12",
   "questions_per_topic": 2,
   "topics": [
-    "topic_1.json",
-    "topic_2.json",
-    "topic_3.json"
+    "topic_1_odrodzenie.json",
+    "topic_2_gospodarka_IIRP.json",
+    "topic_3_II_wojna_swiatowa.json"
   ]
 }

@@ -10,10 +10,23 @@ function isOpenQuestion(question) {
 }
 
 function normalizeAnswer(value) {
+  const polishCharsMap = {
+    ą: "a",
+    ć: "c",
+    ę: "e",
+    ł: "l",
+    ń: "n",
+    ó: "o",
+    ś: "s",
+    ź: "z",
+    ż: "z"
+  };
+
   return value
     .trim()
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+$/gu, "");
+    .replace(/[^\p{L}\p{N}]+$/gu, "")
+    .replace(/[ąćęłńóśźż]/g, (char) => polishCharsMap[char] || char);
 }
 
 function showElement(elementId) {
@@ -39,6 +52,24 @@ function handleCheckAction() {
   if (question.selection_type === "open") {
     handleCheckOpenAnswer();
   }
+}
+
+function handleEnterAction(event) {
+  if (event.key !== "Enter") {
+    return;
+  }
+
+  event.preventDefault();
+
+  const nextButton = document.getElementById("next-button");
+  const isNextVisible = !nextButton.classList.contains("hidden");
+
+  if (isNextVisible) {
+    goToNextQuestion();
+    return;
+  }
+
+  handleCheckAction();
 }
 
 function handleCheckOpenAnswer() {
@@ -70,6 +101,38 @@ function handleCheckOpenAnswer() {
 
   inputEl.disabled = true;
   showFeedback(isCorrectOverall, question.explanation);
+}
+
+function handleGlobalEnterAction(event) {
+  if (event.key !== "Enter") {
+    return;
+  }
+
+  const nextButton = document.getElementById("next-button");
+  const checkButton = document.getElementById("check-button");
+  const activeElement = document.activeElement;
+
+  const isTypingInInput =
+    activeElement &&
+    (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA");
+
+  if (isTypingInInput) {
+    event.preventDefault();
+  }
+
+  const isNextVisible = !nextButton.classList.contains("hidden");
+  const isCheckVisible = !checkButton.classList.contains("hidden");
+
+  if (isNextVisible) {
+    event.preventDefault();
+    goToNextQuestion();
+    return;
+  }
+
+  if (isCheckVisible) {
+    event.preventDefault();
+    handleCheckAction();
+  }
 }
 
 function renderQuestion() {
@@ -111,21 +174,11 @@ function renderQuestion() {
   hideElement("feedback");
   hideElement("open-answer-box");
 
-  openAnswerInputEl.onkeydown = null;
-
   if (isOpenQuestion(question)) {
     answersEl.classList.add("hidden");
     showElement("open-answer-box");
     showElement("check-button");
     openAnswerInputEl.focus();
-
-    openAnswerInputEl.onkeydown = (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        handleCheckAction();
-      }
-    };
-
     return;
   }
 
@@ -282,8 +335,10 @@ async function initQuizPage() {
     document.getElementById("quiz-title").textContent = currentQuiz.title;
     document.getElementById("quiz-description").textContent = currentQuiz.description;
 
+
     document.getElementById("next-button").addEventListener("click", goToNextQuestion);
     document.getElementById("check-button").addEventListener("click", handleCheckAction);
+    document.addEventListener("keydown", handleGlobalEnterAction);
 
     renderQuestion();
   } catch (error) {
