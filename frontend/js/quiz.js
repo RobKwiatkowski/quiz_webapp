@@ -54,24 +54,6 @@ function handleCheckAction() {
   }
 }
 
-function handleEnterAction(event) {
-  if (event.key !== "Enter") {
-    return;
-  }
-
-  event.preventDefault();
-
-  const nextButton = document.getElementById("next-button");
-  const isNextVisible = !nextButton.classList.contains("hidden");
-
-  if (isNextVisible) {
-    goToNextQuestion();
-    return;
-  }
-
-  handleCheckAction();
-}
-
 function handleCheckOpenAnswer() {
   if (hasAnswered) return;
 
@@ -110,27 +92,18 @@ function handleGlobalEnterAction(event) {
 
   const nextButton = document.getElementById("next-button");
   const checkButton = document.getElementById("check-button");
-  const activeElement = document.activeElement;
-
-  const isTypingInInput =
-    activeElement &&
-    (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA");
-
-  if (isTypingInInput) {
-    event.preventDefault();
-  }
 
   const isNextVisible = !nextButton.classList.contains("hidden");
   const isCheckVisible = !checkButton.classList.contains("hidden");
 
+  event.preventDefault();
+
   if (isNextVisible) {
-    event.preventDefault();
     goToNextQuestion();
     return;
   }
 
   if (isCheckVisible) {
-    event.preventDefault();
     handleCheckAction();
   }
 }
