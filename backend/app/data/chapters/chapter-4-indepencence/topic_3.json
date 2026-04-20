@@ -1,47 +1,34 @@
 {
-  "topic_id": "legiony",
-  "topic_title": "Legiony Polskie",
+  "topic_id": "druga_wojna_swiatowa",
+  "topic_title": "Druga Wojna Światowa",
   "questions": [
     {
-      "id": "q10",
-      "text": "W którym roku rozpoczęto budowę portu w Gdyni?",
+      "id": "druga-wojna-start-data",
+      "text": "Kiedy dokładnie rozpoczęła się Druga Wojna Światowa?",
       "image": null,
-      "explanation": "Budowę portu w Gdyni rozpoczęto w 1921 roku.",
+      "explanation": "1 września 1939.",
       "selection_type": "open",
       "accepted_answers": [
-        "1921",
-        "1921 rok",
-        "rok 1921"
-      ],
-      "case_sensitive": false,
-      "answers": []
+        "1 września 1939",
+        "1 wrzesnia 1939",
+        "1.09.1939",
+        "1/09/1939",
+        "01.09.1939",
+        "01/09/1939"
+      ]
     },
     {
-      "id": "q11",
-      "text": "Kto został ministrem przemysłu i handlu w 1926 roku?",
+      "id": "okupacja-definicja",
+      "text": "Podbicie terytorium innego państwa i ustanowienie tam własnych rządów to:",
       "image": null,
-      "explanation": "Był to Eugeniusz Kwiatkowski.",
-      "selection_type": "open",
-      "accepted_answers": [
-        "eugeniusz kwiatkowski",
-        "kwiatkowski"
-      ],
-      "case_sensitive": false,
-      "answers": []
-    },
-    {
-      "id": "q12",
-      "text": "W którym roku rozpoczęto budowę Centralnego Okręgu Przemysłowego?",
-      "image": null,
-      "explanation": "Budowę Centralnego Okręgu Przemysłowego rozpoczęto w 1937 roku.",
-      "selection_type": "open",
-      "accepted_answers": [
-        "1937",
-        "1937 rok",
-        "rok 1937"
-      ],
-      "case_sensitive": false,
-      "answers": []
+      "explanation": "Nazywamy to okupacją.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "okupacja", "is_correct": true },
+        { "text": "wykupienie", "is_correct": false },
+        { "text": "okupienie", "is_correct": false },
+        { "text": "przekupienie", "is_correct": false }
+      ]
     }
   ]
 }

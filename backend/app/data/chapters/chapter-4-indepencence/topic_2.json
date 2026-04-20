@@ -1,148 +1,75 @@
 {
-  "topic_id": "legiony",
-  "topic_title": "Legiony Polskie",
+  "topic_id": "gospodarka",
+  "topic_title": "Gospodarka Okresu Międzywojennego",
   "questions": [
     {
-      "id": "q3",
-      "text": "W którym roku odbyła się Bitwa Warszawska z Rosja Bolszewicką?",
+      "id": "gdynia-port-start-rok",
+      "text": "W którym roku rozpoczęto budowę portu w Gdyni?",
       "image": null,
-      "explanation": "Bitwa Warszawska miała miejsce latem 1920.",
-      "selection_type": "single",
-      "answers": [
-        {
-          "text": "1919",
-          "is_correct": false
-        },
-        {
-          "text": "1920",
-          "is_correct": true
-        },
-        {
-          "text": "1923",
-          "is_correct": false
-        },
-        {
-          "text": "1925",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q2",
-      "text": "Jakie stanowisko objął Józef Piłsudski po odzyskaniu przez Polskę niepodległości?",
-      "image": null,
-      "explanation": "Został Naczelnikiem Państwa.",
-      "selection_type": "single",
-      "answers": [
-        {
-          "text": "Naczelnik Państwa",
-          "is_correct": true
-        },
-        {
-          "text": "Prezydent",
-          "is_correct": false
-        },
-        {
-          "text": "Premier",
-          "is_correct": false
-        },
-        {
-          "text": "Minister Spraw Wojny",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q4",
-      "text": "Jakie dwa powstania pomogły w ustaleniu granic Polski po I WŚ? (2 odpowiedzi)",
-      "image": null,
-      "explanation": "Były dwa powstania: Śląskie (1921) i Wielkopolskie (1918).",
-      "selection_type": "multiple",
-      "answers": [
-        {
-          "text": "Powstanie Śląskie",
-          "is_correct": true
-        },
-        {
-          "text": "Powstanie Wielkopolskie",
-          "is_correct": true
-        },
-        {
-          "text": "Powstanie Kościuszkowskie",
-          "is_correct": false
-        },
-        {
-          "text": "Powstanie Styczniowe",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q6",
-      "text": "Kto stał na czele polskiego dowództwa podczas wojny polsko-bolszewickiej opisanej?",
-      "image": null,
-      "explanation": "Na czele polskiego dowództwa stał Józef Piłsudski.",
-      "selection_type": "open",
-      "accepted_answers": [
-        "józef piłsudski",
-        "piłsudski"
-      ],
-      "case_sensitive": false,
-      "answers": []
-    },
-    {
-      "id": "q7",
-      "text": "W którym roku bolszewicy zagrozili Warszawie?",
-      "image": null,
-      "explanation": "W podręczniku podano, że stało się to latem 1920 roku.",
-      "selection_type": "open",
-      "accepted_answers": [
-        "1920",
-        "1920 rok",
-        "rok 1920"
-      ],
-      "case_sensitive": false,
-      "answers": []
-    },
-    {
-      "id": "q8",
-      "text": "W którym roku zawarto pokój kończący wojnę Polski z Rosją Sowiecką?",
-      "image": null,
-      "explanation": "Pokój kończący wojnę zawarto w 1921 roku.",
+      "explanation": "Budowę portu w Gdyni rozpoczęto w 1921 roku.",
       "selection_type": "open",
       "accepted_answers": [
         "1921",
         "1921 rok",
         "rok 1921"
-      ],
-      "case_sensitive": false,
-      "answers": []
+      ]
     },
     {
-      "id": "q9",
-      "text": "Jak nazywa się święto obchodzone 15 sierpnia na pamiątkę zwycięstwa w Bitwie Warszawskiej?",
+      "id": "kwiatkowski-minister-1926",
+      "text": "Kto został ministrem przemysłu i handlu w 1926 roku?",
       "image": null,
-      "explanation": "To Święto Wojska Polskiego.",
+      "explanation": "Był to Eugeniusz Kwiatkowski.",
       "selection_type": "open",
       "accepted_answers": [
-        "święto wojska polskiego",
-        "swieto wojska polskiego",
-        "wojska polskiego"
-      ],
-      "case_sensitive": false,
-      "answers": []
+        "eugeniusz kwiatkowski",
+        "kwiatkowski"
+      ]
     },
     {
-      "id": "q14",
-      "text": "Kogo przedstawia ilustracja?",
-      "image": "/static/images/history/lenin_poster.jpg",
-      "explanation": "Plakat przedstawia przywódcę bolszewików - Włodzimierza Lenina.",
+      "id": "cop-start-rok",
+      "text": "W którym roku rozpoczęto budowę Centralnego Okręgu Przemysłowego?",
+      "image": null,
+      "explanation": "Budowę Centralnego Okręgu Przemysłowego rozpoczęto w 1937 roku.",
       "selection_type": "open",
       "accepted_answers": [
-        "lenin",
-        "wlodzimierz lenin"
-      ],
-      "case_sensitive": false
+        "1937",
+        "1937 rok",
+        "rok 1937"
+      ]
+    },
+    {
+      "id": "wegiel-eksport",
+      "text": "Jaki był główny towar eksportowy Polski w Okresie Międzywojennym?",
+      "image": null,
+      "explanation": "Był to węgiel.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "węgiel",
+        "wegiel"
+      ]
+    },
+    {
+      "id": "polska-brak-portu",
+      "text": "Czego brakowało gospodarczo Polsce po odrodzeniu?",
+      "image": null,
+      "explanation": "Polsce brakowało portu. Później wybudowano port w Gdyni.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "portu",
+        "port"
+      ]
+    },
+    {
+      "id": "cop-nazwa-obszaru",
+      "text": "Jak nazywał się obszar Polski, gdzie rozpoczęto w 1937 roku intensywną budowę fabryk i hut?",
+      "image": null,
+      "explanation": "Był to Centralny Okręg Przemysłowy.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "centralny okręg przemysłowy",
+        "centralny okreg przemyslowy",
+        "cop"
+      ]
     }
   ]
 }
