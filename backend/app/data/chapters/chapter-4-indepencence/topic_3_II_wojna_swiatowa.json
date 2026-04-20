@@ -32,8 +32,8 @@
     },
     {
       "id": "hitler-photo",
-      "text": "Kto to?",
-      "image": "/static/images/history/hitler_photo.jpg",
+      "text": "Kto to jest?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Bundesarchiv_Bild_183-H1216-0500-002%2C_Adolf_Hitler.jpg",
       "explanation": "Jest to kanclerz Trzeciej Rzeszy Adolf Hitler.",
       "selection_type": "open",
       "accepted_answers": [

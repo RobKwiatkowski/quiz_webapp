@@ -148,7 +148,7 @@
     {
       "id": "ilustracja-lenin",
       "text": "Kogo przedstawia ilustracja?",
-      "image": "/static/images/history/lenin_poster.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg",
       "explanation": "Plakat przedstawia przywódcę bolszewików - Włodzimierza Lenina.",
       "selection_type": "open",
       "accepted_answers": [

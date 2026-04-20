@@ -127,7 +127,19 @@ function renderQuestion() {
   document.getElementById("question-text").textContent = question.text;
 
   if (question.image) {
-    imageEl.src = `${CONFIG.API_BASE_URL}${question.image}`;
+    const isRemoteImage =
+      question.image.startsWith("http://") || question.image.startsWith("https://");
+
+    imageEl.src = isRemoteImage
+      ? question.image
+      : `${CONFIG.API_BASE_URL}${question.image}`;
+
+    imageEl.onerror = () => {
+    imageEl.removeAttribute("src");
+    imageEl.classList.add("hidden");
+    imageWrapperEl.classList.add("hidden");
+};
+
     imageWrapperEl.classList.remove("hidden");
     imageEl.classList.remove("hidden");
   } else {
