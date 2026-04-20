@@ -1,0 +1,47 @@
+{
+  "topic_id": "legiony",
+  "topic_title": "Legiony Polskie",
+  "questions": [
+    {
+      "id": "q10",
+      "text": "W którym roku rozpoczęto budowę portu w Gdyni?",
+      "image": null,
+      "explanation": "Budowę portu w Gdyni rozpoczęto w 1921 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1921",
+        "1921 rok",
+        "rok 1921"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q11",
+      "text": "Kto został ministrem przemysłu i handlu w 1926 roku?",
+      "image": null,
+      "explanation": "Był to Eugeniusz Kwiatkowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "eugeniusz kwiatkowski",
+        "kwiatkowski"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    },
+    {
+      "id": "q12",
+      "text": "W którym roku rozpoczęto budowę Centralnego Okręgu Przemysłowego?",
+      "image": null,
+      "explanation": "Budowę Centralnego Okręgu Przemysłowego rozpoczęto w 1937 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1937",
+        "1937 rok",
+        "rok 1937"
+      ],
+      "case_sensitive": false,
+      "answers": []
+    }
+  ]
+}

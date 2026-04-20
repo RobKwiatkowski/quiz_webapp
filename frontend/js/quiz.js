@@ -10,7 +10,10 @@ function isOpenQuestion(question) {
 }
 
 function normalizeAnswer(value) {
-  return value.trim().toLowerCase();
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+$/gu, "");
 }
 
 function showElement(elementId) {

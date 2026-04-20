@@ -1,25 +1,71 @@
 import json
+import random
 from pathlib import Path
+
 from app.config import settings
-from app.models.quiz import Quiz, QuizListItem
+from app.models.quiz import ChapterMeta, Quiz, QuizListItem, TopicFile
 
 
-def get_quiz_files() -> list[Path]:
-    quiz_dir = Path(settings.quiz_data_dir)
-    files = sorted(quiz_dir.glob("*.json"))
-    print("QUIZ DIR:", quiz_dir)
-    print("QUIZ FILES:", files)
-    return files
+def get_chapter_dirs() -> list[Path]:
+    chapters_dir = Path(settings.quiz_data_dir)
+    chapter_dirs = sorted([p for p in chapters_dir.iterdir() if p.is_dir()])
+    print("CHAPTERS DIR:", chapters_dir)
+    print("CHAPTER DIRS:", chapter_dirs)
+    return chapter_dirs
+
+
+def load_chapter_meta(chapter_dir: Path) -> ChapterMeta:
+    meta_path = chapter_dir / "meta.json"
+    with open(meta_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return ChapterMeta.model_validate(data)
+
+
+def load_topic_file(chapter_dir: Path, topic_filename: str) -> TopicFile:
+    topic_path = chapter_dir / topic_filename
+    with open(topic_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return TopicFile.model_validate(data)
+
+
+def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
+    meta = load_chapter_meta(chapter_dir)
+
+    selected_questions = []
+    remaining_pool = []
+
+    for topic_filename in meta.topics:
+        topic = load_topic_file(chapter_dir, topic_filename)
+        questions = topic.questions[:]
+        random.shuffle(questions)
+
+        selected_from_topic = questions[: meta.questions_per_topic]
+        leftover_from_topic = questions[meta.questions_per_topic :]
+
+        selected_questions.extend(selected_from_topic)
+        remaining_pool.extend(leftover_from_topic)
+
+    if len(selected_questions) < meta.target_question_count:
+        missing = meta.target_question_count - len(selected_questions)
+        random.shuffle(remaining_pool)
+        selected_questions.extend(remaining_pool[:missing])
+
+    random.shuffle(selected_questions)
+
+    return Quiz(
+        id=meta.id,
+        title=meta.title,
+        description=meta.description,
+        category=meta.category,
+        age_group=meta.age_group,
+        questions=selected_questions,
+    )
 
 
 def load_all_quizzes() -> list[Quiz]:
     quizzes = []
-    for file_path in get_quiz_files():
-        print("READING FILE:", file_path)
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            print("RAW QUESTIONS COUNT:", len(data.get("questions", [])))
-            quizzes.append(Quiz.model_validate(data))
+    for chapter_dir in get_chapter_dirs():
+        quizzes.append(build_quiz_from_chapter(chapter_dir))
     return quizzes
 
 

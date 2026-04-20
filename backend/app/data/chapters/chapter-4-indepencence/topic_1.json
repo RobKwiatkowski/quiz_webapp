@@ -1,0 +1,99 @@
+{
+  "topic_id": "legiony",
+  "topic_title": "Legiony Polskie",
+  "questions": [
+    {
+      "id": "legiony-dowodca",
+      "text": "Kto był dowódcą Legionów Polskich w Pierwszej Wojnie Światowej?",
+      "image": null,
+      "explanation": "Józef Piłsudski.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Józef Piłsudski", "is_correct": true },
+        { "text": "Władysław Anders", "is_correct": false },
+        { "text": "Henryk Dąbrowski", "is_correct": false },
+        { "text": "Włodzimierz Lenin", "is_correct": false }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Jakie stanowisko objął Józef Piłsudski po odzyskaniu przez Polskę niepodległości?",
+      "image": null,
+      "explanation": "Został Naczelnikiem Państwa.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Naczelnik Państwa",
+          "is_correct": true
+        },
+        {
+          "text": "Prezydent",
+          "is_correct": false
+        },
+        {
+          "text": "Premier",
+          "is_correct": false
+        },
+        {
+          "text": "Minister Spraw Wojny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Jakie dwa powstania pomogły w ustaleniu granic Polski po I WŚ? (2 odpowiedzi)",
+      "image": null,
+      "explanation": "Były dwa powstania: Śląskie (1921) i Wielkopolskie (1918).",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Powstanie Śląskie",
+          "is_correct": true
+        },
+        {
+          "text": "Powstanie Wielkopolskie",
+          "is_correct": true
+        },
+        {
+          "text": "Powstanie Kościuszkowskie",
+          "is_correct": false
+        },
+        {
+          "text": "Powstanie Styczniowe",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "text": "Kogo przedstawia ilustracja?",
+      "image": "/static/images/history/jozef_pilsudski.webp",
+      "explanation": "Jest to naczelnik państwa Józef Piłsudski.",
+      "selection_type": "single",
+      "accepted_answers": [
+        "jozef piłsudski",
+        "piłsudski"
+      ],
+      "case_sensitive": false,
+      "answers": [
+        {
+          "text": "Józef Piłsudski",
+          "is_correct": true
+        },
+        {
+          "text": "Eugeniusz Kwiatkowski",
+          "is_correct": false
+        },
+        {
+          "text": "Adolf Hitler",
+          "is_correct": false
+        },
+        {
+          "text": "Włodzimierz Lenin",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "history-chapter-1",
+  "title": "Historia Polski — rozdział 1",
+  "description": "Powtórka z rozdziału 1.",
+  "category": "history",
+  "age_group": "10-12",
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1.json",
+    "topic_2.json",
+    "topic_3.json"
+  ]
+}
