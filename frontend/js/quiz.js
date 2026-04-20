@@ -93,18 +93,18 @@ function handleGlobalEnterAction(event) {
   const nextButton = document.getElementById("next-button");
   const checkButton = document.getElementById("check-button");
 
-  const isNextVisible = !nextButton.classList.contains("hidden");
-  const isCheckVisible = !checkButton.classList.contains("hidden");
+  const isNextVisible = !nextButton.classList.contains("hidden") && !nextButton.disabled;
+  const isCheckVisible = !checkButton.classList.contains("hidden") && !checkButton.disabled;
 
   event.preventDefault();
 
   if (isNextVisible) {
-    goToNextQuestion();
+    nextButton.click();
     return;
   }
 
   if (isCheckVisible) {
-    handleCheckAction();
+    checkButton.click();
   }
 }
 
