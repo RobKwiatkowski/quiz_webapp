@@ -105,8 +105,7 @@
         { "text": "Łysego", "is_correct": false },
         { "text": "Zośkę", "is_correct": false }
       ]
-    }
-    ,
+    },
     {
       "id": "arsenał_smierc",
       "text": "Kto z harcerzy z Akcji pod Arsenałem zginął od ran postrzałowych?",
@@ -118,6 +117,45 @@
         { "text": "Rusy", "is_correct": false },
         { "text": "Łysy", "is_correct": false },
         { "text": "Zośka", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kraje_sasiadujace_1",
+      "text": "Jaki kraj oznaczono na mapie kolorem czarnym",
+      "image": "/static/images/history/mapa_IIRP_countries.jpg",
+      "explanation": "Jest to Rzesza Niemiecka.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rzesza Niemiecka", "is_correct": true },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Związek Sowiecki", "is_correct": false },
+        { "text": "Wolne Miasto Gdańsk", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kraje_sasiadujace_2",
+      "text": "Jaki kraj oznaczono na mapie kolorem czerwonym",
+      "image": "/static/images/history/mapa_IIRP_countries.jpg",
+      "explanation": "Jest to Związek Sowiecki lub inaczej ZSRR.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rzesza Niemiecka", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Związek Sowiecki", "is_correct": true },
+        { "text": "Wolne Miasto Gdańsk", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kraje_sasiadujace_3",
+      "text": "Jaki kraj oznaczono na mapie kolorem zielonym",
+      "image": "/static/images/history/mapa_IIRP_countries.jpg",
+      "explanation": "Jest to Wolne Miast Gdańsk.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rzesza Niemiecka", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Związek Sowiecki", "is_correct": false },
+        { "text": "Wolne Miasto Gdańsk", "is_correct": true }
       ]
     }
   ]

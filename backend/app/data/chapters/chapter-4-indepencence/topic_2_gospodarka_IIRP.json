@@ -70,6 +70,32 @@
         "centralny okreg przemyslowy",
         "cop"
       ]
+    },
+    {
+      "id": "mapa_gdynia",
+      "text": "Jaką literą zaznaczono miasto Gdynia?",
+      "image": "/static/images/history/mapa_IIRP_abcd.jpg",
+      "explanation": "Punkt A.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "A", "is_correct": true },
+        { "text": "B", "is_correct": false },
+        { "text": "C", "is_correct": false },
+        { "text": "D", "is_correct": false }
+      ]
+    },
+    {
+      "id": "mapa_gdansk",
+      "text": "Jaką literą zaznaczono Wolne Miasto Gdańsk?",
+      "image": "/static/images/history/mapa_IIRP_abcd.jpg",
+      "explanation": "Punkt B.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "A", "is_correct": false },
+        { "text": "B", "is_correct": true },
+        { "text": "C", "is_correct": false },
+        { "text": "D", "is_correct": false }
+      ]
     }
   ]
 }
