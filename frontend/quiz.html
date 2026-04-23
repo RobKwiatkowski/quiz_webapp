@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=3" />
 </head>
 <body>
   <main class="container">
-    <a href="./index.html">← Powrót do listy quizów</a>
+    <a href="./index.html">&#8592; Powr&oacute;t do listy quiz&oacute;w</a>
 
-    <div id="status">Ładowanie quizu...</div>
+    <div id="status">&#321;adowanie quizu...</div>
 
     <section id="quiz-screen" class="hidden">
       <h1 id="quiz-title"></h1>
@@ -18,46 +18,75 @@
 
       <div class="question-card">
         <p id="question-counter"></p>
+        <div
+          id="question-progress-track"
+          class="question-progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div id="question-progress-bar" class="question-progress-bar"></div>
+        </div>
+        <p id="question-progress-percent" class="question-progress-percent"></p>
+        <p id="question-hint" class="question-hint hidden"></p>
         <h2 id="question-text"></h2>
 
-      <div id="question-image-wrapper" class="question-image-wrapper hidden">
-        <img id="question-image" class="question-image hidden" alt="Obrazek do pytania" />
-      </div>
+        <div id="question-image-wrapper" class="question-image-wrapper hidden">
+          <img id="question-image" class="question-image hidden" alt="Obrazek do pytania" />
+        </div>
 
-      <div id="answers" class="answers"></div>
+        <div id="answers" class="answers"></div>
 
-      <div id="open-answer-box" class="hidden open-answer-box">
-        <input id="open-answer-input" type="text" placeholder="Wpisz odpowiedź" />
-      </div>
-
-
+        <div id="open-answer-box" class="hidden open-answer-box">
+          <input id="open-answer-input" type="text" placeholder="Wpisz odpowied&#378;" />
+        </div>
 
         <div id="feedback" class="feedback hidden"></div>
 
         <div class="actions">
-          <button id="check-button" class="hidden">Sprawdź</button>
+          <button id="check-button" class="hidden">Sprawd&#378;</button>
           <button id="next-button" class="hidden">Dalej</button>
         </div>
       </div>
     </section>
 
     <section id="result-screen" class="hidden">
-      <div class="question-card">
+      <div class="question-card result-card">
+        <div id="result-emoji" class="result-emoji">🎉</div>
         <h2>Koniec quizu</h2>
-        <p id="final-score"></p>
-        <p id="final-message"></p>
-        <button onclick="window.location.reload()">Zagraj jeszcze raz</button>
+
+        <div class="result-grid">
+          <div class="result-tile">
+            <div class="result-label">Wynik</div>
+            <div id="final-score" class="result-value"></div>
+          </div>
+
+          <div class="result-tile">
+            <div class="result-label">Procent</div>
+            <div id="final-percentage" class="result-value"></div>
+          </div>
+
+          <div class="result-tile result-tile-wide">
+            <div class="result-label">Ocena</div>
+            <div id="final-message" class="result-value"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="restart-button" type="button">Zagraj jeszcze raz</button>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="./js/config.js"></script>
-  <script src="./js/api.js"></script>
-  <script src="./js/utils.js"></script>
-  <script src="./js/quiz-state.js"></script>
-  <script src="./js/quiz-check.js"></script>
-  <script src="./js/quiz-render.js"></script>
-  <script src="./js/quiz-events.js"></script>
-  <script src="./js/quiz-page.js"></script>
+  <script src="./js/config.js?v=3"></script>
+  <script src="./js/api.js?v=3"></script>
+  <script src="./js/utils.js?v=3"></script>
+  <script src="./js/quiz-state.js?v=3"></script>
+  <script src="./js/quiz-check.js?v=3"></script>
+  <script src="./js/quiz-render.js?v=3"></script>
+  <script src="./js/quiz-events.js?v=3"></script>
+  <script src="./js/quiz-page.js?v=3"></script>
 </body>
 </html>

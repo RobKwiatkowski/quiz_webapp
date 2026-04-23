@@ -1,4 +1,4 @@
-// SECTION: quiz-dom-visibility-utils
+﻿// SECTION: quiz-dom-visibility-utils
 // Small DOM visibility wrappers used across render and feedback flows.
 function showElement(elementId) {
   document.getElementById(elementId).classList.remove("hidden");
@@ -16,6 +16,10 @@ function renderQuestion() {
   const openAnswerInputEl = document.getElementById("open-answer-input");
   const imageEl = document.getElementById("question-image");
   const imageWrapperEl = document.getElementById("question-image-wrapper");
+  const questionProgressTrackEl = document.getElementById("question-progress-track");
+  const questionProgressBarEl = document.getElementById("question-progress-bar");
+  const questionProgressPercentEl = document.getElementById("question-progress-percent");
+  const questionHintEl = document.getElementById("question-hint");
 
   showElement("quiz-screen");
   hideElement("result-screen");
@@ -23,10 +27,37 @@ function renderQuestion() {
 
   hasAnswered = false;
 
+  const questionPosition = currentQuestionIndex + 1;
+  const questionTotal = currentQuiz.questions.length;
+  const questionProgressPercent = getQuestionProgressPercentage(questionPosition, questionTotal);
+
   document.getElementById("question-counter").textContent =
-    `Pytanie ${currentQuestionIndex + 1} z ${currentQuiz.questions.length}`;
+    `Pytanie ${questionPosition} z ${questionTotal}`;
+
+  if (questionProgressTrackEl) {
+    questionProgressTrackEl.setAttribute("aria-valuenow", String(questionProgressPercent));
+  }
+
+  if (questionProgressBarEl) {
+    questionProgressBarEl.style.width = `${questionProgressPercent}%`;
+  }
+
+  if (questionProgressPercentEl) {
+    questionProgressPercentEl.textContent = `${questionProgressPercent}%`;
+  }
 
   document.getElementById("question-text").textContent = question.text;
+
+  const questionHint = getQuestionHint(question);
+  if (questionHintEl) {
+    if (questionHint) {
+      questionHintEl.textContent = questionHint;
+      questionHintEl.classList.remove("hidden");
+    } else {
+      questionHintEl.textContent = "";
+      questionHintEl.classList.add("hidden");
+    }
+  }
 
   if (question.image) {
     const isRemoteImage =
@@ -128,8 +159,8 @@ function showFeedback(isCorrectOverall, explanation) {
     feedbackEl.className = "feedback correct-feedback";
   } else {
     feedbackEl.textContent = explanation
-      ? `Niepoprawna odpowiedź. ${explanation}`
-      : "Niepoprawna odpowiedź.";
+      ? `Niepoprawna odpowied\u017a. ${explanation}`
+      : "Niepoprawna odpowied\u017a.";
     feedbackEl.className = "feedback incorrect-feedback";
   }
 
@@ -145,23 +176,29 @@ function showFinalResult() {
   showElement("result-screen");
 
   const totalQuestions = currentQuiz.questions.length;
+  const percentage = getScorePercentage(score, totalQuestions);
   const message = getFinalMessage(score, totalQuestions);
-  const finalScoreEl = document.getElementById("final-score");
-  let finalMessageEl = document.getElementById("final-message");
+  const emoji = getFinalEmoji(score, totalQuestions);
 
-  if (!finalMessageEl && finalScoreEl && finalScoreEl.parentElement) {
-    finalMessageEl = document.createElement("p");
-    finalMessageEl.id = "final-message";
-    finalScoreEl.parentElement.insertBefore(finalMessageEl, finalScoreEl.nextSibling);
-  }
+  const finalScoreEl = document.getElementById("final-score");
+  const finalPercentageEl = document.getElementById("final-percentage");
+  const finalMessageEl = document.getElementById("final-message");
+  const resultEmojiEl = document.getElementById("result-emoji");
 
   if (finalScoreEl) {
-    finalScoreEl.textContent = "Twój wynik: " + score + "/" + totalQuestions;
+    finalScoreEl.textContent = `${score}/${totalQuestions}`;
+  }
+
+  if (finalPercentageEl) {
+    finalPercentageEl.textContent = `${percentage}%`;
   }
 
   if (finalMessageEl) {
-    finalMessageEl.classList.remove("hidden");
     finalMessageEl.textContent = message;
+  }
+
+  if (resultEmojiEl) {
+    resultEmojiEl.textContent = emoji;
   }
 }
 
@@ -174,4 +211,54 @@ function goToNextQuestion() {
   }
 
   renderQuestion();
+}
+
+function getFinalEmoji(currentScore, totalQuestions) {
+  if (totalQuestions === 0) {
+    return "🙂";
+  }
+
+  const percentage = (currentScore / totalQuestions) * 100;
+
+  if (percentage < 50) {
+    return "📚";
+  }
+
+  if (percentage < 75) {
+    return "🙂";
+  }
+
+  if (percentage < 90) {
+    return "👏";
+  }
+
+  if (percentage < 100) {
+    return "🎉";
+  }
+
+  return "🏆";
+}
+
+function getQuestionProgressPercentage(position, totalQuestions) {
+  if (totalQuestions === 0) {
+    return 0;
+  }
+
+  return Math.round((position / totalQuestions) * 100);
+}
+
+function getQuestionHint(question) {
+  if (question.selection_type === "open") {
+    return "Wpisz kr\u00f3tk\u0105 odpowied\u017a.";
+  }
+
+  if (question.selection_type === "multiple") {
+    const correctCount = (question.answers || []).filter((answer) => answer.is_correct).length;
+    if (correctCount >= 2) {
+      return `Wybierz ${correctCount} odpowiedzi.`;
+    }
+    return "Mo\u017cliwa jest wi\u0119cej ni\u017c jedna poprawna odpowied\u017a.";
+  }
+
+  return "";
 }

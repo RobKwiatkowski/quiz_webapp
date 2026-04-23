@@ -1,5 +1,34 @@
-// SECTION: quiz-bootstrap
+﻿// SECTION: quiz-bootstrap
 // Page initialization: loads quiz data and wires event listeners.
+async function restartQuiz() {
+  const statusEl = document.getElementById("status");
+  const quizId = getQueryParam("id");
+
+  if (!quizId) {
+    statusEl.textContent = "Brak id quizu w adresie.";
+    return;
+  }
+
+  try {
+    resetQuizState();
+    currentQuiz = await getQuizById(quizId);
+
+    if (!currentQuiz.questions || currentQuiz.questions.length === 0) {
+      statusEl.textContent = "Quiz nie zawiera pytań.";
+      return;
+    }
+
+    document.getElementById("quiz-title").textContent = currentQuiz.title;
+    document.getElementById("quiz-description").textContent = currentQuiz.description;
+
+    hideElement("result-screen");
+    renderQuestion();
+  } catch (error) {
+    console.error(error);
+    statusEl.textContent = `Błąd: ${error.message}`;
+  }
+}
+
 async function initQuizPage() {
   const statusEl = document.getElementById("status");
   const quizId = getQueryParam("id");
@@ -10,6 +39,7 @@ async function initQuizPage() {
   }
 
   try {
+    resetQuizState();
     currentQuiz = await getQuizById(quizId);
 
     if (!currentQuiz.questions || currentQuiz.questions.length === 0) {
@@ -22,6 +52,12 @@ async function initQuizPage() {
 
     document.getElementById("next-button").addEventListener("click", goToNextQuestion);
     document.getElementById("check-button").addEventListener("click", handleCheckAction);
+
+    const restartButton = document.getElementById("restart-button");
+    if (restartButton) {
+      restartButton.addEventListener("click", restartQuiz);
+    }
+
     document.addEventListener("keydown", handleGlobalEnterAction);
 
     renderQuestion();

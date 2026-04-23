@@ -8,3 +8,9 @@ let hasAnswered = false;
 function getCurrentQuestion() {
   return currentQuiz.questions[currentQuestionIndex];
 }
+
+function resetQuizState() {
+  currentQuestionIndex = 0;
+  score = 0;
+  hasAnswered = false;
+}

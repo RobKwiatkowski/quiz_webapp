@@ -1,4 +1,4 @@
-// SECTION: quiz-question-type-utils
+﻿// SECTION: quiz-question-type-utils
 // Helpers for question type detection and answer normalization.
 function isOpenQuestion(question) {
   return question.selection_type === "open";
@@ -6,22 +6,22 @@ function isOpenQuestion(question) {
 
 function normalizeAnswer(value) {
   const polishCharsMap = {
-    "ą": "a",
-    "ć": "c",
-    "ę": "e",
-    "ł": "l",
-    "ń": "n",
-    "ó": "o",
-    "ś": "s",
-    "ź": "z",
-    "ż": "z"
+    "\u0105": "a",
+    "\u0107": "c",
+    "\u0119": "e",
+    "\u0142": "l",
+    "\u0144": "n",
+    "\u00f3": "o",
+    "\u015b": "s",
+    "\u017a": "z",
+    "\u017c": "z"
   };
 
   return value
     .trim()
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+$/gu, "")
-    .replace(/[ąćęłńóśźż]/g, (char) => polishCharsMap[char] || char);
+    .replace(/[\u0105\u0107\u0119\u0142\u0144\u00f3\u015b\u017a\u017c]/g, (char) => polishCharsMap[char] || char);
 }
 
 // SECTION: quiz-check-actions
@@ -49,6 +49,7 @@ function handleCheckOpenAnswer() {
   const rawValue = inputEl.value.trim();
 
   if (!rawValue) {
+    showOpenAnswerRequiredMessage();
     return;
   }
 
@@ -61,6 +62,9 @@ function handleCheckOpenAnswer() {
   const acceptedAnswers = (question.accepted_answers || []).map((answer) =>
     question.case_sensitive ? answer.trim() : normalizeAnswer(answer)
   );
+  const firstAcceptedAnswerRaw = (question.accepted_answers || []).find(
+    (answer) => typeof answer === "string" && answer.trim() !== ""
+  );
 
   const isCorrectOverall = acceptedAnswers.includes(userAnswer);
 
@@ -68,8 +72,16 @@ function handleCheckOpenAnswer() {
     score += 1;
   }
 
+  let feedbackExplanation = question.explanation || "";
+  if (!isCorrectOverall && firstAcceptedAnswerRaw) {
+    const referenceText = `Poprawna odpowied\u017a: ${firstAcceptedAnswerRaw.trim()}.`;
+    feedbackExplanation = feedbackExplanation
+      ? `${feedbackExplanation} ${referenceText}`
+      : referenceText;
+  }
+
   inputEl.disabled = true;
-  showFeedback(isCorrectOverall, question.explanation);
+  showFeedback(isCorrectOverall, feedbackExplanation);
 }
 
 // SECTION: quiz-single-answer-check
@@ -123,19 +135,34 @@ function handleCheckMultipleAnswers() {
   showFeedback(isCorrectOverall, question.explanation);
 }
 
+function getScorePercentage(currentScore, totalQuestions) {
+  if (totalQuestions === 0) {
+    return 0;
+  }
+
+  return Math.round((currentScore / totalQuestions) * 100);
+}
+
+function showOpenAnswerRequiredMessage() {
+  const feedbackEl = document.getElementById("feedback");
+  feedbackEl.textContent = "Wpisz odpowied\u017a.";
+  feedbackEl.className = "feedback warning-feedback";
+  feedbackEl.classList.remove("hidden");
+}
+
 function getFinalMessage(currentScore, totalQuestions) {
   if (totalQuestions === 0) {
     return "";
   }
 
-  const percentage = (currentScore / totalQuestions) * 100;
+  const percentage = getScorePercentage(currentScore, totalQuestions);
 
   if (percentage < 50) {
-    return "Musisz jeszcze poćwiczyć";
+    return "Musisz jeszcze po\u0107wiczy\u0107";
   }
 
   if (percentage < 75) {
-    return "Nieźle ale może być lepiej";
+    return "Nie\u017ale ale mo\u017ce by\u0107 lepiej";
   }
 
   if (percentage < 90) {
