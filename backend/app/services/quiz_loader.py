@@ -1,3 +1,5 @@
+"""Utilities for loading chapter files and assembling quizzes."""
+
 import json
 import random
 from pathlib import Path
@@ -7,14 +9,24 @@ from app.models.quiz import ChapterMeta, Quiz, QuizListItem, TopicFile
 
 
 def get_chapter_dirs() -> list[Path]:
+    """Returns available chapter directories from the configured data path.
+
+    Returns:
+        list[Path]: Sorted chapter directory paths.
+    """
     chapters_dir = Path(settings.quiz_data_dir)
-    chapter_dirs = sorted([p for p in chapters_dir.iterdir() if p.is_dir()])
-    print("CHAPTERS DIR:", chapters_dir)
-    print("CHAPTER DIRS:", chapter_dirs)
-    return chapter_dirs
+    return sorted([p for p in chapters_dir.iterdir() if p.is_dir()])
 
 
 def load_chapter_meta(chapter_dir: Path) -> ChapterMeta:
+    """Loads and validates chapter metadata from ``meta.json``.
+
+    Args:
+        chapter_dir: Chapter directory path.
+
+    Returns:
+        ChapterMeta: Parsed chapter metadata model.
+    """
     meta_path = chapter_dir / "meta.json"
     with open(meta_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -22,6 +34,15 @@ def load_chapter_meta(chapter_dir: Path) -> ChapterMeta:
 
 
 def load_topic_file(chapter_dir: Path, topic_filename: str) -> TopicFile:
+    """Loads and validates a single topic JSON file.
+
+    Args:
+        chapter_dir: Chapter directory path.
+        topic_filename: Topic JSON filename from chapter metadata.
+
+    Returns:
+        TopicFile: Parsed topic model with questions.
+    """
     topic_path = chapter_dir / topic_filename
     with open(topic_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -29,18 +50,47 @@ def load_topic_file(chapter_dir: Path, topic_filename: str) -> TopicFile:
 
 
 def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
+    """Builds a quiz by distributing picks across all chapter topics.
+
+    Selection strategy:
+    1. Compute equal per-topic quota from ``target_question_count``.
+    2. Shuffle each topic and take quota-sized picks.
+    3. Backfill missing questions from leftovers across topics.
+    4. Shuffle final selected question list.
+
+    Args:
+        chapter_dir: Chapter directory path.
+
+    Returns:
+        Quiz: Fully assembled quiz payload.
+    """
     meta = load_chapter_meta(chapter_dir)
+
+    topic_filenames = meta.topics
+    topic_count = len(topic_filenames)
+
+    if topic_count == 0:
+        return Quiz(
+            id=meta.id,
+            title=meta.title,
+            description=meta.description,
+            category=meta.category,
+            age_group=meta.age_group,
+            questions=[],
+        )
+
+    questions_per_topic = max(1, meta.target_question_count // topic_count)
 
     selected_questions = []
     remaining_pool = []
 
-    for topic_filename in meta.topics:
+    for topic_filename in topic_filenames:
         topic = load_topic_file(chapter_dir, topic_filename)
-        questions = topic.questions[:]
-        random.shuffle(questions)
+        topic_questions = topic.questions[:]
+        random.shuffle(topic_questions)
 
-        selected_from_topic = questions[: meta.questions_per_topic]
-        leftover_from_topic = questions[meta.questions_per_topic :]
+        selected_from_topic = topic_questions[:questions_per_topic]
+        leftover_from_topic = topic_questions[questions_per_topic:]
 
         selected_questions.extend(selected_from_topic)
         remaining_pool.extend(leftover_from_topic)
@@ -63,13 +113,20 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
 
 
 def load_all_quizzes() -> list[Quiz]:
-    quizzes = []
-    for chapter_dir in get_chapter_dirs():
-        quizzes.append(build_quiz_from_chapter(chapter_dir))
-    return quizzes
+    """Loads and builds quizzes for all available chapters.
+
+    Returns:
+        list[Quiz]: Built quizzes for all chapter directories.
+    """
+    return [build_quiz_from_chapter(chapter_dir) for chapter_dir in get_chapter_dirs()]
 
 
 def load_quiz_list() -> list[QuizListItem]:
+    """Builds lightweight quiz cards for the list endpoint.
+
+    Returns:
+        list[QuizListItem]: Quiz metadata without full question payloads.
+    """
     return [
         QuizListItem(
             id=quiz.id,
@@ -83,9 +140,15 @@ def load_quiz_list() -> list[QuizListItem]:
 
 
 def load_quiz_by_id(quiz_id: str) -> Quiz | None:
+    """Finds and returns a quiz by its identifier.
+
+    Args:
+        quiz_id: Unique quiz identifier.
+
+    Returns:
+        Quiz | None: Matching quiz when found, otherwise ``None``.
+    """
     for quiz in load_all_quizzes():
         if quiz.id == quiz_id:
-            print("MATCHED QUIZ:", quiz.id)
-            print("MATCHED QUESTIONS COUNT:", len(quiz.questions))
             return quiz
     return None

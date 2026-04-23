@@ -4,7 +4,7 @@
   "description": "Powtórka z rozdziału 6.",
   "category": "history",
   "age_group": "10-12",
-  "questions_per_topic": 2,
+  "target_question_count": 2,
   "topics": [
     "topic_1_odrodzenie.json",
     "topic_2_gospodarka_IIRP.json",

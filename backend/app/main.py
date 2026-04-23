@@ -1,3 +1,5 @@
+"""Application entrypoint for the Edu Quiz backend API."""
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -20,4 +22,9 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 @app.get("/health")
 def health():
+    """Returns a minimal health-check payload.
+
+    Returns:
+        dict[str, str]: Service status payload.
+    """
     return {"status": "ok"}

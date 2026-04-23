@@ -1,3 +1,5 @@
+"""Validates chapter/topic quiz JSON files and static image references."""
+
 from __future__ import annotations
 
 import json
@@ -13,15 +15,38 @@ ALLOWED_SELECTION_TYPES = {"single", "multiple", "open"}
 
 
 def load_json(path: Path) -> Any:
+    """Loads JSON content from disk.
+
+    Args:
+        path: Path to a JSON file.
+
+    Returns:
+        Any: Parsed JSON payload.
+    """
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def is_non_empty_string(value: Any) -> bool:
+    """Checks whether a value is a non-empty string.
+
+    Args:
+        value: Value to validate.
+
+    Returns:
+        bool: ``True`` when value is a non-empty string, else ``False``.
+    """
     return isinstance(value, str) and value.strip() != ""
 
 
 def validate_image_path(image_path: str, errors: list[str], context: str) -> None:
+    """Validates static image path format and file existence.
+
+    Args:
+        image_path: Image path declared in a question.
+        errors: Shared error accumulator.
+        context: Human-readable validation context prefix.
+    """
     if not image_path.startswith("/static/"):
         errors.append(f"{context}: image must start with '/static/'")
         return
@@ -35,6 +60,16 @@ def validate_image_path(image_path: str, errors: list[str], context: str) -> Non
 def validate_answers_structure(
     answers: Any, errors: list[str], context: str
 ) -> list[dict[str, Any]]:
+    """Validates structure for single/multiple-choice answers.
+
+    Args:
+        answers: Raw ``answers`` payload from JSON.
+        errors: Shared error accumulator.
+        context: Human-readable validation context prefix.
+
+    Returns:
+        list[dict[str, Any]]: Validated answer dictionaries (best effort).
+    """
     if not isinstance(answers, list) or not answers:
         errors.append(f"{context}: answers must be a non-empty list")
         return []
@@ -65,6 +100,13 @@ def validate_answers_structure(
 def validate_open_answers_structure(
     accepted_answers: Any, errors: list[str], context: str
 ) -> None:
+    """Validates accepted answers used by open questions.
+
+    Args:
+        accepted_answers: Raw ``accepted_answers`` payload.
+        errors: Shared error accumulator.
+        context: Human-readable validation context prefix.
+    """
     if not isinstance(accepted_answers, list) or not accepted_answers:
         errors.append(f"{context}: accepted_answers must be a non-empty list")
         return
@@ -84,6 +126,16 @@ def validate_question(
     chapter_question_ids: set[str],
     topic_path: Path,
 ) -> None:
+    """Validates one question object according to its ``selection_type``.
+
+    Args:
+        question: Raw question payload.
+        errors: Shared error accumulator.
+        warnings: Shared warnings accumulator.
+        question_ids: Seen question IDs for the current topic.
+        chapter_question_ids: Seen question IDs for the whole chapter.
+        topic_path: Source topic file path.
+    """
     if not isinstance(question, dict):
         errors.append(f"{topic_path.name}: question must be an object")
         return
@@ -181,6 +233,18 @@ def validate_topic_file(
     chapter_question_ids: set[str],
     topic_ids: set[str],
 ) -> int:
+    """Validates one topic JSON file.
+
+    Args:
+        topic_path: Topic file path.
+        errors: Shared error accumulator.
+        warnings: Shared warnings accumulator.
+        chapter_question_ids: Seen question IDs for the whole chapter.
+        topic_ids: Seen topic IDs for the chapter.
+
+    Returns:
+        int: Number of questions found in the topic (``0`` on hard failure).
+    """
     try:
         data = load_json(topic_path)
     except Exception as e:
@@ -229,6 +293,13 @@ def validate_meta_file(
     errors: list[str],
     warnings: list[str],
 ) -> None:
+    """Validates chapter metadata and all referenced topic files.
+
+    Args:
+        meta_path: Path to chapter ``meta.json``.
+        errors: Shared error accumulator.
+        warnings: Shared warnings accumulator.
+    """
     chapter_dir = meta_path.parent
 
     try:
@@ -305,6 +376,11 @@ def validate_meta_file(
 
 
 def main() -> int:
+    """Runs full validation for every chapter in the project.
+
+    Returns:
+        int: Process exit code (``0`` for success, ``1`` for validation failure).
+    """
     errors: list[str] = []
     warnings: list[str] = []
 

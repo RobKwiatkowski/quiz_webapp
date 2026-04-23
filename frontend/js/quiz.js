@@ -1,3 +1,5 @@
+﻿// SECTION: quiz-state
+// Shared runtime state for the quiz session.
 let currentQuiz = null;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -5,30 +7,34 @@ let hasAnswered = false;
 
 
 
+// SECTION: quiz-question-type-utils
+// Helpers for question type detection and answer normalization.
 function isOpenQuestion(question) {
   return question.selection_type === "open";
 }
 
 function normalizeAnswer(value) {
   const polishCharsMap = {
-    ą: "a",
-    ć: "c",
-    ę: "e",
-    ł: "l",
-    ń: "n",
-    ó: "o",
-    ś: "s",
-    ź: "z",
-    ż: "z"
+    "ą": "a",
+    "ć": "c",
+    "ę": "e",
+    "l": "l",
+    "ń": "n",
+    "ó": "o",
+    "ś": "s",
+    "ź": "z",
+    "ż": "z"
   };
 
   return value
     .trim()
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+$/gu, "")
-    .replace(/[ąćęłńóśźż]/g, (char) => polishCharsMap[char] || char);
+    .replace(/[Ä…Ä‡Ä™Å‚Å„Ã³Å›ÅºÅ¼]/g, (char) => polishCharsMap[char] || char);
 }
 
+// SECTION: quiz-dom-visibility-utils
+// Small DOM visibility wrappers used across render and feedback flows.
 function showElement(elementId) {
   document.getElementById(elementId).classList.remove("hidden");
 }
@@ -37,10 +43,14 @@ function hideElement(elementId) {
   document.getElementById(elementId).classList.add("hidden");
 }
 
+// SECTION: quiz-navigation-state
+// Accessor for currently active question.
 function getCurrentQuestion() {
   return currentQuiz.questions[currentQuestionIndex];
 }
 
+// SECTION: quiz-check-actions
+// Entry point that dispatches validation logic by question type.
 function handleCheckAction() {
   const question = getCurrentQuestion();
 
@@ -54,6 +64,8 @@ function handleCheckAction() {
   }
 }
 
+// SECTION: quiz-open-answer-check
+// Validation flow for free-text answers.
 function handleCheckOpenAnswer() {
   if (hasAnswered) return;
 
@@ -85,6 +97,8 @@ function handleCheckOpenAnswer() {
   showFeedback(isCorrectOverall, question.explanation);
 }
 
+// SECTION: quiz-keyboard-shortcuts
+// Global Enter behavior: confirm answer or move to next question.
 function handleGlobalEnterAction(event) {
   if (event.key !== "Enter") {
     return;
@@ -108,6 +122,8 @@ function handleGlobalEnterAction(event) {
   }
 }
 
+// SECTION: quiz-rendering
+// Renders one question screen with answers/image and resets interaction state.
 function renderQuestion() {
   const question = getCurrentQuestion();
   const answersEl = document.getElementById("answers");
@@ -197,6 +213,8 @@ function renderQuestion() {
   }
 }
 
+// SECTION: quiz-answer-feedback-ui
+// UI helpers for locking answers and applying correct/incorrect styles.
 function lockAnswers() {
   document.querySelectorAll(".answer-btn").forEach((btn) => {
     btn.disabled = true;
@@ -224,8 +242,8 @@ function showFeedback(isCorrectOverall, explanation) {
     feedbackEl.className = "feedback correct-feedback";
   } else {
     feedbackEl.textContent = explanation
-      ? `Niepoprawna odpowiedź. ${explanation}`
-      : "Niepoprawna odpowiedź.";
+      ? `Niepoprawna odpowiedÅº. ${explanation}`
+      : "Niepoprawna odpowiedÅº.";
     feedbackEl.className = "feedback incorrect-feedback";
   }
 
@@ -234,6 +252,8 @@ function showFeedback(isCorrectOverall, explanation) {
   hideElement("check-button");
 }
 
+// SECTION: quiz-single-answer-check
+// Immediate validation for single-choice questions.
 function handleSingleAnswerClick(event) {
   if (hasAnswered) return;
 
@@ -251,6 +271,8 @@ function handleSingleAnswerClick(event) {
   showFeedback(isCorrect, question.explanation);
 }
 
+// SECTION: quiz-multiple-answer-check
+// Deferred validation for multiple-choice questions after user clicks "Check".
 function handleCheckMultipleAnswers() {
   if (hasAnswered) return;
 
@@ -281,12 +303,33 @@ function handleCheckMultipleAnswers() {
   showFeedback(isCorrectOverall, question.explanation);
 }
 
+// SECTION: quiz-finish-and-progress
+// End screen rendering and progression to subsequent questions.
 function showFinalResult() {
   hideElement("quiz-screen");
   showElement("result-screen");
 
-  document.getElementById("final-score").textContent =
-    `Twój wynik: ${score}/${currentQuiz.questions.length}`;
+  const totalQuestions = currentQuiz.questions.length;
+  const message = getFinalMessage(score, totalQuestions);
+  const finalScoreEl = document.getElementById("final-score");
+  let finalMessageEl = document.getElementById("final-message");
+
+  // Backward-compatible fallback: create message node when older HTML
+  // template does not include #final-message yet.
+  if (!finalMessageEl && finalScoreEl && finalScoreEl.parentElement) {
+    finalMessageEl = document.createElement("p");
+    finalMessageEl.id = "final-message";
+    finalScoreEl.parentElement.insertBefore(finalMessageEl, finalScoreEl.nextSibling);
+  }
+
+  if (finalScoreEl) {
+    finalScoreEl.textContent = "Twój wynik: " + score + "/" + totalQuestions;
+  }
+
+  if (finalMessageEl) {
+    finalMessageEl.classList.remove("hidden");
+    finalMessageEl.textContent = message;
+  }
 }
 
 function goToNextQuestion() {
@@ -300,6 +343,8 @@ function goToNextQuestion() {
   renderQuestion();
 }
 
+// SECTION: quiz-bootstrap
+// Page initialization: loads quiz data and wires event listeners.
 async function initQuizPage() {
   const statusEl = document.getElementById("status");
   const quizId = getQueryParam("id");
@@ -313,7 +358,7 @@ async function initQuizPage() {
     currentQuiz = await getQuizById(quizId);
 
     if (!currentQuiz.questions || currentQuiz.questions.length === 0) {
-      statusEl.textContent = "Quiz nie zawiera pytań.";
+      statusEl.textContent = "Quiz nie zawiera pytaÅ„.";
       return;
     }
 
@@ -328,8 +373,35 @@ async function initQuizPage() {
     renderQuestion();
   } catch (error) {
     console.error(error);
-    statusEl.textContent = `Błąd: ${error.message}`;
+    statusEl.textContent = `BÅ‚Ä…d: ${error.message}`;
   }
 }
+
+function getFinalMessage(score, totalQuestions) {
+  if (totalQuestions === 0) {
+    return "";
+  }
+
+  const percentage = (score / totalQuestions) * 100;
+
+  if (percentage < 50) {
+    return "Musisz jeszcze poćwiczyć";
+  }
+
+  if (percentage < 75) {
+    return "Nieźle ale może być lepiej";
+  }
+
+  if (percentage < 90) {
+    return "Dobrze";
+  }
+
+  if (percentage < 100) {
+    return "Bardzo dobrze";
+  }
+
+  return "Perfekcyjnie!";
+}
+
 
 initQuizPage();
