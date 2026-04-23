@@ -40,21 +40,24 @@ def is_non_empty_string(value: Any) -> bool:
 
 
 def validate_image_path(image_path: str, errors: list[str], context: str) -> None:
-    """Validates static image path format and file existence.
+    """Validates image reference format and local static file existence.
 
     Args:
         image_path: Image path declared in a question.
         errors: Shared error accumulator.
         context: Human-readable validation context prefix.
     """
-    if not image_path.startswith("/static/"):
-        errors.append(f"{context}: image must start with '/static/'")
+    if image_path.startswith(("http://", "https://")):
         return
 
-    relative_path = image_path.removeprefix("/static/")
-    file_path = STATIC_DIR / relative_path
-    if not file_path.exists():
-        errors.append(f"{context}: image file does not exist: {image_path}")
+    if image_path.startswith("/static/"):
+        relative_path = image_path.removeprefix("/static/")
+        file_path = STATIC_DIR / relative_path
+        if not file_path.exists():
+            errors.append(f"{context}: image file does not exist: {image_path}")
+        return
+
+    errors.append(f"{context}: image must start with '/static/', 'http://', or 'https://'")
 
 
 def validate_answers_structure(

@@ -158,9 +158,7 @@ function showFeedback(isCorrectOverall, explanation) {
     feedbackEl.textContent = "Dobrze";
     feedbackEl.className = "feedback correct-feedback";
   } else {
-    feedbackEl.textContent = explanation
-      ? `Niepoprawna odpowied\u017a. ${explanation}`
-      : "Niepoprawna odpowied\u017a.";
+    feedbackEl.textContent = explanation || "";
     feedbackEl.className = "feedback incorrect-feedback";
   }
 

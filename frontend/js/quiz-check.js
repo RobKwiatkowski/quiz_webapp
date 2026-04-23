@@ -62,9 +62,6 @@ function handleCheckOpenAnswer() {
   const acceptedAnswers = (question.accepted_answers || []).map((answer) =>
     question.case_sensitive ? answer.trim() : normalizeAnswer(answer)
   );
-  const firstAcceptedAnswerRaw = (question.accepted_answers || []).find(
-    (answer) => typeof answer === "string" && answer.trim() !== ""
-  );
 
   const isCorrectOverall = acceptedAnswers.includes(userAnswer);
 
@@ -72,16 +69,8 @@ function handleCheckOpenAnswer() {
     score += 1;
   }
 
-  let feedbackExplanation = question.explanation || "";
-  if (!isCorrectOverall && firstAcceptedAnswerRaw) {
-    const referenceText = `Poprawna odpowied\u017a: ${firstAcceptedAnswerRaw.trim()}.`;
-    feedbackExplanation = feedbackExplanation
-      ? `${feedbackExplanation} ${referenceText}`
-      : referenceText;
-  }
-
   inputEl.disabled = true;
-  showFeedback(isCorrectOverall, feedbackExplanation);
+  showFeedback(isCorrectOverall, question.explanation || "");
 }
 
 // SECTION: quiz-single-answer-check

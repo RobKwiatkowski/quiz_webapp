@@ -1,4 +1,4 @@
-# Edu Quiz for Kids — Codex Instructions
+# Edu Quiz for Kids - Codex Instructions
 
 ## Source of truth
 Before making meaningful changes, read:
@@ -32,3 +32,27 @@ Before finishing:
 - run the quiz validator
 - check that no question ids collide inside a chapter
 - check that referenced topic files exist
+
+## Quiz authoring
+- For quiz content authoring, do not assume missing information.
+- Ask clarifying questions first when question type, answer mode, target topic, or expected output format is unclear.
+- Only propose missing distractors or accepted answers after explicitly asking for permission.
+- For any task involving adding, editing, merging, or validating quiz questions in local JSON files, use the skill `quiz-question-authoring`.
+- Keep the canonical skill in-repo at `skills/quiz-question-authoring/SKILL.md`.
+- If `quiz-question-authoring` is not listed in the current session skills, load `skills/quiz-question-authoring/SKILL.md` directly and follow it as mandatory instructions instead of failing the task.
+- If a global/user-level copy and the in-repo copy differ, prefer the in-repo copy.
+
+## Python environment
+- On Windows, do not use `python` directly.
+- Use `py -3.12` for Python commands.
+- Use `py -3.12 backend/scripts/validate_quizzes.py` to run the validator.
+- If a command needs the venv, use `py -3.12 -m ...` unless the repo specifies otherwise.
+
+
+## Python execution
+- Do not assume `python` is available in PATH.
+- On Windows prefer:
+  - `py -3.12 backend/scripts/validate_quizzes.py`
+- If that fails, use:
+  - `powershell -ExecutionPolicy Bypass -File backend/scripts/validate_quizzes.ps1`
+- Do not rely on `.venv` unless it is confirmed working.

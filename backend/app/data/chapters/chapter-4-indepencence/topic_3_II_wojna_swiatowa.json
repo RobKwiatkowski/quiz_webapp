@@ -120,6 +120,19 @@
       ]
     },
     {
+      "id": "arsenal-ksiazka-film",
+      "text": "Jak nazywa się książka i film o Akcji pod Arsenałem?",
+      "image": null,
+      "explanation": "Poprawna odpowiedź to \"Kamienie na szaniec\".",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Kamienie na szaniec", "is_correct": true },
+        { "text": "Dywizjon 303", "is_correct": false },
+        { "text": "Szare Szeregi", "is_correct": false },
+        { "text": "Zośka i Parasol", "is_correct": false }
+      ]
+    },
+    {
       "id": "kraje_sasiadujace_1",
       "text": "Jaki kraj oznaczono na mapie kolorem czarnym",
       "image": "/static/images/history/mapa_IIRP_countries.jpg",
@@ -156,6 +169,29 @@
         { "text": "Prusy", "is_correct": false },
         { "text": "Związek Sowiecki", "is_correct": false },
         { "text": "Wolne Miasto Gdańsk", "is_correct": true }
+      ]
+    },
+    {
+      "id": "symbol-polski-walczacej",
+      "text": "Jaki był symbol Polski Walczącej?",
+      "image": null,
+      "explanation": "Symbolem Polski Walczącej była kotwica.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "kotwica", "is_correct": true },
+        { "text": "haczyk", "is_correct": false },
+        { "text": "młotek", "is_correct": false },
+        { "text": "siekiera", "is_correct": false }
+      ]
+    },
+    {
+      "id": "druga-wojna-koniec-rok",
+      "text": "W którym roku zakończyła się II Wojna Światowa?",
+      "image": null,
+      "explanation": "II Wojna Światowa zakończyła się w 1945 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1945"
       ]
     }
   ]

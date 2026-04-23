@@ -66,9 +66,20 @@
       "explanation": "Był to Centralny Okręg Przemysłowy.",
       "selection_type": "open",
       "accepted_answers": [
-        "centralny okręg przemysłowy",
-        "centralny okreg przemyslowy",
-        "cop"
+        "centralny okręg przemysłowy"
+      ]
+    },
+    {
+      "id": "gdansk-po-i-wojnie-podlegal",
+      "text": "Komu podlegał Gdańsk po I Wojnie Światowej?",
+      "image": null,
+      "explanation": "Wolne Miasto Gdańsk podlegało Lidze Narodów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Lidze Narodów", "is_correct": true },
+        { "text": "Polsce", "is_correct": false },
+        { "text": "Niemcom", "is_correct": false },
+        { "text": "Rosji", "is_correct": false }
       ]
     },
     {
