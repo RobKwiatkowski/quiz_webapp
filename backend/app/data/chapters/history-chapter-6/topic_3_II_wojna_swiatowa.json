@@ -33,7 +33,7 @@
     {
       "id": "hitler-photo",
       "text": "Kto to jest?",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Bundesarchiv_Bild_183-H1216-0500-002%2C_Adolf_Hitler.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Hitler_portrait_crop_%28cropped%29%282%29.jpg/500px-Hitler_portrait_crop_%28cropped%29%282%29.jpg",
       "explanation": "Jest to kanclerz Trzeciej Rzeszy Adolf Hitler.",
       "selection_type": "open",
       "accepted_answers": [
