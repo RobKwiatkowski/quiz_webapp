@@ -1,260 +1,475 @@
-# Edu Quiz for Kids — Specification
+# Edu Quiz for Kids - Project Specification
 
-## 1. Project overview
-This project is about building a lightweight educational quiz application for children, hosted on a home webserver.
+## 1. Product Goal
 
-The application should help a child aged 10–12 prepare for school quizzes or short tests, for example in history.
+Edu Quiz for Kids is a lightweight educational quiz application for home learning,
+designed for a child aged about 10-12. The first production version supports
+single-player school revision without login, user profiles, rankings, or persisted
+scores.
 
-The main interaction model contains:
-- a simple single-choice quiz with four answers (ABCD)
-- a simple multiple-choice quiz with four answers (ABCD)
-- open questions
-- optional images in question cards
-- immediate feedback after each answer
+The application should be easy to run on a home server, including Raspberry Pi 3,
+and should remain a separate service from the notes application.
 
-This is not intended to be a full learning platform or a multiplayer classroom tool. It is a focused, small educational application designed for home use.
-
-The service should be independent from the existing notes application and available under a separate URL.
-
-Code repository:
+Repository:
 https://github.com/RobKwiatkowski/Quiz_webapp
 
-## 2. Main goal
-The goal is to build a simple, clear, interactive quiz application that:
-- is easy for a child to use
-- supports learning before a school test
-- is lightweight enough to run on Raspberry Pi 3
-- is simple to maintain and extend
-- avoids unnecessary technical complexity in MVP
+## 2. Language Policy
 
-## 3. Product vision
-The product should feel like:
-- a focused educational quiz
-- calm and readable
-- interactive but simple
-- more like practice before a test than a game show
+The project language is English.
 
-It is inspired by quiz-style tools, but it is not intended to replicate Kahoot or similar multiplayer platforms.
+Use English for:
 
-## 4. Target user
-Primary user:
-- a child aged 10–11
+- source code comments and docstrings
+- repository documentation
+- project specifications
+- agent instructions
+- technical identifiers where practical
 
-Expected use case:
-- solving a short quiz before a school test
-- mostly single-player
-- at home
-- on a local home server
+Use Polish only for:
 
-## 5. MVP scope
-Included in MVP:
-- one independent quiz service
-- separate URL from the notes app
-- one category at the beginning, for example history
-- structure prepared for many quizzes in the future
-- one quiz = one chapter from a school book
-- each chapter contains several topics
+- user-facing UI copy
+- quiz questions, answers, accepted answers, explanations, and other learning content
+
+This keeps the public GitHub repository approachable for contributors while keeping
+the learning experience localized for the target child.
+
+## 3. First Production Scope
+
+In scope:
+
+- quiz list page
+- one quiz represents one school book chapter
+- each chapter contains multiple topics
 - each topic is stored in a separate JSON file
-- questions are created manually by the author
-- the app selects questions from topics according to chapter metadata
-- target quiz size is configurable, for example 12, 20, or 26 questions
-- the backend first iterates through topics in the order defined in `meta.json`
-- the backend selects a base number of questions per topic using integer division:
-  - `questions_per_topic = target_question_count // number_of_topics`
-- if some questions are still missing, the backend fills the remaining slots by randomly selecting unused questions from all topics listed in `meta.json`
-- if there are still not enough questions overall, the quiz uses as many questions as are available
-- question order may be randomized after selection
-- support for single-choice, multiple-choice, and short open-text questions
-- optional images for some questions
+- backend assembles ready quiz payloads from chapter metadata and topic files
+- frontend renders ready quiz data returned by the backend
+- question types: `single`, `multiple`, and `open`
+- optional images on questions
 - one question displayed at a time
-- answer order randomized for closed questions
-- immediate feedback after answering or checking
-- final score shown at the end
-- restart quiz after completion
-- no login
-- no user profiles
-- no score persistence
-- no admin panel
-- local Docker Compose based development workflow
+- randomized question order in the assembled quiz
+- randomized answer order for closed questions
+- immediate feedback after answering
+- final score, percentage, and localized result message
+- quiz restart after completion
+- Enter key support on the quiz screen
+- quiz content validator
+- Docker Compose workflow with a static frontend served by Nginx and a FastAPI backend
 
-Explicitly out of scope for MVP:
+Out of scope:
+
+- login
+- user profiles
+- persisted scores
+- database-backed content
+- admin panel
+- in-app question editor
+- in-app image upload
 - multiplayer mode
 - live classroom sessions
 - rankings
 - timers
-- saving attempts to database
-- teacher dashboard
-- content editor in UI
-- image upload via UI
-- repeating incorrect questions after the quiz
+- retrying incorrect questions after the quiz
 - advanced gamification
 
-## 6. Functional assumptions
+## 4. Architecture
 
-### Quiz flow
-1. The user opens the application.
-2. The user sees a list of quizzes, where each quiz represents one chapter.
-3. The user starts a selected quiz.
-4. The backend loads all topic files for that chapter.
-5. The backend selects questions from topics according to the chapter metadata.
-6. Questions are shown one by one.
-7. For each question:
-   - `single`: user clicks one answer and gets immediate feedback
-   - `multiple`: user selects answers and clicks Check
-   - `open`: user types a short answer and clicks Check
-8. For open questions, answers are compared after:
-   - trimming spaces
-   - converting text to lowercase
-   - removing trailing punctuation
-   - ignoring Polish diacritics during comparison
-9. The user moves to the next question.
-10. After all questions, the final score is shown.
-11. The user may restart the quiz.
+The project consists of:
 
-### Feedback rules
-- Correct answer: short confirmation only.
-- Incorrect answer: short explanation and correct answer where relevant.
-- Final result: summary score, for example `9/12`.
+- FastAPI backend in `backend/app`
+- static HTML/CSS/vanilla JavaScript frontend in `frontend`
+- quiz content JSON files in `backend/app/data/chapters`
+- static files, including local images, in `backend/app/static`
+- Nginx configuration in `nginx/default.conf`
+- Docker Compose workflow in `docker-compose.yml`
 
-### Final score message
-The final score message depends on the percentage result:
-- `< 50%` → `Musisz jeszcze poćwiczyć`
-- `>= 50% and < 75%` → `Nieźle ale może być lepiej`
-- `>= 75% and < 90%` → `Dobrze`
-- `>= 90% and < 100%` → `Bardzo dobrze`
-- `== 100%` → `Perfekcyjnie!`
+The backend is the source of ready quiz payloads. The frontend does not know the
+chapter/topic file structure and does not assemble quizzes by itself.
 
-### Keyboard behavior
-- Enter should trigger the same action as the currently visible main action button:
-  - `Check`, if `Check` is visible
-  - `Next`, if `Next` is visible
-- This should work globally for the quiz screen, not only for open questions.
+## 5. Runtime and URLs
 
-## 7. Content assumptions
+Default workflow:
 
-### Questions
-- prepared manually by the project owner
-- designed for a child aged 10–11
-- focused on school revision
-- one quiz represents one chapter
-- one topic inside a chapter is stored as one JSON file
-- content should be easy to edit without changing application logic
+```bash
+docker compose up --build
+```
 
-### Images
-- used only for selected questions
-- stored as static files or referenced by remote URL
-- referenced by path or URL in JSON
-- local images may come from Wikimedia/Wikipedia and may require attribution support in the future
+Default ports from `docker-compose.yml`:
 
-## 8. Technical assumptions
+- frontend: `http://localhost:8081`
+- backend API exposed on the host: `http://localhost:8001`
+- backend inside the Docker network: port `8000`
 
-### General architecture
-The application should be a separate service from the notes app.
+Nginx handles:
 
-Recommended structure:
-- separate frontend
-- separate backend
-- separate deployment
-- separate URL
-- independent content files
+- `/` - static frontend
+- `/api/` - proxy to the backend API
+- `/health` - proxy to the backend health check
+- `/static/` - proxy to backend static files
 
-### Hosting
-- target platform: Raspberry Pi 3
-- environment: home webserver / LAN use
-- application should remain lightweight
+The frontend uses `CONFIG.API_BASE_URL`. The current default value is an empty
+string, so API requests are relative and go through Nginx.
 
-### Frontend responsibilities
-- loading ready quiz data from backend
-- rendering one question at a time
+## 6. Backend
+
+The backend exposes a small API and assembles quizzes from JSON files.
+
+Endpoints:
+
+- `GET /health` returns `{ "status": "ok" }`
+- `GET /api/quizzes` returns lightweight quiz metadata without questions
+- `GET /api/quizzes/{quiz_id}` returns a full quiz payload with questions
+- unknown quiz IDs return `404` with `Quiz not found`
+
+Configuration:
+
+- `APP_ENV`, default: `dev`
+- `QUIZ_DATA_DIR`, default: `backend/app/data/chapters`
+
+The current backend allows CORS from any origin.
+
+## 7. Data Models
+
+Backend models are defined in `backend/app/models/quiz.py`.
+
+### `Answer`
+
+```json
+{
+  "text": "Answer label",
+  "is_correct": true
+}
+```
+
+Fields:
+
+- `text`: answer label shown to the user
+- `is_correct`: whether this answer is correct
+
+### `Question`
+
+```json
+{
+  "id": "unique-question-id",
+  "text": "Question text",
+  "image": null,
+  "explanation": "Feedback explanation",
+  "selection_type": "single",
+  "answers": [],
+  "accepted_answers": []
+}
+```
+
+Fields:
+
+- `id`: question identifier, unique within a chapter
+- `text`: question text
+- `image`: `null`, a `/static/...` path, or an `http://`/`https://` URL
+- `explanation`: optional feedback text shown after an incorrect answer
+- `selection_type`: `single`, `multiple`, or `open`
+- `answers`: answer options for `single` and `multiple` questions
+- `accepted_answers`: accepted values for `open` questions
+
+The frontend contains partial support for an optional `case_sensitive` field on
+open questions. This field is not part of the Pydantic model and is not validated,
+so it must not be treated as a stable contract unless the model and validator are
+updated.
+
+### `TopicFile`
+
+```json
+{
+  "topic_id": "topic",
+  "topic_title": "Topic title",
+  "questions": []
+}
+```
+
+### `ChapterMeta`
+
+```json
+{
+  "id": "history-chapter-6",
+  "title": "Chapter title",
+  "description": "Chapter revision quiz.",
+  "category": "history",
+  "age_group": "10-12",
+  "target_question_count": 12,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1.json",
+    "topic_2.json"
+  ]
+}
+```
+
+Fields:
+
+- `id`: quiz/chapter identifier
+- `title`: title shown on the list and quiz pages
+- `description`: description shown in the UI
+- `category`: category, for example `history`
+- `age_group`: intended age group
+- `target_question_count`: target number of questions in the final quiz, default `12`
+- `questions_per_topic`: legacy field used by the model and validator, default `2`;
+  the current loader does not use it when assembling quizzes
+- `topics`: topic JSON files in the order used by the backend for base selection
+
+## 8. Quiz Assembly
+
+Quiz assembly logic lives in `backend/app/services/quiz_loader.py`.
+
+For each chapter, the backend:
+
+1. Loads `meta.json`.
+2. Reads topic filenames from `topics`.
+3. Returns an empty-question quiz if there are no topics.
+4. Computes the base per-topic quota:
+
+   ```python
+   questions_per_topic = max(1, target_question_count // topic_count)
+   ```
+
+5. For each topic, in `meta.json` order:
+   - loads the topic file
+   - shuffles the topic questions
+   - takes the base quota from the shuffled topic list
+   - adds the remaining topic questions to the fallback pool
+6. If fewer than `target_question_count` questions were selected, the backend
+   shuffles the fallback pool and fills the missing slots.
+7. The backend shuffles the final selected question list.
+8. The backend returns the assembled quiz.
+
+If the available question pool is smaller than `target_question_count`, the quiz
+will be shorter. If `target_question_count` is lower than the number of topics,
+the current `max(1, ...)` rule can select more questions than the target because
+the final list is not trimmed after the base selection step.
+
+## 9. Frontend
+
+The frontend is static and consists of:
+
+- `frontend/index.html` - quiz list
+- `frontend/quiz.html` - quiz screen and result screen
+- `frontend/js/config.js` - API base URL configuration
+- `frontend/js/api.js` - API calls
+- `frontend/js/utils.js` - URL query parameters and shuffling
+- `frontend/js/quiz-state.js` - current quiz session state
+- `frontend/js/quiz-render.js` - question, feedback, and result rendering
+- `frontend/js/quiz-check.js` - answer checking
+- `frontend/js/quiz-events.js` - Enter key behavior
+- `frontend/js/quiz-page.js` - initialization and restart flow
+
+The frontend is responsible for:
+
+- loading the quiz list
+- loading the selected quiz by query-string `id`
+- displaying one question at a time
 - randomizing answer order for closed questions
-- tracking current question
-- calculating score
-- rendering feedback and final result
-- supporting keyboard interaction such as Enter for Check/Next
-- supporting both local and remote images
+- handling answer selection
+- checking answers in the browser
+- tracking the score in page memory
+- showing the final result screen
+- restarting the current quiz by fetching it from the backend again
 
-### Backend responsibilities
-- serving quiz metadata
-- loading chapter metadata and topic JSON files
-- selecting questions according to chapter selection rules
-- returning one final quiz set to the frontend
-- serving static assets if needed
-- exposing simple API endpoints
+The frontend does not persist scores and does not send user answers to the backend.
 
-### Data source
-Initial source of truth:
-- JSON files
+## 10. Answer Rules and Scoring
 
-Planned structure:
-- one chapter folder per quiz
-- one metadata file per chapter
-- one JSON file per topic
+Each question is worth 1 point.
 
-This keeps content easier to maintain than one large file and matches the chapter/topic structure from the book.
+`single`:
 
-## 9. UX assumptions
+- the user clicks one answer
+- the answer is checked immediately
+- exactly one answer must have `is_correct: true`
+- after the answer is clicked, all answer buttons are locked
+
+`multiple`:
+
+- the user selects one or more answers
+- the answer is checked after clicking the localized check button
+- the result is correct only if the user selects all correct answers and no
+  incorrect answers
+- if nothing is selected, checking does not finish the question
+- the UI shows a localized hint with the number of correct answers when it can be
+  computed
+
+`open`:
+
+- the user types a short answer
+- the answer is checked after clicking the localized check button or pressing Enter
+- an empty answer shows a localized required-answer message
+- the answer is compared against `accepted_answers`
+- normalization includes:
+  - trimming whitespace
+  - lowercasing
+  - removing trailing punctuation and trailing non-letter/non-number characters
+  - replacing Polish diacritics with their plain ASCII equivalents
+
+After a correct answer, the frontend shows a localized success message. After an
+incorrect answer, it shows `explanation` if the question provides one.
+
+## 11. Final Result
+
+At the end of the quiz, the frontend shows:
+
+- score as correct answers over total questions
+- percentage
+- localized result message
+- result icon
+- localized restart button
+
+The final message is selected from localized UI copy based on the percentage:
+
+- `< 50%`
+- `>= 50%` and `< 75%`
+- `>= 75%` and `< 90%`
+- `>= 90%` and `< 100%`
+- `100%`
+
+## 12. Images
+
+A question may have a local or remote image.
+
+Allowed image references:
+
+- `null` or missing field - no image
+- `/static/...` - local backend static file
+- `http://...` or `https://...` - remote image
+
+For local images, the frontend builds the URL by joining `CONFIG.API_BASE_URL` and
+the image path. With the current Nginx setup, `/static/...` works relative to the
+same host.
+
+The validator checks whether local files referenced by `/static/...` exist. It
+does not fetch or validate remote URLs.
+
+## 13. Content Validation
+
+The validator is located at `backend/scripts/validate_quizzes.py`.
+
+Recommended Windows command:
+
+```powershell
+py -3.12 backend/scripts/validate_quizzes.py
+```
+
+Fallback:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File backend/scripts/validate_quizzes.ps1
+```
+
+The validator checks:
+
+- chapter directory existence
+- `meta.json` existence in every chapter directory
+- required string fields in `meta.json`
+- positive `questions_per_topic` and `target_question_count`
+- non-empty `topics`
+- no duplicate topic files in `topics`
+- existence of every topic file referenced by `meta.json`
+- required `topic_id`, `topic_title`, and `questions` fields
+- no duplicate `topic_id` values within a chapter
+- no duplicate question IDs within a topic or chapter
+- valid `selection_type`
+- answer structure for `single` and `multiple`
+- exactly one correct answer for `single`
+- at least two correct answers for `multiple`
+- non-empty `accepted_answers` for `open`
+- local image path format and file existence
+
+The validator emits warnings for content that can still run but is likely
+inconsistent, such as fields that do not match the question type or a total
+question count below the chapter target.
+
+## 14. Quiz Authoring Rules
+
+Quiz JSON files are the source of learning content and should remain easy to edit
+manually.
+
+Rules:
+
+- each chapter has a separate directory in `backend/app/data/chapters`
+- each chapter must have `meta.json`
+- each topic is a separate JSON file referenced by `meta.json`
+- question IDs must be unique within the whole chapter
+- do not change the JSON schema without updating this specification, the backend
+  models, and the validator
+- quiz content should be written for a child aged 10-12
+- quiz content should be in Polish
+- open questions should include all required variants in `accepted_answers`
+- closed questions should usually have four answers, but the model only requires
+  a valid answer list and the correct number of correct answers
+- prefer ASCII-safe `topic_id`, filenames, and question IDs
+
+The current repository contains one chapter directory:
+
+- `backend/app/data/chapters/chapter-4-indepencence`
+
+Its `meta.json` currently has `history-chapter-6` as its quiz ID.
+
+## 15. UX
+
 The interface should be:
-- readable
+
 - calm
+- readable
 - simple
-- suitable for a 10–11 year old
-- not overloaded with elements
+- suitable for a child aged 10-12
+- free of unnecessary elements
 
-Design principles:
-- one main task on screen
-- large clickable answer buttons
-- clear progress information
-- short feedback
-- no unnecessary distractions
+The current quiz screen shows:
 
-The product should not look overly childish, but should feel friendly and clear.
+- quiz title and description
+- question counter
+- progress bar and progress percentage
+- optional question hint
+- question text
+- optional image
+- answers or text input
+- feedback
+- localized primary action button
 
-## 10. Non-functional assumptions
-The MVP should be:
-- simple to deploy
-- easy to maintain
-- lightweight on Raspberry Pi 3
-- modular enough for future expansion
-- separated from the notes application
+Enter works globally on the quiz screen:
 
-The design should minimize technical debt by:
-- separating content from logic
-- using a dedicated quiz loader module
-- keeping API contract independent from storage type
-- structuring the app from the beginning for multiple quizzes
+- if the next action is visible, Enter advances to the next question
+- if the check action is visible, Enter checks the answer
 
-## 11. Future extension ideas
-Possible future phases:
-- more quiz categories
-- multiple quizzes per category
-- storing results
+## 16. Non-Functional Requirements
+
+The project should remain:
+
+- lightweight
+- easy to run locally and on a home server
+- easy to extend with more chapters
+- JSON-backed until there is a real need for a database
+- separated into backend, frontend, and content
+- validated before quiz content changes are considered complete
+
+## 17. Future Directions
+
+Possible future extensions:
+
+- more categories
+- more chapters
+- category-based quiz organization
+- persisted results
 - child profiles
-- admin panel
+- parent or teacher dashboard
 - question editor
 - image upload
+- incorrect-answer retry mode
 - timer mode
-- repeat incorrect answers mode
-- simple gamification
-- database-backed quiz content
-- teacher or parent dashboard
-- image attribution support for locally stored Wikimedia/Wikipedia images
+- database-backed content
+- image attribution support for Wikimedia/Wikipedia images
+- stricter production CORS settings
+- encoding cleanup if Polish text display problems appear in content files
 
-These are explicitly outside MVP.
+## 18. First Production Definition
 
-## 12. Recommended repository / service strategy
-This quiz application should be treated as a separate service from the notes application.
-
-Reasoning:
-- different purpose
-- different UX
-- different content structure
-- different product flow
-- cleaner architecture
-- cleaner project context in future discussions
-
-It may still be described as part of the broader home webserver ecosystem, but development should be handled independently.
-
-## 13. Final MVP definition
-The MVP is:
-
-A lightweight single-player educational quiz application for a child aged 10–11, hosted on Raspberry Pi 3, available under a separate URL, where each quiz represents one chapter from a school book, each topic is stored in a separate JSON file, the backend assembles the final question set from those topics based on chapter metadata, and the frontend presents the questions one by one with simple feedback and a final score.
+The first production version is a working single-player quiz application that runs
+through Docker Compose, shows a quiz list, loads a selected quiz from the backend,
+supports `single`, `multiple`, and `open` questions, handles images, shows
+immediate feedback and a final result, and keeps quiz content in validated chapter
+and topic JSON files.

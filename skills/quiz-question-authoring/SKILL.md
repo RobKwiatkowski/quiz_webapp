@@ -30,6 +30,8 @@ Before editing, read:
 - Prefer ASCII-safe ids for topic_id, file names, and question ids
 - Question ids must be unique within a chapter
 - Keep language simple for a child aged 10-11
+- Keep project documentation and agent instructions in English
+- Keep quiz learning content in Polish unless the user explicitly requests another language
 
 # Authoring rules
 - single: exactly 1 correct answer

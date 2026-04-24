@@ -17,6 +17,12 @@ For quiz content changes, also read:
 - Prefer small, focused changes.
 - Do not change JSON schema, quiz flow, or selection logic without updating `docs/spec.md`.
 
+## Language policy
+- Use English for code comments, docstrings, documentation, specifications, and agent instructions.
+- Use Polish only for user-facing UI copy and quiz learning content.
+- Quiz learning content includes questions, answers, accepted answers, explanations, and related educational text.
+- Prefer ASCII-safe technical identifiers, filenames, and slugs where practical.
+
 ## Backend rules
 - Quiz assembly logic belongs in backend, not frontend.
 - Question selection is driven by chapter metadata and topic files.

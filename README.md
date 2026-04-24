@@ -8,9 +8,13 @@ Lightweight educational quiz app for kids, designed for Raspberry Pi 3.
 - Data: JSON files
 - Hosting: Docker Compose + Nginx
 
+## Language convention
+- Project documentation, code comments, and agent instructions are written in English.
+- User-facing UI copy and quiz learning content are written in Polish.
+
 ## MVP
 - one question at a time
-- 10 random questions from a larger pool
+- configurable target question count assembled from chapter topics
 - randomized answer order
 - optional images
 - immediate feedback
@@ -19,3 +23,4 @@ Lightweight educational quiz app for kids, designed for Raspberry Pi 3.
 ## Run
 ```bash
 docker compose up --build
+```
