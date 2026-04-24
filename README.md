@@ -27,8 +27,8 @@ The application has two main screens:
 
 Each quiz represents one school book chapter. A chapter contains topic JSON files,
 and each topic contains questions. The backend loads the chapter metadata, selects
-questions from the topic files, shuffles the final question set, and returns it to
-the frontend.
+questions from the topic files, keeps questions grouped by the topic order in
+`meta.json`, and returns the assembled quiz to the frontend.
 
 Supported question types:
 
@@ -98,10 +98,50 @@ docker compose up --build
 
 Default local URLs:
 
-- frontend: `http://localhost:8081`
-- backend API exposed on the host: `http://localhost:8001`
+- app: `http://localhost:8081`
+- health check through Nginx: `http://localhost:8081/health`
 
 The Nginx frontend proxies `/api/`, `/health`, and `/static/` to the backend.
+The backend container is intentionally not exposed on a host port in the default
+Compose file; it is reachable by Nginx on the internal Docker network.
+
+## Home Server Deployment
+
+The default `docker-compose.yml` is suitable for a small home-server deployment:
+
+- `frontend` publishes one host port: `8081:80`
+- `backend` is not published to the host and is only reachable by the frontend
+  proxy inside the Docker Compose network
+- both services use `restart: unless-stopped`, so they come back after a reboot
+  unless explicitly stopped
+- the backend runs Uvicorn without `--reload`
+- the backend code is copied into the Docker image instead of bind-mounted from
+  the host filesystem
+
+To deploy on a home server:
+
+```bash
+docker compose up -d --build
+```
+
+Then open:
+
+```text
+http://SERVER_IP:8081
+```
+
+Useful maintenance commands:
+
+```bash
+docker compose ps
+docker compose logs -f
+docker compose down
+docker compose up -d --build
+```
+
+If you need direct backend debugging from the host, temporarily add a backend port
+mapping such as `8001:8000`, then use `http://SERVER_IP:8001/health`. For normal
+use, keep the backend unexposed and access it through Nginx.
 
 ## Validate Quiz Content
 
@@ -156,7 +196,8 @@ Included:
 - quiz list
 - one-question-at-a-time quiz flow
 - configurable target question count assembled from chapter topics
-- randomized question and answer order
+- question order grouped by chapter topic order
+- randomized answer order for closed questions
 - optional images
 - immediate feedback
 - final score and restart

@@ -96,7 +96,7 @@ docker compose up --build
 Default ports from `docker-compose.yml`:
 
 - frontend: `http://localhost:8081`
-- backend API exposed on the host: `http://localhost:8001`
+- backend API through frontend proxy: `http://localhost:8081/api`
 - backend inside the Docker network: port `8000`
 
 Nginx handles:
