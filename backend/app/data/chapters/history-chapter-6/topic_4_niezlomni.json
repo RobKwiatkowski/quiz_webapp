@@ -1,0 +1,29 @@
+{
+  "topic_id": "niezlomni",
+  "topic_title": "Żołnierze Niezłomni",
+  "questions": [
+    {
+      "id": "pilecki-oboz-zaglady-ucieczka",
+      "text": "Jaki żołnierz Niezłomny sam zgłosił się do obozu zagłady i z niego uciekł, aby przekazać informacje?",
+      "image": null,
+      "explanation": "Był to Witold Pilecki, który dobrowolnie trafił do Auschwitz, a potem uciekł i przekazał informacje o obozie.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "witold pilecki"
+      ]
+    },
+    {
+      "id": "inka-prawdziwe-nazwisko",
+      "text": "Jak naprawdę nazywała się \"Inka\"?",
+      "image": null,
+      "explanation": "\"Inka\" naprawdę nazywała się Danuta Siedzikówna.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Danuta Siedzikówna", "is_correct": true },
+        { "text": "Dorota Siedzikówna", "is_correct": false },
+        { "text": "Danuta Sienkiewicz", "is_correct": false },
+        { "text": "Daria Siedlecka", "is_correct": false }
+      ]
+    }
+  ]
+}
