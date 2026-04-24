@@ -55,8 +55,8 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
     Selection strategy:
     1. Compute equal per-topic quota from ``target_question_count``.
     2. Shuffle each topic and take quota-sized picks.
-    3. Backfill missing questions from leftovers across topics.
-    4. Shuffle final selected question list.
+    3. Backfill missing questions from leftovers, preserving topic order.
+    4. Return selected questions grouped by ``meta.json`` topic order.
 
     Args:
         chapter_dir: Chapter directory path.
@@ -81,8 +81,9 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
 
     questions_per_topic = max(1, meta.target_question_count // topic_count)
 
-    selected_questions = []
-    remaining_pool = []
+    selected_by_topic = []
+    leftovers_by_topic = []
+    selected_question_count = 0
 
     for topic_filename in topic_filenames:
         topic = load_topic_file(chapter_dir, topic_filename)
@@ -92,15 +93,30 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
         selected_from_topic = topic_questions[:questions_per_topic]
         leftover_from_topic = topic_questions[questions_per_topic:]
 
-        selected_questions.extend(selected_from_topic)
-        remaining_pool.extend(leftover_from_topic)
+        selected_by_topic.append(selected_from_topic)
+        leftovers_by_topic.append(leftover_from_topic)
+        selected_question_count += len(selected_from_topic)
 
-    if len(selected_questions) < meta.target_question_count:
-        missing = meta.target_question_count - len(selected_questions)
-        random.shuffle(remaining_pool)
-        selected_questions.extend(remaining_pool[:missing])
+    while selected_question_count < meta.target_question_count:
+        added_question = False
 
-    random.shuffle(selected_questions)
+        for topic_questions, leftover_questions in zip(selected_by_topic, leftovers_by_topic):
+            if selected_question_count >= meta.target_question_count:
+                break
+
+            if leftover_questions:
+                topic_questions.append(leftover_questions.pop(0))
+                selected_question_count += 1
+                added_question = True
+
+        if not added_question:
+            break
+
+    selected_questions = [
+        question
+        for topic_questions in selected_by_topic
+        for question in topic_questions
+    ]
 
     return Quiz(
         id=meta.id,

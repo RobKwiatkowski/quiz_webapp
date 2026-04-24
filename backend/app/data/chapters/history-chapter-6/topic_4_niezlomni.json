@@ -21,8 +21,36 @@
       "answers": [
         { "text": "Danuta Siedzikówna", "is_correct": true },
         { "text": "Dorota Siedzikówna", "is_correct": false },
-        { "text": "Danuta Sienkiewicz", "is_correct": false },
-        { "text": "Daria Siedlecka", "is_correct": false }
+        { "text": "Danuta Siedzikowska", "is_correct": false },
+        { "text": "Daria Siedzikowska", "is_correct": false }
+      ]
+    },
+    {
+      "id": "inka-stanowisko",
+      "text": "Jak stanowisko w partyzantce miała \"Inka\"?",
+      "image": null,
+      "explanation": "\"Inka\" była sanitariuszką.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "sanitariuszką", "is_correct": true },
+        { "text": "snajperem", "is_correct": false },
+        { "text": "obserwatorką", "is_correct": false },
+        { "text": "strzelcem", "is_correct": false }
+      ]
+    },
+    {
+      "id": "inka-wiek-smierc",
+      "text": "Ile miała lat Inka gdy zginęła z rąk komunistów?",
+      "image": null,
+      "explanation": "\"Inka\" miała 18 lat, gdy została zabita przez komunistów.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "18",
+        "18 lat",
+        "osiemnaście",
+        "osiemnaście lat",
+        "osiemnascie",
+        "osiemnascie lat"
       ]
     }
   ]

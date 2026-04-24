@@ -11,6 +11,59 @@ body {
   padding: 24px;
 }
 
+.start-hero {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111827;
+  color: white;
+}
+
+.start-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.start-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.08) 0%,
+    rgba(15, 23, 42, 0.28) 45%,
+    rgba(15, 23, 42, 0.78) 100%
+  );
+}
+
+.start-hero-overlay {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+}
+
+.start-hero h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.start-hero p {
+  max-width: 420px;
+  margin: 10px 0 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+#status {
+  margin-top: 20px;
+}
+
 .hidden {
   display: none;
 }
@@ -66,7 +119,7 @@ button:disabled {
   margin-top: 16px;
   width: 100%;
   max-width: 450px;
-  height: 250px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,6 +261,28 @@ button:disabled {
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .start-hero {
+    max-width: 100%;
+  }
+
+  .start-hero-overlay {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .start-hero h1 {
+    font-size: 34px;
+  }
+
+  .start-hero p {
+    font-size: 16px;
+  }
+
   .result-grid {
     grid-template-columns: 1fr;
   }

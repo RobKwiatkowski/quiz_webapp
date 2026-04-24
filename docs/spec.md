@@ -46,7 +46,7 @@ In scope:
 - question types: `single`, `multiple`, and `open`
 - optional images on questions
 - one question displayed at a time
-- randomized question order in the assembled quiz
+- question display order grouped by the topic order declared in `meta.json`
 - randomized answer order for closed questions
 - immediate feedback after answering
 - final score, percentage, and localized result message
@@ -233,10 +233,12 @@ For each chapter, the backend:
    - loads the topic file
    - shuffles the topic questions
    - takes the base quota from the shuffled topic list
-   - adds the remaining topic questions to the fallback pool
+   - keeps remaining topic questions as fallback questions for that topic
 6. If fewer than `target_question_count` questions were selected, the backend
-   shuffles the fallback pool and fills the missing slots.
-7. The backend shuffles the final selected question list.
+   fills the missing slots from per-topic fallback questions while preserving
+   the `meta.json` topic order.
+7. The backend returns the final selected question list grouped by the topic
+   order from `meta.json`.
 8. The backend returns the assembled quiz.
 
 If the available question pool is smaller than `target_question_count`, the quiz

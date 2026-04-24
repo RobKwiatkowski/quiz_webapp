@@ -4,12 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edu Quiz</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=2" />
 </head>
 <body>
   <main class="container">
-    <h1>Edu Quiz</h1>
-    <p>Wybierz quiz i rozpocznij naukę.</p>
+    <section class="start-hero" aria-labelledby="start-title">
+      <img
+        id="start-hero-image"
+        class="start-hero-image"
+        src="./assets/start-images/start_image_1.png"
+        alt=""
+      />
+      <div class="start-hero-overlay">
+        <h1 id="start-title">Edu Quiz</h1>
+        <p>Wybierz quiz i rozpocznij naukę.</p>
+      </div>
+    </section>
 
     <div id="status">Ładowanie quizów...</div>
     <div id="quiz-list" class="quiz-list"></div>
@@ -17,7 +27,10 @@
 
   <script src="./js/config.js"></script>
   <script src="./js/api.js"></script>
+  <script src="./js/start-images.js"></script>
   <script>
+    setRandomStartImage();
+
     async function renderQuizList() {
       const statusEl = document.getElementById("status");
       const listEl = document.getElementById("quiz-list");

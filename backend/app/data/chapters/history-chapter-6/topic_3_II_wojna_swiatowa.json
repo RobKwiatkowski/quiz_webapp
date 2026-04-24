@@ -114,7 +114,7 @@
       "selection_type": "single",
       "answers": [
         { "text": "Alek", "is_correct": true },
-        { "text": "Rusy", "is_correct": false },
+        { "text": "Rudy", "is_correct": false },
         { "text": "Łysy", "is_correct": false },
         { "text": "Zośka", "is_correct": false }
       ]
