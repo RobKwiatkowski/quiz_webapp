@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quiz Question Authoring"
+  short_description: "Author and validate Edu Quiz topic JSON files"
+  default_prompt: "Use this skill to add, edit, merge, and validate local quiz topic JSON files while preserving Edu Quiz schema and question-type rules."

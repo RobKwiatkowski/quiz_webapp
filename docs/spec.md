@@ -405,9 +405,7 @@ Rules:
 
 The current repository contains one chapter directory:
 
-- `backend/app/data/chapters/chapter-4-indepencence`
-
-Its `meta.json` currently has `history-chapter-6` as its quiz ID.
+- `backend/app/data/chapters/history-chapter-6`
 
 ## 15. UX
 
