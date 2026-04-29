@@ -29,6 +29,32 @@
         "karol józef wojtyła",
         "karol jozef wojtyla"
       ]
+    },
+    {
+      "id": "jan-pawel-ii-pontyfikat-prawa-czlowieka-a",
+      "text": "Jan Paweł II podczas swojego pontyfikatu:",
+      "image": null,
+      "explanation": "Jan Paweł II głosił konieczność poszanowania praw człowieka.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "pomijał temat pojednania wszystkich chrześcijan", "is_correct": false },
+        { "text": "prowadził rozmowy tylko z przedstawicielami religii chrześcijańskiej", "is_correct": false },
+        { "text": "głosił konieczność poszanowania praw człowieka", "is_correct": true },
+        { "text": "był obojętny wobec spraw związanych z polityką", "is_correct": false }
+      ]
+    },
+    {
+      "id": "jan-pawel-ii-pontyfikat-prawa-czlowieka-b",
+      "text": "Które zdanie prawidłowo opisuje pontyfikat Jana Pawła II?",
+      "image": null,
+      "explanation": "Poprawne zdanie mówi o poszanowaniu praw człowieka.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "był obojętny wobec spraw związanych z polityką", "is_correct": false },
+        { "text": "głosił konieczność poszanowania praw człowieka", "is_correct": true },
+        { "text": "pomijał temat pojednania wszystkich chrześcijan", "is_correct": false },
+        { "text": "prowadził rozmowy tylko z przedstawicielami religii chrześcijańskiej", "is_correct": false }
+      ]
     }
   ]
 }

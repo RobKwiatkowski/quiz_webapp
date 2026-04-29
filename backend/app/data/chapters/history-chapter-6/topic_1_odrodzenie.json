@@ -183,6 +183,74 @@
         { "text": "Częstochowę", "is_correct": false },
         { "text": "Zbaraż", "is_correct": false }
       ]
+    },
+    {
+      "id": "odezwa-1920-panstwo-zagrazajace",
+      "text": "Na podstawie tekstu: jakie państwo zagroziło Polsce w 1920 roku?",
+      "source_text": "Odezwa Rady Obrony Państwa. Warszawa, 3 VII 1920 r. Obywatele Rzeczypospolitej! Ojczyzna w potrzebie! Wrogowie otaczający nas zewsząd skupili wszystkie siły, by zniszczyć wywalczoną krwią i trudem żołnierza polskiego niepodległość naszą. [...] Wzywamy tedy wszystkich, zdolnych do noszenia broni, by dobrowolnie zaciągali się w szeregi armii. W imieniu Rady Obrony Państwa: Józef Piłsudski, Naczelnik Państwa i Wódz Naczelny.",
+      "image": null,
+      "explanation": "W 1920 roku Polsce zagroziła Rosja Sowiecka.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Francja", "is_correct": false },
+        { "text": "Wielka Brytania", "is_correct": false },
+        { "text": "Rosja Sowiecka", "is_correct": true },
+        { "text": "Niemcy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "odezwa-1920-wezwanie",
+      "text": "Na podstawie tekstu: do czego odezwa wzywała Polaków?",
+      "source_text": "Odezwa Rady Obrony Państwa. Warszawa, 3 VII 1920 r. Obywatele Rzeczypospolitej! Ojczyzna w potrzebie! Wrogowie otaczający nas zewsząd skupili wszystkie siły, by zniszczyć wywalczoną krwią i trudem żołnierza polskiego niepodległość naszą. [...] Wzywamy tedy wszystkich, zdolnych do noszenia broni, by dobrowolnie zaciągali się w szeregi armii. W imieniu Rady Obrony Państwa: Józef Piłsudski, Naczelnik Państwa i Wódz Naczelny.",
+      "image": null,
+      "explanation": "Odezwa zachęcała Polaków do walki za ojczyznę i wstępowania do armii.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Walki za ojczyznę", "is_correct": true },
+        { "text": "Poddania się wrogowi", "is_correct": false },
+        { "text": "Ucieczki z pola bitwy", "is_correct": false },
+        { "text": "Rezygnacji z niepodległości", "is_correct": false }
+      ]
+    },
+    {
+      "id": "odezwa-1920-wezwanie-2",
+      "text": "Na podstawie tekstu i swojej wiedzy: kto jest wrogiem Polski w podanym tekście?",
+      "source_text": "Odezwa Rady Obrony Państwa. Warszawa, 3 VII 1920 r. Obywatele Rzeczypospolitej! Ojczyzna w potrzebie! Wrogowie otaczający nas zewsząd skupili wszystkie siły, by zniszczyć wywalczoną krwią i trudem żołnierza polskiego niepodległość naszą. [...] Wzywamy tedy wszystkich, zdolnych do noszenia broni, by dobrowolnie zaciągali się w szeregi armii. W imieniu Rady Obrony Państwa: Józef Piłsudski, Naczelnik Państwa i Wódz Naczelny.",
+      "image": null,
+      "explanation": "Odezwa odnosiła się od ataku Rosji Sowieckiej na Polskę",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rosja Sowiecka", "is_correct": true },
+        { "text": "Związek Sowiecki", "is_correct": false },
+        { "text": "Związek Radziecki", "is_correct": false },
+        { "text": "Rzesza Niemiecka", "is_correct": false }
+      ]
+    },
+    {
+      "id": "granica-zachodnia-wydarzenia",
+      "text": "Które wydarzenia kształtowały granicę zachodnią Polski? (2 odpowiedzi)",
+      "image": null,
+      "explanation": "Granicę zachodnią kształtowały między innymi Powstanie Wielkopolskie i Powstania Śląskie.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Powstanie Wielkopolskie", "is_correct": true },
+        { "text": "Powstania Śląskie", "is_correct": true },
+        { "text": "Walki o Lwów", "is_correct": false },
+        { "text": "Wojna polsko-bolszewicka", "is_correct": false }
+      ]
+    },
+    {
+      "id": "granica-wschodnia-wydarzenia",
+      "text": "Które wydarzenia kształtowały granicę wschodnią Polski? (2 odpowiedzi)",
+      "image": null,
+      "explanation": "Granicę wschodnią kształtowały między innymi walki o Lwów i wojna polsko-bolszewicka.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Powstanie Wielkopolskie", "is_correct": false },
+        { "text": "Powstania Śląskie", "is_correct": false },
+        { "text": "Walki o Lwów", "is_correct": true },
+        { "text": "Wojna polsko-bolszewicka", "is_correct": true }
+      ]
     }
   ]
 }

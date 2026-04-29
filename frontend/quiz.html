@@ -4,11 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz</title>
-  <link rel="stylesheet" href="./css/styles.css?v=3" />
+  <link rel="stylesheet" href="./css/styles.css?v=4" />
 </head>
 <body>
   <main class="container">
-    <a href="./index.html">&#8592; Powr&oacute;t do listy quiz&oacute;w</a>
+    <nav class="quiz-top-nav" aria-label="Nawigacja quizu">
+      <a class="quiz-menu-tile" href="./index.html">
+        <span class="quiz-menu-icon" aria-hidden="true">&#8592;</span>
+        <span>Menu quiz&oacute;w</span>
+      </a>
+    </nav>
 
     <div id="status">&#321;adowanie quizu...</div>
 
@@ -74,8 +79,15 @@
           </div>
         </div>
 
-        <div class="actions">
+        <div class="result-actions">
           <button id="restart-button" type="button">Zagraj jeszcze raz</button>
+          <a class="result-list-tile" href="./index.html">
+            <span class="result-list-icon" aria-hidden="true">&#8592;</span>
+            <span>
+              <span class="result-list-title">Lista quiz&oacute;w</span>
+              <span class="result-list-subtitle">Wybierz inny zestaw</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
