@@ -165,6 +165,18 @@ button:disabled {
   font-weight: 600;
 }
 
+.question-source {
+  margin: 16px 0 18px;
+  padding: 16px;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1e293b;
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
 .feedback {
   margin-top: 22px;
   padding: 16px;

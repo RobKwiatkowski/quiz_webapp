@@ -145,6 +145,7 @@ def validate_question(
 
     question_id = question.get("id")
     text = question.get("text")
+    source_text = question.get("source_text")
     selection_type = question.get("selection_type")
     image = question.get("image")
     explanation = question.get("explanation")
@@ -167,6 +168,9 @@ def validate_question(
 
     if not is_non_empty_string(text):
         errors.append(f"{context}: text must be a non-empty string")
+
+    if source_text is not None and not is_non_empty_string(source_text):
+        errors.append(f"{context}: source_text must be null or a non-empty string")
 
     if not is_non_empty_string(selection_type):
         errors.append(f"{context}: selection_type must be a non-empty string")

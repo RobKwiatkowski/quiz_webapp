@@ -44,6 +44,7 @@ In scope:
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
 - question types: `single`, `multiple`, and `open`
+- optional source text passages on questions
 - optional images on questions
 - one question displayed at a time
 - question display order grouped by the topic order declared in `meta.json`
@@ -151,6 +152,7 @@ Fields:
 {
   "id": "unique-question-id",
   "text": "Question text",
+  "source_text": null,
   "image": null,
   "explanation": "Feedback explanation",
   "selection_type": "single",
@@ -163,6 +165,8 @@ Fields:
 
 - `id`: question identifier, unique within a chapter
 - `text`: question text
+- `source_text`: optional source passage shown above the question; may be used
+  with `single`, `multiple`, or `open` questions
 - `image`: `null`, a `/static/...` path, or an `http://`/`https://` URL
 - `explanation`: optional feedback text shown after an incorrect answer
 - `selection_type`: `single`, `multiple`, or `open`
@@ -266,6 +270,7 @@ The frontend is responsible for:
 - loading the quiz list
 - loading the selected quiz by query-string `id`
 - displaying one question at a time
+- displaying optional source text above a question
 - randomizing answer order for closed questions
 - handling answer selection
 - checking answers in the browser
@@ -375,6 +380,7 @@ The validator checks:
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
 - valid `selection_type`
+- optional `source_text` structure
 - answer structure for `single` and `multiple`
 - exactly one correct answer for `single`
 - at least two correct answers for `multiple`
@@ -398,6 +404,8 @@ Rules:
 - question IDs must be unique within the whole chapter
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
+- source-based questions may add `source_text` while keeping the regular
+  `selection_type` flow
 - quiz content should be written for a child aged 10-12
 - quiz content should be in Polish
 - open questions should include all required variants in `accepted_answers`
@@ -425,6 +433,7 @@ The current quiz screen shows:
 - question counter
 - progress bar and progress percentage
 - optional question hint
+- optional source text block
 - question text
 - optional image
 - answers or text input

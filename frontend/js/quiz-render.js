@@ -20,6 +20,7 @@ function renderQuestion() {
   const questionProgressBarEl = document.getElementById("question-progress-bar");
   const questionProgressPercentEl = document.getElementById("question-progress-percent");
   const questionHintEl = document.getElementById("question-hint");
+  const questionSourceEl = document.getElementById("question-source");
 
   showElement("quiz-screen");
   hideElement("result-screen");
@@ -56,6 +57,16 @@ function renderQuestion() {
     } else {
       questionHintEl.textContent = "";
       questionHintEl.classList.add("hidden");
+    }
+  }
+
+  if (questionSourceEl) {
+    if (question.source_text) {
+      questionSourceEl.textContent = question.source_text;
+      questionSourceEl.classList.remove("hidden");
+    } else {
+      questionSourceEl.textContent = "";
+      questionSourceEl.classList.add("hidden");
     }
   }
 

@@ -22,6 +22,7 @@ class Question(BaseModel):
     Attributes:
         id: Unique question identifier.
         text: Question text shown in the UI.
+        source_text: Optional source passage shown above the question.
         image: Optional image path or URL.
         explanation: Optional explanation shown after answering.
         selection_type: Interaction type (single, multiple, or open).
@@ -31,6 +32,7 @@ class Question(BaseModel):
 
     id: str
     text: str
+    source_text: Optional[str] = None
     image: Optional[str] = None
     explanation: Optional[str] = None
     selection_type: Literal["single", "multiple", "open"] = "single"
