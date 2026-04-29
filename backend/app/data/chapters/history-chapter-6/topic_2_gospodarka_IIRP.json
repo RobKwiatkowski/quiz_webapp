@@ -107,6 +107,19 @@
         { "text": "C", "is_correct": false },
         { "text": "D", "is_correct": false }
       ]
+    },
+    {
+      "id": "gdynia-port-przyczyny",
+      "text": "Wybierz dwie przyczyny budowy portu w Gdyni.",
+      "image": null,
+      "explanation": "Port w Gdyni był potrzebny między innymi do eksportu węgla i dlatego, że Gdańsk nie znajdował się w granicach Polski.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "chęć eksportu węgla i innych towarów", "is_correct": true },
+        { "text": "brak Gdańska w granicach Polski", "is_correct": true },
+        { "text": "potrzeba budowy Centralnego Okręgu Przemysłowego nad morzem", "is_correct": false },
+        { "text": "konieczność przeniesienia stolicy państwa nad Bałtyk", "is_correct": false }
+      ]
     }
   ]
 }

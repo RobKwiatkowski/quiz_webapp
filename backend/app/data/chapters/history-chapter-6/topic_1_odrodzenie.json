@@ -251,6 +251,19 @@
         { "text": "Walki o Lwów", "is_correct": true },
         { "text": "Wojna polsko-bolszewicka", "is_correct": true }
       ]
+    },
+    {
+      "id": "zaslubiny-polski-z-morzem",
+      "text": "Co to są \"Zaślubiny Polski z morzem\"?",
+      "image": null,
+      "explanation": "Zaślubiny Polski z morzem oznaczały symboliczny powrót Polski nad Bałtyk po zaborach.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "symboliczny powrót Polski nad Bałtyk po zaborach", "is_correct": true },
+        { "text": "podpisanie traktatu pokojowego kończącego wojnę polsko-bolszewicką", "is_correct": false },
+        { "text": "uroczyste rozpoczęcie budowy portu w Gdyni", "is_correct": false },
+        { "text": "przyłączenie Wolnego Miasta Gdańska do Polski w 1918 roku", "is_correct": false }
+      ]
     }
   ]
 }

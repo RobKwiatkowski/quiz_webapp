@@ -58,7 +58,7 @@
       "text": "Jak naywamy żołnierzy którzy po IIWŚ nie złożyli broni i walczyli z władzą komunistyczną na terenie Polski?",
       "image": null,
       "explanation": "Nazywamy ich żołnierzami niezłomnymi",
-      "selection_type": "multiple",
+      "selection_type": "single",
       "answers": [
         { "text": "żołnierze niezłomni", "is_correct": true },
         { "text": "żołnierze waleczni", "is_correct": false },
