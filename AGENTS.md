@@ -62,3 +62,11 @@ Before finishing:
 - If that fails, use:
   - `powershell -ExecutionPolicy Bypass -File backend/scripts/validate_quizzes.ps1`
 - Do not rely on `.venv` unless it is confirmed working.
+- In Codex sandbox or similar tool environments, `py -3.12`, `python`, and the
+  project `.venv` may be unavailable. If both official validation commands fail
+  because no local interpreter is found, use the bundled workspace Python
+  runtime exposed by the tool environment to run the same validator script, then
+  clearly report that fallback in the final response.
+- After using a bundled runtime fallback for backend-affecting changes, also run
+  lightweight sanity checks where practical, for example model parsing/imports
+  and JavaScript syntax checks for touched frontend files.

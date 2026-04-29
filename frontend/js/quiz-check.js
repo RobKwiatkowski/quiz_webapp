@@ -4,6 +4,10 @@ function isOpenQuestion(question) {
   return question.selection_type === "open";
 }
 
+function isOrderQuestion(question) {
+  return question.selection_type === "order";
+}
+
 function normalizeAnswer(value) {
   const polishCharsMap = {
     "\u0105": "a",
@@ -36,6 +40,11 @@ function handleCheckAction() {
 
   if (question.selection_type === "open") {
     handleCheckOpenAnswer();
+    return;
+  }
+
+  if (question.selection_type === "order") {
+    handleCheckOrderAnswer();
   }
 }
 
@@ -121,6 +130,34 @@ function handleCheckMultipleAnswers() {
 
   showCorrectAndIncorrectStates(selectedButtons);
   lockAnswers();
+  showFeedback(isCorrectOverall, question.explanation);
+}
+
+// SECTION: quiz-order-answer-check
+// Deferred validation for sequence questions after user clicks "Check".
+function handleCheckOrderAnswer() {
+  if (hasAnswered) return;
+
+  const question = getCurrentQuestion();
+  const orderedItemIds = Array.from(document.querySelectorAll(".order-item"))
+    .map((item) => item.dataset.orderItemId);
+
+  const correctItemIds = [...(question.order_items || [])]
+    .sort((a, b) => a.position - b.position)
+    .map((item) => item.id);
+
+  const isCorrectOverall =
+    orderedItemIds.length === correctItemIds.length &&
+    orderedItemIds.every((itemId, index) => itemId === correctItemIds[index]);
+
+  hasAnswered = true;
+
+  if (isCorrectOverall) {
+    score += 1;
+  }
+
+  showOrderItemStates(isCorrectOverall);
+  lockOrderItems();
   showFeedback(isCorrectOverall, question.explanation);
 }
 

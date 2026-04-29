@@ -43,7 +43,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, and `open`
+- question types: `single`, `multiple`, `open`, and `order`
 - optional source text passages on questions
 - optional images on questions
 - one question displayed at a time
@@ -146,6 +146,22 @@ Fields:
 - `text`: answer label shown to the user
 - `is_correct`: whether this answer is correct
 
+### `OrderItem`
+
+```json
+{
+  "id": "event-id",
+  "text": "Event label",
+  "position": 1
+}
+```
+
+Fields:
+
+- `id`: stable item identifier, unique within one question
+- `text`: item label shown to the user
+- `position`: correct 1-based position in the final sequence
+
 ### `Question`
 
 ```json
@@ -157,7 +173,8 @@ Fields:
   "explanation": "Feedback explanation",
   "selection_type": "single",
   "answers": [],
-  "accepted_answers": []
+  "accepted_answers": [],
+  "order_items": []
 }
 ```
 
@@ -169,9 +186,10 @@ Fields:
   with `single`, `multiple`, or `open` questions
 - `image`: `null`, a `/static/...` path, or an `http://`/`https://` URL
 - `explanation`: optional feedback text shown after an incorrect answer
-- `selection_type`: `single`, `multiple`, or `open`
+- `selection_type`: `single`, `multiple`, `open`, or `order`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for `open` questions
+- `order_items`: sequence items for `order` questions
 
 The frontend contains partial support for an optional `case_sensitive` field on
 open questions. This field is not part of the Pydantic model and is not validated,
@@ -313,6 +331,16 @@ Each question is worth 1 point.
   - removing trailing punctuation and trailing non-letter/non-number characters
   - replacing Polish diacritics with their plain ASCII equivalents
 
+`order`:
+
+- the user arranges items into the correct sequence
+- items are checked after clicking the localized check button
+- the result is correct only if every item is in the exact position declared by
+  `order_items[].position`
+- `order_items` must contain at least two items
+- positions must be consecutive integers from `1` to the number of items
+- answer order is randomized before display
+
 After a correct answer, the frontend shows a localized success message. After an
 incorrect answer, it shows `explanation` if the question provides one.
 
@@ -385,6 +413,7 @@ The validator checks:
 - exactly one correct answer for `single`
 - at least two correct answers for `multiple`
 - non-empty `accepted_answers` for `open`
+- valid `order_items` for `order`
 - local image path format and file existence
 
 The validator emits warnings for content that can still run but is likely
@@ -406,6 +435,8 @@ Rules:
   models, and the validator
 - source-based questions may add `source_text` while keeping the regular
   `selection_type` flow
+- order questions use `order_items` with stable item IDs and consecutive
+  1-based positions
 - quiz content should be written for a child aged 10-12
 - quiz content should be in Polish
 - open questions should include all required variants in `accepted_answers`
@@ -479,6 +510,6 @@ Possible future extensions:
 
 The first production version is a working single-player quiz application that runs
 through Docker Compose, shows a quiz list, loads a selected quiz from the backend,
-supports `single`, `multiple`, and `open` questions, handles images, shows
-immediate feedback and a final result, and keeps quiz content in validated chapter
-and topic JSON files.
+supports `single`, `multiple`, `open`, and `order` questions, handles images,
+shows immediate feedback and a final result, and keeps quiz content in validated
+chapter and topic JSON files.

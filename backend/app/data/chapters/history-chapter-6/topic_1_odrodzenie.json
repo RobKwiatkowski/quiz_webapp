@@ -264,6 +264,19 @@
         { "text": "uroczyste rozpoczęcie budowy portu w Gdyni", "is_correct": false },
         { "text": "przyłączenie Wolnego Miasta Gdańska do Polski w 1918 roku", "is_correct": false }
       ]
+    },
+    {
+      "id": "kolejnosc-odrodzenie-wydarzenia",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "image": null,
+      "explanation": "Poprawna kolejność to: wybuch I wojny światowej, odzyskanie niepodległości, Bitwa Warszawska, trzecie powstanie śląskie.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "wybuch-i-wojny", "text": "wybuch I wojny światowej", "position": 1 },
+        { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie przez Polskę niepodległości", "position": 2 },
+        { "id": "bitwa-warszawska", "text": "Bitwa Warszawska", "position": 3 },
+        { "id": "trzecie-powstanie-slaskie", "text": "wybuch trzeciego powstania śląskiego", "position": 4 }
+      ]
     }
   ]
 }

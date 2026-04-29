@@ -120,6 +120,19 @@
         { "text": "potrzeba budowy Centralnego Okręgu Przemysłowego nad morzem", "is_correct": false },
         { "text": "konieczność przeniesienia stolicy państwa nad Bałtyk", "is_correct": false }
       ]
+    },
+    {
+      "id": "kolejnosc-gdynia-wydarzenia",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "image": null,
+      "explanation": "Poprawna kolejność to: I wojna światowa, odzyskanie niepodległości, wojna z Rosją Sowiecką, zaślubiny Polski z morzem, rozpoczęcie budowy portu w Gdyni.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "wybuch-i-wojny", "text": "wybuch I wojny światowej", "position": 1 },
+        { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie przez Polskę niepodległości", "position": 2 },
+        { "id": "wojna-z-rosja-sowiecka", "text": "wybuch wojny pomiędzy Polską a Rosją Sowiecką", "position": 3 },
+        { "id": "budowa-portu-gdynia", "text": "rozpoczęcie budowy portu w Gdyni", "position": 4 }
+      ]
     }
   ]
 }

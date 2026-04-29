@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CHAPTERS_DIR = PROJECT_ROOT / "backend" / "app" / "data" / "chapters"
 STATIC_DIR = PROJECT_ROOT / "backend" / "app" / "static"
 
-ALLOWED_SELECTION_TYPES = {"single", "multiple", "open"}
+ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "order"}
 
 
 def load_json(path: Path) -> Any:
@@ -121,6 +121,59 @@ def validate_open_answers_structure(
             )
 
 
+def validate_order_items_structure(
+    order_items: Any, errors: list[str], context: str
+) -> None:
+    """Validates items used by order-based questions.
+
+    Args:
+        order_items: Raw ``order_items`` payload.
+        errors: Shared error accumulator.
+        context: Human-readable validation context prefix.
+    """
+    if not isinstance(order_items, list) or len(order_items) < 2:
+        errors.append(f"{context}: order_items must be a list with at least 2 items")
+        return
+
+    seen_ids: set[str] = set()
+    seen_positions: set[int] = set()
+
+    for i, item in enumerate(order_items):
+        item_context = f"{context} -> order_items[{i}]"
+
+        if not isinstance(item, dict):
+            errors.append(f"{item_context}: item must be an object")
+            continue
+
+        item_id = item.get("id")
+        text = item.get("text")
+        position = item.get("position")
+
+        if not is_non_empty_string(item_id):
+            errors.append(f"{item_context}: id must be a non-empty string")
+        elif item_id in seen_ids:
+            errors.append(f"{item_context}: duplicate id: {item_id}")
+        else:
+            seen_ids.add(item_id)
+
+        if not is_non_empty_string(text):
+            errors.append(f"{item_context}: text must be a non-empty string")
+
+        if not isinstance(position, int):
+            errors.append(f"{item_context}: position must be an integer")
+        elif position in seen_positions:
+            errors.append(f"{item_context}: duplicate position: {position}")
+        else:
+            seen_positions.add(position)
+
+    expected_positions = set(range(1, len(order_items) + 1))
+    if seen_positions and seen_positions != expected_positions:
+        errors.append(
+            f"{context}: order_items positions must be consecutive from 1 to "
+            f"{len(order_items)}"
+        )
+
+
 def validate_question(
     question: Any,
     errors: list[str],
@@ -194,6 +247,7 @@ def validate_question(
 
     answers = question.get("answers")
     accepted_answers = question.get("accepted_answers")
+    order_items = question.get("order_items")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, errors, context)
@@ -208,6 +262,10 @@ def validate_question(
         if "accepted_answers" in question:
             warnings.append(
                 f"{context}: single question should not contain accepted_answers"
+            )
+        if "order_items" in question and order_items not in (None, []):
+            warnings.append(
+                f"{context}: single question should not contain order_items"
             )
 
     elif selection_type == "multiple":
@@ -224,12 +282,31 @@ def validate_question(
             warnings.append(
                 f"{context}: multiple question should not contain accepted_answers"
             )
+        if "order_items" in question and order_items not in (None, []):
+            warnings.append(
+                f"{context}: multiple question should not contain order_items"
+            )
 
     elif selection_type == "open":
         validate_open_answers_structure(accepted_answers, errors, context)
         if "answers" in question and answers not in (None, []):
             warnings.append(
                 f"{context}: open question should not contain answers"
+            )
+        if "order_items" in question and order_items not in (None, []):
+            warnings.append(
+                f"{context}: open question should not contain order_items"
+            )
+
+    elif selection_type == "order":
+        validate_order_items_structure(order_items, errors, context)
+        if "answers" in question and answers not in (None, []):
+            warnings.append(
+                f"{context}: order question should not contain answers"
+            )
+        if "accepted_answers" in question and accepted_answers not in (None, []):
+            warnings.append(
+                f"{context}: order question should not contain accepted_answers"
             )
 
 

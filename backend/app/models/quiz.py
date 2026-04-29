@@ -1,7 +1,7 @@
 """Pydantic data models for quizzes, chapters, and topics."""
 
 from typing import List, Optional, Literal
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Answer(BaseModel):
@@ -16,8 +16,22 @@ class Answer(BaseModel):
     is_correct: bool
 
 
+class OrderItem(BaseModel):
+    """Single item used by order-based questions.
+
+    Attributes:
+        id: Stable item identifier used for checking order.
+        text: Item label displayed to a user.
+        position: Correct 1-based position in the final sequence.
+    """
+
+    id: str
+    text: str
+    position: int
+
+
 class Question(BaseModel):
-    """Question schema supporting single, multiple, and open answers.
+    """Question schema supporting single, multiple, open, and order answers.
 
     Attributes:
         id: Unique question identifier.
@@ -25,9 +39,10 @@ class Question(BaseModel):
         source_text: Optional source passage shown above the question.
         image: Optional image path or URL.
         explanation: Optional explanation shown after answering.
-        selection_type: Interaction type (single, multiple, or open).
+        selection_type: Interaction type (single, multiple, open, or order).
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
+        order_items: Items to arrange for order questions.
     """
 
     id: str
@@ -35,9 +50,10 @@ class Question(BaseModel):
     source_text: Optional[str] = None
     image: Optional[str] = None
     explanation: Optional[str] = None
-    selection_type: Literal["single", "multiple", "open"] = "single"
-    answers: List[Answer] = []
-    accepted_answers: List[str] = []
+    selection_type: Literal["single", "multiple", "open", "order"] = "single"
+    answers: List[Answer] = Field(default_factory=list)
+    accepted_answers: List[str] = Field(default_factory=list)
+    order_items: List[OrderItem] = Field(default_factory=list)
 
 
 class Quiz(BaseModel):

@@ -259,6 +259,56 @@ button:disabled {
   outline: 3px solid #94a3b8;
 }
 
+.order-list {
+  display: grid;
+  gap: 10px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #eef2ff;
+}
+
+.order-item.correct {
+  background: #d1fae5;
+  border-color: #86efac;
+}
+
+.order-item.incorrect {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.order-item-text {
+  line-height: 1.35;
+}
+
+.order-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.order-move-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.order-move-btn:disabled {
+  color: #94a3b8;
+  background: #e2e8f0;
+}
+
 .open-answer-box {
   margin-top: 20px;
 }
@@ -434,5 +484,13 @@ button:disabled {
 
   .result-emoji {
     font-size: 3.2rem;
+  }
+
+  .order-item {
+    grid-template-columns: 1fr;
+  }
+
+  .order-controls {
+    justify-content: flex-end;
   }
 }

@@ -111,6 +111,12 @@ function renderQuestion() {
     return;
   }
 
+  if (isOrderQuestion(question)) {
+    renderOrderQuestion(question, answersEl);
+    showElement("check-button");
+    return;
+  }
+
   const shuffledAnswers = shuffleArray(question.answers || []);
 
   answersEl.innerHTML = shuffledAnswers.map((answer) => `
@@ -149,6 +155,12 @@ function lockAnswers() {
   });
 }
 
+function lockOrderItems() {
+  document.querySelectorAll(".order-move-btn").forEach((btn) => {
+    btn.disabled = true;
+  });
+}
+
 function showCorrectAndIncorrectStates(selectedButtons = []) {
   document.querySelectorAll(".answer-btn").forEach((btn) => {
     const isCorrect = btn.dataset.correct === "true";
@@ -159,6 +171,12 @@ function showCorrectAndIncorrectStates(selectedButtons = []) {
     } else if (isSelected) {
       btn.classList.add("incorrect");
     }
+  });
+}
+
+function showOrderItemStates(isCorrectOverall) {
+  document.querySelectorAll(".order-item").forEach((item) => {
+    item.classList.add(isCorrectOverall ? "correct" : "incorrect");
   });
 }
 
@@ -176,6 +194,83 @@ function showFeedback(isCorrectOverall, explanation) {
   feedbackEl.classList.remove("hidden");
   showElement("next-button");
   hideElement("check-button");
+}
+
+// SECTION: quiz-order-rendering
+// Renders a lightweight reorder list using up/down controls.
+function renderOrderQuestion(question, answersEl) {
+  const shuffledItems = shuffleArray(question.order_items || []);
+  const orderListEl = document.createElement("div");
+  orderListEl.className = "order-list";
+
+  shuffledItems.forEach((item) => {
+    orderListEl.appendChild(createOrderItemElement(item));
+  });
+
+  answersEl.appendChild(orderListEl);
+  updateOrderMoveButtons(orderListEl);
+}
+
+function createOrderItemElement(item) {
+  const itemEl = document.createElement("div");
+  itemEl.className = "order-item";
+  itemEl.dataset.orderItemId = item.id;
+
+  const textEl = document.createElement("span");
+  textEl.className = "order-item-text";
+  textEl.textContent = item.text;
+
+  const controlsEl = document.createElement("span");
+  controlsEl.className = "order-controls";
+
+  const moveUpButton = createOrderMoveButton("up", "\u2191", "Przesuń wyżej");
+  const moveDownButton = createOrderMoveButton("down", "\u2193", "Przesuń niżej");
+
+  controlsEl.append(moveUpButton, moveDownButton);
+  itemEl.append(textEl, controlsEl);
+
+  return itemEl;
+}
+
+function createOrderMoveButton(direction, label, ariaLabel) {
+  const button = document.createElement("button");
+  button.className = "order-move-btn";
+  button.type = "button";
+  button.dataset.orderMove = direction;
+  button.textContent = label;
+  button.setAttribute("aria-label", ariaLabel);
+  button.addEventListener("click", handleOrderMoveClick);
+  return button;
+}
+
+function handleOrderMoveClick(event) {
+  if (hasAnswered) return;
+
+  const button = event.currentTarget;
+  const itemEl = button.closest(".order-item");
+  const listEl = itemEl.closest(".order-list");
+
+  if (button.dataset.orderMove === "up" && itemEl.previousElementSibling) {
+    listEl.insertBefore(itemEl, itemEl.previousElementSibling);
+  }
+
+  if (button.dataset.orderMove === "down" && itemEl.nextElementSibling) {
+    listEl.insertBefore(itemEl.nextElementSibling, itemEl);
+  }
+
+  updateOrderMoveButtons(listEl);
+}
+
+function updateOrderMoveButtons(listEl) {
+  const items = Array.from(listEl.querySelectorAll(".order-item"));
+
+  items.forEach((item, index) => {
+    const moveUpButton = item.querySelector('[data-order-move="up"]');
+    const moveDownButton = item.querySelector('[data-order-move="down"]');
+
+    moveUpButton.disabled = index === 0;
+    moveDownButton.disabled = index === items.length - 1;
+  });
 }
 
 // SECTION: quiz-finish-and-progress
@@ -267,6 +362,10 @@ function getQuestionHint(question) {
       return `Wybierz ${correctCount} odpowiedzi.`;
     }
     return "Mo\u017cliwa jest wi\u0119cej ni\u017c jedna poprawna odpowied\u017a.";
+  }
+
+  if (question.selection_type === "order") {
+    return "Ułóż wydarzenia od najwcześniejszego do najpóźniejszego.";
   }
 
   return "";
