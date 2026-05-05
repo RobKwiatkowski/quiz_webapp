@@ -1,0 +1,30 @@
+{
+  "topic_id": "solidarnosc",
+  "topic_title": "Solidarność",
+  "questions": [
+    {
+      "id": "solidarnosc-zdjecie-lech-walesa",
+      "text": "Kto jest przedstawiony na zdjęciu?",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lech_Wa%C5%82%C4%99sa,_jeden_z_za%C5%82o%C5%BCycieli_ruchu_zwi%C4%85zkowego_%E2%80%9ESolidarno%C5%9B%C4%87%E2%80%9D,_p%C3%B3%C5%BAniejsza_g%C5%82owa_pa%C5%84stwa._Fortepan_76155.jpg",
+      "explanation": "Na zdjęciu jest Lech Wałęsa, jeden z założycieli Solidarności.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "lech wałęsa",
+        "lech walesa"
+      ]
+    },
+    {
+      "id": "solidarnosc-zdjecie-wojciech-jaruzelski",
+      "text": "Kto to jest?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Gen._Wojciech_Jaruzelski_13_grudnia_1981.JPG?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "explanation": "Na zdjęciu jest gen. Wojciech Jaruzelski, przywódca polskich komunistów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "gen. Wojciech Jaruzelski", "is_correct": true },
+        { "text": "gen. Wojciech Jaruzelewski", "is_correct": false },
+        { "text": "gen. Władysław Jaruzelski", "is_correct": false },
+        { "text": "gen. Wiesław Jeruzelewicz", "is_correct": false }
+      ]
+    }
+  ]
+}

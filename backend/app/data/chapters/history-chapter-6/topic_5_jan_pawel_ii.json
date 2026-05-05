@@ -31,6 +31,43 @@
       ]
     },
     {
+      "id": "jan-pawel-ii-wybor-na-papieza-rok",
+      "text": "W którym roku Jan Paweł II został wybrany na papieża?",
+      "image": null,
+      "explanation": "Jan Paweł II został wybrany na papieża w 1978 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1978"
+      ]
+    },
+    {
+      "id": "jan-pawel-ii-smierc-data",
+      "text": "Kiedy dokładnie zmarł Jan Paweł II?",
+      "image": null,
+      "explanation": "Jan Paweł II zmarł 2 kwietnia 2005 roku.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "2 kwietnia 2005", "is_correct": true },
+        { "text": "2 kwietnia 2006", "is_correct": false },
+        { "text": "2 kwietnia 2008", "is_correct": false },
+        { "text": "2 kwietnia 2009", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kolejnosc-wydarzenia-jan-pawel-ii",
+      "text": "Ułóż wydarzenia w kolejności od najwcześniejszego do najpóźniejszego.",
+      "image": null,
+      "explanation": "Najpierw Polska odzyskała niepodległość, potem urodził się Karol Wojtyła, wybuchła II wojna światowa, zginęła Inka, a na końcu Jan Paweł II został wybrany na papieża.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie niepodległości", "position": 1 },
+        { "id": "narodziny-karola-wojtyly", "text": "narodziny Karola Wojtyły", "position": 2 },
+        { "id": "wybuch-ii-wojny-swiatowej", "text": "wybuch II wojny światowej", "position": 3 },
+        { "id": "smierc-inki", "text": "śmierć \"Inki\"", "position": 4 },
+        { "id": "wybor-jana-pawla-ii", "text": "wybór Jana Pawła II na papieża", "position": 5 }
+      ]
+    },
+    {
       "id": "jan-pawel-ii-pontyfikat-prawa-czlowieka-a",
       "text": "Jan Paweł II podczas swojego pontyfikatu:",
       "image": null,
