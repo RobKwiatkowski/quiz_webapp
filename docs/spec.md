@@ -83,6 +83,10 @@ The project consists of:
 - Nginx configuration in `nginx/default.conf`
 - Docker Compose workflow in `docker-compose.yml`
 
+Docker Compose builds only the backend image. The frontend uses the official
+`nginx:stable-alpine` image with `frontend/` and `nginx/default.conf`
+bind-mounted into the container to keep rebuilds lightweight on Raspberry Pi.
+
 The backend is the source of ready quiz payloads. The frontend does not know the
 chapter/topic file structure and does not assemble quizzes by itself.
 
@@ -93,6 +97,9 @@ Default workflow:
 ```bash
 docker compose up --build
 ```
+
+The `--build` flag rebuilds the backend when needed. The frontend is not rebuilt
+as a custom image in the default Compose workflow.
 
 Default ports from `docker-compose.yml`:
 
