@@ -117,7 +117,8 @@ GitHub Actions publishes production images to Docker Hub:
 
 The frontend image is a lightweight static Nginx image. It serves the files from
 `frontend/` and writes `frontend/js/config.js` at container startup from the
-`API_BASE_URL` environment variable.
+`API_BASE_URL` environment variable. The image defaults `API_BASE_URL` to
+`/quiz-api`, matching the Raspberry Pi Caddy route.
 
 For a Raspberry Pi deployment behind Caddy, a typical Compose service can keep
 the frontend internal to the Docker network:

@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-ENV API_BASE_URL=""
+ENV API_BASE_URL="/quiz-api"
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker-entrypoint.d/10-write-config.sh /docker-entrypoint.d/10-write-config.sh
