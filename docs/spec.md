@@ -11,7 +11,7 @@ The application should be easy to run on a home server, including Raspberry Pi 3
 and should remain a separate service from the notes application.
 
 Repository:
-https://github.com/RobKwiatkowski/Quiz_webapp
+https://github.com/RobKwiatkowski/quiz_webapp
 
 ## 2. Language Policy
 
