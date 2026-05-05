@@ -108,6 +108,38 @@ Compose builds the backend image only. The frontend uses the official
 `nginx:stable-alpine` image and bind-mounts `frontend/` plus
 `nginx/default.conf`, which keeps rebuilds faster on Raspberry Pi.
 
+## Docker Hub Images
+
+GitHub Actions publishes production images to Docker Hub:
+
+- `kwiaci/quiz-webapp-backend:latest`
+- `kwiaci/quiz-webapp-frontend:latest`
+
+The frontend image is a lightweight static Nginx image. It serves the files from
+`frontend/` and writes `frontend/js/config.js` at container startup from the
+`API_BASE_URL` environment variable.
+
+For a Raspberry Pi deployment behind Caddy, a typical Compose service can keep
+the frontend internal to the Docker network:
+
+```yaml
+frontend:
+  image: kwiaci/quiz-webapp-frontend:latest
+  restart: unless-stopped
+  environment:
+    API_BASE_URL: /quiz-api
+  expose:
+    - "80"
+```
+
+In that setup Caddy should strip `/quiz` before proxying to the frontend and
+strip `/quiz-api` before proxying to the backend.
+
+`expose` is enough only when Caddy runs as a container on the same Docker
+network. If Caddy runs directly on the Raspberry Pi host, bind the services to
+localhost with `ports`, for example `127.0.0.1:8081:80` for the frontend and
+`127.0.0.1:8000:8000` for the backend.
+
 ## Home Server Deployment
 
 The default `docker-compose.yml` is suitable for a small home-server deployment:

@@ -87,6 +87,12 @@ Docker Compose builds only the backend image. The frontend uses the official
 `nginx:stable-alpine` image with `frontend/` and `nginx/default.conf`
 bind-mounted into the container to keep rebuilds lightweight on Raspberry Pi.
 
+The repository also supports publishing a production frontend image for
+container-only deployments. The image serves the static frontend with Nginx and
+generates `js/config.js` from the `API_BASE_URL` environment variable at startup.
+This is intended for Raspberry Pi deployments where Caddy routes traffic to
+internal frontend and backend containers.
+
 The backend is the source of ready quiz payloads. The frontend does not know the
 chapter/topic file structure and does not assemble quizzes by itself.
 

@@ -1,4 +1,4 @@
-name: Build backend image
+name: Build Docker images
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  backend-image:
+  docker-images:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,5 +42,18 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/quiz-webapp-backend:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/quiz-webapp-backend:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v7
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/quiz-webapp-frontend:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/quiz-webapp-frontend:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
