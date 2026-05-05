@@ -281,11 +281,13 @@ function showFinalResult() {
 
   const totalQuestions = currentQuiz.questions.length;
   const percentage = getScorePercentage(score, totalQuestions);
+  const grade = getFinalGrade(score, totalQuestions);
   const message = getFinalMessage(score, totalQuestions);
   const emoji = getFinalEmoji(score, totalQuestions);
 
   const finalScoreEl = document.getElementById("final-score");
   const finalPercentageEl = document.getElementById("final-percentage");
+  const finalGradeEl = document.getElementById("final-grade");
   const finalMessageEl = document.getElementById("final-message");
   const resultEmojiEl = document.getElementById("result-emoji");
 
@@ -295,6 +297,10 @@ function showFinalResult() {
 
   if (finalPercentageEl) {
     finalPercentageEl.textContent = `${percentage}%`;
+  }
+
+  if (finalGradeEl) {
+    finalGradeEl.textContent = grade;
   }
 
   if (finalMessageEl) {

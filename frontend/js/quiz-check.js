@@ -169,6 +169,36 @@ function getScorePercentage(currentScore, totalQuestions) {
   return Math.round((currentScore / totalQuestions) * 100);
 }
 
+function getFinalGrade(currentScore, totalQuestions) {
+  if (totalQuestions === 0) {
+    return "";
+  }
+
+  const percentage = getScorePercentage(currentScore, totalQuestions);
+
+  if (percentage < 50) {
+    return "1";
+  }
+
+  if (percentage <= 65) {
+    return "2";
+  }
+
+  if (percentage <= 79) {
+    return "3";
+  }
+
+  if (percentage <= 89) {
+    return "4";
+  }
+
+  if (percentage <= 99) {
+    return "5";
+  }
+
+  return "6";
+}
+
 function showOpenAnswerRequiredMessage() {
   const feedbackEl = document.getElementById("feedback");
   feedbackEl.textContent = "Wpisz odpowied\u017a.";

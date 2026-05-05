@@ -350,9 +350,19 @@ At the end of the quiz, the frontend shows:
 
 - score as correct answers over total questions
 - percentage
+- school grade computed from the rounded percentage
 - localized result message
 - result icon
 - localized restart button
+
+The school grade is selected from the rounded percentage:
+
+- `< 50%`: `1`
+- `>= 50%` and `<= 65%`: `2`
+- `>= 66%` and `<= 79%`: `3`
+- `>= 80%` and `<= 89%`: `4`
+- `>= 90%` and `<= 99%`: `5`
+- `100%`: `6`
 
 The final message is selected from localized UI copy based on the percentage:
 
