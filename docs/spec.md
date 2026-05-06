@@ -45,7 +45,8 @@ In scope:
 - frontend renders ready quiz data returned by the backend
 - question types: `single`, `multiple`, `open`, and `order`
 - optional source text passages on questions
-- optional images on questions
+- optional images on questions, including multiple alternative images for one
+  question
 - one question displayed at a time
 - question display order grouped by the topic order declared in `meta.json`
 - randomized answer order for closed questions
@@ -197,7 +198,8 @@ Fields:
 - `text`: question text
 - `source_text`: optional source passage shown above the question; may be used
   with `single`, `multiple`, or `open` questions
-- `image`: `null`, a `/static/...` path, or an `http://`/`https://` URL
+- `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
+  of those image references
 - `explanation`: optional feedback text shown after an incorrect answer
 - `selection_type`: `single`, `multiple`, `open`, or `order`
 - `answers`: answer options for `single` and `multiple` questions
@@ -394,10 +396,16 @@ Allowed image references:
 - `null` or missing field - no image
 - `/static/...` - local backend static file
 - `http://...` or `https://...` - remote image
+- a non-empty list of `/static/...`, `http://...`, or `https://...` image
+  references
 
 For local images, the frontend builds the URL by joining `CONFIG.API_BASE_URL` and
 the image path. With the current Nginx setup, `/static/...` works relative to the
 same host.
+
+When a question defines a list of image references, the backend randomly selects
+one image while assembling the quiz. The frontend still receives one concrete
+image reference in the ready quiz payload.
 
 The validator checks whether local files referenced by `/static/...` exist. It
 does not fetch or validate remote URLs.
@@ -437,7 +445,7 @@ The validator checks:
 - at least two correct answers for `multiple`
 - non-empty `accepted_answers` for `open`
 - valid `order_items` for `order`
-- local image path format and file existence
+- local image path format and file existence, including every item in image lists
 
 The validator emits warnings for content that can still run but is likely
 inconsistent, such as fields that do not match the question type or a total

@@ -5,7 +5,7 @@ import random
 from pathlib import Path
 
 from app.config import settings
-from app.models.quiz import ChapterMeta, Quiz, QuizListItem, TopicFile
+from app.models.quiz import ChapterMeta, Question, Quiz, QuizListItem, TopicFile
 
 
 def get_chapter_dirs() -> list[Path]:
@@ -47,6 +47,21 @@ def load_topic_file(chapter_dir: Path, topic_filename: str) -> TopicFile:
     with open(topic_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return TopicFile.model_validate(data)
+
+
+def resolve_question_image(question: Question) -> Question:
+    """Returns a question with one concrete image reference selected.
+
+    Topic files may provide one image string or a list of image strings. The API
+    response stays simple and always exposes a single image value or ``None``.
+    """
+    image = question.image
+
+    if isinstance(image, list):
+        selected_image = random.choice(image) if image else None
+        return question.model_copy(update={"image": selected_image})
+
+    return question
 
 
 def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
@@ -113,7 +128,7 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
             break
 
     selected_questions = [
-        question
+        resolve_question_image(question)
         for topic_questions in selected_by_topic
         for question in topic_questions
     ]

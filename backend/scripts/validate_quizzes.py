@@ -237,10 +237,23 @@ def validate_question(
         return
 
     if image is not None:
-        if not is_non_empty_string(image):
-            errors.append(f"{context}: image must be null or a non-empty string")
-        else:
+        if isinstance(image, list):
+            if not image:
+                errors.append(f"{context}: image list must not be empty")
+
+            for i, image_path in enumerate(image):
+                image_context = f"{context} -> image[{i}]"
+                if not is_non_empty_string(image_path):
+                    errors.append(f"{image_context}: must be a non-empty string")
+                else:
+                    validate_image_path(image_path, errors, image_context)
+        elif is_non_empty_string(image):
             validate_image_path(image, errors, context)
+        else:
+            errors.append(
+                f"{context}: image must be null, a non-empty string, or a list "
+                "of non-empty strings"
+            )
 
     if explanation is not None and not is_non_empty_string(explanation):
         errors.append(f"{context}: explanation must be null or a non-empty string")

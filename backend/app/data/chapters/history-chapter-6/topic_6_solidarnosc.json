@@ -5,7 +5,10 @@
     {
       "id": "solidarnosc-zdjecie-lech-walesa",
       "text": "Kto jest przedstawiony na zdjęciu?",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lech_Wa%C5%82%C4%99sa,_jeden_z_za%C5%82o%C5%BCycieli_ruchu_zwi%C4%85zkowego_%E2%80%9ESolidarno%C5%9B%C4%87%E2%80%9D,_p%C3%B3%C5%BAniejsza_g%C5%82owa_pa%C5%84stwa._Fortepan_76155.jpg",
+      "image": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lech_Wa%C5%82%C4%99sa,_jeden_z_za%C5%82o%C5%BCycieli_ruchu_zwi%C4%85zkowego_%E2%80%9ESolidarno%C5%9B%C4%87%E2%80%9D,_p%C3%B3%C5%BAniejsza_g%C5%82owa_pa%C5%84stwa._Fortepan_76155.jpg",
+        "https://kennedyhumanrights.org/wp-content/uploads/2023/12/Lech.jpg"
+      ],
       "explanation": "Na zdjęciu jest Lech Wałęsa, jeden z założycieli Solidarności.",
       "selection_type": "open",
       "accepted_answers": [
@@ -24,6 +27,28 @@
         { "text": "gen. Wojciech Jaruzelewski", "is_correct": false },
         { "text": "gen. Władysław Jaruzelski", "is_correct": false },
         { "text": "gen. Wiesław Jeruzelewicz", "is_correct": false }
+      ]
+    },
+    {
+      "id": "solidarnosc-zwiazek-zawodowy",
+      "text": "Jak nazywa się organizacja skupiająca pracowników w celu ochrony ich interesów?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Związek zawodowy", "is_correct": true },
+        { "text": "związek zawodniczy", "is_correct": false },
+        { "text": "związek komunistyczny", "is_correct": false },
+        { "text": "związek zwodniczy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "solidarnosc-nazwa-zwiazku-walesy",
+      "text": "Jak nazywał się związek zawodowy, którego współzałożycielem był Lech Wałęsa?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "solidarność",
+        "solidarnosc",
+        "nszz solidarność",
+        "nszz solidarnosc"
       ]
     }
   ]

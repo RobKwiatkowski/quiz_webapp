@@ -37,7 +37,7 @@ class Question(BaseModel):
         id: Unique question identifier.
         text: Question text shown in the UI.
         source_text: Optional source passage shown above the question.
-        image: Optional image path or URL.
+        image: Optional image path, URL, or list of image references.
         explanation: Optional explanation shown after answering.
         selection_type: Interaction type (single, multiple, open, or order).
         answers: Options for single/multiple questions.
@@ -48,7 +48,7 @@ class Question(BaseModel):
     id: str
     text: str
     source_text: Optional[str] = None
-    image: Optional[str] = None
+    image: str | List[str] | None = None
     explanation: Optional[str] = None
     selection_type: Literal["single", "multiple", "open", "order"] = "single"
     answers: List[Answer] = Field(default_factory=list)
