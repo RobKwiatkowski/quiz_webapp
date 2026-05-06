@@ -5,7 +5,10 @@
     {
       "id": "jan-pawel-ii-zdjecie-kto-to",
       "text": "Kto jest przedstawiony na zdjęciu?",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg",
+      "image": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/9c/ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg",
+        "https://www.oursundayvisitor.com/wp-content/uploads/2023/10/20110413T0900-POPE-JOHN-PAUL-II-LIFE-1185595.jpg"
+      ],
       "explanation": "Na zdjęciu jest Jan Paweł II, papież pochodzący z Polski.",
       "selection_type": "open",
       "accepted_answers": [
