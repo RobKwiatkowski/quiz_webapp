@@ -50,6 +50,25 @@
         "nszz solidarność",
         "nszz solidarnosc"
       ]
+    },
+    {
+      "id": "solidarnosc-stan-wojenny",
+      "text": "Co wprowadził gen. Jaruzelski?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "stan wojenny", "is_correct": true },
+        { "text": "stan wojny", "is_correct": false },
+        { "text": "wojnę", "is_correct": false },
+        { "text": "stan wyjątkowy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "solidarnosc-stan-wojenny-rok",
+      "text": "W którym roku wprowadzono stan wojenny?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1981"
+      ]
     }
   ]
 }
