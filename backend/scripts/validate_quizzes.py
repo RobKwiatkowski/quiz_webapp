@@ -255,8 +255,8 @@ def validate_question(
                 "of non-empty strings"
             )
 
-    if explanation is not None and not is_non_empty_string(explanation):
-        errors.append(f"{context}: explanation must be null or a non-empty string")
+    if not is_non_empty_string(explanation):
+        errors.append(f"{context}: explanation must be a non-empty string")
 
     answers = question.get("answers")
     accepted_answers = question.get("accepted_answers")

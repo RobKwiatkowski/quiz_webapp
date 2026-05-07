@@ -8,6 +8,10 @@ function isOrderQuestion(question) {
   return question.selection_type === "order";
 }
 
+function normalizeAnswerWhitespace(value) {
+  return value.trim().replace(/\s+/g, " ");
+}
+
 function normalizeAnswer(value) {
   const polishCharsMap = {
     "\u0105": "a",
@@ -21,8 +25,7 @@ function normalizeAnswer(value) {
     "\u017c": "z"
   };
 
-  return value
-    .trim()
+  return normalizeAnswerWhitespace(value)
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+$/gu, "")
     .replace(/[\u0105\u0107\u0119\u0142\u0144\u00f3\u015b\u017a\u017c]/g, (char) => polishCharsMap[char] || char);
@@ -65,11 +68,11 @@ function handleCheckOpenAnswer() {
   hasAnswered = true;
 
   const userAnswer = question.case_sensitive
-    ? rawValue.trim()
+    ? normalizeAnswerWhitespace(rawValue)
     : normalizeAnswer(rawValue);
 
   const acceptedAnswers = (question.accepted_answers || []).map((answer) =>
-    question.case_sensitive ? answer.trim() : normalizeAnswer(answer)
+    question.case_sensitive ? normalizeAnswerWhitespace(answer) : normalizeAnswer(answer)
   );
 
   const isCorrectOverall = acceptedAnswers.includes(userAnswer);

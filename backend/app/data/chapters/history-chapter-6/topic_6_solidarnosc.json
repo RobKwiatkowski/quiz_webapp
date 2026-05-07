@@ -6,7 +6,7 @@
       "id": "solidarnosc-zdjecie-lech-walesa",
       "text": "Kto jest przedstawiony na zdjęciu?",
       "image": [
-        "https://commons.wikimedia.org/wiki/Special:FilePath/Lech_Wa%C5%82%C4%99sa,_jeden_z_za%C5%82o%C5%BCycieli_ruchu_zwi%C4%85zkowego_%E2%80%9ESolidarno%C5%9B%C4%87%E2%80%9D,_p%C3%B3%C5%BAniejsza_g%C5%82owa_pa%C5%84stwa._Fortepan_76155.jpg",
+        "https://wzz.ipn.gov.pl/dokumenty/zalaczniki/121/121-5557.jpg",
         "https://kennedyhumanrights.org/wp-content/uploads/2023/12/Lech.jpg"
       ],
       "explanation": "Na zdjęciu jest Lech Wałęsa, jeden z założycieli Solidarności.",
@@ -33,6 +33,7 @@
       "id": "solidarnosc-zwiazek-zawodowy",
       "text": "Jak nazywa się organizacja skupiająca pracowników w celu ochrony ich interesów?",
       "selection_type": "single",
+      "explanation": "Są to związki zawodowe.",
       "answers": [
         { "text": "Związek zawodowy", "is_correct": true },
         { "text": "związek zawodniczy", "is_correct": false },
@@ -44,6 +45,7 @@
       "id": "solidarnosc-nazwa-zwiazku-walesy",
       "text": "Jak nazywał się związek zawodowy, którego współzałożycielem był Lech Wałęsa?",
       "selection_type": "open",
+      "explanation": "Solidarność",
       "accepted_answers": [
         "solidarność",
         "solidarnosc",
@@ -54,6 +56,7 @@
     {
       "id": "solidarnosc-stan-wojenny",
       "text": "Co wprowadził gen. Jaruzelski?",
+      "explanation": "Gen. Jaruzelski wprowadził w Polsce stan wojenny.",
       "selection_type": "single",
       "answers": [
         { "text": "stan wojenny", "is_correct": true },
@@ -65,9 +68,32 @@
     {
       "id": "solidarnosc-stan-wojenny-rok",
       "text": "W którym roku wprowadzono stan wojenny?",
+      "explanation": "Stan wojenny wprowadzono w 1981 roku.",
       "selection_type": "open",
       "accepted_answers": [
         "1981"
+      ]
+    },
+    {
+      "id": "solidarnosc-upadek-komunizmu-rok",
+      "text": "Kiedy w Polsce upadł komunizm?",
+      "explanation": "Komunizm w Polsce upadł po obradach Okrągłego Stołu.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1989"
+      ]
+    },
+    {
+      "id": "solidarnosc-kolejnosc-wydarzen",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: wybór Jana Pawła II, zwolnienie Anny Walentynowicz ze Stoczni Gdańskiej, założenie Solidarności, stan wojenny, obrady Okrągłego Stołu.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "wybor-jana-pawla-ii", "text": "wybór Jana Pawła II", "position": 1 },
+        { "id": "zwolnienie-anny-walentynowicz", "text": "zwolnienie Anny Walentynowicz ze Stoczni Gdańskiej", "position": 2 },
+        { "id": "zalozenie-solidarnosci", "text": "założenie Solidarności", "position": 3 },
+        { "id": "stan-wojenny", "text": "stan wojenny", "position": 4 },
+        { "id": "obrady-okraglego-stolu", "text": "obrady Okrągłego Stołu", "position": 5 }
       ]
     }
   ]

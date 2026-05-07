@@ -38,7 +38,7 @@ class Question(BaseModel):
         text: Question text shown in the UI.
         source_text: Optional source passage shown above the question.
         image: Optional image path, URL, or list of image references.
-        explanation: Optional explanation shown after answering.
+        explanation: Required explanation shown after an incorrect answer.
         selection_type: Interaction type (single, multiple, open, or order).
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
@@ -49,7 +49,7 @@ class Question(BaseModel):
     text: str
     source_text: Optional[str] = None
     image: str | List[str] | None = None
-    explanation: Optional[str] = None
+    explanation: str
     selection_type: Literal["single", "multiple", "open", "order"] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)

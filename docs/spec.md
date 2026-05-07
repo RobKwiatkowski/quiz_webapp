@@ -184,7 +184,7 @@ Fields:
   "text": "Question text",
   "source_text": null,
   "image": null,
-  "explanation": "Feedback explanation",
+  "explanation": "Required feedback explanation",
   "selection_type": "single",
   "answers": [],
   "accepted_answers": [],
@@ -200,7 +200,7 @@ Fields:
   with `single`, `multiple`, or `open` questions
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
-- `explanation`: optional feedback text shown after an incorrect answer
+- `explanation`: required feedback text shown after an incorrect answer
 - `selection_type`: `single`, `multiple`, `open`, or `order`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for `open` questions
@@ -342,6 +342,7 @@ Each question is worth 1 point.
 - the answer is compared against `accepted_answers`
 - normalization includes:
   - trimming whitespace
+  - replacing consecutive whitespace inside the answer with a single space
   - lowercasing
   - removing trailing punctuation and trailing non-letter/non-number characters
   - replacing Polish diacritics with their plain ASCII equivalents
@@ -357,7 +358,7 @@ Each question is worth 1 point.
 - answer order is randomized before display
 
 After a correct answer, the frontend shows a localized success message. After an
-incorrect answer, it shows `explanation` if the question provides one.
+incorrect answer, it shows the question `explanation`.
 
 ## 11. Final Result
 
@@ -438,6 +439,7 @@ The validator checks:
 - required `topic_id`, `topic_title`, and `questions` fields
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
+- required non-empty `explanation` on every question
 - valid `selection_type`
 - optional `source_text` structure
 - answer structure for `single` and `multiple`
@@ -462,6 +464,7 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
+- every question must include a non-empty `explanation`
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
 - source-based questions may add `source_text` while keeping the regular
