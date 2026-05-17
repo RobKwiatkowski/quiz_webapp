@@ -44,6 +44,31 @@
       ]
     },
     {
+      "id": "jan-pawel-ii-miasto-urodzenia",
+      "text": "W jakim mieście urodził się Karol Wojtyła?",
+      "image": null,
+      "explanation": "Karol Wojtyła urodził się w Wadowicach.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wadowicach", "is_correct": true },
+        { "text": "Wojanowicach", "is_correct": false },
+        { "text": "Wojtyłowicach", "is_correct": false },
+        { "text": "Wodawicach", "is_correct": false }
+      ]
+    },
+    {
+      "id": "jan-pawel-ii-nauka-o-bogu",
+      "text": "Jak nazywa się nauka o Bogu?",
+      "image": null,
+      "explanation": "Nauka o Bogu nazywa się teologią.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "teologia",
+        "teologią",
+        "teologie"
+      ]
+    },
+    {
       "id": "jan-pawel-ii-smierc-data",
       "text": "Kiedy dokładnie zmarł Jan Paweł II?",
       "image": null,

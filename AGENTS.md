@@ -50,23 +50,28 @@ Before finishing:
 
 ## Python environment
 - On Windows, do not use `python` directly.
-- Use `py -3.12` for Python commands.
-- Use `py -3.12 backend/scripts/validate_quizzes.py` to run the validator.
+- In Codex desktop/tool environments, prefer the bundled workspace Python
+  runtime exposed by `load_workspace_dependencies` for Python commands.
+- Use the bundled Python executable to run the validator:
+  `<bundled-python> backend/scripts/validate_quizzes.py`.
+- Outside Codex, use `py -3.12` for Python commands.
+- Outside Codex, use `py -3.12 backend/scripts/validate_quizzes.py` to run the validator.
 - If a command needs the venv, use `py -3.12 -m ...` unless the repo specifies otherwise.
 
 
 ## Python execution
 - Do not assume `python` is available in PATH.
-- On Windows prefer:
+- In Codex sandbox or similar tool environments, call `load_workspace_dependencies`
+  and use the returned bundled Python executable before trying local interpreters.
+- In Codex, prefer:
+  - `<bundled-python> backend/scripts/validate_quizzes.py`
+- Outside Codex on Windows prefer:
   - `py -3.12 backend/scripts/validate_quizzes.py`
 - If that fails, use:
   - `powershell -ExecutionPolicy Bypass -File backend/scripts/validate_quizzes.ps1`
 - Do not rely on `.venv` unless it is confirmed working.
-- In Codex sandbox or similar tool environments, `py -3.12`, `python`, and the
-  project `.venv` may be unavailable. If both official validation commands fail
-  because no local interpreter is found, use the bundled workspace Python
-  runtime exposed by the tool environment to run the same validator script, then
-  clearly report that fallback in the final response.
-- After using a bundled runtime fallback for backend-affecting changes, also run
+- If the bundled Python runtime is unavailable, clearly report that in the final
+  response and then try the official local commands above.
+- After using the bundled runtime for backend-affecting changes, also run
   lightweight sanity checks where practical, for example model parsing/imports
   and JavaScript syntax checks for touched frontend files.

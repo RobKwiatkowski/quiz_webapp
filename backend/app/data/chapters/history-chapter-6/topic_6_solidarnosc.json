@@ -84,6 +84,31 @@
       ]
     },
     {
+      "id": "solidarnosc-skrot-prl",
+      "text": "Rozwiń skrót PRL.",
+      "explanation": "PRL to Polska Rzeczpospolita Ludowa.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Polska Rzeczpospolita Ludowa",
+        "polska rzeczpospolita ludowa",
+        "Polską Rzeczpospolitą Ludową",
+        "polską rzeczpospolitą ludową"
+      ]
+    },
+    {
+      "id": "solidarnosc-mapa-polski-po-ii-wojnie",
+      "text": "Która mapa przedstawia Polskę po II wojnie światowej?",
+      "image": "/static/images/history/mapy_pl_kontury.jpg",
+      "explanation": "Mapa B przedstawia Polskę po II wojnie światowej.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "A", "is_correct": false },
+        { "text": "B", "is_correct": true },
+        { "text": "C", "is_correct": false },
+        { "text": "D", "is_correct": false }
+      ]
+    },
+    {
       "id": "solidarnosc-kolejnosc-wydarzen",
       "text": "Ułóż wydarzenia w kolejności chronologicznej.",
       "explanation": "Poprawna kolejność to: wybór Jana Pawła II, zwolnienie Anny Walentynowicz ze Stoczni Gdańskiej, założenie Solidarności, stan wojenny, obrady Okrągłego Stołu.",

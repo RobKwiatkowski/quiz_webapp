@@ -109,6 +109,19 @@
       ]
     },
     {
+      "id": "gospodarka-mapa-polski-miedzywojennej",
+      "text": "Która mapa przedstawia Polskę w okresie międzywojennym?",
+      "image": "/static/images/history/mapy_pl_kontury.jpg",
+      "explanation": "Mapa A przedstawia Polskę w okresie międzywojennym.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "A", "is_correct": true },
+        { "text": "B", "is_correct": false },
+        { "text": "C", "is_correct": false },
+        { "text": "D", "is_correct": false }
+      ]
+    },
+    {
       "id": "gdynia-port-przyczyny",
       "text": "Wybierz dwie przyczyny budowy portu w Gdyni.",
       "image": null,
