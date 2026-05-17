@@ -1,0 +1,135 @@
+{
+  "topic_id": "rewolucja_francuska",
+  "topic_title": "Rewolucja Francuska",
+  "questions": [
+    {
+      "id": "rewolucja-francuska-krol",
+      "text": "Jaki król panował we Francji, gdy wybuchła Rewolucja Francuska?",
+      "explanation": "Gdy wybuchła Rewolucja Francuska, we Francji panował Ludwik XVI.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "ludwik xvi"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-stany-generalne",
+      "text": "Jak nazywamy zgromadzenie przedstawicieli społeczeństwa francuskiego, mające doradzać królowi, szczególnie w sprawie podatków?",
+      "explanation": "Takie zgromadzenie nazywamy Stanami Generalnymi.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "stany generalne"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-dynastia",
+      "text": "Do jakiej dynastii należał Ludwik XVI?",
+      "explanation": "Ludwik XVI należał do dynastii Burbonów.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "burbonowie"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-stan-trzeci-zgromadzenie",
+      "text": "Jak obwołali się przedstawiciele stanu trzeciego przed Rewolucją Francuską?",
+      "explanation": "Przedstawiciele stanu trzeciego obwołali się Zgromadzeniem Narodowym.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zgromadzenie Narodowe", "is_correct": true },
+        { "text": "Zgromadzenie Ludowe", "is_correct": false },
+        { "text": "Zgrupowanie Narodowe", "is_correct": false },
+        { "text": "Zgromadzenie Konstytucyjne", "is_correct": false }
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-konstytuanta",
+      "text": "Zgromadzenie Narodowe zmieniło nazwę na:",
+      "explanation": "Zgromadzenie Narodowe przyjęło nazwę Konstytuanta.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Konstytuanta", "is_correct": true },
+        { "text": "Dyrektoriat", "is_correct": false },
+        { "text": "Komitet Ocalenia Publicznego", "is_correct": false },
+        { "text": "Rada Pięciuset", "is_correct": false }
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-stan-drugi",
+      "text": "Jak nazywał się stan drugi społeczeństwa francuskiego?",
+      "explanation": "Stanem drugim społeczeństwa francuskiego była szlachta.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "szlachta", "is_correct": true },
+        { "text": "duchowieństwo", "is_correct": false },
+        { "text": "burżuazja", "is_correct": false },
+        { "text": "chłopi", "is_correct": false }
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-wybuch-data",
+      "text": "Kiedy dokładnie wybuchła Wielka Rewolucja Francuska?",
+      "explanation": "Wielka Rewolucja Francuska wybuchła 14 lipca 1789 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "14 lipca 1789",
+        "14 lipca 1789 roku",
+        "14.07.1789",
+        "14/07/1789"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-konstytucja-rok",
+      "text": "W którym roku została uchwalona konstytucja Francji?",
+      "explanation": "Konstytucja Francji została uchwalona w 1791 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1791",
+        "1791 rok",
+        "rok 1791"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-ustroj-po-konstytucji",
+      "text": "W jaki ustrój zmieniła się Francja po uchwaleniu konstytucji?",
+      "explanation": "Po uchwaleniu konstytucji Francja stała się monarchią konstytucyjną.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "monarchia konstytucyjna"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-deklaracja-praw-rok",
+      "text": "Kiedy uchwalono Deklarację praw człowieka i obywatela?",
+      "explanation": "Deklarację praw człowieka i obywatela uchwalono w 1789 roku.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "1789", "is_correct": true },
+        { "text": "1788", "is_correct": false },
+        { "text": "1790", "is_correct": false },
+        { "text": "1799", "is_correct": false }
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-maria-antonina-obraz",
+      "text": "Kto to jest?",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Louise_Elisabeth_Vig%C3%A9e-Lebrun_-_Marie-Antoinette_dit_%C2%AB_%C3%A0_la_Rose_%C2%BB_-_Google_Art_Project.jpg",
+      "explanation": "Na obrazie jest Maria Antonina.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "maria antonina"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-bastylia-obraz",
+      "text": "Jakie to wydarzenie?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Anonymous_-_Prise_de_la_Bastille.jpg",
+      "explanation": "Na obrazie przedstawiono zdobycie Bastylii, czyli szturm na Bastylię.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "zdobycie bastylii",
+        "szturm na bastylie",
+        "walka o bastylie"
+      ]
+    }
+  ]
+}

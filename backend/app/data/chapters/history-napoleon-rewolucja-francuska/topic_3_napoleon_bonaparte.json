@@ -1,0 +1,136 @@
+{
+  "topic_id": "napoleon_bonaparte",
+  "topic_title": "Napoleon Bonaparte",
+  "questions": [
+    {
+      "id": "napoleon-bonaparte-francja-po-obaleniu-jakobinow",
+      "text": "Jaka była sytuacja Francji po obaleniu jakobinów? (3 odpowiedzi)",
+      "explanation": "Po obaleniu jakobinów Francja była w kryzysie gospodarczym, pozostawała w stanie wojny i panowała w niej korupcja.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "był kryzys gospodarczy", "is_correct": true },
+        { "text": "Francja była w stanie wojny", "is_correct": true },
+        { "text": "panowała korupcja", "is_correct": true },
+        { "text": "panował terror", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-wojna-we-wloszech-stanowisko",
+      "text": "Jakie stanowisko miał Napoleon Bonaparte w wojnie na terenie Włoch w latach 1796-1797?",
+      "explanation": "Podczas wojny na terenie Włoch Napoleon Bonaparte był generałem.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "generał", "is_correct": true },
+        { "text": "porucznik", "is_correct": false },
+        { "text": "marszałek", "is_correct": false },
+        { "text": "konsul", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-przejecie-wladzy-rok",
+      "text": "W którym roku władzę przejął Napoleon Bonaparte?",
+      "explanation": "Napoleon Bonaparte przejął władzę w 1799 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1799",
+        "1799 rok",
+        "rok 1799"
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-dyrektoriat",
+      "text": "Jaki urząd rządził po upadku jakobinów?",
+      "explanation": "Po upadku jakobinów we Francji rządził Dyrektoriat.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "dyrektoriat", "is_correct": true },
+        { "text": "konsulat", "is_correct": false },
+        { "text": "Trybunał Rewolucyjny", "is_correct": false },
+        { "text": "Zgromadzenie Narodowe", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-konsulat",
+      "text": "Jak nazywał się urząd wprowadzony przez Napoleona po przejęciu władzy?",
+      "explanation": "Po przejęciu władzy Napoleon wprowadził konsulat.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "konsulat", "is_correct": true },
+        { "text": "parlament", "is_correct": false },
+        { "text": "dyrektoriat", "is_correct": false },
+        { "text": "senat", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-kolejnosc-wydarzen",
+      "text": "Ułóż wydarzenia z życia Napoleona w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: walki we Włoszech, obalenie rządów Dyrektoriatu, Napoleon pierwszym konsulem, koronacja na cesarza.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "walki-we-wloszech", "text": "walki we Włoszech", "position": 1 },
+        { "id": "obalenie-dyrektoriatu", "text": "obalenie rządów Dyrektoriatu", "position": 2 },
+        { "id": "pierwszy-konsul", "text": "Napoleon pierwszym konsulem", "position": 3 },
+        { "id": "koronacja-na-cesarza", "text": "koronacja na cesarza", "position": 4 }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-kolejnosc-bitwy",
+      "text": "Ułóż bitwy w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: Austerlitz, Raszyn, Borodino, Lipsk.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "austerlitz", "text": "Austerlitz", "position": 1 },
+        { "id": "raszyn", "text": "Raszyn", "position": 2 },
+        { "id": "borodino", "text": "Borodino", "position": 3 },
+        { "id": "lipsk", "text": "Lipsk", "position": 4 }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-kolejnosc-instytucji",
+      "text": "Ułóż instytucje i urzędy we Francji w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: Zgromadzenie Narodowe, Konstytuanta, Trybunał Rewolucyjny, Dyrektoriat, Konsulat.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "zgromadzenie-narodowe", "text": "Zgromadzenie Narodowe", "position": 1 },
+        { "id": "konstytuanta", "text": "Konstytuanta", "position": 2 },
+        { "id": "trybunal-rewolucyjny", "text": "Trybunał Rewolucyjny", "position": 3 },
+        { "id": "dyrektoriat", "text": "Dyrektoriat", "position": 4 },
+        { "id": "konsulat", "text": "Konsulat", "position": 5 }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-konsulat-ile-osob",
+      "text": "Ile osób wchodziło do Konsulatu?",
+      "explanation": "Do Konsulatu wchodziły 3 osoby, czyli trzej konsulowie.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "3",
+        "trzy"
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-pierwsze-wygnanie",
+      "text": "Na jaką wyspę wygnano Napoleona za pierwszym razem?",
+      "explanation": "Po pierwszej abdykacji Napoleona zesłano na Elbę.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Elbę", "is_correct": true },
+        { "text": "Wyspę św. Heleny", "is_correct": false },
+        { "text": "Korsykę", "is_correct": false },
+        { "text": "Maltę", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-blokada-kontynentalna",
+      "text": "Na jaki kraj Napoleon nałożył blokadę kontynentalną?",
+      "explanation": "Blokada kontynentalna była wymierzona w Wielką Brytanię.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "wielką brytanię",
+        "wielka brytanie",
+        "wielka brytania",
+        "wielką brytania"
+      ]
+    }
+  ]
+}

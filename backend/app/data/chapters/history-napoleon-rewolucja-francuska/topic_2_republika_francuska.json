@@ -1,0 +1,116 @@
+{
+  "topic_id": "republika_francuska",
+  "topic_title": "Republika Francuska",
+  "questions": [
+    {
+      "id": "republika-francuska-wojna-austria-prusy",
+      "text": "Z jakimi krajami Francja prowadziła wojnę po Rewolucji Francuskiej? (2 odpowiedzi)",
+      "explanation": "Po Rewolucji Francuskiej Francja prowadziła wojnę z Austrią i Prusami.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Austria", "is_correct": true },
+        { "text": "Prusy", "is_correct": true },
+        { "text": "Dania", "is_correct": false },
+        { "text": "Australia", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-wojna-po-egzekucji-krola",
+      "text": "Z jakim krajem Francja nie prowadziła wojny bezpośrednio po egzekucji Ludwika XVI?",
+      "explanation": "Bezpośrednio po egzekucji Ludwika XVI Francja walczyła z Austrią, Prusami, Wielką Brytanią i Hiszpanią, ale nie z Danią.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Dania", "is_correct": true },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Wielka Brytania", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-zniesienie-monarchii-rok",
+      "text": "W którym roku zniesiono we Francji monarchię?",
+      "explanation": "Monarchię we Francji zniesiono w 1792 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1792",
+        "1792 rok",
+        "rok 1792"
+      ]
+    },
+    {
+      "id": "republika-francuska-ustroj-po-upadku-monarchii",
+      "text": "Jaki ustrój przyjęła Francja po upadku monarchii?",
+      "explanation": "Po upadku monarchii Francja stała się republiką.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "republika"
+      ]
+    },
+    {
+      "id": "republika-francuska-gilotyna",
+      "text": "Jak nazywa się urządzenie do ścinania głów osób skazanych na śmierć?",
+      "explanation": "Takie urządzenie nazywa się gilotyna.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "gilotyna"
+      ]
+    },
+    {
+      "id": "republika-francuska-jakobini",
+      "text": "Jak nazywamy radykalne stronnictwo rewolucyjne rządzące Francją za pomocą terroru?",
+      "explanation": "Takie radykalne stronnictwo nazywamy jakobinami.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "jakobini"
+      ]
+    },
+    {
+      "id": "republika-francuska-robespierre-obraz",
+      "text": "Kto to jest?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Robespierre.jpg",
+      "explanation": "Na obrazie jest Maksymilian Robespierre.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Maksymilian Robespierre", "is_correct": true },
+        { "text": "Maksym Robert", "is_correct": false },
+        { "text": "Jakob Robespierre", "is_correct": false },
+        { "text": "Maksymilian Jakobierre", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-trybunal-rewolucyjny",
+      "text": "Jak nazywał się sąd powołany przez jakobinów?",
+      "explanation": "Sądem powołanym przez jakobinów był Trybunał Rewolucyjny.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Trybunał Rewolucyjny", "is_correct": true },
+        { "text": "Trybunał Ludowy", "is_correct": false },
+        { "text": "Zgromadzenie Narodowe", "is_correct": false },
+        { "text": "Konstytuanta", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-los-przywodcow-jakobinow",
+      "text": "Jak skończyli przywódcy jakobinów?",
+      "explanation": "Przywódcy jakobinów zostali pojmani i skazani na karę śmierci.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "zostali pojmani i skazani na karę śmierci", "is_correct": true },
+        { "text": "zostali wygnani", "is_correct": false },
+        { "text": "zostali aresztowani i skazani na dożywocie", "is_correct": false },
+        { "text": "umarli ze starości", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-dyrektoriat-ile-osob",
+      "text": "Ile osób wchodziło do Dyrektoriatu?",
+      "explanation": "Do Dyrektoriatu wchodziło 5 osób.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "5",
+        "pięć",
+        "piec"
+      ]
+    }
+  ]
+}

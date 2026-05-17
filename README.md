@@ -156,6 +156,10 @@ The default `docker-compose.yml` is suitable for a small home-server deployment:
 - frontend files are bind-mounted into the Nginx container instead of copied into
   a custom frontend image
 
+On the current Raspberry Pi setup for this project, deployment files live under
+`/opt`, not under `/home`. Keep the Compose project directory and related files
+there when following the Raspberry Pi deployment workflow.
+
 To deploy on a home server:
 
 ```bash

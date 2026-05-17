@@ -1,0 +1,14 @@
+{
+  "id": "history-napoleon-rewolucja-francuska",
+  "title": "Napoleon i Rewolucja Francuska",
+  "description": "Powtórka z najważniejszych informacji o Rewolucji Francuskiej i epoce Napoleona.",
+  "category": "history",
+  "age_group": "10-12",
+  "target_question_count": 20,
+  "questions_per_topic": 7,
+  "topics": [
+    "topic_1_rewolucja_francuska.json",
+    "topic_2_republika_francuska.json",
+    "topic_3_napoleon_bonaparte.json"
+  ]
+}

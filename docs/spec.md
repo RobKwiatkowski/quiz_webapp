@@ -94,6 +94,9 @@ generates `js/config.js` from the `API_BASE_URL` environment variable at startup
 This is intended for Raspberry Pi deployments where Caddy routes traffic to
 internal frontend and backend containers.
 
+For the current Raspberry Pi deployment used for this project, deployment files
+are stored under `/opt` rather than `/home`.
+
 The backend is the source of ready quiz payloads. The frontend does not know the
 chapter/topic file structure and does not assemble quizzes by itself.
 
