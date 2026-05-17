@@ -131,6 +131,72 @@
         "wielka brytania",
         "wielką brytania"
       ]
+    },
+    {
+      "id": "napoleon-bonaparte-kodeks-cywilny",
+      "text": "Jak nazywał się zbiór praw wprowadzony przez Napoleona po objęciu władzy?",
+      "explanation": "Tym zbiorem praw był Kodeks Cywilny.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Kodeks Cywilny", "is_correct": true },
+        { "text": "Kodesk Państwowy", "is_correct": false },
+        { "text": "Konstytucja", "is_correct": false },
+        { "text": "Kodeks Wolności", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-zwiazek-renski",
+      "text": "Na terenach jakiego kraju Napoleon utworzył Związek Reński?",
+      "explanation": "Napoleon utworzył Związek Reński na terenach Niemiec.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Niemcy", "is_correct": true },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Rosja", "is_correct": false },
+        { "text": "Dania", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-ostatnia-bitwa",
+      "text": "Jaka była ostatnia bitwa Napoleona?",
+      "explanation": "Ostatnią bitwą Napoleona była bitwa pod Waterloo.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Waterloo", "is_correct": true },
+        { "text": "Austerlitz", "is_correct": false },
+        { "text": "Borodino", "is_correct": false },
+        { "text": "Lipsk", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-pokoj-w-tylzy",
+      "text": "Z jakim krajem podpisano pokój w Tylży?",
+      "explanation": "Pokój w Tylży Napoleon podpisał z Rosją.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rosja", "is_correct": true },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Wielka Brytania", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-zamach-stanu",
+      "text": "Jak nazywa się siłowe przejęcie władzy w państwie, na przykład przez wojsko?",
+      "explanation": "Takie siłowe przejęcie władzy nazywa się zamachem stanu.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "zamach stanu"
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-bagnet",
+      "text": "Jak nazywamy ostrze do walki nakładane przez żołnierzy na czubek karabinu?",
+      "explanation": "Takie ostrze nazywa się bagnet.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "bagnet"
+      ]
     }
   ]
 }

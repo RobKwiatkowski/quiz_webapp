@@ -130,6 +130,15 @@
         "szturm na bastylie",
         "walka o bastylie"
       ]
+    },
+    {
+      "id": "rewolucja-francuska-trojpodzial-wladzy",
+      "text": "Jaki dokument wprowadził we Francji trójpodział władzy?",
+      "explanation": "Trójpodział władzy we Francji wprowadziła konstytucja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "konstytucja"
+      ]
     }
   ]
 }

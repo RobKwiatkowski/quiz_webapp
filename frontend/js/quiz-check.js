@@ -179,19 +179,19 @@ function getFinalGrade(currentScore, totalQuestions) {
 
   const percentage = getScorePercentage(currentScore, totalQuestions);
 
-  if (percentage < 50) {
+  if (percentage < 30) {
     return "1";
   }
 
-  if (percentage <= 65) {
+  if (percentage <= 50) {
     return "2";
   }
 
-  if (percentage <= 79) {
+  if (percentage <= 75) {
     return "3";
   }
 
-  if (percentage <= 89) {
+  if (percentage <= 90) {
     return "4";
   }
 
@@ -217,7 +217,7 @@ function getFinalMessage(currentScore, totalQuestions) {
   const percentage = getScorePercentage(currentScore, totalQuestions);
 
   if (percentage < 50) {
-    return "Musisz jeszcze po\u0107wiczy\u0107";
+    return "Niestety, ale musisz jeszcze po\u0107wiczy\u0107";
   }
 
   if (percentage < 75) {
