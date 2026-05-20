@@ -43,7 +43,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, and `order`
+- question types: `single`, `multiple`, `open`, `order`, and `matching`
 - optional source text passages on questions
 - optional images on questions, including multiple alternative images for one
   question
@@ -179,6 +179,23 @@ Fields:
 - `text`: item label shown to the user
 - `position`: correct 1-based position in the final sequence
 
+### `MatchingPair`
+
+```json
+{
+  "id": "pair-id",
+  "left": "Left column label",
+  "right": "Right column label"
+}
+```
+
+Fields:
+
+- `id`: stable pair identifier, unique within one question
+- `left`: item label shown in the left column
+- `right`: matching item label shown as a right-column choice; the same label may
+  be reused by more than one pair for category-style matching
+
 ### `Question`
 
 ```json
@@ -191,7 +208,8 @@ Fields:
   "selection_type": "single",
   "answers": [],
   "accepted_answers": [],
-  "order_items": []
+  "order_items": [],
+  "matching_pairs": []
 }
 ```
 
@@ -199,15 +217,15 @@ Fields:
 
 - `id`: question identifier, unique within a chapter
 - `text`: question text
-- `source_text`: optional source passage shown above the question; may be used
-  with `single`, `multiple`, or `open` questions
+- `source_text`: optional source passage shown above the question
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: required feedback text shown after an incorrect answer
-- `selection_type`: `single`, `multiple`, `open`, or `order`
+- `selection_type`: `single`, `multiple`, `open`, `order`, or `matching`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for `open` questions
 - `order_items`: sequence items for `order` questions
+- `matching_pairs`: left/right pairs for `matching` questions
 
 The frontend contains partial support for an optional `case_sensitive` field on
 open questions. This field is not part of the Pydantic model and is not validated,
@@ -360,6 +378,19 @@ Each question is worth 1 point.
 - positions must be consecutive integers from `1` to the number of items
 - answer order is randomized before display
 
+`matching`:
+
+- the user matches each left-column item to one right-column item
+- items are checked after clicking the localized check button
+- the result is correct only if every left-column item is paired with its matching
+  right-column item
+- `matching_pairs` must contain at least two pairs
+- each pair must have a unique `id` and `left`
+- `right` labels must be non-empty and may repeat when multiple left-column items
+  share the same matching category
+- left-column row order and unique right-column choices may be randomized before
+  display
+
 After a correct answer, the frontend shows a localized success message. After an
 incorrect answer, it shows the question `explanation`.
 
@@ -450,6 +481,7 @@ The validator checks:
 - at least two correct answers for `multiple`
 - non-empty `accepted_answers` for `open`
 - valid `order_items` for `order`
+- valid `matching_pairs` for `matching`
 - local image path format and file existence, including every item in image lists
 
 The validator emits warnings for content that can still run but is likely
@@ -474,6 +506,8 @@ Rules:
   `selection_type` flow
 - order questions use `order_items` with stable item IDs and consecutive
   1-based positions
+- matching questions use `matching_pairs` with stable pair IDs and unique left
+  labels; right labels may repeat for category-style matching
 - quiz content should be written for a child aged 10-12
 - quiz content should be in Polish
 - open questions should include all required variants in `accepted_answers`
@@ -504,7 +538,7 @@ The current quiz screen shows:
 - optional source text block
 - question text
 - optional image
-- answers or text input
+- answers, text input, sequence controls, or matching controls
 - feedback
 - localized primary action button
 
@@ -547,6 +581,6 @@ Possible future extensions:
 
 The first production version is a working single-player quiz application that runs
 through Docker Compose, shows a quiz list, loads a selected quiz from the backend,
-supports `single`, `multiple`, `open`, and `order` questions, handles images,
-shows immediate feedback and a final result, and keeps quiz content in validated
-chapter and topic JSON files.
+supports `single`, `multiple`, `open`, `order`, and `matching` questions, handles
+images, shows immediate feedback and a final result, and keeps quiz content in
+validated chapter and topic JSON files.

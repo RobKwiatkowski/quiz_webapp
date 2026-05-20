@@ -30,8 +30,22 @@ class OrderItem(BaseModel):
     position: int
 
 
+class MatchingPair(BaseModel):
+    """Single pair used by matching questions.
+
+    Attributes:
+        id: Stable pair identifier used for checking the selected match.
+        left: Item label displayed in the left column.
+        right: Matching item label displayed as a right-column choice.
+    """
+
+    id: str
+    left: str
+    right: str
+
+
 class Question(BaseModel):
-    """Question schema supporting single, multiple, open, and order answers.
+    """Question schema supporting single, multiple, open, order, and matching answers.
 
     Attributes:
         id: Unique question identifier.
@@ -39,10 +53,11 @@ class Question(BaseModel):
         source_text: Optional source passage shown above the question.
         image: Optional image path, URL, or list of image references.
         explanation: Required explanation shown after an incorrect answer.
-        selection_type: Interaction type (single, multiple, open, or order).
+        selection_type: Interaction type (single, multiple, open, order, or matching).
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
         order_items: Items to arrange for order questions.
+        matching_pairs: Left/right pairs for matching questions.
     """
 
     id: str
@@ -50,10 +65,11 @@ class Question(BaseModel):
     source_text: Optional[str] = None
     image: str | List[str] | None = None
     explanation: str
-    selection_type: Literal["single", "multiple", "open", "order"] = "single"
+    selection_type: Literal["single", "multiple", "open", "order", "matching"] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
     order_items: List[OrderItem] = Field(default_factory=list)
+    matching_pairs: List[MatchingPair] = Field(default_factory=list)
 
 
 class Quiz(BaseModel):

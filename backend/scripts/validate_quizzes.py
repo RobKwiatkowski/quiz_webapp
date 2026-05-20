@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CHAPTERS_DIR = PROJECT_ROOT / "backend" / "app" / "data" / "chapters"
 STATIC_DIR = PROJECT_ROOT / "backend" / "app" / "static"
 
-ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "order"}
+ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "order", "matching"}
 
 
 def load_json(path: Path) -> Any:
@@ -174,6 +174,51 @@ def validate_order_items_structure(
         )
 
 
+def validate_matching_pairs_structure(
+    matching_pairs: Any, errors: list[str], context: str
+) -> None:
+    """Validates pairs used by matching questions.
+
+    Args:
+        matching_pairs: Raw ``matching_pairs`` payload.
+        errors: Shared error accumulator.
+        context: Human-readable validation context prefix.
+    """
+    if not isinstance(matching_pairs, list) or len(matching_pairs) < 2:
+        errors.append(f"{context}: matching_pairs must be a list with at least 2 pairs")
+        return
+
+    seen_ids: set[str] = set()
+    seen_left_values: set[str] = set()
+    for i, pair in enumerate(matching_pairs):
+        pair_context = f"{context} -> matching_pairs[{i}]"
+
+        if not isinstance(pair, dict):
+            errors.append(f"{pair_context}: pair must be an object")
+            continue
+
+        pair_id = pair.get("id")
+        left = pair.get("left")
+        right = pair.get("right")
+
+        if not is_non_empty_string(pair_id):
+            errors.append(f"{pair_context}: id must be a non-empty string")
+        elif pair_id in seen_ids:
+            errors.append(f"{pair_context}: duplicate id: {pair_id}")
+        else:
+            seen_ids.add(pair_id)
+
+        if not is_non_empty_string(left):
+            errors.append(f"{pair_context}: left must be a non-empty string")
+        elif left in seen_left_values:
+            errors.append(f"{pair_context}: duplicate left value: {left}")
+        else:
+            seen_left_values.add(left)
+
+        if not is_non_empty_string(right):
+            errors.append(f"{pair_context}: right must be a non-empty string")
+
+
 def validate_question(
     question: Any,
     errors: list[str],
@@ -261,6 +306,7 @@ def validate_question(
     answers = question.get("answers")
     accepted_answers = question.get("accepted_answers")
     order_items = question.get("order_items")
+    matching_pairs = question.get("matching_pairs")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, errors, context)
@@ -279,6 +325,10 @@ def validate_question(
         if "order_items" in question and order_items not in (None, []):
             warnings.append(
                 f"{context}: single question should not contain order_items"
+            )
+        if "matching_pairs" in question and matching_pairs not in (None, []):
+            warnings.append(
+                f"{context}: single question should not contain matching_pairs"
             )
 
     elif selection_type == "multiple":
@@ -299,6 +349,10 @@ def validate_question(
             warnings.append(
                 f"{context}: multiple question should not contain order_items"
             )
+        if "matching_pairs" in question and matching_pairs not in (None, []):
+            warnings.append(
+                f"{context}: multiple question should not contain matching_pairs"
+            )
 
     elif selection_type == "open":
         validate_open_answers_structure(accepted_answers, errors, context)
@@ -310,6 +364,10 @@ def validate_question(
             warnings.append(
                 f"{context}: open question should not contain order_items"
             )
+        if "matching_pairs" in question and matching_pairs not in (None, []):
+            warnings.append(
+                f"{context}: open question should not contain matching_pairs"
+            )
 
     elif selection_type == "order":
         validate_order_items_structure(order_items, errors, context)
@@ -320,6 +378,25 @@ def validate_question(
         if "accepted_answers" in question and accepted_answers not in (None, []):
             warnings.append(
                 f"{context}: order question should not contain accepted_answers"
+            )
+        if "matching_pairs" in question and matching_pairs not in (None, []):
+            warnings.append(
+                f"{context}: order question should not contain matching_pairs"
+            )
+
+    elif selection_type == "matching":
+        validate_matching_pairs_structure(matching_pairs, errors, context)
+        if "answers" in question and answers not in (None, []):
+            warnings.append(
+                f"{context}: matching question should not contain answers"
+            )
+        if "accepted_answers" in question and accepted_answers not in (None, []):
+            warnings.append(
+                f"{context}: matching question should not contain accepted_answers"
+            )
+        if "order_items" in question and order_items not in (None, []):
+            warnings.append(
+                f"{context}: matching question should not contain order_items"
             )
 
 

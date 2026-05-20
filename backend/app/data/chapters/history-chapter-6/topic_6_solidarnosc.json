@@ -120,6 +120,20 @@
         { "id": "stan-wojenny", "text": "stan wojenny", "position": 4 },
         { "id": "obrady-okraglego-stolu", "text": "obrady Okrągłego Stołu", "position": 5 }
       ]
+    },
+    {
+      "id": "solidarnosc-dopasuj-imiona-nazwiska",
+      "text": "Dopasuj imiona do nazwisk osób.",
+      "explanation": "Poprawne pary to: Karol Wojtyła, Józef Piłsudski, Witold Pilecki, Lech Wałęsa, Włodzimierz Lenin i Eugeniusz Kwiatkowski.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "karol-wojtyla", "left": "Karol", "right": "Wojtyła" },
+        { "id": "jozef-pilsudski", "left": "Józef", "right": "Piłsudski" },
+        { "id": "witold-pilecki", "left": "Witold", "right": "Pilecki" },
+        { "id": "lech-walesa", "left": "Lech", "right": "Wałęsa" },
+        { "id": "wlodzimierz-lenin", "left": "Włodzimierz", "right": "Lenin" },
+        { "id": "eugeniusz-kwiatkowski", "left": "Eugeniusz", "right": "Kwiatkowski" }
+      ]
     }
   ]
 }

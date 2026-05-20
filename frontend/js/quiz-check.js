@@ -8,6 +8,10 @@ function isOrderQuestion(question) {
   return question.selection_type === "order";
 }
 
+function isMatchingQuestion(question) {
+  return question.selection_type === "matching";
+}
+
 function normalizeAnswerWhitespace(value) {
   return value.trim().replace(/\s+/g, " ");
 }
@@ -48,6 +52,11 @@ function handleCheckAction() {
 
   if (question.selection_type === "order") {
     handleCheckOrderAnswer();
+    return;
+  }
+
+  if (question.selection_type === "matching") {
+    handleCheckMatchingAnswer();
   }
 }
 
@@ -164,6 +173,35 @@ function handleCheckOrderAnswer() {
   showFeedback(isCorrectOverall, question.explanation);
 }
 
+// SECTION: quiz-matching-answer-check
+// Deferred validation for matching questions after user clicks "Check".
+function handleCheckMatchingAnswer() {
+  if (hasAnswered) return;
+
+  const question = getCurrentQuestion();
+  const matchingSelects = Array.from(document.querySelectorAll(".matching-select"));
+  const hasEmptyMatch = matchingSelects.some((select) => select.value === "");
+
+  if (hasEmptyMatch) {
+    showMatchingAnswerRequiredMessage();
+    return;
+  }
+
+  const isCorrectOverall = matchingSelects.every(
+    (select) => select.value === select.dataset.correctRight
+  );
+
+  hasAnswered = true;
+
+  if (isCorrectOverall) {
+    score += 1;
+  }
+
+  showMatchingPairStates();
+  lockMatchingPairs();
+  showFeedback(isCorrectOverall, question.explanation);
+}
+
 function getScorePercentage(currentScore, totalQuestions) {
   if (totalQuestions === 0) {
     return 0;
@@ -205,6 +243,13 @@ function getFinalGrade(currentScore, totalQuestions) {
 function showOpenAnswerRequiredMessage() {
   const feedbackEl = document.getElementById("feedback");
   feedbackEl.textContent = "Wpisz odpowied\u017a.";
+  feedbackEl.className = "feedback warning-feedback";
+  feedbackEl.classList.remove("hidden");
+}
+
+function showMatchingAnswerRequiredMessage() {
+  const feedbackEl = document.getElementById("feedback");
+  feedbackEl.textContent = "Dopasuj wszystkie pary.";
   feedbackEl.className = "feedback warning-feedback";
   feedbackEl.classList.remove("hidden");
 }

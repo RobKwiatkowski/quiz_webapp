@@ -117,6 +117,12 @@ function renderQuestion() {
     return;
   }
 
+  if (isMatchingQuestion(question)) {
+    renderMatchingQuestion(question, answersEl);
+    showElement("check-button");
+    return;
+  }
+
   const shuffledAnswers = shuffleArray(question.answers || []);
 
   answersEl.innerHTML = shuffledAnswers.map((answer) => `
@@ -161,6 +167,12 @@ function lockOrderItems() {
   });
 }
 
+function lockMatchingPairs() {
+  document.querySelectorAll(".matching-select").forEach((select) => {
+    select.disabled = true;
+  });
+}
+
 function showCorrectAndIncorrectStates(selectedButtons = []) {
   document.querySelectorAll(".answer-btn").forEach((btn) => {
     const isCorrect = btn.dataset.correct === "true";
@@ -177,6 +189,14 @@ function showCorrectAndIncorrectStates(selectedButtons = []) {
 function showOrderItemStates(isCorrectOverall) {
   document.querySelectorAll(".order-item").forEach((item) => {
     item.classList.add(isCorrectOverall ? "correct" : "incorrect");
+  });
+}
+
+function showMatchingPairStates() {
+  document.querySelectorAll(".matching-row").forEach((row) => {
+    const select = row.querySelector(".matching-select");
+    const isCorrect = select.value === select.dataset.correctRight;
+    row.classList.add(isCorrect ? "correct" : "incorrect");
   });
 }
 
@@ -271,6 +291,65 @@ function updateOrderMoveButtons(listEl) {
     moveUpButton.disabled = index === 0;
     moveDownButton.disabled = index === items.length - 1;
   });
+}
+
+// SECTION: quiz-matching-rendering
+// Renders left-column items with randomized right-column select choices.
+function renderMatchingQuestion(question, answersEl) {
+  const shuffledPairs = shuffleArray(question.matching_pairs || []);
+  const shuffledChoices = shuffleArray(getUniqueMatchingChoices(question.matching_pairs || []));
+  const matchingListEl = document.createElement("div");
+  matchingListEl.className = "matching-list";
+
+  shuffledPairs.forEach((pair) => {
+    matchingListEl.appendChild(createMatchingRowElement(pair, shuffledChoices));
+  });
+
+  answersEl.appendChild(matchingListEl);
+}
+
+function getUniqueMatchingChoices(pairs) {
+  const seenChoices = new Set();
+  const uniqueChoices = [];
+
+  pairs.forEach((pair) => {
+    if (seenChoices.has(pair.right)) {
+      return;
+    }
+
+    seenChoices.add(pair.right);
+    uniqueChoices.push(pair.right);
+  });
+
+  return uniqueChoices;
+}
+
+function createMatchingRowElement(pair, choices) {
+  const rowEl = document.createElement("div");
+  rowEl.className = "matching-row";
+
+  const leftEl = document.createElement("span");
+  leftEl.className = "matching-left";
+  leftEl.textContent = pair.left;
+
+  const selectEl = document.createElement("select");
+  selectEl.className = "matching-select";
+  selectEl.dataset.correctRight = pair.right;
+
+  const placeholderOption = document.createElement("option");
+  placeholderOption.value = "";
+  placeholderOption.textContent = "Wybierz dopasowanie";
+  selectEl.appendChild(placeholderOption);
+
+  choices.forEach((choice) => {
+    const optionEl = document.createElement("option");
+    optionEl.value = choice;
+    optionEl.textContent = choice;
+    selectEl.appendChild(optionEl);
+  });
+
+  rowEl.append(leftEl, selectEl);
+  return rowEl;
 }
 
 // SECTION: quiz-finish-and-progress
@@ -372,6 +451,10 @@ function getQuestionHint(question) {
 
   if (question.selection_type === "order") {
     return "Ułóż wydarzenia od najwcześniejszego do najpóźniejszego.";
+  }
+
+  if (question.selection_type === "matching") {
+    return "Dopasuj elementy z lewej kolumny do prawej.";
   }
 
   return "";

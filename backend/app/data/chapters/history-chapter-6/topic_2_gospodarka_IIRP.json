@@ -146,6 +146,19 @@
         { "id": "wojna-z-rosja-sowiecka", "text": "wybuch wojny pomiędzy Polską a Rosją Sowiecką", "position": 3 },
         { "id": "budowa-portu-gdynia", "text": "rozpoczęcie budowy portu w Gdyni", "position": 4 }
       ]
+    },
+    {
+      "id": "gospodarka-dopasuj-wydarzenia-granice",
+      "text": "Wybierz do której granicy Polski tyczy się dane wydarzenie.",
+      "image": null,
+      "explanation": "Powstania Śląskie i Powstanie Wielkopolskie dotyczyły granicy zachodniej, a wojna polsko-bolszewicka i walki o Lwów - granicy wschodniej.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "powstania-slaskie", "left": "Powstania Śląskie", "right": "Zachodnia" },
+        { "id": "powstanie-wielkopolskie", "left": "Powstanie Wielkopolskie", "right": "Zachodnia" },
+        { "id": "wojna-polsko-bolszewicka", "left": "Wojna polsko-bolszewicka", "right": "Wschodnia" },
+        { "id": "walki-o-lwow", "left": "Walki o Lwów", "right": "Wschodnia" }
+      ]
     }
   ]
 }
