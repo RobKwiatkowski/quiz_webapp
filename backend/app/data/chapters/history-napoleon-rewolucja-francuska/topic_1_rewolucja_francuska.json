@@ -26,7 +26,8 @@
       "explanation": "Ludwik XVI należał do dynastii Burbonów.",
       "selection_type": "open",
       "accepted_answers": [
-        "burbonowie"
+        "burbonowie",
+        "burbonów"
       ]
     },
     {
@@ -138,6 +139,18 @@
       "selection_type": "open",
       "accepted_answers": [
         "konstytucja"
+      ]
+    },
+    {
+      "id": "rewolucja-francuska-polska-po-rozbiorach",
+      "text": "Po których zaborach była Polska w momencie wybuchu Rewolucji Francuskiej?",
+      "explanation": "W 1789 roku Polska była po I rozbiorze. II rozbiór był w 1793 roku, a III w 1795 roku.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "po I rozbiorze", "is_correct": true },
+        { "text": "przed rozbiorami", "is_correct": false },
+        { "text": "po II rozbiorze", "is_correct": false },
+        { "text": "po III rozbiorze", "is_correct": false }
       ]
     }
   ]

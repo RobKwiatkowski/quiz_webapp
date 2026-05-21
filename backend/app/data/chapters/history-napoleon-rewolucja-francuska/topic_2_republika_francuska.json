@@ -111,6 +111,42 @@
         "pięć",
         "piec"
       ]
+    },
+    {
+      "id": "republika-francuska-rzady-jakobinow-nazwa",
+      "text": "Jak nazywały się surowe rządy jakobinów, podczas których wielu ludzi skazywano na śmierć?",
+      "explanation": "Surowe rządy jakobinów nazywamy terrorem.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "terror",
+        "terrorem",
+        "rzady terroru",
+        "rządy terroru"
+      ]
+    },
+    {
+      "id": "republika-francuska-los-ludwika-xvi",
+      "text": "Co stało się z Ludwikiem XVI po obaleniu monarchii?",
+      "explanation": "Po obaleniu monarchii Ludwik XVI został skazany na śmierć i stracony.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "został skazany na śmierć i stracony", "is_correct": true },
+        { "text": "został koronowany na cesarza", "is_correct": false },
+        { "text": "uciekł do Ameryki", "is_correct": false },
+        { "text": "został przywódcą jakobinów", "is_correct": false }
+      ]
+    },
+    {
+      "id": "republika-francuska-dopasuj-pojecia",
+      "text": "Dopasuj pojęcie do jego znaczenia.",
+      "explanation": "Jakobini byli radykalnym stronnictwem, bagnet to ostrze nakładane na karabin, Trybunał Rewolucyjny był sądem, a Dyrektoriat pięcioosobowym rządem Francji.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "jakobini", "left": "Jakobini", "right": "radykalne stronnictwo rewolucyjne" },
+        { "id": "bagnet", "left": "Bagnet", "right": "ostrze nakładane na karabin" },
+        { "id": "trybunal-rewolucyjny", "left": "Trybunał Rewolucyjny", "right": "sąd powołany w czasie rewolucji" },
+        { "id": "dyrektoriat", "left": "Dyrektoriat", "right": "pięcioosobowy rząd Francji po upadku jakobinów" }
+      ]
     }
   ]
 }

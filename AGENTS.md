@@ -41,8 +41,15 @@ Before finishing:
 
 ## Quiz authoring
 - For quiz content authoring, do not assume missing information.
+- When the user asks to add or propose quiz questions, first present the proposed
+  questions for review and wait for explicit approval before editing JSON files,
+  unless the user clearly asks to implement immediately.
 - Ask clarifying questions first when question type, answer mode, target topic, or expected output format is unclear.
 - Only propose missing distractors or accepted answers after explicitly asking for permission.
+- For open questions, include natural accepted answer variants a child may type.
+  This is especially important for dates and short history answers: include both
+  bare dates and phrased forms such as `1795` and `w 1795`, and include common
+  grammatical variants such as `z dynastii Burbonów`, `z Burbonów`, and `Burbonów`.
 - For any task involving adding, editing, merging, or validating quiz questions in local JSON files, use the skill `quiz-question-authoring`.
 - Keep the canonical skill in-repo at `skills/quiz-question-authoring/SKILL.md`.
 - If `quiz-question-authoring` is not listed in the current session skills, load `skills/quiz-question-authoring/SKILL.md` directly and follow it as mandatory instructions instead of failing the task.

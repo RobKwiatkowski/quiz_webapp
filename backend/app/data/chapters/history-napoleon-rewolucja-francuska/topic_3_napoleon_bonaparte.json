@@ -74,18 +74,6 @@
       ]
     },
     {
-      "id": "napoleon-bonaparte-kolejnosc-bitwy",
-      "text": "Ułóż bitwy w kolejności chronologicznej.",
-      "explanation": "Poprawna kolejność to: Austerlitz, Raszyn, Borodino, Lipsk.",
-      "selection_type": "order",
-      "order_items": [
-        { "id": "austerlitz", "text": "Austerlitz", "position": 1 },
-        { "id": "raszyn", "text": "Raszyn", "position": 2 },
-        { "id": "borodino", "text": "Borodino", "position": 3 },
-        { "id": "lipsk", "text": "Lipsk", "position": 4 }
-      ]
-    },
-    {
       "id": "napoleon-bonaparte-kolejnosc-instytucji",
       "text": "Ułóż instytucje i urzędy we Francji w kolejności chronologicznej.",
       "explanation": "Poprawna kolejność to: Zgromadzenie Narodowe, Konstytuanta, Trybunał Rewolucyjny, Dyrektoriat, Konsulat.",
@@ -106,18 +94,6 @@
       "accepted_answers": [
         "3",
         "trzy"
-      ]
-    },
-    {
-      "id": "napoleon-bonaparte-pierwsze-wygnanie",
-      "text": "Na jaką wyspę wygnano Napoleona za pierwszym razem?",
-      "explanation": "Po pierwszej abdykacji Napoleona zesłano na Elbę.",
-      "selection_type": "single",
-      "answers": [
-        { "text": "Elbę", "is_correct": true },
-        { "text": "Wyspę św. Heleny", "is_correct": false },
-        { "text": "Korsykę", "is_correct": false },
-        { "text": "Maltę", "is_correct": false }
       ]
     },
     {

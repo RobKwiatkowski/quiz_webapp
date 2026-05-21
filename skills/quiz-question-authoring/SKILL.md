@@ -37,6 +37,10 @@ Before editing, read:
 - single: exactly 1 correct answer
 - multiple: at least 2 correct answers
 - open: accepted_answers must be non-empty
+- For open questions, include natural accepted answer variants a child may type.
+  For dates, include both bare dates and phrased forms, for example `1795` and
+  `w 1795`. For short history answers, include common grammatical variants, for
+  example `z dynastii Burbonów`, `z Burbonów`, and `Burbonów`.
 - images may be local /static/... paths or remote URLs
 - keep explanations short and clear
 - avoid duplicate questions across topics
@@ -50,6 +54,10 @@ When editing files:
 
 # Interaction mode
 When creating quiz questions, use a clarification-first workflow.
+
+When the user asks to add or propose quiz questions, first present the proposed
+questions for review and wait for explicit approval before editing JSON files,
+unless the user clearly asks to implement immediately.
 
 If any of the following are missing, ask first:
 - target chapter
