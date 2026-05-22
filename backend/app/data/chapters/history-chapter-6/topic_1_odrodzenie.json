@@ -76,6 +76,10 @@
       "accepted_answers": [
         "11 listopada 1918",
         "11 listopada 1918 roku",
+        "11 listopada w 1918",
+        "11 listopada w 1918 roku",
+        "w 1918",
+        "w 1918 roku",
         "11.11.1918",
         "11/11/1918"
       ],
@@ -89,7 +93,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "józef piłsudski",
-        "piłsudski"
+        "piłsudski",
+        "józefem piłsudskim",
+        "piłsudskim",
+        "józefa piłsudskiego",
+        "piłsudskiego"
       ],
       "answers": []
     },
@@ -102,7 +110,10 @@
       "accepted_answers": [
         "1920",
         "1920 rok",
-        "rok 1920"
+        "1920 roku",
+        "rok 1920",
+        "w 1920",
+        "w 1920 roku"
       ],
       "answers": []
     },
@@ -115,7 +126,10 @@
       "accepted_answers": [
         "1921",
         "1921 rok",
-        "rok 1921"
+        "1921 roku",
+        "rok 1921",
+        "w 1921",
+        "w 1921 roku"
       ],
       "answers": []
     },
@@ -128,6 +142,8 @@
       "accepted_answers": [
         "święto wojska polskiego",
         "swieto wojska polskiego",
+        "świętem wojska polskiego",
+        "swietem wojska polskiego",
         "wojska polskiego"
       ],
       "answers": []
@@ -157,7 +173,10 @@
       "accepted_answers": [
         "lenin",
         "włodzimierz lenin",
-        "wlodzimierz lenin"
+        "wlodzimierz lenin",
+        "włodzimierza lenina",
+        "wlodzimierza lenina",
+        "lenina"
       ],
       "answers": []
     },

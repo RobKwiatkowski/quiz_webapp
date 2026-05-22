@@ -34,7 +34,10 @@
       "accepted_answers": [
         "1792",
         "1792 rok",
-        "rok 1792"
+        "1792 roku",
+        "rok 1792",
+        "w 1792",
+        "w 1792 roku"
       ]
     },
     {
@@ -43,7 +46,10 @@
       "explanation": "Po upadku monarchii Francja stała się republiką.",
       "selection_type": "open",
       "accepted_answers": [
-        "republika"
+        "republika",
+        "republiką",
+        "republike",
+        "republikę"
       ]
     },
     {
@@ -52,7 +58,10 @@
       "explanation": "Takie urządzenie nazywa się gilotyna.",
       "selection_type": "open",
       "accepted_answers": [
-        "gilotyna"
+        "gilotyna",
+        "gilotyną",
+        "gilotyne",
+        "gilotynę"
       ]
     },
     {
@@ -61,7 +70,10 @@
       "explanation": "Takie radykalne stronnictwo nazywamy jakobinami.",
       "selection_type": "open",
       "accepted_answers": [
-        "jakobini"
+        "jakobini",
+        "jakobinami",
+        "jakobinów",
+        "jakobinow"
       ]
     },
     {
@@ -109,7 +121,11 @@
       "accepted_answers": [
         "5",
         "pięć",
-        "piec"
+        "piec",
+        "pięciu",
+        "pieciu",
+        "5 osób",
+        "5 osob"
       ]
     },
     {
@@ -120,8 +136,11 @@
       "accepted_answers": [
         "terror",
         "terrorem",
+        "terroru",
         "rzady terroru",
-        "rządy terroru"
+        "rządy terroru",
+        "rządami terroru",
+        "rzadami terroru"
       ]
     },
     {

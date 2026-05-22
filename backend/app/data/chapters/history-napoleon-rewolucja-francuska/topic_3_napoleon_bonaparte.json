@@ -34,7 +34,10 @@
       "accepted_answers": [
         "1799",
         "1799 rok",
-        "rok 1799"
+        "1799 roku",
+        "rok 1799",
+        "w 1799",
+        "w 1799 roku"
       ]
     },
     {
@@ -93,7 +96,10 @@
       "selection_type": "open",
       "accepted_answers": [
         "3",
-        "trzy"
+        "trzy",
+        "trzech",
+        "3 osoby",
+        "trzy osoby"
       ]
     },
     {
@@ -105,7 +111,12 @@
         "wielką brytanię",
         "wielka brytanie",
         "wielka brytania",
-        "wielką brytania"
+        "wielką brytania",
+        "wielkiej brytanii",
+        "na wielką brytanię",
+        "na wielka brytanie",
+        "na wielką brytanie",
+        "na wielka brytania"
       ]
     },
     {
@@ -162,7 +173,9 @@
       "explanation": "Takie siłowe przejęcie władzy nazywa się zamachem stanu.",
       "selection_type": "open",
       "accepted_answers": [
-        "zamach stanu"
+        "zamach stanu",
+        "zamachem stanu",
+        "zamachu stanu"
       ]
     },
     {
@@ -171,7 +184,9 @@
       "explanation": "Takie ostrze nazywa się bagnet.",
       "selection_type": "open",
       "accepted_answers": [
-        "bagnet"
+        "bagnet",
+        "bagnetem",
+        "bagnetu"
       ]
     }
   ]

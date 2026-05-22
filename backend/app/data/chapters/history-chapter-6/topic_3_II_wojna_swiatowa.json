@@ -11,6 +11,10 @@
       "accepted_answers": [
         "1 września 1939",
         "1 wrzesnia 1939",
+        "1 września 1939 roku",
+        "1 wrzesnia 1939 roku",
+        "w 1939",
+        "w 1939 roku",
         "1.09.1939",
         "1/09/1939",
         "01.09.1939",
@@ -38,7 +42,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "adolf hitler",
-        "hitler"
+        "hitler",
+        "adolfem hitlerem",
+        "hitlerem",
+        "adolfa hitlera",
+        "hitlera"
       ]
     },
     {
@@ -191,7 +199,12 @@
       "explanation": "II Wojna Światowa zakończyła się w 1945 roku.",
       "selection_type": "open",
       "accepted_answers": [
-        "1945"
+        "1945",
+        "1945 rok",
+        "1945 roku",
+        "rok 1945",
+        "w 1945",
+        "w 1945 roku"
       ]
     }
   ]

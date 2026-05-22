@@ -16,8 +16,14 @@
         "jan pawel ii",
         "papież jan paweł ii",
         "papiez jan pawel ii",
+        "papieżem janem pawłem ii",
+        "papiezem janem pawlem ii",
+        "jana pawła ii",
+        "jana pawla ii",
         "karol wojtyła",
-        "karol wojtyla"
+        "karol wojtyla",
+        "karolem wojtyłą",
+        "karolem wojtyla"
       ]
     },
     {
@@ -30,7 +36,15 @@
         "karol wojtyła",
         "karol wojtyla",
         "karol józef wojtyła",
-        "karol jozef wojtyla"
+        "karol jozef wojtyla",
+        "karolem wojtyłą",
+        "karolem wojtyla",
+        "karolem józefem wojtyłą",
+        "karolem jozefem wojtyla",
+        "karola wojtyłę",
+        "karola wojtyle",
+        "karola józefa wojtyłę",
+        "karola jozefa wojtyle"
       ]
     },
     {
@@ -40,7 +54,12 @@
       "explanation": "Jan Paweł II został wybrany na papieża w 1978 roku.",
       "selection_type": "open",
       "accepted_answers": [
-        "1978"
+        "1978",
+        "1978 rok",
+        "1978 roku",
+        "rok 1978",
+        "w 1978",
+        "w 1978 roku"
       ]
     },
     {
@@ -65,7 +84,8 @@
       "accepted_answers": [
         "teologia",
         "teologią",
-        "teologie"
+        "teologie",
+        "teologii"
       ]
     },
     {

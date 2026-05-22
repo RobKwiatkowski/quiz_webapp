@@ -11,7 +11,10 @@
       "accepted_answers": [
         "1921",
         "1921 rok",
-        "rok 1921"
+        "1921 roku",
+        "rok 1921",
+        "w 1921",
+        "w 1921 roku"
       ]
     },
     {
@@ -22,7 +25,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "eugeniusz kwiatkowski",
-        "kwiatkowski"
+        "kwiatkowski",
+        "eugeniuszem kwiatkowskim",
+        "kwiatkowskim",
+        "eugeniusza kwiatkowskiego",
+        "kwiatkowskiego"
       ]
     },
     {
@@ -34,7 +41,10 @@
       "accepted_answers": [
         "1937",
         "1937 rok",
-        "rok 1937"
+        "1937 roku",
+        "rok 1937",
+        "w 1937",
+        "w 1937 roku"
       ]
     },
     {
@@ -45,7 +55,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "węgiel",
-        "wegiel"
+        "wegiel",
+        "węgla",
+        "wegla",
+        "węglem",
+        "weglem"
       ]
     },
     {
@@ -56,7 +70,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "portu",
-        "port"
+        "port",
+        "własnego portu",
+        "wlasnego portu",
+        "własnego portu morskiego",
+        "wlasnego portu morskiego"
       ]
     },
     {
@@ -66,7 +84,10 @@
       "explanation": "Był to Centralny Okręg Przemysłowy.",
       "selection_type": "open",
       "accepted_answers": [
-        "centralny okręg przemysłowy"
+        "centralny okręg przemysłowy",
+        "centralnego okręgu przemysłowego",
+        "centralnym okręgiem przemysłowym",
+        "cop"
       ]
     },
     {
@@ -145,6 +166,19 @@
         { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie przez Polskę niepodległości", "position": 2 },
         { "id": "wojna-z-rosja-sowiecka", "text": "wybuch wojny pomiędzy Polską a Rosją Sowiecką", "position": 3 },
         { "id": "budowa-portu-gdynia", "text": "rozpoczęcie budowy portu w Gdyni", "position": 4 }
+      ]
+    },
+    {
+      "id": "kolejnosc-gospodarka-ii-rp",
+      "text": "Ułóż wydarzenia gospodarcze II Rzeczypospolitej w kolejności chronologicznej.",
+      "image": null,
+      "explanation": "Poprawna kolejność to: odzyskanie niepodległości, zaślubiny Polski z morzem, rozpoczęcie budowy portu w Gdyni, rozpoczęcie budowy Centralnego Okręgu Przemysłowego.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie przez Polskę niepodległości", "position": 1 },
+        { "id": "zaslubiny-z-morzem", "text": "zaślubiny Polski z morzem", "position": 2 },
+        { "id": "budowa-portu-gdynia", "text": "rozpoczęcie budowy portu w Gdyni", "position": 3 },
+        { "id": "budowa-cop", "text": "rozpoczęcie budowy Centralnego Okręgu Przemysłowego", "position": 4 }
       ]
     },
     {

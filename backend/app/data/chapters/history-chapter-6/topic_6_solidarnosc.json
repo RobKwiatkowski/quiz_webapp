@@ -13,7 +13,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "lech wałęsa",
-        "lech walesa"
+        "lech walesa",
+        "lechem wałęsą",
+        "lechem walesa",
+        "lecha wałęsę",
+        "lecha walese"
       ]
     },
     {
@@ -50,7 +54,11 @@
         "solidarność",
         "solidarnosc",
         "nszz solidarność",
-        "nszz solidarnosc"
+        "nszz solidarnosc",
+        "solidarnością",
+        "solidarnoscia",
+        "nszz solidarnością",
+        "nszz solidarnoscia"
       ]
     },
     {
@@ -71,7 +79,12 @@
       "explanation": "Stan wojenny wprowadzono w 1981 roku.",
       "selection_type": "open",
       "accepted_answers": [
-        "1981"
+        "1981",
+        "1981 rok",
+        "1981 roku",
+        "rok 1981",
+        "w 1981",
+        "w 1981 roku"
       ]
     },
     {
@@ -80,7 +93,12 @@
       "explanation": "Komunizm w Polsce upadł po obradach Okrągłego Stołu.",
       "selection_type": "open",
       "accepted_answers": [
-        "1989"
+        "1989",
+        "1989 rok",
+        "1989 roku",
+        "rok 1989",
+        "w 1989",
+        "w 1989 roku"
       ]
     },
     {
@@ -92,7 +110,9 @@
         "Polska Rzeczpospolita Ludowa",
         "polska rzeczpospolita ludowa",
         "Polską Rzeczpospolitą Ludową",
-        "polską rzeczpospolitą ludową"
+        "polską rzeczpospolitą ludową",
+        "Polskiej Rzeczpospolitej Ludowej",
+        "polskiej rzeczpospolitej ludowej"
       ]
     },
     {
@@ -119,6 +139,21 @@
         { "id": "zalozenie-solidarnosci", "text": "założenie Solidarności", "position": 3 },
         { "id": "stan-wojenny", "text": "stan wojenny", "position": 4 },
         { "id": "obrady-okraglego-stolu", "text": "obrady Okrągłego Stołu", "position": 5 }
+      ]
+    },
+    {
+      "id": "kolejnosc-polska-1914-1989",
+      "text": "Ułóż wydarzenia z historii Polski w kolejności chronologicznej.",
+      "image": null,
+      "explanation": "Poprawna kolejność to: wybuch I wojny światowej, odzyskanie niepodległości, Bitwa Warszawska, wybuch II wojny światowej, wybór Jana Pawła II na papieża, obrady Okrągłego Stołu.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "wybuch-i-wojny", "text": "wybuch I wojny światowej", "position": 1 },
+        { "id": "odzyskanie-niepodleglosci", "text": "odzyskanie przez Polskę niepodległości", "position": 2 },
+        { "id": "bitwa-warszawska", "text": "Bitwa Warszawska", "position": 3 },
+        { "id": "wybuch-ii-wojny", "text": "wybuch II wojny światowej", "position": 4 },
+        { "id": "jan-pawel-ii-papiez", "text": "wybór Jana Pawła II na papieża", "position": 5 },
+        { "id": "okragly-stol", "text": "obrady Okrągłego Stołu", "position": 6 }
       ]
     },
     {

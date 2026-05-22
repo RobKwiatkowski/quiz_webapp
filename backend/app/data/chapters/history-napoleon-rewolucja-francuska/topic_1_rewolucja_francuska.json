@@ -8,7 +8,9 @@
       "explanation": "Gdy wybuchła Rewolucja Francuska, we Francji panował Ludwik XVI.",
       "selection_type": "open",
       "accepted_answers": [
-        "ludwik xvi"
+        "ludwik xvi",
+        "ludwikiem xvi",
+        "ludwika xvi"
       ]
     },
     {
@@ -17,7 +19,10 @@
       "explanation": "Takie zgromadzenie nazywamy Stanami Generalnymi.",
       "selection_type": "open",
       "accepted_answers": [
-        "stany generalne"
+        "stany generalne",
+        "stanami generalnymi",
+        "stanów generalnych",
+        "stanow generalnych"
       ]
     },
     {
@@ -27,7 +32,12 @@
       "selection_type": "open",
       "accepted_answers": [
         "burbonowie",
-        "burbonów"
+        "burbonów",
+        "burbonow",
+        "z dynastii burbonów",
+        "z dynastii burbonow",
+        "z burbonów",
+        "z burbonow"
       ]
     },
     {
@@ -74,6 +84,10 @@
       "accepted_answers": [
         "14 lipca 1789",
         "14 lipca 1789 roku",
+        "14 lipca w 1789",
+        "14 lipca w 1789 roku",
+        "w 1789",
+        "w 1789 roku",
         "14.07.1789",
         "14/07/1789"
       ]
@@ -86,7 +100,10 @@
       "accepted_answers": [
         "1791",
         "1791 rok",
-        "rok 1791"
+        "1791 roku",
+        "rok 1791",
+        "w 1791",
+        "w 1791 roku"
       ]
     },
     {
@@ -95,7 +112,10 @@
       "explanation": "Po uchwaleniu konstytucji Francja stała się monarchią konstytucyjną.",
       "selection_type": "open",
       "accepted_answers": [
-        "monarchia konstytucyjna"
+        "monarchia konstytucyjna",
+        "monarchię konstytucyjną",
+        "monarchie konstytucyjna",
+        "monarchią konstytucyjną"
       ]
     },
     {
@@ -117,7 +137,10 @@
       "explanation": "Na obrazie jest Maria Antonina.",
       "selection_type": "open",
       "accepted_answers": [
-        "maria antonina"
+        "maria antonina",
+        "marią antoniną",
+        "marię antoninę",
+        "marie antonine"
       ]
     },
     {
@@ -128,8 +151,11 @@
       "selection_type": "open",
       "accepted_answers": [
         "zdobycie bastylii",
+        "zdobyciem bastylii",
         "szturm na bastylie",
-        "walka o bastylie"
+        "szturm na bastylię",
+        "walka o bastylie",
+        "walka o bastylię"
       ]
     },
     {
@@ -138,7 +164,10 @@
       "explanation": "Trójpodział władzy we Francji wprowadziła konstytucja.",
       "selection_type": "open",
       "accepted_answers": [
-        "konstytucja"
+        "konstytucja",
+        "konstytucją",
+        "konstytucje",
+        "konstytucję"
       ]
     },
     {
