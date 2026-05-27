@@ -229,7 +229,7 @@ function getFinalGrade(currentScore, totalQuestions) {
     return "3";
   }
 
-  if (percentage <= 90) {
+  if (percentage < 90) {
     return "4";
   }
 
