@@ -60,6 +60,18 @@ body {
   line-height: 1.4;
 }
 
+.site-thanks {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-thanks p {
+  margin: 0;
+}
+
 #status {
   margin-top: 20px;
 }
