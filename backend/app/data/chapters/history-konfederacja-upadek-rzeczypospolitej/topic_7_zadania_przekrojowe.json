@@ -1,0 +1,185 @@
+{
+  "topic_id": "zadania_przekrojowe",
+  "topic_title": "Zadania przekrojowe",
+  "questions": [
+    {
+      "id": "przekrojowe-wettinowie-pierwszy-rozbior",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Najpierw Rzeczpospolitą rządzili Wettinowie, później królem został Stanisław August Poniatowski. Konflikty wewnętrzne i wpływy Rosji doprowadziły do konfederacji barskiej i I rozbioru.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "august-ii-krolem",
+          "text": "August II Mocny zostaje królem Rzeczypospolitej.",
+          "position": 1
+        },
+        {
+          "id": "sejm-niemy",
+          "text": "Sejm niemy i ugoda króla ze szlachtą.",
+          "position": 2
+        },
+        {
+          "id": "wybor-poniatowskiego",
+          "text": "Wybór Stanisława Augusta Poniatowskiego na króla.",
+          "position": 3
+        },
+        {
+          "id": "konfederacja-barska",
+          "text": "Konfederacja barska.",
+          "position": 4
+        },
+        {
+          "id": "pierwszy-rozbior",
+          "text": "Pierwszy rozbiór Polski.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "przekrojowe-pierwszy-rozbior-oswiecenie",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Za panowania Stanisława Augusta rozwijała się kultura, ale państwo było osłabiane przez konflikty i wpływy Rosji. Po I rozbiorze powstała Komisja Edukacji Narodowej.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "wybor-poniatowskiego",
+          "text": "Wybór Stanisława Augusta Poniatowskiego na króla.",
+          "position": 1
+        },
+        {
+          "id": "teatr-narodowy",
+          "text": "Powstanie Teatru Narodowego.",
+          "position": 2
+        },
+        {
+          "id": "konfederacja-barska",
+          "text": "Konfederacja barska.",
+          "position": 3
+        },
+        {
+          "id": "pierwszy-rozbior",
+          "text": "Pierwszy rozbiór Polski.",
+          "position": 4
+        },
+        {
+          "id": "ken",
+          "text": "Ustanowienie Komisji Edukacji Narodowej.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "przekrojowe-oswiecenie-sejm-wielki",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Najpierw rozwijały się kultura i edukacja oświecenia, a później Sejm Wielki próbował naprawić państwo przez reformy.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "teatr-narodowy",
+          "text": "Powstanie Teatru Narodowego.",
+          "position": 1
+        },
+        {
+          "id": "ken",
+          "text": "Ustanowienie Komisji Edukacji Narodowej.",
+          "position": 2
+        },
+        {
+          "id": "sejm-wielki",
+          "text": "Rozpoczęcie obrad Sejmu Wielkiego.",
+          "position": 3
+        },
+        {
+          "id": "prawo-o-miastach",
+          "text": "Uchwalenie prawa o miastach.",
+          "position": 4
+        },
+        {
+          "id": "konstytucja-3-maja",
+          "text": "Uchwalenie Konstytucji 3 maja.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "przekrojowe-sejm-wielki-powstanie-kosciuszkowskie",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Po Konstytucji 3 maja przeciwnicy reform doprowadzili do konfederacji targowickiej i II rozbioru. Potem Tadeusz Kościuszko rozpoczął powstanie przeciwko Rosji.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "konstytucja-3-maja",
+          "text": "Uchwalenie Konstytucji 3 maja.",
+          "position": 1
+        },
+        {
+          "id": "konfederacja-targowicka",
+          "text": "Konfederacja targowicka.",
+          "position": 2
+        },
+        {
+          "id": "drugi-rozbior",
+          "text": "Drugi rozbiór Polski.",
+          "position": 3
+        },
+        {
+          "id": "wybuch-powstania",
+          "text": "Wybuch powstania kościuszkowskiego.",
+          "position": 4
+        },
+        {
+          "id": "raclawice",
+          "text": "Bitwa pod Racławicami.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "przekrojowe-pierwszy-rozbior-sejm-wielki",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Po I rozbiorze powstała Rada Nieustająca. Później Sejm Wielki próbował wzmocnić państwo, ale po walce przeciwników reform doszło do II rozbioru.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "pierwszy-rozbior",
+          "text": "Pierwszy rozbiór Polski.",
+          "position": 1
+        },
+        {
+          "id": "rada-nieustajaca",
+          "text": "Powołanie Rady Nieustającej.",
+          "position": 2
+        },
+        {
+          "id": "sejm-wielki",
+          "text": "Rozpoczęcie obrad Sejmu Wielkiego.",
+          "position": 3
+        },
+        {
+          "id": "konstytucja-3-maja",
+          "text": "Uchwalenie Konstytucji 3 maja.",
+          "position": 4
+        },
+        {
+          "id": "drugi-rozbior",
+          "text": "Drugi rozbiór Polski.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "przekrojowe-daty-wydarzen",
+      "text": "Dopasuj datę do wydarzenia.",
+      "explanation": "Daty pokazują drogę od osłabienia Rzeczypospolitej w czasach saskich do jej upadku po trzecim rozbiorze.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "sejm-niemy-1717", "left": "1717", "right": "sejm niemy" },
+        { "id": "wybor-poniatowskiego-1764", "left": "1764", "right": "wybór Stanisława Augusta Poniatowskiego" },
+        { "id": "pierwszy-rozbior-1772", "left": "1772", "right": "pierwszy rozbiór Polski" },
+        { "id": "konstytucja-1791", "left": "1791", "right": "uchwalenie Konstytucji 3 maja" },
+        { "id": "powstanie-kosciuszkowskie-1794", "left": "1794", "right": "wybuch powstania kościuszkowskiego" },
+        { "id": "trzeci-rozbior-1795", "left": "1795", "right": "trzeci rozbiór Polski" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "topic_id": "sejm_wielki_i_konstytucja_3_maja",
+  "topic_title": "Sejm Wielki i Konstytucja 3 maja",
+  "questions": [
+    {
+      "id": "sejm-wielki-nazwa-1788",
+      "text": "Jak nazywał się sejm zebrany w 1788 roku?",
+      "explanation": "Sejm zebrany w 1788 roku nazywano Sejmem Wielkim albo Sejmem Czteroletnim.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Sejm Wielki", "is_correct": true },
+        { "text": "Sejm Czteroletni", "is_correct": true },
+        { "text": "Sejm Konstytucyjny", "is_correct": false },
+        { "text": "Sejm Wieloletni", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-reformy",
+      "text": "Jakie reformy wprowadził Sejm Wielki?",
+      "explanation": "Sejm Wielki powiększył armię i uchwalił prawo o miastach.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "powiększenie armii", "is_correct": true },
+        { "text": "prawo o miastach", "is_correct": true },
+        { "text": "prawa człowieka", "is_correct": false },
+        { "text": "kodeks cywilny", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-lata-obrad",
+      "text": "Ile lat obradował Sejm Wielki?",
+      "explanation": "Sejm Wielki obradował 4 lata, dlatego nazywa się go także Sejmem Czteroletnim.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "4",
+        "4 lata",
+        "cztery",
+        "cztery lata"
+      ]
+    },
+    {
+      "id": "sejm-wielki-konstytucja-data",
+      "text": "Kiedy dokładnie przyjęto konstytucję Polski?",
+      "explanation": "Konstytucję Polski przyjęto 3 maja 1791 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "3 maja 1791",
+        "3 maja 1791 roku",
+        "3.05.1791",
+        "03.05.1791",
+        "3/05/1791",
+        "03/05/1791"
+      ]
+    },
+    {
+      "id": "sejm-wielki-co-wprowadzala-konstytucja",
+      "text": "Co wprowadzała Konstytucja 3 maja?",
+      "explanation": "Konstytucja 3 maja znosiła wolną elekcję i liberum veto, łączyła Litwę i Polskę oraz wprowadzała trójpodział władzy.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "zniesienie wolnej elekcji", "is_correct": true },
+        { "text": "zniesienie liberum veto", "is_correct": true },
+        { "text": "zniesienie podziału na Litwę i Polskę", "is_correct": true },
+        { "text": "wprowadzenie trójpodziału władzy", "is_correct": true },
+        { "text": "zlikwidowanie sejmu", "is_correct": false },
+        { "text": "zmuszenie wojska rosyjskiego do wycofania się z terenów Polski", "is_correct": false },
+        { "text": "zniesienie stanu szlacheckiego", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-trojpodzial-wladzy",
+      "text": "Co wprowadzał trójpodział władzy w Polsce?",
+      "explanation": "Trójpodział władzy oznaczał władzę ustawodawczą, wykonawczą oraz niezawisłe sądy.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "władzę ustawodawczą", "is_correct": true },
+        { "text": "władzę wykonawczą", "is_correct": true },
+        { "text": "niezawisłe sądy", "is_correct": true },
+        { "text": "władzę policyjną", "is_correct": false },
+        { "text": "niezależne wojsko", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-magnaci-przeciw-reformom",
+      "text": "Z jakim krajem związali się polscy bogacze, czyli magnaci, przeciwko reformom w Polsce?",
+      "explanation": "Magnaci przeciwni reformom związali się z Rosją.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja",
+        "rosją",
+        "z rosja",
+        "z rosją",
+        "z rosjanami",
+        "rosji",
+        "z rosji"
+      ]
+    },
+    {
+      "id": "sejm-wielki-katarzyna-pomoc-zdrajcom",
+      "text": "Kto pomógł polskim zdrajcom, czyli bogaczom walczącym przeciwko reformom?",
+      "explanation": "Magnatom przeciwnym reformom pomogła caryca Rosji Katarzyna II.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "caryca Rosji Katarzyna II", "is_correct": true },
+        { "text": "król Prus Fryderyk Wilhelm II", "is_correct": false },
+        { "text": "cesarz Austrii Leopold II", "is_correct": false },
+        { "text": "król Francji Ludwik XVI", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-organizacja-magnatow-rok",
+      "text": "W którym roku polscy magnaci powołali organizację do walki z polską władzą?",
+      "explanation": "Magnaci przeciwni reformom powołali konfederację targowicką w 1792 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1792",
+        "1792 rok",
+        "1792 roku",
+        "w 1792",
+        "w 1792 roku"
+      ]
+    },
+    {
+      "id": "sejm-wielki-konfederacja-targowicka",
+      "text": "Jak nazywa się organizacja założona przez zdrajców polskich do walki z polską władzą?",
+      "explanation": "Organizacja założona przez przeciwników reform to konfederacja targowicka.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "konfederacja targowicka",
+        "konfederacje targowicka",
+        "konfederację targowicką",
+        "targowica",
+        "konfederacja w targowicy"
+      ]
+    },
+    {
+      "id": "sejm-wielki-krol-po-ataku-rosji",
+      "text": "Co zrobił król Stanisław August, gdy caryca Katarzyna pomogła zdrajcom Polski atakując Polskę?",
+      "explanation": "Stanisław August zaprzestał walki i przystąpił do konfederacji targowickiej.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zaprzestał walki i poparł zdrajców.", "is_correct": true },
+        { "text": "Walczył do końca i zginął w bitwie pod Dubienką.", "is_correct": false },
+        { "text": "Wycofał wojska i bronił Warszawy aż do przegranej z armią rosyjską.", "is_correct": false },
+        { "text": "Przeprowadził kontratak i zatrzymał armię rosyjską.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-drugi-rozbior-rok",
+      "text": "Kiedy dokonano drugiego rozbioru Polski?",
+      "explanation": "Drugiego rozbioru Polski dokonano w 1793 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1793",
+        "1793 rok",
+        "1793 roku",
+        "w 1793",
+        "w 1793 roku"
+      ]
+    },
+    {
+      "id": "sejm-wielki-drugi-rozbior-panstwa",
+      "text": "Jakie kraje brały udział w drugim rozbiorze Polski?",
+      "explanation": "W drugim rozbiorze Polski brały udział Rosja i Prusy.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Rosja", "is_correct": true },
+        { "text": "Prusy", "is_correct": true },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Szwecja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-drugi-rozbior-bez-austrii",
+      "text": "Jaki kraj nie uczestniczył w drugim rozbiorze Polski?",
+      "explanation": "Austria nie uczestniczyła w drugim rozbiorze Polski. Wzięły w nim udział Rosja i Prusy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Austria", "is_correct": true },
+        { "text": "Rosja", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Szwecja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-poznan-zaborca",
+      "text": "Jaki kraj zaborczy zabrał Poznań?",
+      "explanation": "Poznań w drugim rozbiorze zabrały Prusy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Prusy", "is_correct": true },
+        { "text": "Rosja", "is_correct": false },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Szwecja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-targowica-zaborca",
+      "text": "Jaki kraj zaborczy zabrał Targowicę?",
+      "explanation": "Targowicę w drugim rozbiorze zabrała Rosja.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rosja", "is_correct": true },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Szwecja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-gdansk-zaborca",
+      "text": "Jaki kraj zaborczy zabrał Gdańsk?",
+      "explanation": "Gdańsk w drugim rozbiorze zabrały Prusy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Prusy", "is_correct": true },
+        { "text": "Rosja", "is_correct": false },
+        { "text": "Austria", "is_correct": false },
+        { "text": "Szwecja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "sejm-wielki-kolejnosc-reform-i-rozbioru",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Najpierw zebrał się Sejm Wielki, potem uchwalono prawo o miastach i Konstytucję 3 maja. Następnie powstała konfederacja targowicka, a rok później doszło do II rozbioru.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "sejm-wielki-1788",
+          "text": "Zebranie Sejmu Wielkiego.",
+          "position": 1
+        },
+        {
+          "id": "prawo-o-miastach",
+          "text": "Uchwalenie prawa o miastach.",
+          "position": 2
+        },
+        {
+          "id": "konstytucja-3-maja",
+          "text": "Uchwalenie Konstytucji 3 maja.",
+          "position": 3
+        },
+        {
+          "id": "konfederacja-targowicka",
+          "text": "Zawiązanie konfederacji targowickiej.",
+          "position": 4
+        },
+        {
+          "id": "drugi-rozbior",
+          "text": "Drugi rozbiór Polski.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "sejm-wielki-kolejnosc-targowica",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Magnaci przeciwni reformom związali się z Rosją, potem powołali konfederację targowicką. Katarzyna II wsparła ich wojskiem, król przestał walczyć, a skutkiem był II rozbiór Polski.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "magnaci-i-rosja",
+          "text": "Polscy magnaci przeciwni reformom wiążą się z Rosją.",
+          "position": 1
+        },
+        {
+          "id": "powolanie-targowicy",
+          "text": "Powołanie konfederacji targowickiej.",
+          "position": 2
+        },
+        {
+          "id": "pomoc-katarzyny",
+          "text": "Katarzyna II pomaga przeciwnikom reform i Rosja atakuje Polskę.",
+          "position": 3
+        },
+        {
+          "id": "krol-przestaje-walczyc",
+          "text": "Król Stanisław August zaprzestaje walki.",
+          "position": 4
+        },
+        {
+          "id": "skutek-drugi-rozbior",
+          "text": "Dochodzi do drugiego rozbioru Polski.",
+          "position": 5
+        }
+      ]
+    }
+  ]
+}

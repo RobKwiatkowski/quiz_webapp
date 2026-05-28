@@ -1,0 +1,239 @@
+{
+  "topic_id": "powstanie_kosciuszkowskie",
+  "topic_title": "Powstanie kościuszkowskie",
+  "questions": [
+    {
+      "id": "kosciuszko-sytuacja-po-drugim-rozbiorze",
+      "text": "Które zdania są prawdziwe?",
+      "explanation": "Po drugim rozbiorze Stanisław August Poniatowski utrzymał się na tronie, ale w kraju faktycznie rządził ambasador Rosji.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Po drugim rozbiorze na tronie utrzymał się Stanisław August Poniatowski.", "is_correct": true },
+        { "text": "W kraju faktycznie rządził ambasador Rosji.", "is_correct": true },
+        { "text": "Po drugim rozbiorze tron stracił Stanisław August.", "is_correct": false },
+        { "text": "W kraju faktycznie rządzili ambasadorzy Rosji i Prus.", "is_correct": false },
+        { "text": "Austria wprowadziła swoje wojska na teren Polski.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-naczelnik-powstania",
+      "text": "Kto stanął na czele powstania przeciwko Rosji?",
+      "explanation": "Na czele powstania przeciwko Rosji stanął Tadeusz Kościuszko.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "tadeusz kosciuszko",
+        "tadeusz kościuszko",
+        "kosciuszko",
+        "kościuszko",
+        "tadeusza kosciuszki",
+        "tadeusza kościuszki"
+      ]
+    },
+    {
+      "id": "kosciuszko-powstanie-rok",
+      "text": "W którym roku wybuchło powstanie kościuszkowskie?",
+      "explanation": "Powstanie kościuszkowskie wybuchło w 1794 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1794",
+        "1794 rok",
+        "1794 roku",
+        "w 1794",
+        "w 1794 roku"
+      ]
+    },
+    {
+      "id": "kosciuszko-miasto-ogloszenia-powstania",
+      "text": "W którym mieście ogłoszono wybuch powstania przeciwko Rosji?",
+      "explanation": "Wybuch powstania ogłoszono w Krakowie.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Kraków", "is_correct": true },
+        { "text": "Warszawa", "is_correct": false },
+        { "text": "Poznań", "is_correct": false },
+        { "text": "Toruń", "is_correct": false },
+        { "text": "Gdańsk", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-wojna-o-niepodleglosc-usa",
+      "text": "Tadeusz Kościuszko walczył w wojnie o niepodległość którego kraju?",
+      "explanation": "Tadeusz Kościuszko walczył w wojnie o niepodległość Stanów Zjednoczonych.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "USA", "is_correct": true },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Szwecji", "is_correct": false },
+        { "text": "Francji", "is_correct": false },
+        { "text": "Hiszpanii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-kosynierzy",
+      "text": "Jak nazywamy oddziały chłopów uzbrojone w kosy?",
+      "explanation": "Oddziały chłopów uzbrojone w kosy nazywamy kosynierami.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "kosynierzy",
+        "kosynierami",
+        "kosynierow",
+        "kosynierów",
+        "oddzialy kosynierow",
+        "oddziały kosynierów"
+      ]
+    },
+    {
+      "id": "kosciuszko-pierwsza-bitwa",
+      "text": "Gdzie stoczyła się pierwsza bitwa powstania kościuszkowskiego?",
+      "explanation": "Pierwsza bitwa powstania kościuszkowskiego stoczyła się pod Racławicami.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Racławice", "is_correct": true },
+        { "text": "Dubienka", "is_correct": false },
+        { "text": "Raszyn", "is_correct": false },
+        { "text": "Tarczyn", "is_correct": false },
+        { "text": "Maciejowice", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-zwyciezca-raclawice",
+      "text": "Kto zwyciężył w bitwie pod Racławicami?",
+      "explanation": "W bitwie pod Racławicami zwyciężyli powstańcy kościuszkowscy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "powstańcy kościuszkowscy", "is_correct": true },
+        { "text": "Rosjanie", "is_correct": false },
+        { "text": "powstańcy wielkopolscy", "is_correct": false },
+        { "text": "Prusy", "is_correct": false },
+        { "text": "Szwedzi", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-upadek-powstania-rok",
+      "text": "W którym roku upadło powstanie kościuszkowskie?",
+      "explanation": "Powstanie kościuszkowskie upadło w 1794 roku.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "1794", "is_correct": true },
+        { "text": "1792", "is_correct": false },
+        { "text": "1795", "is_correct": false },
+        { "text": "1799", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-trzeci-rozbior-rok",
+      "text": "W którym roku dokonano trzeciego rozbioru Polski?",
+      "explanation": "Trzeciego rozbioru Polski dokonano w 1795 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1795",
+        "1795 rok",
+        "1795 roku",
+        "w 1795",
+        "w 1795 roku"
+      ]
+    },
+    {
+      "id": "kosciuszko-trzeci-rozbior-terytoria",
+      "text": "Dopasuj teren do kraju zaborczego, który go zajął.",
+      "explanation": "Po trzecim rozbiorze Warszawę i Mazowsze zajęły Prusy, Kraków Austria, a Litwę i Wołyń Rosja.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "warszawa-prusy", "left": "Warszawa", "right": "Prusy" },
+        { "id": "krakow-austria", "left": "Kraków", "right": "Austria" },
+        { "id": "litwa-rosja", "left": "Litwa", "right": "Rosja" },
+        { "id": "mazowsze-prusy", "left": "Mazowsze", "right": "Prusy" },
+        { "id": "wolyn-rosja", "left": "Wołyń", "right": "Rosja" }
+      ]
+    },
+    {
+      "id": "kosciuszko-los-stanislawa-augusta-po-rozbiorze",
+      "text": "Co się stało z królem Stanisławem Augustem Poniatowskim po trzecim rozbiorze Polski?",
+      "explanation": "Po trzecim rozbiorze Polski Stanisław August Poniatowski zrzekł się korony.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zrzekł się korony.", "is_correct": true },
+        { "text": "Uciekł na emigrację.", "is_correct": false },
+        { "text": "Dostał się do niewoli.", "is_correct": false },
+        { "text": "Zginął w bitwie o Warszawę.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-portret",
+      "text": "Kto to?",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Karl_G_Schweikart_-_Tadeusz_Ko%C5%9Bciuszko_(%C3%96aL).jpg",
+      "explanation": "Na obrazie jest Tadeusz Kościuszko.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "tadeusz kosciuszko",
+        "tadeusz kościuszko",
+        "kosciuszko",
+        "kościuszko",
+        "tadeusza kosciuszke",
+        "tadeusza kościuszkę",
+        "tadeuszem kosciuszka",
+        "tadeuszem kościuszką"
+      ]
+    },
+    {
+      "id": "kosciuszko-portret-stanislaw-august",
+      "text": "Kto to?",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_August_Poniatowski-coronation_portrait.PNG",
+      "explanation": "Na obrazie jest Stanisław August Poniatowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "stanislaw august poniatowski",
+        "stanisław august poniatowski",
+        "stanislaw august",
+        "stanisław august",
+        "poniatowski",
+        "stanislawa augusta poniatowskiego",
+        "stanisława augusta poniatowskiego",
+        "stanislawa augusta",
+        "stanisława augusta"
+      ]
+    },
+    {
+      "id": "kosciuszko-powstanie-wielkopolskie-dabrowski",
+      "text": "Kto stanął na czele powstania wielkopolskiego?",
+      "explanation": "Na czele powstania wielkopolskiego stanął Jan Henryk Dąbrowski.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Jan Henryk Dąbrowski", "is_correct": true },
+        { "text": "Jan Józef Dąbrowski", "is_correct": false },
+        { "text": "Henryk Jan Dąbrowski", "is_correct": false },
+        { "text": "Jan Henryk Dobrzański", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kosciuszko-uniwersal-polaniecki",
+      "text": "Jaki dokument wydał Kościuszko, aby zachęcić chłopów do walki w powstaniu?",
+      "explanation": "Kościuszko wydał Uniwersał połaniecki, aby zachęcić chłopów do walki.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "uniwersal polaniecki",
+        "uniwersał połaniecki",
+        "uniwersal połaniecki",
+        "uniwersał polaniecki",
+        "uniwersalu polanieckiego",
+        "uniwersału połanieckiego",
+        "uniwersal z polanca",
+        "uniwersał z połanca",
+        "uniwersal z połanca",
+        "uniwersał z polanca"
+      ]
+    },
+    {
+      "id": "kosciuszko-kopiec-miasto",
+      "text": "W którym mieście znajduje się kopiec Kościuszki?",
+      "explanation": "Kopiec Kościuszki znajduje się w Krakowie.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "w Krakowie", "is_correct": true },
+        { "text": "w Warszawie", "is_correct": false },
+        { "text": "w Gdańsku", "is_correct": false },
+        { "text": "w Toruniu", "is_correct": false }
+      ]
+    }
+  ]
+}
