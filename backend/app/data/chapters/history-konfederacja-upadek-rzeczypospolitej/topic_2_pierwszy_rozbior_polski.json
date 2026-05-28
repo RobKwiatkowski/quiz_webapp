@@ -61,6 +61,203 @@
         { "text": "szwedzkiej", "is_correct": false },
         { "text": "austriackiej", "is_correct": false }
       ]
+    },
+    {
+      "id": "pierwszy-rozbior-prawa-kardynalne",
+      "text": "Jak nazwano prawa wprowadzone w Polsce pod naciskiem Rosji?",
+      "explanation": "Prawa wprowadzone pod naciskiem Rosji nazwano prawami kardynalnymi.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "prawa kardynalne", "is_correct": true },
+        { "text": "prawa karne", "is_correct": false },
+        { "text": "prawa królewskie", "is_correct": false },
+        { "text": "prawa kuriozalne", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-konfederacja-barska-rok",
+      "text": "W którym roku zawiązała się konfederacja barska?",
+      "explanation": "Konfederacja barska zawiązała się w 1768 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1768",
+        "1768 rok",
+        "1768 roku",
+        "w 1768",
+        "w 1768 roku"
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-zryw-przeciw-rosji",
+      "text": "Jak nazywamy zryw szlachty polskiej przeciwko wpływom i naciskom Rosji w Polsce w 1768 roku?",
+      "explanation": "Ten zryw szlachty polskiej nazywamy konfederacją barską.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "konfederacja barska", "is_correct": true },
+        { "text": "powstanie wielkopolskie", "is_correct": false },
+        { "text": "zryw narodowy", "is_correct": false },
+        { "text": "federacja targowicka", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-koniec-konfederacji-barskiej",
+      "text": "Jak zakończył się zryw szlachty polskiej z 1768 roku przeciwko wpływom Rosji?",
+      "explanation": "Konfederacja barska zakończyła się klęską, a wielu jej uczestników zesłano na Syberię.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "klęską i zesłaniami na Syberię", "is_correct": true },
+        { "text": "zwycięstwem i zmianami w prawie polskim", "is_correct": false },
+        { "text": "zwycięstwem, ale brakiem realnych zmian", "is_correct": false },
+        { "text": "zwycięstwem, ale tajnymi zesłaniami na Syberię", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-rok",
+      "text": "W którym roku doszło do pierwszego rozbioru Polski?",
+      "explanation": "Do pierwszego rozbioru Polski doszło w 1772 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1772",
+        "1772 rok",
+        "1772 roku",
+        "w 1772",
+        "w 1772 roku"
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-panstwa-zaborcze",
+      "text": "Jakie kraje wzięły udział w pierwszym rozbiorze Polski?",
+      "explanation": "W pierwszym rozbiorze Polski udział wzięły Rosja, Prusy i Austria.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja prusy austria",
+        "rosja, prusy, austria",
+        "rosja prusy i austria",
+        "rosja, prusy i austria",
+        "rosja austria prusy",
+        "rosja, austria, prusy",
+        "rosja austria i prusy",
+        "rosja, austria i prusy",
+        "prusy rosja austria",
+        "prusy, rosja, austria",
+        "prusy rosja i austria",
+        "prusy, rosja i austria",
+        "prusy austria rosja",
+        "prusy, austria, rosja",
+        "prusy austria i rosja",
+        "prusy, austria i rosja",
+        "austria rosja prusy",
+        "austria, rosja, prusy",
+        "austria rosja i prusy",
+        "austria, rosja i prusy",
+        "austria prusy rosja",
+        "austria, prusy, rosja",
+        "austria prusy i rosja",
+        "austria, prusy i rosja"
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-obszary-bialoruskie",
+      "text": "Jaki kraj zaborczy zajął biedniejsze polskie obszary białoruskie po I rozbiorze?",
+      "explanation": "Po I rozbiorze obszary białoruskie zajęła Rosja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja",
+        "rosji",
+        "rosjanie",
+        "imperium rosyjskie",
+        "carstwo rosyjskie"
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-zgoda-sejmu",
+      "text": "Czy polski sejm zgodził się na rozbiory Polski?",
+      "explanation": "Sejm zatwierdził rozbiór, ale Rosja zastraszała i przekupywała posłów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Tak, ale Rosja zastraszała i przekupowała posłów.", "is_correct": true },
+        { "text": "Tak, ale Austria zastraszała, a Rosja przekupywała posłów.", "is_correct": false },
+        { "text": "Nie, ale Rosja sama potwierdziła rozbiór.", "is_correct": false },
+        { "text": "Tak, ale posłowie w zamian zażądali ustępstw od Rosji i Austrii.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-rada-nieustajaca",
+      "text": "Jaki urząd wprowadzili zwolennicy Rosjan w Polsce po pierwszym rozbiorze?",
+      "explanation": "Po pierwszym rozbiorze powołano Radę Nieustającą.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Radę Nieustającą", "is_correct": true },
+        { "text": "Straż Praw", "is_correct": false },
+        { "text": "Sejm Wielki", "is_correct": false },
+        { "text": "Komisję Porządkową", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-kolejnosc-wettinowie",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Najpierw królem został August II Mocny, potem utracił tron, a po klęsce Szwecji pod Połtawą wrócił do władzy. W 1717 roku doszło do sejmu niemego.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "august-ii-krolem",
+          "text": "August II Mocny zostaje królem po śmierci Jana III Sobieskiego.",
+          "position": 1
+        },
+        {
+          "id": "august-ii-traci-tron",
+          "text": "August II Mocny traci tron po zwycięstwach Szwecji.",
+          "position": 2
+        },
+        {
+          "id": "bitwa-pod-poltawa",
+          "text": "Bitwa pod Połtawą.",
+          "position": 3
+        },
+        {
+          "id": "august-ii-wraca-na-tron",
+          "text": "August II Mocny wraca na tron Rzeczypospolitej.",
+          "position": 4
+        },
+        {
+          "id": "sejm-niemy",
+          "text": "Sejm niemy i ugoda króla ze szlachtą.",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-kolejnosc-do-rozbioru",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "explanation": "Stanisław August Poniatowski został królem w 1764 roku. Później Rosja naciskała na wprowadzenie praw kardynalnych, wybuchł sprzeciw części szlachty, a po jego klęsce doszło do I rozbioru Polski.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "wybor-poniatowskiego",
+          "text": "Wybór Stanisława Augusta Poniatowskiego na króla.",
+          "position": 1
+        },
+        {
+          "id": "prawa-kardynalne",
+          "text": "Wprowadzenie praw kardynalnych pod naciskiem Rosji.",
+          "position": 2
+        },
+        {
+          "id": "sprzeciw-szlachty",
+          "text": "Wystąpienie części szlachty przeciwko wpływom Rosji.",
+          "position": 3
+        },
+        {
+          "id": "kleska-i-zeslania",
+          "text": "Pokonanie przeciwników rosyjskich wpływów i zesłania na Syberię.",
+          "position": 4
+        },
+        {
+          "id": "pierwszy-rozbior",
+          "text": "Pierwszy rozbiór Polski.",
+          "position": 5
+        }
+      ]
     }
   ]
 }

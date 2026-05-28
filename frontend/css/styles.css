@@ -72,6 +72,10 @@ body {
   margin: 0;
 }
 
+.site-thanks p + p {
+  margin-top: 8px;
+}
+
 #status {
   margin-top: 20px;
 }
