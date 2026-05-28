@@ -44,6 +44,9 @@ Before finishing:
 - When the user asks to add or propose quiz questions, first present the proposed
   questions for review and wait for explicit approval before editing JSON files,
   unless the user clearly asks to implement immediately.
+- When the user asks Codex to invent quiz questions, answers, distractors, or
+  order/matching tasks, always present the proposed content for review and wait
+  for explicit approval before editing JSON files.
 - Ask clarifying questions first when question type, answer mode, target topic, or expected output format is unclear.
 - Only propose missing distractors or accepted answers after explicitly asking for permission.
 - For open questions, include natural accepted answer variants a child may type.

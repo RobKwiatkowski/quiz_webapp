@@ -59,6 +59,10 @@ When the user asks to add or propose quiz questions, first present the proposed
 questions for review and wait for explicit approval before editing JSON files,
 unless the user clearly asks to implement immediately.
 
+When the user asks Codex to invent quiz questions, answers, distractors, or
+order/matching tasks, always present the proposed content for review and wait
+for explicit approval before editing JSON files.
+
 If any of the following are missing, ask first:
 - target chapter
 - target topic file

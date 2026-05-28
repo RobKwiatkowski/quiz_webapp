@@ -1,0 +1,94 @@
+{
+  "topic_id": "kultura_polskiego_oswiecenia",
+  "topic_title": "Kultura polskiego oświecenia",
+  "questions": [
+    {
+      "id": "oswiecenie-postaci-pisarstwo",
+      "text": "Które postaci poniżej zajmowały się pisarstwem?",
+      "explanation": "Pisarstwem zajmowali się Ignacy Krasicki, Hugo Kołłątaj i Stanisław Staszic.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Ignacy Krasicki", "is_correct": true },
+        { "text": "Hugo Kołłątaj", "is_correct": true },
+        { "text": "Stanisław Staszic", "is_correct": true },
+        { "text": "Marcello Bacciarelli", "is_correct": false },
+        { "text": "Fryderyk August", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-teatr-narodowy-rok",
+      "text": "W którym roku powstał Teatr Narodowy?",
+      "explanation": "Teatr Narodowy powstał w 1765 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1765",
+        "1765 rok",
+        "1765 roku",
+        "w 1765",
+        "w 1765 roku"
+      ]
+    },
+    {
+      "id": "oswiecenie-pismo-monitor",
+      "text": "Jakie pismo wspierał Stanisław August?",
+      "explanation": "Stanisław August wspierał pismo Monitor.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Monitor", "is_correct": true },
+        { "text": "Lustro", "is_correct": false },
+        { "text": "Obraz", "is_correct": false },
+        { "text": "Niebo", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-obiady-czwartkowe",
+      "text": "Jak nazywały się spotkania króla z artystami i uczonymi w Łazienkach Królewskich?",
+      "explanation": "Spotkania króla z artystami i uczonymi nazywały się obiadami czwartkowymi.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "obiady czwartkowe",
+        "obiad czwartkowy",
+        "obiadami czwartkowymi",
+        "obiadow czwartkowych",
+        "obiadów czwartkowych"
+      ]
+    },
+    {
+      "id": "oswiecenie-komisja-edukacji-narodowej-rok",
+      "text": "W którym roku ustanowiono Komisję Edukacji Narodowej?",
+      "explanation": "Komisję Edukacji Narodowej ustanowiono w 1773 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1773",
+        "1773 rok",
+        "1773 roku",
+        "w 1773",
+        "w 1773 roku"
+      ]
+    },
+    {
+      "id": "oswiecenie-jezyk-nauki-przed-ken",
+      "text": "Przed reformami Komisji Edukacji Narodowej, w jakim języku uczyli się uczniowie w szkołach?",
+      "explanation": "Przed reformami Komisji Edukacji Narodowej uczniowie uczyli się głównie po łacinie.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "po łacinie", "is_correct": true },
+        { "text": "po polsku", "is_correct": false },
+        { "text": "po rosyjsku", "is_correct": false },
+        { "text": "w swoich lokalnych językach", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-styl-klasycystyczny",
+      "text": "Jaki styl upowszechnił się w sztuce i architekturze w Polsce w XVIII wieku?",
+      "explanation": "W XVIII wieku w Polsce upowszechnił się styl klasycystyczny.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "klasycystyczny", "is_correct": true },
+        { "text": "barokowy", "is_correct": false },
+        { "text": "ascetyczny", "is_correct": false },
+        { "text": "ekspresyjny", "is_correct": false }
+      ]
+    }
+  ]
+}
