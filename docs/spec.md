@@ -515,9 +515,11 @@ Rules:
   a valid answer list and the correct number of correct answers
 - prefer ASCII-safe `topic_id`, filenames, and question IDs
 
-The current repository contains one chapter directory:
+The current repository contains these chapter directories:
 
 - `backend/app/data/chapters/history-chapter-6`
+- `backend/app/data/chapters/history-konfederacja-upadek-rzeczypospolitej`
+- `backend/app/data/chapters/history-napoleon-rewolucja-francuska`
 
 ## 15. UX
 

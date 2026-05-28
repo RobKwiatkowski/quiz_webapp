@@ -1,0 +1,219 @@
+{
+  "topic_id": "ksiestwo_warszawskie",
+  "topic_title": "Księstwo Warszawskie",
+  "questions": [
+    {
+      "id": "ksiestwo-warszawskie-powstanie-1806",
+      "text": "Jakie powstanie wybuchło w Polsce w 1806 roku?",
+      "explanation": "W 1806 roku wybuchło powstanie w Wielkopolsce.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "powstanie w Wielkopolsce",
+        "powstanie wielkopolskie",
+        "wielkopolskie",
+        "w Wielkopolsce"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-utworzenie-rok",
+      "text": "W którym roku utworzono Księstwo Warszawskie?",
+      "explanation": "Księstwo Warszawskie utworzono w 1807 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1807",
+        "1807 rok",
+        "1807 roku",
+        "rok 1807",
+        "w 1807",
+        "w 1807 roku"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-terytorium-powstania",
+      "text": "Na jakim terenie powstało Księstwo Warszawskie?",
+      "explanation": "Księstwo Warszawskie powstało na terenie zaboru pruskiego.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "terenie zaboru pruskiego", "is_correct": true },
+        { "text": "terenie zaboru rosyjskiego", "is_correct": false },
+        { "text": "terenie zaboru austro-węgierskiego", "is_correct": false },
+        { "text": "terenie Francji", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-konstytucja-trojpodzial",
+      "text": "Co wprowadzała konstytucja Napoleona w Księstwie Warszawskim?",
+      "explanation": "Konstytucja Napoleona wprowadzała w Księstwie Warszawskim trójpodział władzy.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "trójpodział władzy",
+        "trojpodzial wladzy",
+        "trójpodział",
+        "trojpodzial"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-prawa-wyborcze",
+      "text": "Kto miał prawa wyborcze w Księstwie Warszawskim? (2 odpowiedzi)",
+      "explanation": "Prawa wyborcze w Księstwie Warszawskim mieli między innymi księża i bogaci mieszczanie.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "księża", "is_correct": true },
+        { "text": "bogaci mieszczanie", "is_correct": true },
+        { "text": "chłopi", "is_correct": false },
+        { "text": "Francuzi", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-dowodca-armii",
+      "text": "Kto stał na czele armii Księstwa Warszawskiego?",
+      "explanation": "Na czele armii Księstwa Warszawskiego stał Józef Poniatowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Józef Poniatowski",
+        "Jozef Poniatowski",
+        "książę Józef Poniatowski",
+        "ksiaze Jozef Poniatowski",
+        "Poniatowski",
+        "Józefem Poniatowskim",
+        "Jozefem Poniatowskim"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-szwolezerowie-hiszpania",
+      "text": "W wojnie przeciwko któremu krajowi wzięli udział polscy szwoleżerowie?",
+      "explanation": "Polscy szwoleżerowie wzięli udział w wojnie przeciwko Hiszpanii.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Hiszpanii", "is_correct": true },
+        { "text": "Prusom", "is_correct": false },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Austrii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-szarza-somosierra",
+      "text": "Jak nazywa się wąwóz, gdzie była słynna szarża polskich szwoleżerów?",
+      "explanation": "Słynna szarża polskich szwoleżerów odbyła się pod Somosierrą.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Somosierra", "is_correct": true },
+        { "text": "Wąwóz Kłodzki", "is_correct": false },
+        { "text": "Przełęcz Dukielska", "is_correct": false },
+        { "text": "Dolina Kościeliska", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-raszyn-przeciwnik",
+      "text": "Przeciwko jakiemu krajowi walczyliśmy w bitwie pod Raszynem?",
+      "explanation": "W bitwie pod Raszynem wojska Księstwa Warszawskiego walczyły przeciwko Austrii.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Austrii", "is_correct": true },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Hiszpanii", "is_correct": false },
+        { "text": "Prusom", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-przylaczone-tereny",
+      "text": "Jakie tereny przyłączyła armia polska po powstaniu Księstwa Warszawskiego?",
+      "explanation": "Po powstaniu Księstwa Warszawskiego armia polska przyłączyła tereny Austrii.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Austrii", "is_correct": true },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Hiszpanii", "is_correct": false },
+        { "text": "Prusom", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-smierc-poniatowskiego",
+      "text": "W jakiej bitwie zginął książę Józef Poniatowski?",
+      "explanation": "Książę Józef Poniatowski zginął w bitwie pod Lipskiem.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "pod Lipskiem", "is_correct": true },
+        { "text": "Borodino", "is_correct": false },
+        { "text": "pod Moskwą", "is_correct": false },
+        { "text": "Waterloo", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-likwidacja-rok",
+      "text": "W którym roku zostało zlikwidowane Księstwo Warszawskie?",
+      "explanation": "Księstwo Warszawskie zostało zlikwidowane w 1815 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1815",
+        "1815 rok",
+        "1815 roku",
+        "rok 1815",
+        "w 1815",
+        "w 1815 roku"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-ile-lat",
+      "text": "Ile lat istniało Księstwo Warszawskie?",
+      "explanation": "Księstwo Warszawskie istniało 8 lat, od 1807 do 1815 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "8",
+        "8 lat",
+        "osiem",
+        "osiem lat"
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-berezyna",
+      "text": "W jakiej bitwie podczas odwrotu Napoleona z Rosji wsławiły się polskie wojska?",
+      "explanation": "Podczas odwrotu Napoleona z Rosji polskie wojska wsławiły się w bitwie pod Berezyną.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "pod Berezyną", "is_correct": true },
+        { "text": "pod Borodino", "is_correct": false },
+        { "text": "pod Lipskiem", "is_correct": false },
+        { "text": "pod Raszynem", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-kolejnosc-wydarzen",
+      "text": "Ułóż wydarzenia związane z Księstwem Warszawskim w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: powstanie w Wielkopolsce, utworzenie Księstwa Warszawskiego, szarża pod Somosierrą, bitwa pod Raszynem, bitwa pod Berezyną.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "powstanie-wielkopolskie", "text": "powstanie w Wielkopolsce", "position": 1 },
+        { "id": "utworzenie-ksiestwa", "text": "utworzenie Księstwa Warszawskiego", "position": 2 },
+        { "id": "szarza-somosierra", "text": "szarża pod Somosierrą", "position": 3 },
+        { "id": "bitwa-pod-raszynem", "text": "bitwa pod Raszynem", "position": 4 },
+        { "id": "bitwa-pod-berezyna", "text": "bitwa pod Berezyną", "position": 5 }
+      ]
+    },
+    {
+      "id": "ksiestwo-warszawskie-kolejnosc-napoleon",
+      "text": "Ułóż wydarzenia z czasów Napoleona i Księstwa Warszawskiego w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: utworzenie Legionów Polskich, powstanie w Wielkopolsce, utworzenie Księstwa Warszawskiego, bitwa pod Raszynem, bitwa pod Lipskiem.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "legiony-polskie", "text": "utworzenie Legionów Polskich", "position": 1 },
+        { "id": "powstanie-wielkopolskie", "text": "powstanie w Wielkopolsce", "position": 2 },
+        { "id": "utworzenie-ksiestwa", "text": "utworzenie Księstwa Warszawskiego", "position": 3 },
+        { "id": "bitwa-pod-raszynem", "text": "bitwa pod Raszynem", "position": 4 },
+        { "id": "bitwa-pod-lipskiem", "text": "bitwa pod Lipskiem", "position": 5 }
+      ]
+    },
+    {
+      "id": "napoleon-przekrojowe-dopasuj-wydarzenia-lata",
+      "text": "Dopasuj wydarzenia z epoki Rewolucji Francuskiej i Napoleona do właściwych lat.",
+      "explanation": "Poprawne pary to: wybuch Rewolucji Francuskiej - 1789, przejęcie władzy przez Napoleona - 1799, utworzenie Księstwa Warszawskiego - 1807, bitwa pod Waterloo - 1815.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "rewolucja-francuska", "left": "wybuch Rewolucji Francuskiej", "right": "1789" },
+        { "id": "przejecie-wladzy", "left": "przejęcie władzy przez Napoleona", "right": "1799" },
+        { "id": "ksiestwo-warszawskie", "left": "utworzenie Księstwa Warszawskiego", "right": "1807" },
+        { "id": "waterloo", "left": "bitwa pod Waterloo", "right": "1815" }
+      ]
+    }
+  ]
+}

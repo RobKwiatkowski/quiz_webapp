@@ -1,0 +1,166 @@
+{
+  "topic_id": "legiony_polskie_we_wloszech",
+  "topic_title": "Legiony Polskie we Włoszech",
+  "questions": [
+    {
+      "id": "legiony-polskie-iii-rozbior-rok",
+      "text": "W którym roku był III rozbiór Polski?",
+      "explanation": "III rozbiór Polski był w 1795 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1795",
+        "1795 rok",
+        "1795 roku",
+        "rok 1795",
+        "w 1795",
+        "w 1795 roku"
+      ]
+    },
+    {
+      "id": "legiony-polskie-utworzenie-rok",
+      "text": "W którym roku utworzono Legiony Polskie?",
+      "explanation": "Legiony Polskie we Włoszech utworzono w 1797 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1797",
+        "1797 rok",
+        "1797 roku",
+        "rok 1797",
+        "w 1797",
+        "w 1797 roku"
+      ]
+    },
+    {
+      "id": "legiony-polskie-general",
+      "text": "Kto został generałem Legionów Polskich?",
+      "explanation": "Generałem Legionów Polskich został Jan Henryk Dąbrowski.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Jan Henryk Dąbrowski", "is_correct": true },
+        { "text": "Jan Horacy Dąbrowski", "is_correct": false },
+        { "text": "Józef Henryk Dąbrowski", "is_correct": false },
+        { "text": "Józef Horacy Dąbrowski", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-kraje-zolnierzy",
+      "text": "Z jakich krajów pochodzili Polacy, żołnierze Legionów? (2 odpowiedzi)",
+      "explanation": "Polscy żołnierze Legionów pochodzili między innymi z Francji i Austrii.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Francji", "is_correct": true },
+        { "text": "Austrii", "is_correct": true },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Niemiec", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-kokardy",
+      "text": "Co przypinali sobie legioniści polscy na znak przynależności do Legionów?",
+      "explanation": "Legioniści polscy przypinali sobie trójkolorowe kokardy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Trójkolorowe kokardy", "is_correct": true },
+        { "text": "biało-czerwone flagi", "is_correct": false },
+        { "text": "biało-czerwone opaski", "is_correct": false },
+        { "text": "orła polskiego", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-piesn-autor",
+      "text": "Kto jest autorem Pieśni Legionów Polskich we Włoszech?",
+      "explanation": "Autorem Pieśni Legionów Polskich we Włoszech jest Józef Wybicki.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Józef Wybicki",
+        "Wybicki",
+        "Józefem Wybickim",
+        "Wybickim",
+        "Józefa Wybickiego",
+        "Wybickiego"
+      ]
+    },
+    {
+      "id": "legiony-polskie-san-domingo",
+      "text": "Gdzie wysłano część polskich legionistów z rozkazu Napoleona?",
+      "explanation": "Część polskich legionistów wysłano na wyspę San Domingo.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "na wyspę San Domingo", "is_correct": true },
+        { "text": "na Syberię", "is_correct": false },
+        { "text": "na wyspę San Salvador", "is_correct": false },
+        { "text": "do San Marino", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-san-domingo-obecnie",
+      "text": "Jak obecnie nazywa się miejsce lub kraj, do którego wysłano legionistów?",
+      "explanation": "Dawne San Domingo to obecnie Haiti.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Haiti",
+        "na Haiti",
+        "Haiti obecnie"
+      ]
+    },
+    {
+      "id": "legiony-polskie-przeciwnicy-napoleona",
+      "text": "Przeciwko komu walczyli polscy legioniści u boku Napoleona? (2 odpowiedzi)",
+      "explanation": "Polscy legioniści u boku Napoleona walczyli przeciwko Austrii i Rosji.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Austrii", "is_correct": true },
+        { "text": "Rosji", "is_correct": true },
+        { "text": "Wielkiej Brytanii", "is_correct": false },
+        { "text": "Danii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-wyrozniajace-zasady",
+      "text": "Co odróżniało legiony polskie od innych oddziałów u boku Napoleona?",
+      "explanation": "Legiony polskie wyróżniały się tym, że nie było w nich kary chłosty i była obowiązkowa edukacja.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Nie było kary chłosty i była obowiązkowa edukacja", "is_correct": true },
+        { "text": "O winie orzekał sam gen. Dąbrowski", "is_correct": false },
+        { "text": "Dowódców wybierali sami szeregowi oficerowie", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-piesn-nazwa",
+      "text": "Jak nazywała się pieśń napisana dla Legionów Polskich we Włoszech?",
+      "explanation": "Pieśń Legionów Polskich we Włoszech jest znana jako Mazurek Dąbrowskiego.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Mazurek Dąbrowskiego", "is_correct": true },
+        { "text": "Rota", "is_correct": false },
+        { "text": "Bogurodzica", "is_correct": false },
+        { "text": "Warszawianka", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-powody-wstapienia",
+      "text": "Które stwierdzenia najlepiej wyjaśniają związek Legionów Polskich z nadziejami na odzyskanie niepodległości? (2 odpowiedzi)",
+      "explanation": "Legiony dawały Polakom możliwość walki o sprawę polską u boku Francji, która walczyła z częścią zaborców.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Polacy mogli walczyć u boku Francji przeciwko państwom zaborczym", "is_correct": true },
+        { "text": "służba w Legionach podtrzymywała nadzieję na odbudowę państwa polskiego", "is_correct": true },
+        { "text": "Legiony były oficjalną armią niepodległej Polski po III rozbiorze", "is_correct": false },
+        { "text": "Legiony powstały po to, aby utrwalić władzę zaborców nad ziemiami polskimi", "is_correct": false }
+      ]
+    },
+    {
+      "id": "legiony-polskie-polskie-nazwiska-na-haiti",
+      "text": "Na Haiti są spotykane polskie nazwiska, ponieważ:",
+      "explanation": "Na Haiti pozostały ślady po polskich legionistach, którzy trafili tam z rozkazu Napoleona i część z nich zamieszkała z Haitańczykami.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "polscy legioniści zamieszkali z Haitańczykami", "is_correct": true },
+        { "text": "Polacy pokonali Haitańczyków", "is_correct": false },
+        { "text": "Polacy przejęli władzę nad Haitańczykami", "is_correct": false },
+        { "text": "Haitańczycy masowo przyjęli polskie nazwiska po wojnie", "is_correct": false }
+      ]
+    }
+  ]
+}

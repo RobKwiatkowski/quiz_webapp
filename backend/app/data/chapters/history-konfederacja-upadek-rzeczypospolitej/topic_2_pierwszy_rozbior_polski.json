@@ -1,0 +1,66 @@
+{
+  "topic_id": "pierwszy_rozbior_polski",
+  "topic_title": "Pierwszy rozbiór Polski",
+  "questions": [
+    {
+      "id": "pierwszy-rozbior-wybor-poniatowskiego",
+      "text": "W którym roku wybrano Stanisława Augusta Poniatowskiego?",
+      "explanation": "Stanisław August Poniatowski został wybrany na króla w 1764 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1764",
+        "1764 rok",
+        "1764 roku",
+        "w 1764",
+        "w 1764 roku"
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-poparcie-poniatowskiego",
+      "text": "Kto popierał Stanisława Augusta Poniatowskiego?",
+      "explanation": "Stanisława Augusta Poniatowskiego popierała caryca Rosji Katarzyna II.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "caryca Rosji Katarzyna II", "is_correct": true },
+        { "text": "król Prus Fryderyk II", "is_correct": false },
+        { "text": "cesarzowa Austrii Maria Teresa", "is_correct": false },
+        { "text": "król Francji Ludwik XV", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-pierwsze-reformy-poniatowskiego",
+      "text": "Jakie były pierwsze zmiany wprowadzone przez Stanisława Augusta Poniatowskiego?",
+      "explanation": "Do pierwszych zmian należały reforma finansów i utworzenie Szkoły Rycerskiej.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "reforma finansów", "is_correct": true },
+        { "text": "wybudowanie Szkoły Rycerskiej", "is_correct": true },
+        { "text": "reforma wojska", "is_correct": false },
+        { "text": "budowa Biblioteki Załuskich", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-wyznania-szlachty",
+      "text": "Dopasuj szlachtę do jej wyznania.",
+      "explanation": "Szlachta polska była głównie katolicka, rosyjska prawosławna, a pruska protestancka.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "polska-katolickie", "left": "szlachta polska", "right": "katolickie" },
+        { "id": "rosyjska-prawoslawne", "left": "szlachta rosyjska", "right": "prawosławne" },
+        { "id": "pruska-protestanckie", "left": "szlachta pruska", "right": "protestanckie" }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-prawa-szlachty-pod-naciskiem-katarzyny",
+      "text": "Pod naciskiem Katarzyny II szlachcie z jakich krajów nadano takie same prawa jak polskiej?",
+      "explanation": "Pod naciskiem Katarzyny II takie same prawa nadano szlachcie rosyjskiej i pruskiej.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "rosyjskiej", "is_correct": true },
+        { "text": "pruskiej", "is_correct": true },
+        { "text": "szwedzkiej", "is_correct": false },
+        { "text": "austriackiej", "is_correct": false }
+      ]
+    }
+  ]
+}

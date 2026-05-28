@@ -1,0 +1,179 @@
+{
+  "topic_id": "upadek_napoleona",
+  "topic_title": "Upadek Napoleona",
+  "questions": [
+    {
+      "id": "upadek-napoleona-niepodbity-kraj",
+      "text": "Jakiego kraju nie udało się podbić Napoleonowi?",
+      "explanation": "Napoleonowi nie udało się podbić Wielkiej Brytanii.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wielkiej Brytanii", "is_correct": true },
+        { "text": "Rosji", "is_correct": false },
+        { "text": "Włoch", "is_correct": false },
+        { "text": "Austrii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-wielka-armia",
+      "text": "Jak nazywała się armia Napoleona atakująca Rosję?",
+      "explanation": "Armię Napoleona atakującą Rosję nazywano Wielką Armią.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wielka Armia", "is_correct": true },
+        { "text": "Duża Armia", "is_correct": false },
+        { "text": "Silna Armia", "is_correct": false },
+        { "text": "Potężna Armia", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-borodino",
+      "text": "Gdzie odbyła się pierwsza wielka bitwa z Rosją w 1812 roku?",
+      "explanation": "Jedna z najważniejszych bitew kampanii rosyjskiej odbyła się pod Borodino.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Borodino",
+        "pod Borodino",
+        "borodinem",
+        "pod borodinem"
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-kolejnosc-bitwy",
+      "text": "Ułóż bitwy w kolejności chronologicznej.",
+      "explanation": "Poprawna kolejność to: Austerlitz, Raszyn, Borodino, Lipsk.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "austerlitz", "text": "Austerlitz", "position": 1 },
+        { "id": "raszyn", "text": "Raszyn", "position": 2 },
+        { "id": "borodino", "text": "Borodino", "position": 3 },
+        { "id": "lipsk", "text": "Lipsk", "position": 4 }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-odwrot-z-rosji",
+      "text": "Kiedy zaczął się odwrót armii Napoleona z Rosji?",
+      "explanation": "Odwrót armii Napoleona zaczął się po wkroczeniu do Moskwy.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "po wkroczeniu do Moskwy", "is_correct": true },
+        { "text": "po wygranej bitwie pod Moskwą", "is_correct": false },
+        { "text": "po przegranej bitwie pod Moskwą", "is_correct": false },
+        { "text": "po zbliżeniu się do Moskwy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-spalona-ziemia",
+      "text": "Jak nazywa się taktyka, którą Rosjanie zastosowali podczas kampanii Napoleona w Rosji?",
+      "explanation": "Rosjanie stosowali taktykę spalonej ziemi, utrudniając wojskom Napoleona zdobycie żywności i schronienia.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "taktyka spalonej ziemi",
+        "spalona ziemia",
+        "taktyka spalonej ziemii",
+        "taktyką spalonej ziemi",
+        "taktyka spalonej ziemie",
+        "spalonej ziemi"
+      ]
+    },
+    {
+      "id": "upadek-napoleona-smierc-zolnierzy",
+      "text": "Z jakiego powodu umierali żołnierze Napoleona? (2 odpowiedzi)",
+      "explanation": "Podczas odwrotu z Rosji wielu żołnierzy Napoleona umierało z głodu i z mrozu.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "z głodu", "is_correct": true },
+        { "text": "z mrozu", "is_correct": true },
+        { "text": "z ran", "is_correct": false },
+        { "text": "z wypadków", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-bitwa-narodow",
+      "text": "Bitwa pod jakim miastem jest znana jako \"Bitwa Narodów\"?",
+      "explanation": "Bitwa Narodów to bitwa pod Lipskiem.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Lipsk",
+        "Lipskiem",
+        "pod Lipskiem",
+        "w Lipsku"
+      ]
+    },
+    {
+      "id": "upadek-napoleona-abdykacja-po-bitwie-narodow",
+      "text": "Do czego zmuszono Napoleona po przegranej Bitwie Narodów?",
+      "explanation": "Po przegranej Bitwie Narodów Napoleona zmuszono do abdykacji.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "do abdykacji", "is_correct": true },
+        { "text": "samobójstwa", "is_correct": false },
+        { "text": "niczego", "is_correct": false },
+        { "text": "koronacji", "is_correct": false }
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte-pierwsze-wygnanie",
+      "text": "Na jaką wyspę wygnano Napoleona za pierwszym razem?",
+      "explanation": "Po pierwszej abdykacji Napoleona zesłano na Elbę.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Elbę", "is_correct": true },
+        { "text": "Wyspę św. Heleny", "is_correct": false },
+        { "text": "Korsykę", "is_correct": false },
+        { "text": "Maltę", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-postacie-na-obrazkach",
+      "text": "Dopasuj litery z obrazka do postaci. Kto jest kim?",
+      "image": "/static/images/history/postacie_napoleon_1.jpg",
+      "explanation": "Poprawne pary: A - Robespierre, B - Ludwik XVI, C - Bonaparte, D - Dąbrowski.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "postac-a", "left": "A", "right": "Robespierre" },
+        { "id": "postac-b", "left": "B", "right": "Ludwik XVI" },
+        { "id": "postac-c", "left": "C", "right": "Bonaparte" },
+        { "id": "postac-d", "left": "D", "right": "Dąbrowski" }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-postacie-na-obrazkach-2",
+      "text": "Dopasuj litery z obrazka do postaci. Kto jest kim?",
+      "image": "/static/images/history/postacie_napoleon_2.jpg",
+      "explanation": "Poprawne pary: A - Bonaparte, B - Ludwik XVI, C - Robespierre, D - Dąbrowski.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "postac-2-a", "left": "A", "right": "Bonaparte" },
+        { "id": "postac-2-b", "left": "B", "right": "Ludwik XVI" },
+        { "id": "postac-2-c", "left": "C", "right": "Robespierre" },
+        { "id": "postac-2-d", "left": "D", "right": "Dąbrowski" }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-drugie-wygnanie",
+      "text": "Gdzie zesłano Napoleona po klęsce pod Waterloo?",
+      "explanation": "Po klęsce pod Waterloo Napoleon został zesłany na Wyspę Świętej Heleny.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "na Wyspę Świętej Heleny", "is_correct": true },
+        { "text": "na Elbę", "is_correct": false },
+        { "text": "na Korsykę", "is_correct": false },
+        { "text": "na Maltę", "is_correct": false }
+      ]
+    },
+    {
+      "id": "upadek-napoleona-kolejnosc-koncowych-wydarzen",
+      "text": "Ułóż bitwy i wydarzenia z końca epoki Napoleona w kolejności chronologicznej.",
+      "explanation": "Najpierw była kampania rosyjska w 1812 roku: Borodino i odwrót spod Moskwy. Potem Napoleon przegrał pod Lipskiem w 1813 roku, abdykował w 1814 roku, a ostatecznie przegrał pod Waterloo w 1815 roku.",
+      "selection_type": "order",
+      "order_items": [
+        { "id": "borodino", "text": "bitwa pod Borodino", "position": 1 },
+        { "id": "odwrot-spod-moskwy", "text": "odwrót Napoleona spod Moskwy", "position": 2 },
+        { "id": "bitwa-narodow-lipsk", "text": "Bitwa Narodów pod Lipskiem", "position": 3 },
+        { "id": "pierwsza-abdykacja", "text": "pierwsza abdykacja Napoleona", "position": 4 },
+        { "id": "waterloo", "text": "bitwa pod Waterloo", "position": 5 }
+      ]
+    }
+  ]
+}

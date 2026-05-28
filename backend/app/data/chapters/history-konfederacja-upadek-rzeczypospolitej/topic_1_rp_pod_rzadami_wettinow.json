@@ -1,0 +1,233 @@
+{
+  "topic_id": "rp_pod_rzadami_wettinow",
+  "topic_title": "RP pod rządami Wettinów",
+  "questions": [
+    {
+      "id": "wettinowie-tron-po-sobieskim",
+      "text": "Kto zasiadł na tronie po śmierci Jana III Sobieskiego?",
+      "explanation": "Po śmierci Jana III Sobieskiego królem został August II Mocny z dynastii Wettinów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "August II Mocny", "is_correct": true },
+        { "text": "August III Mocny", "is_correct": false },
+        { "text": "Stanisław Leszczyński", "is_correct": false },
+        { "text": "Michał Korybut Wiśniowiecki", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-dynastia-augusta-ii",
+      "text": "Z jakiej dynastii był król, który zasiadł na tronie po Sobieskim?",
+      "explanation": "Następca Sobieskiego, August II Mocny, pochodził z dynastii Wettinów.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "wettinow",
+        "wettinów",
+        "wettinowie",
+        "wettini",
+        "z wettinow",
+        "z wettinów",
+        "z dynastii wettinow",
+        "z dynastii wettinów",
+        "dynastia wettinow",
+        "dynastia wettinów",
+        "dynastii wettinow",
+        "dynastii wettinów"
+      ]
+    },
+    {
+      "id": "wettinowie-sojusz-augusta-ii",
+      "text": "Z kim wszedł w sojusz August II Mocny, aby wzmocnić Polskę?",
+      "explanation": "August II Mocny związał się sojuszem z Rosją.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "z Rosją", "is_correct": true },
+        { "text": "z Prusami", "is_correct": false },
+        { "text": "z Austrią", "is_correct": false },
+        { "text": "ze Szwecją", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-august-ii-ksiaze",
+      "text": "Księciem z jakiego państwa był August II Mocny?",
+      "explanation": "August II Mocny był elektorem Saksonii, czyli władcą tego państwa.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Saksonii", "is_correct": true },
+        { "text": "Brandenburgii", "is_correct": false },
+        { "text": "Bawarii", "is_correct": false },
+        { "text": "Szwabii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-konsekwencje-wojny-polnocnej",
+      "text": "Co było konsekwencją wojny rosyjsko-szwedzkiej dla Rzeczypospolitej i Augusta II Mocnego?",
+      "explanation": "Po zwycięstwach Szwecji August II Mocny musiał na pewien czas porzucić polski tron.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "porzucenie polskiego tronu przez króla", "is_correct": true },
+        { "text": "zwycięstwo Szwecji", "is_correct": true },
+        { "text": "zwycięstwo Rosji", "is_correct": false },
+        { "text": "porzucenie tronu przez cara rosyjskiego", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-tron-po-auguscie-ii",
+      "text": "Kto zasiadł na tronie po Auguście II Mocnym?",
+      "explanation": "Po Auguście II Mocnym królem został Stanisław Leszczyński.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Stanisław Leszczyński", "is_correct": true },
+        { "text": "August III Sas", "is_correct": false },
+        { "text": "Stanisław August Poniatowski", "is_correct": false },
+        { "text": "Jan III Sobieski", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-poltawa-zwyciezca",
+      "text": "Kto zwyciężył w bitwie pod Połtawą w 1709 roku?",
+      "explanation": "W bitwie pod Połtawą w 1709 roku zwyciężyła Rosja pod wodzą cara Piotra I.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja",
+        "rosjanie",
+        "rosjanie zwyciezyli",
+        "rosjanie zwyciężyli",
+        "rosja zwyciezyla",
+        "rosja zwyciężyła",
+        "wojska rosyjskie",
+        "car piotr i",
+        "piotr i"
+      ]
+    },
+    {
+      "id": "wettinowie-tron-po-poltawie",
+      "text": "Kto zasiadł na tronie po bitwie pod Połtawą?",
+      "explanation": "Po klęsce Szwecji pod Połtawą na tron Rzeczypospolitej powrócił August II Mocny.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "August II Mocny", "is_correct": true },
+        { "text": "August III", "is_correct": false },
+        { "text": "August Poniatowski", "is_correct": false },
+        { "text": "Stanisław Leszczyński", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-szlachta-przeciw-krolowi",
+      "text": "Co zawarła szlachta przeciwko królowi po 1709 roku w obronie swoich interesów?",
+      "explanation": "Szlachta zawarła konfederację, aby bronić swoich interesów wobec króla.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "konfederacje",
+        "konfederację",
+        "konfederacja",
+        "zawarla konfederacje",
+        "zawarła konfederację",
+        "szlachta zawarla konfederacje",
+        "szlachta zawarła konfederację"
+      ]
+    },
+    {
+      "id": "wettinowie-rosja-wplyw-na-krola",
+      "text": "Jaki kraj pomógł szlachcie wywrzeć wpływ na króla Polski, aby zgodził się na ugodę?",
+      "explanation": "W sporze szlachty z królem duży wpływ miała Rosja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja",
+        "rosjanie",
+        "panstwo rosyjskie",
+        "carstwo rosyjskie"
+      ]
+    },
+    {
+      "id": "wettinowie-sejm-niemy-rok",
+      "text": "W którym roku podpisano porozumienie króla ze szlachtą na tak zwanym sejmie niemym?",
+      "explanation": "Porozumienie króla ze szlachtą na sejmie niemym podpisano w 1717 roku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1717",
+        "1717 rok",
+        "1717 roku",
+        "w 1717",
+        "w 1717 roku"
+      ]
+    },
+    {
+      "id": "wettinowie-podwojna-elekcja",
+      "text": "Kogo dotyczyła tak zwana podwójna elekcja?",
+      "explanation": "Podwójna elekcja dotyczyła Augusta III i Stanisława Leszczyńskiego.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Augusta III", "is_correct": true },
+        { "text": "Stanisława Leszczyńskiego", "is_correct": true },
+        { "text": "Augusta II Mocnego", "is_correct": false },
+        { "text": "Augusta Poniatowskiego", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-francja-wspiera-leszczynskiego",
+      "text": "Jaki kraj wspierał Stanisława Leszczyńskiego?",
+      "explanation": "Stanisława Leszczyńskiego wspierała Francja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "francja",
+        "francji",
+        "francuzi",
+        "krolestwo francji",
+        "królestwo francji"
+      ]
+    },
+    {
+      "id": "wettinowie-rosja-wspiera-augusta-iii",
+      "text": "Jaki kraj wspierał Augusta III?",
+      "explanation": "Augusta III wspierała Rosja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosja",
+        "rosji",
+        "rosjanie",
+        "panstwo rosyjskie",
+        "państwo rosyjskie",
+        "carstwo rosyjskie"
+      ]
+    },
+    {
+      "id": "wettinowie-slabe-panowanie-augusta-iii",
+      "text": "Co było wynikiem słabego panowania Augusta III?",
+      "explanation": "Słabe panowanie Augusta III pogłębiało anarchię w Rzeczypospolitej.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "anarchia", "is_correct": true },
+        { "text": "komunizm", "is_correct": false },
+        { "text": "okupacja rosyjska", "is_correct": false },
+        { "text": "terror", "is_correct": false }
+      ]
+    },
+    {
+      "id": "wettinowie-wojska-stacjonujace-w-polsce",
+      "text": "Wojska jakiego kraju stacjonowały w Polsce w trakcie rządów Augusta III?",
+      "explanation": "W trakcie rządów Augusta III w Polsce stacjonowały wojska rosyjskie.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "rosji",
+        "rosja",
+        "rosyjskie",
+        "wojska rosyjskie",
+        "rosyjskiego",
+        "panstwa rosyjskiego",
+        "państwa rosyjskiego"
+      ]
+    },
+    {
+      "id": "wettinowie-pozytywne-wyniki-augusta-iii",
+      "text": "Jakie były pozytywne wyniki panowania Augusta III?",
+      "explanation": "Za panowania Augusta III odbudowywała się gospodarka i rozwijała kultura.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "odbudowa gospodarki", "is_correct": true },
+        { "text": "rozwój kultury", "is_correct": true },
+        { "text": "wzmocnienie armii", "is_correct": false },
+        { "text": "wzmocnienie instytucji polskich", "is_correct": false }
+      ]
+    }
+  ]
+}
