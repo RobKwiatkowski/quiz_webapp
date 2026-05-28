@@ -88,6 +88,18 @@
       ]
     },
     {
+      "id": "pierwszy-rozbior-konfederaci-barscy-lata-walki",
+      "text": "Ile lat walczyli konfederaci barscy z Rosją?",
+      "explanation": "Konfederaci barscy walczyli z Rosją przez 4 lata.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "4",
+        "4 lata",
+        "cztery",
+        "cztery lata"
+      ]
+    },
+    {
       "id": "pierwszy-rozbior-zryw-przeciw-rosji",
       "text": "Jak nazywamy zryw szlachty polskiej przeciwko wpływom i naciskom Rosji w Polsce w 1768 roku?",
       "explanation": "Ten zryw szlachty polskiej nazywamy konfederacją barską.",
@@ -170,6 +182,18 @@
       ]
     },
     {
+      "id": "pierwszy-rozbior-zagarniete-ziemie",
+      "text": "Dopasuj zagarnięte ziemie po pierwszym rozbiorze do kraju zaborczego.",
+      "explanation": "Po pierwszym rozbiorze Prusy zajęły Pomorze Gdańskie i Warmię, Austria Małopolskę, a Rosja ziemie białoruskie.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "pomorze-gdanskie-prusy", "left": "Pomorze Gdańskie", "right": "Prusy" },
+        { "id": "warmia-prusy", "left": "Warmia", "right": "Prusy" },
+        { "id": "malopolska-austria", "left": "Małopolska", "right": "Austria" },
+        { "id": "ziemie-bialoruskie-rosja", "left": "ziemie białoruskie", "right": "Rosja" }
+      ]
+    },
+    {
       "id": "pierwszy-rozbior-zgoda-sejmu",
       "text": "Czy polski sejm zgodził się na rozbiory Polski?",
       "explanation": "Sejm zatwierdził rozbiór, ale Rosja zastraszała i przekupywała posłów.",
@@ -191,6 +215,18 @@
         { "text": "Straż Praw", "is_correct": false },
         { "text": "Sejm Wielki", "is_correct": false },
         { "text": "Komisję Porządkową", "is_correct": false }
+      ]
+    },
+    {
+      "id": "pierwszy-rozbior-liberum-veto",
+      "text": "Jak nazywało się prawo pozwalające szlachcie sprzeciwić się i zablokować reformę bez podania przyczyny?",
+      "explanation": "Takie prawo nazywało się liberum veto.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "liberum veto",
+        "liberum weto",
+        "veto",
+        "weto"
       ]
     },
     {

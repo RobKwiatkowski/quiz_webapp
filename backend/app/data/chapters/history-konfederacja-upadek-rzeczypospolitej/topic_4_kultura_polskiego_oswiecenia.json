@@ -89,6 +89,67 @@
         { "text": "ascetyczny", "is_correct": false },
         { "text": "ekspresyjny", "is_correct": false }
       ]
+    },
+    {
+      "id": "oswiecenie-klasycyzm-wzor",
+      "text": "Na czym wzorowała się sztuka klasycyzmu?",
+      "explanation": "Sztuka klasycyzmu wzorowała się na starożytności.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "na starożytności", "is_correct": true },
+        { "text": "na średniowieczu", "is_correct": false },
+        { "text": "na współczesności", "is_correct": false },
+        { "text": "na nowoczesności", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-poglady-z-francji-czasy",
+      "text": "Za jakich czasów zaczęły docierać do Polski poglądy oświeceniowe z Francji?",
+      "explanation": "Poglądy oświeceniowe z Francji zaczęły docierać do Polski za panowania Wettinów.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "za panowania Wettinów", "is_correct": true },
+        { "text": "za panowania Jagiellonów", "is_correct": false },
+        { "text": "za panowania Wazów", "is_correct": false },
+        { "text": "po trzecim rozbiorze Polski", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-szkola-rycerska-kogo-szkolila",
+      "text": "Kto miał się szkolić w Szkole Rycerskiej?",
+      "explanation": "W Szkole Rycerskiej mieli się szkolić przyszli oficerowie i urzędnicy.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "oficerowie", "is_correct": true },
+        { "text": "urzędnicy", "is_correct": true },
+        { "text": "szlachta", "is_correct": false },
+        { "text": "kupcy", "is_correct": false },
+        { "text": "szpiedzy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "oswiecenie-virtuti-militari",
+      "text": "Jak nazywa się najwyższe odznaczenie wojskowe w Polsce do dzisiaj?",
+      "explanation": "Najwyższe odznaczenie wojskowe w Polsce to Order Virtuti Militari.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "virtuti militari",
+        "order virtuti militari",
+        "virtutu militari",
+        "order virtutu militari"
+      ]
+    },
+    {
+      "id": "oswiecenie-nadworny-malarz-canaletto",
+      "text": "Jak nazywał się nadworny malarz Stanisława Augusta Poniatowskiego?",
+      "explanation": "Nadwornym malarzem Stanisława Augusta Poniatowskiego był Canaletto.",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Canaletto", "is_correct": true },
+        { "text": "Merlini", "is_correct": false },
+        { "text": "Donatello", "is_correct": false },
+        { "text": "Amoretto", "is_correct": false }
+      ]
     }
   ]
 }

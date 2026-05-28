@@ -35,6 +35,20 @@
       ]
     },
     {
+      "id": "wettinowie-inne-panstwo-saksonia",
+      "text": "Jak się nazywa inne państwo poza Polską rządzone przez dynastię Wettinów?",
+      "explanation": "Dynastia Wettinów rządziła także Saksonią. August II Mocny był elektorem Saksonii.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "saksonia",
+        "saksonii",
+        "w saksonii",
+        "ksiestwo saksonii",
+        "księstwo saksonii",
+        "elektorat saksonii"
+      ]
+    },
+    {
       "id": "wettinowie-sojusz-augusta-ii",
       "text": "Z kim wszedł w sojusz August II Mocny, aby wzmocnić Polskę?",
       "explanation": "August II Mocny związał się sojuszem z Rosją.",
