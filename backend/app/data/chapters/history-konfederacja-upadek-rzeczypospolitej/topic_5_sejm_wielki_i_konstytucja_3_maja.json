@@ -172,14 +172,14 @@
     },
     {
       "id": "sejm-wielki-drugi-rozbior-bez-austrii",
-      "text": "Jaki kraj nie uczestniczył w drugim rozbiorze Polski?",
-      "explanation": "Austria nie uczestniczyła w drugim rozbiorze Polski. Wzięły w nim udział Rosja i Prusy.",
-      "selection_type": "single",
+      "text": "Jakie kraje nie uczestniczyły w drugim rozbiorze Polski?",
+      "explanation": "Austria i Szwecja nie uczestniczyły w drugim rozbiorze Polski. Wzięły w nim udział Rosja i Prusy.",
+      "selection_type": "multiple",
       "answers": [
         { "text": "Austria", "is_correct": true },
         { "text": "Rosja", "is_correct": false },
         { "text": "Prusy", "is_correct": false },
-        { "text": "Szwecja", "is_correct": false }
+        { "text": "Szwecja", "is_correct": true }
       ]
     },
     {
