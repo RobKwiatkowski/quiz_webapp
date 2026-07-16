@@ -1,7 +1,11 @@
-﻿// SECTION: quiz-question-type-utils
+// SECTION: quiz-question-type-utils
 // Helpers for question type detection and answer normalization.
 function isOpenQuestion(question) {
   return question.selection_type === "open";
+}
+
+function isLlmQuestion(question) {
+  return question.selection_type === "llm";
 }
 
 function isOrderQuestion(question) {
@@ -50,6 +54,11 @@ function handleCheckAction() {
     return;
   }
 
+  if (question.selection_type === "llm") {
+    handleCheckLlmAnswer();
+    return;
+  }
+
   if (question.selection_type === "order") {
     handleCheckOrderAnswer();
     return;
@@ -94,6 +103,41 @@ function handleCheckOpenAnswer() {
   showFeedback(isCorrectOverall, question.explanation || "");
 }
 
+// SECTION: quiz-llm-answer-check
+// Sends free-text answers to the LLM evaluation service.
+async function handleCheckLlmAnswer() {
+  if (hasAnswered) return;
+
+  const question = getCurrentQuestion();
+  const inputEl = document.getElementById("open-answer-input");
+  const checkButton = document.getElementById("check-button");
+  const rawValue = inputEl.value.trim();
+
+  if (!rawValue) {
+    showOpenAnswerRequiredMessage();
+    return;
+  }
+
+  checkButton.disabled = true;
+  showCheckingAnswerMessage();
+
+  try {
+    const evaluation = await checkAnswerWithLlm(question, rawValue);
+    const llmPoints = Math.max(0, Math.min(Number(evaluation.points) || 0, 2));
+    const quizPoints = llmPoints / 2;
+    const isCorrectOverall = llmPoints === 2;
+
+    hasAnswered = true;
+    score += quizPoints;
+    inputEl.disabled = true;
+    showLlmFeedback(evaluation, isCorrectOverall, llmPoints);
+  } catch (error) {
+    console.error(error);
+    showLlmErrorMessage();
+  } finally {
+    checkButton.disabled = false;
+  }
+}
 // SECTION: quiz-single-answer-check
 // Immediate validation for single-choice questions.
 function handleSingleAnswerClick(event) {
@@ -247,6 +291,32 @@ function showOpenAnswerRequiredMessage() {
   feedbackEl.classList.remove("hidden");
 }
 
+function showCheckingAnswerMessage() {
+  const feedbackEl = document.getElementById("feedback");
+  feedbackEl.textContent = "Sprawdzam odpowiedź...";
+  feedbackEl.className = "feedback warning-feedback";
+  feedbackEl.classList.remove("hidden");
+}
+
+function showLlmErrorMessage() {
+  const feedbackEl = document.getElementById("feedback");
+  feedbackEl.textContent = "Nie udało się sprawdzić odpowiedzi przez LLM.";
+  feedbackEl.className = "feedback incorrect-feedback";
+  feedbackEl.classList.remove("hidden");
+}
+
+function showLlmFeedback(evaluation, isCorrectOverall, llmPoints) {
+  const feedbackEl = document.getElementById("feedback");
+  const feedback = evaluation.feedback || "Odpowiedź została sprawdzona.";
+  feedbackEl.textContent = `${feedback} Punkty: ${llmPoints}/2`;
+  feedbackEl.className = isCorrectOverall
+    ? "feedback correct-feedback"
+    : "feedback incorrect-feedback";
+  feedbackEl.classList.remove("hidden");
+  showElement("next-button");
+  hideElement("check-button");
+}
+
 function showMatchingAnswerRequiredMessage() {
   const feedbackEl = document.getElementById("feedback");
   feedbackEl.textContent = "Dopasuj wszystkie pary.";
@@ -279,3 +349,5 @@ function getFinalMessage(currentScore, totalQuestions) {
 
   return "Perfekcyjnie!";
 }
+
+

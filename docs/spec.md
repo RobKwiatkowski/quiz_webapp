@@ -43,7 +43,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, `order`, and `matching`
+- question types: `single`, `multiple`, `open`, `llm`, `order`, and `matching`
 - optional source text passages on questions
 - optional images on questions, including multiple alternative images for one
   question
@@ -221,9 +221,9 @@ Fields:
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: required feedback text shown after an incorrect answer
-- `selection_type`: `single`, `multiple`, `open`, `order`, or `matching`
+- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, or `matching`
 - `answers`: answer options for `single` and `multiple` questions
-- `accepted_answers`: accepted values for `open` questions
+- `accepted_answers`: accepted values for `open` questions and the reference answer for `llm` questions
 - `order_items`: sequence items for `order` questions
 - `matching_pairs`: left/right pairs for `matching` questions
 
@@ -367,6 +367,14 @@ Each question is worth 1 point.
   - lowercasing
   - removing trailing punctuation and trailing non-letter/non-number characters
   - replacing Polish diacritics with their plain ASCII equivalents
+
+`llm`:
+
+- the user writes a full-sentence answer
+- the answer is sent to the configured LLM evaluation service
+- the first `accepted_answers` item is sent as the reference answer
+- LLM points are mapped to quiz score as `0 -> 0`, `1 -> 0.5`, and `2 -> 1`
+- the UI shows the LLM feedback and returned point count
 
 `order`:
 
@@ -586,3 +594,4 @@ through Docker Compose, shows a quiz list, loads a selected quiz from the backen
 supports `single`, `multiple`, `open`, `order`, and `matching` questions, handles
 images, shows immediate feedback and a final result, and keeps quiz content in
 validated chapter and topic JSON files.
+

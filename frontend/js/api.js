@@ -15,3 +15,24 @@ async function getQuizById(quizId) {
   }
   return response.json();
 }
+
+async function checkAnswerWithLlm(question, studentAnswer) {
+  const correctAnswer = (question.accepted_answers || [])[0] || "";
+  const response = await fetch(`${CONFIG.LLM_API_BASE_URL}/check-answer`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      question: question.text,
+      correct_answer: correctAnswer,
+      student_answer: studentAnswer
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to check answer with LLM");
+  }
+
+  return response.json();
+}

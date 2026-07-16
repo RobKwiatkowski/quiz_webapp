@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CHAPTERS_DIR = PROJECT_ROOT / "backend" / "app" / "data" / "chapters"
 STATIC_DIR = PROJECT_ROOT / "backend" / "app" / "static"
 
-ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "order", "matching"}
+ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "llm", "order", "matching"}
 
 
 def load_json(path: Path) -> Any:
@@ -369,6 +369,21 @@ def validate_question(
                 f"{context}: open question should not contain matching_pairs"
             )
 
+    elif selection_type == "llm":
+        validate_open_answers_structure(accepted_answers, errors, context)
+        if "answers" in question and answers not in (None, []):
+            warnings.append(
+                f"{context}: llm question should not contain answers"
+            )
+        if "order_items" in question and order_items not in (None, []):
+            warnings.append(
+                f"{context}: llm question should not contain order_items"
+            )
+        if "matching_pairs" in question and matching_pairs not in (None, []):
+            warnings.append(
+                f"{context}: llm question should not contain matching_pairs"
+            )
+
     elif selection_type == "order":
         validate_order_items_structure(order_items, errors, context)
         if "answers" in question and answers not in (None, []):
@@ -592,3 +607,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

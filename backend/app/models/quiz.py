@@ -45,7 +45,7 @@ class MatchingPair(BaseModel):
 
 
 class Question(BaseModel):
-    """Question schema supporting single, multiple, open, order, and matching answers.
+    """Question schema supporting single, multiple, open, llm, order, and matching answers.
 
     Attributes:
         id: Unique question identifier.
@@ -53,7 +53,7 @@ class Question(BaseModel):
         source_text: Optional source passage shown above the question.
         image: Optional image path, URL, or list of image references.
         explanation: Required explanation shown after an incorrect answer.
-        selection_type: Interaction type (single, multiple, open, order, or matching).
+        selection_type: Interaction type (single, multiple, open, llm, order, or matching).
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
         order_items: Items to arrange for order questions.
@@ -65,7 +65,7 @@ class Question(BaseModel):
     source_text: Optional[str] = None
     image: str | List[str] | None = None
     explanation: str
-    selection_type: Literal["single", "multiple", "open", "order", "matching"] = "single"
+    selection_type: Literal["single", "multiple", "open", "llm", "order", "matching"] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
     order_items: List[OrderItem] = Field(default_factory=list)
@@ -146,3 +146,4 @@ class ChapterMeta(BaseModel):
     target_question_count: int = 12
     questions_per_topic: int = 2
     topics: List[str]
+

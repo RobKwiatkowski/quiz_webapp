@@ -1,4 +1,4 @@
-﻿// SECTION: quiz-dom-visibility-utils
+// SECTION: quiz-dom-visibility-utils
 // Small DOM visibility wrappers used across render and feedback flows.
 function showElement(elementId) {
   document.getElementById(elementId).classList.remove("hidden");
@@ -103,7 +103,7 @@ function renderQuestion() {
   hideElement("feedback");
   hideElement("open-answer-box");
 
-  if (isOpenQuestion(question)) {
+  if (isOpenQuestion(question) || isLlmQuestion(question)) {
     answersEl.classList.add("hidden");
     showElement("open-answer-box");
     showElement("check-button");
@@ -441,6 +441,10 @@ function getQuestionHint(question) {
     return "Wpisz kr\u00f3tk\u0105 odpowied\u017a.";
   }
 
+  if (question.selection_type === "llm") {
+    return "Napisz odpowiedź pełnym zdaniem. Sprawdzi ją LLM.";
+  }
+
   if (question.selection_type === "multiple") {
     const correctCount = (question.answers || []).filter((answer) => answer.is_correct).length;
     if (correctCount >= 2) {
@@ -459,3 +463,4 @@ function getQuestionHint(question) {
 
   return "";
 }
+
