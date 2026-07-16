@@ -123,12 +123,11 @@ async function handleCheckLlmAnswer() {
 
   try {
     const evaluation = await checkAnswerWithLlm(question, rawValue);
-    const llmPoints = Math.max(0, Math.min(Number(evaluation.points) || 0, 2));
-    const quizPoints = llmPoints / 2;
-    const isCorrectOverall = llmPoints === 2;
+    const llmPoints = Math.max(0, Math.min(Number(evaluation.points) || 0, 1));
+    const isCorrectOverall = llmPoints === 1;
 
     hasAnswered = true;
-    score += quizPoints;
+    score += llmPoints;
     inputEl.disabled = true;
     showLlmFeedback(evaluation, isCorrectOverall, llmPoints);
   } catch (error) {
@@ -307,8 +306,13 @@ function showLlmErrorMessage() {
 
 function showLlmFeedback(evaluation, isCorrectOverall, llmPoints) {
   const feedbackEl = document.getElementById("feedback");
-  const feedback = evaluation.feedback || "Odpowiedź została sprawdzona.";
-  feedbackEl.textContent = `${feedback} Punkty: ${llmPoints}/2`;
+  const feedback = (evaluation.feedback || "Odpowiedź została sprawdzona.")
+    .replace(/\s*Punkty:\s*\d+(?:[.,]\d+)?\s*\/\s*1\s*$/i, "");
+  feedbackEl.replaceChildren(
+    document.createTextNode(feedback),
+    document.createElement("br"),
+    document.createTextNode(`Punkty: ${llmPoints}/1`)
+  );
   feedbackEl.className = isCorrectOverall
     ? "feedback correct-feedback"
     : "feedback incorrect-feedback";

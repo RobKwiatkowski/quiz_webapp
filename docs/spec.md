@@ -373,7 +373,7 @@ Each question is worth 1 point.
 - the user writes a full-sentence answer
 - the answer is sent to the configured LLM evaluation service
 - the first `accepted_answers` item is sent as the reference answer
-- LLM points are mapped to quiz score as `0 -> 0`, `1 -> 0.5`, and `2 -> 1`
+- LLM points are used directly as the quiz score for the question, usually `0`, `0.5`, or `1`
 - the UI shows the LLM feedback and returned point count
 
 `order`:
