@@ -16,6 +16,14 @@ async function getQuizById(quizId) {
   return response.json();
 }
 
+async function getMathQuestion() {
+  const response = await fetch(`${CONFIG.API_BASE_URL}/api/math/question`);
+  if (!response.ok) {
+    throw new Error("LLM server unavailable");
+  }
+  return response.json();
+}
+
 async function checkAnswerWithLlm(question, studentAnswer) {
   const correctAnswer = (question.accepted_answers || [])[0] || "";
   const response = await fetch(`${CONFIG.LLM_API_BASE_URL}/check-answer`, {

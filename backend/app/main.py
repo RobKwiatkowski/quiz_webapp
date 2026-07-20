@@ -3,6 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from app.api.math import router as math_router
 from app.api.quizzes import router as quizzes_router
 
 app = FastAPI(title="Edu Quiz API")
@@ -16,6 +17,7 @@ app.add_middleware(
 )
 
 app.include_router(quizzes_router)
+app.include_router(math_router)
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 

@@ -286,6 +286,32 @@ body {
   line-height: 1.5;
 }
 
+.math-question-card h1 {
+  margin: 0 0 16px;
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+#math-status {
+  margin-top: 16px;
+  padding: 16px;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1e293b;
+  line-height: 1.45;
+}
+
+#math-question-text {
+  margin-top: 12px;
+}
+
+#math-check-button {
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+}
+
 .quiz-card,
 .question-card {
   background: white;

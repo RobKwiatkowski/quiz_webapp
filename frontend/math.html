@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matematyka - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=9" />
+  <link rel="stylesheet" href="./css/styles.css?v=10" />
 </head>
 <body>
   <main class="container">
@@ -15,52 +15,50 @@
       </a>
     </nav>
 
-    <section class="section-placeholder" aria-labelledby="math-title">
-      <div class="section-placeholder-icon" aria-hidden="true">+</div>
-      <h1 id="math-title">Matematyka</h1>
-      <p>Wybierz zestaw zada&#324; matematycznych lub testowych LLM.</p>
-    </section>
+    <section class="question-card math-question-card" aria-labelledby="math-title">
+      <p class="question-hint">Matematyka</p>
+      <h1 id="math-title">Zadanie generowane przez LLM</h1>
+      <div id="math-status">&#321;adowanie zadania...</div>
 
-    <div id="status">&#321;adowanie zada&#324;...</div>
-    <div id="quiz-list" class="quiz-list"></div>
+      <div id="math-question-box" class="hidden">
+        <p id="math-question-instruction" class="question-hint"></p>
+        <h2 id="math-question-text"></h2>
+
+        <div class="open-answer-box">
+          <input id="math-answer-input" type="text" placeholder="Wpisz odpowied&#378;" />
+        </div>
+
+        <div class="actions">
+          <button id="math-check-button" type="button">Sprawd&#378;</button>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script src="./js/config.js"></script>
-  <script src="./js/api.js"></script>
+  <script src="./js/config.js?v=10"></script>
+  <script src="./js/api.js?v=10"></script>
   <script>
-    const MATH_CATEGORIES = new Set(["math", "llm"]);
-
-    async function renderMathQuizList() {
-      const statusEl = document.getElementById("status");
-      const listEl = document.getElementById("quiz-list");
+    async function initMathQuestionPage() {
+      const statusEl = document.getElementById("math-status");
+      const questionBoxEl = document.getElementById("math-question-box");
+      const instructionEl = document.getElementById("math-question-instruction");
+      const questionTextEl = document.getElementById("math-question-text");
 
       try {
-        const quizzes = await getQuizzes();
-        const mathQuizzes = quizzes.filter((quiz) => MATH_CATEGORIES.has(quiz.category));
+        const question = await getMathQuestion();
 
-        statusEl.textContent = "";
-
-        if (!mathQuizzes.length) {
-          statusEl.textContent = "Brak dost\u0119pnych zada\u0144 z matematyki.";
-          return;
-        }
-
-        listEl.innerHTML = mathQuizzes.map((quiz) => `
-          <article class="quiz-card">
-            <h2>${quiz.title}</h2>
-            <p>${quiz.description}</p>
-            <p><strong>Kategoria:</strong> ${quiz.category}</p>
-            <button onclick="window.location.href='quiz.html?id=${encodeURIComponent(quiz.id)}&section=math'">
-              Start
-            </button>
-          </article>
-        `).join("");
+        questionTextEl.textContent = question.text || "Brak tre\u015bci zadania.";
+        instructionEl.textContent = question.instruction || "";
+        statusEl.classList.add("hidden");
+        questionBoxEl.classList.remove("hidden");
       } catch (error) {
-        statusEl.textContent = `B\u0142\u0105d: ${error.message}`;
+        console.error(error);
+        statusEl.textContent = "Serwer LLM niedost\u0119pny.";
+        questionBoxEl.classList.add("hidden");
       }
     }
 
-    renderMathQuizList();
+    initMathQuestionPage();
   </script>
 </body>
 </html>

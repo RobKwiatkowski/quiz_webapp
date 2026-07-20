@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=9" />
+  <link rel="stylesheet" href="./css/styles.css?v=10" />
 </head>
 <body>
   <main class="container">
@@ -32,11 +32,12 @@
     <div id="quiz-list" class="quiz-list"></div>
   </main>
 
-  <script src="./js/config.js"></script>
-  <script src="./js/api.js"></script>
+  <script src="./js/config.js?v=10"></script>
+  <script src="./js/api.js?v=10"></script>
   <script src="./js/start-images.js"></script>
   <script>
     setRandomStartImage();
+    const HISTORY_CATEGORIES = new Set(["history", "llm"]);
 
     async function renderQuizList() {
       const statusEl = document.getElementById("status");
@@ -44,7 +45,7 @@
 
       try {
         const quizzes = await getQuizzes();
-        const historyQuizzes = quizzes.filter((quiz) => quiz.category === "history");
+        const historyQuizzes = quizzes.filter((quiz) => HISTORY_CATEGORIES.has(quiz.category));
 
         statusEl.textContent = "";
 

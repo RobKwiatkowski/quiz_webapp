@@ -136,6 +136,7 @@ Endpoints:
 - `GET /health` returns `{ "status": "ok" }`
 - `GET /api/quizzes` returns lightweight quiz metadata without questions
 - `GET /api/quizzes/{quiz_id}` returns a full quiz payload with questions
+- `GET /api/math/question` returns a placeholder LLM-generated math question
 - unknown quiz IDs return `404` with `Quiz not found`
 
 Configuration:
@@ -310,7 +311,7 @@ The frontend is static and consists of:
 
 - `frontend/index.html` - main subject menu
 - `frontend/history.html` - history quiz list
-- `frontend/math.html` - math quiz list
+- `frontend/math.html` - generated math question screen
 - `frontend/quiz.html` - quiz screen and result screen
 - `frontend/js/config.js` - API base URL configuration
 - `frontend/js/api.js` - API calls
@@ -325,8 +326,10 @@ The frontend is responsible for:
 
 - showing the main subject menu
 - loading the quiz list
-- filtering history quizzes on the history section page
-- filtering math and LLM quizzes on the math section page
+- filtering history and one-shot LLM quizzes on the history section page
+- requesting a generated math question when the math page opens
+- showing a localized LLM-unavailable message if the generated math question
+  endpoint cannot be reached
 - returning from a quiz to the section that launched it when the section is provided
   in the query string
 - loading the selected quiz by query-string `id`
