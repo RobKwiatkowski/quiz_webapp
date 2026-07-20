@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=8" />
+  <link rel="stylesheet" href="./css/styles.css?v=9" />
 </head>
 <body>
   <main class="container">
@@ -58,7 +58,7 @@
             <h2>${quiz.title}</h2>
             <p>${quiz.description}</p>
             <p><strong>Kategoria:</strong> ${quiz.category}</p>
-            <button onclick="window.location.href='quiz.html?id=${quiz.id}'">
+            <button onclick="window.location.href='quiz.html?id=${encodeURIComponent(quiz.id)}&section=history'">
               Start
             </button>
           </article>

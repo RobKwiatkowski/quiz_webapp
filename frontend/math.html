@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matematyka - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=8" />
+  <link rel="stylesheet" href="./css/styles.css?v=9" />
 </head>
 <body>
   <main class="container">
@@ -18,8 +18,49 @@
     <section class="section-placeholder" aria-labelledby="math-title">
       <div class="section-placeholder-icon" aria-hidden="true">+</div>
       <h1 id="math-title">Matematyka</h1>
-      <p>Sekcja jest gotowa na kolejny etap: generowanie zada&#324; przez LLM.</p>
+      <p>Wybierz zestaw zada&#324; matematycznych lub testowych LLM.</p>
     </section>
+
+    <div id="status">&#321;adowanie zada&#324;...</div>
+    <div id="quiz-list" class="quiz-list"></div>
   </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script>
+    const MATH_CATEGORIES = new Set(["math", "llm"]);
+
+    async function renderMathQuizList() {
+      const statusEl = document.getElementById("status");
+      const listEl = document.getElementById("quiz-list");
+
+      try {
+        const quizzes = await getQuizzes();
+        const mathQuizzes = quizzes.filter((quiz) => MATH_CATEGORIES.has(quiz.category));
+
+        statusEl.textContent = "";
+
+        if (!mathQuizzes.length) {
+          statusEl.textContent = "Brak dost\u0119pnych zada\u0144 z matematyki.";
+          return;
+        }
+
+        listEl.innerHTML = mathQuizzes.map((quiz) => `
+          <article class="quiz-card">
+            <h2>${quiz.title}</h2>
+            <p>${quiz.description}</p>
+            <p><strong>Kategoria:</strong> ${quiz.category}</p>
+            <button onclick="window.location.href='quiz.html?id=${encodeURIComponent(quiz.id)}&section=math'">
+              Start
+            </button>
+          </article>
+        `).join("");
+      } catch (error) {
+        statusEl.textContent = `B\u0142\u0105d: ${error.message}`;
+      }
+    }
+
+    renderMathQuizList();
+  </script>
 </body>
 </html>

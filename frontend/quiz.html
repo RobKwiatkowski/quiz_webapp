@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz</title>
-  <link rel="stylesheet" href="./css/styles.css?v=7" />
+  <link rel="stylesheet" href="./css/styles.css?v=9" />
 </head>
 <body>
   <main class="container">
@@ -99,6 +99,38 @@
   </main>
 
   <script src="./js/config.js?v=3"></script>
+  <script>
+    (function configureSectionReturnLinks() {
+      const params = new URLSearchParams(window.location.search);
+      const section = params.get("section");
+
+      if (section !== "math") {
+        return;
+      }
+
+      const topLink = document.querySelector(".quiz-menu-tile");
+      const resultLink = document.querySelector(".result-list-tile");
+      const resultTitle = document.querySelector(".result-list-title");
+      const resultSubtitle = document.querySelector(".result-list-subtitle");
+
+      if (topLink) {
+        topLink.href = "./math.html";
+        topLink.querySelector("span:last-child").textContent = "Zadania z matematyki";
+      }
+
+      if (resultLink) {
+        resultLink.href = "./math.html";
+      }
+
+      if (resultTitle) {
+        resultTitle.textContent = "Zadania z matematyki";
+      }
+
+      if (resultSubtitle) {
+        resultSubtitle.textContent = "Wybierz inny zestaw";
+      }
+    })();
+  </script>
   <script src="./js/api.js?v=3"></script>
   <script src="./js/utils.js?v=3"></script>
   <script src="./js/quiz-state.js?v=3"></script>
