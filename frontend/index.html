@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz na Szóstkę</title>
-  <link rel="stylesheet" href="./css/styles.css?v=3" />
+  <title>Quiz na Sz&oacute;stk&#281;</title>
+  <link rel="stylesheet" href="./css/styles.css?v=8" />
 </head>
 <body>
   <main class="container">
@@ -16,51 +16,33 @@
         alt=""
       />
       <div class="start-hero-overlay">
-        <h1 id="start-title">Quiz na Szóstkę</h1>
-        <p>Wybierz quiz i rozpocznij naukę.</p>
+        <h1 id="start-title">Quiz na Sz&oacute;stk&#281;</h1>
+        <p>Wybierz dzia&#322; nauki.</p>
       </div>
     </section>
 
-    <div id="status">Ładowanie quizów...</div>
-    <div id="quiz-list" class="quiz-list"></div>
+    <section class="section-grid" aria-label="Dzia&#322;y nauki">
+      <a class="section-tile section-tile-math" href="./math.html">
+        <span class="section-tile-icon" aria-hidden="true">+</span>
+        <span>
+          <span class="section-tile-title">Matematyka</span>
+          <span class="section-tile-subtitle">Zadania generowane przez nauczyciela AI</span>
+        </span>
+      </a>
+
+      <a class="section-tile section-tile-history" href="./history.html">
+        <span class="section-tile-icon" aria-hidden="true">H</span>
+        <span>
+          <span class="section-tile-title">Historia</span>
+          <span class="section-tile-subtitle">Obecne quizy z rozdzia&#322;&oacute;w</span>
+        </span>
+      </a>
+    </section>
   </main>
 
-  <script src="./js/config.js"></script>
-  <script src="./js/api.js"></script>
   <script src="./js/start-images.js"></script>
   <script>
     setRandomStartImage();
-
-    async function renderQuizList() {
-      const statusEl = document.getElementById("status");
-      const listEl = document.getElementById("quiz-list");
-
-      try {
-        const quizzes = await getQuizzes();
-
-        statusEl.textContent = "";
-
-        if (!quizzes.length) {
-          statusEl.textContent = "Brak dostępnych quizów.";
-          return;
-        }
-
-        listEl.innerHTML = quizzes.map((quiz) => `
-          <article class="quiz-card">
-            <h2>${quiz.title}</h2>
-            <p>${quiz.description}</p>
-            <p><strong>Kategoria:</strong> ${quiz.category}</p>
-            <button onclick="window.location.href='quiz.html?id=${quiz.id}'">
-              Start
-            </button>
-          </article>
-        `).join("");
-      } catch (error) {
-        statusEl.textContent = `Błąd: ${error.message}`;
-      }
-    }
-
-    renderQuizList();
   </script>
 </body>
 </html>

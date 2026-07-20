@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia - Quiz na Sz&oacute;stk&#281;</title>
+  <link rel="stylesheet" href="./css/styles.css?v=8" />
+</head>
+<body>
+  <main class="container">
+    <nav class="quiz-top-nav" aria-label="Nawigacja">
+      <a class="quiz-menu-tile" href="./index.html">
+        <span class="quiz-menu-icon" aria-hidden="true">&#8592;</span>
+        <span>Menu g&#322;&oacute;wne</span>
+      </a>
+    </nav>
+
+    <section class="start-hero" aria-labelledby="history-title">
+      <img
+        id="start-hero-image"
+        class="start-hero-image"
+        src="./assets/start-images/start_image_1.png"
+        alt=""
+      />
+      <div class="start-hero-overlay">
+        <h1 id="history-title">Historia</h1>
+        <p>Wybierz quiz i rozpocznij nauk&#281;.</p>
+      </div>
+    </section>
+
+    <div id="status">&#321;adowanie quiz&oacute;w...</div>
+    <div id="quiz-list" class="quiz-list"></div>
+  </main>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/start-images.js"></script>
+  <script>
+    setRandomStartImage();
+
+    async function renderQuizList() {
+      const statusEl = document.getElementById("status");
+      const listEl = document.getElementById("quiz-list");
+
+      try {
+        const quizzes = await getQuizzes();
+        const historyQuizzes = quizzes.filter((quiz) => quiz.category === "history");
+
+        statusEl.textContent = "";
+
+        if (!historyQuizzes.length) {
+          statusEl.textContent = "Brak dostępnych quizów z historii.";
+          return;
+        }
+
+        listEl.innerHTML = historyQuizzes.map((quiz) => `
+          <article class="quiz-card">
+            <h2>${quiz.title}</h2>
+            <p>${quiz.description}</p>
+            <p><strong>Kategoria:</strong> ${quiz.category}</p>
+            <button onclick="window.location.href='quiz.html?id=${quiz.id}'">
+              Start
+            </button>
+          </article>
+        `).join("");
+      } catch (error) {
+        statusEl.textContent = `Błąd: ${error.message}`;
+      }
+    }
+
+    renderQuizList();
+  </script>
+</body>
+</html>

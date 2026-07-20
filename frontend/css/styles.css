@@ -175,6 +175,117 @@ body {
   margin-top: 24px;
 }
 
+.section-grid {
+  max-width: 720px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.section-tile {
+  box-sizing: border-box;
+  min-height: 156px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #1e293b;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.section-tile:hover,
+.section-tile:focus-visible {
+  border-color: #93c5fd;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.section-tile:focus-visible {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+.section-tile-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.section-tile-math .section-tile-icon {
+  background: #0f766e;
+}
+
+.section-tile-history .section-tile-icon {
+  background: #7c2d12;
+}
+
+.section-tile-title,
+.section-tile-subtitle {
+  display: block;
+}
+
+.section-tile-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.section-tile-subtitle {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.section-placeholder {
+  margin-top: 24px;
+  padding: 32px 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+.section-placeholder-icon {
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #0f766e;
+  color: white;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.section-placeholder h1 {
+  margin: 18px 0 8px;
+  font-size: 36px;
+}
+
+.section-placeholder p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .quiz-card,
 .question-card {
   background: white;
@@ -572,6 +683,18 @@ button:disabled {
 
   .result-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-tile {
+    min-height: 132px;
+  }
+
+  .section-tile-title {
+    font-size: 24px;
   }
 
   .result-actions {

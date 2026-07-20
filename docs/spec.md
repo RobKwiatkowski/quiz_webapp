@@ -308,7 +308,9 @@ the final list is not trimmed after the base selection step.
 
 The frontend is static and consists of:
 
-- `frontend/index.html` - quiz list
+- `frontend/index.html` - main subject menu
+- `frontend/history.html` - history quiz list
+- `frontend/math.html` - math section placeholder
 - `frontend/quiz.html` - quiz screen and result screen
 - `frontend/js/config.js` - API base URL configuration
 - `frontend/js/api.js` - API calls
@@ -321,7 +323,9 @@ The frontend is static and consists of:
 
 The frontend is responsible for:
 
+- showing the main subject menu
 - loading the quiz list
+- filtering history quizzes on the history section page
 - loading the selected quiz by query-string `id`
 - displaying one question at a time
 - displaying optional source text above a question

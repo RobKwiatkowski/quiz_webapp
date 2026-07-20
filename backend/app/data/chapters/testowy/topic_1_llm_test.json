@@ -1,0 +1,16 @@
+{
+  "topic_id": "llm-test",
+  "topic_title": "Pytanie testowe LLM",
+  "questions": [
+    {
+      "id": "pierwsze-cywilizacje-rzeki-wybrzeza",
+      "text": "Wyjaśnij dlaczego pierwsze cywilizacje tworzyły się wzdłuż rzek i wybrzeży morskich?",
+      "image": null,
+      "explanation": "Pierwsze cywilizacje rozwijały się przy rzekach i wybrzeżach, bo miały tam wodę, żywność oraz łatwiejszy transport i handel.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "Cywilizacje te tworzyły się tam, ponieważ rzeki umożliwiały handel, transport, a także stanowiły źródło pożywienia."
+      ]
+    }
+  ]
+}

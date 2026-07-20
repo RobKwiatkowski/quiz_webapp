@@ -1,0 +1,12 @@
+{
+  "id": "testowy",
+  "title": "Testowy",
+  "description": "Quiz testowy do strojenia prompta LLM.",
+  "category": "llm",
+  "age_group": "10-12",
+  "target_question_count": 1,
+  "questions_per_topic": 1,
+  "topics": [
+    "topic_1_llm_test.json"
+  ]
+}
