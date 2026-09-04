@@ -1,0 +1,49 @@
+{
+  "topic_id": "miasta-panstwa-mezopotamii",
+  "topic_title": "Miasta-państwa Mezopotamii",
+  "questions": [
+    {
+      "id": "q-2ce852e3",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Bliski Wschód lezy na styku jakich kontynentów?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Europa",
+          "is_correct": true
+        },
+        {
+          "text": "Afryka",
+          "is_correct": true
+        },
+        {
+          "text": "Azja",
+          "is_correct": true
+        },
+        {
+          "text": "Ameryka",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-7de477f4",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Pomiędzy jakimi rzekami powstała Mezopotamia?",
+      "selection_type": "open",
+      "explanation": "Pomiędzy Tygrysem i Eufratem",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Eufrat"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Tygrys"
+          ]
+        }
+      ]
+    }
+  ]
+}
