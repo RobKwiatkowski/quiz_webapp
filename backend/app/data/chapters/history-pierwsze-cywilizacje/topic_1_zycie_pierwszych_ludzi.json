@@ -1,0 +1,271 @@
+{
+  "topic_id": "zycie-pierwszych-ludzi",
+  "topic_title": "Życie pierwszych ludzi",
+  "questions": [
+    {
+      "id": "q-fb87da9d",
+      "text": "Jak nazywany przodków obecnego człowieka?",
+      "selection_type": "single",
+      "explanation": "Nazywamy ich praludźmi.",
+      "answers": [
+        {
+          "text": "praludźmi",
+          "is_correct": true
+        },
+        {
+          "text": "paraludźmi",
+          "is_correct": false
+        },
+        {
+          "text": "przedludźmi",
+          "is_correct": false
+        },
+        {
+          "text": "podludźmi",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b51d2e1d",
+      "text": "Jak nazywamy człowieka rozumnego?",
+      "selection_type": "single",
+      "explanation": "Jest to homo sapiens",
+      "answers": [
+        {
+          "text": "Homo sapiens",
+          "is_correct": true
+        },
+        {
+          "text": "Homo erectus",
+          "is_correct": false
+        },
+        {
+          "text": "Homo habilis",
+          "is_correct": false
+        },
+        {
+          "text": "Homo inteligentus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-55a50370",
+      "text": "Jak nazywamy człowieka wyprostowanego?",
+      "selection_type": "single",
+      "explanation": "Jest to homo erectus",
+      "answers": [
+        {
+          "text": "Homo erectus",
+          "is_correct": true
+        },
+        {
+          "text": "Homo sapiens",
+          "is_correct": false
+        },
+        {
+          "text": "Homo habilis",
+          "is_correct": false
+        },
+        {
+          "text": "Homo adamus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f8dd9b55",
+      "text": "Jak nazywamy kamienne narzędzie o ostrych krawędziach o kształcie dopasowanym do dłoni?",
+      "selection_type": "open",
+      "explanation": "Jest to pięściak",
+      "accepted_answers": [
+        "pięściak"
+      ]
+    },
+    {
+      "id": "q-44ee4253",
+      "text": "Z jakiego kontynentu pochodzi gatunek ludzki?",
+      "selection_type": "open",
+      "explanation": "Z Afryki",
+      "accepted_answers": [
+        "Z Afryki",
+        "Afryka"
+      ]
+    },
+    {
+      "id": "q-af077fc7",
+      "text": "Co dała ludziom umiejętność rozpalania ognia?",
+      "selection_type": "llm",
+      "explanation": "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta.",
+      "accepted_answers": [
+        "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta."
+      ]
+    },
+    {
+      "id": "q-fb775bf4",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jak nazywamy gatunek człowieka zręcznego?",
+      "selection_type": "single",
+      "explanation": "Nazywamy go Homo Habilis.",
+      "answers": [
+        {
+          "text": "Homo habilis",
+          "is_correct": true
+        },
+        {
+          "text": "Homo sapiens",
+          "is_correct": false
+        },
+        {
+          "text": "Homo erectus",
+          "is_correct": false
+        },
+        {
+          "text": "Homo neaderticus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2f30c5ea",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Ułóż epoki w kolejności chronologicznej.",
+      "selection_type": "order",
+      "explanation": "Po kolei były epoka kamienia, brązu i żelaza która jest do dzisiaj.",
+      "order_items": [
+        {
+          "id": "epoka-kamienia",
+          "text": "epoka kamienia",
+          "position": 1
+        },
+        {
+          "id": "epoka-brazu",
+          "text": "epoka brązu",
+          "position": 2
+        },
+        {
+          "id": "epoka-zelaza",
+          "text": "epoka żelaza",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "id": "q-3cc632e1",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Z czego robi się brąz?",
+      "selection_type": "multiple",
+      "explanation": "Brąz to stop cyny i miedzi.",
+      "answers": [
+        {
+          "text": "miedzi",
+          "is_correct": true
+        },
+        {
+          "text": "cyny",
+          "is_correct": true
+        },
+        {
+          "text": "żelaza",
+          "is_correct": false
+        },
+        {
+          "text": "aluminium",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-211fde7b",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jak nazywa się ta rzecz?",
+      "selection_type": "open",
+      "explanation": "Jest to dymiarka - piec do wytapiania żelaza.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dymarki_in_Biskupin.jpg",
+      "accepted_answers": [
+        "dymiarka",
+        "nazywa się dymiarka"
+      ]
+    },
+    {
+      "id": "q-de33f1e5",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Napisz jak wytapia się żelazo (z czego i gdzie)?",
+      "selection_type": "llm",
+      "explanation": "Żelazo wytapia się z rud w piecach. Fabrykę produkującą żelazo nazywa się hutą.",
+      "accepted_answers": [
+        "Żelazo wytapia się z rud w hutach."
+      ]
+    },
+    {
+      "id": "q-2e511f17",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Wyjaśnij dlaczego kolejne okresy w dziejach człowieka określa się jako epokę kamienia, brązu i żelaza?",
+      "selection_type": "llm",
+      "explanation": "Nazwy te określają z jakiego materiału wytwarzano narzędzia w danym okresie.",
+      "accepted_answers": [
+        "Nazwy te określają z jakiego materiału wytwarzano narzędzia w danym okresie."
+      ]
+    },
+    {
+      "id": "q-ee26fe53",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jakie są najważniejsze umiejętności opanowane przez praludzi?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "używanie mowy",
+          "is_correct": true
+        },
+        {
+          "text": "rozpalanie ognia",
+          "is_correct": true
+        },
+        {
+          "text": "pismo",
+          "is_correct": false
+        },
+        {
+          "text": "matematyka",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-26d02bf7",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jaki kontynent został zasiedlony przez człowieka jako ostatni?",
+      "selection_type": "open",
+      "explanation": "Ostatnim kontynentem zasiedlonym przez człowieka była Ameryka Południowa.",
+      "accepted_answers": [
+        "Ameryka Południowa",
+        "Ameryk Pd."
+      ]
+    },
+    {
+      "id": "q-9a9011f3",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Czym była rewolucja neolityczna?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "przejście z koczowniczego na osiadły tryb życia",
+          "is_correct": true
+        },
+        {
+          "text": "przejście z epoki brązu do epoki żelaza",
+          "is_correct": false
+        },
+        {
+          "text": "opanowanie mowy i pisma",
+          "is_correct": false
+        },
+        {
+          "text": "umiejętność tworzenia narzędzi z kamienia",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

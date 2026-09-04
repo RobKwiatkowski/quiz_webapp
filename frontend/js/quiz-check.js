@@ -75,32 +75,76 @@ function handleCheckOpenAnswer() {
   if (hasAnswered) return;
 
   const question = getCurrentQuestion();
-  const inputEl = document.getElementById("open-answer-input");
-  const rawValue = inputEl.value.trim();
+  const inputEls = getOpenAnswerInputs();
+  const rawValues = inputEls.map((inputEl) => inputEl.value.trim());
 
-  if (!rawValue) {
+  if (rawValues.every((value) => !value)) {
     showOpenAnswerRequiredMessage();
     return;
   }
 
   hasAnswered = true;
 
-  const userAnswer = question.case_sensitive
-    ? normalizeAnswerWhitespace(rawValue)
-    : normalizeAnswer(rawValue);
+  const points = getOpenAnswerPoints(question, rawValues);
+  const maximum = getQuestionMaxPoints(question);
+  const isCorrectOverall = points === maximum;
 
-  const acceptedAnswers = (question.accepted_answers || []).map((answer) =>
-    question.case_sensitive ? normalizeAnswerWhitespace(answer) : normalizeAnswer(answer)
-  );
+  earnedPoints += points;
 
-  const isCorrectOverall = acceptedAnswers.includes(userAnswer);
+  inputEls.forEach((inputEl) => {
+    inputEl.disabled = true;
+  });
+  showFeedback(isCorrectOverall, question.explanation || "", points, maximum);
+}
 
-  if (isCorrectOverall) {
-    score += 1;
+function getOpenAnswerInputs() {
+  const slotInputs = Array.from(document.querySelectorAll(".open-answer-slot-input"));
+  if (slotInputs.length > 0) {
+    return slotInputs;
+  }
+  return [document.getElementById("open-answer-input")];
+}
+
+function getOpenAnswerPoints(question, rawValues) {
+  if (Array.isArray(question.answer_slots) && question.answer_slots.length > 0) {
+    return getMultiSlotOpenAnswerPoints(question, rawValues);
   }
 
-  inputEl.disabled = true;
-  showFeedback(isCorrectOverall, question.explanation || "");
+  const userAnswer = normalizeOpenValue(question, rawValues[0] || "");
+  const acceptedAnswers = (question.accepted_answers || []).map((answer) =>
+    normalizeOpenValue(question, answer)
+  );
+  return acceptedAnswers.includes(userAnswer) ? 1 : 0;
+}
+
+function getMultiSlotOpenAnswerPoints(question, rawValues) {
+  const unmatchedSlots = (question.answer_slots || []).map((slot) =>
+    (slot.accepted_answers || []).map((answer) => normalizeOpenValue(question, answer))
+  );
+  const userAnswers = rawValues
+    .filter(Boolean)
+    .map((answer) => normalizeOpenValue(question, answer));
+
+  let points = 0;
+
+  userAnswers.forEach((userAnswer) => {
+    const slotIndex = unmatchedSlots.findIndex((acceptedAnswers) =>
+      acceptedAnswers.includes(userAnswer)
+    );
+
+    if (slotIndex >= 0) {
+      points += 1;
+      unmatchedSlots.splice(slotIndex, 1);
+    }
+  });
+
+  return points;
+}
+
+function normalizeOpenValue(question, value) {
+  return question.case_sensitive
+    ? normalizeAnswerWhitespace(value)
+    : normalizeAnswer(value);
 }
 
 // SECTION: quiz-llm-answer-check
@@ -127,7 +171,7 @@ async function handleCheckLlmAnswer() {
     const isCorrectOverall = llmPoints === 1;
 
     hasAnswered = true;
-    score += llmPoints;
+    earnedPoints += llmPoints;
     inputEl.disabled = true;
     showLlmFeedback(evaluation, isCorrectOverall, llmPoints);
   } catch (error) {
@@ -148,7 +192,7 @@ function handleSingleAnswerClick(event) {
   const isCorrect = button.dataset.correct === "true";
 
   if (isCorrect) {
-    score += 1;
+    earnedPoints += 1;
   }
 
   showCorrectAndIncorrectStates([button]);
@@ -180,7 +224,7 @@ function handleCheckMultipleAnswers() {
   const isCorrectOverall = allSelectedAreCorrect && allCorrectSelected;
 
   if (isCorrectOverall) {
-    score += 1;
+    earnedPoints += 1;
   }
 
   showCorrectAndIncorrectStates(selectedButtons);
@@ -208,7 +252,7 @@ function handleCheckOrderAnswer() {
   hasAnswered = true;
 
   if (isCorrectOverall) {
-    score += 1;
+    earnedPoints += 1;
   }
 
   showOrderItemStates(isCorrectOverall);
@@ -237,7 +281,7 @@ function handleCheckMatchingAnswer() {
   hasAnswered = true;
 
   if (isCorrectOverall) {
-    score += 1;
+    earnedPoints += 1;
   }
 
   showMatchingPairStates();
@@ -306,19 +350,65 @@ function showLlmErrorMessage() {
 
 function showLlmFeedback(evaluation, isCorrectOverall, llmPoints) {
   const feedbackEl = document.getElementById("feedback");
-  const feedback = (evaluation.feedback || "Odpowiedź została sprawdzona.")
-    .replace(/\s*Punkty:\s*\d+(?:[.,]\d+)?\s*\/\s*1\s*$/i, "");
-  feedbackEl.replaceChildren(
-    document.createTextNode(feedback),
-    document.createElement("br"),
-    document.createTextNode(`Punkty: ${llmPoints}/1`)
-  );
+  const feedbackParts = parseLlmFeedback(evaluation.feedback);
+
+  feedbackEl.replaceChildren(createLlmFeedbackContent(feedbackParts, llmPoints));
   feedbackEl.className = isCorrectOverall
-    ? "feedback correct-feedback"
-    : "feedback incorrect-feedback";
+    ? "feedback correct-feedback llm-feedback"
+    : "feedback incorrect-feedback llm-feedback";
   feedbackEl.classList.remove("hidden");
   showElement("next-button");
   hideElement("check-button");
+}
+
+function parseLlmFeedback(rawFeedback) {
+  const withoutPoints = (rawFeedback || "Odpowiedź została sprawdzona.")
+    .replace(/\s*Punkty:\s*\d+(?:[.,]\d+)?\s*\/\s*1\s*$/i, "")
+    .replace(/\\+$/g, "")
+    .trim();
+  const correctAnswerMatch = withoutPoints.match(/^(.*?)[;.]?\s*poprawnie:\s*(.+)$/i);
+
+  if (!correctAnswerMatch) {
+    return {message: withoutPoints, correctAnswer: ""};
+  }
+
+  return {
+    message: correctAnswerMatch[1].trim() || "Odpowiedź wymaga poprawy.",
+    correctAnswer: correctAnswerMatch[2].trim()
+  };
+}
+
+function createLlmFeedbackContent(feedbackParts, llmPoints) {
+  const contentEl = document.createElement("div");
+  contentEl.className = "llm-feedback-content";
+
+  const messageEl = document.createElement("p");
+  messageEl.className = "llm-feedback-message";
+  messageEl.textContent = feedbackParts.message;
+  contentEl.appendChild(messageEl);
+
+  if (feedbackParts.correctAnswer) {
+    const answerBlockEl = document.createElement("div");
+    answerBlockEl.className = "llm-correct-answer";
+
+    const labelEl = document.createElement("div");
+    labelEl.className = "llm-correct-answer-label";
+    labelEl.textContent = "Poprawnie:";
+
+    const textEl = document.createElement("p");
+    textEl.className = "llm-correct-answer-text";
+    textEl.textContent = feedbackParts.correctAnswer;
+
+    answerBlockEl.append(labelEl, textEl);
+    contentEl.appendChild(answerBlockEl);
+  }
+
+  const pointsEl = document.createElement("div");
+  pointsEl.className = "llm-points-badge";
+  pointsEl.textContent = `Punkty: ${llmPoints} / 1`;
+  contentEl.appendChild(pointsEl);
+
+  return contentEl;
 }
 
 function showMatchingAnswerRequiredMessage() {

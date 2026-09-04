@@ -1,0 +1,13 @@
+{
+  "id": "history-pierwsze-cywilizacje",
+  "title": "Pierwsze cywilizacje",
+  "description": "Powtórka z rozdziału o pierwszych cywilizacjach.",
+  "category": "history",
+  "age_group": "10-12",
+  "target_question_count": 6,
+  "questions_per_topic": 6,
+  "topics": [
+    "topic_1_zycie_pierwszych_ludzi.json",
+    "topic_2_miasta-panstwa-mezopotamii.json"
+  ]
+}

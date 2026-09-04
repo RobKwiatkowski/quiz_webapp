@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logowanie admina</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css" />
+</head>
+<body>
+  <main class="login-shell">
+    <section class="admin-panel login-panel">
+      <h1>Logowanie</h1>
+      <form id="login-form">
+        <label>
+          Login
+          <input id="username" type="text" autocomplete="username" />
+        </label>
+        <label>
+          Hasło
+          <input id="password" type="password" autocomplete="current-password" />
+        </label>
+        <div id="login-error" class="status error hidden"></div>
+        <button type="submit">Zaloguj</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const errorEl = document.getElementById("login-error");
+      errorEl.classList.add("hidden");
+
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value
+        })
+      });
+
+      if (response.ok) {
+        window.location.href = "/admin/";
+        return;
+      }
+
+      const payload = await response.json().catch(() => ({}));
+      errorEl.textContent = payload.detail || "Nie udało się zalogować.";
+      errorEl.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

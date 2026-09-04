@@ -44,6 +44,28 @@ class MatchingPair(BaseModel):
     right: str
 
 
+class QuestionContext(BaseModel):
+    """Optional plain text context displayed before a question.
+
+    Attributes:
+        text: Context passage shown above the question.
+        source: Optional source attribution.
+    """
+
+    text: str
+    source: Optional[str] = None
+
+
+class AnswerSlot(BaseModel):
+    """One answer slot for multi-field open questions.
+
+    Attributes:
+        accepted_answers: Accepted values for this slot.
+    """
+
+    accepted_answers: List[str]
+
+
 class Question(BaseModel):
     """Question schema supporting single, multiple, open, llm, order, and matching answers.
 
@@ -51,25 +73,31 @@ class Question(BaseModel):
         id: Unique question identifier.
         text: Question text shown in the UI.
         source_text: Optional source passage shown above the question.
+        context: Optional plain text context passage with source attribution.
         image: Optional image path, URL, or list of image references.
-        explanation: Required explanation shown after an incorrect answer.
+        explanation: Optional explanation shown after an incorrect answer.
         selection_type: Interaction type (single, multiple, open, llm, order, or matching).
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
+        answer_slots: Slots for multi-field open questions.
         order_items: Items to arrange for order questions.
         matching_pairs: Left/right pairs for matching questions.
+        topic_id: Optional topic identifier used by the admin editor.
     """
 
     id: str
     text: str
     source_text: Optional[str] = None
+    context: Optional[QuestionContext] = None
     image: str | List[str] | None = None
-    explanation: str
+    explanation: Optional[str] = None
     selection_type: Literal["single", "multiple", "open", "llm", "order", "matching"] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
+    answer_slots: List[AnswerSlot] = Field(default_factory=list)
     order_items: List[OrderItem] = Field(default_factory=list)
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
+    topic_id: Optional[str] = None
 
 
 class Quiz(BaseModel):

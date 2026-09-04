@@ -4,9 +4,10 @@ Edu Quiz for Kids is a lightweight single-player quiz application for home
 learning. It is designed for a child aged about 10-12 and currently focuses on
 school revision quizzes in Polish.
 
-The project is intentionally small: it does not include login, user profiles,
-rankings, a database, or an admin panel. Quiz content is stored in JSON files, and
-the backend assembles ready quiz payloads for the frontend.
+The project is intentionally small: it does not include user profiles, rankings,
+or a database. Quiz content is stored in JSON files, and the backend assembles
+ready quiz payloads for the frontend. A minimal single-admin panel can edit
+questions in existing topics.
 
 ## Purpose
 
@@ -24,6 +25,7 @@ The application has two main screens:
 
 - a quiz list page
 - a quiz page that shows one question at a time
+- an admin page for editing questions in existing topics
 
 Each quiz represents one school book chapter. A chapter contains topic JSON files,
 and each topic contains questions. The backend loads the chapter metadata, selects
@@ -35,9 +37,10 @@ Supported question types:
 - `single` - one correct answer
 - `multiple` - multiple correct answers
 - `open` - short free-text answer checked against accepted variants
+- multi-slot `open` - several short answers, scored one point per matched slot
 
 The frontend handles answer selection, immediate feedback, progress display, final
-score, and quiz restart. Scores are not persisted.
+point score, and quiz restart. Scores are not persisted.
 
 ## Stack
 
@@ -57,6 +60,7 @@ backend/
     models/              Pydantic models
     services/            quiz loading and assembly logic
     static/              local static assets, including images
+    admin_static/        minimal admin HTML/CSS/JavaScript
   scripts/               quiz validation scripts
 frontend/
   css/                   frontend styles
@@ -99,6 +103,7 @@ docker compose up --build
 Default local URLs:
 
 - app: `http://localhost:8081`
+- admin: `http://localhost:8081/admin`
 - health check through Nginx: `http://localhost:8081/health`
 
 The Nginx frontend proxies `/api/`, `/health`, and `/static/` to the backend.
@@ -107,6 +112,18 @@ Compose file; it is reachable by Nginx on the internal Docker network.
 Compose builds the backend image only. The frontend uses the official
 `nginx:stable-alpine` image and bind-mounts `frontend/` plus
 `nginx/default.conf`, which keeps rebuilds faster on Raspberry Pi.
+
+Admin login uses:
+
+- `ADMIN_USERNAME`
+- `ADMIN_PASSWORD_HASH`
+
+Do not commit a plaintext password. The hash format is `pbkdf2_sha256`. You can
+generate a hash from the backend code in a configured Python environment:
+
+```powershell
+$env:PYTHONPATH="backend"; python -c "from app.services.admin_auth import hash_password; print(hash_password('your-password'))"
+```
 
 ## Docker Hub Images
 
@@ -241,17 +258,19 @@ Included:
 - question order grouped by chapter topic order
 - randomized answer order for closed questions
 - optional images
+- optional context/source text
+- multi-slot open questions
 - immediate feedback
-- final score and restart
+- final point score and restart
 - content validation
+- minimal single-admin question editor
 
 Not included:
 
-- login
 - profiles
 - persisted scores
 - database-backed content
-- admin UI
+- admin chapter/topic creation
 - multiplayer mode
 - rankings
 - timers

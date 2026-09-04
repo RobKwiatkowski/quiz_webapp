@@ -7,7 +7,19 @@ services:
     restart: unless-stopped
     environment:
       APP_ENV: prod
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD_HASH: "pbkdf2_sha256$$260000$$KcfkKY3bkM_ySjy-f-ge_w==$$TXqRVaefuUGxrjq42weO9ArnfRyjpkUPkOaKH6q9N6A="
+    volumes:
+      - ./backend/app/data/chapters:/app/app/data/chapters
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+  llm-checker:
+    build:
+      context: ../LLM_server
+      provenance: false
+    container_name: quiz-llm-checker
+    restart: unless-stopped
+    env_file:
+      - ../LLM_server/.env
 
   frontend:
     image: nginx:stable-alpine
@@ -20,3 +32,4 @@ services:
       - ./frontend:/usr/share/nginx/html:ro
     depends_on:
       - backend
+      - llm-checker

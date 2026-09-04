@@ -14,6 +14,7 @@ function renderQuestion() {
   const question = getCurrentQuestion();
   const answersEl = document.getElementById("answers");
   const openAnswerInputEl = document.getElementById("open-answer-input");
+  const openAnswerBoxEl = document.getElementById("open-answer-box");
   const imageEl = document.getElementById("question-image");
   const imageWrapperEl = document.getElementById("question-image-wrapper");
   const questionProgressTrackEl = document.getElementById("question-progress-track");
@@ -61,11 +62,12 @@ function renderQuestion() {
   }
 
   if (questionSourceEl) {
-    if (question.source_text) {
-      questionSourceEl.textContent = question.source_text;
+    const contextText = getQuestionContextText(question);
+    if (contextText) {
+      questionSourceEl.replaceChildren(...contextText);
       questionSourceEl.classList.remove("hidden");
     } else {
-      questionSourceEl.textContent = "";
+      questionSourceEl.replaceChildren();
       questionSourceEl.classList.add("hidden");
     }
   }
@@ -97,6 +99,8 @@ function renderQuestion() {
 
   openAnswerInputEl.value = "";
   openAnswerInputEl.disabled = false;
+  openAnswerInputEl.classList.remove("hidden");
+  document.querySelectorAll(".open-answer-slot-row").forEach((row) => row.remove());
 
   hideElement("check-button");
   hideElement("next-button");
@@ -106,8 +110,16 @@ function renderQuestion() {
   if (isOpenQuestion(question) || isLlmQuestion(question)) {
     answersEl.classList.add("hidden");
     showElement("open-answer-box");
+    if (isOpenQuestion(question) && Array.isArray(question.answer_slots) && question.answer_slots.length > 0) {
+      openAnswerInputEl.classList.add("hidden");
+      question.answer_slots.forEach((slot, index) => {
+        openAnswerBoxEl.appendChild(createOpenAnswerSlotElement(index));
+      });
+      document.querySelector(".open-answer-slot-input")?.focus();
+    } else {
+      openAnswerInputEl.focus();
+    }
     showElement("check-button");
-    openAnswerInputEl.focus();
     return;
   }
 
@@ -200,7 +212,7 @@ function showMatchingPairStates() {
   });
 }
 
-function showFeedback(isCorrectOverall, explanation) {
+function showFeedback(isCorrectOverall, explanation, earned = 0, maximum = 1) {
   const feedbackEl = document.getElementById("feedback");
 
   if (isCorrectOverall) {
@@ -211,9 +223,46 @@ function showFeedback(isCorrectOverall, explanation) {
     feedbackEl.className = "feedback incorrect-feedback";
   }
 
+  if (maximum > 1) {
+    feedbackEl.append(
+      document.createElement("br"),
+      document.createTextNode(`Zdobyte punkty: ${earned} / ${maximum}`)
+    );
+  }
+
   feedbackEl.classList.remove("hidden");
   showElement("next-button");
   hideElement("check-button");
+}
+
+function getQuestionContextText(question) {
+  if (question.context && question.context.text) {
+    const nodes = [document.createTextNode(question.context.text)];
+    if (question.context.source) {
+      nodes.push(document.createElement("br"), document.createTextNode(`Źródło: ${question.context.source}`));
+    }
+    return nodes;
+  }
+
+  if (question.source_text) {
+    return [document.createTextNode(question.source_text)];
+  }
+
+  return null;
+}
+
+function createOpenAnswerSlotElement(index) {
+  const rowEl = document.createElement("label");
+  rowEl.className = "open-answer-slot-row";
+  rowEl.textContent = `${index + 1}.`;
+
+  const inputEl = document.createElement("input");
+  inputEl.className = "open-answer-slot-input";
+  inputEl.type = "text";
+  inputEl.placeholder = "Wpisz odpowiedź";
+
+  rowEl.appendChild(inputEl);
+  return rowEl;
 }
 
 // SECTION: quiz-order-rendering
@@ -358,11 +407,10 @@ function showFinalResult() {
   hideElement("quiz-screen");
   showElement("result-screen");
 
-  const totalQuestions = currentQuiz.questions.length;
-  const percentage = getScorePercentage(score, totalQuestions);
-  const grade = getFinalGrade(score, totalQuestions);
-  const message = getFinalMessage(score, totalQuestions);
-  const emoji = getFinalEmoji(score, totalQuestions);
+  const percentage = getScorePercentage(earnedPoints, maxPoints);
+  const grade = getFinalGrade(earnedPoints, maxPoints);
+  const message = getFinalMessage(earnedPoints, maxPoints);
+  const emoji = getFinalEmoji(earnedPoints, maxPoints);
 
   const finalScoreEl = document.getElementById("final-score");
   const finalPercentageEl = document.getElementById("final-percentage");
@@ -371,7 +419,7 @@ function showFinalResult() {
   const resultEmojiEl = document.getElementById("result-emoji");
 
   if (finalScoreEl) {
-    finalScoreEl.textContent = `${score}/${totalQuestions}`;
+    finalScoreEl.textContent = `${earnedPoints} / ${maxPoints} pkt`;
   }
 
   if (finalPercentageEl) {

@@ -1,0 +1,567 @@
+body {
+  margin: 0;
+  background: #f6f7f9;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: default;
+}
+
+.secondary-button {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.secondary-button:hover,
+.secondary-button:focus-visible {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.danger-button {
+  background: #dc2626;
+}
+
+.admin-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+.login-shell {
+  max-width: 420px;
+  margin: 72px auto;
+  padding: 16px;
+}
+
+.admin-header,
+.section-header,
+.form-actions,
+.question-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question-actions {
+  flex-shrink: 0;
+}
+
+.question-row .question-actions {
+  justify-content: flex-end;
+}
+
+.question-row .question-actions button {
+  padding: 8px 10px;
+}
+
+.admin-header h1,
+.admin-header p,
+.admin-panel h2,
+.admin-panel h3,
+.editor-heading h2,
+.editor-heading p,
+.editor-card h3 {
+  margin-top: 0;
+}
+
+.admin-header p {
+  color: #475569;
+}
+
+.admin-panel {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+.login-panel {
+  margin-top: 0;
+}
+
+.editor-panel {
+  max-width: 960px;
+  margin: 22px auto 0;
+}
+
+.editor-heading {
+  margin-bottom: 16px;
+}
+
+.editor-heading h2 {
+  margin-bottom: 6px;
+  color: #111827;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.editor-heading p {
+  margin-bottom: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+#question-form {
+  display: grid;
+  gap: 16px;
+}
+
+.editor-card {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.editor-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editor-card-header h3 {
+  margin-bottom: 0;
+  color: #111827;
+  font-size: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 9px;
+}
+
+.compact-field {
+  max-width: 440px;
+}
+
+.optional-field {
+  display: grid;
+  gap: 12px;
+}
+
+.optional-label {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-optional-button {
+  justify-self: start;
+}
+
+.subsection-title {
+  color: #334155;
+  font-weight: 700;
+}
+
+.image-upload-controls {
+  display: grid;
+  gap: 16px;
+}
+
+.upload-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 108px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.upload-dropzone:hover,
+.upload-dropzone:focus-within,
+.upload-dropzone.is-dragging {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.upload-dropzone input {
+  display: none;
+}
+
+.field-separator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.field-separator::before,
+.field-separator::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e5e7eb;
+}
+
+.admin-select-grid,
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.breadcrumb-separator {
+  color: #94a3b8;
+}
+
+.link-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #2563eb;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  background: transparent;
+  color: #1d4ed8;
+}
+
+.item-list {
+  display: grid;
+  gap: 10px;
+}
+
+.item-button {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #1e293b;
+  text-align: left;
+}
+
+.item-button:hover,
+.item-button:focus-visible {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.empty-state {
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 16px;
+  background: #f8fafc;
+  color: #475569;
+}
+
+label {
+  display: grid;
+  gap: 9px;
+  color: #334155;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: white;
+  color: #1e293b;
+}
+
+input,
+select {
+  min-height: 42px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+  outline: none;
+}
+
+textarea {
+  line-height: 1.45;
+  resize: vertical;
+}
+
+#question-text {
+  min-height: 132px;
+}
+
+.question-list {
+  margin-top: 14px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+}
+
+.question-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.question-row:last-child {
+  border-bottom: 0;
+}
+
+.question-row:hover {
+  background: #f8fafc;
+}
+
+.question-number {
+  width: 34px;
+  flex-shrink: 0;
+  color: #475569;
+  font-weight: 700;
+  text-align: right;
+}
+
+.question-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.question-count {
+  margin: -6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.row-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.image-preview img {
+  width: 132px;
+  height: 88px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #e2e8f0;
+}
+
+.image-preview-actions {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.image-preview-actions span {
+  overflow: hidden;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-preview-actions button {
+  justify-self: start;
+}
+
+.answer-row,
+.accepted-answer-row,
+.slot-row,
+.order-item-row,
+.matching-pair-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.slot-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.order-item-row {
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+}
+
+.matching-pair-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+}
+
+.inline-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.inline-check input {
+  width: auto;
+}
+
+.delete-button {
+  border: 0;
+  background: transparent;
+  color: #dc2626;
+}
+
+.delete-button:hover,
+.delete-button:focus-visible {
+  background: #fee2e2;
+}
+
+.compact {
+  margin-top: 0;
+}
+
+.status {
+  margin-top: 12px;
+  padding: 12px;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  background: #eff6ff;
+}
+
+.error {
+  border-left-color: #dc2626;
+  background: #fee2e2;
+}
+
+.form-actions {
+  justify-content: flex-end;
+  margin-top: 2px;
+  padding: 2px 0 0;
+}
+
+.form-actions button {
+  min-width: 132px;
+}
+
+.form-actions .secondary-button {
+  min-width: 104px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .admin-shell {
+    padding: 20px 14px;
+  }
+
+  .editor-heading h2 {
+    font-size: 26px;
+  }
+
+  .editor-card {
+    padding: 18px;
+  }
+
+  .admin-select-grid,
+  .two-column,
+  .image-preview,
+  .answer-row,
+  .accepted-answer-row,
+  .slot-row,
+  .order-item-row,
+  .matching-pair-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header,
+  .section-header,
+  .question-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .question-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .question-text {
+    flex-basis: calc(100% - 46px);
+  }
+
+  .question-actions {
+    width: 100%;
+    padding-left: 46px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .image-preview-actions button {
+    justify-self: stretch;
+  }
+}

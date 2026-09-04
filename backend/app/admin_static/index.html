@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel admina</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css" />
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <h1>Panel admina</h1>
+        <p>Zarządzaj rozdziałami, tematami i pytaniami.</p>
+      </div>
+      <button id="logout-button" type="button" class="secondary-button">Wyloguj</button>
+    </header>
+
+    <nav id="breadcrumb" class="breadcrumb" aria-label="Ścieżka"></nav>
+    <div id="status" class="status hidden"></div>
+
+    <section id="chapter-panel" class="admin-panel">
+      <div class="section-header">
+        <h2>Rozdziały</h2>
+        <button id="add-chapter-button" type="button">+ Dodaj rozdział</button>
+      </div>
+      <div id="chapter-empty" class="empty-state hidden">Brak rozdziałów. Dodaj pierwszy rozdział.</div>
+      <div id="chapter-list" class="item-list"></div>
+    </section>
+
+    <section id="topic-panel" class="admin-panel hidden">
+      <div class="section-header">
+        <h2 id="topic-panel-title">Tematy</h2>
+        <button id="add-topic-button" type="button">+ Dodaj temat</button>
+      </div>
+      <div id="topic-empty" class="empty-state hidden">Ten rozdział nie ma jeszcze tematów. Dodaj pierwszy temat.</div>
+      <div id="topic-list" class="item-list"></div>
+    </section>
+
+    <section id="question-panel" class="admin-panel hidden">
+      <div class="section-header">
+        <div>
+          <h2 id="question-panel-title">Pytania</h2>
+          <p id="question-count" class="question-count">0 pytań</p>
+        </div>
+        <button id="add-question-button" type="button">+ Dodaj pytanie</button>
+      </div>
+      <div id="question-empty" class="empty-state hidden">Ten temat nie ma jeszcze pytań. Dodaj pierwsze pytanie.</div>
+      <div id="question-list" class="question-list"></div>
+    </section>
+
+    <section id="editor-panel" class="editor-panel hidden">
+      <div class="editor-heading">
+        <h2 id="editor-title">Dodaj pytanie</h2>
+        <p id="editor-subtitle">Utwórz nowe pytanie w wybranym temacie</p>
+      </div>
+      <form id="question-form">
+        <div class="editor-card">
+          <div class="editor-card-header">
+            <h3>Dane pytania</h3>
+          </div>
+
+          <div class="form-field compact-field">
+            <label for="question-type">Typ pytania</label>
+            <select id="question-type">
+              <option value="single">Jedna poprawna odpowiedź</option>
+              <option value="multiple">Kilka poprawnych odpowiedzi</option>
+              <option value="open">Odpowiedź pisemna</option>
+              <option value="order">Układanie w kolejności</option>
+              <option value="matching">Dopasowywanie par</option>
+              <option value="llm">Odpowiedź pisemna oceniana przez AI</option>
+            </select>
+          </div>
+
+          <label class="form-field">
+            <span>Treść pytania</span>
+            <textarea id="question-text" rows="3"></textarea>
+          </label>
+
+          <div class="optional-field">
+            <button id="toggle-context-button" type="button" class="link-button add-optional-button">+ Dodaj tekst źródłowy</button>
+            <label id="context-field" class="form-field hidden">
+              <span>Tekst źródłowy <span class="optional-label">opcjonalnie</span></span>
+              <textarea id="context-text" rows="4"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div id="image-editor" class="editor-card hidden">
+          <div class="editor-card-header">
+            <h3>Materiały dodatkowe</h3>
+          </div>
+          <div class="subsection-title">Obrazek</div>
+          <div id="image-preview" class="image-preview hidden">
+            <img id="image-preview-img" alt="Miniatura obrazka" />
+            <div class="image-preview-actions">
+              <span id="image-preview-name"></span>
+              <button id="remove-image-button" type="button" class="secondary-button">Usuń obrazek</button>
+            </div>
+          </div>
+          <div id="image-upload-controls" class="image-upload-controls">
+            <label id="image-dropzone" class="upload-dropzone" for="image-file">
+              <input id="image-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp" />
+              <span>Przeciągnij obrazek tutaj lub wybierz plik</span>
+            </label>
+            <div class="field-separator"><span>lub</span></div>
+            <label class="form-field">
+              <span>Link do obrazka</span>
+              <input id="image-url" type="text" placeholder="https://..." />
+            </label>
+          </div>
+        </div>
+
+        <div id="choice-editor" class="editor-card">
+          <div class="section-header compact">
+            <h3>Odpowiedzi</h3>
+            <button id="add-answer-button" type="button" class="secondary-button">+ Odpowiedź</button>
+          </div>
+          <div id="answer-rows" class="row-stack"></div>
+        </div>
+
+        <div id="open-editor" class="editor-card hidden">
+          <label class="inline-check">
+            <input id="multi-slot-toggle" type="checkbox" />
+            Kilka pól odpowiedzi
+          </label>
+
+          <div id="accepted-answer-editor">
+            <div class="section-header compact">
+              <h3 id="accepted-answer-title">Poprawne odpowiedzi</h3>
+              <button id="add-accepted-answer-button" type="button" class="secondary-button">+ Wariant</button>
+            </div>
+            <div id="accepted-answer-rows" class="row-stack"></div>
+          </div>
+
+          <div id="slot-editor" class="hidden">
+            <div class="section-header compact">
+              <h3>Pola odpowiedzi</h3>
+              <button id="add-slot-button" type="button" class="secondary-button">+ Pole</button>
+            </div>
+            <div id="slot-rows" class="row-stack"></div>
+          </div>
+        </div>
+
+        <div id="order-editor" class="editor-card hidden">
+          <div class="section-header compact">
+            <h3>Elementy w poprawnej kolejności</h3>
+            <button id="add-order-item-button" type="button" class="secondary-button">+ Element</button>
+          </div>
+          <div id="order-item-rows" class="row-stack"></div>
+        </div>
+
+        <div id="matching-editor" class="editor-card hidden">
+          <div class="section-header compact">
+            <h3>Pary do dopasowania</h3>
+            <button id="add-matching-pair-button" type="button" class="secondary-button">+ Para</button>
+          </div>
+          <div id="matching-pair-rows" class="row-stack"></div>
+        </div>
+
+        <div class="editor-card">
+          <label id="explanation-label">
+            <span id="explanation-label-text">Wyjaśnienie</span>
+            <textarea id="question-explanation" rows="3"></textarea>
+          </label>
+        </div>
+
+        <div id="form-error" class="status error hidden"></div>
+
+        <div class="form-actions">
+          <button id="cancel-edit-button" type="button" class="secondary-button">Anuluj</button>
+          <button id="save-question-button" type="submit">Dodaj pytanie</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/admin/assets/admin.js"></script>
+</body>
+</html>

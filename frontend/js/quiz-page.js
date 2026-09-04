@@ -12,6 +12,7 @@ async function restartQuiz() {
   try {
     resetQuizState();
     currentQuiz = await getQuizById(quizId);
+    maxPoints = getQuizMaxPoints(currentQuiz);
 
     if (!currentQuiz.questions || currentQuiz.questions.length === 0) {
       statusEl.textContent = "Quiz nie zawiera pytań.";
@@ -41,6 +42,7 @@ async function initQuizPage() {
   try {
     resetQuizState();
     currentQuiz = await getQuizById(quizId);
+    maxPoints = getQuizMaxPoints(currentQuiz);
 
     if (!currentQuiz.questions || currentQuiz.questions.length === 0) {
       statusEl.textContent = "Quiz nie zawiera pytań.";
