@@ -232,6 +232,14 @@ body {
   background: #7c2d12;
 }
 
+.section-tile-geography .section-tile-icon {
+  background: #166534;
+}
+
+.section-tile-biology .section-tile-icon {
+  background: #7f1d1d;
+}
+
 .section-tile-title,
 .section-tile-subtitle {
   display: block;

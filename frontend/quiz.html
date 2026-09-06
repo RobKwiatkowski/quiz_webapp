@@ -102,11 +102,14 @@
   <script>
     (function configureSectionReturnLinks() {
       const params = new URLSearchParams(window.location.search);
-      const section = params.get("section");
-
-      if (section !== "math") {
-        return;
-      }
+      const section = params.get("section") || "history";
+      const sectionPages = {
+        history: {href: "./history.html", title: "Quizy z historii"},
+        geography: {href: "./geography.html", title: "Quizy z geografii"},
+        biology: {href: "./biology.html", title: "Quizy z biologii"},
+        math: {href: "./math.html", title: "Zadania z matematyki"}
+      };
+      const sectionPage = sectionPages[section] || sectionPages.history;
 
       const topLink = document.querySelector(".quiz-menu-tile");
       const resultLink = document.querySelector(".result-list-tile");
@@ -114,16 +117,16 @@
       const resultSubtitle = document.querySelector(".result-list-subtitle");
 
       if (topLink) {
-        topLink.href = "./math.html";
-        topLink.querySelector("span:last-child").textContent = "Zadania z matematyki";
+        topLink.href = sectionPage.href;
+        topLink.querySelector("span:last-child").textContent = sectionPage.title;
       }
 
       if (resultLink) {
-        resultLink.href = "./math.html";
+        resultLink.href = sectionPage.href;
       }
 
       if (resultTitle) {
-        resultTitle.textContent = "Zadania z matematyki";
+        resultTitle.textContent = sectionPage.title;
       }
 
       if (resultSubtitle) {
@@ -135,7 +138,7 @@
   <script src="./js/utils.js?v=3"></script>
   <script src="./js/quiz-state.js?v=4"></script>
   <script src="./js/quiz-check.js?v=14"></script>
-  <script src="./js/quiz-render.js?v=11"></script>
+  <script src="./js/quiz-render.js?v=12"></script>
   <script src="./js/quiz-events.js?v=3"></script>
   <script src="./js/quiz-page.js?v=3"></script>
 </body>

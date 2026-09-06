@@ -11,7 +11,7 @@
     <header class="admin-header">
       <div>
         <h1>Panel admina</h1>
-        <p>Zarządzaj rozdziałami, tematami i pytaniami.</p>
+        <p>Zarządzaj rozdziałami, tematami i pytaniami per przedmiot.</p>
       </div>
       <button id="logout-button" type="button" class="secondary-button">Wyloguj</button>
     </header>
@@ -20,8 +20,9 @@
     <div id="status" class="status hidden"></div>
 
     <section id="chapter-panel" class="admin-panel">
+      <div class="subject-tabs" id="subject-tabs" aria-label="Przedmiot"></div>
       <div class="section-header">
-        <h2>Rozdziały</h2>
+        <h2 id="chapter-panel-title">Rozdziały</h2>
         <button id="add-chapter-button" type="button">+ Dodaj rozdział</button>
       </div>
       <div id="chapter-empty" class="empty-state hidden">Brak rozdziałów. Dodaj pierwszy rozdział.</div>

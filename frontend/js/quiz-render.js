@@ -502,7 +502,7 @@ function getQuestionHint(question) {
   }
 
   if (question.selection_type === "order") {
-    return "Ułóż wydarzenia od najwcześniejszego do najpóźniejszego.";
+    return "Ułóż elementy we właściwej kolejności.";
   }
 
   if (question.selection_type === "matching") {

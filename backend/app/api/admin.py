@@ -24,6 +24,7 @@ from app.services.admin_content import (
     delete_question,
     list_admin_chapters,
     list_admin_questions,
+    list_admin_subjects,
     list_admin_topics,
     update_question,
 )
@@ -93,10 +94,16 @@ def get_me(request: Request):
     return {"authenticated": verify_session_value(request.cookies.get("edu_quiz_admin"))}
 
 
+@router.get("/subjects", dependencies=[Depends(require_admin)])
+def get_subjects():
+    """Lists subjects available for admin editing."""
+    return list_admin_subjects()
+
+
 @router.get("/chapters", dependencies=[Depends(require_admin)])
-def get_chapters():
+def get_chapters(subject: str | None = None):
     """Lists chapters available for admin editing."""
-    return list_admin_chapters()
+    return list_admin_chapters(subject)
 
 
 @router.post("/chapters", dependencies=[Depends(require_admin)])

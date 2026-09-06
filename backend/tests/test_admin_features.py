@@ -294,14 +294,63 @@ def test_create_chapter_starts_empty_and_appears_in_list(tmp_path, monkeypatch):
 
     assert response.status_code == 200
     created = response.json()
-    assert created == {"id": "nowy-rozdzial", "title": "Nowy rozdział"}
+    assert created == {"id": "nowy-rozdzial", "title": "Nowy rozdział", "subject": "history"}
     meta_path = data_dir / "nowy-rozdzial" / "meta.json"
     meta_data = json.loads(meta_path.read_text(encoding="utf-8"))
     assert meta_data["title"] == "Nowy rozdział"
+    assert meta_data["category"] == "history"
     assert meta_data["topics"] == []
 
     chapters = client.get("/api/admin/chapters").json()
     assert created in chapters
+
+
+def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    subjects = client.get("/api/admin/subjects").json()
+    assert subjects == [
+        {"id": "history", "title": "Historia"},
+        {"id": "geography", "title": "Geografia"},
+        {"id": "biology", "title": "Biologia"},
+    ]
+
+    response = client.post(
+        "/api/admin/chapters",
+        json={"name": "Mapa Polski", "subject": "geography"},
+    )
+
+    assert response.status_code == 200
+    created = response.json()
+    assert created == {"id": "mapa-polski", "title": "Mapa Polski", "subject": "geography"}
+
+    geography_meta = json.loads((data_dir / "mapa-polski" / "meta.json").read_text(encoding="utf-8"))
+    assert geography_meta["category"] == "geography"
+
+    history_chapters = client.get("/api/admin/chapters?subject=history").json()
+    geography_chapters = client.get("/api/admin/chapters?subject=geography").json()
+    biology_chapters = client.get("/api/admin/chapters?subject=biology").json()
+
+    assert [chapter["id"] for chapter in history_chapters] == ["chapter-1"]
+    assert geography_chapters == [created]
+    assert biology_chapters == []
+
+
+def test_create_chapter_rejects_unknown_subject(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.post(
+        "/api/admin/chapters",
+        json={"name": "Nieznany przedmiot", "subject": "chemistry"},
+    )
+
+    assert response.status_code == 400
 
 
 def test_create_topic_adds_file_to_current_chapter(tmp_path, monkeypatch):

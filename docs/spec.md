@@ -4,8 +4,8 @@
 
 Edu Quiz for Kids is a lightweight educational quiz application for home learning,
 designed for a child aged about 10-12. The first production version supports
-single-player school revision, plus a minimal single-admin authoring panel for
-editing JSON-backed questions.
+single-player school revision for history, geography, biology, and math, plus a
+minimal single-admin authoring panel for editing JSON-backed questions.
 
 The application should be easy to run on a home server, including Raspberry Pi 3,
 and should remain a separate service from the notes application.
@@ -37,8 +37,10 @@ the learning experience localized for the target child.
 
 In scope:
 
-- quiz list page
+- subject menu and subject-specific quiz list pages
 - one quiz represents one school book chapter
+- history, geography, and biology use the same chapter/topic/question learning
+  method
 - each playable chapter contains one or more topics; a newly created admin
   chapter may temporarily contain no topics
 - each topic is stored in a separate JSON file
@@ -54,7 +56,7 @@ In scope:
 - multi-slot open questions
 - point-based scoring derived from question structure
 - minimal admin login with a signed session cookie
-- admin question editor for existing chapters and topics
+- admin question editor for existing chapters and topics, scoped per subject
 - creating new chapters and topics from the admin panel
 - creating, editing, and deleting questions in existing topic JSON files
 - one question displayed at a time
@@ -147,7 +149,9 @@ Endpoints:
 - `GET /admin/login.html` serves the admin login page
 - `POST /api/admin/login` creates the admin session
 - `POST /api/admin/logout` clears the admin session
+- `GET /api/admin/subjects` lists editable JSON-backed subjects
 - `GET /api/admin/chapters` lists editable chapters
+- `GET /api/admin/chapters?subject={subject}` lists editable chapters for one subject
 - `POST /api/admin/chapters` creates a chapter
 - `GET /api/admin/chapters/{chapter_id}/topics` lists editable topics
 - `POST /api/admin/chapters/{chapter_id}/topics` creates a topic in a chapter
@@ -344,7 +348,8 @@ Fields:
 - `id`: quiz/chapter identifier
 - `title`: title shown on the list and quiz pages
 - `description`: description shown in the UI
-- `category`: category, for example `history`
+- `category`: subject/category identifier; JSON-backed school subjects are
+  `history`, `geography`, and `biology`
 - `age_group`: intended age group
 - `target_question_count`: target number of questions in the final quiz, default `12`
 - `questions_per_topic`: legacy field used by the model and validator, default `2`;
@@ -390,10 +395,13 @@ The frontend is static and consists of:
 
 - `frontend/index.html` - main subject menu
 - `frontend/history.html` - history quiz list
+- `frontend/geography.html` - geography quiz list
+- `frontend/biology.html` - biology quiz list
 - `frontend/math.html` - generated math question screen
 - `frontend/quiz.html` - quiz screen and result screen
 - `frontend/js/config.js` - API base URL configuration
 - `frontend/js/api.js` - API calls
+- `frontend/js/subject-page.js` - shared subject quiz list rendering
 - `frontend/js/utils.js` - URL query parameters and shuffling
 - `frontend/js/quiz-state.js` - current quiz session state
 - `frontend/js/quiz-render.js` - question, feedback, and result rendering
@@ -405,7 +413,8 @@ The frontend is responsible for:
 
 - showing the main subject menu
 - loading the quiz list
-- filtering history and one-shot LLM quizzes on the history section page
+- filtering history, geography, and biology quiz lists by chapter category
+- keeping one-shot LLM quizzes on the history section page
 - requesting a generated math question when the math page opens
 - showing a localized LLM-unavailable message if the generated math question
   endpoint cannot be reached
@@ -680,8 +689,10 @@ Enter works globally on the quiz screen:
 The admin interface is intentionally plain and functional:
 
 - it uses vanilla HTML/CSS/JavaScript
+- it starts with a subject selector for history, geography, and biology
 - it starts with a chapter list, then a topic list, then questions for one topic
-- it supports creating chapters by entering only a chapter name
+- it supports creating chapters inside the currently selected subject by
+  entering only a chapter name
 - it supports creating topics inside the currently selected chapter by entering
   only a topic name
 - it lists questions without exposing filenames, JSON structure, question IDs, or
@@ -700,9 +711,9 @@ JSON files remain the source of truth. Admin writes load the existing topic JSON
 modify it in memory, validate the chapter with the shared validation rules, write
 to a temporary file, keep one `.bak` backup of the previous topic file, and then
 atomically replace the topic file.
-Admin-created chapters write a new chapter directory and `meta.json`. Admin-created
-topics write an empty topic JSON file and append that filename to the chapter
-metadata.
+Admin-created chapters write a new chapter directory and `meta.json` with
+`category` set to the selected subject. Admin-created topics write an empty
+topic JSON file and append that filename to the chapter metadata.
 
 ## 16. Non-Functional Requirements
 
@@ -719,7 +730,7 @@ The project should remain:
 
 Possible future extensions:
 
-- more categories
+- more subject categories
 - more chapters
 - category-based quiz organization
 - persisted results

@@ -24,6 +24,11 @@ from app.services.quiz_validation import validate_chapter_dir
 STATIC_DIR = Path(__file__).resolve().parents[1] / "static"
 ALLOWED_IMAGE_EXTENSIONS = {".gif", ".jpeg", ".jpg", ".png", ".webp"}
 MAX_IMAGE_UPLOAD_BYTES = 5 * 1024 * 1024
+SUPPORTED_SUBJECTS = {
+    "history": "Historia",
+    "geography": "Geografia",
+    "biology": "Biologia",
+}
 
 
 def get_chapter_dir(chapter_id: str) -> Path:
@@ -39,13 +44,26 @@ def get_chapter_dir(chapter_id: str) -> Path:
     raise HTTPException(status_code=404, detail="Chapter not found")
 
 
-def list_admin_chapters() -> list[dict[str, str]]:
+def list_admin_subjects() -> list[dict[str, str]]:
+    """Returns subjects that use the JSON-backed chapter/topic quiz method."""
+    return [
+        {"id": subject_id, "title": title}
+        for subject_id, title in SUPPORTED_SUBJECTS.items()
+    ]
+
+
+def list_admin_chapters(subject: str | None = None) -> list[dict[str, str]]:
     """Returns chapters available for admin editing."""
+    if subject is not None:
+        subject = normalize_subject(subject)
+
     chapters = []
     chapters_dir = Path(settings.quiz_data_dir)
     for chapter_dir in sorted([p for p in chapters_dir.iterdir() if p.is_dir()]):
         meta = load_chapter_meta(chapter_dir)
-        chapters.append({"id": meta.id, "title": meta.title})
+        if subject and meta.category != subject:
+            continue
+        chapters.append({"id": meta.id, "title": meta.title, "subject": meta.category})
     return chapters
 
 
@@ -54,6 +72,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
     name = str(payload.get("name", "")).strip()
     if not name:
         raise HTTPException(status_code=400, detail="Chapter name cannot be empty")
+    subject = normalize_subject(payload.get("subject", "history"))
 
     chapters_dir = Path(settings.quiz_data_dir)
     chapters_dir.mkdir(parents=True, exist_ok=True)
@@ -73,7 +92,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
         "id": chapter_id,
         "title": name,
         "description": f"Powtórka z rozdziału {name}.",
-        "category": "history",
+        "category": subject,
         "age_group": "10-12",
         "target_question_count": 12,
         "questions_per_topic": 2,
@@ -87,7 +106,15 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
         shutil.rmtree(chapter_dir)
         raise
 
-    return {"id": chapter_id, "title": name}
+    return {"id": chapter_id, "title": name, "subject": subject}
+
+
+def normalize_subject(value: Any) -> str:
+    """Validates and returns a supported admin subject identifier."""
+    subject = str(value or "").strip()
+    if subject not in SUPPORTED_SUBJECTS:
+        raise HTTPException(status_code=400, detail="Unsupported subject")
+    return subject
 
 
 def get_topic_filename(chapter_dir: Path, topic_id: str) -> str:

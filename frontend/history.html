@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=10" />
+  <link rel="stylesheet" href="./css/styles.css?v=13" />
 </head>
-<body>
+<body data-subject="history">
   <main class="container">
     <nav class="quiz-top-nav" aria-label="Nawigacja">
       <a class="quiz-menu-tile" href="./index.html">
@@ -34,42 +34,11 @@
 
   <script src="./js/config.js?v=10"></script>
   <script src="./js/api.js?v=10"></script>
+  <script src="./js/subject-page.js?v=1"></script>
   <script src="./js/start-images.js"></script>
   <script>
     setRandomStartImage();
-    const HISTORY_CATEGORIES = new Set(["history", "llm"]);
-
-    async function renderQuizList() {
-      const statusEl = document.getElementById("status");
-      const listEl = document.getElementById("quiz-list");
-
-      try {
-        const quizzes = await getQuizzes();
-        const historyQuizzes = quizzes.filter((quiz) => HISTORY_CATEGORIES.has(quiz.category));
-
-        statusEl.textContent = "";
-
-        if (!historyQuizzes.length) {
-          statusEl.textContent = "Brak dostępnych quizów z historii.";
-          return;
-        }
-
-        listEl.innerHTML = historyQuizzes.map((quiz) => `
-          <article class="quiz-card">
-            <h2>${quiz.title}</h2>
-            <p>${quiz.description}</p>
-            <p><strong>Kategoria:</strong> ${quiz.category}</p>
-            <button onclick="window.location.href='quiz.html?id=${encodeURIComponent(quiz.id)}&section=history'">
-              Start
-            </button>
-          </article>
-        `).join("");
-      } catch (error) {
-        statusEl.textContent = `Błąd: ${error.message}`;
-      }
-    }
-
-    renderQuizList();
+    renderSubjectQuizList();
   </script>
 </body>
 </html>

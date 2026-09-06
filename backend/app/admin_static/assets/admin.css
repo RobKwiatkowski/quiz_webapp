@@ -105,6 +105,25 @@ button:disabled {
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
 }
 
+.subject-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.subject-tab {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.subject-tab[aria-pressed="true"] {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
 .login-panel {
   margin-top: 0;
 }

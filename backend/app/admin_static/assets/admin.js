@@ -1,6 +1,10 @@
+const DEFAULT_SUBJECT_ID = "history";
+
+let subjects = [];
 let chapters = [];
 let topics = [];
 let questions = [];
+let selectedSubject = null;
 let selectedChapter = null;
 let selectedTopic = null;
 let editingQuestionId = null;
@@ -77,7 +81,7 @@ async function initAdmin() {
   questionType.addEventListener("change", updateEditorType);
   questionForm.addEventListener("submit", saveQuestion);
 
-  await loadChapters();
+  await loadSubjects();
   showChapterView();
 }
 
@@ -92,7 +96,7 @@ function setPanels(viewName) {
 function renderBreadcrumb(viewName) {
   const breadcrumb = document.getElementById("breadcrumb");
   breadcrumb.replaceChildren();
-  addCrumb("Rozdziały", showChapterView, viewName === "chapters");
+  addCrumb(getSelectedSubjectTitle(), showChapterView, viewName === "chapters");
 
   if (selectedChapter && (viewName === "topics" || viewName === "questions")) {
     addSeparator();
@@ -131,13 +135,50 @@ function addSeparator() {
 }
 
 async function loadChapters() {
-  chapters = await adminFetch("/api/admin/chapters");
+  const subjectId = selectedSubject?.id || DEFAULT_SUBJECT_ID;
+  chapters = await adminFetch(`/api/admin/chapters?subject=${encodeURIComponent(subjectId)}`);
   renderChapterList();
+}
+
+async function loadSubjects() {
+  subjects = await adminFetch("/api/admin/subjects");
+  selectedSubject = subjects.find((subject) => subject.id === DEFAULT_SUBJECT_ID) || subjects[0] || null;
+  renderSubjectTabs();
+  await loadChapters();
+}
+
+function renderSubjectTabs() {
+  const tabsEl = document.getElementById("subject-tabs");
+  tabsEl.replaceChildren();
+
+  subjects.forEach((subject) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "subject-tab";
+    button.textContent = subject.title;
+    button.setAttribute("aria-pressed", subject.id === selectedSubject?.id ? "true" : "false");
+    button.addEventListener("click", () => selectSubject(subject));
+    tabsEl.appendChild(button);
+  });
+}
+
+async function selectSubject(subject) {
+  if (subject.id === selectedSubject?.id) return;
+  selectedSubject = subject;
+  selectedChapter = null;
+  selectedTopic = null;
+  topics = [];
+  questions = [];
+  hideStatus();
+  renderSubjectTabs();
+  await loadChapters();
+  showChapterView();
 }
 
 function renderChapterList() {
   chapterList.replaceChildren();
   document.getElementById("chapter-empty").classList.toggle("hidden", chapters.length > 0);
+  document.getElementById("chapter-panel-title").textContent = `Rozdziały: ${getSelectedSubjectTitle()}`;
 
   chapters.forEach((chapter) => {
     chapterList.appendChild(createItemButton(chapter.title, () => selectChapter(chapter)));
@@ -217,11 +258,15 @@ async function addChapter() {
 
   const chapter = await adminFetch("/api/admin/chapters", {
     method: "POST",
-    body: JSON.stringify({name: trimmedName})
+    body: JSON.stringify({name: trimmedName, subject: selectedSubject?.id || DEFAULT_SUBJECT_ID})
   });
   await loadChapters();
   await selectChapter(chapter);
   showStatus("Dodano rozdział.");
+}
+
+function getSelectedSubjectTitle() {
+  return selectedSubject?.title || "Przedmiot";
 }
 
 async function addTopic() {
