@@ -430,6 +430,9 @@ The frontend is static and consists of:
 - `frontend/js/quiz-events.js` - Enter key behavior
 - `frontend/js/quiz-page.js` - initialization and restart flow
 
+The application is designed for desktop use. New frontend features do not need
+mobile or touch support unless explicitly requested.
+
 The frontend is responsible for:
 
 - showing the main subject menu

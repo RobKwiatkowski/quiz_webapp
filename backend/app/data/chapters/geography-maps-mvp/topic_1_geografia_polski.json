@@ -289,6 +289,65 @@
         }
       ],
       "explanation": "Poprawne pary to: Dolnośląskie - Wrocław, Kujawsko-pomorskie - Bydgoszcz, Lubuskie - Gorzów Wielkopolski, Opolskie - Opole."
+    },
+    {
+      "id": "geo-miasto-na-mapie-warszawa",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-warszawa.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Warszawa",
+        "w Warszawie"
+      ],
+      "explanation": "Na mapie zaznaczono Warszawę."
+    },
+    {
+      "id": "geo-miasto-na-mapie-poznan",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-poznan.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Poznań",
+        "Poznan",
+        "w Poznaniu"
+      ],
+      "explanation": "Na mapie zaznaczono Poznań."
+    },
+    {
+      "id": "geo-miasto-na-mapie-gdansk",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-gdansk.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Gdańsk",
+        "Gdansk",
+        "w Gdańsku",
+        "w Gdansku"
+      ],
+      "explanation": "Na mapie zaznaczono Gdańsk."
+    },
+    {
+      "id": "geo-miasto-na-mapie-olsztyn",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-olsztyn.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Olsztyn",
+        "w Olsztynie"
+      ],
+      "explanation": "Na mapie zaznaczono Olsztyn."
+    },
+    {
+      "id": "geo-miasto-na-mapie-krakow",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-krakow.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Kraków",
+        "Krakow",
+        "w Krakowie"
+      ],
+      "explanation": "Na mapie zaznaczono Kraków."
     }
   ]
 }

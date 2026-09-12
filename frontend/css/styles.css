@@ -671,9 +671,9 @@ button:disabled {
 }
 
 .question-image-wrapper {
-  margin-top: 16px;
+  margin: 16px auto 0;
   width: 100%;
-  max-width: 540px;
+  max-width: 700px;
   height: 420px;
   display: flex;
   align-items: center;
@@ -923,12 +923,6 @@ button:disabled {
   width: 100%;
   height: auto;
   display: block;
-  touch-action: none;
-  cursor: grab;
-}
-
-.map-svg.is-dragging {
-  cursor: grabbing;
 }
 
 .map-basemap-land,
@@ -990,33 +984,6 @@ button:disabled {
 .map-region.locked {
   cursor: default;
   pointer-events: none;
-}
-
-.map-controls {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: grid;
-  gap: 6px;
-}
-
-.map-control-btn {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  border: 1px solid rgba(36, 54, 75, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  color: #24364b;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.map-control-btn:hover,
-.map-control-btn:focus-visible {
-  background: #ffffff;
-  color: #147d78;
 }
 
 .map-caption {
@@ -1649,7 +1616,4 @@ body[data-page="quiz"] {
     width: 100%;
   }
 
-  .map-question {
-    width: 100%;
-  }
 }

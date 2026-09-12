@@ -47,8 +47,8 @@ function createMapQuestionElement(question, geojson, backgroundGeojson) {
 
   const mapFrameEl = document.createElement("div");
   mapFrameEl.className = "map-frame";
-  const {svgEl, controlsEl} = renderGeoJsonMap(geojson, question, backgroundGeojson);
-  mapFrameEl.append(svgEl, controlsEl);
+  const svgEl = renderGeoJsonMap(geojson, question, backgroundGeojson);
+  mapFrameEl.appendChild(svgEl);
   wrapperEl.appendChild(mapFrameEl);
 
   if (question.map_config.background_source) {
@@ -71,21 +71,19 @@ function renderGeoJsonMap(geojson, question, backgroundGeojson) {
   svgEl.setAttribute("tabindex", "0");
   contentEl.classList.add("map-content");
 
-  const interaction = createMapInteraction(svgEl, contentEl, viewBox);
-
   if (backgroundGeojson) {
     renderMapBackground(backgroundGeojson, contentEl, bounds, viewBox);
   }
 
   (geojson.features || []).forEach((feature) => {
-    const pathEl = createFeaturePath(feature, bounds, viewBox, question, interaction);
+    const pathEl = createFeaturePath(feature, bounds, viewBox, question);
     if (pathEl) {
       contentEl.appendChild(pathEl);
     }
   });
 
   svgEl.appendChild(contentEl);
-  return {svgEl, controlsEl: createMapControls(interaction)};
+  return svgEl;
 }
 
 function renderMapBackground(geojson, parentEl, bounds, viewBox) {
@@ -99,7 +97,7 @@ function renderMapBackground(geojson, parentEl, bounds, viewBox) {
   });
 }
 
-function createFeaturePath(feature, bounds, viewBox, question, interaction) {
+function createFeaturePath(feature, bounds, viewBox, question) {
   const featureId = feature?.properties?.id;
   if (!featureId || !feature.geometry) {
     return null;
@@ -122,9 +120,7 @@ function createFeaturePath(feature, bounds, viewBox, question, interaction) {
 
   if (question.map_config.mode === "select") {
     pathEl.addEventListener("click", () => {
-      if (!interaction.shouldSuppressSelection()) {
-        handleMapSelectAnswer(featureId);
-      }
+      handleMapSelectAnswer(featureId);
     });
     pathEl.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
@@ -267,184 +263,6 @@ function getMapViewBox(bounds) {
   const height = Math.max(320, Math.round(width * (latitudeSpan / longitudeSpan)));
 
   return {width, height, padding: 24};
-}
-
-function createMapInteraction(svgEl, contentEl, viewBox) {
-  const state = {
-    scale: 1,
-    translateX: 0,
-    translateY: 0,
-    pointers: new Map(),
-    dragStart: null,
-    dragOrigin: null,
-    pinchDistance: null,
-    pinchScale: 1,
-    didMove: false,
-    suppressSelection: false,
-  };
-
-  const clampScale = (scale) => Math.min(10, Math.max(1, scale));
-  const applyTransform = () => {
-    contentEl.setAttribute(
-      "transform",
-      `translate(${state.translateX.toFixed(2)} ${state.translateY.toFixed(2)}) scale(${state.scale.toFixed(3)})`
-    );
-  };
-  const getSvgPoint = (event) => {
-    const rect = svgEl.getBoundingClientRect();
-    return {
-      x: ((event.clientX - rect.left) / rect.width) * viewBox.width,
-      y: ((event.clientY - rect.top) / rect.height) * viewBox.height,
-    };
-  };
-  const getPointerDistance = () => {
-    const [first, second] = [...state.pointers.values()];
-    return Math.hypot(second.x - first.x, second.y - first.y);
-  };
-  const zoomBy = (factor) => {
-    state.scale = clampScale(state.scale * factor);
-    applyTransform();
-  };
-  const reset = () => {
-    state.scale = 1;
-    state.translateX = 0;
-    state.translateY = 0;
-    applyTransform();
-  };
-
-  svgEl.addEventListener("pointerdown", (event) => {
-    svgEl.focus({preventScroll: true});
-    state.pointers.set(event.pointerId, getSvgPoint(event));
-    svgEl.setPointerCapture(event.pointerId);
-    state.didMove = false;
-
-    if (state.pointers.size === 1) {
-      state.dragStart = getSvgPoint(event);
-      state.dragOrigin = {x: state.translateX, y: state.translateY};
-    } else if (state.pointers.size === 2) {
-      state.pinchDistance = getPointerDistance();
-      state.pinchScale = state.scale;
-    }
-  });
-
-  svgEl.addEventListener("pointermove", (event) => {
-    if (!state.pointers.has(event.pointerId)) {
-      return;
-    }
-
-    const point = getSvgPoint(event);
-    state.pointers.set(event.pointerId, point);
-
-    if (state.pointers.size === 2 && state.pinchDistance) {
-      state.scale = clampScale(state.pinchScale * (getPointerDistance() / state.pinchDistance));
-      state.didMove = true;
-      svgEl.classList.add("is-dragging");
-      applyTransform();
-      return;
-    }
-
-    if (state.pointers.size === 1 && state.dragStart && state.dragOrigin) {
-      const deltaX = point.x - state.dragStart.x;
-      const deltaY = point.y - state.dragStart.y;
-      if (Math.hypot(deltaX, deltaY) > 4) {
-        state.didMove = true;
-        svgEl.classList.add("is-dragging");
-      }
-      if (state.didMove) {
-        state.translateX = state.dragOrigin.x + deltaX;
-        state.translateY = state.dragOrigin.y + deltaY;
-        applyTransform();
-      }
-    }
-  });
-
-  const finishPointerInteraction = (event) => {
-    if (!state.pointers.has(event.pointerId)) {
-      return;
-    }
-    state.pointers.delete(event.pointerId);
-    if (state.didMove) {
-      state.suppressSelection = true;
-      window.setTimeout(() => {
-        state.suppressSelection = false;
-      }, 0);
-    }
-    if (state.pointers.size < 2) {
-      state.pinchDistance = null;
-    }
-    if (state.pointers.size === 0) {
-      state.dragStart = null;
-      state.dragOrigin = null;
-      svgEl.classList.remove("is-dragging");
-    }
-  };
-
-  svgEl.addEventListener("pointerup", finishPointerInteraction);
-  svgEl.addEventListener("pointercancel", finishPointerInteraction);
-  svgEl.addEventListener("wheel", (event) => {
-    event.preventDefault();
-    zoomBy(event.deltaY < 0 ? 1.18 : 1 / 1.18);
-  }, {passive: false});
-  svgEl.addEventListener("keydown", (event) => {
-    if (event.target !== svgEl) {
-      return;
-    }
-
-    const panStep = 36;
-    if (event.key === "+" || event.key === "=") {
-      event.preventDefault();
-      zoomBy(1.25);
-    } else if (event.key === "-") {
-      event.preventDefault();
-      zoomBy(1 / 1.25);
-    } else if (event.key === "0") {
-      event.preventDefault();
-      reset();
-    } else if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      state.translateX += panStep;
-      applyTransform();
-    } else if (event.key === "ArrowRight") {
-      event.preventDefault();
-      state.translateX -= panStep;
-      applyTransform();
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      state.translateY += panStep;
-      applyTransform();
-    } else if (event.key === "ArrowDown") {
-      event.preventDefault();
-      state.translateY -= panStep;
-      applyTransform();
-    }
-  });
-
-  applyTransform();
-  return {zoomBy, reset, shouldSuppressSelection: () => state.suppressSelection};
-}
-
-function createMapControls(interaction) {
-  const controlsEl = document.createElement("div");
-  controlsEl.className = "map-controls";
-  controlsEl.setAttribute("aria-label", "Sterowanie mapą");
-
-  controlsEl.append(
-    createMapControlButton("+", "Przybliż", () => interaction.zoomBy(1.25)),
-    createMapControlButton("−", "Oddal", () => interaction.zoomBy(1 / 1.25)),
-    createMapControlButton("↺", "Przywróć początkowy widok", interaction.reset)
-  );
-  return controlsEl;
-}
-
-function createMapControlButton(label, ariaLabel, action) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "map-control-btn";
-  button.textContent = label;
-  button.setAttribute("aria-label", ariaLabel);
-  button.setAttribute("title", ariaLabel);
-  button.addEventListener("click", action);
-  return button;
 }
 
 function createMapCaption() {
