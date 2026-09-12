@@ -16,6 +16,10 @@ function isMatchingQuestion(question) {
   return question.selection_type === "matching";
 }
 
+function isMapQuestion(question) {
+  return question.selection_type === "map";
+}
+
 function normalizeAnswerWhitespace(value) {
   return value.trim().replace(/\s+/g, " ");
 }

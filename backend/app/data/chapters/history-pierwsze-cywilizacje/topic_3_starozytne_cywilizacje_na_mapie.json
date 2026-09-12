@@ -1,0 +1,58 @@
+{
+  "topic_id": "starozytne-cywilizacje-na-mapie",
+  "topic_title": "Starożytne cywilizacje na mapie",
+  "questions": [
+    {
+      "id": "map-ancient-egypt",
+      "topic_id": "starozytne-cywilizacje-na-mapie",
+      "text": "Wskaż na mapie starożytny Egipt.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_egypt"
+      },
+      "explanation": "To przybliżony region starożytnego Egiptu, rozwijającego się nad Nilem."
+    },
+    {
+      "id": "map-mesopotamia",
+      "topic_id": "starozytne-cywilizacje-na-mapie",
+      "text": "Wskaż na mapie Mezopotamię.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "mesopotamia"
+      },
+      "explanation": "Mezopotamia leżała między rzekami Tygrys i Eufrat."
+    },
+    {
+      "id": "map-ancient-israel",
+      "topic_id": "starozytne-cywilizacje-na-mapie",
+      "text": "Wskaż na mapie region starożytnego Izraela i Judy.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_israel"
+      },
+      "explanation": "To przybliżony region starożytnego Izraela i Judy nad wschodnim wybrzeżem Morza Śródziemnego."
+    },
+    {
+      "id": "map-ancient-greece",
+      "topic_id": "starozytne-cywilizacje-na-mapie",
+      "text": "Wskaż na mapie starożytną Grecję.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_greece"
+      },
+      "explanation": "To przybliżony region starożytnej Grecji, obejmujący ląd i wyspy Morza Egejskiego, w tym Kretę."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biologia - Quiz na Szóstkę</title>
+  <link rel="stylesheet" href="./css/styles.css?v=13" />
+</head>
+<body data-subject="biology">
+  <main class="container">
+    <nav class="quiz-top-nav" aria-label="Nawigacja">
+      <a class="quiz-menu-tile" href="./index.html">
+        <span class="quiz-menu-icon" aria-hidden="true">&#8592;</span>
+        <span>Menu główne</span>
+      </a>
+    </nav>
+
+    <section class="start-hero" aria-labelledby="biology-title">
+      <img
+        id="start-hero-image"
+        class="start-hero-image"
+        src="./assets/start-images/start_image_1.png"
+        alt=""
+      />
+      <div class="start-hero-overlay">
+        <h1 id="biology-title">Biologia</h1>
+        <p>Wybierz quiz i rozpocznij naukę.</p>
+      </div>
+    </section>
+
+    <div id="status">Ładowanie quizów...</div>
+    <div id="quiz-list" class="quiz-list subject-quiz-grid"></div>
+  </main>
+
+  <script src="./js/config.js?v=10"></script>
+  <script src="./js/api.js?v=10"></script>
+  <script src="./js/subject-page.js?v=1"></script>
+  <script src="./js/start-images.js"></script>
+  <script>
+    setRandomStartImage();
+    renderSubjectQuizList();
+  </script>
+</body>
+</html>

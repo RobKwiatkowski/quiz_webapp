@@ -4,32 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Historia - Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=13" />
+  <link rel="stylesheet" href="./css/styles.css?v=14" />
 </head>
 <body data-subject="history">
-  <main class="container">
+  <main class="container subject-shell history-shell">
     <nav class="quiz-top-nav" aria-label="Nawigacja">
-      <a class="quiz-menu-tile" href="./index.html">
-        <span class="quiz-menu-icon" aria-hidden="true">&#8592;</span>
+      <a class="atlas-back-link" href="./index.html">
+        <span aria-hidden="true">&#8592;</span>
         <span>Menu g&#322;&oacute;wne</span>
       </a>
     </nav>
 
-    <section class="start-hero" aria-labelledby="history-title">
-      <img
-        id="start-hero-image"
-        class="start-hero-image"
-        src="./assets/start-images/start_image_1.png"
-        alt=""
-      />
-      <div class="start-hero-overlay">
+    <section class="history-atlas-hero" aria-labelledby="history-title">
+      <div class="history-hero-copy">
+        <p class="history-kicker">ODKRYWAJ PRZESZ&#321;O&#346;&#262;</p>
         <h1 id="history-title">Historia</h1>
-        <p>Wybierz quiz i rozpocznij nauk&#281;.</p>
+        <p>Poznaj wydarzenia, kt&oacute;re zmieni&#322;y &#347;wiat. Wybierz temat i sprawd&#378;, co ju&#380; wiesz.</p>
+      </div>
+      <div class="history-hero-media">
+        <img
+          id="start-hero-image"
+          class="history-hero-image"
+          src="./assets/start-images/start_image_1.png"
+          alt=""
+        />
       </div>
     </section>
 
-    <div id="status">&#321;adowanie quiz&oacute;w...</div>
-    <div id="quiz-list" class="quiz-list"></div>
+    <section class="subject-topics" aria-labelledby="topics-title">
+      <div class="subject-topics-header">
+        <div>
+          <h2 id="topics-title">Wybierz temat</h2>
+          <p>Ka&#380;dy quiz to kolejny krok w poznawaniu historii</p>
+        </div>
+        <span id="quiz-count" class="quiz-count-pill hidden"></span>
+      </div>
+
+      <div id="status" class="subject-status">&#321;adowanie quiz&oacute;w...</div>
+      <div id="quiz-list" class="quiz-list subject-quiz-grid"></div>
+    </section>
   </main>
 
   <script src="./js/config.js?v=10"></script>

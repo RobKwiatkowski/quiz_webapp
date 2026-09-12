@@ -296,10 +296,30 @@ def normalize_admin_question(
         question["order_items"] = normalize_order_items(payload.get("order_items", []))
     elif selection_type == "matching":
         question["matching_pairs"] = normalize_matching_pairs(payload.get("matching_pairs", []))
+    elif selection_type == "map":
+        map_config = payload.get("map_config")
+        if not isinstance(map_config, dict):
+            raise HTTPException(status_code=400, detail="Map questions require map configuration")
+
+        question["map_config"] = {
+            "source": str(map_config.get("source", "")).strip(),
+            "mode": str(map_config.get("mode", "")).strip(),
+            "target_feature_id": str(map_config.get("target_feature_id", "")).strip(),
+        }
+        background_source = str(map_config.get("background_source", "")).strip()
+        if background_source:
+            question["map_config"]["background_source"] = background_source
+
+        if question["map_config"]["mode"] == "identify":
+            question["answers"] = [
+                {"text": str(answer.get("text", "")).strip(), "is_correct": bool(answer.get("is_correct"))}
+                for answer in payload.get("answers", [])
+                if isinstance(answer, dict)
+            ]
     else:
         raise HTTPException(
             status_code=400,
-            detail="Admin supports only single, multiple, open, llm, order, and matching questions",
+            detail="Admin supports only single, multiple, open, llm, order, matching, and map questions",
         )
 
     try:

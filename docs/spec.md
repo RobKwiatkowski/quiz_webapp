@@ -46,7 +46,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, `llm`, `order`, and `matching`
+- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, and `map`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -255,6 +255,25 @@ Fields:
 - `accepted_answers`: non-empty list of accepted answer variants for one input
   field in a multi-slot open question
 
+### `MapConfig`
+
+```json
+{
+  "source": "/static/maps/poland-voivodeships.geojson",
+  "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+  "mode": "select",
+  "target_feature_id": "mazowieckie"
+}
+```
+
+Fields:
+
+- `source`: local `/static/...` GeoJSON FeatureCollection used by the map renderer
+- `background_source`: optional local `/static/...` GeoJSON FeatureCollection rendered below clickable regions
+- `mode`: `select` when the learner clicks a region, or `identify` when the
+  learner identifies a highlighted region using standard answer buttons
+- `target_feature_id`: stable technical identifier matching `feature.properties.id`
+
 ### `Question`
 
 ```json
@@ -271,6 +290,7 @@ Fields:
   "answer_slots": [],
   "order_items": [],
   "matching_pairs": [],
+  "map_config": null,
   "topic_id": null
 }
 ```
@@ -286,13 +306,14 @@ Fields:
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
   `single` and `multiple`, required for `open`, `llm`, `order`, and `matching`
-- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, or `matching`
+- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, `matching`, or `map`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for one-field `open` questions and the
   reference answer for `llm` questions
 - `answer_slots`: answer fields for multi-slot `open` questions
 - `order_items`: sequence items for `order` questions
 - `matching_pairs`: left/right pairs for `matching` questions
+- `map_config`: map asset and target configuration for `map` questions
 - `topic_id`: optional topic identifier set by admin writes so a created
   question can be traced to its topic without showing technical IDs in the UI
 
@@ -509,6 +530,22 @@ Scores are point-based. Maximum points are derived from question structure:
 - left-column row order and unique right-column choices may be randomized before
   display
 
+`map`:
+
+- `map_config` is required
+- `map_config.source` points to a local GeoJSON asset under `/static/...`
+- the GeoJSON contains one Feature per selectable/highlightable region
+- each Feature uses `properties.id` as the stable technical identifier and may
+  use `properties.name` as a visible/source label
+- `select` mode lets the user answer by clicking one SVG-rendered region
+- a correct `select` click gives 1 point; an incorrect click gives 0 points
+- after a `select` answer, the chosen incorrect region and the correct target
+  region are visually marked and map interaction is locked
+- `identify` mode highlights the target region and reuses standard single-choice
+  answer buttons and scoring
+- the frontend renders Polygon and MultiPolygon GeoJSON directly to SVG and keeps
+  a minimal in-memory GeoJSON cache by source path
+
 After a correct answer, the frontend shows a localized success message. After an
 incorrect answer, it shows the question `explanation` when one is available.
 For multi-slot open questions, feedback also shows earned points for that
@@ -656,6 +693,8 @@ The current repository contains these chapter directories:
 - `backend/app/data/chapters/history-chapter-6`
 - `backend/app/data/chapters/history-konfederacja-upadek-rzeczypospolitej`
 - `backend/app/data/chapters/history-napoleon-rewolucja-francuska`
+- `backend/app/data/chapters/geography-maps-mvp`
+- `backend/app/data/chapters/geography-continents-maps`
 
 ## 15. UX
 

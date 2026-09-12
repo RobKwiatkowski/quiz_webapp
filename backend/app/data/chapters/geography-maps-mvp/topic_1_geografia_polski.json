@@ -1,0 +1,294 @@
+{
+  "topic_id": "geografia-polski",
+  "topic_title": "Geografia Polski",
+  "questions": [
+    {
+      "id": "geo-woj-dolnoslaskie",
+      "text": "Wskaż na mapie województwo dolnośląskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "dolnoslaskie"
+      },
+      "explanation": "To województwo dolnośląskie."
+    },
+    {
+      "id": "geo-woj-kujawsko-pomorskie",
+      "text": "Wskaż na mapie województwo kujawsko-pomorskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "kujawsko-pomorskie"
+      },
+      "explanation": "To województwo kujawsko-pomorskie."
+    },
+    {
+      "id": "geo-woj-lubelskie",
+      "text": "Wskaż na mapie województwo lubelskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "lubelskie"
+      },
+      "explanation": "To województwo lubelskie."
+    },
+    {
+      "id": "geo-woj-lubuskie",
+      "text": "Wskaż na mapie województwo lubuskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "lubuskie"
+      },
+      "explanation": "To województwo lubuskie."
+    },
+    {
+      "id": "geo-woj-lodzkie",
+      "text": "Wskaż na mapie województwo łódzkie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "lodzkie"
+      },
+      "explanation": "To województwo łódzkie."
+    },
+    {
+      "id": "geo-woj-malopolskie",
+      "text": "Wskaż na mapie województwo małopolskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "malopolskie"
+      },
+      "explanation": "To województwo małopolskie."
+    },
+    {
+      "id": "geo-woj-mazowieckie",
+      "text": "Wskaż na mapie województwo mazowieckie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "mazowieckie"
+      },
+      "explanation": "To województwo mazowieckie."
+    },
+    {
+      "id": "geo-woj-opolskie",
+      "text": "Wskaż na mapie województwo opolskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "opolskie"
+      },
+      "explanation": "To województwo opolskie."
+    },
+    {
+      "id": "geo-woj-podkarpackie",
+      "text": "Wskaż na mapie województwo podkarpackie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "podkarpackie"
+      },
+      "explanation": "To województwo podkarpackie."
+    },
+    {
+      "id": "geo-woj-podlaskie",
+      "text": "Wskaż na mapie województwo podlaskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "podlaskie"
+      },
+      "explanation": "To województwo podlaskie."
+    },
+    {
+      "id": "geo-woj-pomorskie",
+      "text": "Wskaż na mapie województwo pomorskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "pomorskie"
+      },
+      "explanation": "To województwo pomorskie."
+    },
+    {
+      "id": "geo-woj-slaskie",
+      "text": "Wskaż na mapie województwo śląskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "slaskie"
+      },
+      "explanation": "To województwo śląskie."
+    },
+    {
+      "id": "geo-woj-swietokrzyskie",
+      "text": "Wskaż na mapie województwo świętokrzyskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "swietokrzyskie"
+      },
+      "explanation": "To województwo świętokrzyskie."
+    },
+    {
+      "id": "geo-woj-warminsko-mazurskie",
+      "text": "Wskaż na mapie województwo warmińsko-mazurskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "warminsko-mazurskie"
+      },
+      "explanation": "To województwo warmińsko-mazurskie."
+    },
+    {
+      "id": "geo-woj-wielkopolskie",
+      "text": "Wskaż na mapie województwo wielkopolskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "wielkopolskie"
+      },
+      "explanation": "To województwo wielkopolskie."
+    },
+    {
+      "id": "geo-woj-zachodniopomorskie",
+      "text": "Wskaż na mapie województwo zachodniopomorskie.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-voivodeships.geojson",
+        "mode": "select",
+        "target_feature_id": "zachodniopomorskie"
+      },
+      "explanation": "To województwo zachodniopomorskie."
+    },
+    {
+      "id": "geo-woj-miasta-dopasuj-1",
+      "text": "Dopasuj województwa do ich miast wojewódzkich.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "mazowieckie-warszawa",
+          "left": "Mazowieckie",
+          "right": "Warszawa"
+        },
+        {
+          "id": "malopolskie-krakow",
+          "left": "Małopolskie",
+          "right": "Kraków"
+        },
+        {
+          "id": "pomorskie-gdansk",
+          "left": "Pomorskie",
+          "right": "Gdańsk"
+        },
+        {
+          "id": "wielkopolskie-poznan",
+          "left": "Wielkopolskie",
+          "right": "Poznań"
+        }
+      ],
+      "explanation": "Poprawne pary to: Mazowieckie - Warszawa, Małopolskie - Kraków, Pomorskie - Gdańsk, Wielkopolskie - Poznań."
+    },
+    {
+      "id": "geo-woj-miasta-dopasuj-2",
+      "text": "Dopasuj województwa do ich miast wojewódzkich.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "lodzkie-lodz",
+          "left": "Łódzkie",
+          "right": "Łódź"
+        },
+        {
+          "id": "slaskie-katowice",
+          "left": "Śląskie",
+          "right": "Katowice"
+        },
+        {
+          "id": "lubelskie-lublin",
+          "left": "Lubelskie",
+          "right": "Lublin"
+        },
+        {
+          "id": "podkarpackie-rzeszow",
+          "left": "Podkarpackie",
+          "right": "Rzeszów"
+        }
+      ],
+      "explanation": "Poprawne pary to: Łódzkie - Łódź, Śląskie - Katowice, Lubelskie - Lublin, Podkarpackie - Rzeszów."
+    },
+    {
+      "id": "geo-woj-miasta-dopasuj-3",
+      "text": "Dopasuj województwa do ich miast wojewódzkich.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "podlaskie-bialystok",
+          "left": "Podlaskie",
+          "right": "Białystok"
+        },
+        {
+          "id": "swietokrzyskie-kielce",
+          "left": "Świętokrzyskie",
+          "right": "Kielce"
+        },
+        {
+          "id": "warminsko-mazurskie-olsztyn",
+          "left": "Warmińsko-mazurskie",
+          "right": "Olsztyn"
+        },
+        {
+          "id": "zachodniopomorskie-szczecin",
+          "left": "Zachodniopomorskie",
+          "right": "Szczecin"
+        }
+      ],
+      "explanation": "Poprawne pary to: Podlaskie - Białystok, Świętokrzyskie - Kielce, Warmińsko-mazurskie - Olsztyn, Zachodniopomorskie - Szczecin."
+    },
+    {
+      "id": "geo-woj-miasta-dopasuj-4",
+      "text": "Dopasuj województwa do ich miast wojewódzkich.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "dolnoslaskie-wroclaw",
+          "left": "Dolnośląskie",
+          "right": "Wrocław"
+        },
+        {
+          "id": "kujawsko-pomorskie-bydgoszcz",
+          "left": "Kujawsko-pomorskie",
+          "right": "Bydgoszcz"
+        },
+        {
+          "id": "lubuskie-gorzow-wielkopolski",
+          "left": "Lubuskie",
+          "right": "Gorzów Wielkopolski"
+        },
+        {
+          "id": "opolskie-opole",
+          "left": "Opolskie",
+          "right": "Opole"
+        }
+      ],
+      "explanation": "Poprawne pary to: Dolnośląskie - Wrocław, Kujawsko-pomorskie - Bydgoszcz, Lubuskie - Gorzów Wielkopolski, Opolskie - Opole."
+    }
+  ]
+}

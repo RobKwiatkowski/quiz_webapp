@@ -135,6 +135,11 @@ function renderQuestion() {
     return;
   }
 
+  if (isMapQuestion(question)) {
+    renderMapQuestion(question, answersEl);
+    return;
+  }
+
   const shuffledAnswers = shuffleArray(question.answers || []);
 
   answersEl.innerHTML = shuffledAnswers.map((answer) => `

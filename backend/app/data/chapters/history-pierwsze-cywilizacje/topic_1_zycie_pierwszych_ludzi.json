@@ -266,6 +266,22 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-image-handaxe-tool",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jakiego narzędzia używa tutaj pokazany człowiek?",
+      "selection_type": "open",
+      "image": "/static/images/history/first-civilizations/prehistoric-human-handaxe.png",
+      "explanation": "Pokazany człowiek używa pięściaka, czyli kamiennego narzędzia trzymanego w dłoni.",
+      "accepted_answers": [
+        "pięściak",
+        "piesciak",
+        "używa pięściaka",
+        "uzywa piesciaka",
+        "używa narzędzia pięściak",
+        "uzywa narzedzia piesciak"
+      ]
     }
   ]
 }

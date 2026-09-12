@@ -1,0 +1,12 @@
+{
+  "id": "geography-maps-mvp",
+  "title": "Mapy: województwa Polski",
+  "description": "Krótka powtórka z województw i miast wojewódzkich.",
+  "category": "geography",
+  "age_group": "10-12",
+  "target_question_count": 20,
+  "questions_per_topic": 8,
+  "topics": [
+    "topic_1_geografia_polski.json"
+  ]
+}

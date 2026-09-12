@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "llm", "order", "matching"}
+ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "llm", "order", "matching", "map"}
 
 
 @dataclass
@@ -51,6 +51,112 @@ def validate_image_path(
         return
 
     result.errors.append(f"{context}: image must start with '/static/', 'http://', or 'https://'")
+
+
+def resolve_static_path(static_reference: str, static_dir: Path) -> Path:
+    """Resolves a /static/... reference against the backend static directory."""
+    return static_dir / static_reference.removeprefix("/static/")
+
+
+def validate_map_config(
+    map_config: Any,
+    result: ValidationResult,
+    context: str,
+    static_dir: Path,
+) -> dict[str, Any] | None:
+    """Validates common map question configuration and local GeoJSON references."""
+    if not isinstance(map_config, dict):
+        result.errors.append(f"{context}: map_config must be an object")
+        return None
+
+    source = map_config.get("source")
+    background_source = map_config.get("background_source")
+    mode = map_config.get("mode")
+    target_feature_id = map_config.get("target_feature_id")
+
+    if not is_non_empty_string(source):
+        result.errors.append(f"{context}: map_config.source must be a non-empty string")
+
+    if mode not in {"select", "identify"}:
+        result.errors.append(f"{context}: map_config.mode must be 'select' or 'identify'")
+
+    if not is_non_empty_string(target_feature_id):
+        result.errors.append(
+            f"{context}: map_config.target_feature_id must be a non-empty string"
+        )
+
+    if is_non_empty_string(source) and source.startswith("/static/"):
+        map_path = resolve_static_path(source, static_dir)
+        if not map_path.exists():
+            result.errors.append(f"{context}: map_config.source file does not exist: {source}")
+        elif is_non_empty_string(target_feature_id):
+            validate_map_target_feature(map_path, target_feature_id, result, context)
+
+    if background_source not in (None, ""):
+        if not is_non_empty_string(background_source):
+            result.errors.append(f"{context}: map_config.background_source must be a non-empty string")
+        elif not background_source.startswith("/static/"):
+            result.errors.append(f"{context}: map_config.background_source must be a local /static/ path")
+        else:
+            background_path = resolve_static_path(background_source, static_dir)
+            if not background_path.exists():
+                result.errors.append(
+                    f"{context}: map_config.background_source file does not exist: {background_source}"
+                )
+            else:
+                validate_map_geojson_source(background_path, result, context, "background_source")
+
+    return map_config
+
+
+def validate_map_target_feature(
+    map_path: Path,
+    target_feature_id: str,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Checks whether a GeoJSON asset contains the referenced feature id."""
+    try:
+        geojson = load_json(map_path)
+    except Exception as e:
+        result.errors.append(f"{context}: failed to load map_config.source GeoJSON: {e}")
+        return
+
+    features = geojson.get("features") if isinstance(geojson, dict) else None
+    if not isinstance(features, list):
+        result.errors.append(f"{context}: map_config.source must be a GeoJSON FeatureCollection")
+        return
+
+    has_target = any(
+        isinstance(feature, dict)
+        and isinstance(feature.get("properties"), dict)
+        and feature["properties"].get("id") == target_feature_id
+        for feature in features
+    )
+
+    if not has_target:
+        result.errors.append(
+            f"{context}: map_config.target_feature_id not found in map source: {target_feature_id}"
+        )
+
+
+def validate_map_geojson_source(
+    map_path: Path,
+    result: ValidationResult,
+    context: str,
+    field_name: str,
+) -> None:
+    """Checks that an optional map layer is a readable GeoJSON FeatureCollection."""
+    try:
+        geojson = load_json(map_path)
+    except Exception as e:
+        result.errors.append(f"{context}: failed to load map_config.{field_name} GeoJSON: {e}")
+        return
+
+    if not isinstance(geojson, dict) or not isinstance(geojson.get("features"), list):
+        result.errors.append(
+            f"{context}: map_config.{field_name} must be a GeoJSON FeatureCollection"
+        )
 
 
 def validate_answers_structure(
@@ -313,6 +419,7 @@ def validate_question(
     answer_slots = question.get("answer_slots")
     order_items = question.get("order_items")
     matching_pairs = question.get("matching_pairs")
+    map_config = question.get("map_config")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, result, context)
@@ -368,6 +475,34 @@ def validate_question(
             result.errors.append(f"{context}: explanation must be a non-empty string")
         validate_matching_pairs_structure(matching_pairs, result, context)
         warn_unexpected(question, result, context, ["answers", "accepted_answers", "answer_slots", "order_items"])
+
+    elif selection_type == "map":
+        validated_map_config = validate_map_config(map_config, result, context, static_dir)
+        mode = validated_map_config.get("mode") if validated_map_config else None
+
+        if mode == "select":
+            warn_unexpected(
+                question,
+                result,
+                context,
+                ["answers", "accepted_answers", "answer_slots", "order_items", "matching_pairs"],
+            )
+
+        elif mode == "identify":
+            validated_answers = validate_answers_structure(answers, result, context)
+            correct_count = sum(
+                1 for answer in validated_answers if answer.get("is_correct") is True
+            )
+            if correct_count != 1:
+                result.errors.append(
+                    f"{context}: identify map question must have exactly 1 correct answer, found {correct_count}"
+                )
+            warn_unexpected(
+                question,
+                result,
+                context,
+                ["accepted_answers", "answer_slots", "order_items", "matching_pairs"],
+            )
 
 
 def warn_unexpected(

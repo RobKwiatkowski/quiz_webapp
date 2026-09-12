@@ -1,0 +1,293 @@
+{
+  "topic_id": "geografia-ogolna",
+  "topic_title": "Geografia ogólna",
+  "questions": [
+    {
+      "id": "geo-continent-africa",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "africa"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": true
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Afryka."
+    },
+    {
+      "id": "geo-continent-europe",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "europe"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": true
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Europa."
+    },
+    {
+      "id": "geo-continent-asia",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "asia"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": true
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Azja."
+    },
+    {
+      "id": "geo-continent-north-america",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "north-america"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": true
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Ameryka Północna."
+    },
+    {
+      "id": "geo-continent-south-america",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "south-america"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": true
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Ameryka Południowa."
+    },
+    {
+      "id": "geo-continent-australia",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "australia"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": true
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Australia."
+    },
+    {
+      "id": "geo-continent-antarctica",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "antarctica"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Antarktyda."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "geography-continents-maps",
+  "title": "Mapy: kontynenty",
+  "description": "Krótka powtórka z rozpoznawania kontynentów na mapie.",
+  "category": "geography",
+  "age_group": "10-12",
+  "target_question_count": 7,
+  "questions_per_topic": 7,
+  "topics": [
+    "topic_1_geografia_ogolna.json"
+  ]
+}

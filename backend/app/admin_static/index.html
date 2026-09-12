@@ -69,6 +69,7 @@
               <option value="open">Odpowiedź pisemna</option>
               <option value="order">Układanie w kolejności</option>
               <option value="matching">Dopasowywanie par</option>
+              <option value="map">Wskazanie na mapie</option>
               <option value="llm">Odpowiedź pisemna oceniana przez AI</option>
             </select>
           </div>
@@ -157,6 +158,35 @@
             <button id="add-matching-pair-button" type="button" class="secondary-button">+ Para</button>
           </div>
           <div id="matching-pair-rows" class="row-stack"></div>
+        </div>
+
+        <div id="map-editor" class="editor-card hidden">
+          <div class="editor-card-header">
+            <h3>Konfiguracja mapy</h3>
+          </div>
+          <label class="form-field">
+            <span>Mapa</span>
+            <select id="map-source">
+              <option value="/static/maps/ancient-civilizations-regions.geojson">Starożytne cywilizacje</option>
+              <option value="/static/maps/poland-voivodeships.geojson">Województwa Polski</option>
+              <option value="/static/maps/world-continents.geojson">Kontynenty świata</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Tryb odpowiedzi</span>
+            <select id="map-mode">
+              <option value="select">Wskazanie regionu</option>
+              <option value="identify">Rozpoznanie zaznaczonego regionu</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Identyfikator poprawnego regionu</span>
+            <input id="map-target-feature-id" type="text" placeholder="np. ancient_egypt" />
+          </label>
+          <label class="form-field">
+            <span>Podkład GeoJSON <span class="optional-label">opcjonalnie</span></span>
+            <input id="map-background-source" type="text" placeholder="/static/maps/..." />
+          </label>
         </div>
 
         <div class="editor-card">

@@ -44,6 +44,186 @@
           ]
         }
       ]
+    },
+    {
+      "id": "q-image-mesopotamia-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-mesopotamia-street-view.png",
+      "explanation": "To Mezopotamia. W tle widać ziggurat, czyli charakterystyczną świątynię schodkową.",
+      "answers": [
+        {
+          "text": "Mezopotamia",
+          "is_correct": true
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-egypt-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-egypt-nile-city-street.png",
+      "explanation": "To Starożytny Egipt. Pomagają rozpoznać go Nil, obeliski i wielka świątynia.",
+      "answers": [
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-israel-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną społeczność przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-israel-jerusalem-street.png",
+      "explanation": "To Starożytny Izrael. Scena pokazuje Jerozolimę i świątynię na wzgórzu.",
+      "answers": [
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": true
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-india-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-india-city-street.png",
+      "explanation": "To Starożytne Indie. Widać życie miasta, ceglaną zabudowę, handel i wozy ciągnięte przez woły.",
+      "answers": [
+        {
+          "text": "Starożytne Indie",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-china-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-china-city-street.png",
+      "explanation": "To Starożytne Chiny. Pomagają rozpoznać je drewniana architektura, dachy i stroje mieszkańców.",
+      "answers": [
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-cuneiform-name",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Jak nazywamy pismo pokazane na obrazku?",
+      "selection_type": "open",
+      "image": "/static/images/history/first-civilizations/cuneiform-clay-tablet.png",
+      "explanation": "To pismo klinowe. Znaki odciskano w glinie za pomocą rylca.",
+      "accepted_answers": [
+        "pismo klinowe",
+        "klinowe",
+        "to pismo klinowe",
+        "jest to pismo klinowe"
+      ]
+    },
+    {
+      "id": "q-image-cuneiform-inventors",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Kto wynalazł pismo pokazane na obrazku?",
+      "selection_type": "open",
+      "image": "/static/images/history/first-civilizations/cuneiform-clay-tablet.png",
+      "explanation": "Pismo klinowe wynaleźli Sumerowie.",
+      "accepted_answers": [
+        "Sumerowie",
+        "sumerowie",
+        "wynaleźli je Sumerowie",
+        "wynalezli je Sumerowie",
+        "pismo wynaleźli Sumerowie",
+        "pismo wynalezli Sumerowie"
+      ]
     }
   ]
 }

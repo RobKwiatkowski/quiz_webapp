@@ -66,8 +66,23 @@ class AnswerSlot(BaseModel):
     accepted_answers: List[str]
 
 
+class MapConfig(BaseModel):
+    """Configuration for map-based questions.
+
+    Attributes:
+        source: Local GeoJSON asset path.
+        mode: Map interaction mode.
+        target_feature_id: Stable feature identifier from properties.id.
+    """
+
+    source: str
+    mode: Literal["select", "identify"]
+    target_feature_id: str
+    background_source: Optional[str] = None
+
+
 class Question(BaseModel):
-    """Question schema supporting single, multiple, open, llm, order, and matching answers.
+    """Question schema supporting all quiz answer interaction types.
 
     Attributes:
         id: Unique question identifier.
@@ -76,12 +91,13 @@ class Question(BaseModel):
         context: Optional plain text context passage with source attribution.
         image: Optional image path, URL, or list of image references.
         explanation: Optional explanation shown after an incorrect answer.
-        selection_type: Interaction type (single, multiple, open, llm, order, or matching).
+        selection_type: Interaction type.
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
         answer_slots: Slots for multi-field open questions.
         order_items: Items to arrange for order questions.
         matching_pairs: Left/right pairs for matching questions.
+        map_config: Configuration for map questions.
         topic_id: Optional topic identifier used by the admin editor.
     """
 
@@ -91,12 +107,13 @@ class Question(BaseModel):
     context: Optional[QuestionContext] = None
     image: str | List[str] | None = None
     explanation: Optional[str] = None
-    selection_type: Literal["single", "multiple", "open", "llm", "order", "matching"] = "single"
+    selection_type: Literal["single", "multiple", "open", "llm", "order", "matching", "map"] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
     answer_slots: List[AnswerSlot] = Field(default_factory=list)
     order_items: List[OrderItem] = Field(default_factory=list)
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
+    map_config: Optional[MapConfig] = None
     topic_id: Optional[str] = None
 
 
