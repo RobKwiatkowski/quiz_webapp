@@ -348,6 +348,56 @@
         "w Krakowie"
       ],
       "explanation": "Na mapie zaznaczono Kraków."
+    },
+    {
+      "id": "geo-miasto-na-mapie-lodz",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-lodz.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Łódź",
+        "Lodz",
+        "Łodz",
+        "Lódź",
+        "w Łodzi",
+        "w Lodzi"
+      ],
+      "explanation": "Na mapie zaznaczono Łódź."
+    },
+    {
+      "id": "geo-miasto-na-mapie-wroclaw",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-wroclaw.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Wrocław",
+        "Wroclaw",
+        "we Wrocławiu",
+        "we Wroclawiu"
+      ],
+      "explanation": "Na mapie zaznaczono Wrocław."
+    },
+    {
+      "id": "geo-miasto-na-mapie-katowice",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-katowice.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Katowice",
+        "w Katowicach"
+      ],
+      "explanation": "Na mapie zaznaczono Katowice."
+    },
+    {
+      "id": "geo-miasto-na-mapie-szczecin",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-szczecin.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Szczecin",
+        "w Szczecinie"
+      ],
+      "explanation": "Na mapie zaznaczono Szczecin."
     }
   ]
 }
