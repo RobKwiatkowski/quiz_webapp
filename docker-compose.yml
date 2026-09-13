@@ -31,9 +31,6 @@ services:
       LLM_API_BASE_URL: "/llm-api"
     ports:
       - "8082:80"
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./frontend:/usr/share/nginx/html:ro
     depends_on:
       - backend
       - llm-checker
