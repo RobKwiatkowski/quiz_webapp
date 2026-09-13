@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Róża wiatrów - prototyp</title>
+  <style>
+    :root {
+      color: #20354a;
+      background: #f7f4ee;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      place-items: center;
+    }
+
+    main {
+      width: min(92vw, 660px);
+      padding: 32px 0;
+    }
+
+    h1,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .prompt {
+      margin-top: 28px;
+      color: #147d78;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .rose-shell {
+      display: grid;
+      margin-top: 14px;
+      min-height: 560px;
+      place-items: center;
+      border: 1px solid #c9dde1;
+      border-radius: 8px;
+      background: #e7f4f7;
+    }
+
+    .compass-rose {
+      width: min(88vw, 500px);
+      height: auto;
+      overflow: visible;
+    }
+
+    .direction {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .direction path {
+      fill: #f7fafb;
+      stroke: #536b7c;
+      stroke-width: 5;
+      transition: fill 160ms ease, stroke 160ms ease, transform 160ms ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .direction:hover path,
+    .direction:focus-visible path {
+      fill: #d5ebec;
+      stroke: #147d78;
+      transform: scale(1.03);
+    }
+
+    .direction.correct path {
+      fill: #83d8a5;
+      stroke: #147d78;
+    }
+
+    .direction.incorrect path {
+      fill: #f4a2a2;
+      stroke: #b83232;
+    }
+
+    .direction-label {
+      fill: #20354a;
+      font-size: 42px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .direction.revealed .direction-label {
+      opacity: 1;
+    }
+
+    .direction.intermediate .direction-label {
+      font-size: 24px;
+    }
+
+    .center {
+      fill: #147d78;
+      stroke: #ffffff;
+      stroke-width: 8;
+    }
+
+    .feedback {
+      min-height: 26px;
+      margin-top: 16px;
+      color: #536b7c;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .feedback.correct {
+      color: #087f5b;
+      font-weight: 700;
+    }
+
+    .feedback.incorrect {
+      color: #b83232;
+      font-weight: 700;
+    }
+
+    .restart {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin: 18px auto 0;
+      border: 1px solid #b8ced3;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #147d78;
+      cursor: pointer;
+      font-size: 23px;
+    }
+
+    .restart:hover,
+    .restart:focus-visible {
+      border-color: #147d78;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Róża wiatrów</h1>
+    <p class="prompt" id="prompt">Wskaż kierunek: północ.</p>
+    <section class="rose-shell" aria-labelledby="prompt">
+      <svg class="compass-rose" viewBox="0 0 500 500" role="group" aria-label="Klikalna róża wiatrów">
+        <g class="direction intermediate" data-direction="NE" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M365 135 L283 236 L264 217 Z"></path>
+          <text class="direction-label" x="318" y="194" text-anchor="middle">NE</text>
+        </g>
+        <g class="direction intermediate" data-direction="SE" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M365 365 L264 283 L283 264 Z"></path>
+          <text class="direction-label" x="318" y="318" text-anchor="middle">SE</text>
+        </g>
+        <g class="direction intermediate" data-direction="SW" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M135 365 L217 264 L236 283 Z"></path>
+          <text class="direction-label" x="182" y="318" text-anchor="middle">SW</text>
+        </g>
+        <g class="direction intermediate" data-direction="NW" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M135 135 L236 217 L217 236 Z"></path>
+          <text class="direction-label" x="182" y="194" text-anchor="middle">NW</text>
+        </g>
+        <g class="direction" data-direction="N" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M250 42 L294 222 L250 250 L206 222 Z"></path>
+          <text class="direction-label" x="250" y="178" text-anchor="middle">N</text>
+        </g>
+        <g class="direction" data-direction="E" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M458 250 L278 294 L250 250 L278 206 Z"></path>
+          <text class="direction-label" x="332" y="265" text-anchor="middle">E</text>
+        </g>
+        <g class="direction" data-direction="S" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M250 458 L206 278 L250 250 L294 278 Z"></path>
+          <text class="direction-label" x="250" y="340" text-anchor="middle">S</text>
+        </g>
+        <g class="direction" data-direction="W" tabindex="0" role="button" aria-label="Wybierz kierunek">
+          <path d="M42 250 L222 206 L250 250 L222 294 Z"></path>
+          <text class="direction-label" x="168" y="265" text-anchor="middle">W</text>
+        </g>
+        <circle class="center" cx="250" cy="250" r="34"></circle>
+      </svg>
+    </section>
+    <p class="feedback" id="feedback" aria-live="polite"></p>
+    <button class="restart" id="restart" type="button" title="Zacznij od nowa" aria-label="Zacznij od nowa">↻</button>
+  </main>
+  <script>
+    const directions = [
+      {id: "N", name: "północ"},
+      {id: "NE", name: "północny wschód"},
+      {id: "E", name: "wschód"},
+      {id: "SE", name: "południowy wschód"},
+      {id: "S", name: "południe"},
+      {id: "SW", name: "południowy zachód"},
+      {id: "W", name: "zachód"},
+      {id: "NW", name: "północny zachód"},
+    ];
+    let currentIndex = 0;
+    let answered = false;
+
+    const promptEl = document.querySelector("#prompt");
+    const feedbackEl = document.querySelector("#feedback");
+    const directionEls = [...document.querySelectorAll(".direction")];
+
+    function resetQuestion() {
+      answered = false;
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+      directionEls.forEach((directionEl) => {
+        directionEl.classList.remove("correct", "incorrect", "revealed");
+        directionEl.setAttribute("tabindex", "0");
+      });
+      promptEl.textContent = `Wskaż kierunek: ${directions[currentIndex].name}.`;
+    }
+
+    function chooseDirection(directionEl) {
+      if (answered) return;
+
+      answered = true;
+      const selectedId = directionEl.dataset.direction;
+      const target = directions[currentIndex];
+      const isCorrect = selectedId === target.id;
+      const targetEl = directionEls.find((element) => element.dataset.direction === target.id);
+
+      directionEls.forEach((element) => element.setAttribute("tabindex", "-1"));
+      targetEl.classList.add("correct", "revealed");
+      directionEl.classList.add("revealed");
+
+      if (isCorrect) {
+        feedbackEl.textContent = `Dobrze. ${target.id} oznacza ${target.name}.`;
+        feedbackEl.classList.add("correct");
+        currentIndex = (currentIndex + 1) % directions.length;
+      } else {
+        directionEl.classList.add("incorrect");
+        feedbackEl.textContent = `To nie jest ${target.name}. ${target.id} oznacza ${target.name}.`;
+        feedbackEl.classList.add("incorrect");
+      }
+    }
+
+    directionEls.forEach((directionEl) => {
+      directionEl.addEventListener("click", () => chooseDirection(directionEl));
+      directionEl.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          chooseDirection(directionEl);
+        }
+      });
+    });
+
+    document.querySelector("#restart").addEventListener("click", resetQuestion);
+    resetQuestion();
+  </script>
+</body>
+</html>

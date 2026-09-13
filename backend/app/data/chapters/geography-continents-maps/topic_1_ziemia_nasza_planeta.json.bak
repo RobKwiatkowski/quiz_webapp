@@ -1,0 +1,347 @@
+{
+  "topic_id": "ziemia-nasza-planeta",
+  "topic_title": "Ziemia - nasza planeta",
+  "questions": [
+    {
+      "id": "geo-continent-africa",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "africa"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": true
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Afryka."
+    },
+    {
+      "id": "geo-continent-europe",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "europe"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": true
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Europa."
+    },
+    {
+      "id": "geo-continent-asia",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "asia"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": true
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Azja."
+    },
+    {
+      "id": "geo-continent-north-america",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "north-america"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": true
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Ameryka Północna."
+    },
+    {
+      "id": "geo-continent-south-america",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "south-america"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": true
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Ameryka Południowa."
+    },
+    {
+      "id": "geo-continent-australia",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "australia"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": true
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Australia."
+    },
+    {
+      "id": "geo-continent-antarctica",
+      "text": "Jaki kontynent jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "antarctica"
+      },
+      "answers": [
+        {
+          "text": "Afryka",
+          "is_correct": false
+        },
+        {
+          "text": "Europa",
+          "is_correct": false
+        },
+        {
+          "text": "Azja",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Północna",
+          "is_correct": false
+        },
+        {
+          "text": "Ameryka Południowa",
+          "is_correct": false
+        },
+        {
+          "text": "Australia",
+          "is_correct": false
+        },
+        {
+          "text": "Antarktyda",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Zaznaczony kontynent to Antarktyda."
+    },
+    {
+      "id": "q-a810bb73",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Półokręgi łączące bieguny to:",
+      "selection_type": "open",
+      "explanation": "Południki łączą biegun północny i południowy.",
+      "accepted_answers": [
+        "południki"
+      ]
+    },
+    {
+      "id": "q-68beb81f",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Okręgi o różnej długości biegnące równolegle do równika to:",
+      "selection_type": "open",
+      "explanation": "Równoleżniki przecinają południki pod kątem prostym i są równoległe do równika.",
+      "accepted_answers": [
+        "równoleżniki"
+      ]
+    },
+    {
+      "id": "q-247125d1",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Co jest modelem planety Ziemii?",
+      "selection_type": "open",
+      "explanation": "Modelem Ziemii jest globus.",
+      "accepted_answers": [
+        "globus"
+      ]
+    },
+    {
+      "id": "q-6a1097e5",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Równik dzieli naszą planetę na:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "półkulę północną",
+          "is_correct": true
+        },
+        {
+          "text": "półkulę wschodnią",
+          "is_correct": false
+        },
+        {
+          "text": "półkulę zachodnia",
+          "is_correct": false
+        },
+        {
+          "text": "półkulę południową",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
