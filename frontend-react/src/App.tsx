@@ -1,7 +1,12 @@
 import { SubjectQuizList } from "./features/subjects/SubjectQuizList";
 import { getSubjectFromPath, subjectConfigs } from "./features/subjects/subject-config";
+import { QuizPage } from "./pages/QuizPage";
 
 export function App() {
+  if (window.location.pathname.toLowerCase().endsWith("quiz.html")) {
+    return <QuizPage />;
+  }
+
   const subjectId = getSubjectFromPath(window.location.pathname);
 
   if (subjectId) {
