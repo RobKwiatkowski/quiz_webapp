@@ -20,6 +20,10 @@ function isMapQuestion(question) {
   return question.selection_type === "map";
 }
 
+function isHotspotQuestion(question) {
+  return question.selection_type === "hotspot";
+}
+
 function normalizeAnswerWhitespace(value) {
   return value.trim().replace(/\s+/g, " ");
 }

@@ -398,6 +398,54 @@
         "w Szczecinie"
       ],
       "explanation": "Na mapie zaznaczono Szczecin."
+    },
+    {
+      "id": "geo-miasto-na-mapie-bialystok",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-bialystok.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Białystok",
+        "Bialystok",
+        "w Białymstoku",
+        "w Bialymstoku"
+      ],
+      "explanation": "Na mapie zaznaczono Białystok."
+    },
+    {
+      "id": "geo-miasto-na-mapie-kielce",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-kielce.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Kielce",
+        "w Kielcach"
+      ],
+      "explanation": "Na mapie zaznaczono Kielce."
+    },
+    {
+      "id": "geo-miasto-na-mapie-bydgoszcz",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-bydgoszcz.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Bydgoszcz",
+        "w Bydgoszczy"
+      ],
+      "explanation": "Na mapie zaznaczono Bydgoszcz."
+    },
+    {
+      "id": "geo-miasto-na-mapie-gorzow-wielkopolski",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-gorzow-wielkopolski.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Gorzów Wielkopolski",
+        "Gorzow Wielkopolski",
+        "w Gorzowie Wielkopolskim",
+        "w Gorzowie Wielkopolskim"
+      ],
+      "explanation": "Na mapie zaznaczono Gorzów Wielkopolski."
     }
   ]
 }

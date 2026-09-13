@@ -316,10 +316,25 @@ def normalize_admin_question(
                 for answer in payload.get("answers", [])
                 if isinstance(answer, dict)
             ]
+    elif selection_type == "hotspot":
+        hotspot_config = payload.get("hotspot_config")
+        if not isinstance(hotspot_config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Hotspot questions require hotspot configuration",
+            )
+
+        question["hotspot_config"] = {
+            "source": str(hotspot_config.get("source", "")).strip(),
+            "target_hotspot_id": str(hotspot_config.get("target_hotspot_id", "")).strip(),
+        }
     else:
         raise HTTPException(
             status_code=400,
-            detail="Admin supports only single, multiple, open, llm, order, matching, and map questions",
+            detail=(
+                "Admin supports only single, multiple, open, llm, order, matching, "
+                "map, and hotspot questions"
+            ),
         )
 
     try:

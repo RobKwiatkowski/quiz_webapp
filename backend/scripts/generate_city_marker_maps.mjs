@@ -16,6 +16,10 @@ const cities = [
   {id: "wroclaw", longitude: 17.0385, latitude: 51.1079},
   {id: "katowice", longitude: 19.0238, latitude: 50.2649},
   {id: "szczecin", longitude: 14.5528, latitude: 53.4285},
+  {id: "bialystok", longitude: 23.1688, latitude: 53.1325},
+  {id: "kielce", longitude: 20.6286, latitude: 50.8661},
+  {id: "bydgoszcz", longitude: 18.0084, latitude: 53.1235},
+  {id: "gorzow-wielkopolski", longitude: 15.2288, latitude: 52.7368},
 ];
 
 function visitCoordinates(coordinates, visit) {

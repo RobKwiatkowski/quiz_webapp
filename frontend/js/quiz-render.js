@@ -140,6 +140,11 @@ function renderQuestion() {
     return;
   }
 
+  if (isHotspotQuestion(question)) {
+    renderHotspotQuestion(question, answersEl);
+    return;
+  }
+
   const shuffledAnswers = shuffleArray(question.answers || []);
 
   answersEl.innerHTML = shuffledAnswers.map((answer) => `
@@ -512,6 +517,10 @@ function getQuestionHint(question) {
 
   if (question.selection_type === "matching") {
     return "Dopasuj elementy z lewej kolumny do prawej.";
+  }
+
+  if (question.selection_type === "hotspot") {
+    return "Kliknij właściwy kierunek na diagramie.";
   }
 
   return "";

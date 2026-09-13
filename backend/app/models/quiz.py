@@ -81,6 +81,18 @@ class MapConfig(BaseModel):
     background_source: Optional[str] = None
 
 
+class HotspotConfig(BaseModel):
+    """Configuration for questions answered on an interactive SVG diagram.
+
+    Attributes:
+        source: Local SVG asset path.
+        target_hotspot_id: Stable identifier of the correct clickable region.
+    """
+
+    source: str
+    target_hotspot_id: str
+
+
 class Question(BaseModel):
     """Question schema supporting all quiz answer interaction types.
 
@@ -98,6 +110,7 @@ class Question(BaseModel):
         order_items: Items to arrange for order questions.
         matching_pairs: Left/right pairs for matching questions.
         map_config: Configuration for map questions.
+        hotspot_config: Configuration for interactive SVG diagram questions.
         topic_id: Optional topic identifier used by the admin editor.
     """
 
@@ -107,13 +120,16 @@ class Question(BaseModel):
     context: Optional[QuestionContext] = None
     image: str | List[str] | None = None
     explanation: Optional[str] = None
-    selection_type: Literal["single", "multiple", "open", "llm", "order", "matching", "map"] = "single"
+    selection_type: Literal[
+        "single", "multiple", "open", "llm", "order", "matching", "map", "hotspot"
+    ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
     answer_slots: List[AnswerSlot] = Field(default_factory=list)
     order_items: List[OrderItem] = Field(default_factory=list)
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
     map_config: Optional[MapConfig] = None
+    hotspot_config: Optional[HotspotConfig] = None
     topic_id: Optional[str] = None
 
 

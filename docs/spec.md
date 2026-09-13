@@ -46,7 +46,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, and `map`
+- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`, and `hotspot`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -274,6 +274,21 @@ Fields:
   learner identifies a highlighted region using standard answer buttons
 - `target_feature_id`: stable technical identifier matching `feature.properties.id`
 
+### `HotspotConfig`
+
+```json
+{
+  "source": "/static/images/geography/compass-rose.svg",
+  "target_hotspot_id": "N"
+}
+```
+
+Fields:
+
+- `source`: local `/static/...` SVG asset used by the hotspot renderer
+- `target_hotspot_id`: stable technical identifier matching a unique
+  `data-hotspot-id` attribute in the SVG
+
 ### `Question`
 
 ```json
@@ -291,6 +306,7 @@ Fields:
   "order_items": [],
   "matching_pairs": [],
   "map_config": null,
+  "hotspot_config": null,
   "topic_id": null
 }
 ```
@@ -305,8 +321,10 @@ Fields:
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
-  `single` and `multiple`, required for `open`, `llm`, `order`, and `matching`
-- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, `matching`, or `map`
+  `single` and `multiple`, required for `open`, `llm`, `order`, `matching`, and
+  `hotspot`
+- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, `matching`,
+  `map`, or `hotspot`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for one-field `open` questions and the
   reference answer for `llm` questions
@@ -314,6 +332,8 @@ Fields:
 - `order_items`: sequence items for `order` questions
 - `matching_pairs`: left/right pairs for `matching` questions
 - `map_config`: map asset and target configuration for `map` questions
+- `hotspot_config`: SVG asset and target region configuration for `hotspot`
+  questions
 - `topic_id`: optional topic identifier set by admin writes so a created
   question can be traced to its topic without showing technical IDs in the UI
 
@@ -465,7 +485,7 @@ Scores are point-based. Maximum points are derived from question structure:
 - `multiple`: 1 point
 - one-field `open`: 1 point
 - multi-slot `open`: one point per `answer_slots` item
-- `llm`, `order`, and `matching`: 1 point
+- `llm`, `order`, `matching`, `map`, and `hotspot`: 1 point
 
 `single`:
 
@@ -548,6 +568,21 @@ Scores are point-based. Maximum points are derived from question structure:
   answer buttons and scoring
 - the frontend renders Polygon and MultiPolygon GeoJSON directly to SVG and keeps
   a minimal in-memory GeoJSON cache by source path
+
+`hotspot`:
+
+- `hotspot_config` is required
+- `hotspot_config.source` points to a local SVG asset under `/static/...`
+- each clickable region has a unique, non-empty `data-hotspot-id`
+- `target_hotspot_id` must match one clickable region exactly
+- the SVG must not contain scripts, embedded HTML, style elements, inline event
+  handlers, inline styles, or external references
+- the user answers immediately by clicking a region or selecting it with the
+  keyboard
+- a correct click gives 1 point; an incorrect click gives 0 points
+- after answering, the correct region and any chosen incorrect region are marked,
+  their labels are revealed, and further interaction is locked
+- the frontend keeps a minimal in-memory SVG cache by source path
 
 After a correct answer, the frontend shows a localized success message. After an
 incorrect answer, it shows the question `explanation` when one is available.
@@ -641,8 +676,8 @@ The validator checks:
 - `questions` must be a list
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
-- required non-empty `explanation` on `open`, `llm`, `order`, and `matching`
-  questions; optional `explanation` on `single` and `multiple` questions
+- required non-empty `explanation` on `open`, `llm`, `order`, `matching`, and
+  `hotspot` questions; optional `explanation` on `single` and `multiple` questions
 - valid `selection_type`
 - optional `source_text` structure
 - optional `context` structure
@@ -654,6 +689,7 @@ The validator checks:
   `answer_slots`
 - valid `order_items` for `order`
 - valid `matching_pairs` for `matching`
+- valid local SVG source, unique SVG hotspot IDs, and existing target for `hotspot`
 - local image path format and file existence, including every item in image lists
 
 The validator emits warnings for content that can still run but is likely
@@ -671,8 +707,8 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
-- `open`, `llm`, `order`, and `matching` questions must include a non-empty
-  `explanation`; `single` and `multiple` questions may omit it
+- `open`, `llm`, `order`, `matching`, and `hotspot` questions must include a
+  non-empty `explanation`; `single` and `multiple` questions may omit it
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
 - source-based questions may add `source_text` while keeping the regular
@@ -682,6 +718,8 @@ Rules:
   1-based positions
 - matching questions use `matching_pairs` with stable pair IDs and unique left
   labels; right labels may repeat for category-style matching
+- hotspot questions use a validated local SVG with stable `data-hotspot-id`
+  attributes and a matching `hotspot_config.target_hotspot_id`
 - quiz content should be written for a child aged 10-12
 - quiz content should be in Polish
 - open questions should include all required variants in `accepted_answers`
@@ -742,7 +780,8 @@ The admin interface is intentionally plain and functional:
 - its question editor shows only the answer fields relevant to the selected
   question type
 - it supports creating, editing, and deleting `single`, `multiple`, one-field
-  `open`, multi-slot `open`, `llm`, `order`, and `matching` questions
+  `open`, multi-slot `open`, `llm`, `order`, `matching`, `map`, and `hotspot`
+  questions
 - it supports image fields only for `single` and `open` questions
 - it lets the administrator enter source/context text without requiring a
   separate source attribution field
@@ -791,8 +830,8 @@ Possible future extensions:
 
 The first production version is a working single-player quiz application that
 runs through Docker Compose, shows a quiz list, loads a selected quiz from the
-backend, supports `single`, `multiple`, `open`, `order`, and `matching`
-questions, handles images and context text, shows immediate feedback and a
+backend, supports `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`,
+and `hotspot` questions, handles images and context text, shows immediate feedback and a
 point-based final result, keeps quiz content in validated chapter and topic JSON
 files, and includes a minimal authenticated admin panel for editing questions in
 chapter topics.

@@ -41,6 +41,8 @@ Before finishing:
 
 ## Quiz authoring
 - For quiz content authoring, do not assume missing information.
+- For creating or editing interactive Poland maps and city-marker map assets,
+  use `skills/poland-interactive-maps/SKILL.md`.
 - When the user asks to add or propose quiz questions, first present the proposed
   questions for review and wait for explicit approval before editing JSON files,
   unless the user clearly asks to implement immediately.

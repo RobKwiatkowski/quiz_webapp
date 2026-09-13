@@ -70,6 +70,7 @@
               <option value="order">Układanie w kolejności</option>
               <option value="matching">Dopasowywanie par</option>
               <option value="map">Wskazanie na mapie</option>
+              <option value="hotspot">Wskazanie na diagramie</option>
               <option value="llm">Odpowiedź pisemna oceniana przez AI</option>
             </select>
           </div>
@@ -186,6 +187,20 @@
           <label class="form-field">
             <span>Podkład GeoJSON <span class="optional-label">opcjonalnie</span></span>
             <input id="map-background-source" type="text" placeholder="/static/maps/..." />
+          </label>
+        </div>
+
+        <div id="hotspot-editor" class="editor-card hidden">
+          <div class="editor-card-header">
+            <h3>Konfiguracja diagramu</h3>
+          </div>
+          <label class="form-field">
+            <span>Plik SVG</span>
+            <input id="hotspot-source" type="text" placeholder="/static/images/.../diagram.svg" />
+          </label>
+          <label class="form-field">
+            <span>Identyfikator poprawnego obszaru</span>
+            <input id="hotspot-target-id" type="text" placeholder="np. NW" />
           </label>
         </div>
 

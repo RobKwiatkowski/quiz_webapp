@@ -1004,6 +1004,94 @@ button:disabled {
   font-weight: 700;
 }
 
+.hotspot-question {
+  display: grid;
+  width: min(100%, 600px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 12px;
+  place-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(36, 54, 75, 0.14);
+  border-radius: 8px;
+  background: #e6f4fa;
+}
+
+.hotspot-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hotspot-region {
+  cursor: pointer;
+  outline: none;
+}
+
+.hotspot-region path {
+  fill: #f7fafb;
+  stroke: #536b7c;
+  stroke-width: 5;
+  vector-effect: non-scaling-stroke;
+  transition: fill 160ms ease, stroke 160ms ease, transform 160ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hotspot-region:hover path,
+.hotspot-region:focus-visible path {
+  fill: #d5ebec;
+  stroke: #147d78;
+  transform: scale(1.03);
+}
+
+.hotspot-region.correct path {
+  fill: #83d8a5;
+  stroke: #147d78;
+}
+
+.hotspot-region.incorrect path {
+  fill: #f4a2a2;
+  stroke: #b83232;
+}
+
+.hotspot-region.locked {
+  cursor: default;
+  pointer-events: none;
+}
+
+.hotspot-label {
+  fill: #20354a;
+  font-size: 42px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hotspot-part-intermediate .hotspot-label {
+  font-size: 24px;
+}
+
+.hotspot-region.revealed .hotspot-label {
+  opacity: 1;
+}
+
+.hotspot-center {
+  fill: #147d78;
+  stroke: #ffffff;
+  stroke-width: 8;
+  vector-effect: non-scaling-stroke;
+}
+
+.hotspot-status {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff8ec;
+  color: #3d4f64;
+  font-weight: 700;
+}
+
 .open-answer-box {
   margin-top: 20px;
 }
@@ -1323,14 +1411,17 @@ body[data-page="quiz"] {
   .quiz-play-shell .answer-btn,
   .quiz-play-shell .order-item,
   .quiz-play-shell .matching-row,
-  .quiz-play-shell .result-list-tile {
+  .quiz-play-shell .result-list-tile,
+  .hotspot-region path {
     transition: none;
   }
 
   .quiz-play-shell .answer-btn:hover,
   .quiz-play-shell .answer-btn:focus-visible,
   .quiz-play-shell .result-list-tile:hover,
-  .quiz-play-shell .result-list-tile:focus-visible {
+  .quiz-play-shell .result-list-tile:focus-visible,
+  .hotspot-region:hover path,
+  .hotspot-region:focus-visible path {
     transform: none;
   }
 }

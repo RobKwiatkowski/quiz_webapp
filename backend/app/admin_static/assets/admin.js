@@ -366,6 +366,8 @@ function openEditor(question = null) {
   document.getElementById("map-mode").value = "select";
   document.getElementById("map-target-feature-id").value = "";
   document.getElementById("map-background-source").value = "/static/maps/ancient-civilizations-basemap.geojson";
+  document.getElementById("hotspot-source").value = "/static/images/geography/compass-rose.svg";
+  document.getElementById("hotspot-target-id").value = "";
   hideContextField();
   updateImagePreview();
 
@@ -383,6 +385,10 @@ function openEditor(question = null) {
       document.getElementById("map-mode").value = question.map_config.mode || "select";
       document.getElementById("map-target-feature-id").value = question.map_config.target_feature_id || "";
       document.getElementById("map-background-source").value = question.map_config.background_source || "";
+    }
+    if (question.hotspot_config) {
+      document.getElementById("hotspot-source").value = question.hotspot_config.source || "";
+      document.getElementById("hotspot-target-id").value = question.hotspot_config.target_hotspot_id || "";
     }
     updateImagePreview();
 
@@ -450,6 +456,7 @@ function updateEditorType() {
   const isOrder = questionType.value === "order";
   const isMatching = questionType.value === "matching";
   const isMap = questionType.value === "map";
+  const isHotspot = questionType.value === "hotspot";
   const isMapIdentify = isMap && document.getElementById("map-mode").value === "identify";
   const isChoice = questionType.value === "single" || questionType.value === "multiple" || isMapIdentify;
   const supportsImage = questionType.value === "single" || questionType.value === "open";
@@ -460,6 +467,7 @@ function updateEditorType() {
   document.getElementById("order-editor").classList.toggle("hidden", !isOrder);
   document.getElementById("matching-editor").classList.toggle("hidden", !isMatching);
   document.getElementById("map-editor").classList.toggle("hidden", !isMap);
+  document.getElementById("hotspot-editor").classList.toggle("hidden", !isHotspot);
   document.getElementById("multi-slot-toggle").closest("label").classList.toggle("hidden", isLlm);
   document.getElementById("accepted-answer-title").textContent = isLlm ? "Odpowiedź wzorcowa dla AI" : "Poprawne odpowiedzi";
   document.getElementById("explanation-label-text").textContent = isChoice && !isMap ? "Wyjaśnienie (opcjonalne)" : "Wyjaśnienie";
@@ -711,6 +719,11 @@ async function collectQuestionPayload() {
         return {text: input.value.trim(), is_correct: correct.checked};
       }).filter((answer) => answer.text);
     }
+  } else if (payload.selection_type === "hotspot") {
+    payload.hotspot_config = {
+      source: document.getElementById("hotspot-source").value.trim(),
+      target_hotspot_id: document.getElementById("hotspot-target-id").value.trim()
+    };
   } else {
     payload.answers = Array.from(document.querySelectorAll("#answer-rows .answer-row")).map((row) => {
       const input = row.querySelector("input[type='text']");
@@ -874,6 +887,12 @@ function validatePayload(payload) {
       const correctCount = (payload.answers || []).filter((answer) => answer.is_correct).length;
       if ((payload.answers || []).length < 2) return "Dodaj co najmniej dwie odpowiedzi.";
       if (correctCount !== 1) return "Zaznacz dokładnie jedną poprawną odpowiedź.";
+    }
+  }
+
+  if (payload.selection_type === "hotspot") {
+    if (!payload.hotspot_config.source || !payload.hotspot_config.target_hotspot_id) {
+      return "Wpisz plik SVG i identyfikator poprawnego obszaru.";
     }
   }
 

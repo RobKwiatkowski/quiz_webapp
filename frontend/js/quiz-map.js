@@ -52,7 +52,7 @@ function createMapQuestionElement(question, geojson, backgroundGeojson) {
   wrapperEl.appendChild(mapFrameEl);
 
   if (question.map_config.background_source) {
-    wrapperEl.appendChild(createMapCaption());
+    wrapperEl.appendChild(createMapCaption(question));
   }
 
   return wrapperEl;
@@ -265,9 +265,19 @@ function getMapViewBox(bounds) {
   return {width, height, padding: 24};
 }
 
-function createMapCaption() {
+function createMapCaption(question) {
   const captionEl = document.createElement("p");
   captionEl.className = "map-caption";
+
+  if (question.map_config.source === "/static/maps/world-oceans.geojson") {
+    captionEl.append(
+      document.createTextNode("Kontynenty są pokazane jako tło orientacyjne."),
+      document.createElement("br"),
+      document.createTextNode("Podkład: Natural Earth.")
+    );
+    return captionEl;
+  }
+
   captionEl.append(
     document.createTextNode("Przybliżone regiony starożytnych cywilizacji. Granice zmieniały się w czasie."),
     document.createElement("br"),

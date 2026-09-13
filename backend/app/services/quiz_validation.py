@@ -6,8 +6,18 @@ import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from xml.etree import ElementTree
 
-ALLOWED_SELECTION_TYPES = {"single", "multiple", "open", "llm", "order", "matching", "map"}
+ALLOWED_SELECTION_TYPES = {
+    "single",
+    "multiple",
+    "open",
+    "llm",
+    "order",
+    "matching",
+    "map",
+    "hotspot",
+}
 
 
 @dataclass
@@ -157,6 +167,94 @@ def validate_map_geojson_source(
         result.errors.append(
             f"{context}: map_config.{field_name} must be a GeoJSON FeatureCollection"
         )
+
+
+def validate_hotspot_config(
+    hotspot_config: Any,
+    result: ValidationResult,
+    context: str,
+    static_dir: Path,
+) -> dict[str, Any] | None:
+    """Validates a local SVG diagram and its referenced target hotspot."""
+    if not isinstance(hotspot_config, dict):
+        result.errors.append(f"{context}: hotspot_config must be an object")
+        return None
+
+    source = hotspot_config.get("source")
+    target_hotspot_id = hotspot_config.get("target_hotspot_id")
+
+    if not is_non_empty_string(source):
+        result.errors.append(f"{context}: hotspot_config.source must be a non-empty string")
+    elif not source.startswith("/static/"):
+        result.errors.append(f"{context}: hotspot_config.source must be a local /static/ path")
+    elif Path(source).suffix.lower() != ".svg":
+        result.errors.append(f"{context}: hotspot_config.source must point to an SVG file")
+
+    if not is_non_empty_string(target_hotspot_id):
+        result.errors.append(
+            f"{context}: hotspot_config.target_hotspot_id must be a non-empty string"
+        )
+
+    if not is_non_empty_string(source) or not source.startswith("/static/"):
+        return hotspot_config
+
+    diagram_path = resolve_static_path(source, static_dir).resolve()
+    static_root = static_dir.resolve()
+    if not diagram_path.is_relative_to(static_root):
+        result.errors.append(f"{context}: hotspot_config.source must stay inside /static/")
+        return hotspot_config
+
+    if not diagram_path.exists():
+        result.errors.append(f"{context}: hotspot_config.source file does not exist: {source}")
+        return hotspot_config
+
+    try:
+        root = ElementTree.parse(diagram_path).getroot()
+    except (ElementTree.ParseError, OSError) as e:
+        result.errors.append(f"{context}: failed to load hotspot_config.source SVG: {e}")
+        return hotspot_config
+
+    if root.tag.rsplit("}", 1)[-1].lower() != "svg":
+        result.errors.append(f"{context}: hotspot_config.source root element must be svg")
+        return hotspot_config
+
+    hotspot_ids: set[str] = set()
+    for element in root.iter():
+        tag_name = element.tag.rsplit("}", 1)[-1].lower()
+        if tag_name in {"script", "foreignobject", "style"}:
+            result.errors.append(
+                f"{context}: hotspot SVG contains forbidden element: {tag_name}"
+            )
+
+        for attribute_name, attribute_value in element.attrib.items():
+            local_attribute_name = attribute_name.rsplit("}", 1)[-1].lower()
+            if local_attribute_name.startswith("on") or local_attribute_name == "style":
+                result.errors.append(
+                    f"{context}: hotspot SVG contains forbidden attribute: {local_attribute_name}"
+                )
+            if local_attribute_name == "href" and attribute_value and not attribute_value.startswith("#"):
+                result.errors.append(
+                    f"{context}: hotspot SVG href references must stay inside the SVG"
+                )
+
+        hotspot_id = element.attrib.get("data-hotspot-id")
+        if hotspot_id is None:
+            continue
+        if not is_non_empty_string(hotspot_id):
+            result.errors.append(f"{context}: SVG data-hotspot-id must be a non-empty string")
+        elif hotspot_id in hotspot_ids:
+            result.errors.append(f"{context}: duplicate SVG data-hotspot-id: {hotspot_id}")
+        else:
+            hotspot_ids.add(hotspot_id)
+
+    if not hotspot_ids:
+        result.errors.append(f"{context}: hotspot SVG must contain data-hotspot-id regions")
+    elif is_non_empty_string(target_hotspot_id) and target_hotspot_id not in hotspot_ids:
+        result.errors.append(
+            f"{context}: hotspot_config.target_hotspot_id not found in SVG: {target_hotspot_id}"
+        )
+
+    return hotspot_config
 
 
 def validate_answers_structure(
@@ -420,6 +518,7 @@ def validate_question(
     order_items = question.get("order_items")
     matching_pairs = question.get("matching_pairs")
     map_config = question.get("map_config")
+    hotspot_config = question.get("hotspot_config")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, result, context)
@@ -503,6 +602,24 @@ def validate_question(
                 context,
                 ["accepted_answers", "answer_slots", "order_items", "matching_pairs"],
             )
+
+    elif selection_type == "hotspot":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_hotspot_config(hotspot_config, result, context, static_dir)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+            ],
+        )
 
 
 def warn_unexpected(
