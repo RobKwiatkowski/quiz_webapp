@@ -14,6 +14,8 @@ import {
   type QuizFeedback,
 } from "../features/quiz/quiz-session";
 import { LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
+import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
+import { MapQuestion } from "../features/quiz/MapQuestion";
 
 type QuizLoadState =
   | { status: "loading" }
@@ -193,6 +195,8 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "order") return <OrderQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "matching") return <MatchingQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "llm") return <LlmQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "map") return <MapQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "hotspot") return <HotspotQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
 
   return <p className="subject-status">Ten typ pytania zostanie przeniesiony w kolejnym kroku migracji.</p>;
 }
