@@ -13,6 +13,7 @@ import {
   quizSessionReducer,
   type QuizFeedback,
 } from "../features/quiz/quiz-session";
+import { LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
 
 type QuizLoadState =
   | { status: "loading" }
@@ -154,6 +155,7 @@ export function QuizPage() {
             dispatch({ type: "set-open-answer", slotIndex, value });
           }}
           onSubmitOpen={handleCheck}
+          onComplete={completeAnswer}
         />
         {validationMessage && <p className="feedback feedback-warning">{validationMessage}</p>}
         {session.feedback && <FeedbackPanel feedback={session.feedback} />}
@@ -176,6 +178,7 @@ interface QuestionRendererProps {
   onSelectAnswer: (answerIndex: number) => void;
   onOpenAnswerChange: (slotIndex: number, value: string) => void;
   onSubmitOpen: () => void;
+  onComplete: (feedback: QuizFeedback) => void;
 }
 
 function QuestionRenderer(props: QuestionRendererProps) {
@@ -186,6 +189,10 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "open") {
     return <OpenQuestion {...props} />;
   }
+
+  if (props.question.selection_type === "order") return <OrderQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "matching") return <MatchingQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "llm") return <LlmQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
 
   return <p className="subject-status">Ten typ pytania zostanie przeniesiony w kolejnym kroku migracji.</p>;
 }
