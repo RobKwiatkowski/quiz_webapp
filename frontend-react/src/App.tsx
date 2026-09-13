@@ -1,6 +1,12 @@
 import { SubjectQuizList } from "./features/subjects/SubjectQuizList";
-import { getSubjectFromPath, subjectConfigs } from "./features/subjects/subject-config";
+import { getSubjectFromPath, subjectConfigs, type SubjectId } from "./features/subjects/subject-config";
 import { QuizPage } from "./pages/QuizPage";
+
+const homeCards: Record<SubjectId, { label: string; accent: string }> = {
+  history: { label: "Opowieści, daty i decyzje", accent: "home-card-history" },
+  geography: { label: "Mapy, miejsca i świat", accent: "home-card-geography" },
+  biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
+};
 
 export function App() {
   if (window.location.pathname.toLowerCase().endsWith("quiz.html")) {
@@ -30,18 +36,40 @@ export function App() {
     );
   }
 
+  return <HomeScreen />;
+}
+
+function HomeScreen() {
   return (
-    <main className="subject-shell">
-      <p className="subject-kicker">EDU QUIZ</p>
-      <h1>Wybierz dział nauki</h1>
-      <div className="subject-links">
-        {(Object.values(subjectConfigs)).map((subject) => (
-          <a key={subject.id} className="subject-link" href={`${subject.id}.html`}>
-            <span>{subject.title}</span>
-            <span aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
+    <main className="home-shell">
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-copy">
+          <p className="subject-kicker">EDU QUIZ</p>
+          <h1 id="home-title">Wybierz dział nauki</h1>
+          <p>Krótka powtórka w formie quizu: zwykłe pytania, mapy, dopasowania i zadania interaktywne w jednym miejscu.</p>
+        </div>
+        <div className="home-hero-art" aria-hidden="true">
+          <img src="/assets/start-images/start_image_1.png" alt="" />
+        </div>
+      </section>
+
+      <section className="home-subject-grid" aria-label="Działy nauki">
+        {Object.values(subjectConfigs).map((subject) => {
+          const card = homeCards[subject.id];
+
+          return (
+            <a key={subject.id} className={`home-subject-card ${card.accent}`} href={`${subject.id}.html`}>
+              <span className="home-subject-label">{card.label}</span>
+              <span className="home-subject-title">{subject.title}</span>
+              <span className="home-subject-description">{subject.description}</span>
+              <span className="home-subject-action">
+                Start
+                <span aria-hidden="true">→</span>
+              </span>
+            </a>
+          );
+        })}
+      </section>
     </main>
   );
 }
