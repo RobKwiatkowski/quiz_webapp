@@ -11,6 +11,7 @@ services:
       ADMIN_PASSWORD_HASH: "pbkdf2_sha256$$260000$$KcfkKY3bkM_ySjy-f-ge_w==$$TXqRVaefuUGxrjq42weO9ArnfRyjpkUPkOaKH6q9N6A="
     volumes:
       - ./backend/app/data/chapters:/app/app/data/chapters
+      - ./backend/app/static:/app/app/static
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
   llm-checker:
     build:
