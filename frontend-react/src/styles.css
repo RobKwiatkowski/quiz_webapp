@@ -1,0 +1,31 @@
+:root {
+  color: #1f2937;
+  background: #f7fafc;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.migration-shell {
+  max-width: 680px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 0.75rem 2rem rgb(15 23 42 / 12%);
+}
+
+.migration-eyebrow {
+  margin: 0;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.migration-status {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #eff6ff;
+}
