@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <g class="hotspot-part hotspot-part-intermediate" data-hotspot-id="NE" data-hotspot-label="Prawy górny obszar">
+    <path d="M365 135 L283 236 L264 217 Z" />
+    <text class="hotspot-label" x="318" y="194" text-anchor="middle" aria-hidden="true">NE</text>
+  </g>
+  <g class="hotspot-part hotspot-part-intermediate" data-hotspot-id="SE" data-hotspot-label="Prawy dolny obszar">
+    <path d="M365 365 L264 283 L283 264 Z" />
+    <text class="hotspot-label" x="318" y="318" text-anchor="middle" aria-hidden="true">SE</text>
+  </g>
+  <g class="hotspot-part hotspot-part-intermediate" data-hotspot-id="SW" data-hotspot-label="Lewy dolny obszar">
+    <path d="M135 365 L217 264 L236 283 Z" />
+    <text class="hotspot-label" x="182" y="318" text-anchor="middle" aria-hidden="true">SW</text>
+  </g>
+  <g class="hotspot-part hotspot-part-intermediate" data-hotspot-id="NW" data-hotspot-label="Lewy górny obszar">
+    <path d="M135 135 L236 217 L217 236 Z" />
+    <text class="hotspot-label" x="182" y="194" text-anchor="middle" aria-hidden="true">NW</text>
+  </g>
+  <g class="hotspot-part" data-hotspot-id="N" data-hotspot-label="Górny obszar">
+    <path d="M250 42 L294 222 L250 250 L206 222 Z" />
+    <text class="hotspot-label" x="250" y="178" text-anchor="middle" aria-hidden="true">N</text>
+  </g>
+  <g class="hotspot-part" data-hotspot-id="E" data-hotspot-label="Prawy obszar">
+    <path d="M458 250 L278 294 L250 250 L278 206 Z" />
+    <text class="hotspot-label" x="332" y="265" text-anchor="middle" aria-hidden="true">E</text>
+  </g>
+  <g class="hotspot-part" data-hotspot-id="S" data-hotspot-label="Dolny obszar">
+    <path d="M250 458 L206 278 L250 250 L294 278 Z" />
+    <text class="hotspot-label" x="250" y="340" text-anchor="middle" aria-hidden="true">S</text>
+  </g>
+  <g class="hotspot-part" data-hotspot-id="W" data-hotspot-label="Lewy obszar">
+    <path d="M42 250 L222 206 L250 250 L222 294 Z" />
+    <text class="hotspot-label" x="168" y="265" text-anchor="middle" aria-hidden="true">W</text>
+  </g>
+  <circle class="hotspot-center" cx="250" cy="250" r="34" />
+</svg>
