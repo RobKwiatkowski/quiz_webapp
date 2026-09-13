@@ -1,19 +1,42 @@
-import { getRuntimeConfig } from "./runtime-config";
+import { SubjectQuizList } from "./features/subjects/SubjectQuizList";
+import { getSubjectFromPath, subjectConfigs } from "./features/subjects/subject-config";
 
 export function App() {
-  const config = getRuntimeConfig();
+  const subjectId = getSubjectFromPath(window.location.pathname);
+
+  if (subjectId) {
+    const subject = subjectConfigs[subjectId];
+
+    return (
+      <main className="subject-shell">
+        <nav aria-label="Nawigacja">
+          <a className="back-link" href="index.html">← Menu główne</a>
+        </nav>
+        <header className="subject-hero">
+          <p className="subject-kicker">EDU QUIZ</p>
+          <h1>{subject.title}</h1>
+          <p>{subject.description}</p>
+        </header>
+        <section aria-labelledby="quiz-list-title">
+          <h2 id="quiz-list-title">Wybierz temat</h2>
+          <SubjectQuizList subject={subject} />
+        </section>
+      </main>
+    );
+  }
 
   return (
-    <main className="migration-shell">
-      <p className="migration-eyebrow">Edu Quiz</p>
-      <h1>Fundament migracji React</h1>
-      <p>
-        Ten ekran nie zastępuje jeszcze działającego frontendu. Jest izolowanym
-        punktem startowym dla migracji wykonywanej etapami.
-      </p>
-      <p className="migration-status">
-        Konfiguracja API została odczytana: {config.API_BASE_URL || "adres względny"}.
-      </p>
+    <main className="subject-shell">
+      <p className="subject-kicker">EDU QUIZ</p>
+      <h1>Wybierz dział nauki</h1>
+      <div className="subject-links">
+        {(Object.values(subjectConfigs)).map((subject) => (
+          <a key={subject.id} className="subject-link" href={`${subject.id}.html`}>
+            <span>{subject.title}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
     </main>
   );
 }
