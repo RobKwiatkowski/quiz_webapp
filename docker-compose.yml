@@ -23,7 +23,10 @@ services:
       - ../LLM_server/.env
 
   frontend:
-    image: nginx:stable-alpine
+    build:
+      context: .
+      dockerfile: frontend-react/Dockerfile
+      provenance: false
     container_name: quiz-frontend
     restart: unless-stopped
     ports:
