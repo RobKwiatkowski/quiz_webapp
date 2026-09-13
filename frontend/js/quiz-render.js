@@ -282,18 +282,23 @@ function renderOrderQuestion(question, answersEl) {
   const orderListEl = document.createElement("div");
   orderListEl.className = "order-list";
 
-  shuffledItems.forEach((item) => {
-    orderListEl.appendChild(createOrderItemElement(item));
+  shuffledItems.forEach((item, index) => {
+    orderListEl.appendChild(createOrderItemElement(item, index + 1));
   });
 
   answersEl.appendChild(orderListEl);
   updateOrderMoveButtons(orderListEl);
 }
 
-function createOrderItemElement(item) {
+function createOrderItemElement(item, positionNumber) {
   const itemEl = document.createElement("div");
   itemEl.className = "order-item";
   itemEl.dataset.orderItemId = item.id;
+
+  const positionEl = document.createElement("span");
+  positionEl.className = "order-position-marker";
+  positionEl.textContent = String(positionNumber);
+  positionEl.setAttribute("aria-hidden", "true");
 
   const textEl = document.createElement("span");
   textEl.className = "order-item-text";
@@ -306,7 +311,7 @@ function createOrderItemElement(item) {
   const moveDownButton = createOrderMoveButton("down", "\u2193", "Przesuń niżej");
 
   controlsEl.append(moveUpButton, moveDownButton);
-  itemEl.append(textEl, controlsEl);
+  itemEl.append(positionEl, textEl, controlsEl);
 
   return itemEl;
 }
@@ -346,7 +351,9 @@ function updateOrderMoveButtons(listEl) {
   items.forEach((item, index) => {
     const moveUpButton = item.querySelector('[data-order-move="up"]');
     const moveDownButton = item.querySelector('[data-order-move="down"]');
+    const positionEl = item.querySelector(".order-position-marker");
 
+    positionEl.textContent = String(index + 1);
     moveUpButton.disabled = index === 0;
     moveDownButton.disabled = index === items.length - 1;
   });

@@ -44,6 +44,9 @@ async function loadMapGeoJson(source) {
 function createMapQuestionElement(question, geojson, backgroundGeojson) {
   const wrapperEl = document.createElement("div");
   wrapperEl.className = `map-question map-question-${question.map_config.mode}`;
+  if (question.map_config.source === "/static/maps/poland-voivodeships.geojson") {
+    wrapperEl.classList.add("map-question-voivodeships");
+  }
 
   const mapFrameEl = document.createElement("div");
   mapFrameEl.className = "map-frame";

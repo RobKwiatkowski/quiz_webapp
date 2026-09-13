@@ -64,6 +64,10 @@ function createHotspotQuestionElement(question, svgSource) {
     hotspotEl.setAttribute("focusable", "true");
     hotspotEl.setAttribute("role", "button");
     hotspotEl.setAttribute("aria-label", hotspotEl.dataset.hotspotLabel || "Wybierz obszar");
+    hotspotEl.addEventListener("pointerenter", () => showHotspotPreview(hotspotEl));
+    hotspotEl.addEventListener("pointerleave", () => clearHotspotPreview(hotspotEl));
+    hotspotEl.addEventListener("focus", () => showHotspotPreview(hotspotEl));
+    hotspotEl.addEventListener("blur", () => clearHotspotPreview(hotspotEl));
     hotspotEl.addEventListener("click", () => handleHotspotAnswer(hotspotId, svgEl));
     hotspotEl.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
@@ -77,6 +81,36 @@ function createHotspotQuestionElement(question, svgSource) {
   wrapperEl.className = "hotspot-question";
   wrapperEl.appendChild(svgEl);
   return wrapperEl;
+}
+
+function showHotspotPreview(hotspotEl) {
+  if (hasAnswered) return;
+
+  const pathEl = hotspotEl.querySelector("path");
+  if (!pathEl) return;
+
+  hotspotEl.classList.add("preview");
+  pathEl.style.setProperty("fill", "#f8dc8a", "important");
+  pathEl.style.setProperty("fill-opacity", "1", "important");
+  pathEl.style.setProperty("stroke", "#8a601f", "important");
+  pathEl.style.setProperty("stroke-width", "7", "important");
+}
+
+function clearHotspotPreview(hotspotEl) {
+  const pathEl = hotspotEl.querySelector("path");
+  if (!pathEl) return;
+
+  hotspotEl.classList.remove("preview");
+  pathEl.style.removeProperty("fill");
+  pathEl.style.removeProperty("fill-opacity");
+  pathEl.style.removeProperty("stroke");
+  pathEl.style.removeProperty("stroke-width");
+}
+
+function clearAllHotspotPreviews(svgEl) {
+  svgEl.querySelectorAll("[data-hotspot-id]").forEach((hotspotEl) => {
+    clearHotspotPreview(hotspotEl);
+  });
 }
 
 function sanitizeHotspotSvg(svgEl) {
@@ -110,6 +144,7 @@ function handleHotspotAnswer(selectedHotspotId, svgEl) {
     earnedPoints += 1;
   }
 
+  clearAllHotspotPreviews(svgEl);
   showHotspotStates(svgEl, selectedHotspotId, targetHotspotId);
   lockHotspots(svgEl);
   showFeedback(isCorrect, question.explanation);
