@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { SubjectQuizList } from "./features/subjects/SubjectQuizList";
 import { getSubjectFromPath, subjectConfigs, type SubjectId } from "./features/subjects/subject-config";
+import { AdminPage } from "./pages/AdminPage";
 import { QuizPage } from "./pages/QuizPage";
 
 const homeCards: Record<SubjectId, { label: string; accent: string }> = {
@@ -9,27 +11,50 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
 };
 
 export function App() {
-  if (window.location.pathname.toLowerCase().endsWith("quiz.html")) {
-    return <QuizPage />;
+  const subjectId = getSubjectFromPath(window.location.pathname);
+  const isQuizPage = window.location.pathname.toLowerCase().endsWith("quiz.html");
+  const isAdminPage = window.location.pathname.toLowerCase().startsWith("/admin");
+  const [startImage] = useState(() => Math.random() < 0.5 ? "start_image_1.png" : "start_image_2.png");
+
+  useEffect(() => {
+    if (isQuizPage) {
+      document.body.dataset.page = "quiz";
+      delete document.body.dataset.subject;
+      return;
+    }
+
+    delete document.body.dataset.page;
+    if (subjectId) document.body.dataset.subject = subjectId;
+    else delete document.body.dataset.subject;
+  }, [isQuizPage, subjectId]);
+
+  if (isAdminPage) {
+    return <AdminPage />;
   }
 
-  const subjectId = getSubjectFromPath(window.location.pathname);
+  if (isQuizPage) {
+    return <QuizPage />;
+  }
 
   if (subjectId) {
     const subject = subjectConfigs[subjectId];
 
     return (
-      <main className="subject-shell">
-        <nav aria-label="Nawigacja">
-          <a className="back-link" href="index.html">← Menu główne</a>
+      <main className="container">
+        <nav className="quiz-top-nav" aria-label="Nawigacja">
+          <a className="quiz-menu-tile" href="index.html">
+            <span className="quiz-menu-icon" aria-hidden="true">←</span>
+            <span>Menu główne</span>
+          </a>
         </nav>
-        <header className="subject-hero">
-          <p className="subject-kicker">EDU QUIZ</p>
-          <h1>{subject.title}</h1>
-          <p>{subject.description}</p>
-        </header>
-        <section aria-labelledby="quiz-list-title">
-          <h2 id="quiz-list-title">Wybierz temat</h2>
+        <section className="start-hero" aria-labelledby="subject-title">
+          <img className="start-hero-image" src={`/assets/start-images/${startImage}`} alt="" />
+          <div className="start-hero-overlay">
+            <h1 id="subject-title">{subject.title}</h1>
+            <p>{subject.description}</p>
+          </div>
+        </section>
+        <section aria-label="Lista quizów">
           <SubjectQuizList subject={subject} />
         </section>
       </main>
@@ -42,6 +67,10 @@ export function App() {
 function HomeScreen() {
   return (
     <main className="home-shell">
+      <a className="home-admin-link" href="/admin/">
+        Panel admina
+      </a>
+
       <section className="home-hero" aria-labelledby="home-title">
         <div className="home-hero-copy">
           <p className="subject-kicker">EDU QUIZ</p>

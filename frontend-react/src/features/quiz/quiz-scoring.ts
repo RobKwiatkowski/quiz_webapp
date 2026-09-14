@@ -28,10 +28,6 @@ export function normalizeOpenAnswer(question: QuizQuestion, value: string): stri
 }
 
 export function getQuestionMaxPoints(question: QuizQuestion): number {
-  if (question.selection_type === "open" && question.answer_slots.length > 0) {
-    return question.answer_slots.length;
-  }
-
   return 1;
 }
 
@@ -54,19 +50,17 @@ export function getOpenAnswerPoints(question: QuizQuestion, rawValues: string[])
   );
   const userAnswers = rawValues.filter(Boolean).map((answer) => normalizeOpenAnswer(question, answer));
 
-  let points = 0;
   userAnswers.forEach((userAnswer) => {
     const slotIndex = unmatchedSlots.findIndex((acceptedAnswers) =>
       acceptedAnswers.includes(userAnswer),
     );
 
     if (slotIndex >= 0) {
-      points += 1;
       unmatchedSlots.splice(slotIndex, 1);
     }
   });
 
-  return points;
+  return unmatchedSlots.length === 0 ? 1 : 0;
 }
 
 export function getScorePercentage(score: number, maximum: number): number {

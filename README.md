@@ -44,7 +44,7 @@ point score, and quiz restart. Scores are not persisted.
 
 ## Stack
 
-- Frontend: HTML, CSS, vanilla JavaScript
+- Frontend: React, TypeScript, Vite
 - Backend: FastAPI
 - Data: JSON files
 - Static serving and reverse proxy: Nginx
@@ -60,13 +60,12 @@ backend/
     models/              Pydantic models
     services/            quiz loading and assembly logic
     static/              local static assets, including images
-    admin_static/        minimal admin HTML/CSS/JavaScript
+    admin_static/        legacy admin assets retained for rollback
   scripts/               quiz validation scripts
-frontend/
-  css/                   frontend styles
-  js/                    frontend JavaScript modules
-  index.html             quiz list page
-  quiz.html              quiz player page
+frontend-react/
+  src/                   React pages, features, typed API clients, and styles
+  public/js/config.js    runtime API configuration
+  Dockerfile             multi-stage React build and Nginx runtime image
 docs/
   spec.md                project specification
 nginx/

@@ -73,12 +73,14 @@ class MapConfig(BaseModel):
         source: Local GeoJSON asset path.
         mode: Map interaction mode.
         target_feature_id: Stable feature identifier from properties.id.
+        interaction: Optional map target shape. Defaults to region selection.
     """
 
     source: str
     mode: Literal["select", "identify"]
     target_feature_id: str
     background_source: Optional[str] = None
+    interaction: Literal["region", "line"] = "region"
 
 
 class HotspotConfig(BaseModel):

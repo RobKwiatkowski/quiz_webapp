@@ -44,6 +44,7 @@ export interface MapConfig {
   background_source?: string | null;
   mode: "select" | "identify";
   target_feature_id: string;
+  interaction?: "region" | "line";
 }
 
 export interface HotspotConfig {

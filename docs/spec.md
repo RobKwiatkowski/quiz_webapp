@@ -86,15 +86,16 @@ Out of scope:
 The project consists of:
 
 - FastAPI backend in `backend/app`
-- static HTML/CSS/vanilla JavaScript frontend in `frontend`
+- React/TypeScript frontend in `frontend-react`
 - quiz content JSON files in `backend/app/data/chapters`
 - static files, including local images, in `backend/app/static`
 - Nginx configuration in `nginx/default.conf`
 - Docker Compose workflow in `docker-compose.yml`
 
-Docker Compose builds only the backend image. The frontend uses the official
-`nginx:stable-alpine` image with `frontend/` and `nginx/default.conf`
-bind-mounted into the container to keep rebuilds lightweight on Raspberry Pi.
+Docker Compose builds the backend and the React frontend image. The React image
+uses a multi-stage build: Vite produces static files and the runtime stage uses
+only `nginx:stable-alpine`. Nginx serves the React application and proxies API,
+health, LLM, and static-asset requests to the existing services.
 
 The repository also supports publishing a production frontend image for
 container-only deployments. The image serves the static frontend with Nginx and
@@ -131,6 +132,8 @@ Nginx handles:
 - `/api/` - proxy to the backend API
 - `/health` - proxy to the backend health check
 - `/static/` - proxy to backend static files
+- `/admin` and `/admin/login.html` - React admin application; the page checks
+  the existing admin session through `/api/admin/me`
 
 The frontend uses `CONFIG.API_BASE_URL`. The current default value is an empty
 string, so API requests are relative and go through Nginx.
@@ -145,8 +148,8 @@ Endpoints:
 - `GET /api/quizzes` returns lightweight quiz metadata without questions
 - `GET /api/quizzes/{quiz_id}` returns a full quiz payload with questions
 - `GET /api/math/question` returns a placeholder LLM-generated math question
-- `GET /admin` serves the admin editor when authenticated, otherwise redirects to `/admin/login.html`
-- `GET /admin/login.html` serves the admin login page
+- the production Nginx frontend serves the React admin application at `/admin`
+  and `/admin/login.html`; an unauthenticated visitor sees its login screen
 - `POST /api/admin/login` creates the admin session
 - `POST /api/admin/logout` clears the admin session
 - `GET /api/admin/subjects` lists editable JSON-backed subjects
@@ -262,7 +265,8 @@ Fields:
   "source": "/static/maps/poland-voivodeships.geojson",
   "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
   "mode": "select",
-  "target_feature_id": "mazowieckie"
+  "target_feature_id": "mazowieckie",
+  "interaction": "region"
 }
 ```
 
@@ -272,7 +276,11 @@ Fields:
 - `background_source`: optional local `/static/...` GeoJSON FeatureCollection rendered below clickable regions
 - `mode`: `select` when the learner clicks a region, or `identify` when the
   learner identifies a highlighted region using standard answer buttons
-- `target_feature_id`: stable technical identifier matching `feature.properties.id`
+- `target_feature_id`: stable technical identifier matching `feature.id` or
+  `feature.properties.id`
+- `interaction`: optional target shape for `select` mode; `region` is the
+  default, `line` lets the learner click the nearest answer line within a small
+  pointer tolerance
 
 ### `HotspotConfig`
 
@@ -432,23 +440,11 @@ the final list is not trimmed after the base selection step.
 
 ## 9. Frontend
 
-The frontend is static and consists of:
-
-- `frontend/index.html` - main subject menu
-- `frontend/history.html` - history quiz list
-- `frontend/geography.html` - geography quiz list
-- `frontend/biology.html` - biology quiz list
-- `frontend/math.html` - generated math question screen
-- `frontend/quiz.html` - quiz screen and result screen
-- `frontend/js/config.js` - API base URL configuration
-- `frontend/js/api.js` - API calls
-- `frontend/js/subject-page.js` - shared subject quiz list rendering
-- `frontend/js/utils.js` - URL query parameters and shuffling
-- `frontend/js/quiz-state.js` - current quiz session state
-- `frontend/js/quiz-render.js` - question, feedback, and result rendering
-- `frontend/js/quiz-check.js` - answer checking
-- `frontend/js/quiz-events.js` - Enter key behavior
-- `frontend/js/quiz-page.js` - initialization and restart flow
+The frontend is a React/TypeScript application in `frontend-react` and consists
+of a Vite entry point, typed API clients, subject and quiz components, and a
+separate React admin screen selected by the `/admin` URL. `public/js/config.js`
+keeps `API_BASE_URL` configurable at container startup rather than fixing it at
+build time.
 
 The application is designed for desktop use. New frontend features do not need
 mobile or touch support unless explicitly requested.
@@ -473,9 +469,13 @@ The frontend is responsible for:
 - checking answers in the browser
 - tracking earned points and maximum points in page memory
 - showing the final result screen
+- playing a short celebration sound and confetti animation when the learner earns 100% of the available points
 - restarting the current quiz by fetching it from the backend again
 
 The frontend does not persist scores and does not send user answers to the backend.
+The admin screen uses the existing `/api/admin/*` endpoints and their signed
+HTTP-only session cookie; it does not move content validation or writes into the
+browser.
 
 ## 10. Answer Rules and Scoring
 
@@ -484,7 +484,7 @@ Scores are point-based. Maximum points are derived from question structure:
 - `single`: 1 point
 - `multiple`: 1 point
 - one-field `open`: 1 point
-- multi-slot `open`: one point per `answer_slots` item
+- multi-slot `open`: one point when every answer slot is correct
 - `llm`, `order`, `matching`, `map`, and `hotspot`: 1 point
 
 `single`:
@@ -514,7 +514,7 @@ Scores are point-based. Maximum points are derived from question structure:
 - multi-slot answers are matched greedily after normalization and do not depend
   on slot order
 - one user answer can satisfy at most one slot
-- each matched slot gives one point
+- every answer slot must be matched for the answer to earn one point; a partial answer earns zero points
 - normalization includes:
   - trimming whitespace
   - replacing consecutive whitespace inside the answer with a single space
@@ -558,9 +558,13 @@ Scores are point-based. Maximum points are derived from question structure:
 - `map_config` is required
 - `map_config.source` points to a local GeoJSON asset under `/static/...`
 - the GeoJSON contains one Feature per selectable/highlightable region
-- each Feature uses `properties.id` as the stable technical identifier and may
-  use `properties.name` as a visible/source label
+- each Feature uses `id` or `properties.id` as the stable technical identifier
+  and may use `properties.name` or `properties.name_pl` as a visible/source label
 - `select` mode lets the user answer by clicking one SVG-rendered region
+- `select` mode may use `interaction: "line"` when the source GeoJSON contains
+  answer LineString or MultiLineString features; in that case the user answers
+  by clicking near a line, and the frontend selects the nearest line only within
+  a small tolerance
 - a correct `select` click gives 1 point; an incorrect click gives 0 points
 - after a `select` answer, the chosen incorrect region and the correct target
   region are visually marked and map interaction is locked
@@ -768,7 +772,7 @@ Enter works globally on the quiz screen:
 
 The admin interface is intentionally plain and functional:
 
-- it uses vanilla HTML/CSS/JavaScript
+- it uses React/TypeScript while preserving the existing admin API contract
 - it starts with a subject selector for history, geography, and biology
 - it starts with a chapter list, then a topic list, then questions for one topic
 - it supports creating chapters inside the currently selected subject by

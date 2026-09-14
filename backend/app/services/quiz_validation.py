@@ -83,12 +83,19 @@ def validate_map_config(
     background_source = map_config.get("background_source")
     mode = map_config.get("mode")
     target_feature_id = map_config.get("target_feature_id")
+    interaction = map_config.get("interaction", "region")
 
     if not is_non_empty_string(source):
         result.errors.append(f"{context}: map_config.source must be a non-empty string")
 
     if mode not in {"select", "identify"}:
         result.errors.append(f"{context}: map_config.mode must be 'select' or 'identify'")
+
+    if interaction not in {"region", "line"}:
+        result.errors.append(f"{context}: map_config.interaction must be 'region' or 'line'")
+
+    if interaction == "line" and mode != "select":
+        result.errors.append(f"{context}: line map interaction is supported only for select mode")
 
     if not is_non_empty_string(target_feature_id):
         result.errors.append(
@@ -139,8 +146,13 @@ def validate_map_target_feature(
 
     has_target = any(
         isinstance(feature, dict)
-        and isinstance(feature.get("properties"), dict)
-        and feature["properties"].get("id") == target_feature_id
+        and (
+            feature.get("id") == target_feature_id
+            or (
+                isinstance(feature.get("properties"), dict)
+                and feature["properties"].get("id") == target_feature_id
+            )
+        )
         for feature in features
     )
 

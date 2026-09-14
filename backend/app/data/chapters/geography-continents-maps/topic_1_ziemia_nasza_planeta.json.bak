@@ -342,6 +342,221 @@
           "is_correct": true
         }
       ]
+    },
+    {
+      "id": "q-ae79cdb2",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Południk 0 i 180 stopni dzielą naszą planetę na:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "półkulę północną",
+          "is_correct": false
+        },
+        {
+          "text": "półkulę południową",
+          "is_correct": false
+        },
+        {
+          "text": "półkulę wschodnią",
+          "is_correct": true
+        },
+        {
+          "text": "półkulę zachodnią",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "geo-planets-order",
+      "text": "Ułóż planety Układu Słonecznego w kolejności od Słońca.",
+      "selection_type": "order",
+      "order_items": [
+        {"id": "mercury", "text": "Merkury", "position": 1},
+        {"id": "venus", "text": "Wenus", "position": 2},
+        {"id": "earth", "text": "Ziemia", "position": 3},
+        {"id": "mars", "text": "Mars", "position": 4},
+        {"id": "jupiter", "text": "Jowisz", "position": 5},
+        {"id": "saturn", "text": "Saturn", "position": 6},
+        {"id": "uranus", "text": "Uran", "position": 7},
+        {"id": "neptune", "text": "Neptun", "position": 8}
+      ],
+      "explanation": "Kolejność od Słońca to: Merkury, Wenus, Ziemia, Mars, Jowisz, Saturn, Uran, Neptun."
+    },
+    {
+      "id": "geo-ocean-pacific",
+      "text": "Jaki ocean jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-oceans.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "pacific"
+      },
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": true},
+        {"text": "Ocean Atlantycki", "is_correct": false},
+        {"text": "Ocean Indyjski", "is_correct": false},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ],
+      "explanation": "Zaznaczony ocean to Ocean Spokojny."
+    },
+    {
+      "id": "geo-ocean-atlantic",
+      "text": "Jaki ocean jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-oceans.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "atlantic"
+      },
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": false},
+        {"text": "Ocean Atlantycki", "is_correct": true},
+        {"text": "Ocean Indyjski", "is_correct": false},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ],
+      "explanation": "Zaznaczony ocean to Ocean Atlantycki."
+    },
+    {
+      "id": "geo-ocean-indian",
+      "text": "Jaki ocean jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-oceans.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "indian"
+      },
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": false},
+        {"text": "Ocean Atlantycki", "is_correct": false},
+        {"text": "Ocean Indyjski", "is_correct": true},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ],
+      "explanation": "Zaznaczony ocean to Ocean Indyjski."
+    },
+    {
+      "id": "geo-ocean-arctic",
+      "text": "Jaki ocean jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-oceans.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "arctic"
+      },
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": false},
+        {"text": "Ocean Atlantycki", "is_correct": false},
+        {"text": "Ocean Indyjski", "is_correct": false},
+        {"text": "Ocean Arktyczny", "is_correct": true},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ],
+      "explanation": "Zaznaczony ocean to Ocean Arktyczny."
+    },
+    {
+      "id": "geo-ocean-southern",
+      "text": "Jaki ocean jest zaznaczony na mapie?",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-oceans.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "identify",
+        "target_feature_id": "southern"
+      },
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": false},
+        {"text": "Ocean Atlantycki", "is_correct": false},
+        {"text": "Ocean Indyjski", "is_correct": false},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": true}
+      ],
+      "explanation": "Zaznaczony ocean to Ocean Południowy."
+    },
+    {
+      "id": "geo-direction-north",
+      "text": "Wskaż kierunek północny.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "N"
+      },
+      "explanation": "N oznacza kierunek północny."
+    },
+    {
+      "id": "geo-direction-east",
+      "text": "Wskaż kierunek wschodni.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "E"
+      },
+      "explanation": "E oznacza kierunek wschodni."
+    },
+    {
+      "id": "geo-direction-south",
+      "text": "Wskaż kierunek południowy.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "S"
+      },
+      "explanation": "S oznacza kierunek południowy."
+    },
+    {
+      "id": "geo-direction-west",
+      "text": "Wskaż kierunek zachodni.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "W"
+      },
+      "explanation": "W oznacza kierunek zachodni."
+    },
+    {
+      "id": "geo-direction-north-east",
+      "text": "Wskaż kierunek NE.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "NE"
+      },
+      "explanation": "NE oznacza kierunek północno-wschodni."
+    },
+    {
+      "id": "geo-direction-south-east",
+      "text": "Wskaż kierunek SE.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "SE"
+      },
+      "explanation": "SE oznacza kierunek południowo-wschodni."
+    },
+    {
+      "id": "geo-direction-south-west",
+      "text": "Wskaż kierunek SW.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "SW"
+      },
+      "explanation": "SW oznacza kierunek południowo-zachodni."
+    },
+    {
+      "id": "geo-direction-north-west",
+      "text": "Wskaż kierunek NW.",
+      "selection_type": "hotspot",
+      "hotspot_config": {
+        "source": "/static/images/geography/compass-rose.svg",
+        "target_hotspot_id": "NW"
+      },
+      "explanation": "NW oznacza kierunek północno-zachodni."
     }
   ]
 }

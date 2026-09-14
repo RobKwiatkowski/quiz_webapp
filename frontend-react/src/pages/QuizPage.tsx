@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useReducer, useState } from "react";
+import confetti from "canvas-confetti";
+import { animate, motion, useSpring } from "motion/react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from "react";
 import { getQuizById, type Answer, type Quiz, type QuizQuestion } from "../api/quiz-api";
 import {
   getFinalGrade,
@@ -16,6 +18,8 @@ import {
 import { LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
 import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
+
+const PERFECT_SCORE_AUDIO_URL = "/assets/sounds/perfect-score-crowd.mp3";
 
 type QuizLoadState =
   | { status: "loading" }
@@ -58,16 +62,16 @@ export function QuizPage() {
   }, [quizId]);
 
   if (loadState.status === "loading") {
-    return <main className="subject-shell"><p className="subject-status">Ładowanie quizu...</p></main>;
+    return <main className="container quiz-play-shell"><p className="subject-status">Ładowanie quizu...</p></main>;
   }
 
   if (loadState.status === "error") {
-    return <main className="subject-shell"><p className="subject-status subject-status-error">{loadState.message}</p></main>;
+    return <main className="container quiz-play-shell"><p className="subject-status subject-status-error">{loadState.message}</p></main>;
   }
 
   const { quiz } = loadState;
   if (quiz.questions.length === 0) {
-    return <main className="subject-shell"><p className="subject-status">Quiz nie zawiera pytań.</p></main>;
+    return <main className="container quiz-play-shell"><p className="subject-status">Quiz nie zawiera pytań.</p></main>;
   }
 
   if (session.currentQuestionIndex >= quiz.questions.length) {
@@ -81,6 +85,13 @@ export function QuizPage() {
   const completeAnswer = (feedback: QuizFeedback) => {
     setValidationMessage(null);
     dispatch({ type: "submit", feedback });
+  };
+
+  const handleNextQuestion = () => {
+    if (questionPosition === quiz.questions.length && session.earnedPoints === getQuizMaxPoints(quiz)) {
+      playPerfectScoreAudio();
+    }
+    dispatch({ type: "next-question" });
   };
 
   const handleCheck = () => {
@@ -115,20 +126,21 @@ export function QuizPage() {
   };
 
   return (
-    <main className="subject-shell quiz-shell">
-      <nav aria-label="Nawigacja quizu">
-        <a className="back-link" href={`${section}.html`}>← Wróć do listy quizów</a>
+    <main className="container quiz-play-shell">
+      <nav className="quiz-top-nav" aria-label="Nawigacja quizu">
+        <a className="quiz-menu-tile" href={`${section}.html`}>
+          <span className="quiz-menu-icon" aria-hidden="true">←</span>
+          <span>Quizy z {section === "geography" ? "geografii" : section === "biology" ? "biologii" : "historii"}</span>
+        </a>
       </nav>
       <header className="quiz-header">
-        <h1>{quiz.title}</h1>
-        <p>{quiz.description}</p>
+        <h1 id="quiz-title">{quiz.title}</h1>
+        <p id="quiz-description">{quiz.description}</p>
       </header>
       <section className="question-card" aria-labelledby="question-text">
-        <p>Pytanie {questionPosition} z {quiz.questions.length}</p>
-        <div className="progress-track" aria-label="Postęp quizu" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
-          <div className="progress-bar" style={{ width: `${progress}%` }} />
-        </div>
-        <p className="quiz-count">{progress}%</p>
+        <p id="question-counter">Pytanie {questionPosition} z {quiz.questions.length}</p>
+        <AnimatedProgressBar progress={progress} />
+        <p className="question-progress-percent">{progress}%</p>
         <QuestionContext question={question} />
         <h2 id="question-text">{question.text}</h2>
         <QuestionImage question={question} />
@@ -159,13 +171,13 @@ export function QuizPage() {
           onSubmitOpen={handleCheck}
           onComplete={completeAnswer}
         />
-        {validationMessage && <p className="feedback feedback-warning">{validationMessage}</p>}
+        {validationMessage && <p className="feedback warning-feedback">{validationMessage}</p>}
         {session.feedback && <FeedbackPanel feedback={session.feedback} />}
         {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open") && (
-          <button className="quiz-action" type="button" onClick={handleCheck}>Sprawdź</button>
+          <button id="check-button" type="button" onClick={handleCheck}>Sprawdź</button>
         )}
         {session.hasAnswered && (
-          <button className="quiz-action" type="button" onClick={() => dispatch({ type: "next-question" })}>Dalej</button>
+          <button id="next-button" type="button" onClick={handleNextQuestion}>Dalej</button>
         )}
       </section>
     </main>
@@ -192,11 +204,11 @@ function QuestionRenderer(props: QuestionRendererProps) {
     return <OpenQuestion {...props} />;
   }
 
-  if (props.question.selection_type === "order") return <OrderQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "matching") return <MatchingQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "llm") return <LlmQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "map") return <MapQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "hotspot") return <HotspotQuestion question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "order") return <OrderQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "matching") return <MatchingQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
 
   return <p className="subject-status">Ten typ pytania zostanie przeniesiony w kolejnym kroku migracji.</p>;
 }
@@ -218,7 +230,7 @@ function ChoiceQuestion({ question, selectedAnswerIndexes, hasAnswered, onSelect
         return (
           <button
             key={`${question.id}-${originalIndex}`}
-            className={`answer-button ${resultClass}`}
+            className={`answer-btn ${selected ? "selected" : ""} ${resultClass}`}
             disabled={hasAnswered}
             type="button"
             onClick={() => onSelectAnswer(originalIndex)}
@@ -240,6 +252,7 @@ function OpenQuestion({ question, openAnswers, hasAnswered, onOpenAnswerChange, 
         <label key={`${question.id}-${slotIndex}`} className="open-answer-label">
           {slotCount > 1 ? `${slotIndex + 1}.` : "Twoja odpowiedź"}
           <input
+            className="open-answer-slot-input"
             disabled={hasAnswered}
             type="text"
             value={openAnswers[slotIndex] ?? ""}
@@ -262,7 +275,7 @@ function QuestionContext({ question }: { question: QuizQuestion }) {
   if (!contextText) return null;
 
   return (
-    <div className="question-context">
+    <div className="question-source">
       <p>{contextText}</p>
       {question.context?.source && <p>Źródło: {question.context.source}</p>}
     </div>
@@ -273,35 +286,167 @@ function QuestionImage({ question }: { question: QuizQuestion }) {
   if (!question.image) return null;
   const imageUrl = question.image.startsWith("http") ? question.image : `${window.CONFIG?.API_BASE_URL ?? ""}${question.image}`;
 
-  return <img className="question-image" src={imageUrl} alt="Obrazek do pytania" />;
+  return <div className="question-image-wrapper"><img className="question-image" src={imageUrl} alt="Obrazek do pytania" /></div>;
+}
+
+function AnimatedProgressBar({ progress }: { progress: number }) {
+  const scaleX = useSpring(progress / 100, {
+    stiffness: 180,
+    damping: 28,
+    mass: 0.4,
+  });
+
+  useEffect(() => {
+    scaleX.set(progress / 100);
+  }, [progress, scaleX]);
+
+  return (
+    <div
+      className="question-progress-track"
+      aria-label="Postęp quizu"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={progress}
+    >
+      <motion.div className="question-progress-bar" style={{ scaleX, transformOrigin: "left" }} />
+    </div>
+  );
 }
 
 function FeedbackPanel({ feedback }: { feedback: QuizFeedback }) {
   const message = feedback.isCorrect ? "Dobrze" : feedback.explanation;
 
   return (
-    <p className={`feedback ${feedback.isCorrect ? "feedback-correct" : "feedback-incorrect"}`}>
-      {message}
-      {feedback.maximumPoints > 1 && <><br />Zdobyte punkty: {feedback.earnedPoints} / {feedback.maximumPoints}</>}
-    </p>
+    <motion.p
+      className={`feedback animated-feedback ${feedback.isCorrect ? "correct-feedback" : "incorrect-feedback"}`}
+      initial={feedback.isCorrect ? { scale: 0.92, opacity: 0 } : { x: 0, opacity: 0 }}
+      animate={feedback.isCorrect ? { scale: 1, opacity: 1 } : { x: [0, -4, 4, -2, 2, 0], opacity: 1 }}
+      transition={feedback.isCorrect ? { type: "spring", stiffness: 400, damping: 20 } : { duration: 0.28 }}
+    >
+      {feedback.isCorrect && <span className="feedback-icon" aria-hidden="true">✓</span>}
+      <span className="feedback-body">
+        <span>{message}</span>
+        {feedback.maximumPoints > 1 && <span className="feedback-points">Zdobyte punkty: {feedback.earnedPoints} / {feedback.maximumPoints}</span>}
+      </span>
+    </motion.p>
   );
 }
 
 function ResultScreen({ quiz, score, section, onRestart }: { quiz: Quiz; score: number; section: string; onRestart: () => void }) {
   const maximum = getQuizMaxPoints(quiz);
   const percentage = getScorePercentage(score, maximum);
+  const sectionTitle = section === "geography" ? "Quizy z geografii" : section === "biology" ? "Quizy z biologii" : "Quizy z historii";
+  const celebrationStartedRef = useRef(false);
+  const [percentageCountComplete, setPercentageCountComplete] = useState(false);
+  const isPerfectScore = maximum > 0 && score === maximum;
+  const showFinalCelebration = !isPerfectScore || percentageCountComplete;
+
+  const handlePercentageComplete = useCallback(() => {
+    setPercentageCountComplete(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isPerfectScore || !percentageCountComplete || celebrationStartedRef.current) return;
+
+    celebrationStartedRef.current = true;
+    const endTime = Date.now() + 2800;
+    const launchConfetti = () => {
+      confetti({
+        particleCount: 20,
+        angle: 270,
+        spread: 115,
+        startVelocity: 24,
+        gravity: 0.55,
+        scalar: 1.5,
+        ticks: 350,
+        colors: ["#168782", "#f0b848", "#f27163", "#5c9edb", "#9b7bce"],
+        origin: { x: 0.1 + Math.random() * 0.8, y: 0 },
+      });
+    };
+
+    launchConfetti();
+    const interval = window.setInterval(() => {
+      if (Date.now() >= endTime) {
+        window.clearInterval(interval);
+        return;
+      }
+      launchConfetti();
+    }, 120);
+
+    return () => window.clearInterval(interval);
+  }, [isPerfectScore, percentageCountComplete]);
 
   return (
-    <main className="subject-shell result-screen">
-      <h1>Koniec quizu</h1>
-      <p>Wynik: {score} / {maximum} pkt</p>
-      <p>Procent: {percentage}%</p>
-      <p>Ocena: {getFinalGrade(score, maximum)}</p>
-      <p>{getFinalMessage(score, maximum)}</p>
-      <button className="quiz-action" type="button" onClick={onRestart}>Zagraj jeszcze raz</button>
-      <p><a className="back-link" href={`${section}.html`}>Wróć do listy quizów</a></p>
+    <main className="container quiz-play-shell">
+      <motion.section
+        className="question-card result-card"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.24 }}
+      >
+        <motion.div
+          className="result-emoji"
+          aria-hidden="true"
+          initial={false}
+          animate={{ scale: showFinalCelebration ? 1 : 0.9, opacity: showFinalCelebration ? 1 : 0.2 }}
+          transition={{ type: "spring", stiffness: 320, damping: 22 }}
+        >
+          {showFinalCelebration ? getFinalEmoji(percentage) : "🏆"}
+        </motion.div>
+        <h2>Koniec quizu</h2>
+        <div className="result-grid">
+          <ResultTile label="Wynik" value={`${score} / ${maximum} pkt`} />
+          <ResultTile label="Procent" value={<AnimatedPercentage value={percentage} onComplete={handlePercentageComplete} />} />
+          <ResultTile label="Ocena" value={getFinalGrade(score, maximum)} />
+          <ResultTile label="Komunikat" value={getFinalMessage(score, maximum)} wide />
+        </div>
+        <div className="result-actions">
+          <button id="restart-button" type="button" onClick={onRestart}>Zagraj jeszcze raz</button>
+          <a className="result-list-tile" href={`${section}.html`}>
+            <span className="result-list-icon" aria-hidden="true">←</span>
+            <span><span className="result-list-title">{sectionTitle}</span><span className="result-list-subtitle">Wybierz inny zestaw</span></span>
+          </a>
+        </div>
+      </motion.section>
     </main>
   );
+}
+
+function playPerfectScoreAudio() {
+  const audio = new Audio(PERFECT_SCORE_AUDIO_URL);
+  audio.preload = "auto";
+  void audio.play().catch(() => undefined);
+}
+
+function ResultTile({ label, value, wide = false }: { label: string; value: ReactNode; wide?: boolean }) {
+  return <div className={`result-tile${wide ? " result-tile-wide" : ""}`}><div className="result-label">{label}</div><div className="result-value">{value}</div></div>;
+}
+
+function AnimatedPercentage({ value, onComplete }: { value: number; onComplete: () => void }) {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    setDisplayValue(0);
+    const controls = animate(0, value, {
+      duration: 0.8,
+      ease: "easeOut",
+      onUpdate: (latest) => setDisplayValue(Math.round(latest)),
+      onComplete,
+    });
+
+    return () => controls.stop();
+  }, [value, onComplete]);
+
+  return <span className="animated-percentage">{displayValue}%</span>;
+}
+
+function getFinalEmoji(percentage: number): string {
+  if (percentage < 50) return "📚";
+  if (percentage < 75) return "🙂";
+  if (percentage < 90) return "👏";
+  if (percentage < 100) return "🎉";
+  return "🏆";
 }
 
 function shuffleChoices(choices: AnswerChoice[]): AnswerChoice[] {

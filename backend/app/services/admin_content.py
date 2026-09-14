@@ -306,6 +306,10 @@ def normalize_admin_question(
             "mode": str(map_config.get("mode", "")).strip(),
             "target_feature_id": str(map_config.get("target_feature_id", "")).strip(),
         }
+        interaction = str(map_config.get("interaction", "")).strip()
+        if interaction:
+            question["map_config"]["interaction"] = interaction
+
         background_source = str(map_config.get("background_source", "")).strip()
         if background_source:
             question["map_config"]["background_source"] = background_source

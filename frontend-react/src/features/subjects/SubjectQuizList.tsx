@@ -56,14 +56,11 @@ export function SubjectQuizList({ subject }: SubjectQuizListProps) {
   }
 
   return (
-    <>
-      <p className="quiz-count">{loadState.quizzes.length} dostępnych quizów</p>
-      <div className="quiz-list">
-        {loadState.quizzes.map((quiz) => (
-          <QuizCard key={quiz.id} quiz={quiz} subjectId={subject.id} />
-        ))}
-      </div>
-    </>
+    <div className="quiz-list subject-quiz-grid">
+      {loadState.quizzes.map((quiz) => (
+        <QuizCard key={quiz.id} quiz={quiz} subjectId={subject.id} />
+      ))}
+    </div>
   );
 }
 
@@ -78,7 +75,13 @@ function QuizCard({ quiz, subjectId }: QuizCardProps) {
 
   return (
     <article className="quiz-card">
-      <div>
+      <span className="quiz-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+        </svg>
+      </span>
+      <div className="quiz-card-content">
         {chapterLabel && <span className="chapter-label">{chapterLabel}</span>}
         <h2>{quiz.title}</h2>
         <p>{quiz.description}</p>

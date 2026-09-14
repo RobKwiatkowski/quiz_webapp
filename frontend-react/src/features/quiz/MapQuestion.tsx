@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { type PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import { getRuntimeConfig } from "../../runtime-config";
 import type { Answer, QuizQuestion } from "../../api/quiz-api";
 import type { QuizFeedback } from "./quiz-session";
@@ -10,6 +10,7 @@ interface Props {
 }
 
 interface GeoJsonFeature {
+  id?: string | number | null;
   geometry?: Geometry | null;
   properties?: Record<string, unknown> | null;
 }
@@ -40,6 +41,8 @@ interface ViewBox {
 }
 
 const geoJsonCache = new Map<string, Promise<GeoJsonData>>();
+const LINE_SELECTION_TOLERANCE_PX = 12;
+const LINE_AMBIGUITY_DELTA_PX = 2;
 
 export function MapQuestion({ question, disabled, onComplete }: Props) {
   const [state, setState] = useState<
@@ -48,8 +51,11 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     | { status: "ready"; geojson: GeoJsonData; backgroundGeojson: GeoJsonData | null }
   >({ status: "loading" });
   const [selectedFeatureId, setSelectedFeatureId] = useState<string | null>(null);
+  const [selectionHint, setSelectionHint] = useState("");
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   const config = question.map_config;
+  const interaction = config?.interaction ?? "region";
   const answerChoices = useMemo(
     () => shuffle(question.answers.map((answer, originalIndex) => ({ answer, originalIndex }))),
     [question.id, question.answers],
@@ -60,6 +66,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     let mounted = true;
     setState({ status: "loading" });
     setSelectedFeatureId(null);
+    setSelectionHint("");
 
     Promise.all([
       loadMapGeoJson(config.source),
@@ -91,12 +98,44 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
 
   const bounds = getGeoJsonBounds(state.geojson);
   const viewBox = getMapViewBox(bounds);
+  const targetFeature = state.geojson.features?.find((feature) => getFeatureId(feature) === config.target_feature_id);
 
   const selectFeature = (featureId: string) => {
     if (disabled || selectedFeatureId) return;
     const isCorrect = featureId === config.target_feature_id;
     setSelectedFeatureId(featureId);
+    setSelectionHint("");
     onComplete(createFeedback(isCorrect, question));
+  };
+
+  const selectNearestLine = (event: PointerEvent<SVGSVGElement>) => {
+    if (interaction !== "line" || config.mode !== "select" || disabled || selectedFeatureId) return;
+
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const svgPoint = toSvgPoint(svg, event.clientX, event.clientY);
+    if (!svgPoint) return;
+
+    const tolerance = screenPixelsToSvgUnits(svg, event.clientX, event.clientY, LINE_SELECTION_TOLERANCE_PX);
+    const ambiguityDelta = screenPixelsToSvgUnits(svg, event.clientX, event.clientY, LINE_AMBIGUITY_DELTA_PX);
+    const nearestLines = getNearestLineFeatures(state.geojson, bounds, viewBox, svgPoint);
+    const nearest = nearestLines[0];
+
+    if (!nearest || nearest.distance > tolerance) {
+      setSelectionHint("");
+      return;
+    }
+
+    const secondNearest = nearestLines[1];
+    if (secondNearest && secondNearest.distance - nearest.distance < ambiguityDelta) {
+      event.preventDefault();
+      setSelectionHint("Kliknij trochę dalej od przecięcia linii.");
+      return;
+    }
+
+    event.preventDefault();
+    selectFeature(nearest.featureId);
   };
 
   const selectIdentifyAnswer = (answer: Answer) => {
@@ -109,10 +148,12 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     <div className={`map-question map-question-${config.mode}`}>
       <div className="map-frame">
         <svg
+          ref={svgRef}
           className="map-svg"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
           role="group"
           aria-label="Interaktywna mapa do pytania"
+          onPointerDown={selectNearestLine}
         >
           <g className="map-content">
             {state.backgroundGeojson?.features?.map((feature, index) => (
@@ -127,11 +168,16 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
             {state.geojson.features?.map((feature, index) => {
               const featureId = getFeatureId(feature);
               if (!featureId) return null;
+              const isLineInteractionFeature = interaction === "line" && isAnswerLineFeature(feature);
+              const isSelectableRegion = interaction === "region" && config.mode === "select";
               const isTarget = featureId === config.target_feature_id;
               const isSelected = featureId === selectedFeatureId;
               const resultClass = selectedFeatureId
                 ? isTarget ? "correct" : isSelected ? "incorrect" : "locked"
                 : "";
+              const className = isLineInteractionFeature
+                ? `map-line ${resultClass}`
+                : `${interaction === "line" ? getBackgroundClassName(feature) : "map-region"} ${config.mode === "identify" && isTarget ? "target" : ""} ${resultClass}`;
 
               return (
                 <MapLayerPath
@@ -139,17 +185,22 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
                   feature={feature}
                   bounds={bounds}
                   viewBox={viewBox}
-                  className={`map-region ${config.mode === "identify" && isTarget ? "target" : ""} ${resultClass}`}
-                  role={config.mode === "select" ? "button" : undefined}
-                  tabIndex={config.mode === "select" && !disabled && !selectedFeatureId ? 0 : -1}
-                  ariaLabel={config.mode === "select" ? "Wybierz region" : undefined}
-                  onActivate={config.mode === "select" ? () => selectFeature(featureId) : undefined}
+                  className={className}
+                  role={isSelectableRegion || isLineInteractionFeature ? "button" : undefined}
+                  tabIndex={(isSelectableRegion || isLineInteractionFeature) && !disabled && !selectedFeatureId ? 0 : -1}
+                  ariaLabel={isLineInteractionFeature ? getNeutralLineLabel(state.geojson, featureId) : isSelectableRegion ? "Wybierz region" : undefined}
+                  onActivate={isSelectableRegion || isLineInteractionFeature ? () => selectFeature(featureId) : undefined}
+                  activateOnClick={!isLineInteractionFeature}
                 />
               );
             })}
           </g>
         </svg>
       </div>
+      {selectionHint && <p className="map-selection-hint">{selectionHint}</p>}
+      {interaction === "line" && selectedFeatureId && targetFeature && (
+        <p className="map-selection-result">Poprawna linia: {getFeatureName(targetFeature)}.</p>
+      )}
       {config.background_source && <MapCaption source={config.source} />}
       {config.mode === "identify" && (
         <div className="answer-list map-identify-answers">
@@ -186,6 +237,7 @@ function MapLayerPath({
   tabIndex,
   ariaLabel,
   onActivate,
+  activateOnClick = true,
 }: {
   feature: GeoJsonFeature;
   bounds: Bounds;
@@ -195,6 +247,7 @@ function MapLayerPath({
   tabIndex?: number;
   ariaLabel?: string;
   onActivate?: () => void;
+  activateOnClick?: boolean;
 }) {
   const pathData = feature.geometry ? getGeometryPathData(feature.geometry, bounds, viewBox) : "";
   if (!pathData) return null;
@@ -207,7 +260,7 @@ function MapLayerPath({
       role={role}
       tabIndex={tabIndex}
       aria-label={ariaLabel}
-      onClick={onActivate}
+      onClick={activateOnClick ? onActivate : undefined}
       onKeyDown={(event) => {
         if (!onActivate) return;
         if (event.key === "Enter" || event.key === " ") {
@@ -235,8 +288,32 @@ async function loadMapGeoJson(source: string): Promise<GeoJsonData> {
 }
 
 function getFeatureId(feature: GeoJsonFeature): string {
+  if (typeof feature.id === "string") return feature.id;
+  if (typeof feature.id === "number") return String(feature.id);
   const id = feature.properties?.id;
   return typeof id === "string" ? id : "";
+}
+
+function getFeatureName(feature: GeoJsonFeature): string {
+  const namePl = feature.properties?.name_pl;
+  if (typeof namePl === "string" && namePl.trim()) return namePl;
+
+  const name = feature.properties?.name;
+  if (typeof name === "string" && name.trim()) return name;
+
+  return getFeatureId(feature);
+}
+
+function isAnswerLineFeature(feature: GeoJsonFeature): boolean {
+  return feature.properties?.role === "answer_line";
+}
+
+function getNeutralLineLabel(geojson: GeoJsonData, featureId: string): string {
+  const lineIndex = geojson.features
+    ?.filter(isAnswerLineFeature)
+    .findIndex((feature) => getFeatureId(feature) === featureId);
+
+  return `Wybierz linię ${lineIndex !== undefined && lineIndex >= 0 ? lineIndex + 1 : ""}`.trim();
 }
 
 function getBackgroundClassName(feature: GeoJsonFeature): string {
@@ -311,6 +388,103 @@ function projectCoordinate(longitude: number, latitude: number, bounds: Bounds, 
     x: viewBox.padding + ((projectedLongitude - bounds.minProjectedLongitude) / mapWidth) * drawableWidth,
     y: viewBox.padding + ((bounds.maxLatitude - latitude) / mapHeight) * drawableHeight,
   };
+}
+
+function toSvgPoint(svg: SVGSVGElement, clientX: number, clientY: number): { x: number; y: number } | null {
+  const matrix = svg.getScreenCTM();
+  if (!matrix) return null;
+
+  const point = svg.createSVGPoint();
+  point.x = clientX;
+  point.y = clientY;
+  const transformed = point.matrixTransform(matrix.inverse());
+
+  return { x: transformed.x, y: transformed.y };
+}
+
+function screenPixelsToSvgUnits(svg: SVGSVGElement, clientX: number, clientY: number, pixels: number): number {
+  const point = toSvgPoint(svg, clientX, clientY);
+  const shiftedPoint = toSvgPoint(svg, clientX + pixels, clientY);
+
+  if (!point || !shiftedPoint) return pixels;
+
+  return Math.hypot(shiftedPoint.x - point.x, shiftedPoint.y - point.y);
+}
+
+function getNearestLineFeatures(
+  geojson: GeoJsonData,
+  bounds: Bounds,
+  viewBox: ViewBox,
+  point: { x: number; y: number },
+): Array<{ featureId: string; distance: number }> {
+  return (geojson.features ?? [])
+    .filter(isAnswerLineFeature)
+    .map((feature) => {
+      const featureId = getFeatureId(feature);
+      const linePoints = feature.geometry ? getGeometryLinePoints(feature.geometry, bounds, viewBox) : [];
+      const distance = getDistanceToLineStrings(point, linePoints);
+      return { featureId, distance };
+    })
+    .filter((candidate) => candidate.featureId && Number.isFinite(candidate.distance))
+    .sort((left, right) => left.distance - right.distance);
+}
+
+function getGeometryLinePoints(
+  geometry: Geometry,
+  bounds: Bounds,
+  viewBox: ViewBox,
+): Array<Array<{ x: number; y: number }>> {
+  if (geometry.type === "LineString") {
+    return [getProjectedLinePoints(geometry.coordinates, bounds, viewBox)].filter((line) => line.length > 1);
+  }
+
+  if (geometry.type === "MultiLineString" && Array.isArray(geometry.coordinates)) {
+    return geometry.coordinates
+      .map((line) => getProjectedLinePoints(line, bounds, viewBox))
+      .filter((line) => line.length > 1);
+  }
+
+  return [];
+}
+
+function getProjectedLinePoints(coordinates: unknown, bounds: Bounds, viewBox: ViewBox): Array<{ x: number; y: number }> {
+  if (!Array.isArray(coordinates)) return [];
+
+  return coordinates
+    .map((coordinate) => {
+      if (!Array.isArray(coordinate) || typeof coordinate[0] !== "number" || typeof coordinate[1] !== "number") {
+        return null;
+      }
+      return projectCoordinate(coordinate[0], coordinate[1], bounds, viewBox);
+    })
+    .filter((projectedPoint): projectedPoint is { x: number; y: number } => Boolean(projectedPoint));
+}
+
+function getDistanceToLineStrings(
+  point: { x: number; y: number },
+  lineStrings: Array<Array<{ x: number; y: number }>>,
+): number {
+  return Math.min(
+    ...lineStrings.flatMap((line) => line.slice(0, -1).map((linePoint, index) => getDistanceToSegment(point, linePoint, line[index + 1]))),
+  );
+}
+
+function getDistanceToSegment(
+  point: { x: number; y: number },
+  segmentStart: { x: number; y: number },
+  segmentEnd: { x: number; y: number },
+): number {
+  const dx = segmentEnd.x - segmentStart.x;
+  const dy = segmentEnd.y - segmentStart.y;
+  const lengthSquared = dx * dx + dy * dy;
+
+  if (lengthSquared === 0) return Math.hypot(point.x - segmentStart.x, point.y - segmentStart.y);
+
+  const t = Math.max(0, Math.min(1, ((point.x - segmentStart.x) * dx + (point.y - segmentStart.y) * dy) / lengthSquared));
+  const projectionX = segmentStart.x + t * dx;
+  const projectionY = segmentStart.y + t * dy;
+
+  return Math.hypot(point.x - projectionX, point.y - projectionY);
 }
 
 function getGeoJsonBounds(geojson: GeoJsonData): Bounds {
