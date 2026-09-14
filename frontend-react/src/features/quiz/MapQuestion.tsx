@@ -41,7 +41,7 @@ interface ViewBox {
 }
 
 const geoJsonCache = new Map<string, Promise<GeoJsonData>>();
-const LINE_SELECTION_TOLERANCE_PX = 12;
+const LINE_SELECTION_TOLERANCE_PX = 15;
 const LINE_AMBIGUITY_DELTA_PX = 2;
 
 export function MapQuestion({ question, disabled, onComplete }: Props) {

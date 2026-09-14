@@ -82,6 +82,7 @@ export function QuizPage() {
   const maximumPoints = getQuestionMaxPoints(question);
   const questionPosition = session.currentQuestionIndex + 1;
   const progress = Math.round((questionPosition / quiz.questions.length) * 100);
+  const showFeedbackPanel = question.selection_type !== "map";
   const completeAnswer = (feedback: QuizFeedback) => {
     setValidationMessage(null);
     dispatch({ type: "submit", feedback });
@@ -172,7 +173,7 @@ export function QuizPage() {
           onComplete={completeAnswer}
         />
         {validationMessage && <p className="feedback warning-feedback">{validationMessage}</p>}
-        {session.feedback && <FeedbackPanel feedback={session.feedback} />}
+        {session.feedback && showFeedbackPanel && <FeedbackPanel feedback={session.feedback} />}
         {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open") && (
           <button id="check-button" type="button" onClick={handleCheck}>Sprawdź</button>
         )}

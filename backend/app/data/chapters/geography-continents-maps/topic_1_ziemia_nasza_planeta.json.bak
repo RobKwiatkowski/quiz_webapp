@@ -368,18 +368,76 @@
       ]
     },
     {
+      "id": "geo-line-equator",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Wskaż na mapie równik.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-lines.geojson",
+        "mode": "select",
+        "target_feature_id": "equator",
+        "interaction": "line"
+      },
+      "explanation": "Równik to linia 0° szerokości geograficznej. Dzieli Ziemię na półkulę północną i południową."
+    },
+    {
+      "id": "geo-line-prime-meridian",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Wskaż na mapie południk zerowy.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/world-lines.geojson",
+        "mode": "select",
+        "target_feature_id": "prime_meridian",
+        "interaction": "line"
+      },
+      "explanation": "Południk zerowy ma długość geograficzną 0° i przechodzi przez Greenwich."
+    },
+    {
       "id": "geo-planets-order",
       "text": "Ułóż planety Układu Słonecznego w kolejności od Słońca.",
       "selection_type": "order",
       "order_items": [
-        {"id": "mercury", "text": "Merkury", "position": 1},
-        {"id": "venus", "text": "Wenus", "position": 2},
-        {"id": "earth", "text": "Ziemia", "position": 3},
-        {"id": "mars", "text": "Mars", "position": 4},
-        {"id": "jupiter", "text": "Jowisz", "position": 5},
-        {"id": "saturn", "text": "Saturn", "position": 6},
-        {"id": "uranus", "text": "Uran", "position": 7},
-        {"id": "neptune", "text": "Neptun", "position": 8}
+        {
+          "id": "mercury",
+          "text": "Merkury",
+          "position": 1
+        },
+        {
+          "id": "venus",
+          "text": "Wenus",
+          "position": 2
+        },
+        {
+          "id": "earth",
+          "text": "Ziemia",
+          "position": 3
+        },
+        {
+          "id": "mars",
+          "text": "Mars",
+          "position": 4
+        },
+        {
+          "id": "jupiter",
+          "text": "Jowisz",
+          "position": 5
+        },
+        {
+          "id": "saturn",
+          "text": "Saturn",
+          "position": 6
+        },
+        {
+          "id": "uranus",
+          "text": "Uran",
+          "position": 7
+        },
+        {
+          "id": "neptune",
+          "text": "Neptun",
+          "position": 8
+        }
       ],
       "explanation": "Kolejność od Słońca to: Merkury, Wenus, Ziemia, Mars, Jowisz, Saturn, Uran, Neptun."
     },
@@ -394,11 +452,26 @@
         "target_feature_id": "pacific"
       },
       "answers": [
-        {"text": "Ocean Spokojny", "is_correct": true},
-        {"text": "Ocean Atlantycki", "is_correct": false},
-        {"text": "Ocean Indyjski", "is_correct": false},
-        {"text": "Ocean Arktyczny", "is_correct": false},
-        {"text": "Ocean Południowy", "is_correct": false}
+        {
+          "text": "Ocean Spokojny",
+          "is_correct": true
+        },
+        {
+          "text": "Ocean Atlantycki",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Indyjski",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Arktyczny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Południowy",
+          "is_correct": false
+        }
       ],
       "explanation": "Zaznaczony ocean to Ocean Spokojny."
     },
@@ -413,11 +486,26 @@
         "target_feature_id": "atlantic"
       },
       "answers": [
-        {"text": "Ocean Spokojny", "is_correct": false},
-        {"text": "Ocean Atlantycki", "is_correct": true},
-        {"text": "Ocean Indyjski", "is_correct": false},
-        {"text": "Ocean Arktyczny", "is_correct": false},
-        {"text": "Ocean Południowy", "is_correct": false}
+        {
+          "text": "Ocean Spokojny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Atlantycki",
+          "is_correct": true
+        },
+        {
+          "text": "Ocean Indyjski",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Arktyczny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Południowy",
+          "is_correct": false
+        }
       ],
       "explanation": "Zaznaczony ocean to Ocean Atlantycki."
     },
@@ -432,11 +520,26 @@
         "target_feature_id": "indian"
       },
       "answers": [
-        {"text": "Ocean Spokojny", "is_correct": false},
-        {"text": "Ocean Atlantycki", "is_correct": false},
-        {"text": "Ocean Indyjski", "is_correct": true},
-        {"text": "Ocean Arktyczny", "is_correct": false},
-        {"text": "Ocean Południowy", "is_correct": false}
+        {
+          "text": "Ocean Spokojny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Atlantycki",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Indyjski",
+          "is_correct": true
+        },
+        {
+          "text": "Ocean Arktyczny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Południowy",
+          "is_correct": false
+        }
       ],
       "explanation": "Zaznaczony ocean to Ocean Indyjski."
     },
@@ -451,11 +554,26 @@
         "target_feature_id": "arctic"
       },
       "answers": [
-        {"text": "Ocean Spokojny", "is_correct": false},
-        {"text": "Ocean Atlantycki", "is_correct": false},
-        {"text": "Ocean Indyjski", "is_correct": false},
-        {"text": "Ocean Arktyczny", "is_correct": true},
-        {"text": "Ocean Południowy", "is_correct": false}
+        {
+          "text": "Ocean Spokojny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Atlantycki",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Indyjski",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Arktyczny",
+          "is_correct": true
+        },
+        {
+          "text": "Ocean Południowy",
+          "is_correct": false
+        }
       ],
       "explanation": "Zaznaczony ocean to Ocean Arktyczny."
     },
@@ -470,11 +588,26 @@
         "target_feature_id": "southern"
       },
       "answers": [
-        {"text": "Ocean Spokojny", "is_correct": false},
-        {"text": "Ocean Atlantycki", "is_correct": false},
-        {"text": "Ocean Indyjski", "is_correct": false},
-        {"text": "Ocean Arktyczny", "is_correct": false},
-        {"text": "Ocean Południowy", "is_correct": true}
+        {
+          "text": "Ocean Spokojny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Atlantycki",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Indyjski",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Arktyczny",
+          "is_correct": false
+        },
+        {
+          "text": "Ocean Południowy",
+          "is_correct": true
+        }
       ],
       "explanation": "Zaznaczony ocean to Ocean Południowy."
     },
@@ -557,6 +690,31 @@
         "target_hotspot_id": "NW"
       },
       "explanation": "NW oznacza kierunek północno-zachodni."
+    },
+    {
+      "id": "q-977241ca",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Ile jest planet w Układzie Słonecznym?",
+      "selection_type": "single",
+      "explanation": "W Układzie Słonecznym jest 8 planet.",
+      "answers": [
+        {
+          "text": "7",
+          "is_correct": false
+        },
+        {
+          "text": "8",
+          "is_correct": true
+        },
+        {
+          "text": "9",
+          "is_correct": false
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

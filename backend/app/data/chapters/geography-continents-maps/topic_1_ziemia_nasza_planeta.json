@@ -715,6 +715,17 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-96cbb47a",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Jak przybliżony kształt ma planeta Ziemia?",
+      "selection_type": "open",
+      "explanation": "Kula",
+      "accepted_answers": [
+        "kuli",
+        "kula"
+      ]
     }
   ]
 }
