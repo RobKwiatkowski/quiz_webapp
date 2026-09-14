@@ -242,6 +242,46 @@
         "Ameryka Południowa",
         "Ameryk Pd."
       ]
+    },
+    {
+      "id": "q-9a9011f3",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Czym była rewolucja neolityczna?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "przejście z koczowniczego na osiadły tryb życia",
+          "is_correct": true
+        },
+        {
+          "text": "przejście z epoki brązu do epoki żelaza",
+          "is_correct": false
+        },
+        {
+          "text": "opanowanie mowy i pisma",
+          "is_correct": false
+        },
+        {
+          "text": "umiejętność tworzenia narzędzi z kamienia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-handaxe-tool",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Jakiego narzędzia używa tutaj pokazany człowiek?",
+      "selection_type": "open",
+      "image": "/static/images/history/first-civilizations/prehistoric-human-handaxe.png",
+      "explanation": "Pokazany człowiek używa pięściaka, czyli kamiennego narzędzia trzymanego w dłoni.",
+      "accepted_answers": [
+        "pięściak",
+        "piesciak",
+        "używa pięściaka",
+        "uzywa piesciaka",
+        "używa narzędzia pięściak",
+        "uzywa narzedzia piesciak"
+      ]
     }
   ]
 }

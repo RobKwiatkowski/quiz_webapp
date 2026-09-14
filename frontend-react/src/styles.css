@@ -494,7 +494,8 @@ textarea {
 }
 
 .order-row {
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  cursor: grab;
 }
 
 .order-position {
@@ -513,18 +514,51 @@ textarea {
   min-width: 0;
 }
 
-.order-controls {
-  white-space: nowrap;
+.order-drag-handle {
+  color: #0f766e;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
-.order-row button {
-  min-width: 2.25rem;
-  min-height: 2.25rem;
-  margin-left: 0.3rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  background: #ffffff;
-  cursor: pointer;
+.order-row:focus-visible {
+  outline: 3px solid rgb(15 118 110 / 35%);
+  outline-offset: 3px;
+}
+
+.order-row.is-dragging {
+  cursor: grabbing;
+  opacity: 0.45;
+}
+
+.order-row.is-keyboard-dragging {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgb(15 118 110 / 22%);
+}
+
+.order-row.drag-over-above {
+  border-top: 4px solid #0f766e;
+}
+
+.order-row.drag-over-below {
+  border-bottom: 4px solid #0f766e;
+}
+
+.order-list.drag-over-list {
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #0f766e;
+}
+
+.order-live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .map-question,
@@ -1345,7 +1379,7 @@ body[data-page="quiz"] {
 }
 
 .quiz-play-shell .order-row {
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr);
 }
 
 .quiz-play-shell .order-position {

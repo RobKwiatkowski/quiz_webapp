@@ -282,6 +282,35 @@
         "używa narzędzia pięściak",
         "uzywa narzedzia piesciak"
       ]
+    },
+    {
+      "id": "q-5e9d98cb",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Ułóż w kolejności chronologicznej.",
+      "selection_type": "order",
+      "explanation": "Australopitek -> Homo habilis -> Homo erectus -> Homo sapiens",
+      "order_items": [
+        {
+          "id": "australopitek",
+          "text": "Australopitek",
+          "position": 1
+        },
+        {
+          "id": "homo-habilis",
+          "text": "Homo habilis",
+          "position": 2
+        },
+        {
+          "id": "homo-erectus",
+          "text": "Homo erectus",
+          "position": 3
+        },
+        {
+          "id": "homo-sapiens",
+          "text": "Homo sapiens",
+          "position": 4
+        }
+      ]
     }
   ]
 }
