@@ -62,7 +62,7 @@ backend/
     static/              local static assets, including images
     admin_static/        legacy admin assets retained for rollback
   scripts/               quiz validation scripts
-frontend-react/
+frontend/
   src/                   React pages, features, typed API clients, and styles
   public/js/config.js    runtime API configuration
   Dockerfile             multi-stage React build and Nginx runtime image
@@ -108,9 +108,8 @@ Default local URLs:
 The Nginx frontend proxies `/api/`, `/health`, and `/static/` to the backend.
 The backend container is intentionally not exposed on a host port in the default
 Compose file; it is reachable by Nginx on the internal Docker network.
-Compose builds the backend image only. The frontend uses the official
-`nginx:stable-alpine` image and bind-mounts `frontend/` plus
-`nginx/default.conf`, which keeps rebuilds faster on Raspberry Pi.
+Compose builds the backend and frontend images. The frontend uses a multi-stage
+React/Vite build and serves the compiled static files through Nginx.
 
 Admin login uses:
 

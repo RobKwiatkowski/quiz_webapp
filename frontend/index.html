@@ -1,68 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz na Sz&oacute;stk&#281;</title>
-  <link rel="stylesheet" href="./css/styles.css?v=13" />
-</head>
-<body>
-  <main class="container">
-    <section class="start-hero" aria-labelledby="start-title">
-      <img
-        id="start-hero-image"
-        class="start-hero-image"
-        src="./assets/start-images/start_image_1.png"
-        alt=""
-      />
-      <div class="start-hero-overlay">
-        <h1 id="start-title">Quiz na Sz&oacute;stk&#281;</h1>
-        <p>Wybierz dzia&#322; nauki.</p>
-      </div>
-    </section>
-
-    <section class="section-grid" aria-label="Dzia&#322;y nauki">
-      <a class="section-tile section-tile-math" href="./math.html">
-        <span class="section-tile-icon" aria-hidden="true">+</span>
-        <span>
-          <span class="section-tile-title">Matematyka</span>
-          <span class="section-tile-subtitle">Nowe zadanie generowane przez LLM</span>
-        </span>
-      </a>
-
-      <a class="section-tile section-tile-history" href="./history.html">
-        <span class="section-tile-icon" aria-hidden="true">H</span>
-        <span>
-          <span class="section-tile-title">Historia</span>
-          <span class="section-tile-subtitle">Obecne quizy z rozdzia&#322;&oacute;w</span>
-        </span>
-      </a>
-
-      <a class="section-tile section-tile-geography" href="./geography.html">
-        <span class="section-tile-icon" aria-hidden="true">G</span>
-        <span>
-          <span class="section-tile-title">Geografia</span>
-          <span class="section-tile-subtitle">Quizy z rozdzia&#322;&oacute;w i temat&oacute;w</span>
-        </span>
-      </a>
-
-      <a class="section-tile section-tile-biology" href="./biology.html">
-        <span class="section-tile-icon" aria-hidden="true">B</span>
-        <span>
-          <span class="section-tile-title">Biologia</span>
-          <span class="section-tile-subtitle">Quizy z rozdzia&#322;&oacute;w i temat&oacute;w</span>
-        </span>
-      </a>
-    </section>
-
-    <div class="admin-entry">
-      <a href="/admin">Panel admina</a>
-    </div>
-  </main>
-
-  <script src="./js/start-images.js"></script>
-  <script>
-    setRandomStartImage();
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu Quiz</title>
+    <script src="/js/config.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -23,7 +23,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: frontend-react/Dockerfile
+      dockerfile: frontend/Dockerfile
       provenance: false
     restart: unless-stopped
     environment:

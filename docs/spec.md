@@ -86,7 +86,7 @@ Out of scope:
 The project consists of:
 
 - FastAPI backend in `backend/app`
-- React/TypeScript frontend in `frontend-react`
+- React/TypeScript frontend in `frontend`
 - quiz content JSON files in `backend/app/data/chapters`
 - static files, including local images, in `backend/app/static`
 - Nginx configuration in `nginx/default.conf`
@@ -440,7 +440,7 @@ the final list is not trimmed after the base selection step.
 
 ## 9. Frontend
 
-The frontend is a React/TypeScript application in `frontend-react` and consists
+The frontend is a React/TypeScript application in `frontend` and consists
 of a Vite entry point, typed API clients, subject and quiz components, and a
 separate React admin screen selected by the `/admin` URL. `public/js/config.js`
 keeps `API_BASE_URL` configurable at container startup rather than fixing it at
