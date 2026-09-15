@@ -1,0 +1,14 @@
+{
+  "id": "europa-po-kongresie-wiedenskim",
+  "title": "Europa po Kongresie Wiedeńskim",
+  "description": "Powtórka z rozdziału Europa po Kongresie Wiedeńskim.",
+  "category": "history",
+  "age_group": "10-12",
+  "chapter_number": 1,
+  "target_question_count": 12,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1_kongres-wiedenski.json",
+    "topic_2_rewolucja_przemyslowa.json"
+  ]
+}

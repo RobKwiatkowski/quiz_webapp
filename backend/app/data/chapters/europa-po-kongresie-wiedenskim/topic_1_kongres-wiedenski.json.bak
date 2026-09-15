@@ -1,0 +1,231 @@
+{
+  "topic_id": "kongres-wiedenski",
+  "topic_title": "Kongres Wiedeński",
+  "questions": [
+    {
+      "id": "q-5d00f0f4",
+      "topic_id": "kongres-wiedenski",
+      "text": "Klęska Napoleona w bitwie pod {{bitwa}} w {{rok}} doprowadziła do ostatecznego upadku Francji.",
+      "selection_type": "fill",
+      "explanation": "Klęska Napoleona w bitwie pod Lipskiem w 1813 doprowadziła do ostatecznego upadku Francji.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "bitwa",
+          "accepted_answers": [
+            "Lipskiem"
+          ],
+          "options": []
+        },
+        {
+          "id": "rok",
+          "accepted_answers": [
+            "1813"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-3cc1d797",
+      "topic_id": "kongres-wiedenski",
+      "text": "Na jaką wyspę po upadku Francji został zesłany Napoleon?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Elbę",
+          "is_correct": true
+        },
+        {
+          "text": "Sardynię",
+          "is_correct": false
+        },
+        {
+          "text": "Kretę",
+          "is_correct": false
+        },
+        {
+          "text": "Dominikanę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-39787e87",
+      "topic_id": "kongres-wiedenski",
+      "text": "Kiedy miała miejsce bitwa pod Waterloo (dokładnie)?",
+      "selection_type": "open",
+      "explanation": "Bitwa ta miała miejsce 18 czerwca 1815 roku.",
+      "accepted_answers": [
+        "18 czerwca 1815",
+        "18.06.1815",
+        "18.VI.1815",
+        "18 czerwiec 1815",
+        "18 czerwca 1815 roku"
+      ]
+    },
+    {
+      "id": "q-2a76df94",
+      "topic_id": "kongres-wiedenski",
+      "text": "Na jakich trzech zasadach wprowadzono nowy porządek polityczny po kongresie wiedeńskim?",
+      "selection_type": "open",
+      "explanation": "restauracja, legitymizm, równowaga europejska",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "restauracja"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "legitymizm"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "równowaga europejska"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-d0e22a39",
+      "topic_id": "kongres-wiedenski",
+      "text": "Ułóż wydarzenia w kolejności chronologicznej.",
+      "selection_type": "order",
+      "explanation": "Bitwa pod Lipskiem, Zesłanie Napoleona na Elbę, Rozpoczęcię obrad w Wiedniu, Bitwa pod Waterloo, Zesłanie Napoleona na Wyspę Świętej Heleny",
+      "order_items": [
+        {
+          "id": "bitwa-pod-lipskiem",
+          "text": "Bitwa pod Lipskiem",
+          "position": 1
+        },
+        {
+          "id": "zeslanie-napoleona-na-elbe",
+          "text": "Zesłanie Napoleona na Elbę",
+          "position": 2
+        },
+        {
+          "id": "rozpoczecie-obrad-w-wiedniu",
+          "text": "Rozpoczęcię obrad w Wiedniu",
+          "position": 3
+        },
+        {
+          "id": "bitwa-pod-waterloo",
+          "text": "Bitwa pod Waterloo",
+          "position": 4
+        },
+        {
+          "id": "zeslanie-napoleona-na-wyspe-swietej-heleny",
+          "text": "Zesłanie Napoleona na Wyspę Świętej Heleny",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "q-099a4736",
+      "topic_id": "kongres-wiedenski",
+      "text": "Napisz na czym polegała zasada \"restauracji\".",
+      "selection_type": "llm",
+      "explanation": "Polegała ona na powrocie do władzy dynastii obalonych w trakcie rewolucji francuskiej i przez Napoleona.",
+      "accepted_answers": [
+        "Polegała ona na powrocie do władzy dynastii obalonych w trakcie rewolucji francuskiej i przez Napoleona."
+      ]
+    },
+    {
+      "id": "q-8fd0e870",
+      "topic_id": "kongres-wiedenski",
+      "text": "Napisz na czym polegała zasada \"legitymizmu\".",
+      "selection_type": "llm",
+      "explanation": "Zasada ta polegała na tym, że władza monarchów będzie uznawana za świętą i nienaruszalną.",
+      "accepted_answers": [
+        "Zasada ta polegała na tym, że władza monarchów będzie uznawana za świętą i nienaruszalną.",
+        "Polegała na tym, że władza będzie od teraz święta i absolutna."
+      ]
+    },
+    {
+      "id": "q-834d9bea",
+      "topic_id": "kongres-wiedenski",
+      "text": "Jakie duże kraje ostatecznie przystąpiły do Świętego Przymierza?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Państwo Kościelne",
+          "is_correct": false
+        },
+        {
+          "text": "Austria",
+          "is_correct": true
+        },
+        {
+          "text": "Rosja",
+          "is_correct": true
+        },
+        {
+          "text": "Prusy",
+          "is_correct": true
+        },
+        {
+          "text": "Turcja",
+          "is_correct": false
+        },
+        {
+          "text": "Stany Zjednoczone",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-0b8e6642",
+      "topic_id": "kongres-wiedenski",
+      "text": "Kongres Wiedeński trwał od roku {{od}} do roku {{do}}.",
+      "selection_type": "fill",
+      "explanation": "Kongres Wiedeński trwał od roku 1814 do roku 1815.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "od",
+          "accepted_answers": [
+            "1814"
+          ],
+          "options": []
+        },
+        {
+          "id": "do",
+          "accepted_answers": [
+            "1815"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-cb144440",
+      "topic_id": "kongres-wiedenski",
+      "text": "Co było prawdziwym powodem stworzenia Świętego Przymierza?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "zachowanie porządku ustalonego na kongresie Wiedeńskim",
+          "is_correct": true
+        },
+        {
+          "text": "zwalczanie powstań i rewolucji",
+          "is_correct": true
+        },
+        {
+          "text": "niedopuszczenie do ponownego powrotu Napoleona",
+          "is_correct": false
+        },
+        {
+          "text": "osłabieniu pozycji Turcji",
+          "is_correct": false
+        },
+        {
+          "text": "dokonanie III rozbioru Polski",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
