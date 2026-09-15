@@ -1,0 +1,291 @@
+{
+  "topic_id": "rewolucja-przemyslowa",
+  "topic_title": "Rewolucja Przemysłowa",
+  "questions": [
+    {
+      "id": "przemysl-source-2-9-pojecia",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz terminy z właściwymi wyjaśnieniami.",
+      "selection_type": "matching",
+      "explanation": "Industrializacja to uprzemysłowienie. Urbanizacja oznacza rozwój miast, a metropolia jest dużym miastem o ważnych funkcjach.",
+      "matching_pairs": [
+        {
+          "id": "industrializacja",
+          "left": "industrializacja",
+          "right": "uprzemysłowienie"
+        },
+        {
+          "id": "urbanizacja",
+          "left": "urbanizacja",
+          "right": "proces rozwoju miast i zwiększania się liczby ich mieszkańców"
+        },
+        {
+          "id": "metropolia",
+          "left": "metropolia",
+          "right": "duże miasto będące centrum administracyjnym, gospodarczym i kulturalnym"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-3-ideologie",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz ruch społeczno-polityczny z przejawem jego działalności.",
+      "selection_type": "matching",
+      "explanation": "Komuniści ogłosili Manifest komunistyczny, liberałowie głosili wolną konkurencję, a konserwatyści bronili tradycyjnych wartości.",
+      "matching_pairs": [
+        {
+          "id": "komunizm",
+          "left": "komunizm",
+          "right": "ogłoszenie Manifestu komunistycznego"
+        },
+        {
+          "id": "liberalizm",
+          "left": "liberalizm",
+          "right": "głoszenie idei wolnej konkurencji"
+        },
+        {
+          "id": "konserwatyzm",
+          "left": "konserwatyzm",
+          "right": "rozpowszechnianie tradycyjnych wartości"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-11-ideologie",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz ruch społeczno-polityczny z opisem jego działalności.",
+      "selection_type": "matching",
+      "explanation": "Konserwatyści popierali ewolucyjne zmiany, komuniści chcieli rewolucji, a socjaliści dążyli do poprawy warunków życia robotników.",
+      "matching_pairs": [
+        {
+          "id": "konserwatyzm",
+          "left": "konserwatyzm",
+          "right": "popieranie ewolucyjnego rozwoju społeczeństwa"
+        },
+        {
+          "id": "komunizm",
+          "left": "komunizm",
+          "right": "głoszenie idei rewolucji i dążenie do obalenia systemu kapitalistycznego"
+        },
+        {
+          "id": "socjalizm",
+          "left": "socjalizm",
+          "right": "działania na rzecz poprawy warunków życia robotników i powszechnej oświaty"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-12-ideologie",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz ideologię z właściwym opisem.",
+      "selection_type": "matching",
+      "explanation": "Liberalizm podkreślał wolność gospodarczą, a socjalizm dążył do sprawiedliwości społecznej i poprawy życia robotników.",
+      "matching_pairs": [
+        {
+          "id": "liberalizm",
+          "left": "liberalizm",
+          "right": "Powinna obowiązywać wolność gospodarcza, bez ingerencji państwa."
+        },
+        {
+          "id": "socjalizm",
+          "left": "socjalizm",
+          "right": "Należy doprowadzić do sprawiedliwości społecznej i lepszego bytu dla robotników."
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-13-postacie",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz postać z wydarzeniem lub osiągnięciem, które jest z nią związane.",
+      "selection_type": "matching",
+      "explanation": "Ludwik Napoleon Bonaparte był związany z rewolucją lutową, Michael Faraday z odkryciami ważnymi dla silników elektrycznych,  Lajos Kossuth z Wiosną Ludów, a Samuel Morse z wynalezieniem telegrafem (i kodu Morse'a).",
+      "matching_pairs": [
+        {
+          "id": "ludwik-napoleon-bonaparte",
+          "left": "Ludwik Napoleon Bonaparte",
+          "right": "rewolucja lutowa"
+        },
+        {
+          "id": "michael-faraday",
+          "left": "Michael Faraday",
+          "right": "odkrycia ważne dla konstrukcji silników elektrycznych"
+        },
+        {
+          "id": "lajos-kossuth",
+          "left": "Lajos Kossuth",
+          "right": "Wiosna Ludów"
+        },
+        {
+          "id": "samuel-morse",
+          "left": "Samuel Morse",
+          "right": "wynalezienie telegrafu"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-16-zwiazek-zawodowy",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Organizacja prowadząca działalność w obronie robotników to",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "manufaktura",
+          "is_correct": false
+        },
+        {
+          "text": "metropolia",
+          "is_correct": false
+        },
+        {
+          "text": "fabryka",
+          "is_correct": false
+        },
+        {
+          "text": "związek zawodowy",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-17-komunizm",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Opracowany w Niemczech ruch głoszący potrzebę rewolucji przeprowadzonej przez robotników był nazywany",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "socjalizmem",
+          "is_correct": false
+        },
+        {
+          "text": "liberalizmem",
+          "is_correct": false
+        },
+        {
+          "text": "konserwatyzmem",
+          "is_correct": false
+        },
+        {
+          "text": "komunizmem",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-18-zwiazki-zawodowe",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Robotnicy w pierwszej połowie XIX w. walczyli o swoje prawa,",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "kandydując do parlamentu",
+          "is_correct": false
+        },
+        {
+          "text": "wywołując rewolucje socjalistyczne",
+          "is_correct": false
+        },
+        {
+          "text": "pracując dłużej niż zwykle",
+          "is_correct": false
+        },
+        {
+          "text": "zakładając związki zawodowe",
+          "is_correct": true
+        },
+        {
+          "text": "opuszczając masowo miejsca pracy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-20-fabryka",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Zakład, w którym wykorzystywana jest praca ludzi i maszyn, to",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "manufaktura",
+          "is_correct": false
+        },
+        {
+          "text": "fabryka",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-21-skutki",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Zaznacz trzy skutki rewolucji przemysłowej.",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "rozwój miast",
+          "is_correct": true
+        },
+        {
+          "text": "przyspieszenie i usprawnienie produkcji",
+          "is_correct": true
+        },
+        {
+          "text": "skonstruowanie maszyny parowej przez Jamesa Watta",
+          "is_correct": false
+        },
+        {
+          "text": "przekształcanie manufaktur w fabryki",
+          "is_correct": true
+        },
+        {
+          "text": "skrócenie dnia pracy robotników",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "przemysl-source-42-pojecia",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Połącz opis z właściwym pojęciem.",
+      "selection_type": "matching",
+      "explanation": "Industrializacja oznacza zwiększanie udziału maszyn i zatrudnienia w przemyśle. Ważnym ośrodkiem przemysłowym na zachodzie Prus było Zagłębie Ruhry. W manufakturze cała praca wykonywana jest ręcznie.",
+      "matching_pairs": [
+        {
+          "id": "industrializacja",
+          "left": "Proces przekształcania gospodarki polegający na zwiększaniu udziału pracy maszyn i zatrudnienia w przemyśle.",
+          "right": "industrializacja"
+        },
+        {
+          "id": "zaglebie-ruhry",
+          "left": "Ważny ośrodek przemysłowy na zachodzie Prus.",
+          "right": "Zagłębie Ruhry"
+        },
+        {
+          "id": "zaklad-w-ktorym-cala-praca-wykonywana-jest-recznie",
+          "left": "Zakład w którym cała praca wykonywana jest ręcznie.",
+          "right": "manufaktura"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-prawda-falsz-wiosna-ludow",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Oceń, czy poniższe zdania są prawdziwe. Zaznacz P przy zdaniach prawdziwych, a F przy fałszywych.",
+      "selection_type": "true_false",
+      "explanation": "Prawda: Francja stała się republiką podczas Wiosny Ludów, a związki zawodowe broniły praw robotników. Fałsz: Święte Przymierze utworzyły Austria, Prusy i Rosja.",
+      "answers": [
+        {
+          "text": "Francja stała się republiką w okresie Wiosny Ludów.",
+          "is_correct": true
+        },
+        {
+          "text": "Święte Przymierze utworzyły Wielka Brytania, Francja i Rosja.",
+          "is_correct": false
+        },
+        {
+          "text": "Związki zawodowe powstawały, aby bronić praw robotników.",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
