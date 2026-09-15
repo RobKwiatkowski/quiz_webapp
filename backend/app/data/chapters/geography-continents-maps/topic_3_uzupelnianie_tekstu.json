@@ -1,0 +1,48 @@
+{
+  "topic_id": "uzupelnianie-tekstu",
+  "topic_title": "Uzupełnianie tekstu",
+  "questions": [
+    {
+      "id": "geo-fill-north-america-direction",
+      "text": "Ameryka Północna leży na {{direction}} od Europy.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "direction",
+          "accepted_answers": [
+            "zachód"
+          ],
+          "options": [
+            "zachód",
+            "wschód",
+            "północ",
+            "południe"
+          ]
+        }
+      ],
+      "explanation": "Ameryka Północna leży na zachód od Europy."
+    },
+    {
+      "id": "geo-fill-africa-direction",
+      "text": "Afryka leży na {{direction}} od Europy.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "direction",
+          "accepted_answers": [
+            "południe"
+          ],
+          "options": [
+            "zachód",
+            "wschód",
+            "północ",
+            "południe"
+          ]
+        }
+      ],
+      "explanation": "Afryka leży na południe od Europy."
+    }
+  ]
+}

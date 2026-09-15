@@ -1,0 +1,11 @@
+{
+  "id": "history-liczenie-wiekow",
+  "title": "Lata i wieki",
+  "description": "Ćwiczenia w określaniu wieku dla lat p.n.e. i n.e.",
+  "category": "history",
+  "age_group": "10-12",
+  "target_question_count": 10,
+  "topics": [
+    "topic_1_lata_i_wieki.json"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "topic_id": "lata-i-wieki",
+  "topic_title": "Lata p.n.e. i n.e.",
+  "questions": [
+    {"id": "wiek-pne-1", "text": "Określ wiek roku p.n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": -1000, "max_year": -1}},
+    {"id": "wiek-pne-2", "text": "Podaj wiek roku p.n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": -1000, "max_year": -1}},
+    {"id": "wiek-pne-3", "text": "Zapisz wiek roku p.n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": -1000, "max_year": -1}},
+    {"id": "wiek-pne-4", "text": "Ustal wiek roku p.n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": -1000, "max_year": -1}},
+    {"id": "wiek-pne-5", "text": "Wskaż wiek roku p.n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": -1000, "max_year": -1}},
+    {"id": "wiek-ne-1", "text": "Określ wiek roku n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": 1, "max_year": 2000}},
+    {"id": "wiek-ne-2", "text": "Podaj wiek roku n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": 1, "max_year": 2000}},
+    {"id": "wiek-ne-3", "text": "Zapisz wiek roku n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": 1, "max_year": 2000}},
+    {"id": "wiek-ne-4", "text": "Ustal wiek roku n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": 1, "max_year": 2000}},
+    {"id": "wiek-ne-5", "text": "Wskaż wiek roku n.e.", "explanation": "Wiek obejmuje sto kolejnych lat.", "selection_type": "century", "century_config": {"min_year": 1, "max_year": 2000}}
+  ]
+}
