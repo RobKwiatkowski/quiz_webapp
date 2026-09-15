@@ -109,9 +109,13 @@ export async function getQuizzes(signal?: AbortSignal): Promise<QuizListItem[]> 
   return response.json() as Promise<QuizListItem[]>;
 }
 
-export async function getQuizById(quizId: string, signal?: AbortSignal): Promise<Quiz> {
+export async function getQuizById(quizId: string, signal?: AbortSignal, attempt = 0): Promise<Quiz> {
   const { API_BASE_URL } = getRuntimeConfig();
-  const response = await fetch(`${API_BASE_URL}/api/quizzes/${encodeURIComponent(quizId)}`, { signal });
+  const query = new URLSearchParams({ attempt: String(attempt) });
+  const response = await fetch(`${API_BASE_URL}/api/quizzes/${encodeURIComponent(quizId)}?${query}`, {
+    signal,
+    cache: "no-store",
+  });
 
   if (!response.ok) {
     throw new Error("Nie udało się załadować quizu.");

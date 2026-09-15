@@ -7,7 +7,6 @@
   "target_question_count": 26,
   "questions_per_topic": 13,
   "topics": [
-    "topic_3_uzupelnianie_tekstu.json",
     "topic_1_ziemia_nasza_planeta.json",
     "topic_2_odkrycia_geograficzne.json"
   ]

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useMemo, useState, type DragEvent, type KeyboardEvent } from "react";
+import { useEffect, useMemo, useState, type DragEvent, type KeyboardEvent } from "react";
 import { checkAnswerWithLlm, type QuizQuestion } from "../../api/quiz-api";
 import type { QuizFeedback } from "./quiz-session";
 
@@ -7,36 +7,32 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
   const [items, setItems] = useState(() => shuffle(question.order_items));
   const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
   const [keyboardDraggedItemId, setKeyboardDraggedItemId] = useState<string | null>(null);
-  const [dropTarget, setDropTarget] = useState<DropTarget | null>(null);
+  const [dropTargetIndex, setDropTargetIndex] = useState<number | null>(null);
+  const [landedItemId, setLandedItemId] = useState<string | null>(null);
   const [announcement, setAnnouncement] = useState("");
 
-  const moveItem = (sourceId: string, targetId: string | null, placeAfter = false) => {
-    setItems((currentItems) => {
-      const sourceIndex = currentItems.findIndex((item) => item.id === sourceId);
-      if (sourceIndex === -1 || sourceId === targetId) {
-        return currentItems;
-      }
+  useEffect(() => {
+    if (!landedItemId) return;
+    const timer = window.setTimeout(() => setLandedItemId(null), 500);
+    return () => window.clearTimeout(timer);
+  }, [landedItemId]);
 
-      const nextItems = [...currentItems];
-      const [sourceItem] = nextItems.splice(sourceIndex, 1);
+  const moveItem = (sourceId: string, targetIndex: number) => {
+    setItems((currentItems) => placeItemAtIndex(currentItems, sourceId, targetIndex));
+    setLandedItemId(sourceId);
+  };
 
-      if (!targetId) {
-        nextItems.push(sourceItem);
-        return nextItems;
-      }
+  const moveItemByOffset = (itemId: string, direction: -1 | 1) => {
+    const itemIndex = items.findIndex((item) => item.id === itemId);
+    const targetIndex = itemIndex + direction;
+    if (targetIndex < 0 || targetIndex >= items.length) return;
 
-      const targetIndex = nextItems.findIndex((item) => item.id === targetId);
-      if (targetIndex === -1) {
-        return currentItems;
-      }
-
-      nextItems.splice(targetIndex + (placeAfter ? 1 : 0), 0, sourceItem);
-      return nextItems;
-    });
+    moveItem(itemId, targetIndex);
+    setAnnouncement(`Element przeniesiono na pozycję ${targetIndex + 1}.`);
   };
 
   const handleDragStart = (event: DragEvent<HTMLDivElement>, itemId: string) => {
-    if (disabled) {
+    if (disabled || (event.target as HTMLElement).closest("button")) {
       event.preventDefault();
       return;
     }
@@ -44,29 +40,34 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
     event.dataTransfer.effectAllowed = "move";
     event.dataTransfer.setData("text/plain", itemId);
     setDraggedItemId(itemId);
+    setDropTargetIndex(null);
   };
 
-  const handleDragOver = (event: DragEvent<HTMLDivElement>, itemId: string) => {
-    if (disabled || !draggedItemId || draggedItemId === itemId) {
-      return;
-    }
+  const handleDragOver = (event: DragEvent<HTMLDivElement>, targetIndex: number) => {
+    if (disabled || !draggedItemId) return;
 
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-    const bounds = event.currentTarget.getBoundingClientRect();
-    setDropTarget({ itemId, placeAfter: event.clientY >= bounds.top + bounds.height / 2 });
-  };
-
-  const handleDrop = (event: DragEvent<HTMLDivElement>, itemId: string) => {
-    if (disabled || !draggedItemId) {
+    const sourceIndex = items.findIndex((item) => item.id === draggedItemId);
+    if (sourceIndex === targetIndex) {
+      setDropTargetIndex(null);
       return;
     }
 
+    setDropTargetIndex(targetIndex);
+    setAnnouncement(`Kafelek trafi na pozycję ${targetIndex + 1}.`);
+  };
+
+  const handleDrop = (event: DragEvent<HTMLDivElement>, targetIndex: number) => {
+    const sourceId = draggedItemId || event.dataTransfer.getData("text/plain");
+    if (disabled || !sourceId) return;
+
     event.preventDefault();
-    const bounds = event.currentTarget.getBoundingClientRect();
-    moveItem(draggedItemId, itemId, event.clientY >= bounds.top + bounds.height / 2);
+    event.stopPropagation();
+    moveItem(sourceId, targetIndex);
+    setAnnouncement(`Kafelek upuszczono na pozycji ${targetIndex + 1}.`);
     setDraggedItemId(null);
-    setDropTarget(null);
+    setDropTargetIndex(null);
   };
 
   const handleKeyboardMove = (event: KeyboardEvent<HTMLDivElement>, itemId: string, index: number) => {
@@ -104,7 +105,7 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
       return;
     }
 
-    moveItem(itemId, items[targetIndex].id, event.key === "ArrowDown");
+    moveItem(itemId, targetIndex);
     setAnnouncement(`Element przeniesiono na pozycję ${targetIndex + 1}.`);
   };
 
@@ -116,61 +117,49 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
   return (
     <div className="advanced-question">
       <p id="order-instructions" className="order-direction-hint">
-        Przeciągnij elementy, aby zmienić ich kolejność. Klawiatura: Spacja, potem strzałki w górę i w dół.
+        Przeciągnij kafelek na wybrane pole albo użyj strzałek góra/dół. Podświetlone pole pokazuje dokładną pozycję docelową.
       </p>
       <div
-        className={`order-list ${dropTarget?.itemId === null ? "drag-over-list" : ""}`}
+        className="order-list"
         role="list"
         aria-describedby="order-instructions"
         aria-disabled={disabled}
-        onDragOver={(event) => {
-          if (!disabled && draggedItemId && event.target === event.currentTarget) {
-            event.preventDefault();
-            event.dataTransfer.dropEffect = "move";
-            setDropTarget({ itemId: null, placeAfter: true });
-          }
-        }}
-        onDrop={(event) => {
-          if (!disabled && draggedItemId && event.target === event.currentTarget) {
-            event.preventDefault();
-            moveItem(draggedItemId, null);
-            setDraggedItemId(null);
-            setDropTarget(null);
-          }
+        onDragLeave={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node)) setDropTargetIndex(null);
         }}
       >
         {items.map((item, index) => {
           const isKeyboardDragging = keyboardDraggedItemId === item.id && !disabled;
-          const dropClass = dropTarget?.itemId === item.id
-            ? dropTarget.placeAfter ? "drag-over-below" : "drag-over-above"
-            : "";
+          const isDropTarget = dropTargetIndex === index;
 
           return (
-            <div
-              className={`order-row ${draggedItemId === item.id ? "is-dragging" : ""} ${isKeyboardDragging ? "is-keyboard-dragging" : ""} ${dropClass}`}
-              key={item.id}
-              role="listitem"
-              tabIndex={disabled ? -1 : 0}
-              draggable={!disabled}
-              aria-grabbed={isKeyboardDragging}
-              aria-label={`Pozycja ${index + 1} z ${items.length}: ${item.text}. Przeciągnij, aby zmienić kolejność.`}
-              onDragStart={(event) => handleDragStart(event, item.id)}
-              onDragOver={(event) => handleDragOver(event, item.id)}
-              onDragLeave={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-                  setDropTarget(null);
-                }
-              }}
-              onDrop={(event) => handleDrop(event, item.id)}
-              onDragEnd={() => {
-                setDraggedItemId(null);
-                setDropTarget(null);
-              }}
-              onKeyDown={(event) => handleKeyboardMove(event, item.id, index)}
-            >
+            <div className="order-list-item" key={`position-${index}`} role="listitem">
               <span className="order-position" aria-label={`Miejsce ${index + 1} od góry`}>{index + 1}</span>
-              <span className="order-drag-handle" aria-hidden="true">⠿</span>
-              <span className="order-item-text">{item.text}</span>
+              <motion.div
+                key={item.id}
+                className={`order-row ${draggedItemId === item.id ? "is-dragging" : ""} ${isKeyboardDragging ? "is-keyboard-dragging" : ""} ${isDropTarget ? "is-drop-target" : ""} ${landedItemId === item.id ? "has-landed" : ""}`}
+                tabIndex={disabled ? -1 : 0}
+                draggable={!disabled}
+                aria-grabbed={isKeyboardDragging}
+                aria-label={`Pozycja ${index + 1} z ${items.length}: ${item.text}. Przeciągnij, aby zmienić kolejność.`}
+                onDragStartCapture={(event) => handleDragStart(event, item.id)}
+                onDragEnter={(event) => handleDragOver(event, index)}
+                onDragOver={(event) => handleDragOver(event, index)}
+                onDrop={(event) => handleDrop(event, index)}
+                onDragEnd={() => {
+                  setDraggedItemId(null);
+                  setDropTargetIndex(null);
+                }}
+                onKeyDown={(event) => handleKeyboardMove(event, item.id, index)}
+              >
+                <span className="order-drag-handle" aria-hidden="true">⠿</span>
+                <span className="order-item-text">{item.text}</span>
+                <span className="order-actions" aria-label={`Przesuń ${item.text}`}>
+                  <button aria-label={`Przesuń ${item.text} wyżej`} disabled={disabled || index === 0} draggable={false} onClick={() => moveItemByOffset(item.id, -1)} type="button">↑</button>
+                  <button aria-label={`Przesuń ${item.text} niżej`} disabled={disabled || index === items.length - 1} draggable={false} onClick={() => moveItemByOffset(item.id, 1)} type="button">↓</button>
+                </span>
+                {isDropTarget && <span className="order-drop-overlay" aria-hidden="true">Upuść tutaj — pozycja {index + 1}</span>}
+              </motion.div>
             </div>
           );
         })}
@@ -258,7 +247,19 @@ export function LlmQuestion({ question, disabled, onComplete }: Props) {
 }
 
 interface Props { question: QuizQuestion; disabled: boolean; onComplete: (feedback: QuizFeedback) => void; }
-interface DropTarget { itemId: string | null; placeAfter: boolean; }
+function placeItemAtIndex<T extends { id: string }>(
+  items: readonly T[],
+  sourceId: string,
+  targetIndex: number,
+): T[] {
+  const sourceIndex = items.findIndex((item) => item.id === sourceId);
+  if (sourceIndex === -1 || sourceIndex === targetIndex) return [...items];
+
+  const nextItems = [...items];
+  const [sourceItem] = nextItems.splice(sourceIndex, 1);
+  nextItems.splice(targetIndex, 0, sourceItem);
+  return nextItems;
+}
 function feedback(isCorrect: boolean, question: QuizQuestion): QuizFeedback { return { isCorrect, explanation: question.explanation ?? "", earnedPoints: isCorrect ? 1 : 0, maximumPoints: 1 }; }
 function shuffle<T>(items: readonly T[]): T[] { const result = [...items]; for (let index = result.length - 1; index > 0; index -= 1) { const other = Math.floor(Math.random() * (index + 1)); [result[index], result[other]] = [result[other], result[index]]; } return result; }
 function normalizeRomanAnswer(value: string): string { return value.trim().toUpperCase().replace(/[.\s]+/g, ""); }

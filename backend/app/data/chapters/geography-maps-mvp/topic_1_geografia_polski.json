@@ -426,7 +426,7 @@
     {
       "id": "geo-miasto-na-mapie-bydgoszcz",
       "text": "Jakie miasto zaznaczono na mapie?",
-      "image": "/static/images/geography/poland-city-bydgoszcz.svg",
+      "image": "/static/images/geography/poland-city-bydgoszcz-two-capitals.svg",
       "selection_type": "open",
       "accepted_answers": [
         "Bydgoszcz",
@@ -437,7 +437,7 @@
     {
       "id": "geo-miasto-na-mapie-gorzow-wielkopolski",
       "text": "Jakie miasto zaznaczono na mapie?",
-      "image": "/static/images/geography/poland-city-gorzow-wielkopolski.svg",
+      "image": "/static/images/geography/poland-city-gorzow-wielkopolski-two-capitals.svg",
       "selection_type": "open",
       "accepted_answers": [
         "Gorzów Wielkopolski",
@@ -480,6 +480,31 @@
         "w Opolu"
       ],
       "explanation": "Na mapie zaznaczono Opole."
+    },
+    {
+      "id": "geo-miasto-na-mapie-torun",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-torun.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Toruń",
+        "Torun",
+        "w Toruniu"
+      ],
+      "explanation": "Na mapie zaznaczono Toruń. Przerywany okrąg pokazuje Bydgoszcz, drugie miasto wojewódzkie województwa kujawsko-pomorskiego."
+    },
+    {
+      "id": "geo-miasto-na-mapie-zielona-gora",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-zielona-gora.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Zielona Góra",
+        "Zielona Gora",
+        "w Zielonej Górze",
+        "w Zielonej Gorze"
+      ],
+      "explanation": "Na mapie zaznaczono Zieloną Górę. Przerywany okrąg pokazuje Gorzów Wielkopolski, drugie miasto wojewódzkie województwa lubuskiego."
     },
     {
       "id": "geo-woj-dwie-stolice-kujawsko-pomorskie",

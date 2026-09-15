@@ -166,12 +166,19 @@ const geojson = JSON.parse(await readFile(mapPath, "utf8"));
 const bounds = getGeoJsonBounds(geojson);
 const viewBox = getMapViewBox(bounds);
 const citiesById = new Map(cities.map((city) => [city.id, city]));
+const outputCities = [
+  ...cities.map((city) => ({city, assetId: city.id})),
+  ...["bydgoszcz", "gorzow-wielkopolski"].map((cityId) => ({
+    city: citiesById.get(cityId),
+    assetId: `${cityId}-two-capitals`,
+  })),
+];
 
 await mkdir(outputDir, {recursive: true});
 
-await Promise.all(cities.map((city) =>
+await Promise.all(outputCities.map(({city, assetId}) =>
   writeFile(
-    path.join(outputDir, `poland-city-${city.id}.svg`),
+    path.join(outputDir, `poland-city-${assetId}.svg`),
     renderCitySvg(geojson, city, citiesById, bounds, viewBox).replace(/\n/g, "\r\n"),
     "utf8"
   )

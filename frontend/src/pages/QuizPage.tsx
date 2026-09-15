@@ -36,11 +36,19 @@ export function QuizPage() {
   const [loadState, setLoadState] = useState<QuizLoadState>({ status: "loading" });
   const [session, dispatch] = useReducer(quizSessionReducer, initialQuizSessionState);
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const nextActionRef = useRef<(() => void) | null>(null);
   const quizId = new URLSearchParams(window.location.search).get("id");
   const section = new URLSearchParams(window.location.search).get("section") ?? "history";
 
   nextActionRef.current = null;
+
+  const startNewAttempt = () => {
+    setValidationMessage(null);
+    dispatch({ type: "restart" });
+    setLoadState({ status: "loading" });
+    setAttempt((currentAttempt) => currentAttempt + 1);
+  };
 
   useEffect(() => {
     const advanceWithEnter = (event: KeyboardEvent) => {
@@ -68,7 +76,7 @@ export function QuizPage() {
     setLoadState({ status: "loading" });
     dispatch({ type: "restart" });
 
-    getQuizById(quizId, controller.signal)
+    getQuizById(quizId, controller.signal, attempt)
       .then((quiz) => setLoadState({ status: "ready", quiz }))
       .catch((error: unknown) => {
         if (error instanceof DOMException && error.name === "AbortError") return;
@@ -79,7 +87,7 @@ export function QuizPage() {
       });
 
     return () => controller.abort();
-  }, [quizId]);
+  }, [quizId, attempt]);
 
   if (loadState.status === "loading") {
     return <main className="container quiz-play-shell"><p className="subject-status">Ładowanie quizu...</p></main>;
@@ -95,7 +103,7 @@ export function QuizPage() {
   }
 
   if (session.currentQuestionIndex >= quiz.questions.length) {
-    return <ResultScreen quiz={quiz} score={session.earnedPoints} section={section} onRestart={() => dispatch({ type: "restart" })} />;
+    return <ResultScreen quiz={quiz} score={session.earnedPoints} section={section} onRestart={startNewAttempt} />;
   }
 
   const question = quiz.questions[session.currentQuestionIndex];
@@ -177,6 +185,18 @@ export function QuizPage() {
         <p id="quiz-description">{quiz.description}</p>
       </header>
       <section className="question-card" aria-labelledby="question-text">
+        <button
+          aria-label="Rozpocznij quiz od początku"
+          className="quiz-reset-button"
+          onClick={startNewAttempt}
+          title="Rozpocznij quiz od początku"
+          type="button"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M6 21V4" />
+            <path className="quiz-reset-flag-cloth" d="M6 5h11l-2.5 4L17 13H6Z" />
+          </svg>
+        </button>
         <p id="question-counter">Pytanie {questionPosition} z {quiz.questions.length}</p>
         <AnimatedProgressBar progress={progress} />
         <p className="question-progress-percent">{progress}%</p>
@@ -418,7 +438,10 @@ function AnimatedProgressBar({ progress }: { progress: number }) {
 }
 
 function FeedbackPanel({ feedback }: { feedback: QuizFeedback }) {
-  const message = feedback.isCorrect ? "Dobrze" : feedback.explanation;
+  const explanation = feedback.explanation.trim();
+  if (!feedback.isCorrect && !explanation) return null;
+
+  const message = feedback.isCorrect ? "Dobrze" : explanation;
 
   return (
     <motion.p

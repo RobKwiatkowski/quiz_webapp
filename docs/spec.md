@@ -152,6 +152,7 @@ Endpoints:
   and `/admin/login.html`; an unauthenticated visitor sees its login screen
 - `POST /api/admin/login` creates the admin session
 - `POST /api/admin/logout` clears the admin session
+- after logging out, the admin application redirects the user to the main page
 - `GET /api/admin/subjects` lists editable JSON-backed subjects
 - `GET /api/admin/chapters` lists editable chapters
 - `GET /api/admin/chapters?subject={subject}` lists editable chapters for one subject
@@ -312,8 +313,8 @@ Fields:
 - `target_feature_id`: stable technical identifier matching `feature.id` or
   `feature.properties.id`
 - `interaction`: optional target shape for `select` mode; `region` is the
-  default, `line` lets the learner click the nearest answer line within a small
-  pointer tolerance
+  default, `line` lets the learner click the nearest answer line within a
+  generous pointer tolerance
 
 ### `HotspotConfig`
 
@@ -517,7 +518,8 @@ The frontend is responsible for:
 - tracking earned points and maximum points in page memory
 - showing the final result screen
 - playing a short celebration sound and confetti animation when the learner earns 100% of the available points
-- restarting the current quiz by fetching it from the backend again
+- starting every refreshed or restarted quiz attempt by fetching a newly
+  assembled question set from the backend
 
 The frontend does not persist scores and does not send user answers to the backend.
 The admin screen uses the existing `/api/admin/*` endpoints and their signed
@@ -600,6 +602,8 @@ Scores are point-based. Maximum points are derived from question structure:
 `order`:
 
 - the user arranges items into the correct sequence
+- items can be moved onto a concrete numbered position by drag and drop or with
+  visible up/down buttons; the target position is highlighted before dropping
 - items are checked after clicking the localized check button
 - the result is correct only if every item is in the exact position declared by
   `order_items[].position`
@@ -630,8 +634,9 @@ Scores are point-based. Maximum points are derived from question structure:
 - `select` mode lets the user answer by clicking one SVG-rendered region
 - `select` mode may use `interaction: "line"` when the source GeoJSON contains
   answer LineString or MultiLineString features; in that case the user answers
-  by clicking near a line, and the frontend selects the nearest line only within
-  a small tolerance
+  by clicking near a line. The frontend uses a generous pointer tolerance and,
+  near crossings, prioritizes the requested line when it is the nearest line of
+  the same kind (for example, a parallel rather than a crossing meridian)
 - a correct `select` click gives 1 point; an incorrect click gives 0 points
 - after a `select` answer, the chosen incorrect region and the correct target
   region are visually marked and map interaction is locked
@@ -838,6 +843,7 @@ The current quiz screen shows:
 - answers, text input, sequence controls, or matching controls
 - feedback
 - localized primary action button
+- a reset control in the upper-right corner that restarts the current quiz
 
 Enter works globally on the quiz screen:
 

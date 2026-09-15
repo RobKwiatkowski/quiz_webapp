@@ -41,7 +41,7 @@ interface ViewBox {
 }
 
 const geoJsonCache = new Map<string, Promise<GeoJsonData>>();
-const LINE_SELECTION_TOLERANCE_PX = 15;
+const LINE_SELECTION_TOLERANCE_PX = 48;
 const LINE_AMBIGUITY_DELTA_PX = 2;
 
 export function MapQuestion({ question, disabled, onComplete }: Props) {
@@ -120,6 +120,25 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     const tolerance = screenPixelsToSvgUnits(svg, event.clientX, event.clientY, LINE_SELECTION_TOLERANCE_PX);
     const ambiguityDelta = screenPixelsToSvgUnits(svg, event.clientX, event.clientY, LINE_AMBIGUITY_DELTA_PX);
     const nearestLines = getNearestLineFeatures(state.geojson, bounds, viewBox, svgPoint);
+    const targetLine = nearestLines.find((candidate) => candidate.featureId === config.target_feature_id);
+    const nearestSameKindLine = targetLine
+      ? nearestLines.find((candidate) => candidate.kind === targetLine.kind)
+      : undefined;
+
+    // A perpendicular grid line can be closer near an intersection even when the
+    // learner clearly points at the requested line. Give the target a generous
+    // hit area while still respecting closer parallel lines of the same kind.
+    if (
+      targetLine
+      && targetLine.distance <= tolerance
+      && nearestSameKindLine
+      && nearestSameKindLine.featureId === targetLine.featureId
+    ) {
+      event.preventDefault();
+      selectFeature(targetLine.featureId);
+      return;
+    }
+
     const nearest = nearestLines[0];
 
     if (!nearest || nearest.distance > tolerance) {
@@ -416,14 +435,15 @@ function getNearestLineFeatures(
   bounds: Bounds,
   viewBox: ViewBox,
   point: { x: number; y: number },
-): Array<{ featureId: string; distance: number }> {
+): Array<{ featureId: string; kind: string; distance: number }> {
   return (geojson.features ?? [])
     .filter(isAnswerLineFeature)
     .map((feature) => {
       const featureId = getFeatureId(feature);
+      const kind = typeof feature.properties?.kind === "string" ? feature.properties.kind : featureId;
       const linePoints = feature.geometry ? getGeometryLinePoints(feature.geometry, bounds, viewBox) : [];
       const distance = getDistanceToLineStrings(point, linePoints);
-      return { featureId, distance };
+      return { featureId, kind, distance };
     })
     .filter((candidate) => candidate.featureId && Number.isFinite(candidate.distance))
     .sort((left, right) => left.distance - right.distance);
