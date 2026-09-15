@@ -12,6 +12,7 @@ export interface QuizListItem {
 export type SelectionType =
   | "single"
   | "multiple"
+  | "true_false"
   | "open"
   | "llm"
   | "order"

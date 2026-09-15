@@ -51,20 +51,6 @@
       ]
     },
     {
-      "id": "q-39787e87",
-      "topic_id": "kongres-wiedenski",
-      "text": "Kiedy miała miejsce bitwa pod Waterloo (dokładnie)?",
-      "selection_type": "open",
-      "explanation": "Bitwa ta miała miejsce 18 czerwca 1815 roku.",
-      "accepted_answers": [
-        "18 czerwca 1815",
-        "18.06.1815",
-        "18.VI.1815",
-        "18 czerwiec 1815",
-        "18 czerwca 1815 roku"
-      ]
-    },
-    {
       "id": "q-2a76df94",
       "topic_id": "kongres-wiedenski",
       "text": "Na jakich trzech zasadach wprowadzono nowy porządek polityczny po kongresie wiedeńskim?",
@@ -146,13 +132,9 @@
     {
       "id": "q-834d9bea",
       "topic_id": "kongres-wiedenski",
-      "text": "Jakie duże kraje ostatecznie przystąpiły do Świętego Przymierza?",
+      "text": "Jakie kraje początkowo przystąpiły do Świętego Przymierza?",
       "selection_type": "multiple",
       "answers": [
-        {
-          "text": "Państwo Kościelne",
-          "is_correct": false
-        },
         {
           "text": "Austria",
           "is_correct": true
@@ -171,6 +153,14 @@
         },
         {
           "text": "Stany Zjednoczone",
+          "is_correct": false
+        },
+        {
+          "text": "Wielka Brytania",
+          "is_correct": false
+        },
+        {
+          "text": "Francja",
           "is_correct": false
         }
       ]
@@ -224,6 +214,144 @@
         {
           "text": "dokonanie III rozbioru Polski",
           "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-source-1-komunizm",
+      "topic_id": "kongres-wiedenski",
+      "text": "Którą ideologię opisano w tekście źródłowym?",
+      "context": {
+        "text": "Całe społeczeństwo rozszczepia się na dwie wielkie, przeciwstawne sobie klasy: burżuazję i proletariat. [...] Cele mogą być osiągnięte jedynie przez obalenie przemocą całego dotychczasowego ustroju społecznego. [...] Proletariusze nie mają nic do stracenia prócz swych kajdan.",
+        "source": "Fragment Manifestu komunistycznego"
+      },
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "liberalizm",
+          "is_correct": false
+        },
+        {
+          "text": "komunizm",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "kongres-source-5-zasady",
+      "topic_id": "kongres-wiedenski",
+      "text": "Połącz opisy z odpowiednimi zasadami kongresu wiedeńskiego.",
+      "selection_type": "matching",
+      "explanation": "Restauracja oznaczała powrót obalonych dynastii na trony. Równowaga europejska miała chronić państwa przed dominacją jednego mocarstwa.",
+      "matching_pairs": [
+        {
+          "id": "restauracja",
+          "left": "Dążenie do powrotu na trony europejskie dynastii obalonych podczas rewolucji francuskiej i wojen napoleońskich.",
+          "right": "zasada restauracji"
+        },
+        {
+          "id": "rownowaga-europejska",
+          "left": "Mocarstwa nie mogą narzucać swoich praw innym państwom ani zagrażać ich interesom, bo grozi to interwencją zbrojną.",
+          "right": "zasada równowagi europejskiej"
+        }
+      ]
+    },
+    {
+      "id": "kongres-source-6-mapa",
+      "topic_id": "kongres-wiedenski",
+      "text": "Spójrz na mapę Europy po kongresie wiedeńskim. Dopasuj numer z mapy do właściwego państwa.",
+      "image": "/static/images/history/europa-po-kongresie-wiedenskim-mapa-1.png",
+      "selection_type": "matching",
+      "explanation": "Na mapie: 1 - Cesarstwo Austriackie, 2 - Królestwo Niderlandów, 3 - Królestwo Polskie.",
+      "matching_pairs": [
+        {
+          "id": "numer-1",
+          "left": "Numer 1",
+          "right": "Cesarstwo Austriackie"
+        },
+        {
+          "id": "numer-2",
+          "left": "Numer 2",
+          "right": "Królestwo Niderlandów"
+        },
+        {
+          "id": "numer-3",
+          "left": "Numer 3",
+          "right": "Królestwo Polskie"
+        }
+      ]
+    },
+    {
+      "id": "kongres-source-7-mapa",
+      "topic_id": "kongres-wiedenski",
+      "text": "Spójrz na mapę Europy po kongresie wiedeńskim. Dopasuj numer z mapy do właściwego państwa.",
+      "image": "/static/images/history/europa-po-kongresie-wiedenskim-mapa-2.png",
+      "selection_type": "matching",
+      "explanation": "Na mapie: 1 - Królestwo Francji, 2 - imperium osmańskie, 3 - Królestwo Prus.",
+      "matching_pairs": [
+        {
+          "id": "numer-1",
+          "left": "Numer 1",
+          "right": "Królestwo Francji"
+        },
+        {
+          "id": "numer-2",
+          "left": "Numer 2",
+          "right": "imperium osmańskie"
+        },
+        {
+          "id": "numer-3",
+          "left": "Numer 3",
+          "right": "Królestwo Prus"
+        }
+      ]
+    },
+    {
+      "id": "kongres-source-19-zwiazek-niemiecki",
+      "topic_id": "kongres-wiedenski",
+      "text": "W cytowanym akcie zadecydowano o",
+      "context": {
+        "text": "Mocarstwa, które podpisały traktat zawarty w Paryżu dnia 30 maja 1814 r., zebrawszy się w Wiedniu z książętami i państwami, swymi sprzymierzeńcami, upoważniły swoich pełnomocników do zebrania w jeden akt ogólny postanowień trwałej i większej wagi.",
+        "source": "Akt końcowy kongresu wiedeńskiego"
+      },
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "abdykacji Napoleona po bitwie pod Waterloo",
+          "is_correct": false
+        },
+        {
+          "text": "powstaniu Związku Niemieckiego",
+          "is_correct": true
+        },
+        {
+          "text": "powołaniu Świętego Przymierza",
+          "is_correct": false
+        },
+        {
+          "text": "odtworzeniu Księstwa Warszawskiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-prawda-falsz-podstawy",
+      "topic_id": "kongres-wiedenski",
+      "text": "Oceń, czy poniższe zdania są prawdziwe. Zaznacz P przy zdaniach prawdziwych, a F przy fałszywych.",
+      "selection_type": "true_false",
+      "explanation": "Prawda: bitwa pod Waterloo odbyła się po zakończeniu obrad kongresu, a na kongresie podzielono ziemie polskie. Fałsz: Francję reprezentował Charles-Maurice de Talleyrand, nie Napoleon Bonaparte.",
+      "answers": [
+        {
+          "text": "Podczas obrad kongresu wiedeńskiego nie doszło do bitwy pod Waterloo.",
+          "is_correct": true
+        },
+        {
+          "text": "Francję na kongresie wiedeńskim reprezentował Napoleon Bonaparte.",
+          "is_correct": false
+        },
+        {
+          "text": "Na kongresie wiedeńskim dokonano podziału ziem polskich.",
+          "is_correct": true
         }
       ]
     }

@@ -324,7 +324,7 @@ def normalize_admin_question(
         if context_data:
             question["context"] = context_data
 
-    if selection_type in {"single", "multiple"}:
+    if selection_type in {"single", "multiple", "true_false"}:
         question["answers"] = [
             {"text": str(answer.get("text", "")).strip(), "is_correct": bool(answer.get("is_correct"))}
             for answer in payload.get("answers", [])
@@ -413,7 +413,7 @@ def normalize_admin_question(
         raise HTTPException(
             status_code=400,
             detail=(
-                "Admin supports only single, multiple, open, llm, order, matching, "
+                "Admin supports only single, multiple, true_false, open, llm, order, matching, "
                 "map, hotspot, and fill questions"
             ),
         )

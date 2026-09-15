@@ -46,7 +46,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`
+- question types: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -368,11 +368,12 @@ Fields:
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
-  `single` and `multiple`, required for `open`, `llm`, `order`, `matching`,
+  `single` and `multiple`, required for `true_false`, `open`, `llm`, `order`, `matching`,
   `hotspot`, `century`, and `fill`
-- `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, `matching`,
+- `selection_type`: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`,
   `map`, `hotspot`, `century`, or `fill`
-- `answers`: answer options for `single` and `multiple` questions
+- `answers`: answer options for `single` and `multiple` questions, or statements
+  for `true_false` questions where `is_correct` means the statement is true
 - `accepted_answers`: accepted values for one-field `open` questions and the
   reference answer for `llm` questions
 - `answer_slots`: answer fields for multi-slot `open` questions
@@ -532,6 +533,7 @@ Scores are point-based. Maximum points are derived from question structure:
 
 - `single`: 1 point
 - `multiple`: 1 point
+- `true_false`: 1 point
 - one-field `open`: 1 point
 - multi-slot `open`: one point when every answer slot is correct
 - `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`: 1 point
@@ -552,6 +554,14 @@ Scores are point-based. Maximum points are derived from question structure:
 - if nothing is selected, checking does not finish the question
 - the UI shows a localized hint with the number of correct answers when it can be
   computed
+
+`true_false`:
+
+- the learner evaluates every displayed statement as `P` (true) or `F` (false)
+- the answer is checked after clicking the localized check button
+- the learner earns 1 point only when every statement is evaluated correctly
+- `answers` must contain at least two statements, including at least one true
+  and one false statement
 
 `open`:
 
@@ -752,15 +762,17 @@ The validator checks:
 - `questions` must be a list
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
-- required non-empty `explanation` on `open`, `llm`, `order`, `matching`,
+- required non-empty `explanation` on `true_false`, `open`, `llm`, `order`, `matching`,
   `hotspot`, `century`, and `fill` questions; optional `explanation` on `single` and
   `multiple` questions
 - valid `selection_type`
 - optional `source_text` structure
 - optional `context` structure
-- answer structure for `single` and `multiple`
+- answer structure for `single`, `multiple`, and `true_false`
 - exactly one correct answer for `single`
 - at least two correct answers for `multiple`
+- at least two statements, including one true and one false statement, for
+  `true_false`
 - non-empty `accepted_answers` or non-empty `answer_slots` for `open`
 - rejection of `open` questions that contain both `accepted_answers` and
   `answer_slots`
@@ -787,7 +799,7 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
-- `open`, `llm`, `order`, `matching`, `hotspot`, `century`, and `fill` questions must include a
+- `true_false`, `open`, `llm`, `order`, `matching`, `hotspot`, `century`, and `fill` questions must include a
   non-empty `explanation`; `single` and `multiple` questions may omit it
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
@@ -865,10 +877,9 @@ The admin interface is intentionally plain and functional:
   selection internals
 - its question editor shows only the answer fields relevant to the selected
   question type
-- it supports creating, editing, and deleting `single`, `multiple`, one-field
+- it supports creating, editing, and deleting `single`, `multiple`, `true_false`, one-field
   `open`, multi-slot `open`, `llm`, `order`, `matching`, `map`, `hotspot`, and
   `fill` questions
-  questions
 - it supports image fields only for `single` and `open` questions
 - it lets the administrator enter source/context text without requiring a
   separate source attribution field
@@ -917,7 +928,7 @@ Possible future extensions:
 
 The first production version is a working single-player quiz application that
 runs through Docker Compose, shows a quiz list, loads a selected quiz from the
-backend, supports `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`,
+backend, supports `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`,
 `hotspot`, `century`, and `fill` questions, handles images and context text, shows immediate feedback and a
 point-based final result, keeps quiz content in validated chapter and topic JSON
 files, and includes a minimal authenticated admin panel for editing questions in

@@ -1498,7 +1498,92 @@ body[data-page="quiz"] {
 
 .quiz-play-shell .answer-list,
 .quiz-play-shell .open-answer-list,
-.quiz-play-shell .advanced-question { margin: 20px 0 0; }
+.quiz-play-shell .advanced-question,
+.quiz-play-shell .true-false-question { margin: 20px 0 0; }
+
+.true-false-table {
+  overflow: hidden;
+  border: 1px solid rgba(36, 54, 75, 0.2);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.true-false-header,
+.true-false-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.5rem 3.5rem;
+}
+
+.true-false-header {
+  border-bottom: 1px solid rgba(36, 54, 75, 0.2);
+  background: #eef7f4;
+  color: #176b67;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.true-false-header span {
+  display: grid;
+  min-height: 2.6rem;
+  place-items: center;
+  border-left: 1px solid rgba(36, 54, 75, 0.2);
+}
+
+.true-false-header span:first-child {
+  justify-content: start;
+  padding-left: 1rem;
+  border-left: 0;
+}
+
+.true-false-row { border-bottom: 1px solid rgba(36, 54, 75, 0.16); }
+.true-false-row:last-child { border-bottom: 0; }
+
+.true-false-statement {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.8rem;
+  padding: 0.75rem 1rem;
+  color: #24364b;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.true-false-number {
+  flex: 0 0 1.25rem;
+  color: #147d78;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.true-false-choice {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  border-left: 1px solid rgba(36, 54, 75, 0.16);
+  border-radius: 0;
+  background: #fbfaf7;
+  color: #24364b;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.true-false-choice:hover:not(:disabled),
+.true-false-choice:focus-visible { background: #e6f4f1; color: #147d78; outline: 3px solid rgba(20, 125, 120, 0.25); outline-offset: -3px; }
+.true-false-choice.selected { background: #147d78; color: #fff; }
+.true-false-row.is-correct .true-false-choice.selected { background: #16834f; }
+.true-false-row.is-incorrect .true-false-choice.selected { background: #c24141; }
+
+@media (max-width: 520px) {
+  .true-false-header,
+  .true-false-row { grid-template-columns: minmax(0, 1fr) 2.8rem 2.8rem; }
+  .true-false-statement { padding: 0.7rem; font-size: 0.94rem; }
+  .true-false-header span:first-child { padding-left: 0.7rem; }
+}
 
 .quiz-play-shell .order-direction-hint {
   margin: 0 0 12px;

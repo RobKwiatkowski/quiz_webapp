@@ -12,6 +12,7 @@ from xml.etree import ElementTree
 ALLOWED_SELECTION_TYPES = {
     "single",
     "multiple",
+    "true_false",
     "open",
     "llm",
     "order",
@@ -633,6 +634,33 @@ def validate_question(
                 f"{context}: multiple question must have at least 2 correct answers, found {correct_count}"
             )
         warn_unexpected(question, result, context, ["accepted_answers", "answer_slots", "order_items", "matching_pairs"])
+
+    elif selection_type == "true_false":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validated_answers = validate_answers_structure(answers, result, context)
+        if len(validated_answers) < 2:
+            result.errors.append(f"{context}: true_false question must contain at least 2 statements")
+        correct_count = sum(1 for answer in validated_answers if answer.get("is_correct") is True)
+        if correct_count == 0 or correct_count == len(validated_answers):
+            result.errors.append(
+                f"{context}: true_false question must contain both true and false statements"
+            )
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
+            ],
+        )
 
     elif selection_type == "open":
         if not is_non_empty_string(explanation):

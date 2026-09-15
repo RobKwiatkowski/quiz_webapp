@@ -98,7 +98,7 @@
       "topic_id": "rewolucja-przemyslowa",
       "text": "Połącz postać z wydarzeniem lub osiągnięciem, które jest z nią związane.",
       "selection_type": "matching",
-      "explanation": "Ludwik Napoleon Bonaparte był związany z rewolucją lutową, Michael Faraday z odkryciami ważnymi dla silników elektrycznych, a Lajos Kossuth z Wiosną Ludów.",
+      "explanation": "Ludwik Napoleon Bonaparte był związany z rewolucją lutową, Michael Faraday z odkryciami ważnymi dla silników elektrycznych,  Lajos Kossuth z Wiosną Ludów, a Samuel Morse z wynalezieniem telegrafem (i kodu Morse'a).",
       "matching_pairs": [
         {
           "id": "ludwik-napoleon-bonaparte",
@@ -114,6 +114,11 @@
           "id": "lajos-kossuth",
           "left": "Lajos Kossuth",
           "right": "Wiosna Ludów"
+        },
+        {
+          "id": "samuel-morse",
+          "left": "Samuel Morse",
+          "right": "wynalezienie telegrafu"
         }
       ]
     },
@@ -128,16 +133,20 @@
           "is_correct": false
         },
         {
-          "text": "metropolia",
+          "text": "ruch oporu",
           "is_correct": false
         },
         {
-          "text": "fabryka",
+          "text": "policja",
           "is_correct": false
         },
         {
           "text": "związek zawodowy",
           "is_correct": true
+        },
+        {
+          "text": "związek zawodniczy",
+          "is_correct": false
         }
       ]
     },
@@ -186,6 +195,10 @@
         {
           "text": "zakładając związki zawodowe",
           "is_correct": true
+        },
+        {
+          "text": "opuszczając masowo miejsca pracy",
+          "is_correct": false
         }
       ]
     },
@@ -238,7 +251,7 @@
       "topic_id": "rewolucja-przemyslowa",
       "text": "Połącz opis z właściwym pojęciem.",
       "selection_type": "matching",
-      "explanation": "Industrializacja oznacza zwiększanie udziału maszyn i zatrudnienia w przemyśle. Ważnym ośrodkiem przemysłowym na zachodzie Prus było Zagłębie Ruhry.",
+      "explanation": "Industrializacja oznacza zwiększanie udziału maszyn i zatrudnienia w przemyśle. Ważnym ośrodkiem przemysłowym na zachodzie Prus było Zagłębie Ruhry. W manufakturze cała praca wykonywana jest ręcznie.",
       "matching_pairs": [
         {
           "id": "industrializacja",
@@ -249,6 +262,32 @@
           "id": "zaglebie-ruhry",
           "left": "Ważny ośrodek przemysłowy na zachodzie Prus.",
           "right": "Zagłębie Ruhry"
+        },
+        {
+          "id": "zaklad-w-ktorym-cala-praca-wykonywana-jest-recznie",
+          "left": "Zakład w którym cała praca wykonywana jest ręcznie.",
+          "right": "manufaktura"
+        }
+      ]
+    },
+    {
+      "id": "przemysl-prawda-falsz-wiosna-ludow",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Oceń, czy poniższe zdania są prawdziwe. Zaznacz P przy zdaniach prawdziwych, a F przy fałszywych.",
+      "selection_type": "true_false",
+      "explanation": "Prawda: Francja stała się republiką podczas Wiosny Ludów, a związki zawodowe broniły praw robotników. Fałsz: Święte Przymierze utworzyły Austria, Prusy i Rosja.",
+      "answers": [
+        {
+          "text": "Francja stała się republiką w okresie Wiosny Ludów.",
+          "is_correct": true
+        },
+        {
+          "text": "Święte Przymierze utworzyły Wielka Brytania, Francja i Rosja.",
+          "is_correct": false
+        },
+        {
+          "text": "Związki zawodowe powstawały, aby bronić praw robotników.",
+          "is_correct": true
         }
       ]
     }

@@ -125,7 +125,7 @@ class Question(BaseModel):
         image: Optional image path, URL, or list of image references.
         explanation: Optional explanation shown after an incorrect answer.
         selection_type: Interaction type.
-        answers: Options for single/multiple questions.
+        answers: Options for single/multiple and true/false questions.
         accepted_answers: Accepted values for open questions.
         answer_slots: Slots for multi-field open questions.
         fill_mode: Interaction mode for fill-in-the-blanks questions.
@@ -147,7 +147,7 @@ class Question(BaseModel):
     image: str | List[str] | None = None
     explanation: Optional[str] = None
     selection_type: Literal[
-        "single", "multiple", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill"
+        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill"
     ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)

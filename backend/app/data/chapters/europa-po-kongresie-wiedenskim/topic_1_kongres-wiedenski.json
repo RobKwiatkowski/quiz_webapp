@@ -51,20 +51,6 @@
       ]
     },
     {
-      "id": "q-39787e87",
-      "topic_id": "kongres-wiedenski",
-      "text": "Kiedy miała miejsce bitwa pod Waterloo (dokładnie)?",
-      "selection_type": "open",
-      "explanation": "Bitwa ta miała miejsce 18 czerwca 1815 roku.",
-      "accepted_answers": [
-        "18 czerwca 1815",
-        "18.06.1815",
-        "18.VI.1815",
-        "18 czerwiec 1815",
-        "18 czerwca 1815 roku"
-      ]
-    },
-    {
       "id": "q-2a76df94",
       "topic_id": "kongres-wiedenski",
       "text": "Na jakich trzech zasadach wprowadzono nowy porządek polityczny po kongresie wiedeńskim?",
@@ -344,6 +330,75 @@
         },
         {
           "text": "odtworzeniu Księstwa Warszawskiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-prawda-falsz-podstawy",
+      "topic_id": "kongres-wiedenski",
+      "text": "Oceń, czy poniższe zdania są prawdziwe. Zaznacz P przy zdaniach prawdziwych, a F przy fałszywych.",
+      "selection_type": "true_false",
+      "explanation": "Prawda: bitwa pod Waterloo odbyła się po zakończeniu obrad kongresu, a na kongresie podzielono ziemie polskie. Fałsz: Francję reprezentował Charles-Maurice de Talleyrand, nie Napoleon Bonaparte.",
+      "answers": [
+        {
+          "text": "Podczas obrad kongresu wiedeńskiego nie doszło do bitwy pod Waterloo.",
+          "is_correct": true
+        },
+        {
+          "text": "Francję na kongresie wiedeńskim reprezentował Napoleon Bonaparte.",
+          "is_correct": false
+        },
+        {
+          "text": "Na kongresie wiedeńskim dokonano podziału ziem polskich.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-36b964ac",
+      "topic_id": "kongres-wiedenski",
+      "text": "Jakie kraje dominowały na kongresie wiedeńskim?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Francja",
+          "is_correct": true
+        },
+        {
+          "text": "Rosja",
+          "is_correct": true
+        },
+        {
+          "text": "Prusy",
+          "is_correct": true
+        },
+        {
+          "text": "Wielka Brytania",
+          "is_correct": true
+        },
+        {
+          "text": "Austria",
+          "is_correct": true
+        },
+        {
+          "text": "Szwecja",
+          "is_correct": false
+        },
+        {
+          "text": "Włochy",
+          "is_correct": false
+        },
+        {
+          "text": "Turcja",
+          "is_correct": false
+        },
+        {
+          "text": "Portugalia",
+          "is_correct": false
+        },
+        {
+          "text": "Hiszpania",
           "is_correct": false
         }
       ]

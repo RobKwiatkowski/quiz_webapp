@@ -19,6 +19,7 @@ import {
 import { CenturyQuestion, LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
 import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
+import { TrueFalseQuestion } from "../features/quiz/TrueFalseQuestion";
 
 const PERFECT_SCORE_AUDIO_URL = "/assets/sounds/perfect-score-crowd.mp3";
 
@@ -272,6 +273,10 @@ function QuestionRenderer(props: QuestionRendererProps) {
 
   if (props.question.selection_type === "fill") {
     return <FillQuestion {...props} />;
+  }
+
+  if (props.question.selection_type === "true_false") {
+    return <TrueFalseQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   }
 
   if (props.question.selection_type === "order") return <OrderQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;

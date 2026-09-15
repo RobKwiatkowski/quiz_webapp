@@ -7,5 +7,8 @@
   "chapter_number": 1,
   "target_question_count": 12,
   "questions_per_topic": 2,
-  "topics": []
+  "topics": [
+    "topic_1_kongres-wiedenski.json",
+    "topic_2_rewolucja_przemyslowa.json"
+  ]
 }
