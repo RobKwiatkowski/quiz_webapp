@@ -7,7 +7,7 @@ from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, RedirectResponse, Response
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.config import settings
 from app.services.admin_auth import (
@@ -26,6 +26,7 @@ from app.services.admin_content import (
     list_admin_questions,
     list_admin_subjects,
     list_admin_topics,
+    update_chapter_number,
     update_question,
 )
 
@@ -46,6 +47,12 @@ class NameRequest(BaseModel):
     """Request payload for creating a named admin resource."""
 
     name: str
+
+
+class ChapterNumberRequest(BaseModel):
+    """Optional number displayed in the chapter badge."""
+
+    chapter_number: int | None = Field(default=None, ge=1)
 
 
 @admin_pages_router.get("/admin")
@@ -110,6 +117,12 @@ def get_chapters(subject: str | None = None):
 def post_chapter(payload: NameRequest):
     """Creates a new empty chapter."""
     return create_chapter(payload.model_dump())
+
+
+@router.put("/chapters/{chapter_id}/chapter-number", dependencies=[Depends(require_admin)])
+def put_chapter_number(chapter_id: str, payload: ChapterNumberRequest):
+    """Updates the optional chapter badge number."""
+    return update_chapter_number(chapter_id, payload.chapter_number)
 
 
 @router.get("/chapters/{chapter_id}/topics", dependencies=[Depends(require_admin)])

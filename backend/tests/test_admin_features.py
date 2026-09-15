@@ -294,7 +294,12 @@ def test_create_chapter_starts_empty_and_appears_in_list(tmp_path, monkeypatch):
 
     assert response.status_code == 200
     created = response.json()
-    assert created == {"id": "nowy-rozdzial", "title": "Nowy rozdział", "subject": "history"}
+    assert created == {
+        "id": "nowy-rozdzial",
+        "title": "Nowy rozdział",
+        "subject": "history",
+        "chapter_number": None,
+    }
     meta_path = data_dir / "nowy-rozdzial" / "meta.json"
     meta_data = json.loads(meta_path.read_text(encoding="utf-8"))
     assert meta_data["title"] == "Nowy rozdział"
@@ -325,7 +330,12 @@ def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
 
     assert response.status_code == 200
     created = response.json()
-    assert created == {"id": "mapa-polski", "title": "Mapa Polski", "subject": "geography"}
+    assert created == {
+        "id": "mapa-polski",
+        "title": "Mapa Polski",
+        "subject": "geography",
+        "chapter_number": None,
+    }
 
     geography_meta = json.loads((data_dir / "mapa-polski" / "meta.json").read_text(encoding="utf-8"))
     assert geography_meta["category"] == "geography"
@@ -337,6 +347,37 @@ def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
     assert [chapter["id"] for chapter in history_chapters] == ["chapter-1"]
     assert geography_chapters == [created]
     assert biology_chapters == []
+
+
+def test_chapter_number_can_be_set_or_cleared(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.put(
+        "/api/admin/chapters/chapter-1/chapter-number",
+        json={"chapter_number": 6},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "id": "chapter-1",
+        "title": "Rozdział testowy",
+        "subject": "history",
+        "chapter_number": 6,
+    }
+    meta_path = data_dir / "chapter-1" / "meta.json"
+    assert json.loads(meta_path.read_text(encoding="utf-8"))["chapter_number"] == 6
+
+    response = client.put(
+        "/api/admin/chapters/chapter-1/chapter-number",
+        json={"chapter_number": None},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["chapter_number"] is None
+    assert "chapter_number" not in json.loads(meta_path.read_text(encoding="utf-8"))
 
 
 def test_create_chapter_rejects_unknown_subject(tmp_path, monkeypatch):

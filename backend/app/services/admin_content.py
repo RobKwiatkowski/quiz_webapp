@@ -52,7 +52,7 @@ def list_admin_subjects() -> list[dict[str, str]]:
     ]
 
 
-def list_admin_chapters(subject: str | None = None) -> list[dict[str, str]]:
+def list_admin_chapters(subject: str | None = None) -> list[dict[str, Any]]:
     """Returns chapters available for admin editing."""
     if subject is not None:
         subject = normalize_subject(subject)
@@ -63,11 +63,18 @@ def list_admin_chapters(subject: str | None = None) -> list[dict[str, str]]:
         meta = load_chapter_meta(chapter_dir)
         if subject and meta.category != subject:
             continue
-        chapters.append({"id": meta.id, "title": meta.title, "subject": meta.category})
+        chapters.append(
+            {
+                "id": meta.id,
+                "title": meta.title,
+                "subject": meta.category,
+                "chapter_number": meta.chapter_number,
+            }
+        )
     return chapters
 
 
-def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
+def create_chapter(payload: dict[str, Any]) -> dict[str, Any]:
     """Creates a new empty chapter directory with metadata."""
     name = str(payload.get("name", "")).strip()
     if not name:
@@ -94,6 +101,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
         "description": f"Powtórka z rozdziału {name}.",
         "category": subject,
         "age_group": "10-12",
+        "chapter_number": None,
         "target_question_count": 12,
         "questions_per_topic": 2,
         "topics": [],
@@ -106,7 +114,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, str]:
         shutil.rmtree(chapter_dir)
         raise
 
-    return {"id": chapter_id, "title": name, "subject": subject}
+    return {"id": chapter_id, "title": name, "subject": subject, "chapter_number": None}
 
 
 def normalize_subject(value: Any) -> str:
@@ -115,6 +123,28 @@ def normalize_subject(value: Any) -> str:
     if subject not in SUPPORTED_SUBJECTS:
         raise HTTPException(status_code=400, detail="Unsupported subject")
     return subject
+
+
+def update_chapter_number(chapter_id: str, chapter_number: int | None) -> dict[str, Any]:
+    """Sets or clears the optional number shown on a chapter card."""
+    chapter_dir = get_chapter_dir(chapter_id)
+    meta_path = chapter_dir / "meta.json"
+    with open(meta_path, "r", encoding="utf-8") as f:
+        meta_data = json.load(f)
+
+    if chapter_number is None:
+        meta_data.pop("chapter_number", None)
+    else:
+        meta_data["chapter_number"] = chapter_number
+    save_meta_data(chapter_dir, meta_data)
+
+    meta = load_chapter_meta(chapter_dir)
+    return {
+        "id": meta.id,
+        "title": meta.title,
+        "subject": meta.category,
+        "chapter_number": meta.chapter_number,
+    }
 
 
 def get_topic_filename(chapter_dir: Path, topic_id: str) -> str:

@@ -173,6 +173,7 @@ class Quiz(BaseModel):
         description: Short quiz description.
         category: Quiz domain/category.
         age_group: Intended age group label.
+        chapter_number: Optional number displayed in the chapter badge.
         questions: Final ordered list of selected questions.
     """
 
@@ -181,6 +182,7 @@ class Quiz(BaseModel):
     description: str
     category: str
     age_group: str
+    chapter_number: Optional[int] = None
     questions: List[Question]
 
 
@@ -193,6 +195,7 @@ class QuizListItem(BaseModel):
         description: Short quiz description.
         category: Quiz domain/category.
         age_group: Intended age group label.
+        chapter_number: Optional number displayed in the chapter badge.
     """
 
     id: str
@@ -200,6 +203,7 @@ class QuizListItem(BaseModel):
     description: str
     category: str
     age_group: str
+    chapter_number: Optional[int] = None
 
 
 class TopicFile(BaseModel):
@@ -225,6 +229,7 @@ class ChapterMeta(BaseModel):
         description: Chapter description.
         category: Quiz domain/category.
         age_group: Intended age group label.
+        chapter_number: Optional number displayed in the chapter badge.
         target_question_count: Desired number of questions in final quiz.
         questions_per_topic: Legacy per-topic pick count used by validators.
         topics: Topic JSON filenames that belong to this chapter.
@@ -235,6 +240,7 @@ class ChapterMeta(BaseModel):
     description: str
     category: str
     age_group: str
+    chapter_number: Optional[int] = Field(default=None, ge=1)
     target_question_count: int = 12
     questions_per_topic: int = 2
     topics: List[str]

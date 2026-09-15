@@ -48,8 +48,5 @@ export function filterQuizzesForSubject(
 }
 
 export function getChapterLabel(quiz: QuizListItem): string | null {
-  const source = `${quiz.id} ${quiz.title} ${quiz.description}`;
-  const match = source.match(/(?:chapter|rozdzia[lł])[-\s:]*(\d+)/i);
-
-  return match ? `Rozdział ${match[1]}` : null;
+  return quiz.chapter_number ? `Rozdział ${quiz.chapter_number}` : null;
 }

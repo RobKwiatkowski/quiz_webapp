@@ -156,6 +156,8 @@ Endpoints:
 - `GET /api/admin/chapters` lists editable chapters
 - `GET /api/admin/chapters?subject={subject}` lists editable chapters for one subject
 - `POST /api/admin/chapters` creates a chapter
+- `PUT /api/admin/chapters/{chapter_id}/chapter-number` sets or clears the optional
+  chapter badge number
 - `GET /api/admin/chapters/{chapter_id}/topics` lists editable topics
 - `POST /api/admin/chapters/{chapter_id}/topics` creates a topic in a chapter
 - `GET /api/admin/chapters/{chapter_id}/topics/{topic_id}/questions` lists questions
@@ -423,6 +425,7 @@ Fields:
   "description": "Chapter revision quiz.",
   "category": "history",
   "age_group": "10-12",
+  "chapter_number": 6,
   "target_question_count": 12,
   "questions_per_topic": 2,
   "topics": [
@@ -440,6 +443,8 @@ Fields:
 - `category`: subject/category identifier; JSON-backed school subjects are
   `history`, `geography`, and `biology`
 - `age_group`: intended age group
+- `chapter_number`: optional positive integer displayed as the `Rozdział X` badge on
+  the quiz card; omit it or set it to `null` to hide the badge
 - `target_question_count`: target number of questions in the final quiz, default `12`
 - `questions_per_topic`: legacy field used by the model and validator, default `2`;
   the current loader does not use it when assembling quizzes

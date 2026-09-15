@@ -832,6 +832,7 @@ def validate_meta_data(
 
     questions_per_topic = data.get("questions_per_topic", 2)
     target_question_count = data.get("target_question_count", 12)
+    chapter_number = data.get("chapter_number")
     topics = data.get("topics")
 
     if not isinstance(questions_per_topic, int) or questions_per_topic <= 0:
@@ -839,6 +840,13 @@ def validate_meta_data(
 
     if not isinstance(target_question_count, int) or target_question_count <= 0:
         result.errors.append(f"{meta_name}: target_question_count must be a positive integer")
+
+    if chapter_number is not None and (
+        isinstance(chapter_number, bool)
+        or not isinstance(chapter_number, int)
+        or chapter_number <= 0
+    ):
+        result.errors.append(f"{meta_name}: chapter_number must be null or a positive integer")
 
     if not isinstance(topics, list):
         result.errors.append(f"{meta_name}: topics must be a list")

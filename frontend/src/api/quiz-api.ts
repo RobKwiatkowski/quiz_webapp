@@ -6,6 +6,7 @@ export interface QuizListItem {
   description: string;
   category: string;
   age_group: string;
+  chapter_number?: number | null;
 }
 
 export type SelectionType =

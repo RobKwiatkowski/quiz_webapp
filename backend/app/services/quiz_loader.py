@@ -138,6 +138,7 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
             description=meta.description,
             category=meta.category,
             age_group=meta.age_group,
+            chapter_number=meta.chapter_number,
             questions=[],
         )
 
@@ -186,6 +187,7 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
         description=meta.description,
         category=meta.category,
         age_group=meta.age_group,
+        chapter_number=meta.chapter_number,
         questions=selected_questions,
     )
 
@@ -212,6 +214,7 @@ def load_quiz_list() -> list[QuizListItem]:
             description=quiz.description,
             category=quiz.category,
             age_group=quiz.age_group,
+            chapter_number=quiz.chapter_number,
         )
         for quiz in load_all_quizzes()
     ]
