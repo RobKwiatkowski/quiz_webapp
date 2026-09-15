@@ -10,6 +10,7 @@ export interface QuizSessionState {
   earnedPoints: number;
   selectedAnswerIndexes: number[];
   openAnswers: string[];
+  fillAnswers: string[];
   feedback: QuizFeedback | null;
   hasAnswered: boolean;
 }
@@ -19,6 +20,7 @@ export const initialQuizSessionState: QuizSessionState = {
   earnedPoints: 0,
   selectedAnswerIndexes: [],
   openAnswers: [],
+  fillAnswers: [],
   feedback: null,
   hasAnswered: false,
 };
@@ -27,6 +29,7 @@ export type QuizSessionAction =
   | { type: "select-answer"; answerIndex: number }
   | { type: "toggle-answer"; answerIndex: number }
   | { type: "set-open-answer"; slotIndex: number; value: string }
+  | { type: "set-fill-answer"; blankIndex: number; value: string }
   | { type: "submit"; feedback: QuizFeedback }
   | { type: "next-question" }
   | { type: "restart" };
@@ -56,6 +59,13 @@ export function quizSessionReducer(
       openAnswers[action.slotIndex] = action.value;
       return { ...state, openAnswers };
     }
+    case "set-fill-answer": {
+      if (state.hasAnswered) return state;
+
+      const fillAnswers = [...state.fillAnswers];
+      fillAnswers[action.blankIndex] = action.value;
+      return { ...state, fillAnswers };
+    }
     case "submit":
       return state.hasAnswered
         ? state
@@ -71,6 +81,7 @@ export function quizSessionReducer(
         currentQuestionIndex: state.currentQuestionIndex + 1,
         selectedAnswerIndexes: [],
         openAnswers: [],
+        fillAnswers: [],
         feedback: null,
         hasAnswered: false,
       };

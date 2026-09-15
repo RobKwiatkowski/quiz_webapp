@@ -64,6 +64,53 @@ def resolve_question_image(question: Question) -> Question:
     return question
 
 
+def calculate_century(year: int) -> int:
+    """Returns the 1-based century for a non-zero BCE or CE year."""
+    if year == 0:
+        raise ValueError("Year zero does not belong to either era")
+    return (abs(year) - 1) // 100 + 1
+
+
+def to_roman(number: int) -> str:
+    """Formats a positive integer as a Roman numeral for learner feedback."""
+    numerals = (
+        (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
+        (100, "C"), (90, "XC"), (50, "L"), (40, "XL"),
+        (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I"),
+    )
+    result = []
+    for value, symbol in numerals:
+        while number >= value:
+            result.append(symbol)
+            number -= value
+    return "".join(result)
+
+
+def resolve_century_question(question: Question) -> Question:
+    """Creates one concrete century question from its configured year range."""
+    if question.selection_type != "century" or question.century_config is None:
+        return question
+
+    config = question.century_config
+    year = random.randint(config.min_year, config.max_year)
+    while year == 0:
+        year = random.randint(config.min_year, config.max_year)
+
+    century = calculate_century(year)
+    era = "p.n.e." if year < 0 else "n.e."
+    roman_century = to_roman(century)
+    displayed_year = abs(year)
+
+    return question.model_copy(
+        update={
+            "text": f"Rok {displayed_year} {era} Zapisz liczbą rzymską, który to wiek.",
+            "explanation": f"Rok {displayed_year} {era} należy do {roman_century} wieku {era}",
+            "century_year": year,
+            "correct_century": century,
+        }
+    )
+
+
 def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
     """Builds a quiz by distributing picks across all chapter topics.
 
@@ -128,7 +175,7 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
             break
 
     selected_questions = [
-        resolve_question_image(question)
+        resolve_century_question(resolve_question_image(question))
         for topic_questions in selected_by_topic
         for question in topic_questions
     ]

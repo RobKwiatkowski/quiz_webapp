@@ -1435,6 +1435,29 @@ body[data-page="quiz"] {
   color: #24364b;
 }
 
+.quiz-play-shell .fill-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #24364b;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.fill-blank-input,
+.fill-blank-select {
+  min-width: 150px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid rgba(36, 54, 75, 0.28);
+  border-radius: 10px;
+  background: #fff;
+  color: #24364b;
+  font: inherit;
+}
+
 .quiz-play-shell .feedback { margin-top: 16px; border-radius: 16px; color: #24364b; }
 .quiz-play-shell .correct-feedback { border-left-color: #147d78; background: #e4f7ec; }
 .quiz-play-shell .incorrect-feedback { border-left-color: #d15b5b; background: #fdecec; }

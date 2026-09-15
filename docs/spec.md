@@ -46,7 +46,7 @@ In scope:
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`, and `hotspot`
+- question types: `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -258,6 +258,35 @@ Fields:
 - `accepted_answers`: non-empty list of accepted answer variants for one input
   field in a multi-slot open question
 
+### `CenturyConfig`
+
+```json
+{
+  "min_year": -1000,
+  "max_year": 2000
+}
+```
+
+Fields:
+
+- `min_year`: inclusive lower year limit; negative values represent years p.n.e.
+- `max_year`: inclusive upper year limit; positive values represent years n.e.
+- year `0` is never generated because it does not belong to either era
+
+### `FillBlank`
+
+```json
+{
+  "id": "direction",
+  "accepted_answers": ["zachód"],
+  "options": ["zachód", "wschód", "północ", "południe"]
+}
+```
+
+- `id`: lowercase identifier referenced exactly once in `text` as `{{id}}`
+- `accepted_answers`: non-empty list of accepted answer variants for this gap
+- `options`: choices for this gap in `select` mode; empty in `open` mode
+
 ### `MapConfig`
 
 ```json
@@ -311,6 +340,11 @@ Fields:
   "answers": [],
   "accepted_answers": [],
   "answer_slots": [],
+  "fill_mode": null,
+  "fill_blanks": [],
+  "century_config": null,
+  "century_year": null,
+  "correct_century": null,
   "order_items": [],
   "matching_pairs": [],
   "map_config": null,
@@ -329,14 +363,20 @@ Fields:
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
-  `single` and `multiple`, required for `open`, `llm`, `order`, `matching`, and
-  `hotspot`
+  `single` and `multiple`, required for `open`, `llm`, `order`, `matching`,
+  `hotspot`, `century`, and `fill`
 - `selection_type`: `single`, `multiple`, `open`, `llm`, `order`, `matching`,
-  `map`, or `hotspot`
+  `map`, `hotspot`, `century`, or `fill`
 - `answers`: answer options for `single` and `multiple` questions
 - `accepted_answers`: accepted values for one-field `open` questions and the
   reference answer for `llm` questions
 - `answer_slots`: answer fields for multi-slot `open` questions
+- `fill_mode`: `select` or `open` interaction for `fill` questions
+- `fill_blanks`: named gaps for `fill` questions, referenced in `text` using
+  `{{id}}`
+- `century_config`: source range for a generated `century` question
+- `century_year`: generated signed year returned in a quiz payload; negative is p.n.e.
+- `correct_century`: generated correct century number returned in a quiz payload
 - `order_items`: sequence items for `order` questions
 - `matching_pairs`: left/right pairs for `matching` questions
 - `map_config`: map asset and target configuration for `map` questions
@@ -485,7 +525,7 @@ Scores are point-based. Maximum points are derived from question structure:
 - `multiple`: 1 point
 - one-field `open`: 1 point
 - multi-slot `open`: one point when every answer slot is correct
-- `llm`, `order`, `matching`, `map`, and `hotspot`: 1 point
+- `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`: 1 point
 
 `single`:
 
@@ -529,6 +569,26 @@ Scores are point-based. Maximum points are derived from question structure:
 - the first `accepted_answers` item is sent as the reference answer
 - LLM points are used directly as the quiz score for the question, usually `0`, `0.5`, or `1`
 - the UI shows the LLM feedback and returned point count
+
+`century`:
+
+- the backend generates a non-zero year from `century_config` when it assembles a quiz
+- the learner sees whether the generated year is p.n.e. or n.e. and types the
+  century number using Roman numerals
+- the correct century uses the same boundary rule in both eras: years 1-100 are
+  century I, 101-200 are century II, and so on
+- the feedback states the generated year, its Roman-numeral century, and its era
+
+`fill`:
+
+- question text contains one or more named blank tokens, for example
+  `Ameryka Północna leży na {{direction}} od Europy.`
+- in `select` mode every blank is a choice list; accepted values must appear in
+  that blank's `options`
+- in `open` mode every blank is a text field and uses the same normalization as
+  `open` questions
+- every gap must be filled and correct in its declared position to earn 1 point;
+  a partial answer earns 0 points
 
 `order`:
 
@@ -680,8 +740,9 @@ The validator checks:
 - `questions` must be a list
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
-- required non-empty `explanation` on `open`, `llm`, `order`, `matching`, and
-  `hotspot` questions; optional `explanation` on `single` and `multiple` questions
+- required non-empty `explanation` on `open`, `llm`, `order`, `matching`,
+  `hotspot`, `century`, and `fill` questions; optional `explanation` on `single` and
+  `multiple` questions
 - valid `selection_type`
 - optional `source_text` structure
 - optional `context` structure
@@ -693,6 +754,9 @@ The validator checks:
   `answer_slots`
 - valid `order_items` for `order`
 - valid `matching_pairs` for `matching`
+- valid `century_config` for `century`
+- valid `fill_mode`, `fill_blanks`, and one matching `{{id}}` token per blank
+  for `fill`
 - valid local SVG source, unique SVG hotspot IDs, and existing target for `hotspot`
 - local image path format and file existence, including every item in image lists
 
@@ -711,7 +775,7 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
-- `open`, `llm`, `order`, `matching`, and `hotspot` questions must include a
+- `open`, `llm`, `order`, `matching`, `hotspot`, `century`, and `fill` questions must include a
   non-empty `explanation`; `single` and `multiple` questions may omit it
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
@@ -722,6 +786,9 @@ Rules:
   1-based positions
 - matching questions use `matching_pairs` with stable pair IDs and unique left
   labels; right labels may repeat for category-style matching
+- century questions use `century_config`; a generated year must never be zero
+- fill questions use `fill_mode` and `fill_blanks`; include every `{{id}}` once
+  in the question text and provide at least two options for `select` blanks
 - hotspot questions use a validated local SVG with stable `data-hotspot-id`
   attributes and a matching `hotspot_config.target_hotspot_id`
 - quiz content should be written for a child aged 10-12
@@ -784,7 +851,8 @@ The admin interface is intentionally plain and functional:
 - its question editor shows only the answer fields relevant to the selected
   question type
 - it supports creating, editing, and deleting `single`, `multiple`, one-field
-  `open`, multi-slot `open`, `llm`, `order`, `matching`, `map`, and `hotspot`
+  `open`, multi-slot `open`, `llm`, `order`, `matching`, `map`, `hotspot`, and
+  `fill` questions
   questions
 - it supports image fields only for `single` and `open` questions
 - it lets the administrator enter source/context text without requiring a
@@ -835,7 +903,7 @@ Possible future extensions:
 The first production version is a working single-player quiz application that
 runs through Docker Compose, shows a quiz list, loads a selected quiz from the
 backend, supports `single`, `multiple`, `open`, `llm`, `order`, `matching`, `map`,
-and `hotspot` questions, handles images and context text, shows immediate feedback and a
+`hotspot`, `century`, and `fill` questions, handles images and context text, shows immediate feedback and a
 point-based final result, keeps quiz content in validated chapter and topic JSON
 files, and includes a minimal authenticated admin panel for editing questions in
 chapter topics.

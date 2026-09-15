@@ -5,6 +5,7 @@ import { getQuizById, type Answer, type Quiz, type QuizQuestion } from "../api/q
 import {
   getFinalGrade,
   getFinalMessage,
+  getFillAnswerPoints,
   getOpenAnswerPoints,
   getQuestionMaxPoints,
   getQuizMaxPoints,
@@ -15,7 +16,7 @@ import {
   quizSessionReducer,
   type QuizFeedback,
 } from "../features/quiz/quiz-session";
-import { LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
+import { CenturyQuestion, LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
 import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
 
@@ -123,6 +124,22 @@ export function QuizPage() {
         earnedPoints,
         maximumPoints,
       });
+      return;
+    }
+
+    if (question.selection_type === "fill") {
+      if (session.fillAnswers.length !== question.fill_blanks.length || session.fillAnswers.some((answer) => !answer?.trim())) {
+        setValidationMessage("Uzupełnij wszystkie luki.");
+        return;
+      }
+
+      const earnedPoints = getFillAnswerPoints(question, session.fillAnswers);
+      completeAnswer({
+        isCorrect: earnedPoints === maximumPoints,
+        explanation: question.explanation ?? "",
+        earnedPoints,
+        maximumPoints,
+      });
     }
   };
 
@@ -143,12 +160,13 @@ export function QuizPage() {
         <AnimatedProgressBar progress={progress} />
         <p className="question-progress-percent">{progress}%</p>
         <QuestionContext question={question} />
-        <h2 id="question-text">{question.text}</h2>
+        <h2 id="question-text">{question.selection_type === "fill" ? "Uzupełnij tekst." : question.text}</h2>
         <QuestionImage question={question} />
         <QuestionRenderer
           question={question}
           selectedAnswerIndexes={session.selectedAnswerIndexes}
           openAnswers={session.openAnswers}
+          fillAnswers={session.fillAnswers}
           hasAnswered={session.hasAnswered}
           onSelectAnswer={(answerIndex) => {
             setValidationMessage(null);
@@ -170,11 +188,15 @@ export function QuizPage() {
             dispatch({ type: "set-open-answer", slotIndex, value });
           }}
           onSubmitOpen={handleCheck}
+          onFillAnswerChange={(blankIndex, value) => {
+            setValidationMessage(null);
+            dispatch({ type: "set-fill-answer", blankIndex, value });
+          }}
           onComplete={completeAnswer}
         />
         {validationMessage && <p className="feedback warning-feedback">{validationMessage}</p>}
         {session.feedback && showFeedbackPanel && <FeedbackPanel feedback={session.feedback} />}
-        {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open") && (
+        {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open" || question.selection_type === "fill") && (
           <button id="check-button" type="button" onClick={handleCheck}>Sprawdź</button>
         )}
         {session.hasAnswered && (
@@ -189,10 +211,12 @@ interface QuestionRendererProps {
   question: QuizQuestion;
   selectedAnswerIndexes: number[];
   openAnswers: string[];
+  fillAnswers: string[];
   hasAnswered: boolean;
   onSelectAnswer: (answerIndex: number) => void;
   onOpenAnswerChange: (slotIndex: number, value: string) => void;
   onSubmitOpen: () => void;
+  onFillAnswerChange: (blankIndex: number, value: string) => void;
   onComplete: (feedback: QuizFeedback) => void;
 }
 
@@ -205,7 +229,12 @@ function QuestionRenderer(props: QuestionRendererProps) {
     return <OpenQuestion {...props} />;
   }
 
+  if (props.question.selection_type === "fill") {
+    return <FillQuestion {...props} />;
+  }
+
   if (props.question.selection_type === "order") return <OrderQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "century") return <CenturyQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "matching") return <MatchingQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
@@ -267,6 +296,58 @@ function OpenQuestion({ question, openAnswers, hasAnswered, onOpenAnswerChange, 
           />
         </label>
       ))}
+    </div>
+  );
+}
+
+function FillQuestion({ question, fillAnswers, hasAnswered, onFillAnswerChange, onSubmitOpen }: QuestionRendererProps) {
+  const blankById = new Map(question.fill_blanks.map((blank, index) => [blank.id, { blank, index }]));
+  const parts = question.text.split(/(\{\{[a-z0-9][a-z0-9_-]*\}\})/gi);
+
+  return (
+    <div className="fill-text" aria-label="Tekst z lukami">
+      {parts.map((part, partIndex) => {
+        const match = /^\{\{([a-z0-9][a-z0-9_-]*)\}\}$/i.exec(part);
+        if (!match) return <span key={partIndex}>{part}</span>;
+
+        const entry = blankById.get(match[1]);
+        if (!entry) return <span key={partIndex}>{part}</span>;
+        const { blank, index } = entry;
+
+        if (question.fill_mode === "select") {
+          return (
+            <select
+              aria-label={`Luka ${index + 1}`}
+              className="fill-blank-select"
+              disabled={hasAnswered}
+              key={blank.id}
+              value={fillAnswers[index] ?? ""}
+              onChange={(event) => onFillAnswerChange(index, event.target.value)}
+            >
+              <option value="">Wybierz…</option>
+              {blank.options.map((option) => <option key={option} value={option}>{option}</option>)}
+            </select>
+          );
+        }
+
+        return (
+          <input
+            aria-label={`Luka ${index + 1}`}
+            className="fill-blank-input"
+            disabled={hasAnswered}
+            key={blank.id}
+            type="text"
+            value={fillAnswers[index] ?? ""}
+            onChange={(event) => onFillAnswerChange(index, event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                onSubmitOpen();
+              }
+            }}
+          />
+        );
+      })}
     </div>
   );
 }

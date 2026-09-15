@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -17,7 +18,11 @@ ALLOWED_SELECTION_TYPES = {
     "matching",
     "map",
     "hotspot",
+    "century",
+    "fill",
 }
+
+FILL_BLANK_TOKEN = re.compile(r"\{\{([a-z][a-z0-9_-]*)\}\}")
 
 
 @dataclass
@@ -337,6 +342,82 @@ def validate_answer_slots_structure(
         validate_open_answers_structure(slot.get("accepted_answers"), result, slot_context)
 
 
+def validate_fill_blanks_structure(
+    text: Any,
+    fill_mode: Any,
+    fill_blanks: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates named gaps and their references in a fill-in-the-blanks question."""
+    if fill_mode not in {"select", "open"}:
+        result.errors.append(f"{context}: fill_mode must be 'select' or 'open'")
+
+    if not isinstance(fill_blanks, list) or not fill_blanks:
+        result.errors.append(f"{context}: fill_blanks must be a non-empty list")
+        return
+
+    blank_ids: list[str] = []
+    for index, blank in enumerate(fill_blanks):
+        blank_context = f"{context} -> fill_blanks[{index}]"
+        if not isinstance(blank, dict):
+            result.errors.append(f"{blank_context}: blank must be an object")
+            continue
+
+        blank_id = blank.get("id")
+        if not isinstance(blank_id, str) or not re.fullmatch(r"[a-z][a-z0-9_-]*", blank_id):
+            result.errors.append(f"{blank_context}: id must use lowercase letters, digits, '-' or '_'")
+        elif blank_id in blank_ids:
+            result.errors.append(f"{blank_context}: duplicate blank id '{blank_id}'")
+        else:
+            blank_ids.append(blank_id)
+
+        validate_open_answers_structure(blank.get("accepted_answers"), result, blank_context)
+        options = blank.get("options", [])
+        if fill_mode == "select":
+            if not isinstance(options, list) or len(options) < 2 or any(
+                not is_non_empty_string(option) for option in options
+            ):
+                result.errors.append(f"{blank_context}: select options must contain at least 2 non-empty strings")
+            elif len(set(options)) != len(options):
+                result.errors.append(f"{blank_context}: select options must not contain duplicates")
+            elif any(answer not in options for answer in blank.get("accepted_answers", [])):
+                result.errors.append(f"{blank_context}: every accepted answer must be included in options")
+        elif options not in (None, []):
+            result.warnings.append(f"{blank_context}: open blank should not contain options")
+
+    if not isinstance(text, str):
+        return
+
+    tokens = FILL_BLANK_TOKEN.findall(text)
+    if text.count("{{") != len(tokens) or text.count("}}") != len(tokens):
+        result.errors.append(f"{context}: fill question contains an invalid blank token")
+    elif tokens != blank_ids:
+        result.errors.append(
+            f"{context}: text tokens must list every fill blank exactly once and in fill_blanks order"
+        )
+
+
+def validate_century_config(
+    century_config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates a non-empty BCE/CE year range for generated century questions."""
+    if not isinstance(century_config, dict):
+        result.errors.append(f"{context}: century_config must be an object")
+        return
+
+    min_year = century_config.get("min_year")
+    max_year = century_config.get("max_year")
+    if not isinstance(min_year, int) or not isinstance(max_year, int):
+        result.errors.append(f"{context}: century_config years must be integers")
+    elif min_year > max_year:
+        result.errors.append(f"{context}: century_config.min_year must not exceed max_year")
+    elif min_year == 0 and max_year == 0:
+        result.errors.append(f"{context}: century_config cannot contain only year zero")
+
+
 def validate_order_items_structure(
     order_items: Any,
     result: ValidationResult,
@@ -531,6 +612,9 @@ def validate_question(
     matching_pairs = question.get("matching_pairs")
     map_config = question.get("map_config")
     hotspot_config = question.get("hotspot_config")
+    century_config = question.get("century_config")
+    fill_mode = question.get("fill_mode")
+    fill_blanks = question.get("fill_blanks")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, result, context)
@@ -630,6 +714,45 @@ def validate_question(
                 "order_items",
                 "matching_pairs",
                 "map_config",
+            ],
+        )
+
+    elif selection_type == "century":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_century_config(century_config, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+            ],
+        )
+
+    elif selection_type == "fill":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_fill_blanks_structure(text, fill_mode, fill_blanks, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
             ],
         )
 

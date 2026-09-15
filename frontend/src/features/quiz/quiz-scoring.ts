@@ -63,6 +63,18 @@ export function getOpenAnswerPoints(question: QuizQuestion, rawValues: string[])
   return unmatchedSlots.length === 0 ? 1 : 0;
 }
 
+export function getFillAnswerPoints(question: QuizQuestion, rawValues: string[]): number {
+  if (rawValues.length !== question.fill_blanks.length) return 0;
+
+  const allCorrect = question.fill_blanks.every((blank, index) => {
+    const userAnswer = normalizeOpenAnswer(question, rawValues[index] ?? "");
+    const acceptedAnswers = blank.accepted_answers.map((answer) => normalizeOpenAnswer(question, answer));
+    return acceptedAnswers.includes(userAnswer);
+  });
+
+  return allCorrect ? 1 : 0;
+}
+
 export function getScorePercentage(score: number, maximum: number): number {
   return maximum === 0 ? 0 : Math.round((score / maximum) * 100);
 }

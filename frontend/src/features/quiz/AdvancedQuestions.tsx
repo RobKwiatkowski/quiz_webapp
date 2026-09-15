@@ -181,6 +181,46 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
   );
 }
 
+export function CenturyQuestion({ question, disabled, onComplete }: Props) {
+  const [answer, setAnswer] = useState("");
+  const [message, setMessage] = useState("");
+  const correctAnswer = question.correct_century ? toRoman(question.correct_century) : "";
+
+  const check = () => {
+    if (!answer.trim()) {
+      setMessage("Wpisz liczbę rzymską.");
+      return;
+    }
+
+    const isCorrect = correctAnswer !== "" && normalizeRomanAnswer(answer) === correctAnswer;
+    setMessage("");
+    onComplete(feedback(isCorrect, question));
+  };
+
+  return (
+    <div className="advanced-question">
+      <label className="open-answer-label">
+        Wpisz liczbę rzymską oznaczającą wiek
+        <input
+          disabled={disabled}
+          value={answer}
+          placeholder="Np. V"
+          aria-label="Liczba rzymska oznaczająca wiek"
+          onChange={(event) => setAnswer(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              check();
+            }
+          }}
+        />
+      </label>
+      {message && <p className="feedback warning-feedback">{message}</p>}
+      {!disabled && <button className="quiz-action" onClick={check} type="button">Sprawdź</button>}
+    </div>
+  );
+}
+
 export function MatchingQuestion({ question, disabled, onComplete }: Props) {
   const choices = useMemo(() => shuffle([...new Set(question.matching_pairs.map((pair) => pair.right))]), [question.id, question.matching_pairs]);
   const pairs = useMemo(() => shuffle(question.matching_pairs), [question.id, question.matching_pairs]);
@@ -221,6 +261,8 @@ interface Props { question: QuizQuestion; disabled: boolean; onComplete: (feedba
 interface DropTarget { itemId: string | null; placeAfter: boolean; }
 function feedback(isCorrect: boolean, question: QuizQuestion): QuizFeedback { return { isCorrect, explanation: question.explanation ?? "", earnedPoints: isCorrect ? 1 : 0, maximumPoints: 1 }; }
 function shuffle<T>(items: readonly T[]): T[] { const result = [...items]; for (let index = result.length - 1; index > 0; index -= 1) { const other = Math.floor(Math.random() * (index + 1)); [result[index], result[other]] = [result[other], result[index]]; } return result; }
+function normalizeRomanAnswer(value: string): string { return value.trim().toUpperCase().replace(/[.\s]+/g, ""); }
+function toRoman(number: number): string { const numerals: Array<[number, string]> = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"], [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]]; let result = ""; for (const [value, symbol] of numerals) { while (number >= value) { result += symbol; number -= value; } } return result; }
 
 function JumpingDotsLoader() {
   return (

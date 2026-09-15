@@ -332,12 +332,31 @@ def normalize_admin_question(
             "source": str(hotspot_config.get("source", "")).strip(),
             "target_hotspot_id": str(hotspot_config.get("target_hotspot_id", "")).strip(),
         }
+    elif selection_type == "fill":
+        question["fill_mode"] = str(payload.get("fill_mode", "")).strip()
+        question["fill_blanks"] = [
+            {
+                "id": str(blank.get("id", "")).strip(),
+                "accepted_answers": [
+                    str(answer).strip()
+                    for answer in blank.get("accepted_answers", [])
+                    if str(answer).strip()
+                ],
+                "options": [
+                    str(option).strip()
+                    for option in blank.get("options", [])
+                    if str(option).strip()
+                ],
+            }
+            for blank in payload.get("fill_blanks", [])
+            if isinstance(blank, dict)
+        ]
     else:
         raise HTTPException(
             status_code=400,
             detail=(
                 "Admin supports only single, multiple, open, llm, order, matching, "
-                "map, and hotspot questions"
+                "map, hotspot, and fill questions"
             ),
         )
 

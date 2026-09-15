@@ -66,6 +66,25 @@ class AnswerSlot(BaseModel):
     accepted_answers: List[str]
 
 
+class FillBlank(BaseModel):
+    """One named gap in a fill-in-the-blanks question.
+
+    ``id`` is referenced from the question text as ``{{id}}``. In ``select``
+    mode, ``options`` contains the values displayed in the select control.
+    """
+
+    id: str
+    accepted_answers: List[str]
+    options: List[str] = Field(default_factory=list)
+
+
+class CenturyConfig(BaseModel):
+    """Range of years used to generate a century-calculation question."""
+
+    min_year: int
+    max_year: int
+
+
 class MapConfig(BaseModel):
     """Configuration for map-based questions.
 
@@ -109,6 +128,11 @@ class Question(BaseModel):
         answers: Options for single/multiple questions.
         accepted_answers: Accepted values for open questions.
         answer_slots: Slots for multi-field open questions.
+        fill_mode: Interaction mode for fill-in-the-blanks questions.
+        fill_blanks: Named gaps used by fill-in-the-blanks questions.
+        century_config: Year range used by generated century questions.
+        century_year: Generated signed year; negative values are BCE.
+        correct_century: Correct century number for a generated century question.
         order_items: Items to arrange for order questions.
         matching_pairs: Left/right pairs for matching questions.
         map_config: Configuration for map questions.
@@ -123,11 +147,16 @@ class Question(BaseModel):
     image: str | List[str] | None = None
     explanation: Optional[str] = None
     selection_type: Literal[
-        "single", "multiple", "open", "llm", "order", "matching", "map", "hotspot"
+        "single", "multiple", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill"
     ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
     answer_slots: List[AnswerSlot] = Field(default_factory=list)
+    fill_mode: Optional[Literal["select", "open"]] = None
+    fill_blanks: List[FillBlank] = Field(default_factory=list)
+    century_config: Optional[CenturyConfig] = None
+    century_year: Optional[int] = None
+    correct_century: Optional[int] = None
     order_items: List[OrderItem] = Field(default_factory=list)
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
     map_config: Optional[MapConfig] = None

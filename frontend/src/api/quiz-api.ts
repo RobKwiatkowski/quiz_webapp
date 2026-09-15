@@ -16,7 +16,9 @@ export type SelectionType =
   | "order"
   | "matching"
   | "map"
-  | "hotspot";
+  | "hotspot"
+  | "century"
+  | "fill";
 
 export interface Answer {
   text: string;
@@ -25,6 +27,17 @@ export interface Answer {
 
 export interface AnswerSlot {
   accepted_answers: string[];
+}
+
+export interface FillBlank {
+  id: string;
+  accepted_answers: string[];
+  options: string[];
+}
+
+export interface CenturyConfig {
+  min_year: number;
+  max_year: number;
 }
 
 export interface OrderItem {
@@ -68,6 +81,11 @@ export interface QuizQuestion {
   answers: Answer[];
   accepted_answers: string[];
   answer_slots: AnswerSlot[];
+  fill_mode?: "select" | "open" | null;
+  fill_blanks: FillBlank[];
+  century_config?: CenturyConfig | null;
+  century_year?: number | null;
+  correct_century?: number | null;
   order_items: OrderItem[];
   matching_pairs: MatchingPair[];
   map_config?: MapConfig | null;
