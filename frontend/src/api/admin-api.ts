@@ -2,7 +2,7 @@ import { getRuntimeConfig } from "../runtime-config";
 import type { QuizQuestion, SelectionType } from "./quiz-api";
 
 export interface AdminSubject { id: string; title: string; }
-export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; }
+export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; target_question_count: number; }
 export interface AdminTopic { id: string; title: string; }
 export interface AdminQuestion extends QuizQuestion { id: string; }
 
@@ -42,6 +42,9 @@ export const adminApi = {
   }),
   updateChapterNumber: (chapterId: string, chapterNumber: number | null) => request<AdminChapter>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/chapter-number`, {
     method: "PUT", body: JSON.stringify({ chapter_number: chapterNumber }),
+  }),
+  updateTargetQuestionCount: (chapterId: string, targetQuestionCount: number) => request<AdminChapter>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/target-question-count`, {
+    method: "PUT", body: JSON.stringify({ target_question_count: targetQuestionCount }),
   }),
   topics: (chapterId: string) => request<AdminTopic[]>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics`),
   createTopic: (chapterId: string, name: string) => request<AdminTopic>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics`, {

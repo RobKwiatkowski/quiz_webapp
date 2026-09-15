@@ -69,6 +69,7 @@ def list_admin_chapters(subject: str | None = None) -> list[dict[str, Any]]:
                 "title": meta.title,
                 "subject": meta.category,
                 "chapter_number": meta.chapter_number,
+                "target_question_count": meta.target_question_count,
             }
         )
     return chapters
@@ -114,7 +115,13 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, Any]:
         shutil.rmtree(chapter_dir)
         raise
 
-    return {"id": chapter_id, "title": name, "subject": subject, "chapter_number": None}
+    return {
+        "id": chapter_id,
+        "title": name,
+        "subject": subject,
+        "chapter_number": None,
+        "target_question_count": 12,
+    }
 
 
 def normalize_subject(value: Any) -> str:
@@ -144,6 +151,27 @@ def update_chapter_number(chapter_id: str, chapter_number: int | None) -> dict[s
         "title": meta.title,
         "subject": meta.category,
         "chapter_number": meta.chapter_number,
+        "target_question_count": meta.target_question_count,
+    }
+
+
+def update_target_question_count(chapter_id: str, target_question_count: int) -> dict[str, Any]:
+    """Sets the number of questions randomly selected for a chapter quiz."""
+    chapter_dir = get_chapter_dir(chapter_id)
+    meta_path = chapter_dir / "meta.json"
+    with open(meta_path, "r", encoding="utf-8") as f:
+        meta_data = json.load(f)
+
+    meta_data["target_question_count"] = target_question_count
+    save_meta_data(chapter_dir, meta_data)
+
+    meta = load_chapter_meta(chapter_dir)
+    return {
+        "id": meta.id,
+        "title": meta.title,
+        "subject": meta.category,
+        "chapter_number": meta.chapter_number,
+        "target_question_count": meta.target_question_count,
     }
 
 

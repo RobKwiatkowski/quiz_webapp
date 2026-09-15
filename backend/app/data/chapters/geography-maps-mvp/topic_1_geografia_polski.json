@@ -446,6 +446,84 @@
         "w Gorzowie Wielkopolskim"
       ],
       "explanation": "Na mapie zaznaczono Gorzów Wielkopolski."
+    },
+    {
+      "id": "geo-miasto-na-mapie-lublin",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-lublin.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Lublin",
+        "w Lublinie"
+      ],
+      "explanation": "Na mapie zaznaczono Lublin."
+    },
+    {
+      "id": "geo-miasto-na-mapie-rzeszow",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-rzeszow.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Rzeszów",
+        "Rzeszow",
+        "w Rzeszowie"
+      ],
+      "explanation": "Na mapie zaznaczono Rzeszów."
+    },
+    {
+      "id": "geo-miasto-na-mapie-opole",
+      "text": "Jakie miasto zaznaczono na mapie?",
+      "image": "/static/images/geography/poland-city-opole.svg",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Opole",
+        "w Opolu"
+      ],
+      "explanation": "Na mapie zaznaczono Opole."
+    },
+    {
+      "id": "geo-woj-dwie-stolice-kujawsko-pomorskie",
+      "text": "Wpisz dwa miasta wojewódzkie województwa kujawsko-pomorskiego.",
+      "selection_type": "open",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Bydgoszcz",
+            "w Bydgoszczy"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Toruń",
+            "Torun",
+            "w Toruniu"
+          ]
+        }
+      ],
+      "explanation": "Miasta wojewódzkie województwa kujawsko-pomorskiego to Bydgoszcz i Toruń."
+    },
+    {
+      "id": "geo-woj-dwie-stolice-lubuskie",
+      "text": "Wpisz dwa miasta wojewódzkie województwa lubuskiego.",
+      "selection_type": "open",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Gorzów Wielkopolski",
+            "Gorzow Wielkopolski",
+            "w Gorzowie Wielkopolskim"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Zielona Góra",
+            "Zielona Gora",
+            "w Zielonej Górze",
+            "w Zielonej Gorze"
+          ]
+        }
+      ],
+      "explanation": "Miasta wojewódzkie województwa lubuskiego to Gorzów Wielkopolski i Zielona Góra."
     }
   ]
 }

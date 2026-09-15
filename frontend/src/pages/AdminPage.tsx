@@ -129,7 +129,7 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
     <Breadcrumb subject={subject} chapter={chapter} topic={topic} onChapters={() => { setChapter(null); setTopic(null); setEditorQuestion(undefined); }} onTopics={() => { setTopic(null); setEditorQuestion(undefined); }} />
     {message && <p className="status">{message}</p>}{error && <p className="status error">{error}</p>}
     {!isQuestionEditorOpen && view === "chapters" && <section className="admin-panel"><div className="subject-tabs" aria-label="Przedmiot">{subjects.map((item) => <button aria-pressed={item.id === subject?.id} className="subject-tab" key={item.id} onClick={() => setSubject(item)} type="button">{item.title}</button>)}</div><div className="section-header"><h2>Rozdziały: {subject?.title ?? "Przedmiot"}</h2><button onClick={addChapter} type="button">+ Dodaj rozdział</button></div><ItemList empty="Brak rozdziałów. Dodaj pierwszy rozdział." items={chapters} onSelect={chooseChapter} /></section>}
-    {!isQuestionEditorOpen && view === "topics" && chapter && <><ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><section className="admin-panel"><div className="section-header"><h2>{chapter.title}</h2><button onClick={addTopic} type="button">+ Dodaj temat</button></div><ItemList empty="Ten rozdział nie ma jeszcze tematów. Dodaj pierwszy temat." items={topics} onSelect={chooseTopic} /></section></>}
+    {!isQuestionEditorOpen && view === "topics" && chapter && <><ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><TargetQuestionCountEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano liczbę losowanych pytań."); }} /><section className="admin-panel"><div className="section-header"><h2>{chapter.title}</h2><button onClick={addTopic} type="button">+ Dodaj temat</button></div><ItemList empty="Ten rozdział nie ma jeszcze tematów. Dodaj pierwszy temat." items={topics} onSelect={chooseTopic} /></section></>}
     {!isQuestionEditorOpen && view === "questions" && <section className="admin-panel"><div className="section-header"><div><h2>{topic?.title ?? "Pytania"}</h2><p className="question-count">{formatQuestionCount(questions.length)}</p></div><button onClick={() => setEditorQuestion(null)} type="button">+ Dodaj pytanie</button></div>{questions.length === 0 ? <p className="empty-state">Ten temat nie ma jeszcze pytań. Dodaj pierwsze pytanie.</p> : <div className="question-list">{questions.map((item, index) => <div className="question-row" key={item.id}><span className="question-number">{index + 1}.</span><span className="question-text">{item.text}</span><span className="question-actions"><button className="secondary-button" onClick={() => setEditorQuestion(item)} type="button">Edytuj</button><button className="delete-button" onClick={() => deleteQuestion(item)} type="button">Usuń</button></span></div>)}</div>}</section>}
     {isQuestionEditorOpen && chapter && topic && <QuestionEditor question={editorQuestion} subject={subject} chapter={chapter} topic={topic} onCancel={() => setEditorQuestion(undefined)} onSave={async (payload) => { try { if (editorQuestion) await adminApi.updateQuestion(chapter.id, topic.id, editorQuestion.id, payload); else await adminApi.createQuestion(chapter.id, topic.id, payload); await loadQuestions(chapter, topic); setEditorQuestion(undefined); setMessage("Zapisano pytanie."); } catch (reason) { throw reason; } }} />}
   </main>;
@@ -161,6 +161,29 @@ function ChapterNumberEditor({ chapter, onUpdated }: { chapter: AdminChapter; on
   };
 
   return <section className="admin-panel chapter-number-panel"><h2>Plakietka rozdziału</h2><p>Numer jest widoczny na karcie quizu jako „Rozdział X”. Puste pole ukrywa plakietkę.</p><label className="form-field compact-field">Numer rozdziału<input min="1" onChange={(event) => setValue(event.target.value)} type="number" value={value} /></label><button disabled={saving} onClick={save} type="button">Zapisz numer</button>{error && <p className="status error">{error}</p>}</section>;
+}
+
+function TargetQuestionCountEditor({ chapter, onUpdated }: { chapter: AdminChapter; onUpdated: (chapter: AdminChapter) => void }) {
+  const [value, setValue] = useState(chapter.target_question_count.toString());
+  const [error, setError] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => { setValue(chapter.target_question_count.toString()); setError(""); }, [chapter.id, chapter.target_question_count]);
+
+  const save = async () => {
+    const targetQuestionCount = Number(value.trim());
+    if (!Number.isInteger(targetQuestionCount) || targetQuestionCount < 1) {
+      setError("Wpisz dodatnią liczbę całkowitą.");
+      return;
+    }
+
+    setSaving(true); setError("");
+    try { onUpdated(await adminApi.updateTargetQuestionCount(chapter.id, targetQuestionCount)); }
+    catch (reason) { setError(reason instanceof Error ? reason.message : "Nie udało się zapisać liczby pytań."); }
+    finally { setSaving(false); }
+  };
+
+  return <section className="admin-panel chapter-number-panel"><h2>Liczba losowanych pytań</h2><p>Quiz wylosuje tyle pytań ze wszystkich tematów tego rozdziału, o ile dostępnych jest ich wystarczająco dużo.</p><label className="form-field compact-field">Liczba pytań<input min="1" onChange={(event) => setValue(event.target.value)} type="number" value={value} /></label><button disabled={saving} onClick={save} type="button">Zapisz liczbę pytań</button>{error && <p className="status error">{error}</p>}</section>;
 }
 
 function ItemList<T extends { id: string; title: string }>({ empty, items, onSelect }: { empty: string; items: T[]; onSelect: (item: T) => void }) {

@@ -36,8 +36,27 @@ export function QuizPage() {
   const [loadState, setLoadState] = useState<QuizLoadState>({ status: "loading" });
   const [session, dispatch] = useReducer(quizSessionReducer, initialQuizSessionState);
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
+  const nextActionRef = useRef<(() => void) | null>(null);
   const quizId = new URLSearchParams(window.location.search).get("id");
   const section = new URLSearchParams(window.location.search).get("section") ?? "history";
+
+  nextActionRef.current = null;
+
+  useEffect(() => {
+    const advanceWithEnter = (event: KeyboardEvent) => {
+      if (event.key !== "Enter" || event.repeat || event.isComposing) return;
+
+      const nextAction = nextActionRef.current;
+      if (!nextAction) return;
+
+      event.preventDefault();
+      nextActionRef.current = null;
+      nextAction();
+    };
+
+    window.addEventListener("keydown", advanceWithEnter, true);
+    return () => window.removeEventListener("keydown", advanceWithEnter, true);
+  }, []);
 
   useEffect(() => {
     if (!quizId) {
@@ -95,6 +114,8 @@ export function QuizPage() {
     }
     dispatch({ type: "next-question" });
   };
+
+  if (session.hasAnswered) nextActionRef.current = handleNextQuestion;
 
   const handleCheck = () => {
     if (question.selection_type === "multiple") {

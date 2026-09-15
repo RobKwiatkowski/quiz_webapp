@@ -18,8 +18,13 @@ const cities = [
   {id: "szczecin", longitude: 14.5528, latitude: 53.4285},
   {id: "bialystok", longitude: 23.1688, latitude: 53.1325},
   {id: "kielce", longitude: 20.6286, latitude: 50.8661},
-  {id: "bydgoszcz", longitude: 18.0084, latitude: 53.1235},
-  {id: "gorzow-wielkopolski", longitude: 15.2288, latitude: 52.7368},
+  {id: "bydgoszcz", longitude: 18.0084, latitude: 53.1235, secondaryMarkerId: "torun"},
+  {id: "gorzow-wielkopolski", longitude: 15.2288, latitude: 52.7368, secondaryMarkerId: "zielona-gora"},
+  {id: "lublin", longitude: 22.5667, latitude: 51.2465},
+  {id: "rzeszow", longitude: 22.0047, latitude: 50.0412},
+  {id: "opole", longitude: 17.9213, latitude: 50.6751},
+  {id: "torun", longitude: 18.5984, latitude: 53.0138, secondaryMarkerId: "bydgoszcz"},
+  {id: "zielona-gora", longitude: 15.5062, latitude: 51.9356, secondaryMarkerId: "gorzow-wielkopolski"},
 ];
 
 function visitCoordinates(coordinates, visit) {
@@ -126,20 +131,33 @@ function getGeometryPathData(geometry, bounds, viewBox) {
   return "";
 }
 
-function renderCitySvg(geojson, city, bounds, viewBox) {
+function renderPrimaryMarker(point) {
+  return `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="24" fill="#d15b5b" stroke="#ffffff" stroke-width="8"/>`;
+}
+
+function renderSecondaryMarker(point) {
+  return `<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="18" fill="none" stroke="#d15b5b" stroke-width="6" stroke-dasharray="10 8"/>`;
+}
+
+function renderCitySvg(geojson, city, citiesById, bounds, viewBox) {
   const paths = (geojson.features || [])
     .map((feature) => getGeometryPathData(feature.geometry, bounds, viewBox))
     .filter(Boolean)
     .map((pathData) => `<path d="${pathData}" fill="#e9edf1" stroke="#536b7c" stroke-width="1.4" vector-effect="non-scaling-stroke" fill-rule="evenodd"/>`)
     .join("\n    ");
   const point = projectCoordinate(city.longitude, city.latitude, bounds, viewBox);
+  const secondaryCity = city.secondaryMarkerId ? citiesById.get(city.secondaryMarkerId) : null;
+  const secondaryPoint = secondaryCity
+    ? projectCoordinate(secondaryCity.longitude, secondaryCity.latitude, bounds, viewBox)
+    : null;
+  const secondaryMarker = secondaryPoint ? `  ${renderSecondaryMarker(secondaryPoint)}\n` : "";
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${viewBox.width} ${viewBox.height}" role="img" aria-label="Mapa Polski z zaznaczonym miastem">
   <rect width="100%" height="100%" fill="#e6f4fa"/>
   <g>
     ${paths}
   </g>
-  <circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="24" fill="#d15b5b" stroke="#ffffff" stroke-width="8"/>
+${secondaryMarker}  ${renderPrimaryMarker(point)}
 </svg>
 `;
 }
@@ -147,13 +165,14 @@ function renderCitySvg(geojson, city, bounds, viewBox) {
 const geojson = JSON.parse(await readFile(mapPath, "utf8"));
 const bounds = getGeoJsonBounds(geojson);
 const viewBox = getMapViewBox(bounds);
+const citiesById = new Map(cities.map((city) => [city.id, city]));
 
 await mkdir(outputDir, {recursive: true});
 
 await Promise.all(cities.map((city) =>
   writeFile(
     path.join(outputDir, `poland-city-${city.id}.svg`),
-    renderCitySvg(geojson, city, bounds, viewBox),
+    renderCitySvg(geojson, city, citiesById, bounds, viewBox).replace(/\n/g, "\r\n"),
     "utf8"
   )
 ));

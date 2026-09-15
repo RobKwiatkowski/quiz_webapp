@@ -27,6 +27,7 @@ from app.services.admin_content import (
     list_admin_subjects,
     list_admin_topics,
     update_chapter_number,
+    update_target_question_count,
     update_question,
 )
 
@@ -53,6 +54,12 @@ class ChapterNumberRequest(BaseModel):
     """Optional number displayed in the chapter badge."""
 
     chapter_number: int | None = Field(default=None, ge=1)
+
+
+class TargetQuestionCountRequest(BaseModel):
+    """Requested number of questions randomly selected for a chapter quiz."""
+
+    target_question_count: int = Field(ge=1)
 
 
 @admin_pages_router.get("/admin")
@@ -123,6 +130,12 @@ def post_chapter(payload: NameRequest):
 def put_chapter_number(chapter_id: str, payload: ChapterNumberRequest):
     """Updates the optional chapter badge number."""
     return update_chapter_number(chapter_id, payload.chapter_number)
+
+
+@router.put("/chapters/{chapter_id}/target-question-count", dependencies=[Depends(require_admin)])
+def put_target_question_count(chapter_id: str, payload: TargetQuestionCountRequest):
+    """Updates the number of questions randomly selected for a chapter quiz."""
+    return update_target_question_count(chapter_id, payload.target_question_count)
 
 
 @router.get("/chapters/{chapter_id}/topics", dependencies=[Depends(require_admin)])

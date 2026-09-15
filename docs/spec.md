@@ -158,6 +158,8 @@ Endpoints:
 - `POST /api/admin/chapters` creates a chapter
 - `PUT /api/admin/chapters/{chapter_id}/chapter-number` sets or clears the optional
   chapter badge number
+- `PUT /api/admin/chapters/{chapter_id}/target-question-count` sets the number of
+  questions randomly selected for the chapter quiz
 - `GET /api/admin/chapters/{chapter_id}/topics` lists editable topics
 - `POST /api/admin/chapters/{chapter_id}/topics` creates a topic in a chapter
 - `GET /api/admin/chapters/{chapter_id}/topics/{topic_id}/questions` lists questions
@@ -851,6 +853,8 @@ The admin interface is intentionally plain and functional:
   entering only a chapter name
 - it supports creating topics inside the currently selected chapter by entering
   only a topic name
+- it lets the administrator set the number of questions randomly selected for a
+  chapter quiz
 - it lists questions without exposing filenames, JSON structure, question IDs, or
   selection internals
 - its question editor shows only the answer fields relevant to the selected
