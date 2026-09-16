@@ -1,6 +1,6 @@
 import type { QuizListItem } from "../../api/quiz-api";
 
-export type SubjectId = "history" | "geography" | "biology";
+export type SubjectId = "history" | "geography" | "biology" | "math";
 
 export interface SubjectConfig {
   id: SubjectId;
@@ -31,6 +31,13 @@ export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
     description: "Wybierz quiz i rozpocznij naukę.",
     emptyText: "Brak dostępnych quizów z biologii.",
     categories: ["biology"],
+  },
+  math: {
+    id: "math",
+    title: "Matematyka",
+    description: "Ćwicz rachunki i poznawaj sposoby rozwiązywania zadań krok po kroku.",
+    emptyText: "Brak dostępnych quizów z matematyki.",
+    categories: ["math"],
   },
 };
 

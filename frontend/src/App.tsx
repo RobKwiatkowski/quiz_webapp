@@ -8,6 +8,7 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
   history: { label: "Opowieści, daty i decyzje", accent: "home-card-history" },
   geography: { label: "Mapy, miejsca i świat", accent: "home-card-geography" },
   biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
+  math: { label: "Liczby, działania i logika", accent: "home-card-math" },
 };
 
 export function App() {

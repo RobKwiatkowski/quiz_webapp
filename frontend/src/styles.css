@@ -1010,7 +1010,7 @@ textarea {
 
 .home-subject-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -1389,6 +1389,10 @@ body[data-page="quiz"] {
   height: 5px;
   border-radius: 0 0 999px 0;
   background: #e7b55a;
+}
+
+.home-card-math {
+  --subject-accent: #6d4cc4;
 }
 
 .quiz-reset-button {
@@ -1825,6 +1829,158 @@ body[data-page="quiz"] {
   background: #fff8ec;
   color: #3d4f64;
   font-weight: 700;
+}
+
+.written-multiplication {
+  --digit-size: clamp(2.45rem, 7vw, 3.35rem);
+  --digit-gap: clamp(0.28rem, 1.2vw, 0.55rem);
+  --row-label-space: clamp(7.5rem, 18vw, 10rem);
+  margin-top: 0.75rem;
+}
+
+.written-multiplication-instruction {
+  margin: 0 0 1rem;
+  color: #607083;
+  font-weight: 700;
+}
+
+.written-multiplication-sheet {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem clamp(0.5rem, 3vw, 2rem);
+  color: #18314d;
+}
+
+.multiplication-scratch-block {
+  display: grid;
+  justify-items: end;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+  margin-right: var(--row-label-space);
+}
+
+.multiplication-scratch-block > span {
+  color: #66778a;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.multiplication-number {
+  min-height: var(--digit-size);
+  padding-right: 0.15rem;
+  text-align: right;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: clamp(2.1rem, 8vw, 3.5rem);
+  font-weight: 850;
+  letter-spacing: calc(var(--digit-gap) + 0.12rem);
+  line-height: 1.08;
+  margin-right: var(--row-label-space);
+}
+
+.multiplier-number {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.multiplier-number > span {
+  margin-right: auto;
+  font-family: Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+.multiplication-rule {
+  width: calc(100% - var(--row-label-space));
+  height: 3px;
+  margin: 0.55rem 0;
+  border-radius: 999px;
+  background: #18314d;
+}
+
+.multiplication-partials {
+  position: relative;
+  display: grid;
+  gap: 0.45rem;
+  padding-right: var(--row-label-space);
+}
+
+.multiplication-partial-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(var(--place-offset) * (var(--digit-size) + var(--digit-gap)));
+}
+
+.multiplication-digit-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--digit-size);
+  gap: var(--digit-gap);
+  justify-content: end;
+}
+
+.multiplication-digit-input {
+  width: var(--digit-size);
+  height: var(--digit-size);
+  box-sizing: border-box;
+  border: 2px solid #47617e;
+  border-radius: 9px;
+  background: #fff;
+  color: #18314d;
+  text-align: center;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 850;
+  transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.multiplication-digit-input:focus {
+  border-color: #147d78;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgb(20 125 120 / 18%);
+}
+
+.multiplication-digit-input:disabled { opacity: 1; }
+.multiplication-digit-input.digit-correct { border-color: #3f9d72; background: #e4f7ec; }
+.multiplication-digit-input.digit-incorrect { border-color: #cf5b5b; background: #fdecec; }
+
+.multiplication-row-label {
+  position: absolute;
+  left: calc(100% - clamp(7rem, 17vw, 9.5rem));
+  top: 50%;
+  color: #66778a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.multiplication-result-row {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--row-label-space);
+}
+
+.multiplication-result-row .multiplication-row-label { top: 50%; }
+
+.written-multiplication > .quiz-action {
+  min-height: 46px;
+  margin-top: 1rem;
+  border: 0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #147d78;
+  color: #fff;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .written-multiplication { --row-label-space: 0rem; }
+  .multiplication-partials,
+  .multiplication-result-row { padding-right: 0; }
+  .multiplication-row-label { display: none; }
 }
 
 @media (max-width: 600px) {

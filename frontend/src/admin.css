@@ -24,6 +24,8 @@
 .subject-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .subject-tab { border: 1px solid #cbd5e1 !important; background: #fff !important; color: #1e293b !important; }
 .subject-tab[aria-pressed="true"] { border-color: #2563eb !important; background: #2563eb !important; color: #fff !important; }
+.compact-settings-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .compact-settings-grid { grid-template-columns: 1fr; } }
 .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; color: #475569; font-size: 14px; font-weight: 700; }
 .breadcrumb-separator { color: #94a3b8; }
 .admin-shell .link-button { padding: 0; background: transparent; color: #2563eb; }

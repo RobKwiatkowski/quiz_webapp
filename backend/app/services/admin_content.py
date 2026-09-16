@@ -28,6 +28,7 @@ SUPPORTED_SUBJECTS = {
     "history": "Historia",
     "geography": "Geografia",
     "biology": "Biologia",
+    "math": "Matematyka",
 }
 
 
@@ -409,12 +410,23 @@ def normalize_admin_question(
             for blank in payload.get("fill_blanks", [])
             if isinstance(blank, dict)
         ]
+    elif selection_type == "written_multiplication":
+        config = payload.get("written_multiplication_config")
+        if not isinstance(config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Written multiplication questions require factor limits",
+            )
+        question["written_multiplication_config"] = {
+            "min_factor": config.get("min_factor"),
+            "max_factor": config.get("max_factor"),
+        }
     else:
         raise HTTPException(
             status_code=400,
             detail=(
                 "Admin supports only single, multiple, true_false, open, llm, order, matching, "
-                "map, hotspot, and fill questions"
+                "map, hotspot, fill, and written_multiplication questions"
             ),
         )
 

@@ -20,7 +20,8 @@ export type SelectionType =
   | "map"
   | "hotspot"
   | "century"
-  | "fill";
+  | "fill"
+  | "written_multiplication";
 
 export interface Answer {
   text: string;
@@ -40,6 +41,11 @@ export interface FillBlank {
 export interface CenturyConfig {
   min_year: number;
   max_year: number;
+}
+
+export interface WrittenMultiplicationConfig {
+  min_factor: number;
+  max_factor: number;
 }
 
 export interface OrderItem {
@@ -88,6 +94,9 @@ export interface QuizQuestion {
   century_config?: CenturyConfig | null;
   century_year?: number | null;
   correct_century?: number | null;
+  written_multiplication_config?: WrittenMultiplicationConfig | null;
+  multiplicand?: number | null;
+  multiplier?: number | null;
   order_items: OrderItem[];
   matching_pairs: MatchingPair[];
   map_config?: MapConfig | null;

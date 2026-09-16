@@ -39,14 +39,14 @@ In scope:
 
 - subject menu and subject-specific quiz list pages
 - one quiz represents one school book chapter
-- history, geography, and biology use the same chapter/topic/question learning
+- history, geography, biology, and math use the same chapter/topic/question learning
   method
 - each playable chapter contains one or more topics; a newly created admin
   chapter may temporarily contain no topics
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, and `fill`
+- question types: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, `fill`, and `written_multiplication`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -331,6 +331,21 @@ Fields:
 - `target_hotspot_id`: stable technical identifier matching a unique
   `data-hotspot-id` attribute in the SVG
 
+### `WrittenMultiplicationConfig`
+
+```json
+{
+  "min_factor": 10,
+  "max_factor": 9999
+}
+```
+
+Fields:
+
+- `min_factor`: inclusive lower limit for both generated integer factors
+- `max_factor`: inclusive upper limit for both generated integer factors
+- both limits must stay in the supported `10` to `9999` range
+
 ### `Question`
 
 ```json
@@ -350,6 +365,9 @@ Fields:
   "century_config": null,
   "century_year": null,
   "correct_century": null,
+  "written_multiplication_config": null,
+  "multiplicand": null,
+  "multiplier": null,
   "order_items": [],
   "matching_pairs": [],
   "map_config": null,
@@ -369,9 +387,9 @@ Fields:
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
   `single` and `multiple`, required for `true_false`, `open`, `llm`, `order`, `matching`,
-  `hotspot`, `century`, and `fill`
+  `hotspot`, `century`, `fill`, and `written_multiplication`
 - `selection_type`: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`,
-  `map`, `hotspot`, `century`, or `fill`
+  `map`, `hotspot`, `century`, `fill`, or `written_multiplication`
 - `answers`: answer options for `single` and `multiple` questions, or statements
   for `true_false` questions where `is_correct` means the statement is true
 - `accepted_answers`: accepted values for one-field `open` questions and the
@@ -383,6 +401,9 @@ Fields:
 - `century_config`: source range for a generated `century` question
 - `century_year`: generated signed year returned in a quiz payload; negative is p.n.e.
 - `correct_century`: generated correct century number returned in a quiz payload
+- `written_multiplication_config`: factor range for a generated written multiplication
+- `multiplicand`: concrete generated upper factor returned in a quiz payload
+- `multiplier`: concrete generated lower factor returned in a quiz payload
 - `order_items`: sequence items for `order` questions
 - `matching_pairs`: left/right pairs for `matching` questions
 - `map_config`: map asset and target configuration for `map` questions
@@ -445,7 +466,7 @@ Fields:
 - `title`: title shown on the list and quiz pages
 - `description`: description shown in the UI
 - `category`: subject/category identifier; JSON-backed school subjects are
-  `history`, `geography`, and `biology`
+  `history`, `geography`, `biology`, and `math`
 - `age_group`: intended age group
 - `chapter_number`: optional positive integer displayed as the `Rozdział X` badge on
   the quiz card; omit it or set it to `null` to hide the badge
@@ -478,9 +499,10 @@ For each chapter, the backend:
 6. If fewer than `target_question_count` questions were selected, the backend
    fills the missing slots from per-topic fallback questions while preserving
    the `meta.json` topic order.
-7. The backend returns the final selected question list grouped by the topic
-   order from `meta.json`.
-8. The backend returns the assembled quiz.
+7. The backend resolves generated templates, including concrete century years
+   and unique written-multiplication factor pairs for the current attempt.
+8. The backend returns the final selected question list grouped by the topic
+   order from `meta.json` and returns the assembled quiz.
 
 If the available question pool is smaller than `target_question_count`, the quiz
 will be shorter. If `target_question_count` is lower than the number of topics,
@@ -502,11 +524,10 @@ The frontend is responsible for:
 
 - showing the main subject menu
 - loading the quiz list
-- filtering history, geography, and biology quiz lists by chapter category
+- filtering history, geography, biology, and math quiz lists by chapter category
 - keeping one-shot LLM quizzes on the history section page
-- requesting a generated math question when the math page opens
-- showing a localized LLM-unavailable message if the generated math question
-  endpoint cannot be reached
+- rendering generated written-multiplication questions with carry scratch fields,
+  partial-product rows, place-value offsets, and a final result row
 - returning from a quiz to the section that launched it when the section is provided
   in the query string
 - loading the selected quiz by query-string `id`
@@ -763,7 +784,7 @@ The validator checks:
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
 - required non-empty `explanation` on `true_false`, `open`, `llm`, `order`, `matching`,
-  `hotspot`, `century`, and `fill` questions; optional `explanation` on `single` and
+  `hotspot`, `century`, `fill`, and `written_multiplication` questions; optional `explanation` on `single` and
   `multiple` questions
 - valid `selection_type`
 - optional `source_text` structure
@@ -781,6 +802,7 @@ The validator checks:
 - valid `century_config` for `century`
 - valid `fill_mode`, `fill_blanks`, and one matching `{{id}}` token per blank
   for `fill`
+- valid factor limits from `10` to `9999` for `written_multiplication`
 - valid local SVG source, unique SVG hotspot IDs, and existing target for `hotspot`
 - local image path format and file existence, including every item in image lists
 
@@ -799,7 +821,7 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
-- `true_false`, `open`, `llm`, `order`, `matching`, `hotspot`, `century`, and `fill` questions must include a
+- `true_false`, `open`, `llm`, `order`, `matching`, `hotspot`, `century`, `fill`, and `written_multiplication` questions must include a
   non-empty `explanation`; `single` and `multiple` questions may omit it
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
@@ -813,6 +835,8 @@ Rules:
 - century questions use `century_config`; a generated year must never be zero
 - fill questions use `fill_mode` and `fill_blanks`; include every `{{id}}` once
   in the question text and provide at least two options for `select` blanks
+- written multiplication questions use `written_multiplication_config`; the
+  backend generates fresh factors for every quiz attempt
 - hotspot questions use a validated local SVG with stable `data-hotspot-id`
   attributes and a matching `hotspot_config.target_hotspot_id`
 - quiz content should be written for a child aged 10-12
@@ -865,7 +889,7 @@ Enter works globally on the quiz screen:
 The admin interface is intentionally plain and functional:
 
 - it uses React/TypeScript while preserving the existing admin API contract
-- it starts with a subject selector for history, geography, and biology
+- it starts with a subject selector for history, geography, biology, and math
 - it starts with a chapter list, then a topic list, then questions for one topic
 - it supports creating chapters inside the currently selected subject by
   entering only a chapter name
@@ -879,7 +903,7 @@ The admin interface is intentionally plain and functional:
   question type
 - it supports creating, editing, and deleting `single`, `multiple`, `true_false`, one-field
   `open`, multi-slot `open`, `llm`, `order`, `matching`, `map`, `hotspot`, and
-  `fill` questions
+  `fill`, and `written_multiplication` questions
 - it supports image fields only for `single` and `open` questions
 - it lets the administrator enter source/context text without requiring a
   separate source attribution field

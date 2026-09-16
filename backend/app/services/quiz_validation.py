@@ -21,6 +21,7 @@ ALLOWED_SELECTION_TYPES = {
     "hotspot",
     "century",
     "fill",
+    "written_multiplication",
 }
 
 FILL_BLANK_TOKEN = re.compile(r"\{\{([a-z][a-z0-9_-]*)\}\}")
@@ -419,6 +420,26 @@ def validate_century_config(
         result.errors.append(f"{context}: century_config cannot contain only year zero")
 
 
+def validate_written_multiplication_config(
+    config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates the configured factor range for generated multiplication."""
+    if not isinstance(config, dict):
+        result.errors.append(f"{context}: written_multiplication_config must be an object")
+        return
+
+    min_factor = config.get("min_factor")
+    max_factor = config.get("max_factor")
+    if not isinstance(min_factor, int) or not isinstance(max_factor, int):
+        result.errors.append(f"{context}: multiplication limits must be integers")
+    elif min_factor < 10 or max_factor > 9999:
+        result.errors.append(f"{context}: multiplication limits must stay between 10 and 9999")
+    elif min_factor > max_factor:
+        result.errors.append(f"{context}: min_factor must not exceed max_factor")
+
+
 def validate_order_items_structure(
     order_items: Any,
     result: ValidationResult,
@@ -616,6 +637,7 @@ def validate_question(
     century_config = question.get("century_config")
     fill_mode = question.get("fill_mode")
     fill_blanks = question.get("fill_blanks")
+    written_multiplication_config = question.get("written_multiplication_config")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, result, context)
@@ -781,6 +803,31 @@ def validate_question(
                 "map_config",
                 "hotspot_config",
                 "century_config",
+            ],
+        )
+
+    elif selection_type == "written_multiplication":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_written_multiplication_config(
+            written_multiplication_config,
+            result,
+            context,
+        )
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
             ],
         )
 

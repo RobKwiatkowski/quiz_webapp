@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { adminApi, type AdminChapter, type AdminQuestion, type AdminQuestionPayload, type AdminSubject, type AdminTopic, type ImageUpload } from "../api/admin-api";
-import type { Answer, AnswerSlot, FillBlank, HotspotConfig, MapConfig, MatchingPair, OrderItem, SelectionType } from "../api/quiz-api";
+import type { Answer, AnswerSlot, FillBlank, HotspotConfig, MapConfig, MatchingPair, OrderItem, SelectionType, WrittenMultiplicationConfig } from "../api/quiz-api";
 import "../admin.css";
 
 type AuthState = "loading" | "anonymous" | "authenticated" | "error";
@@ -22,6 +22,7 @@ type Draft = {
   matching_pairs: MatchingPair[];
   map_config: MapConfig;
   hotspot_config: HotspotConfig;
+  written_multiplication_config: WrittenMultiplicationConfig;
 };
 
 const mapPresets: Record<string, Pick<MapConfig, "mode" | "background_source" | "interaction">> = {
@@ -53,6 +54,7 @@ function createDraft(question?: AdminQuestion): Draft {
     matching_pairs: question?.matching_pairs?.length ? question.matching_pairs : [blankMatchingPair(), blankMatchingPair()],
     map_config: question?.map_config ?? { source: "/static/maps/ancient-civilizations-regions.geojson", mode: "select", target_feature_id: "", background_source: "/static/maps/ancient-civilizations-basemap.geojson", interaction: "region" },
     hotspot_config: question?.hotspot_config ?? { source: "/static/images/geography/compass-rose.svg", target_hotspot_id: "" },
+    written_multiplication_config: question?.written_multiplication_config ?? { min_factor: 10, max_factor: 9999 },
   };
 }
 
@@ -219,6 +221,7 @@ function QuestionEditor({ question, subject, chapter, topic, onCancel, onSave }:
     {type === "matching" && <section className="editor-card"><div className="section-header"><h3>Pary do dopasowania</h3><button className="secondary-button" onClick={() => update({ matching_pairs: [...draft.matching_pairs, blankMatchingPair()] })} type="button">+ Para</button></div><div className="row-stack">{draft.matching_pairs.map((pair, index) => <div className="matching-pair-row" key={index}><input placeholder="Lewy element" value={pair.left} onChange={(event) => update({ matching_pairs: draft.matching_pairs.map((row, rowIndex) => rowIndex === index ? { ...row, left: event.target.value } : row) })} /><input placeholder="Dopasowanie" value={pair.right} onChange={(event) => update({ matching_pairs: draft.matching_pairs.map((row, rowIndex) => rowIndex === index ? { ...row, right: event.target.value } : row) })} /><button className="secondary-button" onClick={() => update({ matching_pairs: draft.matching_pairs.filter((_, rowIndex) => rowIndex !== index) })} type="button">Usuń</button></div>)}</div></section>}
     {type === "map" && <section className="editor-card"><h3>Konfiguracja mapy</h3><label className="form-field">Mapa<select value={draft.map_config.source} onChange={(event) => chooseMapSource(event.target.value)}><option value="/static/maps/ancient-civilizations-regions.geojson">Starożytne cywilizacje</option><option value="/static/maps/poland-voivodeships.geojson">Województwa Polski</option><option value="/static/maps/world-continents.geojson">Kontynenty świata</option><option value="/static/maps/world-lines.geojson">Linie geograficzne świata</option></select></label><label className="form-field">Tryb odpowiedzi<select value={draft.map_config.mode} onChange={(event) => update({ map_config: { ...draft.map_config, mode: event.target.value as MapConfig["mode"] } })}><option value="select">Wskazanie regionu</option><option value="identify">Rozpoznanie zaznaczonego regionu</option></select></label><label className="form-field">Interakcja<select value={draft.map_config.interaction ?? "region"} onChange={(event) => update({ map_config: { ...draft.map_config, interaction: event.target.value as MapConfig["interaction"] } })}><option value="region">Region</option><option value="line">Linia</option></select></label><label className="form-field">Identyfikator poprawnego regionu lub linii<input value={draft.map_config.target_feature_id} onChange={(event) => update({ map_config: { ...draft.map_config, target_feature_id: event.target.value } })} placeholder="np. ancient_egypt albo equator" /></label><label className="form-field">Podkład GeoJSON (opcjonalnie)<input value={draft.map_config.background_source ?? ""} onChange={(event) => update({ map_config: { ...draft.map_config, background_source: event.target.value } })} placeholder="/static/maps/..." /></label></section>}
     {type === "hotspot" && <section className="editor-card"><h3>Konfiguracja diagramu</h3><label className="form-field">Plik SVG<input value={draft.hotspot_config.source} onChange={(event) => update({ hotspot_config: { ...draft.hotspot_config, source: event.target.value } })} /></label><label className="form-field">Identyfikator poprawnego obszaru<input value={draft.hotspot_config.target_hotspot_id} onChange={(event) => update({ hotspot_config: { ...draft.hotspot_config, target_hotspot_id: event.target.value } })} placeholder="np. NW" /></label></section>}
+    {type === "written_multiplication" && <section className="editor-card"><h3>Zakres losowanych liczb</h3><p>Obie liczby będą losowane niezależnie z podanego zakresu.</p><div className="compact-settings-grid"><label className="form-field">Najmniejsza liczba<input min={10} max={9999} type="number" value={draft.written_multiplication_config.min_factor} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, min_factor: Number(event.target.value) } })} /></label><label className="form-field">Największa liczba<input min={10} max={9999} type="number" value={draft.written_multiplication_config.max_factor} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, max_factor: Number(event.target.value) } })} /></label></div></section>}
     <section className="editor-card"><label className="form-field">{isChoice && type !== "map" ? "Wyjaśnienie (opcjonalne)" : "Wyjaśnienie"}<textarea rows={3} value={draft.explanation} onChange={(event) => update({ explanation: event.target.value })} /></label></section>
     {error && <p className="status error">{error}</p>}<div className="form-actions"><button className="secondary-button" onClick={onCancel} type="button">Anuluj</button><button disabled={saving} type="submit">{question ? "Zapisz zmiany" : "Dodaj pytanie"}</button></div>
   </form></section>;
@@ -242,6 +245,7 @@ function toPayload(draft: Draft, multiSlot: boolean): AdminQuestionPayload {
   if (draft.selection_type === "matching") payload.matching_pairs = draft.matching_pairs.filter((pair) => pair.left.trim() || pair.right.trim());
   if (draft.selection_type === "map") { payload.map_config = draft.map_config; if (draft.map_config.mode === "identify") payload.answers = draft.answers.filter((answer) => answer.text.trim()).map((answer) => ({ ...answer, text: answer.text.trim() })); }
   if (draft.selection_type === "hotspot") payload.hotspot_config = draft.hotspot_config;
+  if (draft.selection_type === "written_multiplication") payload.written_multiplication_config = draft.written_multiplication_config;
   return payload;
 }
 
@@ -257,10 +261,11 @@ function validatePayload(payload: AdminQuestionPayload): string {
   if (payload.selection_type === "matching" && ((payload.matching_pairs?.length ?? 0) < 2 || payload.matching_pairs?.some((pair) => !pair.left || !pair.right))) return "Dodaj co najmniej dwie pełne pary do dopasowania.";
   if (payload.selection_type === "map" && (!payload.map_config?.source || !payload.map_config.target_feature_id)) return "Wybierz mapę i wpisz identyfikator poprawnego regionu.";
   if (payload.selection_type === "hotspot" && (!payload.hotspot_config?.source || !payload.hotspot_config.target_hotspot_id)) return "Wpisz plik SVG i identyfikator poprawnego obszaru.";
+  if (payload.selection_type === "written_multiplication") { const config = payload.written_multiplication_config; if (!config || config.min_factor < 10 || config.max_factor > 9999 || config.min_factor > config.max_factor) return "Zakres liczb musi mieścić się od 10 do 9999."; }
   return "";
 }
 
 function moveItem<T>(items: T[], index: number, direction: number): T[] { const result = [...items]; const next = index + direction; if (next >= 0 && next < result.length) [result[index], result[next]] = [result[next], result[index]]; return result; }
 function formatQuestionCount(count: number): string { if (count === 1) return "1 pytanie"; if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return `${count} pytania`; return `${count} pytań`; }
 function fileToDataUrl(file: File): Promise<string> { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.onerror = () => reject(reader.error); reader.readAsDataURL(file); }); }
-const questionTypes: Array<[SelectionType, string]> = [["single", "Jedna poprawna odpowiedź"], ["multiple", "Kilka poprawnych odpowiedzi"], ["true_false", "Prawda / Fałsz"], ["open", "Odpowiedź pisemna"], ["fill", "Uzupełnianie tekstu"], ["order", "Układanie w kolejności"], ["matching", "Dopasowywanie par"], ["map", "Wskazanie na mapie"], ["hotspot", "Wskazanie na diagramie"], ["llm", "Odpowiedź pisemna oceniana przez AI"]];
+const questionTypes: Array<[SelectionType, string]> = [["single", "Jedna poprawna odpowiedź"], ["multiple", "Kilka poprawnych odpowiedzi"], ["true_false", "Prawda / Fałsz"], ["open", "Odpowiedź pisemna"], ["fill", "Uzupełnianie tekstu"], ["order", "Układanie w kolejności"], ["matching", "Dopasowywanie par"], ["map", "Wskazanie na mapie"], ["hotspot", "Wskazanie na diagramie"], ["written_multiplication", "Mnożenie pod kreską"], ["llm", "Odpowiedź pisemna oceniana przez AI"]];

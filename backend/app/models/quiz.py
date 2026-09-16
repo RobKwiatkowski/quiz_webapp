@@ -85,6 +85,13 @@ class CenturyConfig(BaseModel):
     max_year: int
 
 
+class WrittenMultiplicationConfig(BaseModel):
+    """Operand range used to generate a written-multiplication question."""
+
+    min_factor: int = Field(ge=10, le=9999)
+    max_factor: int = Field(ge=10, le=9999)
+
+
 class MapConfig(BaseModel):
     """Configuration for map-based questions.
 
@@ -147,7 +154,7 @@ class Question(BaseModel):
     image: str | List[str] | None = None
     explanation: Optional[str] = None
     selection_type: Literal[
-        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill"
+        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill", "written_multiplication"
     ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
@@ -157,6 +164,9 @@ class Question(BaseModel):
     century_config: Optional[CenturyConfig] = None
     century_year: Optional[int] = None
     correct_century: Optional[int] = None
+    written_multiplication_config: Optional[WrittenMultiplicationConfig] = None
+    multiplicand: Optional[int] = None
+    multiplier: Optional[int] = None
     order_items: List[OrderItem] = Field(default_factory=list)
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
     map_config: Optional[MapConfig] = None

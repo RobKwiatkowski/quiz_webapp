@@ -20,6 +20,7 @@ import { CenturyQuestion, LlmQuestion, MatchingQuestion, OrderQuestion } from ".
 import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
 import { TrueFalseQuestion } from "../features/quiz/TrueFalseQuestion";
+import { WrittenMultiplicationQuestion } from "../features/quiz/WrittenMultiplicationQuestion";
 
 const PERFECT_SCORE_AUDIO_URL = "/assets/sounds/perfect-score-crowd.mp3";
 
@@ -178,7 +179,7 @@ export function QuizPage() {
       <nav className="quiz-top-nav" aria-label="Nawigacja quizu">
         <a className="quiz-menu-tile" href={`${section}.html`}>
           <span className="quiz-menu-icon" aria-hidden="true">←</span>
-          <span>Quizy z {section === "geography" ? "geografii" : section === "biology" ? "biologii" : "historii"}</span>
+          <span>Quizy z {getSubjectGenitive(section)}</span>
         </a>
       </nav>
       <header className="quiz-header">
@@ -285,6 +286,7 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "written_multiplication") return <WrittenMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
 
   return <p className="subject-status">Ten typ pytania zostanie przeniesiony w kolejnym kroku migracji.</p>;
 }
@@ -467,7 +469,7 @@ function FeedbackPanel({ feedback }: { feedback: QuizFeedback }) {
 function ResultScreen({ quiz, score, section, onRestart }: { quiz: Quiz; score: number; section: string; onRestart: () => void }) {
   const maximum = getQuizMaxPoints(quiz);
   const percentage = getScorePercentage(score, maximum);
-  const sectionTitle = section === "geography" ? "Quizy z geografii" : section === "biology" ? "Quizy z biologii" : "Quizy z historii";
+  const sectionTitle = `Quizy z ${getSubjectGenitive(section)}`;
   const celebrationStartedRef = useRef(false);
   const [percentageCountComplete, setPercentageCountComplete] = useState(false);
   const isPerfectScore = maximum > 0 && score === maximum;
@@ -542,6 +544,13 @@ function ResultScreen({ quiz, score, section, onRestart }: { quiz: Quiz; score: 
       </motion.section>
     </main>
   );
+}
+
+function getSubjectGenitive(section: string): string {
+  if (section === "geography") return "geografii";
+  if (section === "biology") return "biologii";
+  if (section === "math") return "matematyki";
+  return "historii";
 }
 
 function playPerfectScoreAudio() {

@@ -111,6 +111,44 @@ def resolve_century_question(question: Question) -> Question:
     )
 
 
+def resolve_written_multiplication_question(
+    question: Question,
+    used_pairs: set[tuple[int, int]],
+) -> Question:
+    """Creates concrete, non-repeated operands for a multiplication template."""
+    if (
+        question.selection_type != "written_multiplication"
+        or question.written_multiplication_config is None
+    ):
+        return question
+
+    config = question.written_multiplication_config
+    pair = (
+        random.randint(config.min_factor, config.max_factor),
+        random.randint(config.min_factor, config.max_factor),
+    )
+    for _ in range(20):
+        if pair not in used_pairs:
+            break
+        pair = (
+            random.randint(config.min_factor, config.max_factor),
+            random.randint(config.min_factor, config.max_factor),
+        )
+    used_pairs.add(pair)
+
+    multiplicand, multiplier = pair
+    return question.model_copy(
+        update={
+            "multiplicand": multiplicand,
+            "multiplier": multiplier,
+            "explanation": (
+                f"{multiplicand} × {multiplier} = {multiplicand * multiplier}. "
+                "Sprawdź wyniki cząstkowe i ich przesunięcie o kolejne miejsca."
+            ),
+        }
+    )
+
+
 def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
     """Builds a quiz by distributing picks across all chapter topics.
 
@@ -175,8 +213,12 @@ def build_quiz_from_chapter(chapter_dir: Path) -> Quiz:
         if not added_question:
             break
 
+    used_multiplication_pairs: set[tuple[int, int]] = set()
     selected_questions = [
-        resolve_century_question(resolve_question_image(question))
+        resolve_written_multiplication_question(
+            resolve_century_question(resolve_question_image(question)),
+            used_multiplication_pairs,
+        )
         for topic_questions in selected_by_topic
         for question in topic_questions
     ]
