@@ -22,6 +22,10 @@ ALLOWED_SELECTION_TYPES = {
     "century",
     "fill",
     "written_multiplication",
+    "written_division",
+    "timed_multiplication",
+    "timed_division",
+    "operation_order",
 }
 
 FILL_BLANK_TOKEN = re.compile(r"\{\{([a-z][a-z0-9_-]*)\}\}")
@@ -432,12 +436,145 @@ def validate_written_multiplication_config(
 
     min_factor = config.get("min_factor")
     max_factor = config.get("max_factor")
-    if not isinstance(min_factor, int) or not isinstance(max_factor, int):
+    max_total_digits = config.get("max_total_digits", 6)
+    easy_max_total_digits = config.get("easy_max_total_digits", 4)
+    easy_max_partial_product = config.get("easy_max_partial_product", 100)
+    values = [min_factor, max_factor, max_total_digits, easy_max_total_digits, easy_max_partial_product]
+    if any(isinstance(value, bool) or not isinstance(value, int) for value in values):
         result.errors.append(f"{context}: multiplication limits must be integers")
     elif min_factor < 10 or max_factor > 9999:
         result.errors.append(f"{context}: multiplication limits must stay between 10 and 9999")
     elif min_factor > max_factor:
         result.errors.append(f"{context}: min_factor must not exceed max_factor")
+    elif not isinstance(max_total_digits, int) or not 4 <= max_total_digits <= 6:
+        result.errors.append(f"{context}: max_total_digits must be an integer from 4 to 6")
+    elif len(str(min_factor)) * 2 > max_total_digits:
+        result.errors.append(f"{context}: factor range cannot satisfy max_total_digits")
+    elif not 4 <= easy_max_total_digits <= max_total_digits:
+        result.errors.append(f"{context}: easy_max_total_digits must stay between 4 and max_total_digits")
+    elif len(str(min_factor)) * 2 > easy_max_total_digits:
+        result.errors.append(f"{context}: factor range cannot satisfy easy_max_total_digits")
+    elif not 10 <= easy_max_partial_product <= 9999:
+        result.errors.append(f"{context}: easy_max_partial_product must stay between 10 and 9999")
+
+
+def validate_timed_multiplication_config(
+    config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates multiplication-table factors and the per-question time limit."""
+    if not isinstance(config, dict):
+        result.errors.append(f"{context}: timed_multiplication_config must be an object")
+        return
+
+    min_factor = config.get("min_factor", 3)
+    max_factor = config.get("max_factor", 9)
+    time_limit_seconds = config.get("time_limit_seconds", 5)
+    values = [min_factor, max_factor, time_limit_seconds]
+    if any(isinstance(value, bool) or not isinstance(value, int) for value in values):
+        result.errors.append(f"{context}: timed multiplication limits must be integers")
+    elif not 3 <= min_factor <= max_factor <= 9:
+        result.errors.append(f"{context}: timed multiplication factors must stay between 3 and 9")
+    elif not 1 <= time_limit_seconds <= 60:
+        result.errors.append(f"{context}: time_limit_seconds must stay between 1 and 60")
+
+
+def validate_timed_division_config(
+    config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates exact division-table ranges and the per-question time limit."""
+    if not isinstance(config, dict):
+        result.errors.append(f"{context}: timed_division_config must be an object")
+        return
+
+    min_divisor = config.get("min_divisor", 3)
+    max_divisor = config.get("max_divisor", 9)
+    min_quotient = config.get("min_quotient", 3)
+    max_quotient = config.get("max_quotient", 9)
+    time_limit_seconds = config.get("time_limit_seconds", 10)
+    values = [min_divisor, max_divisor, min_quotient, max_quotient, time_limit_seconds]
+    if any(isinstance(value, bool) or not isinstance(value, int) for value in values):
+        result.errors.append(f"{context}: timed division limits must be integers")
+    elif not 3 <= min_divisor <= max_divisor <= 9:
+        result.errors.append(f"{context}: timed division divisors must stay between 3 and 9")
+    elif not 3 <= min_quotient <= max_quotient <= 9:
+        result.errors.append(f"{context}: timed division quotients must stay between 3 and 9")
+    elif not 1 <= time_limit_seconds <= 60:
+        result.errors.append(f"{context}: time_limit_seconds must stay between 1 and 60")
+
+
+def validate_written_division_config(
+    config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates ranges for generated exact written division."""
+    if not isinstance(config, dict):
+        result.errors.append(f"{context}: written_division_config must be an object")
+        return
+
+    min_divisor = config.get("min_divisor", 2)
+    max_divisor = config.get("max_divisor", 99)
+    min_quotient = config.get("min_quotient", 10)
+    max_quotient = config.get("max_quotient", 9999)
+    max_dividend_digits = config.get("max_dividend_digits", 6)
+    easy_min_divisor = config.get("easy_min_divisor", 3)
+    easy_max_divisor = config.get("easy_max_divisor", 10)
+    medium_min_divisor = config.get("medium_min_divisor", 8)
+    medium_max_divisor = config.get("medium_max_divisor", 15)
+    easy_max_quotient = config.get("easy_max_quotient", 999)
+    easy_max_dividend_digits = config.get("easy_max_dividend_digits", 4)
+    easy_max_intermediate_value = config.get("easy_max_intermediate_value", 100)
+    values = [
+        min_divisor, max_divisor, min_quotient, max_quotient, max_dividend_digits,
+        easy_min_divisor, easy_max_divisor, medium_min_divisor, medium_max_divisor,
+        easy_max_quotient, easy_max_dividend_digits,
+        easy_max_intermediate_value,
+    ]
+    if any(isinstance(value, bool) or not isinstance(value, int) for value in values):
+        result.errors.append(f"{context}: written division limits must be integers")
+    elif not 2 <= min_divisor <= max_divisor <= 9999:
+        result.errors.append(f"{context}: divisor range must stay between 2 and 9999")
+    elif not 2 <= min_quotient <= max_quotient <= 9999:
+        result.errors.append(f"{context}: quotient range must stay between 2 and 9999")
+    elif not 2 <= max_dividend_digits <= 6:
+        result.errors.append(f"{context}: max_dividend_digits must be between 2 and 6")
+    elif len(str(min_divisor)) + len(str(min_quotient)) > max_dividend_digits:
+        result.errors.append(f"{context}: configured ranges cannot satisfy max_dividend_digits")
+    elif not min_divisor <= easy_min_divisor <= easy_max_divisor <= min(max_divisor, 99):
+        result.errors.append(f"{context}: easy divisor range must stay inside the base range and 99")
+    elif not min_divisor <= medium_min_divisor <= medium_max_divisor <= min(max_divisor, 99):
+        result.errors.append(f"{context}: medium divisor range must stay inside the base range and 99")
+    elif not min_quotient <= easy_max_quotient <= max_quotient:
+        result.errors.append(f"{context}: easy_max_quotient must stay inside the quotient range")
+    elif not 2 <= easy_max_dividend_digits <= max_dividend_digits:
+        result.errors.append(f"{context}: easy_max_dividend_digits must not exceed max_dividend_digits")
+    elif len(str(min_divisor * min_quotient)) > easy_max_dividend_digits:
+        result.errors.append(f"{context}: configured ranges cannot satisfy easy_max_dividend_digits")
+    elif not 10 <= easy_max_intermediate_value <= 9999:
+        result.errors.append(f"{context}: easy_max_intermediate_value must stay between 10 and 9999")
+
+
+def validate_operation_order_config(
+    config: Any,
+    result: ValidationResult,
+    context: str,
+) -> None:
+    """Validates the concept family used by the generated math exercise."""
+    if not isinstance(config, dict):
+        result.errors.append(f"{context}: operation_order_config must be an object")
+        return
+
+    family = config.get("family")
+    allowed_families = {"precedence", "parentheses", "powers", "left_to_right"}
+    if family not in allowed_families:
+        result.errors.append(
+            f"{context}: operation_order_config.family must be one of "
+            f"{sorted(allowed_families)}"
+        )
 
 
 def validate_order_items_structure(
@@ -499,7 +636,6 @@ def validate_matching_pairs_structure(
         return
 
     seen_ids: set[str] = set()
-    seen_left_values: set[str] = set()
 
     for i, pair in enumerate(matching_pairs):
         pair_context = f"{context} -> matching_pairs[{i}]"
@@ -521,10 +657,6 @@ def validate_matching_pairs_structure(
 
         if not is_non_empty_string(left):
             result.errors.append(f"{pair_context}: left must be a non-empty string")
-        elif left in seen_left_values:
-            result.errors.append(f"{pair_context}: duplicate left value: {left}")
-        else:
-            seen_left_values.add(left)
 
         if not is_non_empty_string(right):
             result.errors.append(f"{pair_context}: right must be a non-empty string")
@@ -552,6 +684,7 @@ def validate_question(
     image = question.get("image")
     explanation = question.get("explanation")
     question_topic_id = question.get("topic_id")
+    is_active = question.get("is_active", True)
 
     context = f"{topic_name} -> question[{question_id or '?'}]"
 
@@ -571,6 +704,9 @@ def validate_question(
 
     if not is_non_empty_string(text):
         result.errors.append(f"{context}: text must be a non-empty string")
+
+    if not isinstance(is_active, bool):
+        result.errors.append(f"{context}: is_active must be a boolean")
 
     if question_topic_id is not None:
         if not is_non_empty_string(question_topic_id):
@@ -638,6 +774,10 @@ def validate_question(
     fill_mode = question.get("fill_mode")
     fill_blanks = question.get("fill_blanks")
     written_multiplication_config = question.get("written_multiplication_config")
+    written_division_config = question.get("written_division_config")
+    timed_multiplication_config = question.get("timed_multiplication_config")
+    timed_division_config = question.get("timed_division_config")
+    operation_order_config = question.get("operation_order_config")
 
     if selection_type == "single":
         validated_answers = validate_answers_structure(answers, result, context)
@@ -814,6 +954,11 @@ def validate_question(
             result,
             context,
         )
+
+    elif selection_type == "timed_multiplication":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_timed_multiplication_config(timed_multiplication_config, result, context)
         warn_unexpected(
             question,
             result,
@@ -828,6 +973,96 @@ def validate_question(
                 "hotspot_config",
                 "century_config",
                 "fill_blanks",
+                "written_multiplication_config",
+                "written_division_config",
+                "timed_division_config",
+            ],
+        )
+
+    elif selection_type == "timed_division":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_timed_division_config(timed_division_config, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
+                "written_multiplication_config",
+                "written_division_config",
+                "timed_multiplication_config",
+            ],
+        )
+
+    elif selection_type == "written_division":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_written_division_config(written_division_config, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
+                "written_multiplication_config",
+            ],
+        )
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
+            ],
+        )
+
+    elif selection_type == "operation_order":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_operation_order_config(operation_order_config, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
+                "written_multiplication_config",
+                "written_division_config",
+                "timed_multiplication_config",
+                "timed_division_config",
             ],
         )
 
@@ -852,13 +1087,14 @@ def validate_topic_data(
     topic_ids: set[str],
     static_dir: Path,
 ) -> int:
-    """Validates one topic payload and returns its question count."""
+    """Validates one topic payload and returns its active question count."""
     if not isinstance(data, dict):
         result.errors.append(f"{topic_name}: root must be an object")
         return 0
 
     topic_id = data.get("topic_id")
     topic_title = data.get("topic_title")
+    is_active = data.get("is_active", True)
     questions = data.get("questions")
 
     if not is_non_empty_string(topic_id):
@@ -871,11 +1107,15 @@ def validate_topic_data(
     if not is_non_empty_string(topic_title):
         result.errors.append(f"{topic_name}: topic_title must be a non-empty string")
 
+    if not isinstance(is_active, bool):
+        result.errors.append(f"{topic_name}: is_active must be a boolean")
+
     if not isinstance(questions, list):
         result.errors.append(f"{topic_name}: questions must be a list")
         return 0
 
     topic_question_ids: set[str] = set()
+    active_question_count = 0
     for question in questions:
         validate_question(
             question=question,
@@ -886,8 +1126,10 @@ def validate_topic_data(
             static_dir=static_dir,
             topic_id=topic_id if isinstance(topic_id, str) else None,
         )
+        if isinstance(question, dict) and question.get("is_active", True) is True:
+            active_question_count += 1
 
-    return len(questions)
+    return active_question_count
 
 
 def validate_meta_data(
@@ -908,6 +1150,7 @@ def validate_meta_data(
     questions_per_topic = data.get("questions_per_topic", 2)
     target_question_count = data.get("target_question_count", 12)
     chapter_number = data.get("chapter_number")
+    difficulty_levels = data.get("difficulty_levels", [])
     topics = data.get("topics")
 
     if not isinstance(questions_per_topic, int) or questions_per_topic <= 0:
@@ -922,6 +1165,18 @@ def validate_meta_data(
         or chapter_number <= 0
     ):
         result.errors.append(f"{meta_name}: chapter_number must be null or a positive integer")
+
+    allowed_difficulties = {"easy", "medium", "pro"}
+    if not isinstance(difficulty_levels, list):
+        result.errors.append(f"{meta_name}: difficulty_levels must be a list")
+    elif any(not isinstance(level, str) for level in difficulty_levels):
+        result.errors.append(f"{meta_name}: difficulty_levels items must be strings")
+    elif len(difficulty_levels) != len(set(difficulty_levels)):
+        result.errors.append(f"{meta_name}: difficulty_levels must not contain duplicates")
+    elif any(level not in allowed_difficulties for level in difficulty_levels):
+        result.errors.append(
+            f"{meta_name}: difficulty_levels may contain only easy, medium, and pro"
+        )
 
     if not isinstance(topics, list):
         result.errors.append(f"{meta_name}: topics must be a list")
@@ -965,7 +1220,8 @@ def validate_chapter_dir(
     topic_filenames = validate_meta_data(meta_data, meta_path.name, result)
     topic_ids: set[str] = set()
     chapter_question_ids: set[str] = set()
-    total_questions = 0
+    active_topic_count = 0
+    active_question_count = 0
 
     for topic_filename in topic_filenames:
         topic_path = chapter_dir / topic_filename
@@ -981,7 +1237,7 @@ def validate_chapter_dir(
                 result.errors.append(f"{topic_path.name}: failed to load JSON: {e}")
                 continue
 
-        total_questions += validate_topic_data(
+        question_count = validate_topic_data(
             data=topic_data,
             topic_name=topic_path.name,
             result=result,
@@ -989,22 +1245,24 @@ def validate_chapter_dir(
             topic_ids=topic_ids,
             static_dir=static_dir,
         )
+        if isinstance(topic_data, dict) and topic_data.get("is_active", True) is True:
+            active_topic_count += 1
+            active_question_count += question_count
 
-    topics = meta_data.get("topics") if isinstance(meta_data, dict) else []
     questions_per_topic = meta_data.get("questions_per_topic", 2) if isinstance(meta_data, dict) else 2
     target_question_count = meta_data.get("target_question_count", 12) if isinstance(meta_data, dict) else 12
 
-    if isinstance(questions_per_topic, int) and isinstance(topics, list):
-        desired_base_count = questions_per_topic * len(topics)
-        if total_questions < desired_base_count:
+    if isinstance(questions_per_topic, int):
+        desired_base_count = questions_per_topic * active_topic_count
+        if active_question_count < desired_base_count:
             result.warnings.append(
-                f"{chapter_dir.name}: total questions ({total_questions}) are lower than "
-                f"ideal base selection ({desired_base_count}); quiz will need fallback selection"
+                f"{chapter_dir.name}: active questions ({active_question_count}) are lower than "
+                f"ideal active-topic selection ({desired_base_count}); quiz will need fallback selection"
             )
 
-        if isinstance(target_question_count, int) and total_questions < target_question_count:
+        if isinstance(target_question_count, int) and active_question_count < target_question_count:
             result.warnings.append(
-                f"{chapter_dir.name}: total questions ({total_questions}) are lower than "
+                f"{chapter_dir.name}: active questions ({active_question_count}) are lower than "
                 f"target_question_count ({target_question_count}); final quiz will be shorter"
             )
 

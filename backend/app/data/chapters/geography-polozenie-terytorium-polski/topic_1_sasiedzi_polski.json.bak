@@ -1,0 +1,257 @@
+{
+  "topic_id": "sasiedzi-polski",
+  "topic_title": "Państwa sąsiadujące z Polską",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "geo-sasiedzi-niemcy",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Niemcy.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "germany",
+        "interaction": "region"
+      },
+      "explanation": "Niemcy leżą na zachód od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-czechy",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Czechy.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "czechia",
+        "interaction": "region"
+      },
+      "explanation": "Czechy leżą na południowy zachód od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-slowacja",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Słowację.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "slovakia",
+        "interaction": "region"
+      },
+      "explanation": "Słowacja leży na południe od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-ukraina",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Ukrainę.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "ukraine",
+        "interaction": "region"
+      },
+      "explanation": "Ukraina leży na południowy wschód od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-bialorus",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Białoruś.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "belarus",
+        "interaction": "region"
+      },
+      "explanation": "Białoruś leży na wschód od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-litwa",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Litwę.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "lithuania",
+        "interaction": "region"
+      },
+      "explanation": "Litwa leży na północny wschód od Polski."
+    },
+    {
+      "id": "geo-sasiedzi-rosja",
+      "topic_id": "sasiedzi-polski",
+      "text": "Wskaż na mapie Rosję.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/poland-neighbours.geojson",
+        "mode": "select",
+        "target_feature_id": "russia",
+        "interaction": "region"
+      },
+      "explanation": "Rosja graniczy z Polską przez obwód kaliningradzki."
+    },
+    {
+      "id": "q-ef729cc4",
+      "topic_id": "sasiedzi-polski",
+      "text": "Z iloma państwami sąsiaduje Polska?",
+      "selection_type": "open",
+      "explanation": "Polska sąsiaduje z 7 państwami.",
+      "accepted_answers": [
+        "7",
+        "siedmioma"
+      ]
+    },
+    {
+      "id": "q-ba6ca4d4",
+      "topic_id": "sasiedzi-polski",
+      "text": "Jakie dwie rzeki stanowią częściowo granicę zachodnią Polski?",
+      "selection_type": "open",
+      "explanation": "Są to Odra i Nysa Łużycka",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Odra"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Nysa Łużycka"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-cb0f5e8a",
+      "topic_id": "sasiedzi-polski",
+      "text": "Jakie dwie rzeki stanowią częściowo granicę wschodnią Polski?",
+      "selection_type": "open",
+      "explanation": "Są to rzeki Bug i San.",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Bug"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "San"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-760f242d",
+      "topic_id": "sasiedzi-polski",
+      "text": "Jakie pasma górskie stanowią południową granicę Polski?",
+      "selection_type": "open",
+      "explanation": "Są to Sudety i Karpaty.",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Sudety"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Karpaty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-d26d6af3",
+      "topic_id": "sasiedzi-polski",
+      "text": "Jak nazywamy fragment kraju oddzielony od głównej części jego terytorium?",
+      "selection_type": "open",
+      "explanation": "Jest to eksklawa.",
+      "accepted_answers": [
+        "eksklawa",
+        "eksklawą"
+      ]
+    },
+    {
+      "id": "q-8d6325e1",
+      "topic_id": "sasiedzi-polski",
+      "text": "Z którym krajem mamy najdłuższą granicę?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Niemcy",
+          "is_correct": false
+        },
+        {
+          "text": "Czechy",
+          "is_correct": true
+        },
+        {
+          "text": "Słowacja",
+          "is_correct": false
+        },
+        {
+          "text": "Ukraina",
+          "is_correct": false
+        },
+        {
+          "text": "Litwa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-a87cb69a",
+      "topic_id": "sasiedzi-polski",
+      "text": "Z którym państwem mamy najkrótszą granicę?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Niemcy",
+          "is_correct": false
+        },
+        {
+          "text": "Litwa",
+          "is_correct": true
+        },
+        {
+          "text": "Czechy",
+          "is_correct": false
+        },
+        {
+          "text": "Słowacja",
+          "is_correct": false
+        },
+        {
+          "text": "Ukraina",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-dba1d125",
+      "topic_id": "sasiedzi-polski",
+      "text": "Na jakich półkulach leży Polska?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "półkula północna",
+          "is_correct": true
+        },
+        {
+          "text": "półkula południowa",
+          "is_correct": false
+        },
+        {
+          "text": "półkula zachodnia",
+          "is_correct": false
+        },
+        {
+          "text": "półkula wschodnia",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

@@ -133,16 +133,20 @@
           "is_correct": false
         },
         {
-          "text": "metropolia",
+          "text": "ruch oporu",
           "is_correct": false
         },
         {
-          "text": "fabryka",
+          "text": "policja",
           "is_correct": false
         },
         {
           "text": "związek zawodowy",
           "is_correct": true
+        },
+        {
+          "text": "związek zawodniczy",
+          "is_correct": false
         }
       ]
     },
@@ -284,6 +288,76 @@
         {
           "text": "Związki zawodowe powstawały, aby bronić praw robotników.",
           "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-f434fefd",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Kto skonstruował maszynę parową w 1763 roku?",
+      "selection_type": "open",
+      "explanation": "Był to James Watt",
+      "accepted_answers": [
+        "James Watt"
+      ]
+    },
+    {
+      "id": "q-9850f8b1",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Co było powodem, że w Europie wschodniej rewolucja przebiegała dużo wolniej?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "trwające wojny",
+          "is_correct": false
+        },
+        {
+          "text": "brak uniwersytetów",
+          "is_correct": false
+        },
+        {
+          "text": "obowiązujące frawa feudalne",
+          "is_correct": true
+        },
+        {
+          "text": "wybuchy powstań narodowych",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-329371b8",
+      "topic_id": "rewolucja-przemyslowa",
+      "text": "Na czym opiera się kapitalizm?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "prywatnej własności",
+          "is_correct": true
+        },
+        {
+          "text": "publicznej własności",
+          "is_correct": false
+        },
+        {
+          "text": "wolności osobistej",
+          "is_correct": true
+        },
+        {
+          "text": "kontroli społeczeństwa",
+          "is_correct": false
+        },
+        {
+          "text": "swobodzie konkurencji",
+          "is_correct": true
+        },
+        {
+          "text": "ograniczonej ingerencji pańtwea w gospodarkę",
+          "is_correct": true
+        },
+        {
+          "text": "aktywnej opiece państwa nad gospodarką",
+          "is_correct": false
         }
       ]
     }

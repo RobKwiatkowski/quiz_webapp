@@ -29,7 +29,7 @@
     {
       "id": "q-7de477f4",
       "topic_id": "miasta-panstwa-mezopotamii",
-      "text": "Pomiędzy jakimi rzekami powstała Mezopotamia?",
+      "text": "Pomiędzy jakimi rzekami leży Mezopotamia?",
       "selection_type": "open",
       "explanation": "Pomiędzy Tygrysem i Eufratem",
       "answer_slots": [
@@ -59,36 +59,6 @@
         },
         {
           "text": "Starożytny Egipt",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Izrael",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Indie",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Chiny",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q-image-egypt-city",
-      "topic_id": "miasta-panstwa-mezopotamii",
-      "text": "Którą starożytną cywilizację przedstawia obraz?",
-      "selection_type": "single",
-      "image": "/static/images/history/first-civilizations/ancient-egypt-nile-city-street.png",
-      "explanation": "To Starożytny Egipt. Pomagają rozpoznać go Nil, obeliski i wielka świątynia.",
-      "answers": [
-        {
-          "text": "Starożytny Egipt",
-          "is_correct": true
-        },
-        {
-          "text": "Mezopotamia",
           "is_correct": false
         },
         {
@@ -166,36 +136,6 @@
       ]
     },
     {
-      "id": "q-image-china-city",
-      "topic_id": "miasta-panstwa-mezopotamii",
-      "text": "Którą starożytną cywilizację przedstawia obraz?",
-      "selection_type": "single",
-      "image": "/static/images/history/first-civilizations/ancient-china-city-street.png",
-      "explanation": "To Starożytne Chiny. Pomagają rozpoznać je drewniana architektura, dachy i stroje mieszkańców.",
-      "answers": [
-        {
-          "text": "Starożytne Chiny",
-          "is_correct": true
-        },
-        {
-          "text": "Mezopotamia",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Egipt",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Izrael",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Indie",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": "q-image-cuneiform-name",
       "topic_id": "miasta-panstwa-mezopotamii",
       "text": "Jak nazywamy pismo pokazane na obrazku?",
@@ -223,6 +163,402 @@
         "wynalezli je Sumerowie",
         "pismo wynaleźli Sumerowie",
         "pismo wynalezli Sumerowie"
+      ]
+    },
+    {
+      "id": "q-845e4607",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Mezopotamia to:",
+      "selection_type": "single",
+      "explanation": "Mezopotamia to obszar leżący pomiędzy rzekami Eufrat i Tygrys, obecnie leżący na terytorium Iraku, Turcji i Syrii.",
+      "answers": [
+        {
+          "text": "obszar między rzekami Eufrat i Tygrys",
+          "is_correct": true
+        },
+        {
+          "text": "nazwa starożytnego ludu",
+          "is_correct": false
+        },
+        {
+          "text": "nazwa cywilizacji",
+          "is_correct": false
+        },
+        {
+          "text": "okres kiedy pojawili się Sumerowie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-091d1884",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Kiedy sumerowie założyli swoją cywilizację?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "w połowie IV tysiaclecia p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "w połowie V tysiąclecia p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "w połowie IV wieku p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "w połowie V wieku p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "w połowie VI tysiąclecia p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "w połowie VI wieku p.n.e.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-3367ab0a",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Co budowali sumeryjczycy aby zwiększyć plony ze swoich pól",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "akwedukty",
+          "is_correct": false
+        },
+        {
+          "text": "kanały nawadniające",
+          "is_correct": true
+        },
+        {
+          "text": "studnie",
+          "is_correct": false
+        },
+        {
+          "text": "porty",
+          "is_correct": false
+        },
+        {
+          "text": "miasta-państwa",
+          "is_correct": false
+        },
+        {
+          "text": "oazy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-4cfdea96",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Jakie jest najważniejsze osiągnięcie mieszkańców Sumeru?",
+      "selection_type": "open",
+      "explanation": "Było to pismo.",
+      "accepted_answers": [
+        "pismo"
+      ]
+    },
+    {
+      "id": "q-15fd2aaa",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Które z tych rzeczy wynaleźli sumeryjczycy?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "koło",
+          "is_correct": true
+        },
+        {
+          "text": "pismo",
+          "is_correct": true
+        },
+        {
+          "text": "żagiel",
+          "is_correct": true
+        },
+        {
+          "text": "koło garncarskie",
+          "is_correct": true
+        },
+        {
+          "text": "katapulta",
+          "is_correct": false
+        },
+        {
+          "text": "mury",
+          "is_correct": false
+        },
+        {
+          "text": "piramidy",
+          "is_correct": false
+        },
+        {
+          "text": "stal",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-18878755",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Sumeryjczycy opracowali system matematyczny oparty na jakiej liczbie?",
+      "selection_type": "open",
+      "explanation": "Oparli go na liczbie 60. Do tej pory czasami korzystamy z tego systemu, np. podział godziny i minuty.",
+      "accepted_answers": [
+        "60"
+      ]
+    },
+    {
+      "id": "q-image-canals-mesopotamia",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Co budują Sumerowie na tym obrazku?",
+      "selection_type": "open",
+      "explanation": "Na tym obrazku Sumerowie budują kanał nawadniający.",
+      "image": "/static/images/history/first-civilizations/canals-mesopotamia.png",
+      "accepted_answers": [
+        "kanał nawadniający",
+        "kanał irygacyjny",
+        "kanały nawadniające"
+      ]
+    },
+    {
+      "id": "q-5865ce2d",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Ur i Uruk to przykłady sumeryjskich:",
+      "selection_type": "single",
+      "explanation": "Sumerowie zakładali miasta-państwa takie jak, np. Ur i Uruk.",
+      "answers": [
+        {
+          "text": "miast",
+          "is_correct": false
+        },
+        {
+          "text": "państw",
+          "is_correct": false
+        },
+        {
+          "text": "miast-państw",
+          "is_correct": true
+        },
+        {
+          "text": "świątyń",
+          "is_correct": false
+        },
+        {
+          "text": "bogów",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-7773c5fc",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Wybierz poprawne nazwy sumeryjskich miast-państw:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Ur",
+          "is_correct": true
+        },
+        {
+          "text": "Uruk",
+          "is_correct": true
+        },
+        {
+          "text": "Urban",
+          "is_correct": false
+        },
+        {
+          "text": "Tyr",
+          "is_correct": false
+        },
+        {
+          "text": "Larsa",
+          "is_correct": true
+        },
+        {
+          "text": "Teby",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-955bfd07",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Kto rządził w sumeryjskim mieście-państwie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "król",
+          "is_correct": true
+        },
+        {
+          "text": "faraon",
+          "is_correct": false
+        },
+        {
+          "text": "cesarz",
+          "is_correct": false
+        },
+        {
+          "text": "prezydent",
+          "is_correct": false
+        },
+        {
+          "text": "imperator",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-14ace9b3",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Na obrazku przedstawiono Zigurrat w mieście Ur. Co to było?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/q-14ace9b3.png",
+      "answers": [
+        {
+          "text": "pałac króla",
+          "is_correct": false
+        },
+        {
+          "text": "świątynia",
+          "is_correct": true
+        },
+        {
+          "text": "główny sąd",
+          "is_correct": false
+        },
+        {
+          "text": "spichlerz miasta",
+          "is_correct": false
+        },
+        {
+          "text": "hala targowa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-a47f1c49",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Babilonia powstała około:",
+      "selection_type": "single",
+      "explanation": "Babilonia powstała w drugim tysiącleciu p.n.e.",
+      "answers": [
+        {
+          "text": "3 000 lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "2 000 lat p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "1 000 lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "4 000 lat p.n.e.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-a5edc6a2",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Jak nazywał się król Babilonii który podbił sumeryjskie miasta i wprowadził swój kodeks praw?",
+      "selection_type": "open",
+      "explanation": "Był to Hammurabi",
+      "accepted_answers": [
+        "Hammurabi"
+      ]
+    },
+    {
+      "id": "q-e9c9ef3c",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Jak nazywa się jeden z najstarszych znanych zbiorów praw?",
+      "selection_type": "open",
+      "explanation": "Był to kodeks Hammurabiego.",
+      "accepted_answers": [
+        "kodeks Hammurabiego"
+      ]
+    },
+    {
+      "id": "q-77198b84",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Co opracowali Babilończycy na bazie obserwacji astronomicznych?",
+      "selection_type": "open",
+      "explanation": "Opracowali kalendarz.",
+      "accepted_answers": [
+        "kalendarz"
+      ]
+    },
+    {
+      "id": "q-ec64f888",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Jak nazywała się stolica Babilonii?",
+      "selection_type": "open",
+      "explanation": "Był to Babilon.",
+      "accepted_answers": [
+        "Babilon"
+      ]
+    },
+    {
+      "id": "q-e59edf7f",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Skąd wzięła się władza i rola pierwszych królów sumeryjskich?",
+      "selection_type": "single",
+      "explanation": "Pierwsi królowie zanim zostali królami byli zarządcami budowy rowów melioracyjnych.",
+      "answers": [
+        {
+          "text": "Od nadzorowania kopania rowów melioracyjnych",
+          "is_correct": true
+        },
+        {
+          "text": "Od siłowego przejęcia władzy",
+          "is_correct": false
+        },
+        {
+          "text": "Od kupowania ziemi zdonej do uprawy",
+          "is_correct": false
+        },
+        {
+          "text": "Od płacenia podatku faraonom",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-144e9aa9",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Nad jaką rzeką leżała Babilonia?",
+      "selection_type": "open",
+      "explanation": "Z mapy widać że nad Eufratem",
+      "image": "/static/images/history/first-civilizations/q-144e9aa9.png",
+      "accepted_answers": [
+        "Eufrat",
+        "Nad eufratem",
+        "Eufratem"
+      ]
+    },
+    {
+      "id": "q-04316eb3",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Nad jaką rzeką leżał Uruk?",
+      "selection_type": "open",
+      "explanation": "Leżał nad Eufratem",
+      "image": "/static/images/history/first-civilizations/q-04316eb3.png",
+      "accepted_answers": [
+        "Eufrat",
+        "Eufratem",
+        "nad Eufratem"
       ]
     }
   ]

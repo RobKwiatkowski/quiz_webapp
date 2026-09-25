@@ -1,0 +1,20 @@
+{
+  "id": "math-order-of-operations",
+  "title": "Kolejność wykonywania działań",
+  "description": "Ćwiczenia krok po kroku z nawiasami, potęgami i kolejnością działań.",
+  "category": "math",
+  "age_group": "10-12",
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "pro"
+  ],
+  "target_question_count": 10,
+  "questions_per_topic": 3,
+  "topics": [
+    "topic_1_precedence.json",
+    "topic_2_parentheses.json",
+    "topic_3_powers.json",
+    "topic_4_left_to_right.json"
+  ]
+}

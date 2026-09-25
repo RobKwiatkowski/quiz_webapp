@@ -1,0 +1,176 @@
+{
+  "topic_id": "podzial-administracyjny-2",
+  "topic_title": "Podział administracyjny",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-4d08954f",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Ile jest województw w Polsce?",
+      "selection_type": "open",
+      "explanation": "16",
+      "accepted_answers": [
+        "16"
+      ]
+    },
+    {
+      "id": "q-b25f60e7",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Jakie są trzy rodzaje gmin?",
+      "selection_type": "open",
+      "explanation": "miejskie, wiejskie, miejsko-wiejskie",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "miejskie"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "wiejskie"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "miejsko-wiejskie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-b3c0e32e",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Jakie jest największe województwo?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Mazowieckie",
+          "is_correct": true
+        },
+        {
+          "text": "Zachodnio-Pomorskie",
+          "is_correct": false
+        },
+        {
+          "text": "Wielkopolskie",
+          "is_correct": false
+        },
+        {
+          "text": "Opolskie",
+          "is_correct": false
+        },
+        {
+          "text": "Dolnośląskie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-eef7aa4f",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Wymień nazwy województw, które mają dwie stolice.",
+      "selection_type": "open",
+      "explanation": "Kujawsko-Pomorskie, Lubuskie",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "Lubuskie"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "Kujawsko-Pomorskie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-cb9fb34c",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Duże miasta są gminami {{luka_1}} na prawach {{luka_2}}.",
+      "selection_type": "fill",
+      "explanation": "Duże miasta są gminami miejskimi na prawach powiatu.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "luka_1",
+          "accepted_answers": [
+            "miejskimi"
+          ],
+          "options": []
+        },
+        {
+          "id": "luka_2",
+          "accepted_answers": [
+            "powiatu"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-c31dae50",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Na czele województwa stoi:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "marszałek",
+          "is_correct": true
+        },
+        {
+          "text": "starosta",
+          "is_correct": false
+        },
+        {
+          "text": "wójt",
+          "is_correct": false
+        },
+        {
+          "text": "burmistrz",
+          "is_correct": false
+        },
+        {
+          "text": "prezydent",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-eastern-border-organizations",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Dla jakich organizacji wschodnia granica Polski jest szczególnie istotna?",
+      "selection_type": "open",
+      "explanation": "Wschodnia granica Polski jest jednocześnie zewnętrzną granicą Unii Europejskiej i NATO.",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "NATO",
+            "dla NATO",
+            "Organizacja Traktatu Północnoatlantyckiego",
+            "Organizacji Traktatu Północnoatlantyckiego"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "UE",
+            "dla UE",
+            "Unia Europejska",
+            "Unii Europejskiej",
+            "dla Unii Europejskiej"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-04ffeaac",
+      "topic_id": "podzial-administracyjny-2",
+      "text": "Na ile stopni podzielono podział administracyjny Polski?",
+      "selection_type": "open",
+      "explanation": "Na 3 stopnie.",
+      "accepted_answers": [
+        "3"
+      ]
+    }
+  ]
+}

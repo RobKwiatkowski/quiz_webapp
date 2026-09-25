@@ -1,0 +1,12 @@
+{
+  "id": "math-division-table",
+  "title": "Nauka tabliczki dzielenia",
+  "description": "Szybki trening dzielenia bez reszty na czas.",
+  "category": "math",
+  "age_group": "10-12",
+  "target_question_count": 10,
+  "questions_per_topic": 10,
+  "topics": [
+    "topic_1_division_table.json"
+  ]
+}

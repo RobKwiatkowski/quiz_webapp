@@ -73,9 +73,9 @@
       "topic_id": "odkrycia-geograficzne",
       "text": "Podaj nazwę kontynentu, który przez Europejczyków został odkryty najpóźniej.",
       "selection_type": "open",
-      "explanation": "Była to Australia.",
+      "explanation": "Była to Antarktyda.",
       "accepted_answers": [
-        "Australia"
+        "Antarktyda"
       ]
     },
     {
@@ -91,5 +91,6 @@
         "Ferdynand Magellan"
       ]
     }
-  ]
+  ],
+  "is_active": true
 }

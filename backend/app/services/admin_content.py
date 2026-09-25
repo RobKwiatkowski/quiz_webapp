@@ -10,6 +10,7 @@ import shutil
 import tempfile
 import unicodedata
 import uuid
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,13 @@ SUPPORTED_SUBJECTS = {
     "geography": "Geografia",
     "biology": "Biologia",
     "math": "Matematyka",
+}
+MATH_ONLY_SELECTION_TYPES = {
+    "operation_order",
+    "timed_division",
+    "timed_multiplication",
+    "written_division",
+    "written_multiplication",
 }
 
 
@@ -186,18 +194,61 @@ def get_topic_filename(chapter_dir: Path, topic_id: str) -> str:
     raise HTTPException(status_code=404, detail="Topic not found")
 
 
-def list_admin_topics(chapter_id: str) -> list[dict[str, str]]:
-    """Returns topic titles for an existing chapter."""
+def list_admin_topics(chapter_id: str) -> list[dict[str, Any]]:
+    """Returns topic titles and activation states for an existing chapter."""
     chapter_dir = get_chapter_dir(chapter_id)
     meta = load_chapter_meta(chapter_dir)
     topics = []
     for topic_filename in meta.topics:
         topic = load_topic_file(chapter_dir, topic_filename)
-        topics.append({"id": topic.topic_id, "title": topic.topic_title})
+        topics.append({"id": topic.topic_id, "title": topic.topic_title, "is_active": topic.is_active, "question_count": len(topic.questions)})
     return topics
 
 
-def create_topic(chapter_id: str, payload: dict[str, Any]) -> dict[str, str]:
+def list_admin_images(chapter_id: str) -> dict[str, Any]:
+    """Lists reusable static images and selects the chapter's usual folder."""
+    chapter_dir = get_chapter_dir(chapter_id)
+    meta = load_chapter_meta(chapter_dir)
+    images_root = STATIC_DIR / "images"
+    subject_root = images_root / meta.category
+
+    images = []
+    if subject_root.exists():
+        for image_path in sorted(path for path in subject_root.rglob("*") if path.is_file()):
+            if image_path.suffix.lower() not in ALLOWED_IMAGE_EXTENSIONS:
+                continue
+            relative_path = image_path.relative_to(images_root).as_posix()
+            images.append(
+                {
+                    "path": f"/static/images/{relative_path}",
+                    "filename": image_path.name,
+                    "folder": Path(relative_path).parent.as_posix(),
+                }
+            )
+
+    referenced_folders: Counter[str] = Counter()
+    for topic_filename in meta.topics:
+        topic = load_topic_file(chapter_dir, topic_filename)
+        for question in topic.questions:
+            image_values = question.image if isinstance(question.image, list) else [question.image]
+            for image_value in image_values:
+                if not isinstance(image_value, str) or not image_value.startswith("/static/images/"):
+                    continue
+                relative_path = image_value.removeprefix("/static/images/")
+                folder = Path(relative_path).parent.as_posix()
+                if folder == meta.category or folder.startswith(f"{meta.category}/"):
+                    referenced_folders[folder] += 1
+
+    folders = sorted({image["folder"] for image in images})
+    default_folder = (
+        referenced_folders.most_common(1)[0][0]
+        if referenced_folders
+        else (folders[0] if folders else meta.category)
+    )
+    return {"default_folder": default_folder, "folders": folders, "images": images}
+
+
+def create_topic(chapter_id: str, payload: dict[str, Any]) -> dict[str, Any]:
     """Creates a new empty topic in an existing chapter."""
     name = str(payload.get("name", "")).strip()
     if not name:
@@ -216,7 +267,12 @@ def create_topic(chapter_id: str, payload: dict[str, Any]) -> dict[str, str]:
 
     topic_id = generate_unique_slug(name, existing_topic_ids)
     topic_filename = generate_topic_filename(topic_id, existing_filenames)
-    topic_data = {"topic_id": topic_id, "topic_title": name, "questions": []}
+    topic_data = {
+        "topic_id": topic_id,
+        "topic_title": name,
+        "is_active": False,
+        "questions": [],
+    }
 
     TopicFile.model_validate(topic_data)
     meta_data["topics"] = [*meta_data.get("topics", []), topic_filename]
@@ -225,7 +281,68 @@ def create_topic(chapter_id: str, payload: dict[str, Any]) -> dict[str, str]:
     write_json_file(chapter_dir / topic_filename, topic_data)
     save_meta_data(chapter_dir, meta_data)
 
-    return {"id": topic_id, "title": name}
+    return {"id": topic_id, "title": name, "is_active": False, "question_count": 0}
+
+
+def update_topic_active(chapter_id: str, topic_id: str, is_active: bool) -> dict[str, Any]:
+    """Activates or deactivates one topic without removing its questions."""
+    chapter_dir, topic_filename, topic_data = get_topic_data(chapter_id, topic_id)
+    topic_data["is_active"] = is_active
+    save_topic_data(chapter_dir, topic_filename, topic_data)
+    return {
+        "id": topic_data["topic_id"],
+        "title": topic_data["topic_title"],
+        "is_active": is_active,
+        "question_count": len(topic_data.get("questions", [])),
+    }
+
+
+def delete_topic(chapter_id: str, topic_id: str) -> dict[str, Any]:
+    """Removes a topic from its chapter and archives its JSON for recovery."""
+    chapter_dir, topic_filename, topic_data = get_topic_data(chapter_id, topic_id)
+    meta_path = chapter_dir / "meta.json"
+    with open(meta_path, "r", encoding="utf-8") as f:
+        meta_data = json.load(f)
+
+    topics = meta_data.get("topics", [])
+    if topic_filename not in topics:
+        raise HTTPException(status_code=404, detail="Topic not found")
+
+    meta_data["topics"] = [filename for filename in topics if filename != topic_filename]
+    try:
+        ChapterMeta.model_validate(meta_data)
+    except ValidationError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+
+    topic_path = chapter_dir / topic_filename
+    backup_path = topic_path.with_suffix(topic_path.suffix + ".bak")
+    archive_dir = chapter_dir / "_deleted_topics"
+    archive_dir.mkdir(exist_ok=True)
+    archive_stem = f"{topic_path.stem}-{uuid.uuid4().hex[:8]}"
+    archived_topic_path = archive_dir / f"{archive_stem}.json"
+    archived_backup_path = archive_dir / f"{archive_stem}.json.bak"
+    moved_backup = False
+
+    try:
+        shutil.move(topic_path, archived_topic_path)
+        if backup_path.exists():
+            shutil.move(backup_path, archived_backup_path)
+            moved_backup = True
+        save_meta_data(chapter_dir, meta_data)
+    except Exception:
+        if archived_topic_path.exists():
+            shutil.move(archived_topic_path, topic_path)
+        if moved_backup and archived_backup_path.exists():
+            shutil.move(archived_backup_path, backup_path)
+        raise
+
+    return {
+        "status": "deleted",
+        "id": topic_id,
+        "title": topic_data.get("topic_title", topic_id),
+        "question_count": len(topic_data.get("questions", [])),
+        "archived": True,
+    }
 
 
 def get_topic_data(chapter_id: str, topic_id: str) -> tuple[Path, str, dict[str, Any]]:
@@ -267,7 +384,27 @@ def update_question(
     for index, existing_question in enumerate(questions):
         if existing_question.get("id") == question_id:
             question = normalize_admin_question(payload, question_id, chapter_id, topic_id)
+            question["is_active"] = existing_question.get("is_active", True)
             questions[index] = question
+            save_topic_data(chapter_dir, topic_filename, topic_data)
+            return question
+
+    raise HTTPException(status_code=404, detail="Question not found")
+
+
+def update_question_active(
+    chapter_id: str,
+    topic_id: str,
+    question_id: str,
+    is_active: bool,
+) -> dict[str, Any]:
+    """Activates or deactivates one question without deleting it."""
+    chapter_dir, topic_filename, topic_data = get_topic_data(chapter_id, topic_id)
+    questions = topic_data.get("questions", [])
+
+    for question in questions:
+        if question.get("id") == question_id:
+            question["is_active"] = is_active
             save_topic_data(chapter_dir, topic_filename, topic_data)
             return question
 
@@ -288,6 +425,47 @@ def delete_question(chapter_id: str, topic_id: str, question_id: str) -> dict[st
     return {"status": "deleted"}
 
 
+def move_question(
+    chapter_id: str,
+    source_topic_id: str,
+    question_id: str,
+    target_topic_id: str,
+) -> dict[str, Any]:
+    """Moves one question between two topics in the same chapter."""
+    if source_topic_id == target_topic_id:
+        raise HTTPException(status_code=400, detail="Wybierz inny temat docelowy")
+
+    chapter_dir, source_filename, source_data = get_topic_data(chapter_id, source_topic_id)
+    _, target_filename, target_data = get_topic_data(chapter_id, target_topic_id)
+    source_questions = source_data.get("questions", [])
+    target_questions = target_data.get("questions", [])
+    question = next(
+        (item for item in source_questions if item.get("id") == question_id),
+        None,
+    )
+    if question is None:
+        raise HTTPException(status_code=404, detail="Question not found")
+    if any(item.get("id") == question_id for item in target_questions):
+        raise HTTPException(
+            status_code=409,
+            detail="Pytanie o tym identyfikatorze już istnieje w temacie docelowym",
+        )
+
+    moved_question = {**question, "topic_id": target_topic_id}
+    source_data["questions"] = [
+        item for item in source_questions if item.get("id") != question_id
+    ]
+    target_data["questions"] = [*target_questions, moved_question]
+    save_topic_pair_data(
+        chapter_dir,
+        source_filename,
+        source_data,
+        target_filename,
+        target_data,
+    )
+    return moved_question
+
+
 def normalize_admin_question(
     payload: dict[str, Any],
     question_id: str,
@@ -296,9 +474,16 @@ def normalize_admin_question(
 ) -> dict[str, Any]:
     """Keeps the stored question payload small and type-specific."""
     selection_type = payload.get("selection_type", "single")
+    chapter = load_chapter_meta(get_chapter_dir(chapter_id))
+    if selection_type in MATH_ONLY_SELECTION_TYPES and chapter.category != "math":
+        raise HTTPException(
+            status_code=400,
+            detail="This question type is available only for math chapters",
+        )
     question: dict[str, Any] = {
         "id": question_id,
         "topic_id": topic_id,
+        "is_active": True,
         "text": str(payload.get("text", "")).strip(),
         "selection_type": selection_type,
     }
@@ -420,13 +605,74 @@ def normalize_admin_question(
         question["written_multiplication_config"] = {
             "min_factor": config.get("min_factor"),
             "max_factor": config.get("max_factor"),
+            "max_total_digits": config.get("max_total_digits", 6),
+            "easy_max_total_digits": config.get("easy_max_total_digits", 4),
+            "easy_max_partial_product": config.get("easy_max_partial_product", 100),
+        }
+    elif selection_type == "timed_multiplication":
+        config = payload.get("timed_multiplication_config")
+        if not isinstance(config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Timed multiplication questions require generation limits",
+            )
+        question["timed_multiplication_config"] = {
+            "min_factor": config.get("min_factor", 3),
+            "max_factor": config.get("max_factor", 9),
+            "time_limit_seconds": config.get("time_limit_seconds", 5),
+        }
+    elif selection_type == "timed_division":
+        config = payload.get("timed_division_config")
+        if not isinstance(config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Timed division questions require generation limits",
+            )
+        question["timed_division_config"] = {
+            "min_divisor": config.get("min_divisor", 3),
+            "max_divisor": config.get("max_divisor", 9),
+            "min_quotient": config.get("min_quotient", 3),
+            "max_quotient": config.get("max_quotient", 9),
+            "time_limit_seconds": config.get("time_limit_seconds", 10),
+        }
+    elif selection_type == "written_division":
+        config = payload.get("written_division_config")
+        if not isinstance(config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Written division questions require generation limits",
+            )
+        question["written_division_config"] = {
+            "min_divisor": config.get("min_divisor", 2),
+            "max_divisor": config.get("max_divisor", 99),
+            "min_quotient": config.get("min_quotient", 10),
+            "max_quotient": config.get("max_quotient", 9999),
+            "max_dividend_digits": config.get("max_dividend_digits", 6),
+            "easy_min_divisor": config.get("easy_min_divisor", 3),
+            "easy_max_divisor": config.get("easy_max_divisor", 10),
+            "medium_min_divisor": config.get("medium_min_divisor", 8),
+            "medium_max_divisor": config.get("medium_max_divisor", 15),
+            "easy_max_quotient": config.get("easy_max_quotient", 999),
+            "easy_max_dividend_digits": config.get("easy_max_dividend_digits", 4),
+            "easy_max_intermediate_value": config.get("easy_max_intermediate_value", 100),
+        }
+    elif selection_type == "operation_order":
+        config = payload.get("operation_order_config")
+        if not isinstance(config, dict):
+            raise HTTPException(
+                status_code=400,
+                detail="Order-of-operations questions require a concept family",
+            )
+        question["operation_order_config"] = {
+            "family": str(config.get("family", "")).strip(),
         }
     else:
         raise HTTPException(
             status_code=400,
             detail=(
                 "Admin supports only single, multiple, true_false, open, llm, order, matching, "
-                "map, hotspot, fill, and written_multiplication questions"
+                "map, hotspot, fill, timed_multiplication, timed_division, written_multiplication, "
+                "written_division, and operation_order questions"
             ),
         )
 
@@ -516,7 +762,7 @@ def normalize_question_image(
     if image_upload:
         if image_value:
             raise HTTPException(status_code=400, detail="Use either image URL or image file, not both")
-        return save_uploaded_question_image(image_upload, question_id, chapter_id, topic_id)
+        return save_uploaded_chapter_image(image_upload, chapter_id)
 
     return image_value
 
@@ -527,7 +773,18 @@ def save_uploaded_question_image(
     chapter_id: str,
     topic_id: str,
 ) -> str:
-    """Stores an admin-uploaded image under backend static files."""
+    """Stores an admin-uploaded image in the chapter's reusable image folder.
+
+    The extra identifiers are retained for callers from older admin flows. Image
+    placement is intentionally chapter-based, so an uploaded file is available
+    in the same image library before or after a question is saved.
+    """
+    del question_id, topic_id
+    return save_uploaded_chapter_image(image_upload, chapter_id)
+
+
+def save_uploaded_chapter_image(image_upload: Any, chapter_id: str) -> str:
+    """Immediately stores an image in the current chapter's default folder."""
     if not isinstance(image_upload, dict):
         raise HTTPException(status_code=400, detail="Image upload must be an object")
 
@@ -554,24 +811,27 @@ def save_uploaded_question_image(
     if len(image_bytes) > MAX_IMAGE_UPLOAD_BYTES:
         raise HTTPException(status_code=400, detail="Image file is too large")
 
-    chapter_slug = generate_unique_slug(chapter_id, set())
-    topic_slug = generate_unique_slug(topic_id, set())
-    question_slug = generate_unique_slug(question_id, set())
-    upload_dir = STATIC_DIR / "images" / "admin" / chapter_slug / topic_slug
+    image_library = list_admin_images(chapter_id)
+    relative_folder = Path(image_library["default_folder"])
+    if relative_folder.is_absolute() or ".." in relative_folder.parts:
+        raise HTTPException(status_code=500, detail="Invalid default image folder")
+
+    upload_dir = STATIC_DIR / "images" / relative_folder
     upload_dir.mkdir(parents=True, exist_ok=True)
 
-    target_name = f"{question_slug}{extension}"
+    filename_slug = generate_unique_slug(Path(filename).stem, set())
+    target_name = f"{filename_slug}{extension}"
     target_path = upload_dir / target_name
     suffix = 2
     while target_path.exists():
-        target_name = f"{question_slug}-{suffix}{extension}"
+        target_name = f"{filename_slug}-{suffix}{extension}"
         target_path = upload_dir / target_name
         suffix += 1
 
     with open(target_path, "wb") as f:
         f.write(image_bytes)
 
-    return f"/static/images/admin/{chapter_slug}/{topic_slug}/{target_name}"
+    return f"/static/images/{relative_folder.as_posix()}/{target_name}"
 
 
 def save_topic_data(chapter_dir: Path, topic_filename: str, topic_data: dict[str, Any]) -> None:
@@ -608,6 +868,80 @@ def save_topic_data(chapter_dir: Path, topic_filename: str, topic_data: dict[str
         if os.path.exists(temp_name):
             os.unlink(temp_name)
         raise
+
+
+def save_topic_pair_data(
+    chapter_dir: Path,
+    first_filename: str,
+    first_data: dict[str, Any],
+    second_filename: str,
+    second_data: dict[str, Any],
+) -> None:
+    """Validates and writes two related topic changes as one recoverable operation."""
+    topic_updates = {
+        first_filename: first_data,
+        second_filename: second_data,
+    }
+    try:
+        for topic_data in topic_updates.values():
+            TopicFile.model_validate(topic_data)
+    except ValidationError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+
+    result = validate_chapter_dir(
+        chapter_dir=chapter_dir,
+        static_dir=STATIC_DIR,
+        topic_overrides=topic_updates,
+    )
+    if not result.is_valid:
+        raise HTTPException(status_code=400, detail="; ".join(result.errors))
+
+    paths = {filename: chapter_dir / filename for filename in topic_updates}
+    original_contents = {
+        filename: path.read_bytes() for filename, path in paths.items()
+    }
+    temp_paths: dict[str, str] = {}
+    replaced_filenames: list[str] = []
+
+    try:
+        for filename, topic_data in topic_updates.items():
+            topic_path = paths[filename]
+            fd, temp_name = tempfile.mkstemp(
+                prefix=f".{topic_path.name}.",
+                suffix=".tmp",
+                dir=topic_path.parent,
+                text=True,
+            )
+            temp_paths[filename] = temp_name
+            with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as file:
+                json.dump(topic_data, file, ensure_ascii=False, indent=2)
+                file.write("\n")
+
+        for filename, topic_path in paths.items():
+            shutil.copy2(topic_path, topic_path.with_suffix(topic_path.suffix + ".bak"))
+            os.replace(temp_paths[filename], topic_path)
+            replaced_filenames.append(filename)
+
+    except Exception:
+        for filename in replaced_filenames:
+            topic_path = paths[filename]
+            fd, rollback_name = tempfile.mkstemp(
+                prefix=f".{topic_path.name}.rollback.",
+                suffix=".tmp",
+                dir=topic_path.parent,
+            )
+            try:
+                with os.fdopen(fd, "wb") as file:
+                    file.write(original_contents[filename])
+                os.replace(rollback_name, topic_path)
+            finally:
+                if os.path.exists(rollback_name):
+                    os.unlink(rollback_name)
+        raise
+    finally:
+        for temp_name in temp_paths.values():
+            if os.path.exists(temp_name):
+                os.unlink(temp_name)
 
 
 def save_meta_data(chapter_dir: Path, meta_data: dict[str, Any]) -> None:

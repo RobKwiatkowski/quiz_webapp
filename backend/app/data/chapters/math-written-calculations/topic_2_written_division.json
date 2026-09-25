@@ -1,0 +1,70 @@
+{
+  "topic_id": "written-division",
+  "topic_title": "Dzielenie pod kreską",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "written-division-1",
+      "topic_id": "written-division",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_division",
+      "explanation": "Sprawdź iloraz, kolejne odejmowania i końcową resztę.",
+      "written_division_config": {
+        "min_divisor": 2,
+        "max_divisor": 99,
+        "min_quotient": 10,
+        "max_quotient": 9999,
+        "max_dividend_digits": 6,
+        "easy_min_divisor": 3,
+        "easy_max_divisor": 10,
+        "medium_min_divisor": 8,
+        "medium_max_divisor": 15,
+        "easy_max_quotient": 999,
+        "easy_max_dividend_digits": 4,
+        "easy_max_intermediate_value": 100
+      }
+    },
+    {
+      "id": "written-division-2",
+      "topic_id": "written-division",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_division",
+      "explanation": "Sprawdź iloraz, kolejne odejmowania i końcową resztę.",
+      "written_division_config": {
+        "min_divisor": 2,
+        "max_divisor": 99,
+        "min_quotient": 10,
+        "max_quotient": 9999,
+        "max_dividend_digits": 6,
+        "easy_min_divisor": 3,
+        "easy_max_divisor": 10,
+        "medium_min_divisor": 8,
+        "medium_max_divisor": 15,
+        "easy_max_quotient": 999,
+        "easy_max_dividend_digits": 4,
+        "easy_max_intermediate_value": 100
+      }
+    },
+    {
+      "id": "written-division-3",
+      "topic_id": "written-division",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_division",
+      "explanation": "Sprawdź iloraz, kolejne odejmowania i końcową resztę.",
+      "written_division_config": {
+        "min_divisor": 2,
+        "max_divisor": 99,
+        "min_quotient": 10,
+        "max_quotient": 9999,
+        "max_dividend_digits": 6,
+        "easy_min_divisor": 3,
+        "easy_max_divisor": 10,
+        "medium_min_divisor": 8,
+        "medium_max_divisor": 15,
+        "easy_max_quotient": 999,
+        "easy_max_dividend_digits": 4,
+        "easy_max_intermediate_value": 100
+      }
+    }
+  ]
+}

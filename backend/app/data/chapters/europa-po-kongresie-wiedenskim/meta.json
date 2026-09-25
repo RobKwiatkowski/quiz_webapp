@@ -9,6 +9,7 @@
   "questions_per_topic": 2,
   "topics": [
     "topic_1_kongres-wiedenski.json",
-    "topic_2_rewolucja_przemyslowa.json"
+    "topic_2_rewolucja_przemyslowa.json",
+    "topic_3_nowe-idee-polityczne.json"
   ]
 }

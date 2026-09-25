@@ -1,0 +1,34 @@
+{
+  "topic_id": "budowa-i-funkcje-skory",
+  "topic_title": "Budowa i funkcje skóry",
+  "is_active": false,
+  "questions": [
+    {
+      "id": "q-5683600f",
+      "topic_id": "budowa-i-funkcje-skory",
+      "text": "Rozpoznaj i wybierz tkankę łączną.",
+      "selection_type": "single",
+      "image": "/static/images/history/zrzut-ekranu-2026-09-22-173341.png",
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": true
+        },
+        {
+          "text": "2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-7f654bff",
+      "topic_id": "budowa-i-funkcje-skory",
+      "text": "Znamiona barwnikowe na skórze powinny być systematycznie kontrolowane.\nWymień dwie niepokojące cechy znamion barwnikowych, których obecność wymaga wizyty u\ndermatologa.",
+      "selection_type": "llm",
+      "explanation": "asymetria - połowy różnią się od siebie, nieregularne lub poszarpane brzegi, ciemny kolor, średnica powyżej 6 mm., zmiany kształtu, koloru, wielkości",
+      "accepted_answers": [
+        "asymetria - połowy różnią się od siebie, nieregularne lub poszarpane brzegi, ciemny kolor, średnica powyżej 6 mm., zmiany kształtu, koloru, wielkości"
+      ]
+    }
+  ]
+}

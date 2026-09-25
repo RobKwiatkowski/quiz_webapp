@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getQuizzes, type QuizListItem } from "../../api/quiz-api";
+import { getQuizzes, type QuizDifficulty, type QuizListItem } from "../../api/quiz-api";
 import {
   filterQuizzesForSubject,
   getChapterLabel,
@@ -70,8 +70,12 @@ interface QuizCardProps {
 }
 
 function QuizCard({ quiz, subjectId }: QuizCardProps) {
+  const difficultyLevels = quiz.difficulty_levels ?? [];
+  const [difficulty, setDifficulty] = useState<QuizDifficulty>(difficultyLevels[0] ?? "easy");
   const chapterLabel = getChapterLabel(quiz);
-  const quizUrl = `quiz.html?id=${encodeURIComponent(quiz.id)}&section=${encodeURIComponent(subjectId)}`;
+  const supportsDifficulty = difficultyLevels.length > 0;
+  const difficultyQuery = supportsDifficulty ? `&difficulty=${difficulty}` : "";
+  const quizUrl = `quiz.html?id=${encodeURIComponent(quiz.id)}&section=${encodeURIComponent(subjectId)}${difficultyQuery}`;
 
   return (
     <article className="quiz-card">
@@ -86,6 +90,27 @@ function QuizCard({ quiz, subjectId }: QuizCardProps) {
         <h2>{quiz.title}</h2>
         <p>{quiz.description}</p>
       </div>
+      {supportsDifficulty && (
+        <fieldset className="quiz-card-difficulty">
+          <legend>Poziom trudności</legend>
+          <div className="quiz-card-difficulty-options">
+            {([
+              ["easy", "Łatwy"],
+              ["medium", "Średni"],
+              ["pro", "Pro"],
+            ] as const).filter(([value]) => difficultyLevels.includes(value)).map(([value, label]) => (
+              <button
+                aria-pressed={difficulty === value}
+                key={value}
+                onClick={() => setDifficulty(value)}
+                type="button"
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      )}
       <a className="quiz-start-button" href={quizUrl}>
         Rozpocznij quiz <span aria-hidden="true">→</span>
       </a>

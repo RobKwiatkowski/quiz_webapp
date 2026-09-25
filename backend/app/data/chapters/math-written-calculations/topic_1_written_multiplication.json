@@ -1,0 +1,49 @@
+{
+  "topic_id": "written-multiplication",
+  "topic_title": "Mnożenie pod kreską",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "written-multiplication-1",
+      "topic_id": "written-multiplication",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_multiplication",
+      "explanation": "Sprawdź wyniki cząstkowe i wynik końcowy.",
+      "written_multiplication_config": {
+        "min_factor": 10,
+        "max_factor": 9999,
+        "max_total_digits": 6,
+        "easy_max_total_digits": 4,
+        "easy_max_partial_product": 100
+      }
+    },
+    {
+      "id": "written-multiplication-2",
+      "topic_id": "written-multiplication",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_multiplication",
+      "explanation": "Sprawdź wyniki cząstkowe i wynik końcowy.",
+      "written_multiplication_config": {
+        "min_factor": 10,
+        "max_factor": 9999,
+        "max_total_digits": 6,
+        "easy_max_total_digits": 4,
+        "easy_max_partial_product": 100
+      }
+    },
+    {
+      "id": "written-multiplication-3",
+      "topic_id": "written-multiplication",
+      "text": "Oblicz sposobem pisemnym.",
+      "selection_type": "written_multiplication",
+      "explanation": "Sprawdź wyniki cząstkowe i wynik końcowy.",
+      "written_multiplication_config": {
+        "min_factor": 10,
+        "max_factor": 9999,
+        "max_total_digits": 6,
+        "easy_max_total_digits": 4,
+        "easy_max_partial_product": 100
+      }
+    }
+  ]
+}

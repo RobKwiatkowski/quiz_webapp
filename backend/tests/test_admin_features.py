@@ -151,7 +151,8 @@ def test_create_matching_question_persists_matching_pairs(tmp_path, monkeypatch)
             "selection_type": "matching",
             "matching_pairs": [
                 {"left": "Lewy jeden", "right": "Opis pierwszy"},
-                {"left": "Lewy dwa", "right": "Opis drugi"},
+                {"left": "Lewy jeden", "right": "Opis drugi"},
+                {"left": "Lewy dwa", "right": "Opis trzeci"},
             ],
             "explanation": "Każde pojęcie ma jeden pasujący opis.",
         },
@@ -162,9 +163,37 @@ def test_create_matching_question_persists_matching_pairs(tmp_path, monkeypatch)
     assert created["selection_type"] == "matching"
     assert created["matching_pairs"] == [
         {"id": "lewy-jeden", "left": "Lewy jeden", "right": "Opis pierwszy"},
-        {"id": "lewy-dwa", "left": "Lewy dwa", "right": "Opis drugi"},
+        {"id": "lewy-jeden-2", "left": "Lewy jeden", "right": "Opis drugi"},
+        {"id": "lewy-dwa", "left": "Lewy dwa", "right": "Opis trzeci"},
     ]
     assert "answers" not in created
+
+
+def test_create_operation_order_question_persists_family_for_math(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    meta_path = data_dir / "chapter-1" / "meta.json"
+    meta_data = json.loads(meta_path.read_text(encoding="utf-8"))
+    meta_data["category"] = "math"
+    meta_data["difficulty_levels"] = ["easy", "medium", "pro"]
+    write_json(meta_path, meta_data)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.post(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions",
+        json={
+            "text": "Oblicz działanie krok po kroku.",
+            "selection_type": "operation_order",
+            "operation_order_config": {"family": "parentheses"},
+            "explanation": "Najpierw wykonaj działanie w nawiasie.",
+        },
+    )
+
+    assert response.status_code == 200
+    created = response.json()
+    assert created["selection_type"] == "operation_order"
+    assert created["operation_order_config"] == {"family": "parentheses"}
 
 
 def test_create_single_image_question_copies_local_file(tmp_path, monkeypatch):
@@ -193,9 +222,38 @@ def test_create_single_image_question_copies_local_file(tmp_path, monkeypatch):
 
     assert response.status_code == 200
     created = response.json()
-    assert created["image"].startswith("/static/images/admin/chapter-1/topic-1/")
+    assert created["image"].startswith("/static/images/history/")
     saved_path = static_dir / created["image"].removeprefix("/static/")
     assert saved_path.read_bytes() == b"image-bytes"
+
+
+def test_upload_image_immediately_uses_chapter_default_folder(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    static_dir = tmp_path / "static"
+    configure_admin(monkeypatch, data_dir)
+    monkeypatch.setattr(admin_content, "STATIC_DIR", static_dir)
+    topic_path = data_dir / "chapter-1" / "topic_1.json"
+    topic_data = json.loads(topic_path.read_text(encoding="utf-8"))
+    topic_data["questions"][0]["image"] = "/static/images/history/test-images/reference.png"
+    write_json(topic_path, topic_data)
+    reference_path = static_dir / "images" / "history" / "test-images" / "reference.png"
+    reference_path.parent.mkdir(parents=True)
+    reference_path.write_bytes(b"reference-image")
+    client = TestClient(app)
+    login(client)
+
+    response = client.post(
+        "/api/admin/chapters/chapter-1/images",
+        json={
+            "filename": "Mapa Mezopotamii.png",
+            "content_base64": base64.b64encode(b"new-image").decode("ascii"),
+        },
+    )
+
+    assert response.status_code == 200
+    image_path = response.json()["path"]
+    assert image_path == "/static/images/history/test-images/mapa-mezopotamii.png"
+    assert (static_dir / image_path.removeprefix("/static/")).read_bytes() == b"new-image"
 
 
 def test_create_open_image_question_accepts_url(tmp_path, monkeypatch):
@@ -427,7 +485,7 @@ def test_create_topic_adds_file_to_current_chapter(tmp_path, monkeypatch):
 
     assert response.status_code == 200
     created = response.json()
-    assert created == {"id": "nowy-temat", "title": "Nowy temat"}
+    assert created == {"id": "nowy-temat", "title": "Nowy temat", "is_active": False, "question_count": 0}
 
     chapter_dir = data_dir / "chapter-1"
     meta_data = json.loads((chapter_dir / "meta.json").read_text(encoding="utf-8"))
@@ -436,8 +494,67 @@ def test_create_topic_adds_file_to_current_chapter(tmp_path, monkeypatch):
     assert topic_data == {
         "topic_id": "nowy-temat",
         "topic_title": "Nowy temat",
+        "is_active": False,
         "questions": [],
     }
+    assert (chapter_dir / "meta.json.bak").exists()
+
+
+def test_topic_activation_controls_quiz_selection(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    topics_response = client.get("/api/admin/chapters/chapter-1/topics")
+    assert topics_response.status_code == 200
+    assert topics_response.json() == [
+        {"id": "topic-1", "title": "Temat testowy", "is_active": True, "question_count": 2}
+    ]
+
+    deactivate_response = client.put(
+        "/api/admin/chapters/chapter-1/topics/topic-1/active",
+        json={"is_active": False},
+    )
+    assert deactivate_response.status_code == 200
+    assert deactivate_response.json()["is_active"] is False
+
+    topic_path = data_dir / "chapter-1" / "topic_1.json"
+    assert json.loads(topic_path.read_text(encoding="utf-8"))["is_active"] is False
+    assert client.get("/api/quizzes/chapter-1").json()["questions"] == []
+
+    activate_response = client.put(
+        "/api/admin/chapters/chapter-1/topics/topic-1/active",
+        json={"is_active": True},
+    )
+    assert activate_response.status_code == 200
+    assert len(client.get("/api/quizzes/chapter-1").json()["questions"]) == 2
+
+
+def test_delete_topic_removes_metadata_entry_and_archives_file(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.delete("/api/admin/chapters/chapter-1/topics/topic-1")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "deleted",
+        "id": "topic-1",
+        "title": "Temat testowy",
+        "question_count": 2,
+        "archived": True,
+    }
+    chapter_dir = data_dir / "chapter-1"
+    meta_data = json.loads((chapter_dir / "meta.json").read_text(encoding="utf-8"))
+    assert meta_data["topics"] == []
+    assert not (chapter_dir / "topic_1.json").exists()
+    archived_files = list((chapter_dir / "_deleted_topics").glob("topic_1-*.json"))
+    assert len(archived_files) == 1
+    archived_data = json.loads(archived_files[0].read_text(encoding="utf-8"))
+    assert len(archived_data["questions"]) == 2
     assert (chapter_dir / "meta.json.bak").exists()
 
 
@@ -483,6 +600,114 @@ def test_update_question_keeps_stable_id(tmp_path, monkeypatch):
     updated = response.json()
     assert updated["id"] == "q-existing-1"
     assert updated["text"] == "Zmienione pytanie?"
+
+
+def test_question_activation_controls_quiz_and_survives_edit(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.put(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions/q-existing-1/active",
+        json={"is_active": False},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["is_active"] is False
+
+    quiz_response = client.get("/api/quizzes/chapter-1")
+    assert quiz_response.status_code == 200
+    assert [question["id"] for question in quiz_response.json()["questions"]] == [
+        "q-existing-2"
+    ]
+
+    update_response = client.put(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions/q-existing-1",
+        json={
+            "text": "Zmienione nieaktywne pytanie?",
+            "selection_type": "open",
+            "accepted_answers": ["tak"],
+            "explanation": "Wyjaśnienie",
+        },
+    )
+
+    assert update_response.status_code == 200
+    assert update_response.json()["is_active"] is False
+
+    activate_response = client.put(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions/q-existing-1/active",
+        json={"is_active": True},
+    )
+    assert activate_response.status_code == 200
+    assert activate_response.json()["is_active"] is True
+
+    topic_data = json.loads(
+        (data_dir / "chapter-1" / "topic_1.json").read_text(encoding="utf-8")
+    )
+    stored_question = next(
+        question
+        for question in topic_data["questions"]
+        if question["id"] == "q-existing-1"
+    )
+    assert stored_question["is_active"] is True
+
+
+def test_move_question_between_topics_preserves_content(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    chapter_dir = data_dir / "chapter-1"
+    meta_path = chapter_dir / "meta.json"
+    meta_data = json.loads(meta_path.read_text(encoding="utf-8"))
+    meta_data["topics"].append("topic_2.json")
+    write_json(meta_path, meta_data)
+    write_json(
+        chapter_dir / "topic_2.json",
+        {
+            "topic_id": "topic-2",
+            "topic_title": "Drugi temat",
+            "is_active": False,
+            "questions": [],
+        },
+    )
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.post(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions/q-existing-1/move",
+        json={"target_topic_id": "topic-2"},
+    )
+
+    assert response.status_code == 200
+    moved = response.json()
+    assert moved["id"] == "q-existing-1"
+    assert moved["topic_id"] == "topic-2"
+    assert moved["accepted_answers"] == ["tak"]
+
+    source_data = json.loads((chapter_dir / "topic_1.json").read_text(encoding="utf-8"))
+    target_data = json.loads((chapter_dir / "topic_2.json").read_text(encoding="utf-8"))
+    assert all(question["id"] != "q-existing-1" for question in source_data["questions"])
+    assert [question["id"] for question in target_data["questions"]] == ["q-existing-1"]
+    assert (chapter_dir / "topic_1.json.bak").exists()
+    assert (chapter_dir / "topic_2.json.bak").exists()
+
+
+def test_move_question_rejects_current_topic(tmp_path, monkeypatch):
+    data_dir = make_data_dir(tmp_path)
+    configure_admin(monkeypatch, data_dir)
+    client = TestClient(app)
+    login(client)
+
+    response = client.post(
+        "/api/admin/chapters/chapter-1/topics/topic-1/questions/q-existing-1/move",
+        json={"target_topic_id": "topic-1"},
+    )
+
+    assert response.status_code == 400
+    topic_data = json.loads(
+        (data_dir / "chapter-1" / "topic_1.json").read_text(encoding="utf-8")
+    )
+    assert any(question["id"] == "q-existing-1" for question in topic_data["questions"])
 
 
 def test_delete_question(tmp_path, monkeypatch):

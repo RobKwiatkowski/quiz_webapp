@@ -1,0 +1,13 @@
+{
+  "id": "organizm-czlowieka-skora-powloka-organizmu",
+  "title": "Organizm człowieka. Skóra - powłoka organizmu",
+  "description": "Powtórka z rozdziału Organizm człowieka. Skóra - powłoka organizmu.",
+  "category": "biology",
+  "age_group": "10-12",
+  "chapter_number": null,
+  "target_question_count": 30,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1_generator.json"
+  ]
+}

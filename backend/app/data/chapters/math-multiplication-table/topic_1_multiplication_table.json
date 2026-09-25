@@ -1,0 +1,87 @@
+{
+  "topic_id": "multiplication-table",
+  "topic_title": "Tabliczka mnożenia",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "multiplication-table-1",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-2",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-3",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-4",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-5",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-6",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-7",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-8",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-9",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    },
+    {
+      "id": "multiplication-table-10",
+      "topic_id": "multiplication-table",
+      "text": "Podaj wynik działania.",
+      "selection_type": "timed_multiplication",
+      "explanation": "Sprawdź poprawny wynik działania.",
+      "timed_multiplication_config": { "min_factor": 3, "max_factor": 9, "time_limit_seconds": 5 }
+    }
+  ]
+}

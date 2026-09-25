@@ -1,0 +1,229 @@
+{
+  "topic_id": "konsekwencje-polozenia-geograficznego",
+  "topic_title": "Konsekwencje położenia geograficznego",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-91989c4d",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Jaka jest strefa klimatyczna w której leży Polska?",
+      "selection_type": "open",
+      "explanation": "Polska leży w strefie klimatu umiarkowanego.",
+      "accepted_answers": [
+        "umiarkowana",
+        "klimat umiarkowany",
+        "strefa klimatu umiarkowanego"
+      ]
+    },
+    {
+      "id": "q-2ae51aef",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Polska lezy mniej więcej w połowie drogi pomiędzy {{r}}, a {{b}}, dzięki czemu klimat nie jest ani bardzo ciepły, ani bardzo chłodny.",
+      "selection_type": "fill",
+      "explanation": "Polska lezy mniej więcej w połowie drogi pomiędzy równikiem, a biegunem, dzięki czemu klimat nie jest ti ani bardzo ciepły, ani bardzo chłodny.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "r",
+          "accepted_answers": [
+            "równikiem"
+          ],
+          "options": []
+        },
+        {
+          "id": "b",
+          "accepted_answers": [
+            "biegunem"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-2e8d74fe",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Podaj dwie zalety wynikające z położenia Polski na nizinach.",
+      "selection_type": "llm",
+      "explanation": "Tereny te sprzyjają infrastrukturze i rolnictwu.",
+      "accepted_answers": [
+        "Tereny te sprzyjają infrastrukturze i rolnictwu.",
+        "Dzięki temu łatwiej  jest budować drogi, mosty i tory oraz uprawiać rolę.",
+        "Pomaga to infrastrukturze i rolnictwu."
+      ]
+    },
+    {
+      "id": "q-3ac40ea1",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "W którym polskim mieście jest największy port morski?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Gdańsk",
+          "is_correct": true
+        },
+        {
+          "text": "Gdynia",
+          "is_correct": false
+        },
+        {
+          "text": "Szczecin",
+          "is_correct": false
+        },
+        {
+          "text": "Sopot",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-3e64ba2e",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Podaj 3 korzyści wynikające z położenia Polski nad Bałtykiem.",
+      "selection_type": "llm",
+      "explanation": "Są to transport morski, energetyka wiatrowa, rybołówstwo i turystyka.",
+      "accepted_answers": [
+        "Są to transport morski, energetyka wiatrowa i rybołówstwo.",
+        "Są to transport morski, energetyka wiatrowa i turystyka."
+      ]
+    },
+    {
+      "id": "q-5151463c",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Jakie są konsekwencje rozciągłości południkowej?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Różnice temperatury powietrza",
+          "is_correct": true
+        },
+        {
+          "text": "Różnice długości dnia i nocy",
+          "is_correct": true
+        },
+        {
+          "text": "Różna liczba stref klimatycznych i krajobrazowych",
+          "is_correct": true
+        },
+        {
+          "text": "Inna godzina wschodu i zachodu słońca",
+          "is_correct": false
+        },
+        {
+          "text": "Występowanie stref czasowych",
+          "is_correct": false
+        },
+        {
+          "text": "Występowanie trzęsień ziemii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-5d5223cb",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Jakie są konsekwencje rozciągłości równoleżnikowej?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Inna godzina wschodu i zachodu słońca",
+          "is_correct": true
+        },
+        {
+          "text": "Występowanie stref czasowych",
+          "is_correct": true
+        },
+        {
+          "text": "Różnice temperatury powietrza",
+          "is_correct": false
+        },
+        {
+          "text": "Różnice w długości dnia i nocy",
+          "is_correct": false
+        },
+        {
+          "text": "Różna liczba stref klimatycznych",
+          "is_correct": false
+        },
+        {
+          "text": "Występowanie trzęsień ziemii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b8565836",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Każdy równoleżnik ma rozciągłość {{a}} stopni.",
+      "selection_type": "fill",
+      "explanation": "Każdy równoleżnik ma rozciągłość 360 stopni.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "a",
+          "accepted_answers": [
+            "360"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-cc358d0b",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Ile stref czasowych jest w Polsce?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": true
+        },
+        {
+          "text": "2",
+          "is_correct": false
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f28a273e",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Podaj trzy stopnie podziału administracyjnego Polski",
+      "selection_type": "open",
+      "explanation": "województwa -> powiaty -> gminy",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "województwa"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "powiaty"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "gminy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-b5c4d880",
+      "topic_id": "konsekwencje-polozenia-geograficznego",
+      "text": "Ile stopni rozciągłości równoleżnikowej ma Polska?",
+      "selection_type": "open",
+      "explanation": "Jest to około 10 stopni.",
+      "accepted_answers": [
+        "10"
+      ]
+    }
+  ]
+}

@@ -172,38 +172,56 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
 
 export function CenturyQuestion({ question, disabled, onComplete }: Props) {
   const [answer, setAnswer] = useState("");
+  const [centuryHalf, setCenturyHalf] = useState<"" | "first" | "second">("");
   const [message, setMessage] = useState("");
   const correctAnswer = question.correct_century ? toRoman(question.correct_century) : "";
 
   const check = () => {
-    if (!answer.trim()) {
-      setMessage("Wpisz liczbę rzymską.");
+    if (!answer.trim() || !centuryHalf) {
+      setMessage("Wpisz wiek i wybierz jego połowę.");
       return;
     }
 
-    const isCorrect = correctAnswer !== "" && normalizeRomanAnswer(answer) === correctAnswer;
+    const isCorrect = correctAnswer !== ""
+      && normalizeRomanAnswer(answer) === correctAnswer
+      && centuryHalf === question.correct_century_half;
     setMessage("");
     onComplete(feedback(isCorrect, question));
   };
 
   return (
     <div className="advanced-question">
-      <label className="open-answer-label">
-        Wpisz liczbę rzymską oznaczającą wiek
-        <input
-          disabled={disabled}
-          value={answer}
-          placeholder="Np. V"
-          aria-label="Liczba rzymska oznaczająca wiek"
-          onChange={(event) => setAnswer(event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              event.preventDefault();
-              check();
-            }
-          }}
-        />
-      </label>
+      <div className="century-answer-grid">
+        <label className="open-answer-label">
+          Wpisz liczbę rzymską oznaczającą wiek
+          <input
+            disabled={disabled}
+            value={answer}
+            placeholder="Np. V"
+            aria-label="Liczba rzymska oznaczająca wiek"
+            onChange={(event) => setAnswer(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                check();
+              }
+            }}
+          />
+        </label>
+        <label className="open-answer-label">
+          Wybierz połowę wieku
+          <select
+            aria-label="Połowa wieku"
+            disabled={disabled}
+            value={centuryHalf}
+            onChange={(event) => setCenturyHalf(event.target.value as "" | "first" | "second")}
+          >
+            <option value="">Wybierz…</option>
+            <option value="first">I połowa</option>
+            <option value="second">II połowa</option>
+          </select>
+        </label>
+      </div>
       {message && <p className="feedback warning-feedback">{message}</p>}
       {!disabled && <button className="quiz-action" onClick={check} type="button">Sprawdź</button>}
     </div>

@@ -1,0 +1,199 @@
+{
+  "topic_id": "nowe-idee-polityczne",
+  "topic_title": "Nowe idee polityczne",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "nowe-idee-polityczne-mysliciele",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Dopasuj ideologie do ich głównych myślicieli.",
+      "selection_type": "matching",
+      "explanation": "Liberalizm: Adam Smith i John Locke. Konserwatyzm: Edmund Burke. Socjalizm: Robert Owen. Komunizm: Karol Marks i Fryderyk Engels.",
+      "matching_pairs": [
+        {
+          "id": "liberalizm-adam-smith",
+          "left": "liberalizm",
+          "right": "Adam Smith"
+        },
+        {
+          "id": "liberalizm-john-locke",
+          "left": "liberalizm",
+          "right": "John Locke"
+        },
+        {
+          "id": "konserwatyzm-edmund-burke",
+          "left": "konserwatyzm",
+          "right": "Edmund Burke"
+        },
+        {
+          "id": "socjalizm-robert-owen",
+          "left": "socjalizm",
+          "right": "Robert Owen"
+        },
+        {
+          "id": "komunizm-karol-marks",
+          "left": "komunizm",
+          "right": "Karol Marks"
+        },
+        {
+          "id": "komunizm-fryderyk-engels",
+          "left": "komunizm",
+          "right": "Fryderyk Engels"
+        }
+      ]
+    },
+    {
+      "id": "q-d071a214",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Która ideologia popierała monarchię i kościół?",
+      "selection_type": "open",
+      "explanation": "Był to konserwatyzm.",
+      "accepted_answers": [
+        "konserwatyzm"
+      ]
+    },
+    {
+      "id": "q-2b9a5e4b",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Jak nazywano zamożnych właścicieli fabryk?",
+      "selection_type": "open",
+      "explanation": "Nazywano ich fabrykantami",
+      "accepted_answers": [
+        "fabrykantami",
+        "fabrykanci"
+      ]
+    },
+    {
+      "id": "q-2ba6b52d",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Jak nazywano warstwę ubogich robotników?",
+      "selection_type": "open",
+      "explanation": "Nazywano ich proletariatem.",
+      "accepted_answers": [
+        "proletariat",
+        "proletariatem"
+      ]
+    },
+    {
+      "id": "q-fe3bf74f",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Z jakiego kraju pochodzili Marks i Engels?",
+      "selection_type": "open",
+      "explanation": "Pochodzili z Niemiec.",
+      "accepted_answers": [
+        "Niemcy",
+        "Niemiec"
+      ]
+    },
+    {
+      "id": "q-5f1bacc4",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Która ideologia zakładała, że kapitalizm należy obalić siłą, poprzez rewolucję?",
+      "selection_type": "open",
+      "explanation": "Zakładał to komunizm.",
+      "accepted_answers": [
+        "komunizm"
+      ]
+    },
+    {
+      "id": "q-df554a21",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Jaki ustrój postulował wprowadzenie nowego sprawiedliwego systemu społecznego poprzez pokojowe reformy?",
+      "selection_type": "open",
+      "explanation": "Był to socjalizm.",
+      "accepted_answers": [
+        "socjalizm"
+      ]
+    },
+    {
+      "id": "q-7a784576",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Która ideologia nie chciała żadnych zmian społecznych?",
+      "selection_type": "open",
+      "explanation": "Był to konserwatyzm.",
+      "accepted_answers": [
+        "konserwatyzm"
+      ]
+    },
+    {
+      "id": "q-e844942b",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Szybki rozwój przemysłu spowodował że:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "pojawiły się nowe grupy społeczne",
+          "is_correct": true
+        },
+        {
+          "text": "grupy społeczne zostały połączone",
+          "is_correct": false
+        },
+        {
+          "text": "zlikwidowano pewne grupy społeczne",
+          "is_correct": false
+        },
+        {
+          "text": "powstało społeczeństwo bezklasowe",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2ec38016",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Która ideologia zakładała, że wszyscy obywatele powinni być równi wobec prawa, wolni i nie kontrolowani przez państwo?",
+      "selection_type": "open",
+      "explanation": "Był to liberalizm",
+      "accepted_answers": [
+        "liberalizm"
+      ]
+    },
+    {
+      "id": "q-10d18236",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Kto to jest?",
+      "selection_type": "open",
+      "explanation": "Jest to Karol Marks jeden z twórców komunizmu.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "accepted_answers": [
+        "Karol Marks"
+      ]
+    },
+    {
+      "id": "q-45f7adef",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Komunizm pojawił się w wieku:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "XVIII",
+          "is_correct": false
+        },
+        {
+          "text": "XIX",
+          "is_correct": true
+        },
+        {
+          "text": "XX",
+          "is_correct": false
+        },
+        {
+          "text": "XVII",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2ee4b2b1",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Jak nazywamy sytuację przedstawioną na obrazku?",
+      "selection_type": "open",
+      "explanation": "Jest to strajk.",
+      "image": "/static/images/history/q-2ee4b2b1-2.png",
+      "accepted_answers": [
+        "strajk"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "math-multiplication-table",
+  "title": "Nauka tabliczki mnożenia",
+  "description": "Szybki trening tabliczki mnożenia na czas.",
+  "category": "math",
+  "age_group": "10-12",
+  "target_question_count": 10,
+  "questions_per_topic": 10,
+  "topics": [
+    "topic_1_multiplication_table.json"
+  ]
+}

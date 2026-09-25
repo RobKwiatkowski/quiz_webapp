@@ -1,0 +1,14 @@
+{
+  "id": "math-written-calculations",
+  "title": "Mnożenie i dzielenie pod kreską",
+  "description": "Ćwiczenia z wykonywania działań sposobem pisemnym.",
+  "category": "math",
+  "age_group": "10-12",
+  "difficulty_levels": ["easy", "medium", "pro"],
+  "target_question_count": 6,
+  "questions_per_topic": 3,
+  "topics": [
+    "topic_1_written_multiplication.json",
+    "topic_2_written_division.json"
+  ]
+}

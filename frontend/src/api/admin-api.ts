@@ -3,8 +3,10 @@ import type { QuizQuestion, SelectionType } from "./quiz-api";
 
 export interface AdminSubject { id: string; title: string; }
 export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; target_question_count: number; }
-export interface AdminTopic { id: string; title: string; }
+export interface AdminTopic { id: string; title: string; is_active: boolean; question_count: number; }
 export interface AdminQuestion extends QuizQuestion { id: string; }
+export interface AdminImageAsset { path: string; filename: string; folder: string; }
+export interface AdminImageLibrary { default_folder: string; folders: string[]; images: AdminImageAsset[]; }
 
 export type ImageUpload = { filename: string; content_base64: string };
 export type AdminQuestionPayload = Partial<QuizQuestion> & {
@@ -23,6 +25,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   if (!response.ok) {
     const payload = await response.json().catch(() => ({})) as { detail?: string };
     if (response.status === 401) window.location.assign("/admin/login.html");
+    if (response.status === 413) throw new Error("Plik obrazka jest zbyt duży. Maksymalny rozmiar to 5 MB.");
     throw new Error(payload.detail ?? "Operacja nie powiodła się.");
   }
 
@@ -47,8 +50,18 @@ export const adminApi = {
     method: "PUT", body: JSON.stringify({ target_question_count: targetQuestionCount }),
   }),
   topics: (chapterId: string) => request<AdminTopic[]>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics`),
+  images: (chapterId: string) => request<AdminImageLibrary>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/images`),
+  uploadImage: (chapterId: string, image: ImageUpload) => request<{ path: string }>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/images`, {
+    method: "POST", body: JSON.stringify(image),
+  }),
   createTopic: (chapterId: string, name: string) => request<AdminTopic>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics`, {
     method: "POST", body: JSON.stringify({ name }),
+  }),
+  deleteTopic: (chapterId: string, topicId: string) => request<{ status: string; id: string; title: string; question_count: number; archived: boolean }>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}`, {
+    method: "DELETE",
+  }),
+  updateTopicActive: (chapterId: string, topicId: string, isActive: boolean) => request<AdminTopic>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/active`, {
+    method: "PUT", body: JSON.stringify({ is_active: isActive }),
   }),
   questions: (chapterId: string, topicId: string) => request<AdminQuestion[]>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions`),
   createQuestion: (chapterId: string, topicId: string, payload: AdminQuestionPayload) => request<AdminQuestion>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions`, {
@@ -56,6 +69,12 @@ export const adminApi = {
   }),
   updateQuestion: (chapterId: string, topicId: string, questionId: string, payload: AdminQuestionPayload) => request<AdminQuestion>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions/${encodeURIComponent(questionId)}`, {
     method: "PUT", body: JSON.stringify(payload),
+  }),
+  updateQuestionActive: (chapterId: string, topicId: string, questionId: string, isActive: boolean) => request<AdminQuestion>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions/${encodeURIComponent(questionId)}/active`, {
+    method: "PUT", body: JSON.stringify({ is_active: isActive }),
+  }),
+  moveQuestion: (chapterId: string, topicId: string, questionId: string, targetTopicId: string) => request<AdminQuestion>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions/${encodeURIComponent(questionId)}/move`, {
+    method: "POST", body: JSON.stringify({ target_topic_id: targetTopicId }),
   }),
   deleteQuestion: (chapterId: string, topicId: string, questionId: string) => request<{ status: string }>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/topics/${encodeURIComponent(topicId)}/questions/${encodeURIComponent(questionId)}`, {
     method: "DELETE",

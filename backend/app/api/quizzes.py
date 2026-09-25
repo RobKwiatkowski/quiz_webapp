@@ -1,5 +1,7 @@
 """Quiz API routes used by the frontend application."""
 
+from typing import Literal
+
 from fastapi import APIRouter, HTTPException
 from app.services.quiz_loader import load_quiz_by_id, load_quiz_list
 
@@ -17,7 +19,7 @@ def get_quizzes():
 
 
 @router.get("/{quiz_id}")
-def get_quiz(quiz_id: str):
+def get_quiz(quiz_id: str, difficulty: Literal["easy", "medium", "pro", "hard"] = "easy"):
     """Returns a full quiz payload for a given quiz identifier.
 
     Args:
@@ -29,7 +31,8 @@ def get_quiz(quiz_id: str):
     Raises:
         HTTPException: If the requested quiz does not exist.
     """
-    quiz = load_quiz_by_id(quiz_id)
+    normalized_difficulty = "pro" if difficulty == "hard" else difficulty
+    quiz = load_quiz_by_id(quiz_id, normalized_difficulty)
     if not quiz:
         raise HTTPException(status_code=404, detail="Quiz not found")
     return quiz

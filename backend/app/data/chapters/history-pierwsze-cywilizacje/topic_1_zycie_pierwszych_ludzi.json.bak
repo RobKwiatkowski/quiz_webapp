@@ -94,15 +94,6 @@
       ]
     },
     {
-      "id": "q-af077fc7",
-      "text": "Co dała ludziom umiejętność rozpalania ognia?",
-      "selection_type": "llm",
-      "explanation": "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta.",
-      "accepted_answers": [
-        "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta."
-      ]
-    },
-    {
       "id": "q-fb775bf4",
       "topic_id": "zycie-pierwszych-ludzi",
       "text": "Jak nazywamy gatunek człowieka zręcznego?",
@@ -189,16 +180,6 @@
       ]
     },
     {
-      "id": "q-de33f1e5",
-      "topic_id": "zycie-pierwszych-ludzi",
-      "text": "Napisz jak wytapia się żelazo (z czego i gdzie)?",
-      "selection_type": "llm",
-      "explanation": "Żelazo wytapia się z rud w piecach. Fabrykę produkującą żelazo nazywa się hutą.",
-      "accepted_answers": [
-        "Żelazo wytapia się z rud w hutach."
-      ]
-    },
-    {
       "id": "q-2e511f17",
       "topic_id": "zycie-pierwszych-ludzi",
       "text": "Wyjaśnij dlaczego kolejne okresy w dziejach człowieka określa się jako epokę kamienia, brązu i żelaza?",
@@ -281,6 +262,35 @@
         "uzywa piesciaka",
         "używa narzędzia pięściak",
         "uzywa narzedzia piesciak"
+      ]
+    },
+    {
+      "id": "q-5e9d98cb",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Ułóż w kolejności chronologicznej.",
+      "selection_type": "order",
+      "explanation": "Australopitek -> Homo habilis -> Homo erectus -> Homo sapiens",
+      "order_items": [
+        {
+          "id": "australopitek",
+          "text": "Australopitek",
+          "position": 1
+        },
+        {
+          "id": "homo-habilis",
+          "text": "Homo habilis",
+          "position": 2
+        },
+        {
+          "id": "homo-erectus",
+          "text": "Homo erectus",
+          "position": 3
+        },
+        {
+          "id": "homo-sapiens",
+          "text": "Homo sapiens",
+          "position": 4
+        }
       ]
     }
   ]

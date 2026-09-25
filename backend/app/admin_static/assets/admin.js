@@ -870,10 +870,6 @@ function validatePayload(payload) {
     if (payload.matching_pairs.some((pair) => !pair.left || !pair.right)) {
       return "Każda para musi mieć lewy element i dopasowanie.";
     }
-    const leftLabels = payload.matching_pairs.map((pair) => pair.left.toLocaleLowerCase("pl-PL"));
-    if (new Set(leftLabels).size !== leftLabels.length) {
-      return "Lewe elementy w parach nie mogą się powtarzać.";
-    }
   }
 
   if (payload.selection_type === "map") {

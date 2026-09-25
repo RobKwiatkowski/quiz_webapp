@@ -1,0 +1,821 @@
+{
+  "topic_id": "generator",
+  "topic_title": "Generator",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "skin-a-01-layers",
+      "topic_id": "generator",
+      "text": "Uzupełnij zdania nazwami struktur skóry i warstwy podskórnej. Zbudowany z wielu warstw komórek nabłonkowych {{a}} wytwarza włosy i paznokcie. W {{b}} znajdują się włókna białkowe oraz liczne naczynia krwionośne. {{c}} jest zbudowana głównie z tkanki tłuszczowej.",
+      "selection_type": "fill",
+      "explanation": "Naskórek wytwarza włosy i paznokcie, skóra właściwa zawiera włókna i naczynia, a warstwa podskórna jest zbudowana głównie z tkanki tłuszczowej.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["naskórek", "naskorek"]},
+        {"id": "b", "accepted_answers": ["skórze właściwej", "skorze wlasciwej"]},
+        {"id": "c", "accepted_answers": ["warstwa podskórna", "warstwa podskorna"]}
+      ]
+    },
+    {
+      "id": "skin-a-02-connective-tissue",
+      "topic_id": "generator",
+      "text": "Który rysunek przedstawia tkankę łączną?",
+      "selection_type": "single",
+      "image": "/static/images/history/zrzut-ekranu-2026-09-22-173341.png",
+      "explanation": "Tkanka łączna jest pokazana na rysunku 1. Między jej komórkami są duże przestrzenie międzykomórkowe i liczne włókna kolagenowe.",
+      "answers": [
+        {"text": "1", "is_correct": true},
+        {"text": "2", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-03-moles",
+      "topic_id": "generator",
+      "text": "Wymień dwie niepokojące cechy znamion barwnikowych, które wymagają wizyty u dermatologa.",
+      "selection_type": "llm",
+      "explanation": "Niepokojące są m.in. ciemna barwa, nieregularne brzegi, duży rozmiar, asymetria oraz zmiana kształtu, koloru lub wielkości znamienia.",
+      "accepted_answers": [
+        "ciemna barwa i nieregularne brzegi",
+        "duży rozmiar i asymetryczny kształt",
+        "zmiana kształtu i zmiana koloru",
+        "zmiana koloru i zmiana wielkości"
+      ]
+    },
+    {
+      "id": "skin-a-04-touch-receptors",
+      "topic_id": "generator",
+      "context": {
+        "text": "Odległość, przy której dwa dotknięcia są odczuwane jak jedno, wynosi: dłoń 16,8 mm, kark 35,4 mm, opuszka palca 1,9 mm, nos 3,1 mm."
+      },
+      "text": "Jaki wniosek wynika z doświadczenia?",
+      "selection_type": "single",
+      "explanation": "Różne wyniki dla poszczególnych części ciała wskazują na nierównomierne rozmieszczenie receptorów dotyku.",
+      "answers": [
+        {"text": "Receptory dotyku są rozmieszczone równomiernie na całym ciele.", "is_correct": false},
+        {"text": "Receptory dotyku występują tylko w niektórych częściach ciała.", "is_correct": false},
+        {"text": "Im mniejsza odległość między punktami, tym mniej receptorów.", "is_correct": false},
+        {"text": "Receptory dotyku są rozmieszczone nierównomiernie w różnych częściach ciała.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-a-04-heat-adaptation",
+      "topic_id": "generator",
+      "text": "Wyjaśnij, na czym polega adaptacja receptorów ciepła w skórze.",
+      "selection_type": "llm",
+      "explanation": "Przy długotrwałym działaniu wysokiej temperatury receptory ciepła stopniowo ograniczają odbieranie informacji o tym bodźcu.",
+      "accepted_answers": [
+        "receptory ciepła przestają odbierać informacje po długim działaniu wysokiej temperatury",
+        "długotrwałe ciepło powoduje osłabienie reakcji receptorów ciepła"
+      ]
+    },
+    {
+      "id": "skin-a-05-touch-sensitivity",
+      "topic_id": "generator",
+      "context": {
+        "text": "Najmniejszą odległość między dwiema szpilkami odczuwaną jako jedno ukłucie stwierdzono na opuszkach palców, a największą na zewnętrznej stronie przedramienia."
+      },
+      "text": "Oceń prawdziwość wniosków z doświadczenia.",
+      "selection_type": "true_false",
+      "explanation": "Najwięcej receptorów dotyku znajduje się na opuszkach palców, a najmniej na zewnętrznej części przedramienia.",
+      "answers": [
+        {"text": "Najwięcej receptorów dotyku znajduje się na zewnętrznej części przedramienia.", "is_correct": false},
+        {"text": "Najwięcej receptorów dotyku znajduje się na opuszkach palców.", "is_correct": true},
+        {"text": "Najmniej receptorów dotyku znajduje się na zewnętrznej części przedramienia.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-a-06-glands-origin",
+      "topic_id": "generator",
+      "text": "Dokończ zdanie: Gruczoły łojowe i potowe są wytworami...",
+      "selection_type": "open",
+      "explanation": "Gruczoły łojowe i potowe są wytworami naskórka.",
+      "accepted_answers": ["naskórka", "naskorka"]
+    },
+    {
+      "id": "skin-a-07-melanin",
+      "topic_id": "generator",
+      "text": "Jak nazywa się substancja wytwarzana w skórze, która chroni organizm przed szkodliwym wpływem promieniowania UV?",
+      "selection_type": "open",
+      "explanation": "Melanina pochłania część promieniowania ultrafioletowego.",
+      "accepted_answers": ["melanina", "melaninę", "melanine"]
+    },
+    {
+      "id": "skin-common-subcutaneous-layer",
+      "topic_id": "generator",
+      "text": "Wyjaśnij związek między budową a funkcją warstwy podskórnej.",
+      "selection_type": "llm",
+      "explanation": "Warstwa podskórna zawiera dużo tkanki tłuszczowej, dlatego ogranicza utratę ciepła i chroni przed urazami mechanicznymi.",
+      "accepted_answers": [
+        "tkanka tłuszczowa chroni przed zimnem i urazami mechanicznymi",
+        "warstwa podskórna jest zbudowana z tkanki tłuszczowej, dlatego izoluje i amortyzuje"
+      ]
+    },
+    {
+      "id": "skin-common-08-epidermis-products",
+      "topic_id": "generator",
+      "text": "Połącz opis z właściwym wytworem naskórka.",
+      "selection_type": "matching",
+      "explanation": "Włosy izolują wrażliwe okolice, paznokcie chronią opuszki, gruczoły potowe usuwają zbędne substancje, a gruczoły łojowe chronią skórę przed wysychaniem.",
+      "matching_pairs": [
+        {"id": "hair", "left": "Cienkie, wydłużone struktury izolujące wrażliwe okolice ciała", "right": "włosy"},
+        {"id": "nails", "left": "Twarde płytki chroniące opuszki palców", "right": "paznokcie"},
+        {"id": "sweat", "left": "Gruczoły usuwające część zbędnych substancji", "right": "gruczoły potowe"},
+        {"id": "sebum", "left": "Gruczoły wydzielające tłustą substancję chroniącą przed wysychaniem", "right": "gruczoły łojowe"}
+      ]
+    },
+    {
+      "id": "skin-a-09-structure-and-melanin",
+      "topic_id": "generator",
+      "text": "Uzupełnij zdanie: Skóra jest zbudowana z {{a}} i {{b}}. Komórki barwnikowe produkują {{c}}, która pochłania {{d}}.",
+      "selection_type": "fill",
+      "explanation": "Dwie warstwy skóry to naskórek i skóra właściwa. Melanina pochłania promieniowanie UV.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["naskórka", "naskorka"]},
+        {"id": "b", "accepted_answers": ["skóry właściwej", "skory wlasciwej"]},
+        {"id": "c", "accepted_answers": ["melaninę", "melanine"]},
+        {"id": "d", "accepted_answers": ["promieniowanie UV", "promieniowanie ultrafioletowe"]}
+      ]
+    },
+    {
+      "id": "skin-a-10-elements-functions",
+      "topic_id": "generator",
+      "text": "Połącz element skóry z jego funkcją.",
+      "selection_type": "matching",
+      "explanation": "Ciałka dotykowe odbierają bodźce, włosy izolują, paznokcie chronią opuszki, a łój chroni włosy przed wysychaniem.",
+      "matching_pairs": [
+        {"id": "touch", "left": "Odbieranie bodźców", "right": "ciałka dotykowe"},
+        {"id": "isolation", "left": "Izolacja wrażliwych okolic ciała", "right": "włosy"},
+        {"id": "fingertips", "left": "Ochrona opuszków palców", "right": "paznokcie"},
+        {"id": "dry-hair", "left": "Ochrona włosów przed wysychaniem", "right": "łój"}
+      ]
+    },
+    {
+      "id": "skin-a-11-glands-functions",
+      "topic_id": "generator",
+      "text": "Połącz funkcję z właściwym gruczołem.",
+      "selection_type": "matching",
+      "explanation": "Gruczoł łojowy wydziela ochronny łój, a gruczoł potowy uczestniczy w termoregulacji i wydalaniu.",
+      "matching_pairs": [
+        {"id": "sebaceous", "left": "Tłusta wydzielina chroni skórę przed wysychaniem, pękaniem i bakteriami", "right": "gruczoł łojowy"},
+        {"id": "sweat", "left": "Wydzielina uczestniczy w termoregulacji i usuwaniu zbędnych produktów przemiany materii", "right": "gruczoł potowy"}
+      ]
+    },
+    {
+      "id": "skin-common-12-layers",
+      "topic_id": "generator",
+      "text": "Uzupełnij zdania. Część skóry utworzona z warstw rogowej i rozrodczej to {{a}}. Warstwa zbudowana głównie z tkanki tłuszczowej to {{b}}. Najszersza warstwa skóry, zawierająca gruczoły i naczynia krwionośne, to {{c}}.",
+      "selection_type": "fill",
+      "explanation": "Są to kolejno: naskórek, warstwa podskórna i skóra właściwa.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["naskórek", "naskorek"]},
+        {"id": "b", "accepted_answers": ["warstwa podskórna", "warstwa podskorna"]},
+        {"id": "c", "accepted_answers": ["skóra właściwa", "skora wlasciwa"]}
+      ]
+    },
+    {
+      "id": "skin-a-13-frostbite-first-aid",
+      "topic_id": "generator",
+      "text": "Które czynności należy wykonać podczas udzielania pierwszej pomocy w przypadku odmrożenia?",
+      "selection_type": "multiple",
+      "explanation": "Poszkodowanego należy ogrzewać stopniowo: przykryć, podać gorący napój bez alkoholu i ogrzewać kończynę w coraz cieplejszej wodzie.",
+      "answers": [
+        {"text": "Ogrzać ciało poszkodowanego, np. przykryć kocem.", "is_correct": true},
+        {"text": "Podać gorące napoje.", "is_correct": true},
+        {"text": "Podać alkohol.", "is_correct": false},
+        {"text": "Włożyć odmrożone kończyny do letniej wody i powoli podnosić jej temperaturę.", "is_correct": true},
+        {"text": "Opatrzyć rany bandażem elastycznym.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-14-herpes",
+      "topic_id": "generator",
+      "text": "Jak nazywa się choroba wirusowa powodująca bolesne pęcherze w okolicach warg, która może okresowo powracać?",
+      "selection_type": "open",
+      "explanation": "To opryszczka wargowa.",
+      "accepted_answers": ["opryszczka", "opryszczka wargowa", "opryszczkę", "opryszczke"]
+    },
+    {
+      "id": "skin-a-15-organ-systems",
+      "topic_id": "generator",
+      "text": "Połącz układ narządów z jego funkcją.",
+      "selection_type": "matching",
+      "explanation": "Układ oddechowy wymienia gazy, nerwowy odbiera i analizuje bodźce, a rozrodczy wytwarza gamety i hormony.",
+      "matching_pairs": [
+        {"id": "respiratory", "left": "układ oddechowy", "right": "pobiera tlen i usuwa dwutlenek węgla"},
+        {"id": "nervous", "left": "układ nerwowy", "right": "odbiera i analizuje bodźce"},
+        {"id": "reproductive", "left": "układ rozrodczy", "right": "wytwarza gamety i niektóre hormony"}
+      ]
+    },
+    {
+      "id": "skin-a-16-diseases",
+      "topic_id": "generator",
+      "text": "Połącz chorobę skóry z jej objawem i zasadą profilaktyki.",
+      "selection_type": "matching",
+      "explanation": "Czerniak może mieć postać ciemnego, nieregularnego znamienia i zapobiega się mu przez ochronę UV. Grzybica może dawać swędzące pęcherzyki i wymaga higieny na basenie.",
+      "matching_pairs": [
+        {"id": "melanoma-symptom", "left": "czerniak", "right": "ciemne znamię nieregularnego kształtu"},
+        {"id": "melanoma-prevention", "left": "czerniak", "right": "stosowanie kremów z filtrem UV"},
+        {"id": "mycosis-symptom", "left": "grzybica", "right": "swędzące czerwone pęcherzyki między palcami stóp"},
+        {"id": "mycosis-prevention", "left": "grzybica", "right": "noszenie obuwia kąpielowego na basenie"}
+      ]
+    },
+    {
+      "id": "skin-a-17-functions",
+      "topic_id": "generator",
+      "text": "Połącz funkcję skóry z właściwym opisem.",
+      "selection_type": "matching",
+      "explanation": "Naczynia odpowiadają za termoregulację, receptory za odbieranie bodźców, a zwarty nabłonek za ochronę przed drobnoustrojami.",
+      "matching_pairs": [
+        {"id": "thermoregulation", "left": "funkcja termoregulacyjna", "right": "naczynia krwionośne zwężają się lub rozszerzają zależnie od temperatury"},
+        {"id": "stimuli", "left": "odbieranie bodźców", "right": "receptory odbierają informacje ze środowiska"},
+        {"id": "protection", "left": "funkcja ochronna", "right": "zwarty nabłonek utrudnia wnikanie drobnoustrojów"}
+      ]
+    },
+    {
+      "id": "skin-a-18-skin-diseases",
+      "topic_id": "generator",
+      "text": "W którym zestawie wymieniono wyłącznie choroby skóry?",
+      "selection_type": "single",
+      "explanation": "Grzybica, opryszczka wargowa i świerzb są chorobami skóry.",
+      "answers": [
+        {"text": "Trądzik pospolity, angina, bulimia", "is_correct": false},
+        {"text": "Wszawica, grypa, grzybica", "is_correct": false},
+        {"text": "Grzybica, opryszczka wargowa, świerzb", "is_correct": true},
+        {"text": "Świerzb, alergia pokarmowa, opryszczka wargowa", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-19-functions-true-false",
+      "topic_id": "generator",
+      "text": "Oceń prawdziwość stwierdzeń dotyczących funkcji skóry.",
+      "selection_type": "true_false",
+      "explanation": "Skóra jest barierą i uczestniczy w syntezie witaminy D3, ale nie pobiera substancji odżywczych z otoczenia.",
+      "answers": [
+        {"text": "Skóra stanowi barierę oddzielającą organizm od środowiska.", "is_correct": true},
+        {"text": "Skóra wytwarza witaminę D3.", "is_correct": true},
+        {"text": "Skóra pobiera substancje odżywcze z otoczenia.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-20-mammary-glands",
+      "topic_id": "generator",
+      "text": "Jaką funkcję pełnią gruczoły sutkowe?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Chronią włosy przed czynnikami środowiska.", "is_correct": false},
+        {"text": "Usuwają zbędne substancje.", "is_correct": false},
+        {"text": "Wytwarzają substancje niezbędne do wzrostu i rozwoju dziecka.", "is_correct": true},
+        {"text": "Izolują wrażliwe okolice ciała.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-21-epidermis-renewal",
+      "topic_id": "generator",
+      "text": "Które komórki odbudowują złuszczające się komórki warstwy rogowej naskórka?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Komórki warstwy podskórnej", "is_correct": false},
+        {"text": "Ciałka dotykowe skóry właściwej", "is_correct": false},
+        {"text": "Komórki warstwy rogowej naskórka", "is_correct": false},
+        {"text": "Komórki warstwy rozrodczej naskórka", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-a-22-collagen-function",
+      "topic_id": "generator",
+      "text": "Jaką funkcję pełni kolagen zawarty w skórze?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Nadaje skórze sprężystość i elastyczność.", "is_correct": true},
+        {"text": "Bierze udział w termoregulacji.", "is_correct": false},
+        {"text": "Odbiera bodźce zewnętrzne.", "is_correct": false},
+        {"text": "Chroni przed promieniowaniem UV.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-common-25-sense-organ",
+      "topic_id": "generator",
+      "text": "Jaką funkcję pełni skóra jako narząd zmysłu?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Odbiera wrażenia czuciowe, np. ból, ciepło i zimno.", "is_correct": true},
+        {"text": "Usuwa z organizmu nadmiar wody.", "is_correct": false},
+        {"text": "Wytwarza melaninę.", "is_correct": false},
+        {"text": "Zwiększa odporność organizmu.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-common-26-not-a-function",
+      "topic_id": "generator",
+      "text": "Której funkcji nie pełni skóra?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Synteza witaminy D3", "is_correct": false},
+        {"text": "Rozkład białek do aminokwasów", "is_correct": true},
+        {"text": "Wydalanie zbędnych produktów przemiany materii", "is_correct": false},
+        {"text": "Odbieranie bodźców", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-27-melanin-location",
+      "topic_id": "generator",
+      "text": "Gdzie powstaje melanina?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "W warstwie podskórnej", "is_correct": false},
+        {"text": "W warstwie rozrodczej naskórka", "is_correct": true},
+        {"text": "W warstwie rogowej naskórka", "is_correct": false},
+        {"text": "W skórze właściwej", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-28-structure-true-false",
+      "topic_id": "generator",
+      "text": "Oceń prawdziwość informacji o budowie skóry.",
+      "selection_type": "true_false",
+      "explanation": "Włosy są wytworami naskórka. W skórze właściwej znajdują się receptory i włókna kolagenowe.",
+      "answers": [
+        {"text": "Włosy są wytworami skóry właściwej.", "is_correct": false},
+        {"text": "W skórze właściwej znajdują się zakończenia nerwowe zwane receptorami.", "is_correct": true},
+        {"text": "Skóra właściwa zawiera włókna kolagenowe.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-a-29-dermis-elements",
+      "topic_id": "generator",
+      "text": "Który zestaw zawiera wyłącznie elementy znajdujące się w skórze właściwej?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Komórki martwe, naczynia krwionośne i gruczoły łojowe", "is_correct": false},
+        {"text": "Gruczoły sutkowe, włosy i receptory", "is_correct": true},
+        {"text": "Ciałka dotykowe, gruczoły potowe i melanina", "is_correct": false},
+        {"text": "Paznokcie, gruczoły łojowe i komórki martwe", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-30-sweat-glands",
+      "topic_id": "generator",
+      "text": "Które zdanie o gruczołach potowych jest prawdziwe?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Syntetyzują melaninę i witaminę D3.", "is_correct": false},
+        {"text": "Biorą udział w termoregulacji organizmu.", "is_correct": true},
+        {"text": "Są wytworami skóry właściwej.", "is_correct": false},
+        {"text": "Wytwarzają i wydzielają łój.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-31-collagen-fibres",
+      "topic_id": "generator",
+      "text": "Który składnik skóry nadaje jej wytrzymałość i sprężystość?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Tkanka tłuszczowa", "is_correct": false},
+        {"text": "Włókna kolagenowe", "is_correct": true},
+        {"text": "Tkanka nabłonkowa", "is_correct": false},
+        {"text": "Naskórek", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-32-sebum",
+      "topic_id": "generator",
+      "text": "Podaj nazwę substancji wydzielanej przez gruczoły łojowe i wyjaśnij jej funkcję.",
+      "selection_type": "llm",
+      "explanation": "Łój chroni skórę i włosy przed wysychaniem oraz utrudnia wnikanie drobnoustrojów.",
+      "accepted_answers": [
+        "łój chroni skórę i włosy przed wysychaniem",
+        "loj chroni skore i wlosy przed wysychaniem",
+        "łój zapobiega wysychaniu i wnikaniu drobnoustrojów"
+      ]
+    },
+    {
+      "id": "skin-a-34-hot-day",
+      "topic_id": "generator",
+      "text": "W upalny dzień naczynia krwionośne skóry {{a}}, co powoduje {{b}} przepływu krwi. Gruczoły potowe {{c}} wydzielanie potu.",
+      "selection_type": "fill",
+      "explanation": "W cieple naczynia się rozszerzają, przepływ krwi rośnie, a gruczoły wydzielają więcej potu.",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["się rozszerzają"], "options": ["się rozszerzają", "się kurczą"]},
+        {"id": "b", "accepted_answers": ["zwiększenie"], "options": ["zwiększenie", "zmniejszenie"]},
+        {"id": "c", "accepted_answers": ["zwiększają"], "options": ["zwiększają", "zmniejszają"]}
+      ]
+    },
+    {
+      "id": "skin-a-35-uv-protection",
+      "topic_id": "generator",
+      "text": "Która substancja chroni skórę przed niekorzystnym wpływem promieniowania UV?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Keratyna", "is_correct": false},
+        {"text": "Łój", "is_correct": false},
+        {"text": "Melanina", "is_correct": true},
+        {"text": "Kolagen", "is_correct": false},
+        {"text": "Woda", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-a-36-epidermis-products",
+      "topic_id": "generator",
+      "text": "Zaznacz wszystkie wytwory naskórka.",
+      "selection_type": "multiple",
+      "answers": [
+        {"text": "Receptor dotyku", "is_correct": false},
+        {"text": "Gruczoł łojowy", "is_correct": true},
+        {"text": "Nerw w skórze właściwej", "is_correct": false},
+        {"text": "Paznokieć", "is_correct": true},
+        {"text": "Receptor ucisku", "is_correct": false},
+        {"text": "Włos", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-a-37-sunbathing-risk",
+      "topic_id": "generator",
+      "text": "Podaj argument, dlaczego nadmierne opalanie szkodzi zdrowiu, oraz sposób ochrony skóry przed promieniowaniem UV.",
+      "selection_type": "llm",
+      "explanation": "Promieniowanie UV może uszkadzać materiał genetyczny i zwiększać ryzyko nowotworów. Skórę należy chronić m.in. kremem z odpowiednim filtrem.",
+      "accepted_answers": [
+        "promieniowanie UV uszkadza materiał genetyczny, dlatego trzeba stosować krem z filtrem",
+        "nadmierne opalanie zwiększa ryzyko nowotworu skóry, należy używać kremu z filtrem UV"
+      ]
+    },
+    {
+      "id": "skin-b-01-layers",
+      "topic_id": "generator",
+      "text": "Uzupełnij zdania nazwami struktur skóry i warstwy podskórnej. {{a}} jest zbudowana głównie z tkanki tłuszczowej. W {{b}} znajdują się struktury odbierające bodźce. Włosy i paznokcie są wytwarzane przez {{c}}.",
+      "selection_type": "fill",
+      "explanation": "Warstwa podskórna zawiera tkankę tłuszczową, receptory znajdują się w skórze właściwej, a włosy i paznokcie wytwarza naskórek.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["warstwa podskórna", "warstwa podskorna"]},
+        {"id": "b", "accepted_answers": ["skórze właściwej", "skorze wlasciwej"]},
+        {"id": "c", "accepted_answers": ["naskórek", "naskorek"]}
+      ]
+    },
+    {
+      "id": "skin-b-02-nervous-tissue",
+      "topic_id": "generator",
+      "text": "Który rysunek przedstawia tkankę nerwową?",
+      "selection_type": "single",
+      "image": "/static/images/history/skin/tissues-fat-and-nerve.png",
+      "explanation": "Tkankę nerwową pokazano na rysunku 2. Jej komórki mają wypustki, którymi łączą się z innymi komórkami.",
+      "answers": [
+        {"text": "1", "is_correct": false},
+        {"text": "2", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-b-03-mycosis-prevention",
+      "topic_id": "generator",
+      "text": "Wymień dwie zasady profilaktyki pomagające uniknąć grzybicy.",
+      "selection_type": "llm",
+      "explanation": "Nie należy używać cudzych przedmiotów higieny osobistej ani obuwia. W publicznych prysznicach i na basenie trzeba używać własnych klapek.",
+      "accepted_answers": [
+        "nie używać cudzych ręczników ani obuwia",
+        "używać własnych klapek pod publicznym prysznicem i nie pożyczać obuwia",
+        "nie korzystać z cudzych przedmiotów higieny i nosić klapki na basenie"
+      ]
+    },
+    {
+      "id": "skin-b-04-receptor-adaptation-data",
+      "topic_id": "generator",
+      "context": {
+        "text": "W czterech seriach po 40 dotknięć badana osoba wyczuła kolejno 38, 35, 33 i 32 dotknięcia."
+      },
+      "text": "Jaki wniosek wynika z doświadczenia?",
+      "selection_type": "single",
+      "explanation": "Spadek liczby wyczuwanych dotknięć pokazuje, że przy powtarzającym się bodźcu reakcja receptorów słabnie.",
+      "answers": [
+        {"text": "Receptory dotyku są rozmieszczone nierównomiernie.", "is_correct": false},
+        {"text": "Receptory dotyku występują tylko w niektórych częściach ciała.", "is_correct": false},
+        {"text": "Receptory dotyku są rozmieszczone równomiernie.", "is_correct": true},
+        {"text": "Im więcej bodźców odbiera skóra, tym silniejsza jest reakcja receptorów.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-04-cold-adaptation",
+      "topic_id": "generator",
+      "text": "Wyjaśnij, na czym polega adaptacja receptorów zimna w skórze.",
+      "selection_type": "llm",
+      "explanation": "Przy długotrwałym działaniu niskiej temperatury receptory zimna stopniowo ograniczają odbieranie informacji o tym bodźcu.",
+      "accepted_answers": [
+        "receptory zimna przestają odbierać informacje po długim działaniu niskiej temperatury",
+        "długotrwałe zimno powoduje osłabienie reakcji receptorów zimna"
+      ]
+    },
+    {
+      "id": "skin-b-05-touch-sensitivity",
+      "topic_id": "generator",
+      "context": {
+        "text": "Najmniejszą odległość między dwiema szpilkami odczuwaną jako jedno ukłucie stwierdzono na opuszkach palców, a największą na zewnętrznej stronie przedramienia."
+      },
+      "text": "Oceń prawdziwość wniosków z doświadczenia.",
+      "selection_type": "true_false",
+      "explanation": "Najwięcej receptorów dotyku znajduje się na opuszkach palców, a najmniej na zewnętrznej części przedramienia.",
+      "answers": [
+        {"text": "Najmniej receptorów dotyku znajduje się na opuszkach palców.", "is_correct": false},
+        {"text": "Najmniej receptorów dotyku znajduje się na zewnętrznej części przedramienia.", "is_correct": true},
+        {"text": "Najwięcej receptorów dotyku znajduje się na zewnętrznej części przedramienia.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-06-hair-nails-origin",
+      "topic_id": "generator",
+      "text": "Dokończ zdanie: Paznokcie i włosy są wytworami...",
+      "selection_type": "open",
+      "explanation": "Paznokcie i włosy są wytworami naskórka.",
+      "accepted_answers": ["naskórka", "naskorka"]
+    },
+    {
+      "id": "skin-b-07-vitamin-d3",
+      "topic_id": "generator",
+      "text": "Jak nazywa się substancja wytwarzana w skórze pod wpływem światła, potrzebna do prawidłowej budowy kości?",
+      "selection_type": "open",
+      "explanation": "W skórze pod wpływem światła słonecznego powstaje witamina D3.",
+      "accepted_answers": ["witamina D3", "witaminę D3", "witamine D3", "D3"]
+    },
+    {
+      "id": "skin-b-09-structure",
+      "topic_id": "generator",
+      "text": "Uzupełnij zdanie: Zewnętrzną warstwą skóry jest {{a}} zbudowany z tkanki {{b}}. Pod nim znajduje się {{c}}, zawierająca włókna {{d}}.",
+      "selection_type": "fill",
+      "explanation": "Naskórek jest zbudowany z tkanki nabłonkowej, a pod nim leży skóra właściwa z włóknami kolagenowymi.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["naskórek", "naskorek"]},
+        {"id": "b", "accepted_answers": ["nabłonkowej", "nablonkowej"]},
+        {"id": "c", "accepted_answers": ["skóra właściwa", "skora wlasciwa"]},
+        {"id": "d", "accepted_answers": ["kolagenowe"]}
+      ]
+    },
+    {
+      "id": "skin-b-10-elements-functions",
+      "topic_id": "generator",
+      "text": "Połącz element skóry z jego funkcją.",
+      "selection_type": "matching",
+      "explanation": "Łój chroni włosy, gruczoły potowe usuwają nadmiar wody, paznokcie chronią opuszki, a ciałka dotykowe odbierają bodźce.",
+      "matching_pairs": [
+        {"id": "dry-hair", "left": "Ochrona włosów przed wysychaniem", "right": "łój"},
+        {"id": "water", "left": "Usuwanie z organizmu nadmiaru wody", "right": "gruczoły potowe"},
+        {"id": "fingertips", "left": "Ochrona opuszków palców", "right": "paznokcie"},
+        {"id": "stimuli", "left": "Odbieranie bodźców", "right": "ciałka dotykowe"}
+      ]
+    },
+    {
+      "id": "skin-b-11-glands-functions",
+      "topic_id": "generator",
+      "text": "Połącz funkcję z właściwym gruczołem.",
+      "selection_type": "matching",
+      "explanation": "Gruczoł potowy uczestniczy w termoregulacji, a gruczoł mlekowy wytwarza pokarm zawierający m.in. przeciwciała.",
+      "matching_pairs": [
+        {"id": "sweat", "left": "Wydzielina uczestniczy w termoregulacji i wydalaniu", "right": "gruczoł potowy"},
+        {"id": "milk", "left": "Wydzielina zawiera przeciwciała i substancje potrzebne noworodkowi", "right": "gruczoł mlekowy"}
+      ]
+    },
+    {
+      "id": "skin-b-13-burn-first-aid",
+      "topic_id": "generator",
+      "text": "Które czynności należy wykonać podczas udzielania pierwszej pomocy w przypadku oparzenia?",
+      "selection_type": "multiple",
+      "explanation": "Oparzenie należy chłodzić wodą, zdjąć ozdoby i po schłodzeniu osłonić ranę opatrunkiem.",
+      "answers": [
+        {"text": "Schłodzić oparzone miejsce strumieniem zimnej wody.", "is_correct": true},
+        {"text": "Najpierw nałożyć opatrunek, a dopiero potem chłodzić.", "is_correct": false},
+        {"text": "Posmarować oparzone miejsce masłem.", "is_correct": false},
+        {"text": "Po schłodzeniu nałożyć opatrunek osłonowy.", "is_correct": true},
+        {"text": "Zdjąć z oparzonej części ciała ozdoby.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-b-14-head-lice",
+      "topic_id": "generator",
+      "text": "Jak nazywa się choroba wywoływana przez bezskrzydłe owady żywiące się krwią na owłosionej skórze głowy?",
+      "selection_type": "open",
+      "explanation": "To wszawica.",
+      "accepted_answers": ["wszawica", "wszawicę", "wszawice"]
+    },
+    {
+      "id": "skin-b-15-organ-systems",
+      "topic_id": "generator",
+      "text": "Połącz układ narządów z jego funkcją.",
+      "selection_type": "matching",
+      "explanation": "Układ dokrewny reguluje procesy hormonami, mięśniowy umożliwia ruch, a pokarmowy pobiera i trawi pokarm.",
+      "matching_pairs": [
+        {"id": "endocrine", "left": "układ dokrewny", "right": "reguluje procesy za pomocą substancji wydzielanych do krwi"},
+        {"id": "muscular", "left": "układ mięśniowy", "right": "wpływa na pracę narządów i umożliwia poruszanie się"},
+        {"id": "digestive", "left": "układ pokarmowy", "right": "pobiera i trawi pokarm"}
+      ]
+    },
+    {
+      "id": "skin-b-16-diseases",
+      "topic_id": "generator",
+      "text": "Połącz chorobę skóry z jej objawem i zasadą profilaktyki.",
+      "selection_type": "matching",
+      "explanation": "Trądzik daje zaskórniki i krosty, a jego ryzyko ogranicza odpowiednia dieta. Czerniak może mieć poszarpane brzegi, a chroni przed nim unikanie nadmiernego słońca.",
+      "matching_pairs": [
+        {"id": "acne-symptom", "left": "trądzik pospolity", "right": "zaskórniki, grudki i krosty"},
+        {"id": "acne-prevention", "left": "trądzik pospolity", "right": "ograniczenie tłustych i ostrych potraw oraz słodyczy"},
+        {"id": "melanoma-symptom", "left": "czerniak", "right": "ciemne znamię o poszarpanych brzegach"},
+        {"id": "melanoma-prevention", "left": "czerniak", "right": "unikanie nadmiernej ekspozycji na słońce"}
+      ]
+    },
+    {
+      "id": "skin-b-17-functions",
+      "topic_id": "generator",
+      "text": "Połącz funkcję skóry z właściwym opisem.",
+      "selection_type": "matching",
+      "explanation": "Gruczoły potowe pełnią funkcję wydalniczą, kolagen chroni mechanicznie, a tkanka tłuszczowa ogranicza utratę ciepła.",
+      "matching_pairs": [
+        {"id": "excretion", "left": "funkcja wydalnicza", "right": "gruczoły potowe usuwają nadmiar wody i zbędne produkty przemiany materii"},
+        {"id": "protection", "left": "funkcja ochronna", "right": "włókna kolagenowe zabezpieczają skórę przed urazami mechanicznymi"},
+        {"id": "thermoregulation", "left": "funkcja termoregulacyjna", "right": "tkanka tłuszczowa warstwy podskórnej chroni przed niską temperaturą"}
+      ]
+    },
+    {
+      "id": "skin-b-18-skin-diseases",
+      "topic_id": "generator",
+      "text": "W którym zestawie wymieniono wyłącznie choroby skóry?",
+      "selection_type": "single",
+      "explanation": "Świerzb, grzybica i opryszczka wargowa są chorobami skóry.",
+      "answers": [
+        {"text": "Grzybica, alergia pokarmowa, zapalenie płuc", "is_correct": false},
+        {"text": "Świerzb, grzybica, opryszczka wargowa", "is_correct": true},
+        {"text": "Opryszczka wargowa, nieżyt nosa, wszawica", "is_correct": false},
+        {"text": "Alergia skórna, anemia, grzybica", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-19-functions-true-false",
+      "topic_id": "generator",
+      "text": "Oceń prawdziwość stwierdzeń dotyczących funkcji skóry.",
+      "selection_type": "true_false",
+      "explanation": "Skóra usuwa nadmiar wody i uczestniczy w termoregulacji, ale nie odbiera światła.",
+      "answers": [
+        {"text": "Skóra uczestniczy w usuwaniu nadmiaru wody.", "is_correct": true},
+        {"text": "Skóra odbiera z otoczenia bodźce świetlne.", "is_correct": false},
+        {"text": "Skóra bierze udział w termoregulacji.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-b-20-mammary-glands",
+      "topic_id": "generator",
+      "text": "Które elementy skóry wytwarzają substancje niezbędne do wzrostu i rozwoju dziecka?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Gruczoły potowe", "is_correct": false},
+        {"text": "Gruczoły łojowe", "is_correct": false},
+        {"text": "Gruczoły sutkowe", "is_correct": true},
+        {"text": "Ciałka dotykowe", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-21-shedding",
+      "topic_id": "generator",
+      "text": "Które komórki są usuwane podczas złuszczania się naskórka?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Komórki warstwy podskórnej", "is_correct": false},
+        {"text": "Komórki skóry właściwej", "is_correct": false},
+        {"text": "Komórki warstwy rogowej naskórka", "is_correct": true},
+        {"text": "Komórki warstwy rozrodczej naskórka", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-22-melanin-function",
+      "topic_id": "generator",
+      "text": "Jaką funkcję pełni melanina wytwarzana w komórkach naskórka?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Nadaje skórze sprężystość i elastyczność.", "is_correct": false},
+        {"text": "Bierze udział w termoregulacji.", "is_correct": false},
+        {"text": "Odbiera bodźce zewnętrzne.", "is_correct": false},
+        {"text": "Chroni przed szkodliwym wpływem promieniowania UV.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-b-27-epidermis-renewal",
+      "topic_id": "generator",
+      "text": "Które komórki odbudowują złuszczające się komórki skóry?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Włókna kolagenowe skóry właściwej", "is_correct": false},
+        {"text": "Komórki warstwy podskórnej", "is_correct": false},
+        {"text": "Komórki warstwy rozrodczej naskórka", "is_correct": true},
+        {"text": "Komórki warstwy rogowej naskórka", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-28-structure-true-false",
+      "topic_id": "generator",
+      "text": "Oceń prawdziwość informacji o budowie skóry.",
+      "selection_type": "true_false",
+      "explanation": "Warstwa rozrodcza zawiera żywe komórki, melanina chroni przed UV, a naskórek nie ma naczyń krwionośnych.",
+      "answers": [
+        {"text": "Warstwa rozrodcza naskórka jest zbudowana z martwych komórek.", "is_correct": false},
+        {"text": "Melanina chroni organizm przed promieniowaniem ultrafioletowym.", "is_correct": true},
+        {"text": "Naskórek jest silnie ukrwiony i unerwiony.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-29-epidermis-products",
+      "topic_id": "generator",
+      "text": "Który zestaw zawiera wyłącznie wytwory naskórka?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Komórki tłuszczowe, gruczoły łojowe i paznokcie", "is_correct": false},
+        {"text": "Gruczoły sutkowe, naczynia krwionośne i włosy", "is_correct": false},
+        {"text": "Ciałka dotykowe, włosy i gruczoły łojowe", "is_correct": false},
+        {"text": "Paznokcie, gruczoły potowe i gruczoły sutkowe", "is_correct": true}
+      ]
+    },
+    {
+      "id": "skin-b-30-sebaceous-glands",
+      "topic_id": "generator",
+      "text": "Które zdanie o gruczołach łojowych jest prawdziwe?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Syntetyzują tłuszcze warstwy podskórnej.", "is_correct": false},
+        {"text": "Biorą udział w termoregulacji.", "is_correct": false},
+        {"text": "Produkują łój, który chroni włosy przed wysychaniem.", "is_correct": true},
+        {"text": "Wydzielają łój, który wzmaga wymianę gazową przez skórę.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-31-uv-component",
+      "topic_id": "generator",
+      "text": "Który składnik skóry chroni organizm przed promieniowaniem ultrafioletowym?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Włókna kolagenowe", "is_correct": false},
+        {"text": "Melanina", "is_correct": true},
+        {"text": "Tkanka nabłonkowa", "is_correct": false},
+        {"text": "Tkanka tłuszczowa", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-32-sweat",
+      "topic_id": "generator",
+      "text": "Podaj nazwę substancji wydzielanej przez gruczoły potowe i wyjaśnij jej funkcję.",
+      "selection_type": "llm",
+      "explanation": "Pot bierze udział w termoregulacji i pomaga usuwać nadmiar wody oraz zbędne substancje.",
+      "accepted_answers": [
+        "pot bierze udział w termoregulacji",
+        "pot usuwa nadmiar wody i zbędne substancje",
+        "pot chłodzi organizm i pomaga w wydalaniu"
+      ]
+    },
+    {
+      "id": "skin-b-34-cold-day",
+      "topic_id": "generator",
+      "text": "W mroźny dzień naczynia krwionośne skóry {{a}}, co powoduje {{b}} przepływu krwi. Gruczoły potowe {{c}} wydzielanie potu.",
+      "selection_type": "fill",
+      "explanation": "W zimnie naczynia się kurczą, przepływ krwi maleje, a gruczoły wydzielają mniej potu.",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["się kurczą"], "options": ["się kurczą", "się rozszerzają"]},
+        {"id": "b", "accepted_answers": ["zmniejszenie"], "options": ["zmniejszenie", "zwiększenie"]},
+        {"id": "c", "accepted_answers": ["zmniejszają"], "options": ["zmniejszają", "zwiększają"]}
+      ]
+    },
+    {
+      "id": "skin-b-35-collagen",
+      "topic_id": "generator",
+      "text": "Która substancja sprawia, że skóra jest elastyczna i odporna na rozerwanie?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "Pot", "is_correct": false},
+        {"text": "Łój", "is_correct": false},
+        {"text": "Melanina", "is_correct": false},
+        {"text": "Kolagen", "is_correct": true},
+        {"text": "Woda", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-36-epidermis-products",
+      "topic_id": "generator",
+      "text": "Zaznacz wszystkie wytwory naskórka.",
+      "selection_type": "multiple",
+      "answers": [
+        {"text": "Receptor ucisku", "is_correct": false},
+        {"text": "Receptor bólu", "is_correct": false},
+        {"text": "Paznokieć", "is_correct": true},
+        {"text": "Włos", "is_correct": true},
+        {"text": "Gruczoł potowy", "is_correct": true},
+        {"text": "Naczynie krwionośne w skórze właściwej", "is_correct": false}
+      ]
+    },
+    {
+      "id": "skin-b-37-sunbathing-benefit",
+      "topic_id": "generator",
+      "text": "Wyjaśnij, dlaczego umiarkowane korzystanie ze słońca może być korzystne, i podaj sposób ochrony skóry przed promieniowaniem UV.",
+      "selection_type": "llm",
+      "explanation": "Światło słoneczne umożliwia syntezę witaminy D3 w skórze. Jednocześnie trzeba chronić skórę, np. kremem z filtrem UV.",
+      "accepted_answers": [
+        "słońce umożliwia produkcję witaminy D3, a skórę trzeba chronić kremem z filtrem",
+        "umiarkowane słońce pomaga w syntezie witaminy D3, należy używać filtra UV"
+      ]
+    }
+  ]
+}

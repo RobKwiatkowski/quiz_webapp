@@ -4,10 +4,11 @@
   "description": "Powtórka o Ziemi, kontynentach, oceanach i odkryciach geograficznych.",
   "category": "geography",
   "age_group": "10-12",
-  "target_question_count": 26,
+  "target_question_count": 25,
   "questions_per_topic": 13,
   "topics": [
     "topic_1_ziemia_nasza_planeta.json",
     "topic_2_odkrycia_geograficzne.json"
-  ]
+  ],
+  "chapter_number": 1
 }

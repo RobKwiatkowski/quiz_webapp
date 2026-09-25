@@ -1,0 +1,16 @@
+{
+  "id": "geography-polozenie-terytorium-polski",
+  "title": "Położenie i terytorium Polski",
+  "description": "Ćwiczenia z położenia Polski i państw z nią sąsiadujących.",
+  "category": "geography",
+  "age_group": "10-12",
+  "target_question_count": 15,
+  "questions_per_topic": 7,
+  "topics": [
+    "topic_1_sasiedzi_polski.json",
+    "topic_2_konsekwencje-polozenia-geograficznego.json",
+    "topic_3_podzial-administracyjny.json",
+    "topic_4_podzial-administracyjny-2.json"
+  ],
+  "chapter_number": 1
+}

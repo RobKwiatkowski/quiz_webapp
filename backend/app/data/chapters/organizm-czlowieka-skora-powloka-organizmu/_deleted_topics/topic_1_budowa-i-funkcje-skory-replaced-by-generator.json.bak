@@ -1,0 +1,24 @@
+{
+  "topic_id": "budowa-i-funkcje-skory",
+  "topic_title": "Budowa i funkcje skóry",
+  "is_active": false,
+  "questions": [
+    {
+      "id": "q-5683600f",
+      "topic_id": "budowa-i-funkcje-skory",
+      "text": "Rozpoznaj i wybierz tkankę łączną.",
+      "selection_type": "single",
+      "image": "/static/images/history/zrzut-ekranu-2026-09-22-173341.png",
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": true
+        },
+        {
+          "text": "2",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

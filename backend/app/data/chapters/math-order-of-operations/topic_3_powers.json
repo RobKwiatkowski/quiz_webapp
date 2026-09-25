@@ -1,0 +1,31 @@
+{
+  "topic_id": "operation-powers",
+  "topic_title": "Potęgowanie do kwadratu",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "operation-powers-1",
+      "topic_id": "operation-powers",
+      "text": "Oblicz działanie krok po kroku.",
+      "selection_type": "operation_order",
+      "explanation": "Potęgowanie wykonujemy przed pozostałymi działaniami.",
+      "operation_order_config": { "family": "powers" }
+    },
+    {
+      "id": "operation-powers-2",
+      "topic_id": "operation-powers",
+      "text": "Oblicz działanie krok po kroku.",
+      "selection_type": "operation_order",
+      "explanation": "Potęgowanie wykonujemy przed pozostałymi działaniami.",
+      "operation_order_config": { "family": "powers" }
+    },
+    {
+      "id": "operation-powers-3",
+      "topic_id": "operation-powers",
+      "text": "Oblicz działanie krok po kroku.",
+      "selection_type": "operation_order",
+      "explanation": "Potęgowanie wykonujemy przed pozostałymi działaniami.",
+      "operation_order_config": { "family": "powers" }
+    }
+  ]
+}

@@ -90,6 +90,31 @@
         "Ferdynanda Magellana",
         "Ferdynand Magellan"
       ]
+    },
+    {
+      "id": "q-d711a538",
+      "topic_id": "odkrycia-geograficzne",
+      "text": "Przez jakie oceany płynęła wyprawa Vasco da Gamy?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Atlantycki",
+          "is_correct": true
+        },
+        {
+          "text": "Indyjski",
+          "is_correct": true
+        },
+        {
+          "text": "Spokojny",
+          "is_correct": false
+        },
+        {
+          "text": "Arktyczny",
+          "is_correct": false
+        }
+      ]
     }
-  ]
+  ],
+  "is_active": true
 }

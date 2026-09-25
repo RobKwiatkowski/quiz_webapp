@@ -1,7 +1,7 @@
 import confetti from "canvas-confetti";
 import { animate, motion, useSpring } from "motion/react";
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from "react";
-import { getQuizById, type Answer, type Quiz, type QuizQuestion } from "../api/quiz-api";
+import { getQuizById, type Answer, type Quiz, type QuizDifficulty, type QuizQuestion } from "../api/quiz-api";
 import {
   getFinalGrade,
   getFinalMessage,
@@ -21,6 +21,10 @@ import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
 import { TrueFalseQuestion } from "../features/quiz/TrueFalseQuestion";
 import { WrittenMultiplicationQuestion } from "../features/quiz/WrittenMultiplicationQuestion";
+import { WrittenDivisionQuestion } from "../features/quiz/WrittenDivisionQuestion";
+import { TimedMultiplicationQuestion } from "../features/quiz/TimedMultiplicationQuestion";
+import { TimedDivisionQuestion } from "../features/quiz/TimedDivisionQuestion";
+import { OperationOrderQuestion } from "../features/quiz/OperationOrderQuestion";
 
 const PERFECT_SCORE_AUDIO_URL = "/assets/sounds/perfect-score-crowd.mp3";
 
@@ -34,14 +38,22 @@ interface AnswerChoice {
   originalIndex: number;
 }
 
+function parseDifficulty(value: string | null): QuizDifficulty {
+  if (value === "medium") return "medium";
+  if (value === "pro" || value === "hard") return "pro";
+  return "easy";
+}
+
 export function QuizPage() {
   const [loadState, setLoadState] = useState<QuizLoadState>({ status: "loading" });
   const [session, dispatch] = useReducer(quizSessionReducer, initialQuizSessionState);
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
   const nextActionRef = useRef<(() => void) | null>(null);
-  const quizId = new URLSearchParams(window.location.search).get("id");
-  const section = new URLSearchParams(window.location.search).get("section") ?? "history";
+  const searchParams = new URLSearchParams(window.location.search);
+  const quizId = searchParams.get("id");
+  const section = searchParams.get("section") ?? "history";
+  const difficulty = parseDifficulty(searchParams.get("difficulty"));
 
   nextActionRef.current = null;
 
@@ -78,7 +90,7 @@ export function QuizPage() {
     setLoadState({ status: "loading" });
     dispatch({ type: "restart" });
 
-    getQuizById(quizId, controller.signal, attempt)
+    getQuizById(quizId, controller.signal, attempt, difficulty)
       .then((quiz) => setLoadState({ status: "ready", quiz }))
       .catch((error: unknown) => {
         if (error instanceof DOMException && error.name === "AbortError") return;
@@ -89,7 +101,7 @@ export function QuizPage() {
       });
 
     return () => controller.abort();
-  }, [quizId, attempt]);
+  }, [quizId, attempt, difficulty]);
 
   if (loadState.status === "loading") {
     return <main className="container quiz-play-shell"><p className="subject-status">Ładowanie quizu...</p></main>;
@@ -287,6 +299,10 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "written_multiplication") return <WrittenMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "written_division") return <WrittenDivisionQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "timed_multiplication") return <TimedMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "timed_division") return <TimedDivisionQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "operation_order") return <OperationOrderQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
 
   return <p className="subject-status">Ten typ pytania zostanie przeniesiony w kolejnym kroku migracji.</p>;
 }

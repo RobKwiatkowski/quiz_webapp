@@ -94,15 +94,6 @@
       ]
     },
     {
-      "id": "q-af077fc7",
-      "text": "Co dała ludziom umiejętność rozpalania ognia?",
-      "selection_type": "llm",
-      "explanation": "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta.",
-      "accepted_answers": [
-        "Mogli się ogrzać, ugotować mięso oraz ogień odstraszał zwięrzęta."
-      ]
-    },
-    {
       "id": "q-fb775bf4",
       "topic_id": "zycie-pierwszych-ludzi",
       "text": "Jak nazywamy gatunek człowieka zręcznego?",
@@ -186,16 +177,6 @@
       "accepted_answers": [
         "dymiarka",
         "nazywa się dymiarka"
-      ]
-    },
-    {
-      "id": "q-de33f1e5",
-      "topic_id": "zycie-pierwszych-ludzi",
-      "text": "Napisz jak wytapia się żelazo (z czego i gdzie)?",
-      "selection_type": "llm",
-      "explanation": "Żelazo wytapia się z rud w piecach. Fabrykę produkującą żelazo nazywa się hutą.",
-      "accepted_answers": [
-        "Żelazo wytapia się z rud w hutach."
       ]
     },
     {
@@ -309,6 +290,30 @@
           "id": "homo-sapiens",
           "text": "Homo sapiens",
           "position": 4
+        }
+      ]
+    },
+    {
+      "id": "q-fe551b04",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Zmiana trybu życia z wędrownego na osiadły miała miejsce w:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "neolicie",
+          "is_correct": true
+        },
+        {
+          "text": "paleocie",
+          "is_correct": false
+        },
+        {
+          "text": "starożytności",
+          "is_correct": false
+        },
+        {
+          "text": "jurze",
+          "is_correct": false
         }
       ]
     }

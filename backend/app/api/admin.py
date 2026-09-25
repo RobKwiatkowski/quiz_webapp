@@ -22,13 +22,19 @@ from app.services.admin_content import (
     create_question,
     create_topic,
     delete_question,
+    delete_topic,
     list_admin_chapters,
+    list_admin_images,
     list_admin_questions,
     list_admin_subjects,
     list_admin_topics,
+    move_question,
+    save_uploaded_chapter_image,
     update_chapter_number,
+    update_topic_active,
     update_target_question_count,
     update_question,
+    update_question_active,
 )
 
 ADMIN_STATIC_DIR = Path(__file__).resolve().parents[1] / "admin_static"
@@ -60,6 +66,31 @@ class TargetQuestionCountRequest(BaseModel):
     """Requested number of questions randomly selected for a chapter quiz."""
 
     target_question_count: int = Field(ge=1)
+
+
+class TopicActiveRequest(BaseModel):
+    """Requested activation state for one topic."""
+
+    is_active: bool
+
+
+class QuestionActiveRequest(BaseModel):
+    """Requested activation state for one question."""
+
+    is_active: bool
+
+
+class MoveQuestionRequest(BaseModel):
+    """Target topic for moving one question within a chapter."""
+
+    target_topic_id: str = Field(min_length=1)
+
+
+class ImageUploadRequest(BaseModel):
+    """Image file supplied by the browser as a base64 data URL."""
+
+    filename: str = Field(min_length=1)
+    content_base64: str = Field(min_length=1)
 
 
 @admin_pages_router.get("/admin")
@@ -144,10 +175,40 @@ def get_topics(chapter_id: str):
     return list_admin_topics(chapter_id)
 
 
+@router.get("/chapters/{chapter_id}/images", dependencies=[Depends(require_admin)])
+def get_images(chapter_id: str):
+    """Lists reusable images for the chapter's subject."""
+    return list_admin_images(chapter_id)
+
+
+@router.post("/chapters/{chapter_id}/images", dependencies=[Depends(require_admin)])
+def post_image(chapter_id: str, payload: ImageUploadRequest):
+    """Uploads an image immediately to the chapter's reusable image folder."""
+    return {"path": save_uploaded_chapter_image(payload.model_dump(), chapter_id)}
+
+
 @router.post("/chapters/{chapter_id}/topics", dependencies=[Depends(require_admin)])
 def post_topic(chapter_id: str, payload: NameRequest):
     """Creates a new empty topic inside one chapter."""
     return create_topic(chapter_id, payload.model_dump())
+
+
+@router.delete(
+    "/chapters/{chapter_id}/topics/{topic_id}",
+    dependencies=[Depends(require_admin)],
+)
+def remove_topic(chapter_id: str, topic_id: str):
+    """Removes one topic from a chapter while preserving a recovery copy."""
+    return delete_topic(chapter_id, topic_id)
+
+
+@router.put(
+    "/chapters/{chapter_id}/topics/{topic_id}/active",
+    dependencies=[Depends(require_admin)],
+)
+def put_topic_active(chapter_id: str, topic_id: str, payload: TopicActiveRequest):
+    """Activates or deactivates one topic."""
+    return update_topic_active(chapter_id, topic_id, payload.is_active)
 
 
 @router.get(
@@ -169,6 +230,25 @@ def post_question(chapter_id: str, topic_id: str, payload: dict[str, Any]):
 
 
 @router.put(
+    "/chapters/{chapter_id}/topics/{topic_id}/questions/{question_id}/active",
+    dependencies=[Depends(require_admin)],
+)
+def put_question_active(
+    chapter_id: str,
+    topic_id: str,
+    question_id: str,
+    payload: QuestionActiveRequest,
+):
+    """Activates or deactivates one question."""
+    return update_question_active(
+        chapter_id,
+        topic_id,
+        question_id,
+        payload.is_active,
+    )
+
+
+@router.put(
     "/chapters/{chapter_id}/topics/{topic_id}/questions/{question_id}",
     dependencies=[Depends(require_admin)],
 )
@@ -180,6 +260,25 @@ def put_question(
 ):
     """Updates one question in one topic."""
     return update_question(chapter_id, topic_id, question_id, payload)
+
+
+@router.post(
+    "/chapters/{chapter_id}/topics/{topic_id}/questions/{question_id}/move",
+    dependencies=[Depends(require_admin)],
+)
+def post_move_question(
+    chapter_id: str,
+    topic_id: str,
+    question_id: str,
+    payload: MoveQuestionRequest,
+):
+    """Moves one question to another topic in the same chapter."""
+    return move_question(
+        chapter_id,
+        topic_id,
+        question_id,
+        payload.target_topic_id,
+    )
 
 
 @router.delete(

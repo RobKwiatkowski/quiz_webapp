@@ -1,0 +1,137 @@
+{
+  "topic_id": "starozytny-egipt",
+  "topic_title": "Starożytny egipt",
+  "is_active": false,
+  "questions": [
+    {
+      "id": "q-image-egypt-city",
+      "topic_id": "starozytny-egipt",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-egypt-nile-city-street.png",
+      "explanation": "To Starożytny Egipt. Pomagają rozpoznać go Nil, obeliski i wielka świątynia.",
+      "answers": [
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-china-city",
+      "topic_id": "starozytny-egipt",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-china-city-street.png",
+      "explanation": "To Starożytne Chiny. Pomagają rozpoznać je drewniana architektura, dachy i stroje mieszkańców.",
+      "answers": [
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2ec49c83",
+      "topic_id": "starozytny-egipt",
+      "text": "Kiedy powstał Egipt?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "ok. 4 tysięcy lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 3 tysięcy lat p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "ok. 1 tysięcy lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 1 tysięca lat p.n.e.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-4f072fef",
+      "topic_id": "starozytny-egipt",
+      "text": "Nad jaką rzeką powstał Egipt?",
+      "selection_type": "open",
+      "explanation": "Powstał nad Nilem.",
+      "accepted_answers": [
+        "Nil",
+        "Nilem",
+        "nad Nilem"
+      ]
+    },
+    {
+      "id": "q-fill-egypt-agriculture",
+      "topic_id": "starozytny-egipt",
+      "text": "Starożytny Egipt był przede wszystkim krajem {{gospodarka}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "gospodarka",
+          "accepted_answers": [
+            "rolniczym"
+          ],
+          "options": [
+            "naukowym",
+            "rolniczym",
+            "religijnym",
+            "transportowym"
+          ]
+        }
+      ],
+      "explanation": "Starożytny Egipt był przede wszystkim krajem rolniczym. Życie mieszkańców i gospodarka zależały od wylewów Nilu."
+    },
+    {
+      "id": "q-91c0eaaf",
+      "topic_id": "starozytny-egipt",
+      "text": "Na jakim kontynencie leży Egipt?",
+      "selection_type": "open",
+      "explanation": "Leży on w północnej Afryce.",
+      "accepted_answers": [
+        "Afryka",
+        "Afryce",
+        "w Afryce"
+      ]
+    }
+  ]
+}
