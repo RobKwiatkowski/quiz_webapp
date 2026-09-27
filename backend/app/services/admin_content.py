@@ -29,6 +29,7 @@ SUPPORTED_SUBJECTS = {
     "history": "Historia",
     "geography": "Geografia",
     "biology": "Biologia",
+    "polish": "Język polski",
     "math": "Matematyka",
 }
 MATH_ONLY_SELECTION_TYPES = {

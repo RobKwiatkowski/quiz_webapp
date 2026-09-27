@@ -42,6 +42,42 @@ const blankOrderItem = (): OrderItem => ({ id: "", text: "", position: 0 });
 const blankMatchingPair = (): MatchingPair => ({ id: "", left: "", right: "" });
 const blankFillBlank = (id = "luka_1"): FillBlank => ({ id, accepted_answers: [], options: ["", ""] });
 
+const questionTypeLabels: Record<SelectionType, { label: string; title: string }> = {
+  single: { label: "1 WYB.", title: "Jedna odpowiedź" },
+  multiple: { label: "WIELE", title: "Wiele odpowiedzi" },
+  true_false: { label: "P/F", title: "Prawda lub fałsz" },
+  open: { label: "OTW.", title: "Odpowiedź otwarta" },
+  llm: { label: "LLM", title: "Odpowiedź oceniana przez LLM" },
+  order: { label: "KOL.", title: "Kolejność" },
+  matching: { label: "PARY", title: "Dopasowywanie par" },
+  map: { label: "MAPA", title: "Pytanie na mapie" },
+  hotspot: { label: "PUNKT", title: "Wskaż punkt" },
+  century: { label: "WIEK", title: "Określanie wieku" },
+  fill: { label: "UZUP.", title: "Uzupełnianie luk" },
+  written_multiplication: { label: "× PIS.", title: "Mnożenie pisemne" },
+  written_division: { label: "÷ PIS.", title: "Dzielenie pisemne" },
+  timed_multiplication: { label: "× CZAS", title: "Mnożenie na czas" },
+  timed_division: { label: "÷ CZAS", title: "Dzielenie na czas" },
+  operation_order: { label: "DZIAŁ.", title: "Kolejność działań" },
+};
+
+function QuestionTypeBadge({ selectionType }: { selectionType: SelectionType }) {
+  const type = questionTypeLabels[selectionType];
+  return <span className="question-type-badge" title={type.title}>{type.label}</span>;
+}
+
+function EditIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14.7 5.3 4 4M4 20l4.2-1 10.5-10.5a2.8 2.8 0 0 0-4-4L4.2 15z" /></svg>;
+}
+
+function MoveIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h12M12 4l4 4-4 4M20 16H8M12 12l-4 4 4 4" /></svg>;
+}
+
+function DeleteIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M10 11v5M14 11v5M9 7l1-3h4l1 3M6 7l1 13h10l1-13" /></svg>;
+}
+
 function createDraft(question?: AdminQuestion): Draft {
   return {
     selection_type: question?.selection_type ?? "single",
@@ -174,8 +210,16 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
       const isActive = item.is_active !== false;
       return <div className={`question-row${isActive ? "" : " question-row-inactive"}`} key={item.id}>
         <span className="question-number">{index + 1}.</span>
-        <span className="question-content"><span className="question-text">{item.text}</span><span className={`topic-status ${isActive ? "topic-status-active" : "topic-status-inactive"}`}>{isActive ? "Aktywne" : "Nieaktywne"}</span></span>
-        <span className="question-actions"><button className="secondary-button" onClick={() => setEditorQuestion(item)} type="button">Edytuj</button><button className={isActive ? "secondary-button" : "topic-activate-button"} onClick={() => toggleQuestion(item)} type="button">{isActive ? "Wyłącz" : "Aktywuj"}</button><button className="secondary-button" disabled={topics.length < 2} onClick={() => setQuestionToMove(item)} title={topics.length < 2 ? "Dodaj drugi temat, aby przenieść pytanie" : undefined} type="button">Przenieś</button><button className="delete-button" onClick={() => deleteQuestion(item)} type="button">Usuń</button></span>
+        <span className="question-content"><span className="question-text">{item.text}</span><QuestionTypeBadge selectionType={item.selection_type} /></span>
+        <span className="question-actions">
+          <label className="question-active-toggle" title={isActive ? "Wyłącz pytanie" : "Aktywuj pytanie"}>
+            <input aria-label={isActive ? "Wyłącz pytanie" : "Aktywuj pytanie"} checked={isActive} onChange={() => toggleQuestion(item)} type="checkbox" />
+            <span aria-hidden="true" />
+          </label>
+          <button aria-label="Edytuj pytanie" className="secondary-button question-icon-button" onClick={() => setEditorQuestion(item)} title="Edytuj pytanie" type="button"><EditIcon /></button>
+          <button aria-label="Przenieś pytanie do innego tematu" className="secondary-button question-icon-button" disabled={topics.length < 2} onClick={() => setQuestionToMove(item)} title={topics.length < 2 ? "Dodaj drugi temat, aby przenieść pytanie" : "Przenieś do innego tematu"} type="button"><MoveIcon /></button>
+          <button aria-label="Usuń pytanie" className="delete-button question-icon-button" onClick={() => deleteQuestion(item)} title="Usuń pytanie" type="button"><DeleteIcon /></button>
+        </span>
       </div>;
     })}</div>}</section>}
     {isQuestionEditorOpen && chapter && topic && <QuestionEditor question={editorQuestion} subject={subject} chapter={chapter} topic={topic} onCancel={() => setEditorQuestion(undefined)} onSave={async (payload) => { try { if (editorQuestion) await adminApi.updateQuestion(chapter.id, topic.id, editorQuestion.id, payload); else await adminApi.createQuestion(chapter.id, topic.id, payload); await loadQuestions(chapter, topic); setEditorQuestion(undefined); setMessage("Zapisano pytanie."); } catch (reason) { throw reason; } }} />}

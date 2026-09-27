@@ -565,6 +565,7 @@ function ResultScreen({ quiz, score, section, onRestart }: { quiz: Quiz; score: 
 function getSubjectGenitive(section: string): string {
   if (section === "geography") return "geografii";
   if (section === "biology") return "biologii";
+  if (section === "polish") return "języka polskiego";
   if (section === "math") return "matematyki";
   return "historii";
 }

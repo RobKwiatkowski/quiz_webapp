@@ -56,6 +56,12 @@ class NameRequest(BaseModel):
     name: str
 
 
+class ChapterCreateRequest(NameRequest):
+    """Request payload for creating a chapter in a selected subject."""
+
+    subject: str = "history"
+
+
 class ChapterNumberRequest(BaseModel):
     """Optional number displayed in the chapter badge."""
 
@@ -152,7 +158,7 @@ def get_chapters(subject: str | None = None):
 
 
 @router.post("/chapters", dependencies=[Depends(require_admin)])
-def post_chapter(payload: NameRequest):
+def post_chapter(payload: ChapterCreateRequest):
     """Creates a new empty chapter."""
     return create_chapter(payload.model_dump())
 

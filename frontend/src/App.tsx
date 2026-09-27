@@ -8,14 +8,17 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
   history: { label: "Opowieści, daty i decyzje", accent: "home-card-history" },
   geography: { label: "Mapy, miejsca i świat", accent: "home-card-geography" },
   biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
+  polish: { label: "Lektury, język i opowieści", accent: "home-card-polish" },
   math: { label: "Liczby, działania i logika", accent: "home-card-math" },
 };
+
+const startImages = ["start_image_1.png", "start_image_2.png", "math_pixelart.png", "arsenal_fight.png"] as const;
 
 export function App() {
   const subjectId = getSubjectFromPath(window.location.pathname);
   const isQuizPage = window.location.pathname.toLowerCase().endsWith("quiz.html");
   const isAdminPage = window.location.pathname.toLowerCase().startsWith("/admin");
-  const [startImage] = useState(() => Math.random() < 0.5 ? "start_image_1.png" : "start_image_2.png");
+  const [startImage] = useState(() => startImages[Math.floor(Math.random() * startImages.length)]);
 
   useEffect(() => {
     if (isQuizPage) {
@@ -62,10 +65,10 @@ export function App() {
     );
   }
 
-  return <HomeScreen />;
+  return <HomeScreen startImage={startImage} />;
 }
 
-function HomeScreen() {
+function HomeScreen({ startImage }: { startImage: string }) {
   return (
     <main className="home-shell">
       <a className="home-admin-link" href="/admin/">
@@ -79,7 +82,7 @@ function HomeScreen() {
           <p>Krótka powtórka w formie quizu: zwykłe pytania, mapy, dopasowania i zadania interaktywne w jednym miejscu.</p>
         </div>
         <div className="home-hero-art" aria-hidden="true">
-          <img src="/assets/start-images/start_image_1.png" alt="" />
+          <img src={`/assets/start-images/${startImage}`} alt="" />
         </div>
       </section>
 
