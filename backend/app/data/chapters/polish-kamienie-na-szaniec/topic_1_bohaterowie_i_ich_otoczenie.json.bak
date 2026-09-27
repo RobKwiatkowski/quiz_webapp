@@ -1,0 +1,136 @@
+{
+  "topic_id": "bohaterowie_i_ich_otoczenie",
+  "topic_title": "Bohaterowie i ich otoczenie",
+  "questions": [
+    {
+      "id": "kamienie-rudy-prawdziwe-nazwisko",
+      "text": "Jak naprawdę nazywał się Rudy?",
+      "explanation": "Rudy naprawdę nazywał się Jan Bytnar.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Jan Bytnar",
+        "Jana Bytnara",
+        "Bytnar",
+        "Bytnara"
+      ]
+    },
+    {
+      "id": "kamienie-zoska-prawdziwe-nazwisko",
+      "text": "Jak naprawdę nazywał się Zośka?",
+      "explanation": "Zośka naprawdę nazywał się Tadeusz Zawadzki.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Tadeusz Zawadzki",
+        "Tadeusza Zawadzkiego",
+        "Zawadzki",
+        "Zawadzkiego"
+      ]
+    },
+    {
+      "id": "kamienie-alek-prawdziwe-nazwisko",
+      "text": "Jak naprawdę nazywał się Alek?",
+      "explanation": "Alek naprawdę nazywał się Aleksy Dawidowski.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Aleksy Dawidowski",
+        "Alek Dawidowski",
+        "Aleksego Dawidowskiego",
+        "Dawidowski",
+        "Dawidowskiego"
+      ]
+    },
+    {
+      "id": "kamienie-zeus-prawdziwe-nazwisko",
+      "text": "Jak naprawdę nazywał się „Zeus”?",
+      "explanation": "Zeus naprawdę nazywał się Leszek Domański.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Leszek Domański",
+        "Leszka Domańskiego",
+        "Domański",
+        "Domańskiego"
+      ]
+    },
+    {
+      "id": "kamienie-zeus-rola",
+      "text": "Jaką rolę pełnił Zeus wobec Alka, Rudego i Zośki?",
+      "explanation": "Zeus był ich drużynowym i wychowawcą harcerskim.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "był ich drużynowym i wychowawcą harcerskim",
+        "byl ich druzynowym i wychowawca harcerskim",
+        "drużynowy i wychowawca harcerski",
+        "druzynowy i wychowawca harcerski",
+        "był ich drużynowym",
+        "ich drużynowy",
+        "drużynowy"
+      ]
+    },
+    {
+      "id": "kamienie-tablica-kopernika",
+      "text": "Który z bohaterów zdjął niemiecką tablicę z pomnika Mikołaja Kopernika?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-aresztowany-przez-gestapo",
+      "text": "Który z bohaterów został aresztowany przez Gestapo?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rudy", "is_correct": true },
+        { "text": "Alek", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-ciezko-ranny-arsenal",
+      "text": "Który bohater został ciężko ranny podczas akcji pod Arsenałem?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-zginal-w-sieczychach",
+      "text": "Który bohater zginął podczas akcji w Sieczychach?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zośka", "is_correct": true },
+        { "text": "Alek", "is_correct": false },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-dowodzil-celestynow",
+      "text": "Który bohater dowodził akcją w Celestynowie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zośka", "is_correct": true },
+        { "text": "Alek", "is_correct": false },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-srodowisko-harcerskie",
+      "text": "Z jakim środowiskiem harcerskim związani byli Alek, Rudy, Zośka i Zeus?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Buki / Pomarańczarnia", "is_correct": true },
+        { "text": "Orlęta", "is_correct": false },
+        { "text": "Legion Młodych", "is_correct": false },
+        { "text": "Szare Wilki", "is_correct": false }
+      ]
+    }
+  ]
+}

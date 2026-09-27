@@ -1,0 +1,152 @@
+{
+  "topic_id": "bobrowie_aslan_i_przygotowania",
+  "topic_title": "Bobrowie, Aslan i przygotowania do walki",
+  "questions": [
+    {
+      "id": "narnia-kto-zaopiekowal-sie-dziecmi",
+      "text": "Kto zaopiekował się dziećmi po odkryciu, że Tumnus został aresztowany?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "centaury", "is_correct": false },
+        { "text": "państwo Bobrowie", "is_correct": true },
+        { "text": "wilki", "is_correct": false },
+        { "text": "karły", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-kim-jest-aslan",
+      "text": "Kim jest Aslan?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wielkim lwem i prawowitym władcą Narnii", "is_correct": true },
+        { "text": "Sługą Białej Czarownicy", "is_correct": false },
+        { "text": "Czarodziejem z Anglii", "is_correct": false },
+        { "text": "Królem sąsiedniego państwa", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-reakcja-na-powrot-aslana",
+      "text": "Jak mieszkańcy Narnii reagowali na wiadomość o powrocie Aslana?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Bali się", "is_correct": false },
+        { "text": "Byli obojętni", "is_correct": false },
+        { "text": "Nabierali nadziei", "is_correct": true },
+        { "text": "Chcieli uciec z Narnii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-przyroda-ze-zblizaniem-aslana",
+      "text": "Jak przyroda Narnii zmieniała się wraz ze zbliżaniem się Aslana?",
+      "explanation": "Kończyła się zima, topniał śnieg i nadchodziła wiosna.",
+      "selection_type": "llm",
+      "accepted_answers": ["W Narnii kończyła się zima: topniał śnieg i nadchodziła wiosna."]
+    },
+    {
+      "id": "narnia-spotkanie-ze-swietym-mikolajem",
+      "text": "Kogo dzieci spotkały podczas podróży do Aslana?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Świętego Mikołaja", "is_correct": true },
+        { "text": "profesora", "is_correct": false },
+        { "text": "Tumnusa", "is_correct": false },
+        { "text": "Białą Czarownicę", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-dopasuj-prezenty",
+      "text": "Dopasuj prezent do bohatera.",
+      "explanation": "Piotr otrzymał miecz i tarczę, Zuzanna łuk i róg, a Łucja sztylet i uzdrawiający napój.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        { "id": "piotr", "left": "Piotr", "right": "miecz i tarcza" },
+        { "id": "zuzanna", "left": "Zuzanna", "right": "łuk i róg" },
+        { "id": "lucja", "left": "Łucja", "right": "sztylet i uzdrawiający napój" }
+      ]
+    },
+    {
+      "id": "narnia-rog-zuzanny",
+      "text": "Do czego służył róg otrzymany przez Zuzannę?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Do wzywania pomocy", "is_correct": true },
+        { "text": "Do otwierania przejścia do Anglii", "is_correct": false },
+        { "text": "Do budzenia Aslana", "is_correct": false },
+        { "text": "Do zamrażania przeciwników", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-napoj-lucji",
+      "text": "Jakie szczególne właściwości miał napój Łucji?",
+      "explanation": "Napój Łucji leczył rannych i uzdrawiał chorych.",
+      "selection_type": "open",
+      "accepted_answers": ["leczył rannych", "leczyl rannych", "uzdrawiał", "uzdrawial", "uzdrawiał chorych", "leczył"]
+    },
+    {
+      "id": "narnia-znaczenie-swietego-mikolaja",
+      "text": "Co symbolizowało pojawienie się Świętego Mikołaja w Narnii?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Moc Czarownicy rosła", "is_correct": false },
+        { "text": "Zima miała trwać wiecznie", "is_correct": false },
+        { "text": "Władza Czarownicy zaczynała słabnąć", "is_correct": true },
+        { "text": "Dzieci musiały natychmiast wrócić do Anglii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-edmund-w-zlej-sytuacji",
+      "text": "Dlaczego Edmund znalazł się w złej sytuacji po dotarciu do Białej Czarownicy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Czarownica kazała mu wrócić do domu", "is_correct": false },
+        { "text": "Zgubił drogę do jej zamku", "is_correct": false },
+        { "text": "Czarownica potraktowała go jak więźnia, a nie przyszłego króla", "is_correct": true },
+        { "text": "Aslan schwytał go przed zamkiem", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-piotr-pierwsze-uzycie-miecza",
+      "text": "Do czego Piotrowi po raz pierwszy przydał się miecz otrzymany od Świętego Mikołaja?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Do walki z wilkiem atakującym Zuzannę", "is_correct": true },
+        { "text": "Do przecięcia więzów Edmunda", "is_correct": false },
+        { "text": "Do obrony przed Czarownicą przy Kamiennym Stole", "is_correct": false },
+        { "text": "Do otwarcia bramy zamku", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-nie-upokorzyl-edmunda",
+      "text": "Dlaczego Aslan nie chciał publicznie opowiadać rodzeństwu o rozmowie z Edmundem po jego uratowaniu?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Bał się reakcji Piotra", "is_correct": false },
+        { "text": "Uznał sprawę Edmunda za zakończoną i nie chciał go upokarzać", "is_correct": true },
+        { "text": "Edmund niczego nie żałował", "is_correct": false },
+        { "text": "Rozmowa dotyczyła planu bitwy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-dawne-prawo-zdrajcy",
+      "text": "Co Biała Czarownica przypomniała Aslanowi, gdy przyszła do jego obozu?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Że Narnię stworzyła głębsza magia", "is_correct": false },
+        { "text": "Że zgodnie z dawnym prawem życie zdrajcy należy do niej", "is_correct": true },
+        { "text": "Że Edmund obiecał jej koronę", "is_correct": false },
+        { "text": "Że Piotr złamał prawo Narnii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-sam-na-kamienny-stol",
+      "text": "Dlaczego Aslan zgodził się pójść sam na Kamienny Stół?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Chciał zastawić pułapkę na Czarownicę", "is_correct": false },
+        { "text": "Dobrowolnie przyjął śmierć w miejsce Edmunda", "is_correct": true },
+        { "text": "Nie wiedział, co planuje Czarownica", "is_correct": false },
+        { "text": "Chciał ochronić Piotra przed walką", "is_correct": false }
+      ]
+    }
+  ]
+}

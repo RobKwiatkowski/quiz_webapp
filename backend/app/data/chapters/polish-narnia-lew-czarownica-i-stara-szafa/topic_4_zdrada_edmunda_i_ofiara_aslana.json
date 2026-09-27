@@ -1,0 +1,152 @@
+{
+  "topic_id": "zdrada_edmunda_i_ofiara_aslana",
+  "topic_title": "Zdrada Edmunda i ofiara Aslana",
+  "questions": [
+    {
+      "id": "narnia-kto-uratowal-edmunda",
+      "text": "Kto uratował Edmunda z rąk Białej Czarownicy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Sam uciekł", "is_correct": false },
+        { "text": "Aslan osobiście", "is_correct": false },
+        { "text": "Zwolennicy Aslana", "is_correct": true },
+        { "text": "Łucja", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-wobec-edmunda",
+      "text": "Jak Aslan zachował się wobec Edmunda po jego uratowaniu?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wygnał go z Narnii", "is_correct": false },
+        { "text": "Ukarał go publicznie", "is_correct": false },
+        { "text": "Porozmawiał z nim i przyjął go z powrotem", "is_correct": true },
+        { "text": "Oddał go Białej Czarownicy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-zadanie-czarownicy-za-zdrade",
+      "text": "Czego Biała Czarownica zażądała od Aslana z powodu zdrady Edmunda?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Oddania jej całej Narnii", "is_correct": false },
+        { "text": "Prawa do życia Edmunda jako zdrajcy", "is_correct": true },
+        { "text": "Wygnania Piotra", "is_correct": false },
+        { "text": "Zniszczenia Kamiennego Stołu", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-ratuje-edmunda",
+      "text": "Jak Aslan uratował Edmunda przed karą?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Pokonał Czarownicę w pojedynku", "is_correct": false },
+        { "text": "Oddał za niego własne życie", "is_correct": true },
+        { "text": "Odesłał Edmunda do Anglii", "is_correct": false },
+        { "text": "Ukrył Edmunda przed Czarownicą", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-kto-poszedl-za-aslanem",
+      "text": "Kto potajemnie poszedł za Aslanem, gdy ten nocą opuszczał obóz?",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Piotr", "is_correct": false },
+        { "text": "Edmund", "is_correct": false },
+        { "text": "Zuzanna", "is_correct": true },
+        { "text": "Łucja", "is_correct": true }
+      ]
+    },
+    {
+      "id": "narnia-gdzie-zabito-aslana",
+      "text": "Gdzie Czarownica i jej słudzy zabili Aslana?",
+      "explanation": "Aslan został zabity na Kamiennym Stole.",
+      "selection_type": "open",
+      "accepted_answers": ["Na Kamiennym Stole", "Kamienny Stół", "Kamiennym Stole", "na kamiennym stole"]
+    },
+    {
+      "id": "narnia-kamienny-stol-po-smierci-aslana",
+      "text": "Co stało się z Kamiennym Stołem po śmierci Aslana?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zniknął", "is_correct": false },
+        { "text": "Rozpadł się", "is_correct": true },
+        { "text": "Zamienił się w lód", "is_correct": false },
+        { "text": "Został zabrany przez Czarownicę", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-dlaczego-aslan-wrocil-do-zycia",
+      "text": "Dlaczego Aslan mógł powrócić do życia?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Łucja podała mu magiczny napój", "is_correct": false },
+        { "text": "Czarownica cofnęła swoje zaklęcie", "is_correct": false },
+        { "text": "Działała głębsza magia związana z dobrowolną ofiarą niewinnego za zdrajcę", "is_correct": true },
+        { "text": "Kamienny Stół miał moc wskrzeszania każdego, kto na nim zginął", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-lucja-zuzanna-po-zmartwychwstaniu",
+      "text": "Co zrobiły Zuzanna i Łucja po zmartwychwstaniu Aslana?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Wróciły od razu do Anglii", "is_correct": false },
+        { "text": "Pojechały z nim do zamku Białej Czarownicy", "is_correct": true },
+        { "text": "Ruszyły szukać Edmunda", "is_correct": false },
+        { "text": "Ukryły się w lesie", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-odczarowal-posagi",
+      "text": "Co Aslan zrobił z kamiennymi posągami znajdującymi się w zamku Białej Czarownicy?",
+      "explanation": "Aslan odczarował istoty zamienione w kamień i przywrócił je do życia.",
+      "selection_type": "llm",
+      "accepted_answers": ["Aslan przywrócił kamienne posągi do życia, odczarowując istoty zamienione w kamień."]
+    },
+    {
+      "id": "narnia-sludzy-upokarzali-aslana",
+      "text": "Jak zachowywali się słudzy Czarownicy wobec Aslana przed jego śmiercią?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Bali się go i milczeli", "is_correct": false },
+        { "text": "Szydzili z niego, krępowali go i upokarzali", "is_correct": true },
+        { "text": "Próbowali namówić go do zdrady Edmunda", "is_correct": false },
+        { "text": "Odmówili wykonania rozkazu", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-myszy-przegryzly-liny",
+      "text": "Co Zuzanna i Łucja zrobiły z ciałem Aslana po odejściu Czarownicy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Próbowały przenieść je do obozu", "is_correct": false },
+        { "text": "Zajęły się zdjęciem więzów, a myszy pomogły przegryźć liny", "is_correct": true },
+        { "text": "Ukryły je w lesie", "is_correct": false },
+        { "text": "Wezwały Piotra rogiem", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-kamienny-stol-pekl",
+      "text": "Co zwróciło uwagę dziewczynek tuż przed powrotem Aslana do życia?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Pojawiła się Czarownica", "is_correct": false },
+        { "text": "Kamienny Stół pękł", "is_correct": true },
+        { "text": "Rozległ się róg Zuzanny", "is_correct": false },
+        { "text": "Wzeszło drugie słońce", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-aslan-do-zamku-czarownicy",
+      "text": "Dlaczego Aslan udał się po zmartwychwstaniu do zamku Czarownicy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Chciał odnaleźć swoją koronę", "is_correct": false },
+        { "text": "Chciał uwolnić istoty zamienione przez Czarownicę w kamień", "is_correct": true },
+        { "text": "Chciał zdobyć jej różdżkę", "is_correct": false },
+        { "text": "Tam ukrywał się Edmund", "is_correct": false }
+      ]
+    }
+  ]
+}

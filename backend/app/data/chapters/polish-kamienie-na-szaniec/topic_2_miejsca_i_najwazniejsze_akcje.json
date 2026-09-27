@@ -1,0 +1,339 @@
+{
+  "topic_id": "miejsca_i_najwazniejsze_akcje",
+  "topic_title": "Miejsca i najważniejsze akcje",
+  "questions": [
+    {
+      "id": "kamienie-gdzie-przetrzymywano-rudego",
+      "text": "Gdzie przetrzymywano Rudego po aresztowaniu?",
+      "explanation": "Po aresztowaniu Rudego przetrzymywano na Pawiaku.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Pawiak",
+        "na Pawiaku",
+        "więzienie Pawiak",
+        "w więzieniu na Pawiaku"
+      ]
+    },
+    {
+      "id": "kamienie-gdzie-torturowano-rudego",
+      "text": "Gdzie Rudy był przesłuchiwany i torturowany przez Gestapo?",
+      "explanation": "Rudego przesłuchiwano i torturowano w siedzibie Gestapo przy alei Szucha.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "aleja Szucha",
+        "alei Szucha",
+        "na alei Szucha",
+        "przy alei Szucha",
+        "siedziba Gestapo przy alei Szucha",
+        "w siedzibie Gestapo przy alei Szucha"
+      ]
+    },
+    {
+      "id": "kamienie-miejscowosc-odbicie-z-pociagu",
+      "text": "W jakiej miejscowości Zośka dowodził akcją odbicia więźniów z pociągu?",
+      "explanation": "Zośka dowodził akcją odbicia więźniów z pociągu w Celestynowie.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Celestynów",
+        "Celestynowie",
+        "w Celestynowie"
+      ]
+    },
+    {
+      "id": "kamienie-obrazek-akcja-celestynow",
+      "text": "Akcję w jakim miejscu przedstawia obrazek?",
+      "image": "/static/images/polish/celestynow.png",
+      "explanation": "Obraz przedstawia akcję odbicia więźniów z transportu kolejowego w Celestynowie.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Celestynów",
+        "Celestynowie",
+        "w Celestynowie",
+        "pod Celestynowem",
+        "okolice Celestynowa",
+        "pod miejscowością Celestynów"
+      ]
+    },
+    {
+      "id": "kamienie-miejscowosc-smierci-zoski",
+      "text": "W jakiej miejscowości zginął Zośka?",
+      "explanation": "Zośka zginął podczas akcji w Sieczychach.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Sieczychy",
+        "Sieczychach",
+        "w Sieczychach"
+      ]
+    },
+    {
+      "id": "kamienie-obrazek-akcja-sieczychy",
+      "text": "Akcję w jakim miejscu przedstawia obrazek?",
+      "image": "/static/images/polish/sieczychy.png",
+      "explanation": "Obraz przedstawia akcję przeciw niemieckiemu posterunkowi w Sieczychach.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Sieczychy",
+        "Sieczychach",
+        "w Sieczychach",
+        "pod Sieczychami",
+        "okolice Sieczych",
+        "w okolicach Sieczych"
+      ]
+    },
+    {
+      "id": "kamienie-miejscowosc-most-kolejowy",
+      "text": "Z jaką miejscowością związana była akcja przeciw mostowi kolejowemu?",
+      "explanation": "Akcja przeciw mostowi kolejowemu była związana z Czarnocinem.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Czarnocin",
+        "Czarnocinem",
+        "w Czarnocinie",
+        "z Czarnocinem"
+      ]
+    },
+    {
+      "id": "kamienie-obrazek-akcja-czarnocin",
+      "text": "Akcję w jakim miejscu przedstawia obrazek?",
+      "image": "/static/images/polish/czarnocin.png",
+      "explanation": "Obraz przedstawia akcję przeciw mostowi kolejowemu pod Czarnocinem.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Czarnocin",
+        "Czarnocinem",
+        "w Czarnocinie",
+        "pod Czarnocinem",
+        "okolice Czarnocina",
+        "pod miejscowością Czarnocin"
+      ]
+    },
+    {
+      "id": "kamienie-gdzie-ukrywal-sie-alek",
+      "topic_id": "miejsca_i_najwazniejsze_akcje",
+      "is_active": true,
+      "text": "Gdzie ukrywał się Alek po akcji z pomnikiem Kopernika?",
+      "selection_type": "open",
+      "explanation": "Po akcji z pomnikiem Kopernika Alek ukrywał się we wsi pod Warszawą - w Olesinku pod Górą Kalwarią.",
+      "accepted_answers": [
+        "Olesinek pod Górą Kalwarią",
+        "Olesinku pod Górą Kalwarią",
+        "w Olesinku pod Górą Kalwarią",
+        "Olesinek",
+        "w Olesinku",
+        "na wsi pod Warszawą"
+      ]
+    },
+    {
+      "id": "kamienie-miasto-wiekszosci-wydarzen",
+      "text": "W jakim mieście rozgrywa się większość wydarzeń książki?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Warszawa",
+          "is_correct": true
+        },
+        {
+          "text": "Kraków",
+          "is_correct": false
+        },
+        {
+          "text": "Lublin",
+          "is_correct": false
+        },
+        {
+          "text": "Łódź",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-ulica-pomnika-kopernika",
+      "text": "Przy jakiej warszawskiej ulicy znajdował się pomnik Kopernika związany z akcją Alka?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Krakowskie Przedmieście",
+          "is_correct": true
+        },
+        {
+          "text": "Marszałkowska",
+          "is_correct": false
+        },
+        {
+          "text": "Rakowiecka",
+          "is_correct": false
+        },
+        {
+          "text": "Długa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-miejsce-odbicia-rudego",
+      "text": "Z jakim miejscem związana jest akcja odbicia Rudego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Arsenał",
+          "is_correct": true
+        },
+        {
+          "text": "Cytadela",
+          "is_correct": false
+        },
+        {
+          "text": "Pawiak",
+          "is_correct": false
+        },
+        {
+          "text": "Zachęta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-rejon-akcji-sylwestrowej",
+      "topic_id": "miejsca_i_najwazniejsze_akcje",
+      "is_active": true,
+      "text": "Z jakim rejonem wiązała się akcja dywersyjna przeciw niemieckiemu transportowi kolejowemu w noc sylwestrową?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "okolice Kraśnika",
+          "is_correct": true
+        },
+        {
+          "text": "okolice Celestynowa",
+          "is_correct": false
+        },
+        {
+          "text": "okolice Sieczych",
+          "is_correct": false
+        },
+        {
+          "text": "okolice Olesinka",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-obrazek-akcja-krasnik",
+      "text": "Akcję w jakim miejscu przedstawia obrazek?",
+      "image": "/static/images/polish/krasnik.png",
+      "explanation": "Obraz przedstawia akcję dywersyjną przeciw niemieckiemu transportowi kolejowemu w okolicach Kraśnika.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Kraśnik",
+        "Kraśniku",
+        "pod Kraśnikiem",
+        "okolice Kraśnika",
+        "w okolicach Kraśnika",
+        "w rejonie Kraśnika"
+      ]
+    },
+    {
+      "id": "kamienie-na-czym-arsenal",
+      "text": "Na czym polegała akcja pod Arsenałem?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "na odbiciu Rudego i innych więźniów",
+          "is_correct": true
+        },
+        {
+          "text": "na wysadzeniu mostu kolejowego",
+          "is_correct": false
+        },
+        {
+          "text": "na odbiciu więźniów z pociągu",
+          "is_correct": false
+        },
+        {
+          "text": "na ataku na niemiecki posterunek",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-na-czym-celestynow",
+      "text": "Na czym polegała akcja w Celestynowie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "na odbiciu więźniów z transportu kolejowego",
+          "is_correct": true
+        },
+        {
+          "text": "na odbiciu Rudego",
+          "is_correct": false
+        },
+        {
+          "text": "na wysadzeniu mostu",
+          "is_correct": false
+        },
+        {
+          "text": "na zdobyciu niemieckiej radiostacji",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-cel-czarnocin",
+      "text": "Co było celem akcji w Czarnocinie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "uszkodzenie mostu kolejowego",
+          "is_correct": true
+        },
+        {
+          "text": "odbicie Rudego",
+          "is_correct": false
+        },
+        {
+          "text": "odbicie więźniów z transportu",
+          "is_correct": false
+        },
+        {
+          "text": "zdobycie magazynu broni",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-co-w-sieczychach",
+      "text": "Co wydarzyło się podczas akcji w Sieczychach?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "zaatakowano niemiecki posterunek",
+          "is_correct": true
+        },
+        {
+          "text": "odbito więźniów",
+          "is_correct": false
+        },
+        {
+          "text": "wysadzono most",
+          "is_correct": false
+        },
+        {
+          "text": "odbito Rudego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-c91a56d8",
+      "topic_id": "miejsca_i_najwazniejsze_akcje",
+      "is_active": true,
+      "text": "W którym roku doszło do Akcji pod Arsenałem?",
+      "selection_type": "open",
+      "explanation": "26 marca 1943",
+      "accepted_answers": [
+        "1943"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "polish-kamienie-na-szaniec",
+  "title": "Kamienie na szaniec — znajomość treści",
+  "description": "Powtórka z fabuły, bohaterów, miejsc i najważniejszych akcji opisanych w lekturze.",
+  "category": "polish",
+  "age_group": "10-12",
+  "chapter_number": null,
+  "target_question_count": 15,
+  "questions_per_topic": 3,
+  "topics": [
+    "topic_1_bohaterowie_i_ich_otoczenie.json",
+    "topic_2_miejsca_i_najwazniejsze_akcje.json",
+    "topic_3_maly_sabotaz.json",
+    "topic_4_chronologia_wydarzen.json",
+    "topic_5_autor_i_zrodla_ksiazki.json"
+  ]
+}

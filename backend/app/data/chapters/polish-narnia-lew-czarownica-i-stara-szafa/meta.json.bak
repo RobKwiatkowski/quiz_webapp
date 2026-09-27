@@ -1,0 +1,17 @@
+{
+  "id": "polish-narnia-lew-czarownica-i-stara-szafa",
+  "title": "Opowieści z Narnii — Lew, Czarownica i stara szafa",
+  "description": "Powtórka z fabuły, bohaterów i najważniejszych wydarzeń lektury C.S. Lewisa.",
+  "category": "polish",
+  "age_group": "10-12",
+  "chapter_number": null,
+  "target_question_count": 50,
+  "questions_per_topic": 10,
+  "topics": [
+    "topic_1_poczatek_i_wejscie_do_narnii.json",
+    "topic_2_edmund_czarownica_i_niebezpieczenstwo.json",
+    "topic_3_bobrowie_aslan_i_przygotowania.json",
+    "topic_4_zdrada_edmunda_i_ofiara_aslana.json",
+    "topic_5_bitwa_i_zakonczenie.json"
+  ]
+}

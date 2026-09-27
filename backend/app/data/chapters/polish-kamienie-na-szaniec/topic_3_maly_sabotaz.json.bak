@@ -1,0 +1,206 @@
+{
+  "topic_id": "maly_sabotaz",
+  "topic_title": "Mały Sabotaż",
+  "questions": [
+    {
+      "id": "kamienie-haslo-przeciw-kinom",
+      "text": "Jak brzmiało hasło malowane na murach w ramach akcji przeciw chodzeniu Polaków do kin?",
+      "explanation": "Na murach malowano hasło „Tylko świnie siedzą w kinie”.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Tylko świnie siedzą w kinie",
+        "tylko swinie siedza w kinie"
+      ]
+    },
+    {
+      "id": "kamienie-deutschland-verloren-znaczenie",
+      "text": "Co oznaczało hasło „Deutschland verloren”?",
+      "explanation": "Hasło „Deutschland verloren” oznaczało, że Niemcy są zgubione lub przegrane.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Niemcy zgubione",
+        "Niemcy są zgubione",
+        "Niemcy przegrane",
+        "Niemcy są przegrane",
+        "przegrana Niemiec"
+      ]
+    },
+    {
+      "id": "kamienie-organizacja-malego-sabotazu",
+      "text": "Jak nazywała się organizacja Małego Sabotażu, z którą związani byli bohaterowie?",
+      "explanation": "Bohaterowie byli związani z organizacją Małego Sabotażu „Wawer”.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Wawer",
+        "organizacja Wawer",
+        "Wawrem"
+      ]
+    },
+    {
+      "id": "kamienie-znak-polskiego-oporu",
+      "text": "Jak nazywał się znak polskiego oporu malowany na murach Warszawy w kształcie kotwicy?",
+      "explanation": "Znakiem była Kotwica Polski Walczącej.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Polska Walcząca",
+        "Kotwica Polski Walczącej",
+        "kotwica",
+        "znak Polski Walczącej"
+      ]
+    },
+    {
+      "id": "kamienie-akcja-fotograficzna-na-czym",
+      "text": "Na czym polegała „akcja fotograficzna”?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "na tłuczeniu szyb w zakładach wystawiających fotografie Niemców", "is_correct": true },
+        { "text": "na kradzieży aparatów fotograficznych", "is_correct": false },
+        { "text": "na fotografowaniu niemieckich wojsk", "is_correct": false },
+        { "text": "na wykonywaniu zdjęć do fałszywych dokumentów", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-akcja-fotograficzna-bohater",
+      "text": "Który bohater szczególnie wyróżnił się w akcji fotograficznej?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-akcja-fotograficzna-dlaczego",
+      "text": "Dlaczego Mały Sabotaż występował przeciw zakładom fotograficznym prezentującym zdjęcia niemieckich żołnierzy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "uznawano to za sprzyjanie okupantowi i jego propagandzie", "is_correct": true },
+        { "text": "chciano zdobyć aparaty", "is_correct": false },
+        { "text": "chciano zdobyć zdjęcia do dokumentów", "is_correct": false },
+        { "text": "zakłady należały do Gestapo", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-przeciw-kinom-dlaczego",
+      "text": "Dlaczego członkowie Małego Sabotażu próbowali zniechęcać Polaków do chodzenia do kin?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "kina służyły niemieckiej propagandzie i przynosiły okupantowi dochód", "is_correct": true },
+        { "text": "kina były dostępne wyłącznie dla Niemców", "is_correct": false },
+        { "text": "kina służyły jako siedziby Gestapo", "is_correct": false },
+        { "text": "w kinach prowadzono pobór do niemieckiego wojska", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-napisy-przeciw-kinom-bohater",
+      "text": "Który bohater szczególnie zasłynął z napisów związanych z akcją przeciw kinom?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Rudy", "is_correct": true },
+        { "text": "Alek", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-litera-v-znaczenie",
+      "text": "Co oznaczała litera V w alianckiej propagandzie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Victory — zwycięstwo", "is_correct": true },
+        { "text": "Vaterland — ojczyzna", "is_correct": false },
+        { "text": "Verboten — zakazane", "is_correct": false },
+        { "text": "Vergeltung — odwet", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-odpowiedz-na-niemieckie-v",
+      "text": "Jak Mały Sabotaż odpowiadał na niemieckie wykorzystywanie znaku V?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "rozbudowywał go do hasła „Deutschland verloren”", "is_correct": true },
+        { "text": "zamieniał V w kotwicę Polski Walczącej", "is_correct": false },
+        { "text": "zamalowywał wszystkie znaki V", "is_correct": false },
+        { "text": "dopisywał do V nazwisko Hitlera", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-zolw-symbol",
+      "text": "Co symbolizował rysunek żółwia?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "zachętę do powolnej pracy na rzecz okupanta", "is_correct": true },
+        { "text": "symbol niebezpiecznego miejsca", "is_correct": false },
+        { "text": "oznaczenie lokalu konspiracyjnego", "is_correct": false },
+        { "text": "wezwanie do opuszczenia Warszawy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-nekany-telefonami",
+      "text": "Przeciw komu skierowano akcję obejmującą m.in. nękanie telefonami, tłuczenie szyb i fałszywe ogłoszenia?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Paprockiemu", "is_correct": true },
+        { "text": "Zeusowi", "is_correct": false },
+        { "text": "Orszy", "is_correct": false },
+        { "text": "Kopernikowi", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-paprocki-dlaczego-cel",
+      "text": "Dlaczego Paprocki stał się celem Małego Sabotażu?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "pośredniczył w rozpowszechnianiu niemieckiej prasy", "is_correct": true },
+        { "text": "był oficerem Gestapo", "is_correct": false },
+        { "text": "aresztował Rudego", "is_correct": false },
+        { "text": "prowadził niemieckie kino", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-zrywanie-niemieckich-flag",
+      "text": "Który bohater szczególnie zasłynął ze zrywania niemieckich flag?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Alek", "is_correct": true },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Zośka", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-malowanie-kotwic-bohater",
+      "text": "Który z bohaterów wyróżniał się dużą liczbą malowanych kotwic Polski Walczącej?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Zośka", "is_correct": true },
+        { "text": "Rudy", "is_correct": false },
+        { "text": "Alek", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-dzialania-przeciw-kinom",
+      "text": "Które działania były elementami akcji skierowanej przeciw chodzeniu do kin? Zaznacz wszystkie poprawne.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "gazowanie sal kinowych", "is_correct": true },
+        { "text": "malowanie haseł zniechęcających do chodzenia do kina", "is_correct": true },
+        { "text": "działania propagandowe skierowane do widzów", "is_correct": true },
+        { "text": "wysadzanie budynków kin", "is_correct": false }
+      ]
+    },
+    {
+      "id": "kamienie-dzialania-malego-sabotazu",
+      "text": "Które z poniższych działań należały do Małego Sabotażu? Zaznacz wszystkie poprawne.",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "malowanie znaków na murach", "is_correct": true },
+        { "text": "zrywanie niemieckich flag", "is_correct": true },
+        { "text": "tłuczenie witryn zakładów fotograficznych", "is_correct": true },
+        { "text": "wysadzanie mostów kolejowych", "is_correct": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "topic_id": "poczatek_i_wejscie_do_narnii",
+  "topic_title": "Początek historii i wejście do Narnii",
+  "questions": [
+    {
+      "id": "narnia-ewakuacja-z-londynu",
+      "topic_id": "poczatek_i_wejscie_do_narnii",
+      "is_active": true,
+      "text": "Dlaczego rodzeństwo Pevensie zamieszkało na pewien czas na wsi?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zostało ewakuowane z Polski z powodu wojny",
+          "is_correct": false
+        },
+        {
+          "text": "Zostało ewakuowane z Londynu z powodu wojny",
+          "is_correct": true
+        },
+        {
+          "text": "Zostało ewakuowane z USA z powodu wojny",
+          "is_correct": false
+        },
+        {
+          "text": "Zostało ewakuowane z Londynu z powodu epidemi",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narnia-imiona-rodzenstwa",
+      "text": "Wymień imiona czworga rodzeństwa Pevensie.",
+      "explanation": "Rodzeństwo Pevensie to Piotr, Zuzanna, Edmund i Łucja.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Piotr, Zuzanna, Edmund i Łucja",
+        "Piotr Zuzanna Edmund Łucja",
+        "Łucja, Edmund, Zuzanna i Piotr",
+        "Łucja Edmund Zuzanna Piotr"
+      ]
+    },
+    {
+      "id": "narnia-pierwsza-odkryla-przejscie",
+      "text": "Kto jako pierwszy odkrył przejście do Narnii?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Piotr",
+          "is_correct": false
+        },
+        {
+          "text": "Zuzanna",
+          "is_correct": false
+        },
+        {
+          "text": "Edmund",
+          "is_correct": false
+        },
+        {
+          "text": "Łucja",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "narnia-lucja-jak-trafila",
+      "text": "W jaki sposób Łucja dostała się do Narnii?",
+      "explanation": "Łucja weszła do starej szafy i, idąc coraz głębiej, odkryła przejście do Narnii.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "Łucja weszła do starej szafy i przechodząc przez nią znalazła przejście do Narnii."
+      ]
+    },
+    {
+      "id": "narnia-lucja-pierwsze-spotkanie",
+      "text": "Kogo Łucja spotkała jako pierwszego w Narnii?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Aslana",
+          "is_correct": false
+        },
+        {
+          "text": "fauna Tumnusa",
+          "is_correct": true
+        },
+        {
+          "text": "Białą Czarownicę",
+          "is_correct": false
+        },
+        {
+          "text": "pana Bobra",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narnia-czas-po-powrocie-lucji",
+      "text": "Co niezwykłego zauważyła Łucja po powrocie z Narnii?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "W domu minął tydzień",
+          "is_correct": false
+        },
+        {
+          "text": "Nikt jej nie pamiętał",
+          "is_correct": false
+        },
+        {
+          "text": "W domu niemal nie upłynął czas",
+          "is_correct": true
+        },
+        {
+          "text": "Szafa zniknęła",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narnia-dlaczego-nie-wierzyli-lucji",
+      "text": "Dlaczego rodzeństwo początkowo nie wierzyło Łucji, gdy opowiadała o Narnii?",
+      "explanation": "Jej opowieść wydawała się niemożliwa, a gdy inni sprawdzili szafę, nie znaleźli przejścia.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "Opowieść Łucji wydawała się niemożliwa, a pozostali nie znaleźli przejścia w szafie."
+      ]
+    },
+    {
+      "id": "narnia-kim-byl-profesor",
+      "topic_id": "poczatek_i_wejscie_do_narnii",
+      "is_active": true,
+      "text": "Kim był profesor, w którego domu mieszkały dzieci?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Nauczycielem dzieci",
+          "is_correct": false
+        },
+        {
+          "text": "Właścicielem domu, do którego je ewakuowano",
+          "is_correct": true
+        },
+        {
+          "text": "Królem Anglii",
+          "is_correct": false
+        },
+        {
+          "text": "Przyjacielem Tumnusa i jego nauczycielem",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narnia-opinia-profesora-o-lucji",
+      "text": "Co profesor sądził o opowieści Łucji?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Uznał ją od razu za kłamstwo",
+          "is_correct": false
+        },
+        {
+          "text": "Nakazał ją ukarać",
+          "is_correct": false
+        },
+        {
+          "text": "Dopuszczał możliwość, że mówi prawdę",
+          "is_correct": true
+        },
+        {
+          "text": "Zabronił dzieciom mówić o Narnii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narnia-pierwsze-wspolne-wejscie",
+      "text": "W jaki sposób cała czwórka dzieci po raz pierwszy znalazła się razem w Narnii?",
+      "explanation": "Dzieci ukryły się w szafie, a potem odkryły, że prowadzi ona do Narnii.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "Dzieci ukryły się w szafie i idąc w jej głąb odkryły przejście do Narnii."
+      ]
+    },
+    {
+      "id": "narnia-tumnus-poczatkowy-rozkaz",
+      "text": "Dlaczego Tumnus początkowo zaprosił Łucję do swojego domu?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Chciał ją ukryć przed Czarownicą", "is_correct": false },
+        { "text": "Miał rozkaz schwytać człowieka i wydać go Czarownicy", "is_correct": true },
+        { "text": "Chciał zaprowadzić ją do Aslana", "is_correct": false },
+        { "text": "Potrzebował jej pomocy", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-tumnus-nie-wydal-lucji",
+      "text": "Co ostatecznie powstrzymało Tumnusa przed wydaniem Łucji Czarownicy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Bał się Piotra", "is_correct": false },
+        { "text": "Łucja zagroziła mu ucieczką", "is_correct": false },
+        { "text": "Miał wyrzuty sumienia i nie potrafił jej skrzywdzić", "is_correct": true },
+        { "text": "Dowiedział się, że Czarownica została pokonana", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-lucja-wiadomosc-od-tumnusa",
+      "text": "Po czym Łucja zorientowała się, że Tumnus znalazł się w niebezpieczeństwie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Znalazła wiadomość pozostawioną w jego domu", "is_correct": true },
+        { "text": "Spotkała rannego Tumnusa w lesie", "is_correct": false },
+        { "text": "Pan Bóbr od razu powiedział jej o aresztowaniu", "is_correct": false },
+        { "text": "Zobaczyła jego dom spalony", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-edmund-ukryl-prawde",
+      "text": "Dlaczego Edmund nie powiedział rodzeństwu prawdy o swoim wcześniejszym pobycie w Narnii?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Nie pamiętał, co się wydarzyło", "is_correct": false },
+        { "text": "Chciał dokuczyć Łucji i nie chciał przyznać, że miała rację", "is_correct": true },
+        { "text": "Czarownica odebrała mu pamięć", "is_correct": false },
+        { "text": "Bał się profesora", "is_correct": false }
+      ]
+    }
+  ]
+}

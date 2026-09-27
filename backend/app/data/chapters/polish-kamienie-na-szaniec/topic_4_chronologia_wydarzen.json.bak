@@ -1,0 +1,188 @@
+{
+  "topic_id": "chronologia_wydarzen",
+  "topic_title": "Chronologia wydarzeń",
+  "questions": [
+    {
+      "id": "kamienie-wczesniej-aresztowanie-czy-arsenal",
+      "topic_id": "chronologia_wydarzen",
+      "is_active": true,
+      "text": "Ułóż chronologicznie wydarzenia związane z Akcją pod Arsenałem",
+      "selection_type": "order",
+      "explanation": "Aresztowanie \"Heńka\", Aresztowanie \"Rudego\", Początek tortur i przesłuchań przez Gestapo, Rozpoznanie w siedzibie Gestapo przez \"Wesołego\", Atak na więźniarkę i odbicie \"Rudego\", Ciężkie zranienie \"Alka\"",
+      "order_items": [
+        {
+          "id": "aresztowanie-henka",
+          "text": "Aresztowanie \"Heńka\"",
+          "position": 1
+        },
+        {
+          "id": "aresztowanie-rudego",
+          "text": "Aresztowanie \"Rudego\"",
+          "position": 2
+        },
+        {
+          "id": "poczatek-tortur-i-przesluchan-przez-gestapo",
+          "text": "Początek tortur i przesłuchań przez Gestapo",
+          "position": 3
+        },
+        {
+          "id": "rozpoznanie-w-siedzibie-gestapo-przez-wesolego",
+          "text": "Rozpoznanie w siedzibie Gestapo przez \"Wesołego\"",
+          "position": 4
+        },
+        {
+          "id": "atak-na-wiezniarke-i-odbicie-rudego",
+          "text": "Atak na więźniarkę i odbicie \"Rudego\"",
+          "position": 5
+        },
+        {
+          "id": "ciezkie-zranienie-alka",
+          "text": "Ciężkie zranienie \"Alka\"",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "id": "kamienie-wczesniej-arsenal-czy-celestynow",
+      "text": "Co wydarzyło się wcześniej: akcja pod Arsenałem czy akcja w Celestynowie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "akcja pod Arsenałem",
+          "is_correct": true
+        },
+        {
+          "text": "akcja w Celestynowie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-wczesniej-celestynow-czy-czarnocin",
+      "text": "Co wydarzyło się wcześniej: Celestynów czy Czarnocin?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Celestynów",
+          "is_correct": true
+        },
+        {
+          "text": "Czarnocin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-wczesniej-czarnocin-czy-sieczychy",
+      "text": "Co wydarzyło się wcześniej: Czarnocin czy Sieczychy?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Czarnocin",
+          "is_correct": true
+        },
+        {
+          "text": "Sieczychy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-po-aresztowaniu-rudego",
+      "text": "Co nastąpiło po aresztowaniu Rudego z punktu widzenia jego przyjaciół?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "rozpoczęto przygotowania do jego odbicia",
+          "is_correct": true
+        },
+        {
+          "text": "rozwiązano grupę",
+          "is_correct": false
+        },
+        {
+          "text": "zaprzestano działalności konspiracyjnej",
+          "is_correct": false
+        },
+        {
+          "text": "wszyscy wyjechali z Warszawy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-akcja-najpozniej",
+      "text": "Która z wymienionych akcji odbyła się najpóźniej?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Sieczychy",
+          "is_correct": true
+        },
+        {
+          "text": "Arsenał",
+          "is_correct": false
+        },
+        {
+          "text": "Celestynów",
+          "is_correct": false
+        },
+        {
+          "text": "Czarnocin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-kolejnosc-aresztowanie-arsenal-smierc-zoski",
+      "text": "Ułóż wydarzenia od najwcześniejszego do najpóźniejszego.",
+      "explanation": "Najpierw aresztowano Rudego, następnie przeprowadzono akcję pod Arsenałem, a później Zośka zginął w Sieczychach.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "aresztowanie-rudego",
+          "text": "aresztowanie Rudego",
+          "position": 1
+        },
+        {
+          "id": "akcja-pod-arsenalem",
+          "text": "akcja pod Arsenałem",
+          "position": 2
+        },
+        {
+          "id": "smierc-zoski",
+          "text": "śmierć Zośki",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "id": "kamienie-kolejnosc-celestynow-czarnocin-sieczychy",
+      "text": "Ułóż akcje od najwcześniejszej do najpóźniejszej.",
+      "explanation": "Prawidłowa kolejność to: Kraśnik, Celestynów, Czarnocin, Sieczychy.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "krasnik",
+          "text": "Kraśnik",
+          "position": 1
+        },
+        {
+          "id": "celestynow",
+          "text": "Celestynów",
+          "position": 2
+        },
+        {
+          "id": "czarnocin",
+          "text": "Czarnocin",
+          "position": 3
+        },
+        {
+          "id": "sieczychy",
+          "text": "Sieczychy",
+          "position": 4
+        }
+      ]
+    }
+  ]
+}

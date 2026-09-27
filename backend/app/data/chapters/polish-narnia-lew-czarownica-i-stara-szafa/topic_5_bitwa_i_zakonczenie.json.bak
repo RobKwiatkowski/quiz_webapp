@@ -1,0 +1,108 @@
+{
+  "topic_id": "bitwa_i_zakonczenie",
+  "topic_title": "Bitwa i zakończenie",
+  "questions": [
+    {
+      "id": "narnia-kto-dowodzil-wojskiem",
+      "text": "Kto dowodził wojskami Aslana podczas bitwy, zanim Aslan powrócił?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Edmund", "is_correct": false },
+        { "text": "Piotr", "is_correct": true },
+        { "text": "pan Bóbr", "is_correct": false },
+        { "text": "Tumnus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-edmund-pomogl-w-bitwie",
+      "text": "W jaki sposób Edmund pomógł podczas bitwy z Białą Czarownicą?",
+      "explanation": "Edmund zniszczył różdżkę Czarownicy, więc nie mogła dalej zamieniać przeciwników w kamień.",
+      "selection_type": "llm",
+      "accepted_answers": ["Edmund zaatakował Białą Czarownicę i zniszczył lub złamał jej różdżkę."]
+    },
+    {
+      "id": "narnia-co-stalo-sie-z-edmundem-w-bitwie",
+      "text": "Co stało się z Edmundem podczas walki?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Uciekł", "is_correct": false },
+        { "text": "Został ciężko ranny", "is_correct": true },
+        { "text": "Został zamieniony w kamień", "is_correct": false },
+        { "text": "Wrócił do Anglii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-kto-wyleczyl-edmunda",
+      "text": "Kto wyleczył Edmunda po bitwie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Aslan", "is_correct": false },
+        { "text": "Łucja swoim magicznym napojem", "is_correct": true },
+        { "text": "Zuzanna", "is_correct": false },
+        { "text": "profesor", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-los-bialej-czarownicy",
+      "text": "Co stało się z Białą Czarownicą podczas ostatecznej bitwy?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Uciekła z Narnii", "is_correct": false },
+        { "text": "Została uwięziona", "is_correct": false },
+        { "text": "Została pokonana i zabita przez Aslana", "is_correct": true },
+        { "text": "Została zamieniona w kamień", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-po-zwyciestwie",
+      "text": "Co wydarzyło się z rodzeństwem po zwycięstwie nad Białą Czarownicą?",
+      "selection_type": "multiple",
+      "answers": [
+        { "text": "Zostali królami i królowymi Narnii", "is_correct": true },
+        { "text": "Zamieszkali w Ker-Paravel", "is_correct": true },
+        { "text": "Od razu wrócili do Anglii", "is_correct": false },
+        { "text": "Dorastali w Narnii", "is_correct": true }
+      ]
+    },
+    {
+      "id": "narnia-ile-tronow-w-ker-paravel",
+      "text": "Ile tronów czekało w Ker-Paravel na dzieci?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "2", "is_correct": false },
+        { "text": "3", "is_correct": false },
+        { "text": "4", "is_correct": true },
+        { "text": "5", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-powrot-do-anglii",
+      "text": "W jaki sposób rodzeństwo po wielu latach spędzonych w Narnii wróciło do swojego świata?",
+      "explanation": "Podczas polowania dzieci trafiły w okolice latarni, przeszły przez szafę i znalazły się z powrotem w Anglii.",
+      "selection_type": "llm",
+      "accepted_answers": ["Podczas polowania rodzeństwo znalazło przejście przy latarni, weszło przez szafę i wróciło do Anglii."]
+    },
+    {
+      "id": "narnia-niezwykle-po-powrocie",
+      "text": "Co było najbardziej niezwykłe po powrocie rodzeństwa do Anglii?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Profesor zniknął", "is_correct": false },
+        { "text": "Znów byli dziećmi i w Anglii niemal nie upłynął czas", "is_correct": true },
+        { "text": "Szafa zniknęła", "is_correct": false },
+        { "text": "Wszyscy w Anglii pamiętali ich jako władców Narnii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "narnia-przemiana-edmunda",
+      "text": "Jak zmienił się Edmund od początku do końca opowieści?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Stał się jeszcze bardziej samolubny", "is_correct": false },
+        { "text": "Z zazdrosnego i nielojalnego stał się odważny i lojalny", "is_correct": true },
+        { "text": "Przestał interesować się Narnią", "is_correct": false },
+        { "text": "Zaczął popierać Białą Czarownicę", "is_correct": false }
+      ]
+    }
+  ]
+}
