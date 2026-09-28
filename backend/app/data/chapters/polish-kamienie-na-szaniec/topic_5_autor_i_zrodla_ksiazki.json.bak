@@ -1,0 +1,44 @@
+{
+  "topic_id": "autor_i_zrodla_ksiazki",
+  "topic_title": "Autor i źródła książki",
+  "questions": [
+    {
+      "id": "kamienie-autor-ksiazki",
+      "text": "Kto napisał „Kamienie na szaniec”?",
+      "explanation": "Autorem „Kamieni na szaniec” jest Aleksander Kamiński.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Aleksander Kamiński",
+        "Aleksandra Kamińskiego",
+        "Kamiński",
+        "Kamińskiego"
+      ]
+    },
+    {
+      "id": "kamienie-kaminski-organizacja-malego-sabotazu",
+      "text": "Jaką organizacją Małego Sabotażu kierował Aleksander Kamiński?",
+      "explanation": "Aleksander Kamiński kierował organizacją Małego Sabotażu „Wawer”.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Wawer",
+        "organizacją Wawer",
+        "organizacja Wawer",
+        "Wawrem"
+      ]
+    },
+    {
+      "id": "kamienie-czyje-zapiski-zrodlem",
+      "text": "Czyje zapiski stały się jednym z ważnych źródeł wykorzystanych przez Aleksandra Kamińskiego przy pisaniu książki?",
+      "explanation": "Jednym z ważnych źródeł były zapiski Zośki, czyli Tadeusza Zawadzkiego.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Zośki",
+        "Zośka",
+        "Tadeusza Zawadzkiego",
+        "Tadeusz Zawadzki",
+        "zapiski Zośki",
+        "zapiski Tadeusza Zawadzkiego"
+      ]
+    }
+  ]
+}
