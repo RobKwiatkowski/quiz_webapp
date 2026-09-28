@@ -1,7 +1,7 @@
 {
   "topic_id": "starozytny-egipt",
   "topic_title": "Starożytny egipt",
-  "is_active": false,
+  "is_active": true,
   "questions": [
     {
       "id": "q-image-egypt-city",
@@ -322,6 +322,220 @@
             "serkofaragach"
           ]
         }
+      ]
+    },
+    {
+      "id": "q-d1c81785",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Dlaczego w Egipcie mumifikowano zwłoki?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Uważano, że dusza nadal żyje w ciele nawet po śmierci.",
+          "is_correct": true
+        },
+        {
+          "text": "Uważano, że ciało człowieka jest darem od Bogów i należy o nie dbać.",
+          "is_correct": false
+        },
+        {
+          "text": "Uważano, że władza faraona trwa tak długo aż jego ciało ulegnie zniszczeniu.",
+          "is_correct": false
+        },
+        {
+          "text": "Nie chciano narazić się na gniew Ozyrysa za zniszczenie świętego ciała faraona.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-egypt-mummification-sequence",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Który ciąg prawidłowo przedstawia etapy mumifikacji i pochówku opisane w podręczniku?",
+      "selection_type": "single",
+      "explanation": "Najpierw usuwano wnętrzności, następnie ciało balsamowano i owijano bandażami. Mumię składano w trumnie, którą umieszczano w sarkofagu, a ten w grobowcu.",
+      "answers": [
+        {
+          "text": "Balsamowanie → usunięcie wnętrzności → złożenie w grobowcu → owinięcie bandażami",
+          "is_correct": false
+        },
+        {
+          "text": "Usunięcie wnętrzności → balsamowanie → owinięcie bandażami → złożenie w trumnie i sarkofagu → umieszczenie w grobowcu",
+          "is_correct": true
+        },
+        {
+          "text": "Owinięcie bandażami → balsamowanie → spalenie ciała → złożenie w sarkofagu",
+          "is_correct": false
+        },
+        {
+          "text": "Usunięcie wnętrzności → owinięcie bandażami → zatopienie w Nilu → złożenie w grobowcu",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-egypt-sphinx-chephren",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Które zdanie najlepiej wyjaśnia rolę Wielkiego Sfinksa przedstawioną w podręczniku?",
+      "selection_type": "single",
+      "explanation": "Według uczonych Sfinks przedstawiał faraona Chefrena i pełnił funkcję strażnika jego piramidy.",
+      "answers": [
+        {
+          "text": "Był pomnikiem budowniczych piramid.",
+          "is_correct": false
+        },
+        {
+          "text": "Wyznaczał miejsce, w którym statki rozładowywały kamienne bloki.",
+          "is_correct": false
+        },
+        {
+          "text": "Prawdopodobnie przedstawiał faraona Chefrena i strzegł jego piramidy.",
+          "is_correct": true
+        },
+        {
+          "text": "Był świątynią poświęconą bogu Słońca Ra.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-egypt-pyramid-construction-methods",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Które sposoby wykorzystywali Egipcjanie podczas transportowania i ustawiania kamiennych bloków przy budowie piramid?",
+      "selection_type": "multiple",
+      "explanation": "Kamienne bloki przewożono Nilem, a następnie przemieszczano po rampach i podnoszono za pomocą dźwigni.",
+      "answers": [
+        {
+          "text": "Przewozili bloki Nilem na statkach.",
+          "is_correct": true
+        },
+        {
+          "text": "Przeciągali bloki po stopniowo podwyższanych rampach.",
+          "is_correct": true
+        },
+        {
+          "text": "Podnosili ciężkie bloki za pomocą dźwigni.",
+          "is_correct": true
+        },
+        {
+          "text": "Wciągali bloki żelaznymi dźwigami napędzanymi silnikami.",
+          "is_correct": false
+        },
+        {
+          "text": "Wylewali bloki z betonu bezpośrednio na kolejnych poziomach.",
+          "is_correct": false
+        },
+        {
+          "text": "Transportowali bloki wyłącznie na grzbietach zwierząt.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-egypt-afterlife-burial-practices",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Które działania Egipcjan wynikały z wiary w życie pozagrobowe?",
+      "selection_type": "multiple",
+      "explanation": "Egipcjanie uważali, że po śmierci dusza nadal istnieje, dlatego dbali o zachowanie ciała i odpowiednio przygotowywali grobowiec.",
+      "answers": [
+        {
+          "text": "Starali się zachować ciało zmarłego w nienaruszonym stanie.",
+          "is_correct": true
+        },
+        {
+          "text": "Mumifikowali ciała faraonów i wysokich dostojników.",
+          "is_correct": true
+        },
+        {
+          "text": "Umieszczali mumie w sarkofagach składanych w grobowcach.",
+          "is_correct": true
+        },
+        {
+          "text": "Palili ciała zmarłych, aby uwolnić ich dusze.",
+          "is_correct": false
+        },
+        {
+          "text": "Wrzucali kosztowności zmarłego do Nilu.",
+          "is_correct": false
+        },
+        {
+          "text": "Pozostawiali ciała dostojników bez zabezpieczenia.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-1afc1a07",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Kim była w Egipcie osoba pokazana na grafice?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-egypt-pharaoh-throne-temple.png",
+      "answers": [
+        {
+          "text": "Wielkim Kapłanem",
+          "is_correct": false
+        },
+        {
+          "text": "Faraonem",
+          "is_correct": true
+        },
+        {
+          "text": "Cesarzem",
+          "is_correct": false
+        },
+        {
+          "text": "Imperatorem",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-d0de7330",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywa się to coroczne zjawisko w Egipcie?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/wylew-nilu.png",
+      "answers": [
+        {
+          "text": "Przelew Nilu",
+          "is_correct": false
+        },
+        {
+          "text": "Wylew Nilu",
+          "is_correct": true
+        },
+        {
+          "text": "Odlew Nilu",
+          "is_correct": false
+        },
+        {
+          "text": "Zamulanie Nilu",
+          "is_correct": false
+        },
+        {
+          "text": "Wymulenie Nilu",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-35a5e3a1",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywa się ten posąg?",
+      "selection_type": "open",
+      "explanation": "Jest to Wielki Sfinks",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Great_Sphinx_of_Giza_May_2015.JPG?utm_source=pl.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "accepted_answers": [
+        "Sfinks",
+        "Wielki Sfinks"
       ]
     }
   ]

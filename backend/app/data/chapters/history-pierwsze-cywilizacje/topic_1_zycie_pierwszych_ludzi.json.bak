@@ -292,6 +292,30 @@
           "position": 4
         }
       ]
+    },
+    {
+      "id": "q-fe551b04",
+      "topic_id": "zycie-pierwszych-ludzi",
+      "text": "Zmiana trybu życia z wędrownego na osiadły miała miejsce w:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "neolicie",
+          "is_correct": true
+        },
+        {
+          "text": "paleocie",
+          "is_correct": false
+        },
+        {
+          "text": "starożytności",
+          "is_correct": false
+        },
+        {
+          "text": "jurze",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

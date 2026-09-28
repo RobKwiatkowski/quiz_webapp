@@ -319,11 +319,12 @@
       "topic_id": "miasta-panstwa-mezopotamii",
       "text": "Co budują Sumerowie na tym obrazku?",
       "selection_type": "open",
-      "image": "/static/images/history/first-civilizations/canals-mesopotamia.png",
       "explanation": "Na tym obrazku Sumerowie budują kanał nawadniający.",
+      "image": "/static/images/history/first-civilizations/canals-mesopotamia.png",
       "accepted_answers": [
         "kanał nawadniający",
-        "kanał irygacyjny"
+        "kanał irygacyjny",
+        "kanały nawadniające"
       ]
     },
     {
