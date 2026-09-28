@@ -38,13 +38,15 @@
     },
     {
       "id": "kamienie-znak-polskiego-oporu",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Jak nazywał się znak polskiego oporu malowany na murach Warszawy w kształcie kotwicy?",
-      "explanation": "Znakiem była Kotwica Polski Walczącej.",
       "selection_type": "open",
+      "explanation": "Znakiem była Kotwica Polski Walczącej.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Kotwica_jako_symbol_Polski_Walcz%C4%85cej.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
       "accepted_answers": [
         "Polska Walcząca",
         "Kotwica Polski Walczącej",
-        "kotwica",
         "znak Polski Walczącej"
       ]
     },
@@ -234,6 +236,8 @@
     },
     {
       "id": "kamienie-nekany-telefonami",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Przeciw komu skierowano akcję obejmującą m.in. nękanie telefonami, tłuczenie szyb i fałszywe ogłoszenia?",
       "selection_type": "single",
       "answers": [
@@ -242,21 +246,23 @@
           "is_correct": true
         },
         {
-          "text": "Zeusowi",
+          "text": "Popłowskiemu",
           "is_correct": false
         },
         {
-          "text": "Orszy",
+          "text": "Parackiemu",
           "is_correct": false
         },
         {
-          "text": "Kopernikowi",
+          "text": "Porowskiemu",
           "is_correct": false
         }
       ]
     },
     {
       "id": "kamienie-paprocki-dlaczego-cel",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Dlaczego Paprocki stał się celem Małego Sabotażu?",
       "selection_type": "single",
       "answers": [
@@ -265,11 +271,11 @@
           "is_correct": true
         },
         {
-          "text": "był oficerem Gestapo",
+          "text": "wydawał niemiecką prasę",
           "is_correct": false
         },
         {
-          "text": "aresztował Rudego",
+          "text": "pośredniczył w wysyłaniu Polaków do Niemiec",
           "is_correct": false
         },
         {
@@ -355,6 +361,8 @@
     },
     {
       "id": "kamienie-dzialania-malego-sabotazu",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Które z poniższych działań należały do Małego Sabotażu? Zaznacz wszystkie poprawne.",
       "selection_type": "multiple",
       "answers": [
@@ -372,6 +380,10 @@
         },
         {
           "text": "wysadzanie mostów kolejowych",
+          "is_correct": false
+        },
+        {
+          "text": "ataki na posterunki policji niemieckiej",
           "is_correct": false
         }
       ]
@@ -595,6 +607,19 @@
           "text": "usunięto Pomnik Lotnika",
           "is_correct": false
         }
+      ]
+    },
+    {
+      "id": "q-736a9041",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Alek, Rudy i Zośka po odejściu z PLANU rozwozili grypsy. Co to są grypsy?",
+      "selection_type": "open",
+      "explanation": "Gryps to nielegalny list z więzienia wysłany potajemnie.",
+      "accepted_answers": [
+        "wiadomości z więzienia",
+        "listy z więzienia",
+        "nielegalny list z więzienia"
       ]
     }
   ]

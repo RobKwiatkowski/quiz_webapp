@@ -323,6 +323,17 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-c91a56d8",
+      "topic_id": "miejsca_i_najwazniejsze_akcje",
+      "is_active": true,
+      "text": "W którym roku doszło do Akcji pod Arsenałem?",
+      "selection_type": "open",
+      "explanation": "26 marca 1943",
+      "accepted_answers": [
+        "1943"
+      ]
     }
   ]
 }

@@ -39,6 +39,20 @@
         "zapiski Zośki",
         "zapiski Tadeusza Zawadzkiego"
       ]
+    },
+    {
+      "id": "q-0aa22679",
+      "topic_id": "autor_i_zrodla_ksiazki",
+      "is_active": true,
+      "text": "Kto jest autorem tych słów?",
+      "selection_type": "open",
+      "explanation": "Są to słowa z wiersza Juliusza Słowackiego.",
+      "context": {
+        "text": "A kiedy trzeba, na śmierć idą po kolei,\nJak kamienie przez Boga rzucane na szaniec"
+      },
+      "accepted_answers": [
+        "Juliusz Słowacki"
+      ]
     }
   ]
 }

@@ -120,6 +120,209 @@
         }
       ],
       "explanation": "Starożytny Egipt był przede wszystkim krajem rolniczym. Życie mieszkańców i gospodarka zależały od wylewów Nilu."
+    },
+    {
+      "id": "q-91c0eaaf",
+      "topic_id": "starozytny-egipt",
+      "text": "Na jakim kontynencie leży Egipt?",
+      "selection_type": "open",
+      "explanation": "Leży on w północnej Afryce.",
+      "accepted_answers": [
+        "Afryka",
+        "Afryce",
+        "w Afryce"
+      ]
+    },
+    {
+      "id": "q-db6fb994",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Ułóż grupy według ważności w społeczeństwie Egipskim.",
+      "selection_type": "order",
+      "explanation": "Faraon, Kapłani, Urzędnicy, Rzemieślnicy, Żołnierze, Chłopi, Niewolnicy",
+      "order_items": [
+        {
+          "id": "faraon",
+          "text": "Faraon",
+          "position": 1
+        },
+        {
+          "id": "kaplani",
+          "text": "Kapłani",
+          "position": 2
+        },
+        {
+          "id": "urzednicy",
+          "text": "Urzędnicy",
+          "position": 3
+        },
+        {
+          "id": "rzemieslnicy",
+          "text": "Rzemieślnicy",
+          "position": 4
+        },
+        {
+          "id": "zolnierze",
+          "text": "Żołnierze",
+          "position": 5
+        },
+        {
+          "id": "chlopi",
+          "text": "Chłopi",
+          "position": 6
+        },
+        {
+          "id": "niewolnicy",
+          "text": "Niewolnicy",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "id": "q-197508f4",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Co nanosił na pola Nil w trakcie wylewów?",
+      "selection_type": "open",
+      "explanation": "Nanosił żyzny muł.",
+      "accepted_answers": [
+        "muł",
+        "żyzny muł"
+      ]
+    },
+    {
+      "id": "q-7d397dfe",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Co to za grupa społeczna w Egipcie?",
+      "selection_type": "open",
+      "explanation": "Byli to urzędnicy.",
+      "context": {
+        "text": "Byli drugą nieliczną grupą potrafiącą pisać i czytać. Za ich pośrednictwem faraon rządził państwem."
+      },
+      "accepted_answers": [
+        "Urzędnicy"
+      ]
+    },
+    {
+      "id": "q-24046191",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jaka grupa społeczna była najliczniejsza w Egipcie?",
+      "selection_type": "open",
+      "explanation": "Byli to rolnicy.",
+      "accepted_answers": [
+        "rolnicy"
+      ]
+    },
+    {
+      "id": "q-3ed5311c",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Wybierz prawda lub fałsz.",
+      "selection_type": "true_false",
+      "explanation": "P: Faraon sam ustanawiał prawa. Faraon nie podlegał prawom które sam ustanowił.",
+      "answers": [
+        {
+          "text": "Faraon sam ustanawiał prawa.",
+          "is_correct": true
+        },
+        {
+          "text": "Faraon nie podlegał prawom które sam ustanowił.",
+          "is_correct": true
+        },
+        {
+          "text": "Faraonami mogli być tylko i wyłącznie mężczyźni.",
+          "is_correct": false
+        },
+        {
+          "text": "Korona faraona symbolizowała połacznie Egiptu Dolnego i Północnego.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2eb5f318",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywamy wierzenia w wielu bogów?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "politeizm",
+          "is_correct": true
+        },
+        {
+          "text": "monoteizm",
+          "is_correct": false
+        },
+        {
+          "text": "multiteizm",
+          "is_correct": false
+        },
+        {
+          "text": "parateizm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-013f8f74",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywał się w Egipcie bóg Słońca?",
+      "selection_type": "open",
+      "explanation": "Był to Ra lub Re.",
+      "accepted_answers": [
+        "Ra",
+        "Re"
+      ]
+    },
+    {
+      "id": "q-7f5a3d7b",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywał się bóg który sądził po śmierci ludzi?",
+      "selection_type": "open",
+      "explanation": "Był to Ozyrys.",
+      "accepted_answers": [
+        "Ozyrys"
+      ]
+    },
+    {
+      "id": "q-40b63445",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Ciała faraonów i wysokich dostojników przed pogrzebem były poddawane procesowi {{m}}, umieszczane w {{s}} i składane w grobowcach.",
+      "selection_type": "fill",
+      "explanation": "Ciała faraonów i wysokich dostojników przed pogrzebem były poddawane procesowi mumifikacji, umieszczane w sarkofagach i składane w grobowcach.",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "m",
+          "accepted_answers": [
+            "mumifikacji"
+          ],
+          "options": [
+            "mumifikacji",
+            "mamifikacji",
+            "memifikacji",
+            "mimifikacji"
+          ]
+        },
+        {
+          "id": "s",
+          "accepted_answers": [
+            "sarkofagach"
+          ],
+          "options": [
+            "sarkofagach",
+            "safrogatach",
+            "suprofagach",
+            "serkofaragach"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -73,21 +73,6 @@
       ]
     },
     {
-      "id": "kamienie-wczesniej-czarnocin-czy-sieczychy",
-      "text": "Co wydarzyło się wcześniej: Czarnocin czy Sieczychy?",
-      "selection_type": "single",
-      "answers": [
-        {
-          "text": "Czarnocin",
-          "is_correct": true
-        },
-        {
-          "text": "Sieczychy",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": "kamienie-po-aresztowaniu-rudego",
       "text": "Co nastąpiło po aresztowaniu Rudego z punktu widzenia jego przyjaciół?",
       "selection_type": "single",
@@ -112,6 +97,8 @@
     },
     {
       "id": "kamienie-akcja-najpozniej",
+      "topic_id": "chronologia_wydarzen",
+      "is_active": true,
       "text": "Która z wymienionych akcji odbyła się najpóźniej?",
       "selection_type": "single",
       "answers": [
@@ -129,6 +116,10 @@
         },
         {
           "text": "Czarnocin",
+          "is_correct": false
+        },
+        {
+          "text": "Kraśnik",
           "is_correct": false
         }
       ]
@@ -181,6 +172,46 @@
           "id": "sieczychy",
           "text": "Sieczychy",
           "position": 4
+        }
+      ]
+    },
+    {
+      "id": "q-8674e213",
+      "topic_id": "chronologia_wydarzen",
+      "is_active": true,
+      "text": "Ułóż wydarzenia chronologicznie",
+      "selection_type": "order",
+      "explanation": "Zdanie Matury i wycieczka w góry, Wybuch wojny, Związanie z organizacją PLAN, Związanie z \"Wawrem\", Wysadzenie torów pod Kraśnikiem, Ewakuacja mieszkania na Brackiej i strzelanina z Niemcami",
+      "order_items": [
+        {
+          "id": "zdanie-matury-i-wycieczka-w-gory",
+          "text": "Zdanie Matury i wycieczka w góry",
+          "position": 1
+        },
+        {
+          "id": "wybuch-wojny",
+          "text": "Wybuch wojny",
+          "position": 2
+        },
+        {
+          "id": "zwiazanie-z-organizacja-plan",
+          "text": "Związanie z organizacją PLAN",
+          "position": 3
+        },
+        {
+          "id": "zwiazanie-z-wawrem",
+          "text": "Związanie z \"Wawrem\"",
+          "position": 4
+        },
+        {
+          "id": "wysadzenie-torow-pod-krasnikiem",
+          "text": "Wysadzenie torów pod Kraśnikiem",
+          "position": 5
+        },
+        {
+          "id": "ewakuacja-mieszkania-na-brackiej-i-strzelanina-z-niemcami",
+          "text": "Ewakuacja mieszkania na Brackiej i strzelanina z Niemcami",
+          "position": 6
         }
       ]
     }

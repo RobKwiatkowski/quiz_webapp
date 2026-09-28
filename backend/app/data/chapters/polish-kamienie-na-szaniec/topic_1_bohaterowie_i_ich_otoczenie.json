@@ -205,6 +205,243 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-f1cc8aff",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "Jakie inne ksywki/pseudonimy dostał Alek?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Robal",
+          "is_correct": false
+        },
+        {
+          "text": "Glizda",
+          "is_correct": true
+        },
+        {
+          "text": "Kopernicki",
+          "is_correct": true
+        },
+        {
+          "text": "Wesoły",
+          "is_correct": false
+        },
+        {
+          "text": "Śliski",
+          "is_correct": false
+        },
+        {
+          "text": "Morro",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f5b1a58f",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mowa?\nJest bardzo wysoki i ma niebieskie oczy.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Alek",
+          "is_correct": true
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-aca4e261",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mowa?\nMa jasne włosy, jasnoniebieskie oczy  i długie szczupłe palce.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zośka",
+          "is_correct": true
+        },
+        {
+          "text": "Alek",
+          "is_correct": false
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-eb455822",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "Co oznaczał skrót organizacji PLAN?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Polska Ludowa Akcja Niepodległościowa",
+          "is_correct": true
+        },
+        {
+          "text": "Patriotyczna Ludowa Akcja Niepodległościowa",
+          "is_correct": false
+        },
+        {
+          "text": "Polska Ludowa Armia Niepodległościowa",
+          "is_correct": false
+        },
+        {
+          "text": "Polska Ludowa Armia Niemiecka",
+          "is_correct": false
+        },
+        {
+          "text": "Patriotyczna Ludowa Akcja Niezłomna",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-8439b4ac",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "Kto pracował jako drwal na wsi?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Alek",
+          "is_correct": true
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-47d41cb9",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mowa?\nBył z rodziny bardzo patriotycznej. Aresztowany wraz z ojcem.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Rudy",
+          "is_correct": true
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Alek",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-16dab454",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mowa?\nJego tata był profesorem chemii na Politechnice Warszawskiej.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": true
+        },
+        {
+          "text": "Alek",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b2f7a9e7",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mowa?\nJego tata był dyrektorem fabryki broni.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Alek",
+          "is_correct": true
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-178a1f4e",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "Do jakiego liceum chodziła cała trójka przyjaciół, Rudy, Alek i Zośka?",
+      "selection_type": "open",
+      "explanation": "Chodzili do liceum Stefana Batorego.",
+      "accepted_answers": [
+        "Stefana Batorego"
+      ]
+    },
+    {
+      "id": "q-e99f4a9b",
+      "topic_id": "bohaterowie_i_ich_otoczenie",
+      "is_active": true,
+      "text": "O kim mówi fragment?",
+      "selection_type": "open",
+      "explanation": "Zośka",
+      "context": {
+        "text": "Był wśród Buków chłopiec, który wyróżniał się bardziej od innych. - Urodzony organizator - mówili o nim nauczyciele ... [] ... Urodzony przywódca - stwierdzono w harcerstwie"
+      },
+      "accepted_answers": [
+        "Zośka"
+      ]
     }
   ]
 }

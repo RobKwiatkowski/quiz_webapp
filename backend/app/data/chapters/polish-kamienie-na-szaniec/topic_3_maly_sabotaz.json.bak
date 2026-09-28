@@ -38,13 +38,14 @@
     },
     {
       "id": "kamienie-znak-polskiego-oporu",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Jak nazywał się znak polskiego oporu malowany na murach Warszawy w kształcie kotwicy?",
-      "explanation": "Znakiem była Kotwica Polski Walczącej.",
       "selection_type": "open",
+      "explanation": "Znakiem była Kotwica Polski Walczącej.",
       "accepted_answers": [
         "Polska Walcząca",
         "Kotwica Polski Walczącej",
-        "kotwica",
         "znak Polski Walczącej"
       ]
     },
@@ -53,10 +54,22 @@
       "text": "Na czym polegała „akcja fotograficzna”?",
       "selection_type": "single",
       "answers": [
-        { "text": "na tłuczeniu szyb w zakładach wystawiających fotografie Niemców", "is_correct": true },
-        { "text": "na kradzieży aparatów fotograficznych", "is_correct": false },
-        { "text": "na fotografowaniu niemieckich wojsk", "is_correct": false },
-        { "text": "na wykonywaniu zdjęć do fałszywych dokumentów", "is_correct": false }
+        {
+          "text": "na tłuczeniu szyb w zakładach wystawiających fotografie Niemców",
+          "is_correct": true
+        },
+        {
+          "text": "na kradzieży aparatów fotograficznych",
+          "is_correct": false
+        },
+        {
+          "text": "na fotografowaniu niemieckich wojsk",
+          "is_correct": false
+        },
+        {
+          "text": "na wykonywaniu zdjęć do fałszywych dokumentów",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -64,10 +77,22 @@
       "text": "Który bohater szczególnie wyróżnił się w akcji fotograficznej?",
       "selection_type": "single",
       "answers": [
-        { "text": "Alek", "is_correct": true },
-        { "text": "Rudy", "is_correct": false },
-        { "text": "Zośka", "is_correct": false },
-        { "text": "Zeus", "is_correct": false }
+        {
+          "text": "Alek",
+          "is_correct": true
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -75,10 +100,22 @@
       "text": "Dlaczego Mały Sabotaż występował przeciw zakładom fotograficznym prezentującym zdjęcia niemieckich żołnierzy?",
       "selection_type": "single",
       "answers": [
-        { "text": "uznawano to za sprzyjanie okupantowi i jego propagandzie", "is_correct": true },
-        { "text": "chciano zdobyć aparaty", "is_correct": false },
-        { "text": "chciano zdobyć zdjęcia do dokumentów", "is_correct": false },
-        { "text": "zakłady należały do Gestapo", "is_correct": false }
+        {
+          "text": "uznawano to za sprzyjanie okupantowi i jego propagandzie",
+          "is_correct": true
+        },
+        {
+          "text": "chciano zdobyć aparaty",
+          "is_correct": false
+        },
+        {
+          "text": "chciano zdobyć zdjęcia do dokumentów",
+          "is_correct": false
+        },
+        {
+          "text": "zakłady należały do Gestapo",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -86,10 +123,22 @@
       "text": "Dlaczego członkowie Małego Sabotażu próbowali zniechęcać Polaków do chodzenia do kin?",
       "selection_type": "single",
       "answers": [
-        { "text": "kina służyły niemieckiej propagandzie i przynosiły okupantowi dochód", "is_correct": true },
-        { "text": "kina były dostępne wyłącznie dla Niemców", "is_correct": false },
-        { "text": "kina służyły jako siedziby Gestapo", "is_correct": false },
-        { "text": "w kinach prowadzono pobór do niemieckiego wojska", "is_correct": false }
+        {
+          "text": "kina służyły niemieckiej propagandzie i przynosiły okupantowi dochód",
+          "is_correct": true
+        },
+        {
+          "text": "kina były dostępne wyłącznie dla Niemców",
+          "is_correct": false
+        },
+        {
+          "text": "kina służyły jako siedziby Gestapo",
+          "is_correct": false
+        },
+        {
+          "text": "w kinach prowadzono pobór do niemieckiego wojska",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -97,10 +146,22 @@
       "text": "Który bohater szczególnie zasłynął z napisów związanych z akcją przeciw kinom?",
       "selection_type": "single",
       "answers": [
-        { "text": "Rudy", "is_correct": true },
-        { "text": "Alek", "is_correct": false },
-        { "text": "Zośka", "is_correct": false },
-        { "text": "Zeus", "is_correct": false }
+        {
+          "text": "Rudy",
+          "is_correct": true
+        },
+        {
+          "text": "Alek",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -108,10 +169,22 @@
       "text": "Co oznaczała litera V w alianckiej propagandzie?",
       "selection_type": "single",
       "answers": [
-        { "text": "Victory — zwycięstwo", "is_correct": true },
-        { "text": "Vaterland — ojczyzna", "is_correct": false },
-        { "text": "Verboten — zakazane", "is_correct": false },
-        { "text": "Vergeltung — odwet", "is_correct": false }
+        {
+          "text": "Victory — zwycięstwo",
+          "is_correct": true
+        },
+        {
+          "text": "Vaterland — ojczyzna",
+          "is_correct": false
+        },
+        {
+          "text": "Verboten — zakazane",
+          "is_correct": false
+        },
+        {
+          "text": "Vergeltung — odwet",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -119,10 +192,22 @@
       "text": "Jak Mały Sabotaż odpowiadał na niemieckie wykorzystywanie znaku V?",
       "selection_type": "single",
       "answers": [
-        { "text": "rozbudowywał go do hasła „Deutschland verloren”", "is_correct": true },
-        { "text": "zamieniał V w kotwicę Polski Walczącej", "is_correct": false },
-        { "text": "zamalowywał wszystkie znaki V", "is_correct": false },
-        { "text": "dopisywał do V nazwisko Hitlera", "is_correct": false }
+        {
+          "text": "rozbudowywał go do hasła „Deutschland verloren”",
+          "is_correct": true
+        },
+        {
+          "text": "zamieniał V w kotwicę Polski Walczącej",
+          "is_correct": false
+        },
+        {
+          "text": "zamalowywał wszystkie znaki V",
+          "is_correct": false
+        },
+        {
+          "text": "dopisywał do V nazwisko Hitlera",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -130,32 +215,72 @@
       "text": "Co symbolizował rysunek żółwia?",
       "selection_type": "single",
       "answers": [
-        { "text": "zachętę do powolnej pracy na rzecz okupanta", "is_correct": true },
-        { "text": "symbol niebezpiecznego miejsca", "is_correct": false },
-        { "text": "oznaczenie lokalu konspiracyjnego", "is_correct": false },
-        { "text": "wezwanie do opuszczenia Warszawy", "is_correct": false }
+        {
+          "text": "zachętę do powolnej pracy na rzecz okupanta",
+          "is_correct": true
+        },
+        {
+          "text": "symbol niebezpiecznego miejsca",
+          "is_correct": false
+        },
+        {
+          "text": "oznaczenie lokalu konspiracyjnego",
+          "is_correct": false
+        },
+        {
+          "text": "wezwanie do opuszczenia Warszawy",
+          "is_correct": false
+        }
       ]
     },
     {
       "id": "kamienie-nekany-telefonami",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Przeciw komu skierowano akcję obejmującą m.in. nękanie telefonami, tłuczenie szyb i fałszywe ogłoszenia?",
       "selection_type": "single",
       "answers": [
-        { "text": "Paprockiemu", "is_correct": true },
-        { "text": "Zeusowi", "is_correct": false },
-        { "text": "Orszy", "is_correct": false },
-        { "text": "Kopernikowi", "is_correct": false }
+        {
+          "text": "Paprockiemu",
+          "is_correct": true
+        },
+        {
+          "text": "Popłowskiemu",
+          "is_correct": false
+        },
+        {
+          "text": "Parackiemu",
+          "is_correct": false
+        },
+        {
+          "text": "Porowskiemu",
+          "is_correct": false
+        }
       ]
     },
     {
       "id": "kamienie-paprocki-dlaczego-cel",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Dlaczego Paprocki stał się celem Małego Sabotażu?",
       "selection_type": "single",
       "answers": [
-        { "text": "pośredniczył w rozpowszechnianiu niemieckiej prasy", "is_correct": true },
-        { "text": "był oficerem Gestapo", "is_correct": false },
-        { "text": "aresztował Rudego", "is_correct": false },
-        { "text": "prowadził niemieckie kino", "is_correct": false }
+        {
+          "text": "pośredniczył w rozpowszechnianiu niemieckiej prasy",
+          "is_correct": true
+        },
+        {
+          "text": "wydawał niemiecką prasę",
+          "is_correct": false
+        },
+        {
+          "text": "pośredniczył w wysyłaniu Polaków do Niemiec",
+          "is_correct": false
+        },
+        {
+          "text": "prowadził niemieckie kino",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -163,10 +288,22 @@
       "text": "Który bohater szczególnie zasłynął ze zrywania niemieckich flag?",
       "selection_type": "single",
       "answers": [
-        { "text": "Alek", "is_correct": true },
-        { "text": "Rudy", "is_correct": false },
-        { "text": "Zośka", "is_correct": false },
-        { "text": "Zeus", "is_correct": false }
+        {
+          "text": "Alek",
+          "is_correct": true
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Zośka",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -174,32 +311,314 @@
       "text": "Który z bohaterów wyróżniał się dużą liczbą malowanych kotwic Polski Walczącej?",
       "selection_type": "single",
       "answers": [
-        { "text": "Zośka", "is_correct": true },
-        { "text": "Rudy", "is_correct": false },
-        { "text": "Alek", "is_correct": false },
-        { "text": "Zeus", "is_correct": false }
+        {
+          "text": "Zośka",
+          "is_correct": true
+        },
+        {
+          "text": "Rudy",
+          "is_correct": false
+        },
+        {
+          "text": "Alek",
+          "is_correct": false
+        },
+        {
+          "text": "Zeus",
+          "is_correct": false
+        }
       ]
     },
     {
       "id": "kamienie-dzialania-przeciw-kinom",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Które działania były elementami akcji skierowanej przeciw chodzeniu do kin? Zaznacz wszystkie poprawne.",
       "selection_type": "multiple",
       "answers": [
-        { "text": "gazowanie sal kinowych", "is_correct": true },
-        { "text": "malowanie haseł zniechęcających do chodzenia do kina", "is_correct": true },
-        { "text": "działania propagandowe skierowane do widzów", "is_correct": true },
-        { "text": "wysadzanie budynków kin", "is_correct": false }
+        {
+          "text": "gazowanie sal kinowych",
+          "is_correct": true
+        },
+        {
+          "text": "malowanie haseł zniechęcających do chodzenia do kina",
+          "is_correct": true
+        },
+        {
+          "text": "działania propagandowe skierowane do widzów",
+          "is_correct": true
+        },
+        {
+          "text": "wysadzanie budynków kin",
+          "is_correct": false
+        },
+        {
+          "text": "obrzucanie kamienimi ludzi oglądających niemieckie filmy",
+          "is_correct": false
+        }
       ]
     },
     {
       "id": "kamienie-dzialania-malego-sabotazu",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
       "text": "Które z poniższych działań należały do Małego Sabotażu? Zaznacz wszystkie poprawne.",
       "selection_type": "multiple",
       "answers": [
-        { "text": "malowanie znaków na murach", "is_correct": true },
-        { "text": "zrywanie niemieckich flag", "is_correct": true },
-        { "text": "tłuczenie witryn zakładów fotograficznych", "is_correct": true },
-        { "text": "wysadzanie mostów kolejowych", "is_correct": false }
+        {
+          "text": "malowanie znaków na murach",
+          "is_correct": true
+        },
+        {
+          "text": "zrywanie niemieckich flag",
+          "is_correct": true
+        },
+        {
+          "text": "tłuczenie witryn zakładów fotograficznych",
+          "is_correct": true
+        },
+        {
+          "text": "wysadzanie mostów kolejowych",
+          "is_correct": false
+        },
+        {
+          "text": "ataki na posterunki policji niemieckiej",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-flaga-alek-pko",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Z którego budynku Alek zerwał niemiecką flagę?",
+      "explanation": "Alek zerwał niemiecką flagę z gmachu PKO.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "gmach PKO",
+          "is_correct": true
+        },
+        {
+          "text": "budynek Zachęty",
+          "is_correct": false
+        },
+        {
+          "text": "Muzeum Narodowe",
+          "is_correct": false
+        },
+        {
+          "text": "gmach Poczty Głównej",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-flagi-rudy-zacheta",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Z którego budynku Rudy zerwał trzy niemieckie flagi?",
+      "explanation": "Rudy zerwał trzy niemieckie flagi z budynku Zachęty.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Zachęta",
+        "budynek Zachęty",
+        "z budynku Zachęty"
+      ]
+    },
+    {
+      "id": "kamienie-zoska-kotwicki",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jaki pseudonim związany z działalnością Małego Sabotażu otrzymał Zośka dzięki malowaniu dużej liczby kotwic?",
+      "explanation": "Zośkę nazywano Kotwickim, ponieważ namalował bardzo wiele kotwic Polski Walczącej.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Kotwicki",
+          "is_correct": true
+        },
+        {
+          "text": "Błyskawica",
+          "is_correct": false
+        },
+        {
+          "text": "Żółw",
+          "is_correct": false
+        },
+        {
+          "text": "Wawerczyk",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-rudy-znak-pomnik-lotnika",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Na jakim warszawskim pomniku Rudy umieścił znak Polski Walczącej za pomocą przygotowanego stempla?",
+      "explanation": "Rudy umieścił znak Polski Walczącej na Pomniku Lotnika.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Pomnik Lotnika",
+          "is_correct": true
+        },
+        {
+          "text": "pomnik Kopernika",
+          "is_correct": false
+        },
+        {
+          "text": "pomnik księcia Józefa Poniatowskiego",
+          "is_correct": false
+        },
+        {
+          "text": "pomnik Mickiewicza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-haslo-jedzcie-sami-do-niemiec",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jak Mały Sabotaż przerabiał niemieckie hasło „Jedźcie z nami do Niemiec”?",
+      "explanation": "Dopisywano lub przerabiano hasło na „Jedźcie sami do Niemiec”.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "„Jedźcie sami do Niemiec”",
+          "is_correct": true
+        },
+        {
+          "text": "„Wracajcie sami do Niemiec”",
+          "is_correct": false
+        },
+        {
+          "text": "„Nie jedźcie do Niemiec”",
+          "is_correct": false
+        },
+        {
+          "text": "„Jedźcie z nami przeciw Niemcom”",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-rudy-stempel-kotwicy",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jaką metodę wykorzystywał Rudy, aby szybko nanosić znak Polski Walczącej na murach?",
+      "explanation": "Rudy używał przygotowanego stempla, aby szybko nanosić znak Polski Walczącej.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "przygotowany stempel",
+          "is_correct": true
+        },
+        {
+          "text": "szablon z blachy",
+          "is_correct": false
+        },
+        {
+          "text": "kreda mocowana do kija",
+          "is_correct": false
+        },
+        {
+          "text": "farba nanoszona gąbką",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-gazowanie-wedliny-nowy-swiat",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jak zakończyła się opisana w książce akcja gazowania sklepu z wędlinami na Nowym Świecie?",
+      "explanation": "Akcja nie przebiegła zgodnie z planem i Rudy znalazł się w niebezpiecznej sytuacji.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "akcja nie przebiegła zgodnie z planem i Rudy znalazł się w niebezpiecznej sytuacji",
+          "is_correct": true
+        },
+        {
+          "text": "akcja zakończyła się aresztowaniem Zośki",
+          "is_correct": false
+        },
+        {
+          "text": "sklep został zamknięty przez Niemców",
+          "is_correct": false
+        },
+        {
+          "text": "akcja przebiegła bez komplikacji",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-cel-napisow-maly-sabotaz",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jaki był główny cel malowania na murach znaków i haseł Małego Sabotażu?",
+      "explanation": "Znaki i hasła miały podtrzymywać ducha oporu oraz ośmieszać okupanta.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "podtrzymywanie ducha oporu i ośmieszanie okupanta",
+          "is_correct": true
+        },
+        {
+          "text": "przekazywanie tajnych rozkazów wojskowych",
+          "is_correct": false
+        },
+        {
+          "text": "oznaczanie miejsc zbiórek Grup Szturmowych",
+          "is_correct": false
+        },
+        {
+          "text": "wskazywanie bezpiecznych tras przez Warszawę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kamienie-akcja-alka-kopernik-reakcja-niemcow",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Jaką reakcję Niemców wywołała akcja Alka przy pomniku Kopernika?",
+      "explanation": "W odwecie Niemcy usunęli pomnik Jana Kilińskiego.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "usunięto pomnik Jana Kilińskiego",
+          "is_correct": true
+        },
+        {
+          "text": "zamknięto Krakowskie Przedmieście",
+          "is_correct": false
+        },
+        {
+          "text": "rozebrano pomnik Kopernika",
+          "is_correct": false
+        },
+        {
+          "text": "usunięto Pomnik Lotnika",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-736a9041",
+      "topic_id": "maly_sabotaz",
+      "is_active": true,
+      "text": "Alek, Rudy i Zośka po odejściu z PLANU rozwozili grypsy. Co to są grypsy?",
+      "selection_type": "open",
+      "explanation": "Gryps to nielegalny list z więzienia wysłany potajemnie.",
+      "accepted_answers": [
+        "wiadomości z więzienia",
+        "listy z więzienia",
+        "nielegalny list z więzienia"
       ]
     }
   ]

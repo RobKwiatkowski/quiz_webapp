@@ -232,21 +232,22 @@ export function MatchingQuestion({ question, disabled, onComplete }: Props) {
   const choices = useMemo(() => shuffle([...new Set(question.matching_pairs.map((pair) => pair.right))]), [question.id, question.matching_pairs]);
   const pairs = useMemo(() => shuffle(question.matching_pairs), [question.id, question.matching_pairs]);
   const [matches, setMatches] = useState<Record<string, string>>({});
-  const [checked, setChecked] = useState(false);
+  const [checkedResults, setCheckedResults] = useState<Record<string, boolean> | null>(null);
   const [message, setMessage] = useState("");
   const check = () => {
     if (pairs.some((pair) => !matches[pair.id])) {
       setMessage("Dopasuj wszystkie elementy przed sprawdzeniem.");
       return;
     }
-    const isCorrect = question.matching_pairs.every((pair) => matches[pair.id] === pair.right);
-    setChecked(true);
+    const results = Object.fromEntries(question.matching_pairs.map((pair) => [pair.id, matches[pair.id] === pair.right]));
+    const isCorrect = Object.values(results).every(Boolean);
+    setCheckedResults(results);
     setMessage("");
     onComplete(feedback(isCorrect, question));
   };
   return <div className="advanced-question"><div className="matching-list">{pairs.map((pair) => {
-    const rowState = checked ? matches[pair.id] === pair.right ? "correct" : "incorrect" : "";
-    return <div className={`matching-row ${rowState}`} key={pair.id}><span className="matching-left">{pair.left}</span><select className="matching-select" disabled={disabled} value={matches[pair.id] ?? ""} onChange={(event) => setMatches({ ...matches, [pair.id]: event.target.value })}><option value="">Wybierz dopasowanie</option>{choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}</select></div>;
+    const rowState = checkedResults ? checkedResults[pair.id] ? "correct" : "incorrect" : "";
+    return <div className={`matching-row ${rowState}`} key={pair.id}><span className="matching-left">{pair.left}</span><select className="matching-select" disabled={disabled} value={matches[pair.id] ?? ""} onChange={(event) => { setMatches((currentMatches) => ({ ...currentMatches, [pair.id]: event.target.value })); setCheckedResults(null); }}><option value="">Wybierz dopasowanie</option>{choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}</select></div>;
   })}</div>{message && <p className="feedback warning-feedback">{message}</p>}{!disabled && <button id="check-button" onClick={check} type="button">Sprawdź</button>}</div>;
 }
 

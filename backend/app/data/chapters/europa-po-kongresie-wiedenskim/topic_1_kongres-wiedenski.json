@@ -220,12 +220,12 @@
     {
       "id": "kongres-source-1-komunizm",
       "topic_id": "kongres-wiedenski",
+      "is_active": true,
       "text": "Którą ideologię opisano w tekście źródłowym?",
-      "context": {
-        "text": "Całe społeczeństwo rozszczepia się na dwie wielkie, przeciwstawne sobie klasy: burżuazję i proletariat. [...] Cele mogą być osiągnięte jedynie przez obalenie przemocą całego dotychczasowego ustroju społecznego. [...] Proletariusze nie mają nic do stracenia prócz swych kajdan.",
-        "source": "Fragment Manifestu komunistycznego"
-      },
       "selection_type": "single",
+      "context": {
+        "text": "Całe społeczeństwo rozszczepia się na dwie wielkie, przeciwstawne sobie klasy: burżuazję i proletariat. [...] Cele mogą być osiągnięte jedynie przez obalenie przemocą całego dotychczasowego ustroju społecznego. [...] Proletariusze nie mają nic do stracenia prócz swych kajdan."
+      },
       "answers": [
         {
           "text": "liberalizm",
@@ -234,6 +234,10 @@
         {
           "text": "komunizm",
           "is_correct": true
+        },
+        {
+          "text": "socjalizm",
+          "is_correct": false
         }
       ]
     },
@@ -400,6 +404,118 @@
         {
           "text": "Hiszpania",
           "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-rownowaga-cel",
+      "topic_id": "kongres-wiedenski",
+      "text": "Jak zasada równowagi europejskiej miała zapobiegać kolejnym wojnom?",
+      "selection_type": "single",
+      "explanation": "Równowaga europejska miała nie dopuścić do ponownej dominacji jednego mocarstwa, takiej jak wcześniejsza dominacja Francji Napoleona.",
+      "answers": [
+        {
+          "text": "Wszystkie państwa miały posiadać dokładnie taką samą liczbę żołnierzy.",
+          "is_correct": false
+        },
+        {
+          "text": "Żadne mocarstwo nie powinno stać się tak silne, aby zdominować pozostałe państwa.",
+          "is_correct": true
+        },
+        {
+          "text": "Najsilniejsze państwo miało otrzymać prawo do rządzenia całą Europą.",
+          "is_correct": false
+        },
+        {
+          "text": "Europejskie monarchie miały zrezygnować ze swoich armii.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-restauracja-przyklad",
+      "topic_id": "kongres-wiedenski",
+      "text": "Które wydarzenie było przykładem zastosowania zasady restauracji?",
+      "selection_type": "single",
+      "explanation": "Restauracja oznaczała przywracanie na trony dynastii obalonych podczas rewolucji francuskiej i wojen napoleońskich.",
+      "answers": [
+        {
+          "text": "Utworzenie Związku Niemieckiego.",
+          "is_correct": false
+        },
+        {
+          "text": "Podział ziem Księstwa Warszawskiego.",
+          "is_correct": false
+        },
+        {
+          "text": "Powrót dynastii Burbonów na tron Francji.",
+          "is_correct": true
+        },
+        {
+          "text": "Zawarcie Świętego Przymierza przez Rosję, Austrię i Prusy.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-rownowaga-dzialania",
+      "topic_id": "kongres-wiedenski",
+      "text": "Które dwa działania były zgodne z zasadą równowagi europejskiej?",
+      "selection_type": "multiple",
+      "explanation": "Równowagę europejską starano się utrzymać przez wzmacnianie sąsiadów Francji i taki podział terytoriów, aby żadne mocarstwo nie zdominowało Europy.",
+      "answers": [
+        {
+          "text": "Wzmacnianie państw sąsiadujących z Francją.",
+          "is_correct": true
+        },
+        {
+          "text": "Uznanie władzy monarchów za świętą i nienaruszalną.",
+          "is_correct": false
+        },
+        {
+          "text": "Przywracanie obalonych dynastii na trony.",
+          "is_correct": false
+        },
+        {
+          "text": "Taki podział ziem, aby żadne mocarstwo nie uzyskało zdecydowanej przewagi.",
+          "is_correct": true
+        },
+        {
+          "text": "Popieranie powstań przeciwko europejskim monarchom.",
+          "is_correct": false
+        },
+        {
+          "text": "Przekazanie jednemu państwu kontroli nad większością Europy.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "kongres-decyzje-terytorialne",
+      "topic_id": "kongres-wiedenski",
+      "text": "Połącz obszar z decyzją podjętą na kongresie wiedeńskim.",
+      "selection_type": "matching",
+      "explanation": "Kongres zmienił mapę Europy: utworzył Królestwo Polskie, Związek Niemiecki i Królestwo Niderlandów oraz uznał neutralność Szwajcarii.",
+      "matching_pairs": [
+        {
+          "id": "ksiestwo-warszawskie",
+          "left": "Większość ziem Księstwa Warszawskiego",
+          "right": "utworzenie Królestwa Polskiego połączonego z Rosją"
+        },
+        {
+          "id": "panstwa-niemieckie",
+          "left": "Państwa niemieckie",
+          "right": "utworzenie Związku Niemieckiego"
+        },
+        {
+          "id": "belgia-i-holandia",
+          "left": "Belgia i Holandia",
+          "right": "utworzenie Królestwa Niderlandów"
+        },
+        {
+          "id": "szwajcaria",
+          "left": "Szwajcaria",
+          "right": "uznanie jej wieczystej neutralności"
         }
       ]
     }

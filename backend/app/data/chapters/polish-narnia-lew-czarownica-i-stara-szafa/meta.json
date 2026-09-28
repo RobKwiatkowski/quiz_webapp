@@ -5,7 +5,7 @@
   "category": "polish",
   "age_group": "10-12",
   "chapter_number": null,
-  "target_question_count": 70,
+  "target_question_count": 20,
   "questions_per_topic": 10,
   "topics": [
     "topic_1_poczatek_i_wejscie_do_narnii.json",

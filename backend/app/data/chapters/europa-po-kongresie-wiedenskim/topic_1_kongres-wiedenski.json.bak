@@ -354,6 +354,54 @@
           "is_correct": true
         }
       ]
+    },
+    {
+      "id": "q-36b964ac",
+      "topic_id": "kongres-wiedenski",
+      "text": "Jakie kraje dominowały na kongresie wiedeńskim?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Francja",
+          "is_correct": true
+        },
+        {
+          "text": "Rosja",
+          "is_correct": true
+        },
+        {
+          "text": "Prusy",
+          "is_correct": true
+        },
+        {
+          "text": "Wielka Brytania",
+          "is_correct": true
+        },
+        {
+          "text": "Austria",
+          "is_correct": true
+        },
+        {
+          "text": "Szwecja",
+          "is_correct": false
+        },
+        {
+          "text": "Włochy",
+          "is_correct": false
+        },
+        {
+          "text": "Turcja",
+          "is_correct": false
+        },
+        {
+          "text": "Portugalia",
+          "is_correct": false
+        },
+        {
+          "text": "Hiszpania",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

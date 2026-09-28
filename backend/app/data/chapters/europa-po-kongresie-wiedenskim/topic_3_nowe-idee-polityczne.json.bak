@@ -108,9 +108,9 @@
     {
       "id": "q-7a784576",
       "topic_id": "nowe-idee-polityczne",
-      "text": "Która ideologia nie chciała żadnych zmian społecznych?",
+      "text": "Która ideologia sprzeciwiała się gwałtownym zmianom społecznym i rewolucjom?",
       "selection_type": "open",
-      "explanation": "Był to konserwatyzm.",
+      "explanation": "Był to konserwatyzm. Konserwatyści cenili tradycję i opowiadali się za zmianami ostrożnymi i stopniowymi.",
       "accepted_answers": [
         "konserwatyzm"
       ]
@@ -193,6 +193,193 @@
       "image": "/static/images/history/q-2ee4b2b1-2.png",
       "accepted_answers": [
         "strajk"
+      ]
+    },
+    {
+      "id": "nowe-idee-liberalizm-panstwo",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Które państwo działa zgodnie z zasadami XIX-wiecznego liberalizmu?",
+      "selection_type": "single",
+      "explanation": "Liberałowie bronili praw jednostki, własności prywatnej i swobody działalności gospodarczej.",
+      "answers": [
+        {
+          "text": "Państwo ustala ceny wszystkich produktów i decyduje, co mają wytwarzać fabryki.",
+          "is_correct": false
+        },
+        {
+          "text": "Państwo chroni prawa obywateli i własność prywatną, ale ogranicza ingerencję w gospodarkę.",
+          "is_correct": true
+        },
+        {
+          "text": "Państwo utrzymuje przywileje wynikające z urodzenia i nie dopuszcza zmian społecznych.",
+          "is_correct": false
+        },
+        {
+          "text": "Państwo przejmuje fabryki i przekazuje je wspólnocie robotników.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-konserwatyzm-zmiany",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Które zdanie najlepiej opisuje podejście konserwatystów do zmian społecznych?",
+      "selection_type": "single",
+      "explanation": "Konserwatyści cenili tradycję i istniejący porządek. Dopuszczali ostrożne zmiany, ale sprzeciwiali się gwałtownym rewolucjom.",
+      "answers": [
+        {
+          "text": "Każdą zmianę należy odrzucić, niezależnie od jej skutków.",
+          "is_correct": false
+        },
+        {
+          "text": "Społeczeństwo należy całkowicie przebudować w wyniku rewolucji.",
+          "is_correct": false
+        },
+        {
+          "text": "Zmiany powinny zachodzić ostrożnie i stopniowo, z poszanowaniem tradycji.",
+          "is_correct": true
+        },
+        {
+          "text": "O kierunku wszystkich zmian powinni decydować wyłącznie właściciele fabryk.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-komunizm-wlasnosc-fabryk",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Dlaczego komuniści krytykowali prywatną własność fabryk?",
+      "selection_type": "single",
+      "explanation": "Według komunistów właściciele fabryk czerpali zyski z pracy robotników, co prowadziło do podziału społeczeństwa na nierówne klasy.",
+      "answers": [
+        {
+          "text": "Uważali, że uniemożliwia ona państwu wspieranie monarchii.",
+          "is_correct": false
+        },
+        {
+          "text": "Sądzili, że prowadzi do zbyt wolnego rozwoju nowych maszyn.",
+          "is_correct": false
+        },
+        {
+          "text": "Twierdzili, że pozwala właścicielom bogacić się kosztem pracy robotników.",
+          "is_correct": true
+        },
+        {
+          "text": "Obawiali się, że fabrykanci zlikwidują handel między państwami.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-liberalizm-poglady",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Który zestaw poglądów był charakterystyczny dla liberalizmu?",
+      "selection_type": "single",
+      "explanation": "Liberałowie bronili wolności jednostki, równości wobec prawa oraz prawa do własności prywatnej.",
+      "answers": [
+        {
+          "text": "Wolność jednostki, równość wobec prawa i ochrona własności prywatnej.",
+          "is_correct": true
+        },
+        {
+          "text": "Równość majątkowa, wspólna własność fabryk i rewolucja robotnicza.",
+          "is_correct": false
+        },
+        {
+          "text": "Obrona monarchii, przywilejów stanowych i tradycyjnego porządku.",
+          "is_correct": false
+        },
+        {
+          "text": "Ograniczenie prywatnej przedsiębiorczości i kontrolowanie gospodarki przez państwo.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-socjalizm-cele",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Które dwa cele były charakterystyczne dla socjalizmu?",
+      "selection_type": "multiple",
+      "explanation": "Socjaliści dążyli do większej sprawiedliwości społecznej oraz poprawy warunków życia robotników. Nie wszyscy socjaliści popierali rewolucję.",
+      "answers": [
+        {
+          "text": "Zmniejszenie nierówności społecznych.",
+          "is_correct": true
+        },
+        {
+          "text": "Utrzymanie przywilejów wynikających z urodzenia.",
+          "is_correct": false
+        },
+        {
+          "text": "Całkowite ograniczenie pomocy państwa dla robotników.",
+          "is_correct": false
+        },
+        {
+          "text": "Poprawa warunków życia i pracy robotników.",
+          "is_correct": true
+        },
+        {
+          "text": "Obrona nieograniczonej władzy monarchy.",
+          "is_correct": false
+        },
+        {
+          "text": "Obalenie istniejącego porządku wyłącznie poprzez rewolucję.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-porownanie-prawda-falsz",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Oceń, czy poniższe zdania o nowych ideach politycznych są prawdziwe. Zaznacz P przy zdaniach prawdziwych, a F przy fałszywych.",
+      "selection_type": "true_false",
+      "explanation": "Liberalizm podkreślał wolność jednostki, konserwatyzm bronił tradycji, socjalizm szukał sposobów poprawy życia robotników, a komuniści dopuszczali rewolucję.",
+      "answers": [
+        {
+          "text": "Liberalizm bronił praw jednostki i swobody prowadzenia działalności gospodarczej.",
+          "is_correct": true
+        },
+        {
+          "text": "Konserwatyści uważali, że każdą tradycję należy jak najszybciej odrzucić.",
+          "is_correct": false
+        },
+        {
+          "text": "Socjaliści dążyli do ograniczenia nierówności i poprawy warunków życia robotników.",
+          "is_correct": true
+        },
+        {
+          "text": "Komuniści odrzucali rewolucję i popierali wyłącznie powolne reformy.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "nowe-idee-poglady-dopasowanie",
+      "topic_id": "nowe-idee-polityczne",
+      "text": "Połącz pogląd z ideologią, której odpowiada.",
+      "selection_type": "matching",
+      "explanation": "Ideologie różniły się podejściem do wolności gospodarczej, tradycji, nierówności społecznych oraz sposobu przeprowadzenia zmian.",
+      "matching_pairs": [
+        {
+          "id": "wolna-konkurencja",
+          "left": "Przedsiębiorcy powinni swobodnie konkurować, a państwo nie powinno kierować gospodarką.",
+          "right": "liberalizm"
+        },
+        {
+          "id": "stopniowe-zmiany",
+          "left": "Zmiany należy wprowadzać stopniowo, nie niszcząc tradycyjnego porządku.",
+          "right": "konserwatyzm"
+        },
+        {
+          "id": "poprawa-zycia-robotnikow",
+          "left": "Warunki życia robotników można poprawić przez reformy, edukację i współpracę.",
+          "right": "socjalizm"
+        },
+        {
+          "id": "rewolucja-robotnicza",
+          "left": "Robotnicy powinni w wyniku rewolucji obalić kapitalizm i znieść prywatną własność fabryk.",
+          "right": "komunizm"
+        }
       ]
     }
   ]
