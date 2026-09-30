@@ -1,0 +1,112 @@
+{
+  "topic_id": "questions",
+  "topic_title": "Pytania",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "ps-question-leave",
+      "text": "________ home early yesterday? (Anna / leave)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Anna leave"],
+      "explanation": "Pytanie tworzymy według schematu „Did + osoba + leave”."
+    },
+    {
+      "id": "ps-question-feel",
+      "text": "________ tired after the match? (you / feel)",
+      "selection_type": "open",
+      "accepted_answers": ["Did you feel"],
+      "explanation": "Po „Did you” używamy formy podstawowej „feel”."
+    },
+    {
+      "id": "ps-question-put",
+      "text": "________ the book on the desk? (Mark / put)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Mark put"],
+      "explanation": "Poprawny szyk to „Did Mark put”."
+    },
+    {
+      "id": "ps-question-bring",
+      "text": "________ an umbrella to school? (she / bring)",
+      "selection_type": "open",
+      "accepted_answers": ["Did she bring"],
+      "explanation": "Po „Did she” używamy formy podstawowej „bring”."
+    },
+    {
+      "id": "ps-question-begin",
+      "text": "________ at nine o'clock? (the lesson / begin)",
+      "selection_type": "open",
+      "accepted_answers": ["Did the lesson begin"],
+      "explanation": "Poprawny szyk to „Did the lesson begin”."
+    },
+    {
+      "id": "ps-question-keep",
+      "text": "________ the old letters? (they / keep)",
+      "selection_type": "open",
+      "accepted_answers": ["Did they keep"],
+      "explanation": "Po „Did they” używamy formy podstawowej „keep”."
+    },
+    {
+      "id": "ps-question-like",
+      "text": "________ the concert? (Ola / like)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Ola like"],
+      "explanation": "Poprawny szyk to „Did Ola like”."
+    },
+    {
+      "id": "ps-question-want",
+      "text": "________ another sandwich? (he / want)",
+      "selection_type": "open",
+      "accepted_answers": ["Did he want"],
+      "explanation": "Po „Did he” używamy formy podstawowej „want”."
+    },
+    {
+      "id": "ps-question-ask",
+      "text": "________ the teacher for help? (you / ask)",
+      "selection_type": "open",
+      "accepted_answers": ["Did you ask"],
+      "explanation": "Poprawny szyk to „Did you ask”."
+    },
+    {
+      "id": "ps-question-close",
+      "text": "________ the window before you left? (Mia / close)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Mia close"],
+      "explanation": "Po „Did Mia” używamy formy podstawowej „close”."
+    },
+    {
+      "id": "ps-question-extra-become",
+      "text": "________ dark before the storm? (the sky / become)",
+      "selection_type": "open",
+      "accepted_answers": ["Did the sky become"],
+      "explanation": "Poprawny szyk to „Did the sky become”."
+    },
+    {
+      "id": "ps-question-extra-leave",
+      "text": "________ the party early? (your parents / leave)",
+      "selection_type": "open",
+      "accepted_answers": ["Did your parents leave"],
+      "explanation": "Po „Did your parents” używamy formy podstawowej „leave”."
+    },
+    {
+      "id": "ps-question-extra-feel",
+      "text": "________ better after the rest? (Mia / feel)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Mia feel"],
+      "explanation": "Poprawny szyk to „Did Mia feel”."
+    },
+    {
+      "id": "ps-question-extra-bring",
+      "text": "________ his lunch to school? (Tom / bring)",
+      "selection_type": "open",
+      "accepted_answers": ["Did Tom bring"],
+      "explanation": "Po „Did Tom” używamy formy podstawowej „bring”."
+    },
+    {
+      "id": "ps-question-extra-begin",
+      "text": "________ at eight o'clock? (the film / begin)",
+      "selection_type": "open",
+      "accepted_answers": ["Did the film begin"],
+      "explanation": "Poprawny szyk to „Did the film begin”."
+    }
+  ]
+}

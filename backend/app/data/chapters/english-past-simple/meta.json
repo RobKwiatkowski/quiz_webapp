@@ -1,0 +1,16 @@
+{
+  "id": "english-past-simple",
+  "title": "Past Simple",
+  "description": "Ćwiczenia z tworzenia zdań w czasie Past Simple.",
+  "category": "english",
+  "age_group": "10-12",
+  "target_question_count": 20,
+  "questions_per_topic": 5,
+  "topics": [
+    "topic_1_verb_forms.json",
+    "topic_2_negatives.json",
+    "topic_3_questions.json",
+    "topic_4_choose_form.json",
+    "topic_5_sentence_translation.json"
+  ]
+}

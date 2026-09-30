@@ -1,0 +1,14 @@
+{
+  "id": "english-one-big-family",
+  "title": "One Big Family",
+  "description": "Gramatyka i słownictwo związane z rodziną, domem, wyglądem i upodobaniami.",
+  "category": "english",
+  "age_group": "10-12",
+  "target_question_count": 15,
+  "questions_per_topic": 5,
+  "topics": [
+    "topic_1_grammar.json",
+    "topic_2_vocabulary.json",
+    "topic_3_sentence_translation.json"
+  ]
+}

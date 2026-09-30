@@ -1,0 +1,247 @@
+{
+  "topic_id": "vocabulary",
+  "topic_title": "Słownictwo",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-vocabulary-01",
+      "text": "My parents have one girl. She is their {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["daughter"]}],
+      "explanation": "„Daughter” oznacza córkę."
+    },
+    {
+      "id": "obf-vocabulary-02",
+      "text": "My parents have one boy. He is their {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["son"]}],
+      "explanation": "„Son” oznacza syna."
+    },
+    {
+      "id": "obf-vocabulary-03",
+      "text": "My brother's son is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["nephew"]}],
+      "explanation": "Syn brata lub siostry to „nephew”, czyli bratanek albo siostrzeniec."
+    },
+    {
+      "id": "obf-vocabulary-04",
+      "text": "My sister's daughter is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["niece"]}],
+      "explanation": "Córka brata lub siostry to „niece”, czyli bratanica albo siostrzenica."
+    },
+    {
+      "id": "obf-vocabulary-05",
+      "text": "My grandfather's father is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["great-grandfather", "great grandfather"]}],
+      "explanation": "Ojciec dziadka to „great-grandfather”, czyli pradziadek."
+    },
+    {
+      "id": "obf-vocabulary-06",
+      "text": "My grandmother's mother is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["great-grandmother", "great grandmother"]}],
+      "explanation": "Matka babci to „great-grandmother”, czyli prababcia."
+    },
+    {
+      "id": "obf-vocabulary-07",
+      "text": "My mother's new husband is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["stepfather", "step-father", "step father"]}],
+      "explanation": "Nowy mąż mamy to „stepfather”, czyli ojczym."
+    },
+    {
+      "id": "obf-vocabulary-08",
+      "text": "My father's new wife is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["stepmother", "step-mother", "step mother"]}],
+      "explanation": "Nowa żona taty to „stepmother”, czyli macocha."
+    },
+    {
+      "id": "obf-vocabulary-09",
+      "text": "My mother's new husband's son is my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["stepbrother", "step-brother", "step brother"]}],
+      "explanation": "Syn ojczyma to „stepbrother”, czyli przyrodni brat."
+    },
+    {
+      "id": "obf-vocabulary-10",
+      "text": "A married man can call his female partner his {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["wife"]}],
+      "explanation": "„Wife” oznacza żonę."
+    },
+    {
+      "id": "obf-vocabulary-11",
+      "text": "We cook meals in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["kitchen"]}],
+      "explanation": "Posiłki przygotowujemy w kuchni, czyli w „kitchen”."
+    },
+    {
+      "id": "obf-vocabulary-12",
+      "text": "I sleep in my {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["bedroom"]}],
+      "explanation": "„Bedroom” oznacza sypialnię."
+    },
+    {
+      "id": "obf-vocabulary-13",
+      "text": "You can have a shower in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["bathroom"]}],
+      "explanation": "Prysznic bierzemy w łazience, czyli w „bathroom”."
+    },
+    {
+      "id": "obf-vocabulary-14",
+      "text": "Our family watches TV in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["living room", "living-room"]}],
+      "explanation": "„Living room” oznacza salon."
+    },
+    {
+      "id": "obf-vocabulary-15",
+      "text": "We eat dinner together in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["dining room", "dining-room"]}],
+      "explanation": "„Dining room” oznacza jadalnię."
+    },
+    {
+      "id": "obf-vocabulary-16",
+      "text": "My dad keeps the car in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["garage"]}],
+      "explanation": "Samochód trzymamy w garażu, czyli w „garage”."
+    },
+    {
+      "id": "obf-vocabulary-17",
+      "text": "There are flowers and trees in our {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["garden"]}],
+      "explanation": "Kwiaty i drzewa rosną w ogrodzie, czyli w „garden”."
+    },
+    {
+      "id": "obf-vocabulary-18",
+      "text": "We keep old boxes under the roof in the {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["attic"]}],
+      "explanation": "Pomieszczenie pod dachem to „attic”, czyli strych."
+    },
+    {
+      "id": "obf-vocabulary-19",
+      "text": "Her hair forms lots of small curls. She has got {{word}} hair.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["curly"]}],
+      "explanation": "Włosy tworzące loki opisujemy słowem „curly”."
+    },
+    {
+      "id": "obf-vocabulary-20",
+      "text": "My grandfather has hair on his chin and cheeks. He has got a {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["beard"]}],
+      "explanation": "Włosy na brodzie i policzkach to „beard”, czyli broda."
+    },
+    {
+      "id": "obf-vocabulary-21",
+      "text": "Her hair is very light and yellow. She has got {{word}} hair.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["blonde", "blond"]}],
+      "explanation": "Jasne, żółtawe włosy opisujemy jako „blonde hair” lub „blond hair”."
+    },
+    {
+      "id": "obf-vocabulary-22",
+      "text": "His eyes are the colour of the sky. He has got {{word}} eyes.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["blue"]}],
+      "explanation": "Oczy w kolorze nieba to „blue eyes”."
+    },
+    {
+      "id": "obf-vocabulary-23",
+      "text": "Lucy is kind and nice to other people. She is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["friendly"]}],
+      "explanation": "Miłą i życzliwą osobę opisujemy słowem „friendly”."
+    },
+    {
+      "id": "obf-vocabulary-24",
+      "text": "The children make a lot of noise. They are {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["noisy"]}],
+      "explanation": "Kogoś, kto robi dużo hałasu, opisujemy słowem „noisy”."
+    },
+    {
+      "id": "obf-vocabulary-25",
+      "text": "Ben doesn't talk very much. He is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["quiet"]}],
+      "explanation": "Cichą osobę opisujemy słowem „quiet”."
+    },
+    {
+      "id": "obf-vocabulary-26",
+      "text": "Kate loves exercise and plays many games. She is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["sporty"]}],
+      "explanation": "Osobę, która lubi sport, opisujemy słowem „sporty”."
+    },
+    {
+      "id": "obf-vocabulary-27",
+      "text": "Anna is from Poland. She is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["Polish"]}],
+      "explanation": "Osoba z Polski jest „Polish”."
+    },
+    {
+      "id": "obf-vocabulary-28",
+      "text": "Pierre is from France. He is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["French"]}],
+      "explanation": "Osoba z Francji jest „French”."
+    },
+    {
+      "id": "obf-vocabulary-29",
+      "text": "Li is from China. She is {{word}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["Chinese"]}],
+      "explanation": "Osoba z Chin jest „Chinese”."
+    },
+    {
+      "id": "obf-vocabulary-30",
+      "text": "Can I {{word}} you to my sister?",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [{"id": "word", "accepted_answers": ["introduce"]}],
+      "explanation": "W zwrocie „Can I introduce you...?” czasownik „introduce” oznacza „przedstawić”."
+    }
+  ]
+}

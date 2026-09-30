@@ -1,0 +1,19 @@
+{
+  "topic_id": "choose-form",
+  "topic_title": "Wybór poprawnej formy",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "ps-choice-mean",
+      "text": "What did this word ___ in the story?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "mean", "is_correct": true},
+        {"text": "meant", "is_correct": false},
+        {"text": "did meant", "is_correct": false},
+        {"text": "means", "is_correct": false}
+      ],
+      "explanation": "Po „did” używamy formy podstawowej „mean”, a nie „meant”."
+    }
+  ]
+}

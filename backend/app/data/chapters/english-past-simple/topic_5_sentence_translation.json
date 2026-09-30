@@ -1,0 +1,78 @@
+{
+  "topic_id": "sentence-translation",
+  "topic_title": "Tłumaczenie pełnych zdań",
+  "is_active": true,
+  "max_questions_per_quiz": 2,
+  "questions": [
+    {
+      "id": "ps-translation-go",
+      "text": "Przetłumacz na język angielski: „Wczoraj poszliśmy do parku po szkole.”",
+      "selection_type": "llm",
+      "accepted_answers": ["Yesterday we went to the park after school."],
+      "explanation": "Poprawne tłumaczenie: „Yesterday we went to the park after school.”"
+    },
+    {
+      "id": "ps-translation-buy",
+      "text": "Przetłumacz na język angielski: „Moja siostra kupiła nową książkę w sobotę.”",
+      "selection_type": "llm",
+      "accepted_answers": ["My sister bought a new book on Saturday."],
+      "explanation": "Poprawne tłumaczenie: „My sister bought a new book on Saturday.”"
+    },
+    {
+      "id": "ps-translation-see",
+      "text": "Przetłumacz na język angielski: „Tomek zobaczył dużego psa przy sklepie.”",
+      "selection_type": "llm",
+      "accepted_answers": ["Tom saw a big dog near the shop."],
+      "explanation": "Poprawne tłumaczenie: „Tom saw a big dog near the shop.”"
+    },
+    {
+      "id": "ps-translation-eat",
+      "text": "Przetłumacz na język angielski: „Dziś rano zjadłem śniadanie z moją rodziną.”",
+      "selection_type": "llm",
+      "accepted_answers": ["I ate breakfast with my family this morning."],
+      "explanation": "Poprawne tłumaczenie: „I ate breakfast with my family this morning.”"
+    },
+    {
+      "id": "ps-translation-find",
+      "text": "Przetłumacz na język angielski: „Dzieci znalazły małą piłkę pod stołem.”",
+      "selection_type": "llm",
+      "accepted_answers": ["The children found a small ball under the table."],
+      "explanation": "Poprawne tłumaczenie: „The children found a small ball under the table.”"
+    },
+    {
+      "id": "ps-translation-write",
+      "text": "Przetłumacz na język angielski: „W zeszłym tygodniu napisaliśmy list do babci.”",
+      "selection_type": "llm",
+      "accepted_answers": ["Last week we wrote a letter to our grandmother."],
+      "explanation": "Poprawne tłumaczenie: „Last week we wrote a letter to our grandmother.”"
+    },
+    {
+      "id": "ps-translation-give",
+      "text": "Przetłumacz na język angielski: „Anna dała swojemu bratu szklankę wody.”",
+      "selection_type": "llm",
+      "accepted_answers": ["Anna gave her brother a glass of water."],
+      "explanation": "Poprawne tłumaczenie: „Anna gave her brother a glass of water.”"
+    },
+    {
+      "id": "ps-translation-make",
+      "text": "Przetłumacz na język angielski: „Mój tata zrobił smaczną zupę na obiad.”",
+      "selection_type": "llm",
+      "accepted_answers": ["My dad made a tasty soup for lunch."],
+      "explanation": "Poprawne tłumaczenie: „My dad made a tasty soup for lunch.”"
+    },
+    {
+      "id": "ps-translation-come",
+      "text": "Przetłumacz na język angielski: „Oni przyjechali do domu bardzo późno wczoraj.”",
+      "selection_type": "llm",
+      "accepted_answers": ["They came home very late yesterday."],
+      "explanation": "Poprawne tłumaczenie: „They came home very late yesterday.”"
+    },
+    {
+      "id": "ps-translation-take",
+      "text": "Przetłumacz na język angielski: „Piotr wziął swój parasol wczoraj do szkoły.”",
+      "selection_type": "llm",
+      "accepted_answers": ["Peter took his umbrella to school yesterday."],
+      "explanation": "Poprawne tłumaczenie: „Peter took his umbrella to school yesterday.”"
+    }
+  ]
+}

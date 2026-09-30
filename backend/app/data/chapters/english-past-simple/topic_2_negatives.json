@@ -1,0 +1,112 @@
+{
+  "topic_id": "negatives",
+  "topic_title": "Przeczenia",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "ps-negative-be",
+      "text": "They ________ tired after the trip. (not / be)",
+      "selection_type": "open",
+      "accepted_answers": ["weren't", "were not"],
+      "explanation": "Z „they” używamy „were not” lub skrótu „weren't”."
+    },
+    {
+      "id": "ps-negative-take",
+      "text": "We ________ the bus to school yesterday. (not / take)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't take", "did not take"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „take”."
+    },
+    {
+      "id": "ps-negative-give",
+      "text": "Sara ________ me the note. (not / give)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't give", "did not give"],
+      "explanation": "Poprawna konstrukcja to „didn't give” lub „did not give”."
+    },
+    {
+      "id": "ps-negative-find",
+      "text": "I ________ my keys this morning. (not / find)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't find", "did not find"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „find”."
+    },
+    {
+      "id": "ps-negative-tell",
+      "text": "Dad ________ us the answer. (not / tell)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't tell", "did not tell"],
+      "explanation": "Poprawna konstrukcja to „didn't tell” lub „did not tell”."
+    },
+    {
+      "id": "ps-negative-become",
+      "text": "The weather ________ colder in the afternoon. (not / become)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't become", "did not become"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „become”."
+    },
+    {
+      "id": "ps-negative-help",
+      "text": "They ________ us clean the room. (not / help)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't help", "did not help"],
+      "explanation": "Poprawna konstrukcja to „didn't help” lub „did not help”."
+    },
+    {
+      "id": "ps-negative-call",
+      "text": "Ben ________ his cousin last night. (not / call)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't call", "did not call"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „call”."
+    },
+    {
+      "id": "ps-negative-open",
+      "text": "The shop ________ on Sunday. (not / open)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't open", "did not open"],
+      "explanation": "Poprawna konstrukcja to „didn't open” lub „did not open”."
+    },
+    {
+      "id": "ps-negative-clean",
+      "text": "Mia ________ her room yesterday. (not / clean)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't clean", "did not clean"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „clean”."
+    },
+    {
+      "id": "ps-negative-extra-think",
+      "text": "I ________ the exercise was difficult. (not / think)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't think", "did not think"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „think”."
+    },
+    {
+      "id": "ps-negative-extra-take",
+      "text": "Alex ________ my pencil from the desk. (not / take)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't take", "did not take"],
+      "explanation": "Poprawna konstrukcja to „didn't take” lub „did not take”."
+    },
+    {
+      "id": "ps-negative-extra-give",
+      "text": "The coach ________ us new shirts. (not / give)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't give", "did not give"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „give”."
+    },
+    {
+      "id": "ps-negative-extra-find",
+      "text": "They ________ the missing ball yesterday. (not / find)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't find", "did not find"],
+      "explanation": "Poprawna konstrukcja to „didn't find” lub „did not find”."
+    },
+    {
+      "id": "ps-negative-extra-tell",
+      "text": "Lucy ________ me about the meeting. (not / tell)",
+      "selection_type": "open",
+      "accepted_answers": ["didn't tell", "did not tell"],
+      "explanation": "Po „didn't” lub „did not” używamy formy podstawowej „tell”."
+    }
+  ]
+}

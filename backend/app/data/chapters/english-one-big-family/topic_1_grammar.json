@@ -1,0 +1,182 @@
+{
+  "topic_id": "grammar",
+  "topic_title": "Gramatyka",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-grammar-01",
+      "text": "I ___ reading comics. (love)",
+      "selection_type": "open",
+      "accepted_answers": ["love"],
+      "explanation": "Po zaimku „I” używamy podstawowej formy czasownika: „love”."
+    },
+    {
+      "id": "obf-grammar-02",
+      "text": "Emma ___ collecting badges. (like)",
+      "selection_type": "open",
+      "accepted_answers": ["likes"],
+      "explanation": "W trzeciej osobie liczby pojedynczej do „like” dodajemy „-s”: „likes”."
+    },
+    {
+      "id": "obf-grammar-03",
+      "text": "We ___ getting up early. (not / like)",
+      "selection_type": "open",
+      "accepted_answers": ["don't like", "do not like"],
+      "explanation": "Z zaimkiem „we” używamy „don't like” lub „do not like”."
+    },
+    {
+      "id": "obf-grammar-04",
+      "text": "Tom ___ cleaning his room. (hate)",
+      "selection_type": "open",
+      "accepted_answers": ["hates"],
+      "explanation": "W trzeciej osobie liczby pojedynczej używamy formy „hates”."
+    },
+    {
+      "id": "obf-grammar-05",
+      "text": "I ___ waiting for the bus. (can't stand)",
+      "selection_type": "open",
+      "accepted_answers": ["can't stand", "cannot stand"],
+      "explanation": "„Can't stand” i „cannot stand” oznaczają, że czegoś nie znosimy."
+    },
+    {
+      "id": "obf-grammar-06",
+      "text": "Mia ___ doing homework in the evening. (not / like)",
+      "selection_type": "open",
+      "accepted_answers": ["doesn't like", "does not like"],
+      "explanation": "Z imieniem „Mia” używamy „doesn't like” lub „does not like”."
+    },
+    {
+      "id": "obf-grammar-07",
+      "text": "They ___ washing the dishes. (can't stand)",
+      "selection_type": "open",
+      "accepted_answers": ["can't stand", "cannot stand"],
+      "explanation": "Po „they” używamy formy „can't stand” lub „cannot stand”."
+    },
+    {
+      "id": "obf-grammar-08",
+      "text": "My brother loves ___ photos. (take)",
+      "selection_type": "open",
+      "accepted_answers": ["taking"],
+      "explanation": "Po „loves” możemy użyć czasownika z końcówką „-ing”: „taking”."
+    },
+    {
+      "id": "obf-grammar-09",
+      "text": "We like ___ our grandparents. (visit)",
+      "selection_type": "open",
+      "accepted_answers": ["visiting"],
+      "explanation": "Po „like” używamy tutaj formy z „-ing”: „visiting”."
+    },
+    {
+      "id": "obf-grammar-10",
+      "text": "Anna doesn't like ___ in cold water. (swim)",
+      "selection_type": "open",
+      "accepted_answers": ["swimming"],
+      "explanation": "W słowie „swim” podwajamy końcowe „m” przed dodaniem „-ing”: „swimming”."
+    },
+    {
+      "id": "obf-grammar-11",
+      "text": "He hates ___ his room. (tidy)",
+      "selection_type": "open",
+      "accepted_answers": ["tidying"],
+      "explanation": "Po „hates” używamy formy „tidying”."
+    },
+    {
+      "id": "obf-grammar-12",
+      "text": "What do you like ___ at weekends? (do)",
+      "selection_type": "open",
+      "accepted_answers": ["doing"],
+      "explanation": "Pytamy „What do you like doing...?”, więc poprawna forma to „doing”."
+    },
+    {
+      "id": "obf-grammar-13",
+      "text": "Ułóż pytanie z podanych elementów: your best friend / be / like",
+      "selection_type": "open",
+      "accepted_answers": ["What is your best friend like?"],
+      "explanation": "O charakter pytamy: „What is your best friend like?”"
+    },
+    {
+      "id": "obf-grammar-14",
+      "text": "Ułóż pytanie z podanych elementów: your sister / look like",
+      "selection_type": "open",
+      "accepted_answers": ["What does your sister look like?"],
+      "explanation": "O wygląd jednej osoby pytamy: „What does ... look like?”"
+    },
+    {
+      "id": "obf-grammar-15",
+      "text": "Ułóż pytanie z podanych elementów: your cousins / be / like",
+      "selection_type": "open",
+      "accepted_answers": ["What are your cousins like?"],
+      "explanation": "O charakter kilku osób pytamy: „What are ... like?”"
+    },
+    {
+      "id": "obf-grammar-16",
+      "text": "Ułóż pytanie z podanych elementów: your parents / look like",
+      "selection_type": "open",
+      "accepted_answers": ["What do your parents look like?"],
+      "explanation": "O wygląd kilku osób pytamy: „What do ... look like?”"
+    },
+    {
+      "id": "obf-grammar-17",
+      "text": "My uncle ___ very friendly. (be)",
+      "selection_type": "open",
+      "accepted_answers": ["is", "'s"],
+      "explanation": "Z wyrażeniem „my uncle” używamy formy „is” lub skrótu „'s”."
+    },
+    {
+      "id": "obf-grammar-18",
+      "text": "Tom ___ noisy. (be)",
+      "selection_type": "open",
+      "accepted_answers": ["is", "'s"],
+      "explanation": "Z imieniem „Tom” używamy formy „is” lub skrótu „'s”."
+    },
+    {
+      "id": "obf-grammar-19",
+      "text": "The children ___ naughty sometimes. (be)",
+      "selection_type": "open",
+      "accepted_answers": ["are", "'re"],
+      "explanation": "„The children” to liczba mnoga, dlatego używamy „are” lub „'re”."
+    },
+    {
+      "id": "obf-grammar-20",
+      "text": "I ___ blue eyes. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["have got", "'ve got"],
+      "explanation": "Z zaimkiem „I” używamy „have got” lub skrótu „'ve got”."
+    },
+    {
+      "id": "obf-grammar-21",
+      "text": "Mia ___ curly hair. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["has got", "'s got"],
+      "explanation": "Z imieniem „Mia” używamy „has got” lub skrótu „'s got”."
+    },
+    {
+      "id": "obf-grammar-22",
+      "text": "My grandfather ___ a beard. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["has got", "'s got"],
+      "explanation": "„My grandfather” wymaga formy „has got” lub „'s got”."
+    },
+    {
+      "id": "obf-grammar-23",
+      "text": "We ___ long hair. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["have got", "'ve got"],
+      "explanation": "Z zaimkiem „we” używamy „have got” lub skrótu „'ve got”."
+    },
+    {
+      "id": "obf-grammar-24",
+      "text": "She ___ long straight hair. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["has got", "'s got"],
+      "explanation": "Z zaimkiem „she” używamy „has got” lub skrótu „'s got”."
+    },
+    {
+      "id": "obf-grammar-25",
+      "text": "My brother is quiet and he ___ short hair. (have got)",
+      "selection_type": "open",
+      "accepted_answers": ["has got", "'s got"],
+      "explanation": "Po „he” używamy „has got” lub skrótu „'s got”."
+    }
+  ]
+}

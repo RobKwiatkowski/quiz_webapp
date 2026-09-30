@@ -1,0 +1,236 @@
+{
+  "topic_id": "po-upadku-ksiestwa-warszawskiego",
+  "topic_title": "Po upadku Księstwa Warszawskiego",
+  "is_active": false,
+  "questions": [
+    {
+      "id": "q-eb7252f7",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jaka była decyzja na kongresie wiedeńskim dotycząca Księstwa Warszawskiego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "likwidacja Księstwa Warszawskiego",
+          "is_correct": true
+        },
+        {
+          "text": "pozostawienie Księstwa Warszawskiego",
+          "is_correct": false
+        },
+        {
+          "text": "powiększenie Księstwa Warszawskiego",
+          "is_correct": false
+        },
+        {
+          "text": "wcielenie Księstwa Warszawskiego do Rosji",
+          "is_correct": false
+        },
+        {
+          "text": "wcielenie Księstwa Warszawskiego do Prus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-8a80f5c0",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Z większości ziem Księstwa Warszawskiego w {{luka_1}} roku utworzono {{luka_2}} podporządkowane {{luka_3}}.",
+      "selection_type": "fill",
+      "explanation": "Z większości ziem Księstwa Warszawskiego w 1815 roku utworzono Królestwo Polskie podporządkowane Rosji.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "luka_1",
+          "accepted_answers": [
+            "1815"
+          ],
+          "options": []
+        },
+        {
+          "id": "luka_2",
+          "accepted_answers": [
+            "Królestwo Polskie"
+          ],
+          "options": []
+        },
+        {
+          "id": "luka_3",
+          "accepted_answers": [
+            "Rosji"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "q-663472c2",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co się stało z terytoriami polskimi zabranymi wcześniej przez Rosję w wyniku rozbiorów Polski?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "zostały częścią Cesarstwa Rosyjskiego",
+          "is_correct": true
+        },
+        {
+          "text": "zostały częścią Królestwa Polskiego",
+          "is_correct": false
+        },
+        {
+          "text": "zostały częścią Księstwa Warszawskiego",
+          "is_correct": false
+        },
+        {
+          "text": "zostały częścią Królstwa Pruskiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-6fef61c1",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Kto zajął Gdańsk zgodnie z ustaleniami kongresu wiedeńskiego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Prusy",
+          "is_correct": true
+        },
+        {
+          "text": "Austria",
+          "is_correct": false
+        },
+        {
+          "text": "Rosja",
+          "is_correct": false
+        },
+        {
+          "text": "Królestwo Polskie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b5704852",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co utworzono z Wielkopolski i Kujaw?",
+      "selection_type": "open",
+      "explanation": "Utworzono Wielkie Księstwo Poznańskie należące do Królestwa Pruskiego.",
+      "accepted_answers": [
+        "Wielkie Księstwo Poznańskie"
+      ]
+    },
+    {
+      "id": "q-044a68d0",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co utworzono z Krakowa i jego okolic?",
+      "selection_type": "open",
+      "explanation": "Utworzono Rzeczpospolitą Krakowską.",
+      "accepted_answers": [
+        "Rzeczpospolitą Krakowską"
+      ]
+    },
+    {
+      "id": "q-e9f8ecae",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jak nazywamy ziemie polskie pod zaborem Austriackim?",
+      "selection_type": "open",
+      "explanation": "Jest to Galicja.",
+      "accepted_answers": [
+        "Galicja"
+      ]
+    },
+    {
+      "id": "q-b4e847d0",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jaki ustrój miało Królestwo Polskie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "monarchia absolutna",
+          "is_correct": false
+        },
+        {
+          "text": "monarchia konstytucyjna",
+          "is_correct": true
+        },
+        {
+          "text": "monarchia elekcyjna",
+          "is_correct": false
+        },
+        {
+          "text": "monarchia parlamentarna",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-47cec7dc",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co łączyło Królestwo Polskie z Rosją?",
+      "selection_type": "open",
+      "explanation": "Była to unia personalna - car był królem i Rosji i Polski.",
+      "accepted_answers": [
+        "unia personalna"
+      ]
+    },
+    {
+      "id": "q-6ce1a512",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Kto zastępował cara w rządzeniu Królestwem Polskim w trakcie nieobecności cara (nazwa urzędu)?",
+      "selection_type": "open",
+      "explanation": "Był to namiestnik.",
+      "accepted_answers": [
+        "namiestnik"
+      ]
+    },
+    {
+      "id": "q-d2c8628a",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Wybierz prawda lub fałsz w temacie co gwarantowała konstytucja nadana przez cara Aleksandra I.",
+      "selection_type": "true_false",
+      "explanation": ".",
+      "answers": [
+        {
+          "text": "równość wobec prawa",
+          "is_correct": true
+        },
+        {
+          "text": "wolność osobistą",
+          "is_correct": true
+        },
+        {
+          "text": "wolność religii",
+          "is_correct": true
+        },
+        {
+          "text": "używanie języka rosyjskiego w szkołach i urzędach",
+          "is_correct": true
+        },
+        {
+          "text": "niepodległość Polski",
+          "is_correct": false
+        },
+        {
+          "text": "dowodzenie armią polską przez polskich oficerów",
+          "is_correct": false
+        },
+        {
+          "text": "decydowanie o polityce zagranicznej przez polskiego ministra",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

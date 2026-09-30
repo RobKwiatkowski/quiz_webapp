@@ -1,0 +1,13 @@
+{
+  "id": "ziemie-polskie-po-kongresie-wiedenskim",
+  "title": "Ziemie Polskie po Kongresie Wiedeńskim",
+  "description": "Powtórka z rozdziału Ziemie Polskie po Kongresie Wiedeńskim.",
+  "category": "history",
+  "age_group": "10-12",
+  "chapter_number": 2,
+  "target_question_count": 15,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1_po-upadku-ksiestwa-warszawskiego.json"
+  ]
+}

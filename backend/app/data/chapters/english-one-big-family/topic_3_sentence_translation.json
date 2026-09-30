@@ -1,0 +1,84 @@
+{
+  "topic_id": "sentence-translation",
+  "topic_title": "Tłumaczenie zdań",
+  "is_active": true,
+  "max_questions_per_quiz": 1,
+  "questions": [
+    {
+      "id": "obf-translation-01",
+      "text": "Przetłumacz na język angielski: „Moja siostra ma długie blond włosy i jest bardzo przyjazna.”",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "My sister has got long blonde hair and is very friendly.",
+        "My sister has got long blond hair and is very friendly.",
+        "My sister has long blonde hair and is very friendly.",
+        "My sister has long blond hair and is very friendly.",
+        "My sister has got long blonde hair and she is very friendly.",
+        "My sister has got long blond hair and she is very friendly.",
+        "My sister has long blonde hair and she is very friendly.",
+        "My sister has long blond hair and she is very friendly."
+      ],
+      "explanation": "Przykładowe tłumaczenie: „My sister has got long blonde hair and is very friendly.”"
+    },
+    {
+      "id": "obf-translation-02",
+      "text": "Przetłumacz na język angielski: „Mój brat nie lubi sprzątać swojego pokoju.”",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "My brother doesn't like cleaning his room.",
+        "My brother does not like cleaning his room.",
+        "My brother doesn't like tidying his room.",
+        "My brother does not like tidying his room.",
+        "My brother doesn't like to clean his room.",
+        "My brother does not like to clean his room.",
+        "My brother doesn't like to tidy his room.",
+        "My brother does not like to tidy his room."
+      ],
+      "explanation": "Przykładowe tłumaczenie: „My brother doesn't like cleaning his room.”"
+    },
+    {
+      "id": "obf-translation-03",
+      "text": "Przetłumacz na język angielski: „Mój dziadek ma brodę i niebieskie oczy.”",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "My grandfather has got a beard and blue eyes.",
+        "My grandfather has a beard and blue eyes.",
+        "My grandad has got a beard and blue eyes.",
+        "My grandad has a beard and blue eyes.",
+        "My granddad has got a beard and blue eyes.",
+        "My granddad has a beard and blue eyes."
+      ],
+      "explanation": "Przykładowe tłumaczenie: „My grandfather has got a beard and blue eyes.”"
+    },
+    {
+      "id": "obf-translation-04",
+      "text": "Przetłumacz na język angielski: „Lubimy odwiedzać naszą prababcię w weekendy.”",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "We like visiting our great-grandmother at weekends.",
+        "We like visiting our great grandmother at weekends.",
+        "We like visiting our great-grandmother on weekends.",
+        "We like visiting our great grandmother on weekends.",
+        "We like to visit our great-grandmother at weekends.",
+        "We like to visit our great grandmother at weekends.",
+        "We like to visit our great-grandmother on weekends.",
+        "We like to visit our great grandmother on weekends."
+      ],
+      "explanation": "Przykładowe tłumaczenie: „We like visiting our great-grandmother at weekends.”"
+    },
+    {
+      "id": "obf-translation-05",
+      "text": "Przetłumacz na język angielski: „Nazywam się Anna, a to jest mój brat Tom.”",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "My name is Anna, and this is my brother Tom.",
+        "My name is Anna and this is my brother Tom.",
+        "I'm Anna, and this is my brother Tom.",
+        "I'm Anna and this is my brother Tom.",
+        "I am Anna, and this is my brother Tom.",
+        "I am Anna and this is my brother Tom."
+      ],
+      "explanation": "Przykładowe tłumaczenie: „My name is Anna, and this is my brother Tom.”"
+    }
+  ]
+}

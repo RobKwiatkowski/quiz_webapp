@@ -1,0 +1,280 @@
+{
+  "topic_id": "verb-forms",
+  "topic_title": "Formy czasowników",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "ps-form-go",
+      "text": "Yesterday I ___ to school. (go)",
+      "selection_type": "open",
+      "accepted_answers": ["went"],
+      "explanation": "Forma Past Simple czasownika „go” to „went”."
+    },
+    {
+      "id": "ps-form-have",
+      "text": "We ___ lunch at noon yesterday. (have)",
+      "selection_type": "open",
+      "accepted_answers": ["had"],
+      "explanation": "Forma Past Simple czasownika „have” to „had”."
+    },
+    {
+      "id": "ps-form-do",
+      "text": "Leo ___ his homework after dinner. (do)",
+      "selection_type": "open",
+      "accepted_answers": ["did"],
+      "explanation": "Forma Past Simple czasownika „do” to „did”."
+    },
+    {
+      "id": "ps-form-say",
+      "text": "My sister ___ hello to our new neighbour. (say)",
+      "selection_type": "open",
+      "accepted_answers": ["said"],
+      "explanation": "Forma Past Simple czasownika „say” to „said”."
+    },
+    {
+      "id": "ps-form-see",
+      "text": "I ___ a rainbow after the storm. (see)",
+      "selection_type": "open",
+      "accepted_answers": ["saw"],
+      "explanation": "Forma Past Simple czasownika „see” to „saw”."
+    },
+    {
+      "id": "ps-form-come",
+      "text": "Our cousins ___ to visit us last weekend. (come)",
+      "selection_type": "open",
+      "accepted_answers": ["came"],
+      "explanation": "Forma Past Simple czasownika „come” to „came”."
+    },
+    {
+      "id": "ps-form-get",
+      "text": "Mia ___ a new backpack for school. (get)",
+      "selection_type": "open",
+      "accepted_answers": ["got"],
+      "explanation": "Forma Past Simple czasownika „get” to „got”."
+    },
+    {
+      "id": "ps-form-make",
+      "text": "Dad ___ pancakes on Sunday morning. (make)",
+      "selection_type": "open",
+      "accepted_answers": ["made"],
+      "explanation": "Forma Past Simple czasownika „make” to „made”."
+    },
+    {
+      "id": "ps-form-know",
+      "text": "Ola ___ the answer in class yesterday. (know)",
+      "selection_type": "open",
+      "accepted_answers": ["knew"],
+      "explanation": "Forma Past Simple czasownika „know” to „knew”."
+    },
+    {
+      "id": "ps-form-think",
+      "text": "We ___ the film was funny. (think)",
+      "selection_type": "open",
+      "accepted_answers": ["thought"],
+      "explanation": "Forma Past Simple czasownika „think” to „thought”."
+    },
+    {
+      "id": "ps-form-play",
+      "text": "They ___ basketball after school. (play)",
+      "selection_type": "open",
+      "accepted_answers": ["played"],
+      "explanation": "Do czasownika „play” dodajemy końcówkę „-ed”: „played”."
+    },
+    {
+      "id": "ps-form-watch",
+      "text": "I ___ a documentary last night. (watch)",
+      "selection_type": "open",
+      "accepted_answers": ["watched"],
+      "explanation": "Forma Past Simple czasownika „watch” to „watched”."
+    },
+    {
+      "id": "ps-form-work",
+      "text": "My aunt ___ at home yesterday. (work)",
+      "selection_type": "open",
+      "accepted_answers": ["worked"],
+      "explanation": "Forma Past Simple czasownika „work” to „worked”."
+    },
+    {
+      "id": "ps-form-live",
+      "text": "Tom ___ in London in 2020. (live)",
+      "selection_type": "open",
+      "accepted_answers": ["lived"],
+      "explanation": "Czasownik „live” kończy się na „e”, więc dodajemy tylko „-d”: „lived”."
+    },
+    {
+      "id": "ps-form-study",
+      "text": "She ___ English for the test. (study)",
+      "selection_type": "open",
+      "accepted_answers": ["studied"],
+      "explanation": "W „study” zamieniamy „y” na „i” i dodajemy „-ed”: „studied”."
+    },
+    {
+      "id": "ps-form-try",
+      "text": "I ___ to fix my bike. (try)",
+      "selection_type": "open",
+      "accepted_answers": ["tried"],
+      "explanation": "W „try” zamieniamy „y” na „i” i dodajemy „-ed”: „tried”."
+    },
+    {
+      "id": "ps-form-carry",
+      "text": "Max ___ the heavy bag upstairs. (carry)",
+      "selection_type": "open",
+      "accepted_answers": ["carried"],
+      "explanation": "W „carry” zamieniamy „y” na „i” i dodajemy „-ed”: „carried”."
+    },
+    {
+      "id": "ps-form-stop",
+      "text": "The bus ___ near our school. (stop)",
+      "selection_type": "open",
+      "accepted_answers": ["stopped"],
+      "explanation": "W „stop” podwajamy końcowe „p” i dodajemy „-ed”: „stopped”."
+    },
+    {
+      "id": "ps-form-travel",
+      "text": "We ___ by train last summer. (travel)",
+      "selection_type": "open",
+      "accepted_answers": ["travelled", "traveled"],
+      "explanation": "Poprawne są brytyjskie „travelled” i amerykańskie „traveled”."
+    },
+    {
+      "id": "ps-form-visit",
+      "text": "They ___ the museum on Saturday. (visit)",
+      "selection_type": "open",
+      "accepted_answers": ["visited"],
+      "explanation": "Forma Past Simple czasownika „visit” to „visited”."
+    },
+    {
+      "id": "ps-form-hold",
+      "text": "Yesterday Ben ___ the box for me. (hold)",
+      "selection_type": "open",
+      "accepted_answers": ["held"],
+      "explanation": "Forma Past Simple czasownika „hold” to „held”."
+    },
+    {
+      "id": "ps-form-write",
+      "text": "Lena ___ an email last night. (write)",
+      "selection_type": "open",
+      "accepted_answers": ["wrote"],
+      "explanation": "Forma Past Simple czasownika „write” to „wrote”."
+    },
+    {
+      "id": "ps-form-stand",
+      "text": "The children ___ near the door yesterday. (stand)",
+      "selection_type": "open",
+      "accepted_answers": ["stood"],
+      "explanation": "Forma Past Simple czasownika „stand” to „stood”."
+    },
+    {
+      "id": "ps-form-hear",
+      "text": "We ___ a strange noise last night. (hear)",
+      "selection_type": "open",
+      "accepted_answers": ["heard"],
+      "explanation": "Forma Past Simple czasownika „hear” to „heard”."
+    },
+    {
+      "id": "ps-form-let",
+      "text": "Mum ___ me choose the film yesterday. (let)",
+      "selection_type": "open",
+      "accepted_answers": ["let"],
+      "explanation": "Czasownik „let” ma taką samą formę podstawową i Past Simple: „let”."
+    },
+    {
+      "id": "ps-form-meet",
+      "text": "I ___ my cousin at the station yesterday. (meet)",
+      "selection_type": "open",
+      "accepted_answers": ["met"],
+      "explanation": "Forma Past Simple czasownika „meet” to „met”."
+    },
+    {
+      "id": "ps-form-run",
+      "text": "Sam ___ to the bus stop yesterday morning. (run)",
+      "selection_type": "open",
+      "accepted_answers": ["ran"],
+      "explanation": "Forma Past Simple czasownika „run” to „ran”."
+    },
+    {
+      "id": "ps-form-need",
+      "text": "We ___ more time to finish the project. (need)",
+      "selection_type": "open",
+      "accepted_answers": ["needed"],
+      "explanation": "Forma Past Simple czasownika „need” to „needed”."
+    },
+    {
+      "id": "ps-form-cook",
+      "text": "They ___ dinner for the whole family last Sunday. (cook)",
+      "selection_type": "open",
+      "accepted_answers": ["cooked"],
+      "explanation": "Forma Past Simple czasownika „cook” to „cooked”."
+    },
+    {
+      "id": "ps-form-extra-be",
+      "text": "The children ___ at the playground yesterday. (be)",
+      "selection_type": "open",
+      "accepted_answers": ["were"],
+      "explanation": "Z podmiotem „the children” używamy formy Past Simple „were”."
+    },
+    {
+      "id": "ps-form-extra-go",
+      "text": "We ___ to the cinema last Friday. (go)",
+      "selection_type": "open",
+      "accepted_answers": ["went"],
+      "explanation": "Forma Past Simple czasownika „go” to „went”."
+    },
+    {
+      "id": "ps-form-extra-have",
+      "text": "Ella ___ a headache yesterday. (have)",
+      "selection_type": "open",
+      "accepted_answers": ["had"],
+      "explanation": "Forma Past Simple czasownika „have” to „had”."
+    },
+    {
+      "id": "ps-form-extra-do",
+      "text": "They ___ the shopping after school. (do)",
+      "selection_type": "open",
+      "accepted_answers": ["did"],
+      "explanation": "Forma Past Simple czasownika „do” to „did”."
+    },
+    {
+      "id": "ps-form-extra-say",
+      "text": "The teacher ___ the test was easy. (say)",
+      "selection_type": "open",
+      "accepted_answers": ["said"],
+      "explanation": "Forma Past Simple czasownika „say” to „said”."
+    },
+    {
+      "id": "ps-form-extra-see",
+      "text": "Tom ___ his friend at the library. (see)",
+      "selection_type": "open",
+      "accepted_answers": ["saw"],
+      "explanation": "Forma Past Simple czasownika „see” to „saw”."
+    },
+    {
+      "id": "ps-form-extra-come",
+      "text": "The train ___ ten minutes late. (come)",
+      "selection_type": "open",
+      "accepted_answers": ["came"],
+      "explanation": "Forma Past Simple czasownika „come” to „came”."
+    },
+    {
+      "id": "ps-form-extra-get",
+      "text": "I ___ a postcard from my cousin yesterday. (get)",
+      "selection_type": "open",
+      "accepted_answers": ["got"],
+      "explanation": "Forma Past Simple czasownika „get” to „got”."
+    },
+    {
+      "id": "ps-form-extra-make",
+      "text": "The children ___ a snowman last winter. (make)",
+      "selection_type": "open",
+      "accepted_answers": ["made"],
+      "explanation": "Forma Past Simple czasownika „make” to „made”."
+    },
+    {
+      "id": "ps-form-extra-know",
+      "text": "Maya ___ his name before the lesson. (know)",
+      "selection_type": "open",
+      "accepted_answers": ["knew"],
+      "explanation": "Forma Past Simple czasownika „know” to „knew”."
+    }
+  ]
+}
