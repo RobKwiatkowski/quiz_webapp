@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useMemo, useState, type DragEvent, type KeyboardEvent } from "react";
 import { checkAnswerWithLlm, type QuizQuestion } from "../../api/quiz-api";
+import { getQuestionMaxPoints } from "./quiz-scoring";
 import type { QuizFeedback } from "./quiz-session";
 
 export function OrderQuestion({ question, disabled, onComplete }: Props) {
@@ -251,14 +252,16 @@ export function MatchingQuestion({ question, disabled, onComplete }: Props) {
   })}</div>{message && <p className="feedback warning-feedback">{message}</p>}{!disabled && <button id="check-button" onClick={check} type="button">Sprawdź</button>}</div>;
 }
 
-export function LlmQuestion({ question, disabled, onComplete }: Props) {
+export function LlmQuestion({ question, quizCategory, disabled, onComplete }: LlmQuestionProps) {
   const [answer, setAnswer] = useState("");
   const [message, setMessage] = useState("");
   const [checking, setChecking] = useState(false);
+  const evaluationProfile = quizCategory === "english" ? "english" : "default";
+  const maximumPoints = getQuestionMaxPoints(question, quizCategory);
   const check = async () => {
     if (!answer.trim()) { setMessage("Wpisz odpowiedź."); return; }
     setChecking(true); setMessage("");
-    try { const result = await checkAnswerWithLlm(question, answer.trim()); const points = Math.max(0, Math.min(Number(result.points) || 0, 1)); onComplete({ isCorrect: points === 1, explanation: result.feedback, earnedPoints: points, maximumPoints: 1 }); }
+    try { const result = await checkAnswerWithLlm(question, answer.trim(), evaluationProfile); const points = Math.max(0, Math.min(Number(result.points) || 0, maximumPoints)); onComplete({ isCorrect: points === maximumPoints, explanation: result.feedback, earnedPoints: points, maximumPoints, showExplanationWhenCorrect: true }); }
     catch (error) { setMessage(error instanceof Error ? error.message : "Nieznany błąd."); }
     finally { setChecking(false); }
   };
@@ -266,6 +269,7 @@ export function LlmQuestion({ question, disabled, onComplete }: Props) {
 }
 
 interface Props { question: QuizQuestion; disabled: boolean; onComplete: (feedback: QuizFeedback) => void; }
+interface LlmQuestionProps extends Props { quizCategory: string; }
 function placeItemAtIndex<T extends { id: string }>(
   items: readonly T[],
   sourceId: string,

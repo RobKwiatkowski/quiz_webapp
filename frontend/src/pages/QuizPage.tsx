@@ -121,7 +121,7 @@ export function QuizPage() {
   }
 
   const question = quiz.questions[session.currentQuestionIndex];
-  const maximumPoints = getQuestionMaxPoints(question);
+  const maximumPoints = getQuestionMaxPoints(question, quiz.category);
   const questionPosition = session.currentQuestionIndex + 1;
   const progress = Math.round((questionPosition / quiz.questions.length) * 100);
   const showFeedbackPanel = question.selection_type !== "map";
@@ -219,6 +219,7 @@ export function QuizPage() {
         <QuestionImage question={question} />
         <QuestionRenderer
           question={question}
+          quizCategory={quiz.category}
           selectedAnswerIndexes={session.selectedAnswerIndexes}
           openAnswers={session.openAnswers}
           fillAnswers={session.fillAnswers}
@@ -264,6 +265,7 @@ export function QuizPage() {
 
 interface QuestionRendererProps {
   question: QuizQuestion;
+  quizCategory: string;
   selectedAnswerIndexes: number[];
   openAnswers: string[];
   fillAnswers: string[];
@@ -281,7 +283,7 @@ function QuestionRenderer(props: QuestionRendererProps) {
   }
 
   if (props.question.selection_type === "open") {
-    return <OpenQuestion {...props} />;
+    return <OpenQuestion key={props.question.id} {...props} />;
   }
 
   if (props.question.selection_type === "fill") {
@@ -295,7 +297,7 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "order") return <OrderQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "century") return <CenturyQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "matching") return <MatchingQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} quizCategory={props.quizCategory} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "written_multiplication") return <WrittenMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
@@ -346,6 +348,7 @@ function OpenQuestion({ question, openAnswers, hasAnswered, onOpenAnswerChange, 
         <label key={`${question.id}-${slotIndex}`} className="open-answer-label">
           {slotCount > 1 ? `${slotIndex + 1}.` : "Twoja odpowiedź"}
           <input
+            autoFocus={slotIndex === 0}
             className="open-answer-slot-input"
             disabled={hasAnswered}
             type="text"
@@ -464,7 +467,9 @@ function FeedbackPanel({ feedback }: { feedback: QuizFeedback }) {
   const explanation = feedback.explanation.trim();
   if (!feedback.isCorrect && !explanation) return null;
 
-  const message = feedback.isCorrect ? "Dobrze" : explanation;
+  const message = feedback.isCorrect && !feedback.showExplanationWhenCorrect
+    ? "Dobrze"
+    : explanation;
 
   return (
     <motion.p

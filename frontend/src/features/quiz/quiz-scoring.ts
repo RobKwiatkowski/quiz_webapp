@@ -27,12 +27,15 @@ export function normalizeOpenAnswer(question: QuizQuestion, value: string): stri
     .replace(/[ąćęłńóśźż]/g, (character) => polishCharacters[character] ?? character);
 }
 
-export function getQuestionMaxPoints(question: QuizQuestion): number {
-  return 1;
+export function getQuestionMaxPoints(question: QuizQuestion, quizCategory?: string): number {
+  return question.selection_type === "llm" && quizCategory === "english" ? 3 : 1;
 }
 
 export function getQuizMaxPoints(quiz: Quiz): number {
-  return quiz.questions.reduce((total, question) => total + getQuestionMaxPoints(question), 0);
+  return quiz.questions.reduce(
+    (total, question) => total + getQuestionMaxPoints(question, quiz.category),
+    0,
+  );
 }
 
 export function getOpenAnswerPoints(question: QuizQuestion, rawValues: string[]): number {
@@ -83,8 +86,8 @@ export function getFinalGrade(score: number, maximum: number): string {
   const percentage = getScorePercentage(score, maximum);
 
   if (percentage < 30) return "1";
-  if (percentage <= 50) return "2";
-  if (percentage <= 75) return "3";
+  if (percentage < 50) return "2";
+  if (percentage < 70) return "3";
   if (percentage < 90) return "4";
   if (percentage <= 99) return "5";
   return "6";

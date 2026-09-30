@@ -550,6 +550,186 @@
         "Giza",
         "w Gizie"
       ]
+    },
+    {
+      "id": "q-319476dc",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "W 1922 roku odkryto grobowiec jednego z faraonów. Jaki to był faraon?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Tutenchamon",
+          "is_correct": true
+        },
+        {
+          "text": "Tentuchamon",
+          "is_correct": false
+        },
+        {
+          "text": "Tutenamon",
+          "is_correct": false
+        },
+        {
+          "text": "Tentuchamon",
+          "is_correct": false
+        },
+        {
+          "text": "Amon-ra",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b09568c3",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywamy to pismo?",
+      "selection_type": "open",
+      "explanation": "Są to hieroglify.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg?utm_source=pl.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "accepted_answers": [
+        "hieroglify",
+        "hieroglifami"
+      ]
+    },
+    {
+      "id": "q-1e5930c1",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Prace nad mumifikacją zwłok rozwinęły jaką dziedzinę w Egipcie?",
+      "selection_type": "single",
+      "explanation": "Mumifikacja pomogła Egipcjanom poznać tajemnice ludzkiego ciała, czyli rozwinąć medycynę.",
+      "answers": [
+        {
+          "text": "medycynę",
+          "is_correct": true
+        },
+        {
+          "text": "wojskowość",
+          "is_correct": false
+        },
+        {
+          "text": "religioznawstwo",
+          "is_correct": false
+        },
+        {
+          "text": "rolnictwo",
+          "is_correct": false
+        },
+        {
+          "text": "rzemiosło",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-15a0ed9a",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Dla jakiego faraona wzniesiono w Gizie najwyższą piramidę?",
+      "selection_type": "open",
+      "explanation": "Wzniesiono ją dla Cheopsa",
+      "accepted_answers": [
+        "Cheops",
+        "Cheopsa",
+        "dla Cheopsa"
+      ]
+    },
+    {
+      "id": "q-6746b401",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Co wykorzystali Egipcjanie do stworzenia swojego kalendarza (2 odp.)?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "cykl wylewów Nilu",
+          "is_correct": true
+        },
+        {
+          "text": "cykl wschodu i zachodu słońca",
+          "is_correct": false
+        },
+        {
+          "text": "obserwacje położenia gwiazdy Syriusz",
+          "is_correct": true
+        },
+        {
+          "text": "obserwacje ruchu planet na niebie w nocy",
+          "is_correct": false
+        },
+        {
+          "text": "czas trwania pór roku",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-bc2b4564",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jaka dziedzina została rozwinięta w Egipcie aby umożliwić stawianie gigantycznych budynków, np piramid?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "matematyka",
+          "is_correct": true
+        },
+        {
+          "text": "chemia",
+          "is_correct": false
+        },
+        {
+          "text": "medycyna",
+          "is_correct": false
+        },
+        {
+          "text": "wojskowość",
+          "is_correct": false
+        },
+        {
+          "text": "informatyka",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-e6f4d7c7",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jakie są egipskie symbole władzy?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "bicz",
+          "is_correct": true
+        },
+        {
+          "text": "laska pasterska",
+          "is_correct": true
+        },
+        {
+          "text": "miecz",
+          "is_correct": false
+        },
+        {
+          "text": "lasso",
+          "is_correct": false
+        },
+        {
+          "text": "karabin",
+          "is_correct": false
+        },
+        {
+          "text": "koło garncarskie",
+          "is_correct": false
+        },
+        {
+          "text": "trzcinowa laska z Nilu",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

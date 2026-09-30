@@ -470,7 +470,8 @@ function updateEditorType() {
   document.getElementById("hotspot-editor").classList.toggle("hidden", !isHotspot);
   document.getElementById("multi-slot-toggle").closest("label").classList.toggle("hidden", isLlm);
   document.getElementById("accepted-answer-title").textContent = isLlm ? "Odpowiedź wzorcowa dla AI" : "Poprawne odpowiedzi";
-  document.getElementById("explanation-label-text").textContent = isChoice && !isMap ? "Wyjaśnienie (opcjonalne)" : "Wyjaśnienie";
+  const isExplanationOptional = (isChoice && !isMap) || questionType.value === "true_false";
+  document.getElementById("explanation-label-text").textContent = isExplanationOptional ? "Wyjaśnienie (opcjonalne)" : "Wyjaśnienie";
   updateAnswerControls();
   updateOpenEditorMode();
   updateOrderItemControls();
@@ -830,7 +831,7 @@ function clearImagePreviewObjectUrl() {
 
 function validatePayload(payload) {
   if (!payload.text) return "Wpisz treść pytania.";
-  if (!["single", "multiple"].includes(payload.selection_type) && !payload.explanation) return "Wpisz wyjaśnienie.";
+  if (!["single", "multiple", "true_false"].includes(payload.selection_type) && !payload.explanation) return "Wpisz wyjaśnienie.";
   if (payload.context && !payload.context.text) return "Tekst źródłowy nie może być pusty.";
   if (payload.image && payload.image_upload) return "Wybierz link albo plik obrazka, nie oba naraz.";
   if ((payload.image || payload.image_upload) && !["single", "open"].includes(payload.selection_type)) {

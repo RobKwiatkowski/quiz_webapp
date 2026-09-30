@@ -214,12 +214,16 @@ export interface LlmEvaluation {
   feedback: string;
 }
 
+export type LlmEvaluationProfile = "default" | "english";
+
 export async function checkAnswerWithLlm(
   question: QuizQuestion,
   studentAnswer: string,
+  profile: LlmEvaluationProfile = "default",
 ): Promise<LlmEvaluation> {
   const { LLM_API_BASE_URL } = getRuntimeConfig();
-  const response = await fetch(`${LLM_API_BASE_URL}/check-answer`, {
+  const endpoint = profile === "english" ? "check-answer-english" : "check-answer";
+  const response = await fetch(`${LLM_API_BASE_URL}/${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

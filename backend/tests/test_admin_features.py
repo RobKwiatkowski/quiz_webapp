@@ -794,6 +794,26 @@ def test_single_question_without_explanation_is_valid(tmp_path):
     assert result.errors == []
 
 
+def test_true_false_question_without_explanation_is_valid(tmp_path):
+    data_dir = make_data_dir(tmp_path)
+    topic_path = data_dir / "chapter-1" / "topic_1.json"
+    topic_data = json.loads(topic_path.read_text(encoding="utf-8"))
+    topic_data["questions"][0] = {
+        "id": "q-existing-1",
+        "text": "Oceń prawdziwość zdań.",
+        "selection_type": "true_false",
+        "answers": [
+            {"text": "Pierwsze zdanie jest prawdziwe.", "is_correct": True},
+            {"text": "Drugie zdanie jest fałszywe.", "is_correct": False},
+        ],
+    }
+    write_json(topic_path, topic_data)
+
+    result = validate_chapter_dir(data_dir / "chapter-1", data_dir / "static")
+
+    assert result.errors == []
+
+
 def test_multi_slot_open_question_is_valid(tmp_path):
     data_dir = make_data_dir(tmp_path)
     topic_path = data_dir / "chapter-1" / "topic_1.json"

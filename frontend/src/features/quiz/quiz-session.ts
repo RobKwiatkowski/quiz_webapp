@@ -3,6 +3,7 @@ export interface QuizFeedback {
   explanation: string;
   earnedPoints: number;
   maximumPoints: number;
+  showExplanationWhenCorrect?: boolean;
 }
 
 export interface QuizSessionState {

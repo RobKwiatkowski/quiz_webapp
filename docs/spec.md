@@ -553,7 +553,7 @@ Fields:
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
 - `explanation`: feedback text shown after an incorrect answer; optional for
-  `single` and `multiple`, required for `true_false`, `open`, `llm`, `order`, `matching`,
+  `single`, `multiple`, and `true_false`, required for `open`, `llm`, `order`, `matching`,
   `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`,
   `timed_multiplication`, `timed_division`, and `operation_order`
 - `selection_type`: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`,
@@ -615,6 +615,7 @@ updated.
   "topic_id": "topic",
   "topic_title": "Topic title",
   "is_active": true,
+  "max_questions_per_quiz": null,
   "questions": []
 }
 ```
@@ -625,6 +626,9 @@ Fields:
 - `topic_title`: human-readable topic title
 - `is_active`: whether the topic participates in quiz assembly; defaults to
   `true` for backward compatibility when omitted
+- `max_questions_per_quiz`: optional positive integer limiting how many
+  questions from this topic may appear in one assembled quiz; omitted or `null`
+  means no topic-specific limit
 - `questions`: questions available for this topic; an existing topic may be
   temporarily empty after admin edits
 
@@ -687,11 +691,12 @@ For each chapter, the backend:
    - loads the topic file
    - removes questions whose `is_active` value is `false`, then shuffles the
      remaining questions
-   - takes the base quota from the shuffled topic list
+   - takes the base quota from the shuffled topic list without exceeding the
+     optional `max_questions_per_quiz` topic limit
    - keeps remaining topic questions as fallback questions for that topic
 6. If fewer than `target_question_count` questions were selected, the backend
    fills the missing slots from per-topic fallback questions while preserving
-   the `meta.json` topic order.
+   the `meta.json` topic order and topic-specific limits.
 7. The backend resolves generated templates, including concrete century years,
    unique written-multiplication factor pairs, exact written-division pairs,
    unique commutative multiplication-table pairs, and unique order-of-operations
@@ -811,6 +816,8 @@ Scores are point-based. Maximum points are derived from question structure:
 - the learner earns 1 point only when every statement is evaluated correctly
 - `answers` must contain at least two statements, including at least one true
   and one false statement
+- `explanation` is optional because the evaluated statements already show
+  which answers are correct and incorrect
 
 `open`:
 
@@ -835,8 +842,14 @@ Scores are point-based. Maximum points are derived from question structure:
 - the user writes a full-sentence answer
 - the answer is sent to the configured LLM evaluation service
 - the first `accepted_answers` item is sent as the reference answer
-- LLM points are used directly as the quiz score for the question, usually `0`, `0.5`, or `1`
-- the UI shows the LLM feedback and returned point count
+- LLM questions outside the English category use `/check-answer` and are worth
+  at most `1` point
+- LLM questions in the English category use `/check-answer-english` and are
+  graded from `0` to `3` points
+- LLM points are used directly as the quiz score for the question and are
+  clamped to the maximum supported by the selected evaluator
+- the UI shows the LLM feedback and returned point count, including feedback
+  for a fully correct answer
 
 `century`:
 
@@ -938,9 +951,9 @@ At the end of the quiz, the frontend shows:
 The school grade is selected from the rounded percentage:
 
 - `< 30%`: `1`
-- `>= 30%` and `<= 50%`: `2`
-- `>= 51%` and `<= 75%`: `3`
-- `>= 76%` and `<= 89%`: `4`
+- `>= 30%` and `<= 49%`: `2`
+- `>= 50%` and `<= 69%`: `3`
+- `>= 70%` and `<= 89%`: `4`
 - `>= 90%` and `<= 99%`: `5`
 - `100%`: `6`
 
@@ -1009,13 +1022,14 @@ The validator checks:
 - no duplicate topic files in `topics`
 - existence of every topic file referenced by `meta.json`
 - required `topic_id`, `topic_title`, and `questions` fields
+- optional positive integer or `null` `max_questions_per_quiz`
 - `questions` must be a list
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
-- required non-empty `explanation` on `true_false`, `open`, `llm`, `order`, `matching`,
+- required non-empty `explanation` on `open`, `llm`, `order`, `matching`,
   `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`, and
-  `timed_multiplication`, `timed_division`, and `operation_order` questions; optional `explanation` on `single` and
-  `multiple` questions
+  `timed_multiplication`, `timed_division`, and `operation_order` questions; optional `explanation` on `single`,
+  `multiple`, and `true_false` questions
 - valid `selection_type`
 - optional `source_text` structure
 - optional `context` structure
@@ -1112,6 +1126,7 @@ The current repository contains these chapter directories:
 - `backend/app/data/chapters/history-napoleon-rewolucja-francuska`
 - `backend/app/data/chapters/geography-maps-mvp`
 - `backend/app/data/chapters/geography-continents-maps`
+- `backend/app/data/chapters/english-one-big-family`
 - `backend/app/data/chapters/english-past-simple`
 - `backend/app/data/chapters/math-order-of-operations`
 

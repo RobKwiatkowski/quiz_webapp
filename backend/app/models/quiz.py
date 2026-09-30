@@ -367,12 +367,14 @@ class TopicFile(BaseModel):
         topic_id: Unique topic identifier inside a chapter.
         topic_title: Human-readable topic title.
         is_active: Whether questions from this topic may be included in a quiz.
+        max_questions_per_quiz: Optional cap for questions selected from this topic.
         questions: Questions available for this topic.
     """
 
     topic_id: str
     topic_title: str
     is_active: bool = True
+    max_questions_per_quiz: Optional[int] = Field(default=None, ge=1)
     questions: List[Question]
 
 

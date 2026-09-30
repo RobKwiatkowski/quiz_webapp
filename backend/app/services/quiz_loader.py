@@ -380,8 +380,10 @@ def build_quiz_from_chapter(chapter_dir: Path, difficulty: Difficulty = "easy") 
 
     Selection strategy:
     1. Compute equal per-topic quota from ``target_question_count``.
-    2. Shuffle each active topic and take quota-sized picks.
-    3. Backfill missing questions from leftovers, preserving topic order.
+    2. Shuffle each active topic and take quota-sized picks, respecting an
+       optional topic-level maximum.
+    3. Backfill missing questions from leftovers, preserving topic order and
+       topic-level maximums.
     4. Return selected questions grouped by ``meta.json`` topic order.
 
     Args:
@@ -415,27 +417,35 @@ def build_quiz_from_chapter(chapter_dir: Path, difficulty: Difficulty = "easy") 
 
     selected_by_topic = []
     leftovers_by_topic = []
+    topic_selection_limits = []
     selected_question_count = 0
 
     for _topic_filename, topic in active_topics:
         topic_questions = [question for question in topic.questions if question.is_active]
         random.shuffle(topic_questions)
 
-        selected_from_topic = topic_questions[:questions_per_topic]
-        leftover_from_topic = topic_questions[questions_per_topic:]
+        topic_selection_limit = topic.max_questions_per_quiz or len(topic_questions)
+        initial_pick_count = min(questions_per_topic, topic_selection_limit)
+        selected_from_topic = topic_questions[:initial_pick_count]
+        leftover_from_topic = topic_questions[initial_pick_count:]
 
         selected_by_topic.append(selected_from_topic)
         leftovers_by_topic.append(leftover_from_topic)
+        topic_selection_limits.append(topic_selection_limit)
         selected_question_count += len(selected_from_topic)
 
     while selected_question_count < meta.target_question_count:
         added_question = False
 
-        for topic_questions, leftover_questions in zip(selected_by_topic, leftovers_by_topic):
+        for topic_questions, leftover_questions, topic_selection_limit in zip(
+            selected_by_topic,
+            leftovers_by_topic,
+            topic_selection_limits,
+        ):
             if selected_question_count >= meta.target_question_count:
                 break
 
-            if leftover_questions:
+            if leftover_questions and len(topic_questions) < topic_selection_limit:
                 topic_questions.append(leftover_questions.pop(0))
                 selected_question_count += 1
                 added_question = True

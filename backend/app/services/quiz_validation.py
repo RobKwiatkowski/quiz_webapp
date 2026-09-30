@@ -798,8 +798,6 @@ def validate_question(
         warn_unexpected(question, result, context, ["accepted_answers", "answer_slots", "order_items", "matching_pairs"])
 
     elif selection_type == "true_false":
-        if not is_non_empty_string(explanation):
-            result.errors.append(f"{context}: explanation must be a non-empty string")
         validated_answers = validate_answers_structure(answers, result, context)
         if len(validated_answers) < 2:
             result.errors.append(f"{context}: true_false question must contain at least 2 statements")
@@ -1095,6 +1093,7 @@ def validate_topic_data(
     topic_id = data.get("topic_id")
     topic_title = data.get("topic_title")
     is_active = data.get("is_active", True)
+    max_questions_per_quiz = data.get("max_questions_per_quiz")
     questions = data.get("questions")
 
     if not is_non_empty_string(topic_id):
@@ -1109,6 +1108,15 @@ def validate_topic_data(
 
     if not isinstance(is_active, bool):
         result.errors.append(f"{topic_name}: is_active must be a boolean")
+
+    if max_questions_per_quiz is not None and (
+        isinstance(max_questions_per_quiz, bool)
+        or not isinstance(max_questions_per_quiz, int)
+        or max_questions_per_quiz <= 0
+    ):
+        result.errors.append(
+            f"{topic_name}: max_questions_per_quiz must be a positive integer or null"
+        )
 
     if not isinstance(questions, list):
         result.errors.append(f"{topic_name}: questions must be a list")
