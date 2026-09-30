@@ -518,6 +518,31 @@
           "right": "uznanie jej wieczystej neutralności"
         }
       ]
+    },
+    {
+      "id": "q-fc0d3f11",
+      "topic_id": "kongres-wiedenski",
+      "is_active": true,
+      "text": "Czym było \"sto dni Napoleona\"?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "okres od powrotu Napoleona z Elby aż do zesłania na Wyspę Świętej Heleny",
+          "is_correct": true
+        },
+        {
+          "text": "okres od powrotu Napoleona z Wyspy Świętej Heleny aż do zesłania na Elbę",
+          "is_correct": false
+        },
+        {
+          "text": "okres od przegranej bitwy pod Lipskiem aż do śmierci Napoleona",
+          "is_correct": false
+        },
+        {
+          "text": "okres od bitwy pod Lipskiem do bitwy pod Waterloo",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

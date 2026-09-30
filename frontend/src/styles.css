@@ -1069,6 +1069,10 @@ textarea {
   --subject-accent: #be185d;
 }
 
+.home-card-english {
+  --subject-accent: #2563eb;
+}
+
 .home-subject-label {
   color: var(--subject-accent, #0f766e);
   font-size: 0.82rem;

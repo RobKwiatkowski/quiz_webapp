@@ -1,6 +1,6 @@
 import type { QuizListItem } from "../../api/quiz-api";
 
-export type SubjectId = "history" | "geography" | "biology" | "polish" | "math";
+export type SubjectId = "history" | "geography" | "biology" | "polish" | "english" | "math";
 
 export interface SubjectConfig {
   id: SubjectId;
@@ -38,6 +38,13 @@ export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
     description: "Powtarzaj lektury, bohaterów i najważniejsze wydarzenia.",
     emptyText: "Brak dostępnych quizów z języka polskiego.",
     categories: ["polish"],
+  },
+  english: {
+    id: "english",
+    title: "Język angielski",
+    description: "Ćwicz gramatykę i słownictwo w krótkich, przejrzystych zadaniach.",
+    emptyText: "Brak dostępnych quizów z języka angielskiego.",
+    categories: ["english"],
   },
   math: {
     id: "math",

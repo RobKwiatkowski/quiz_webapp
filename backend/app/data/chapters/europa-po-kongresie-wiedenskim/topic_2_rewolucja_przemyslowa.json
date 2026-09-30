@@ -301,6 +301,68 @@
       "accepted_answers": [
         "kapitał"
       ]
+    },
+    {
+      "id": "q-57f19b70",
+      "topic_id": "rewolucja-przemyslowa",
+      "is_active": true,
+      "text": "W jakim kraju rozpoczęła się rewolucja przemysłowa?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Wielka Brytania",
+          "is_correct": true
+        },
+        {
+          "text": "Stany Zjednoczone",
+          "is_correct": false
+        },
+        {
+          "text": "Niemcy",
+          "is_correct": false
+        },
+        {
+          "text": "Francja",
+          "is_correct": false
+        },
+        {
+          "text": "Rosja",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-ce663dba",
+      "topic_id": "rewolucja-przemyslowa",
+      "is_active": true,
+      "text": "Które z tych wynalazków zostały wynalezione i używane w okresie rewolucji przemysłowej?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "koło garncarskie",
+          "is_correct": false
+        },
+        {
+          "text": "silnik parowy",
+          "is_correct": true
+        },
+        {
+          "text": "silnik odrzutowy",
+          "is_correct": false
+        },
+        {
+          "text": "silnik elektryczny",
+          "is_correct": true
+        },
+        {
+          "text": "silnik benzynowy",
+          "is_correct": false
+        },
+        {
+          "text": "statki żaglowe",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

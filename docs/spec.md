@@ -4,7 +4,7 @@
 
 Edu Quiz for Kids is a lightweight educational quiz application for home learning,
 designed for a child aged about 10-12. The first production version supports
-single-player school revision for history, geography, biology, Polish, and math, plus a
+single-player school revision for history, geography, biology, Polish, English, and math, plus a
 minimal single-admin authoring panel for editing JSON-backed questions.
 
 The application should be easy to run on a home server, including Raspberry Pi 3,
@@ -39,7 +39,7 @@ In scope:
 
 - subject menu and subject-specific quiz list pages
 - one quiz represents one school book chapter
-- history, geography, biology, Polish, and math use the same chapter/topic/question learning
+- history, geography, biology, Polish, English, and math use the same chapter/topic/question learning
   method
 - each playable chapter contains one or more topics; a newly created admin
   chapter may temporarily contain no topics
@@ -654,7 +654,7 @@ Fields:
 - `title`: title shown on the list and quiz pages
 - `description`: description shown in the UI
 - `category`: subject/category identifier; JSON-backed school subjects are
-  `history`, `geography`, `biology`, `polish`, and `math`
+  `history`, `geography`, `biology`, `polish`, `english`, and `math`
 - `age_group`: intended age group
 - `chapter_number`: optional positive integer displayed as the `Rozdział X` badge on
   the quiz card; omit it or set it to `null` to hide the badge
@@ -723,7 +723,7 @@ The frontend is responsible for:
 
 - showing the main subject menu
 - loading the quiz list
-- filtering history, geography, biology, Polish, and math quiz lists by chapter category
+- filtering history, geography, biology, Polish, English, and math quiz lists by chapter category
 - keeping one-shot LLM quizzes on the history section page
 - rendering generated written-multiplication questions with carry scratch fields,
   partial-product rows, place-value offsets, and a final result row
@@ -1112,6 +1112,7 @@ The current repository contains these chapter directories:
 - `backend/app/data/chapters/history-napoleon-rewolucja-francuska`
 - `backend/app/data/chapters/geography-maps-mvp`
 - `backend/app/data/chapters/geography-continents-maps`
+- `backend/app/data/chapters/english-past-simple`
 - `backend/app/data/chapters/math-order-of-operations`
 
 ## 15. UX
@@ -1147,7 +1148,7 @@ Enter works globally on the quiz screen:
 The admin interface is intentionally plain and functional:
 
 - it uses React/TypeScript while preserving the existing admin API contract
-- it starts with a subject selector for history, geography, biology, Polish, and math
+- it starts with a subject selector for history, geography, biology, Polish, English, and math
 - it starts with a chapter list, then a topic list, then questions for one topic
 - it supports creating chapters inside the currently selected subject by
   entering only a chapter name

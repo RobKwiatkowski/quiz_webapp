@@ -566,6 +566,7 @@ function getSubjectGenitive(section: string): string {
   if (section === "geography") return "geografii";
   if (section === "biology") return "biologii";
   if (section === "polish") return "języka polskiego";
+  if (section === "english") return "języka angielskiego";
   if (section === "math") return "matematyki";
   return "historii";
 }

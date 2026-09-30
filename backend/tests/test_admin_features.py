@@ -381,6 +381,7 @@ def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
         {"id": "geography", "title": "Geografia"},
         {"id": "biology", "title": "Biologia"},
         {"id": "polish", "title": "Język polski"},
+        {"id": "english", "title": "Język angielski"},
         {"id": "math", "title": "Matematyka"},
     ]
 
@@ -406,11 +407,13 @@ def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
     geography_chapters = client.get("/api/admin/chapters?subject=geography").json()
     biology_chapters = client.get("/api/admin/chapters?subject=biology").json()
     polish_chapters = client.get("/api/admin/chapters?subject=polish").json()
+    english_chapters = client.get("/api/admin/chapters?subject=english").json()
 
     assert [chapter["id"] for chapter in history_chapters] == ["chapter-1"]
     assert geography_chapters == [created]
     assert biology_chapters == []
     assert polish_chapters == []
+    assert english_chapters == []
 
 
 def test_chapter_number_can_be_set_or_cleared(tmp_path, monkeypatch):

@@ -30,6 +30,7 @@ SUPPORTED_SUBJECTS = {
     "geography": "Geografia",
     "biology": "Biologia",
     "polish": "Język polski",
+    "english": "Język angielski",
     "math": "Matematyka",
 }
 MATH_ONLY_SELECTION_TYPES = {

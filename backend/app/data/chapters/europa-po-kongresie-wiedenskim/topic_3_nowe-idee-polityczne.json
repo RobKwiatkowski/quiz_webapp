@@ -406,6 +406,106 @@
           "right": "Należy zaprowadzić nowy ład za pomocą rewolucji."
         }
       ]
+    },
+    {
+      "id": "q-7b68f559",
+      "topic_id": "nowe-idee-polityczne",
+      "is_active": true,
+      "text": "Ruch robotniczy zaistniał w wyniku:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "rozwoju przemysłu",
+          "is_correct": true
+        },
+        {
+          "text": "wybuchu wojen",
+          "is_correct": false
+        },
+        {
+          "text": "wybuchu epidemii",
+          "is_correct": false
+        },
+        {
+          "text": "rozbudowy armii narodowych",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-89b737ee",
+      "topic_id": "nowe-idee-polityczne",
+      "is_active": true,
+      "text": "Za co niektórzy myśliciele krytykowali liberalizm?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "za promowanie nierówności społecznych",
+          "is_correct": true
+        },
+        {
+          "text": "za doprowadzanie do wojen",
+          "is_correct": false
+        },
+        {
+          "text": "za nadmierny rozwój przemysłu i urbanizację",
+          "is_correct": false
+        },
+        {
+          "text": "za wyprowadzkę ludzi ze wsi do miast",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-63813179",
+      "topic_id": "nowe-idee-polityczne",
+      "is_active": true,
+      "text": "Z którą ideologią był związany Robert Owen?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "kapitalizm",
+          "is_correct": false
+        },
+        {
+          "text": "socjalizm",
+          "is_correct": true
+        },
+        {
+          "text": "liberalizm",
+          "is_correct": false
+        },
+        {
+          "text": "konserwatyzm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-c53909d7",
+      "topic_id": "nowe-idee-polityczne",
+      "is_active": true,
+      "text": "Jakie poglądy mieli zwolennicy liberalizmu czyli liberałowie (wybierz dwa)?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "krytykowali rządy absolutne",
+          "is_correct": true
+        },
+        {
+          "text": "popierali ustrój parlamentarny",
+          "is_correct": true
+        },
+        {
+          "text": "popierali monarchię",
+          "is_correct": false
+        },
+        {
+          "text": "krytykowali bogate mieszczaństwo",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

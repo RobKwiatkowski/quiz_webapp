@@ -9,16 +9,30 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
   geography: { label: "Mapy, miejsca i świat", accent: "home-card-geography" },
   biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
   polish: { label: "Lektury, język i opowieści", accent: "home-card-polish" },
+  english: { label: "Words, grammar and practice", accent: "home-card-english" },
   math: { label: "Liczby, działania i logika", accent: "home-card-math" },
 };
 
-const startImages = ["start_image_1.png", "start_image_2.png", "math_pixelart.png", "arsenal_fight.png"] as const;
+const subjectStartImages: Record<SubjectId, readonly string[]> = {
+  history: ["start_image_1.png", "start_image_2.png", "arsenal_fight.png", "history-hero.webp"],
+  geography: ["geography-hero.webp"],
+  biology: ["biology-hero.webp"],
+  polish: ["polish-hero.webp"],
+  english: ["polish-hero.webp"],
+  math: ["math_pixelart.png", "math-hero.webp"],
+};
+
+const allStartImages = Object.values(subjectStartImages).flat();
+
+function chooseStartImage(images: readonly string[]): string {
+  return images[Math.floor(Math.random() * images.length)];
+}
 
 export function App() {
   const subjectId = getSubjectFromPath(window.location.pathname);
   const isQuizPage = window.location.pathname.toLowerCase().endsWith("quiz.html");
   const isAdminPage = window.location.pathname.toLowerCase().startsWith("/admin");
-  const [startImage] = useState(() => startImages[Math.floor(Math.random() * startImages.length)]);
+  const [startImage] = useState(() => chooseStartImage(subjectId ? subjectStartImages[subjectId] : allStartImages));
 
   useEffect(() => {
     if (isQuizPage) {
