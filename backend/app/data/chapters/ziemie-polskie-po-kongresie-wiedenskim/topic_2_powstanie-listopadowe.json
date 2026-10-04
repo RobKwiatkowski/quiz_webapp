@@ -1,0 +1,694 @@
+{
+  "topic_id": "powstanie-listopadowe",
+  "topic_title": "Powstanie listopadowe",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-247f1975",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Kto przejął tron w Rosji po śmierci cara Aleksandra I?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Aleksander II",
+          "is_correct": false
+        },
+        {
+          "text": "Mikołaj I",
+          "is_correct": true
+        },
+        {
+          "text": "Włodimierz Lenin",
+          "is_correct": false
+        },
+        {
+          "text": "caryca Katarzyna",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-75dd9199",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Jak nazywamy kontrolę publikacji (np. książek) przed ich wydaniem?",
+      "selection_type": "open",
+      "explanation": "Jest to cenzura.",
+      "accepted_answers": [
+        "cenzura"
+      ]
+    },
+    {
+      "id": "q-80b07b70",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Co robił car Aleksander I łamiącego konstytucję?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "wprowadził pobór do wojska",
+          "is_correct": false
+        },
+        {
+          "text": "wprowadził cenzurę",
+          "is_correct": true
+        },
+        {
+          "text": "wprowadził tajną policję",
+          "is_correct": true
+        },
+        {
+          "text": "wprowadził Gestapo",
+          "is_correct": false
+        },
+        {
+          "text": "nałożył wysokie podatki na chłopów polskich",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-5d37e254",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Co car Aleksander zrobił z tzw. kaliszanami?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "nałożył na nich areszt domowy",
+          "is_correct": true
+        },
+        {
+          "text": "wtrącił do więzienia w Warszawskiej Cytadeli",
+          "is_correct": false
+        },
+        {
+          "text": "wysłał na Sybir",
+          "is_correct": false
+        },
+        {
+          "text": "nakazał ich egzekucję",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-przyczyny-pdf",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Zaznacz trzy przyczyny powstania listopadowego.",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "detronizacja Mikołaja I",
+          "is_correct": false
+        },
+        {
+          "text": "walka Rosjan z polskimi organizacjami patriotycznymi",
+          "is_correct": true
+        },
+        {
+          "text": "wprowadzenie języka rosyjskiego jako urzędowego w Królestwie Polskim",
+          "is_correct": false
+        },
+        {
+          "text": "łamanie konstytucji przez cara",
+          "is_correct": true
+        },
+        {
+          "text": "wprowadzenie Statutu organicznego",
+          "is_correct": false
+        },
+        {
+          "text": "informacje o zamiarze wysłania wojska polskiego do Belgii",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-pierwszy-dyktator-pdf",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Kto był pierwszym dyktatorem powstania listopadowego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Piotr Wysocki",
+          "is_correct": false
+        },
+        {
+          "text": "Józef Chłopicki",
+          "is_correct": true
+        },
+        {
+          "text": "Ignacy Prądzyński",
+          "is_correct": false
+        },
+        {
+          "text": "Walerian Łukasiński",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-czartoryski-pdf",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Jakie poglądy głosiło ugrupowanie emigracyjne, na którego czele stanął Adam Jerzy Czartoryski po upadku powstania listopadowego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Propagowało hasła ogólnoeuropejskiej rewolucji społecznej.",
+          "is_correct": false
+        },
+        {
+          "text": "Odwoływało się do rozwiązań ustrojowych Konstytucji 3 maja.",
+          "is_correct": true
+        },
+        {
+          "text": "Dążyło do odebrania szlachcie dominującej roli w społeczeństwie.",
+          "is_correct": false
+        },
+        {
+          "text": "Potępiało prowadzenie wszelkich działań narodowowyzwoleńczych.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-skutki-pdf",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Zaznacz trzy skutki powstania listopadowego.",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "wcielenie Rzeczypospolitej Krakowskiej do Rosji",
+          "is_correct": false
+        },
+        {
+          "text": "wprowadzenie Statutu organicznego",
+          "is_correct": true
+        },
+        {
+          "text": "otwarcie nowego uniwersytetu w Królestwie Polskim",
+          "is_correct": false
+        },
+        {
+          "text": "likwidacja armii i sejmu Królestwa Polskiego",
+          "is_correct": true
+        },
+        {
+          "text": "uwłaszczenie chłopów w zaborze rosyjskim",
+          "is_correct": false
+        },
+        {
+          "text": "budowa Cytadeli w Warszawie",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-organizacje-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Dopasuj informacje do właściwych organizacji.",
+      "selection_type": "matching",
+      "explanation": "Sprzysiężenie Podchorążych: D, E, F. Towarzystwo Patriotyczne: A, C. Towarzystwo Filomatów: B, G.",
+      "matching_pairs": [
+        {
+          "id": "d",
+          "left": "organizacja założona w szkole wojskowej",
+          "right": "Sprzysiężenie Podchorążych"
+        },
+        {
+          "id": "e",
+          "left": "walka o niepodległość Polski i opracowanie planu powstania",
+          "right": "Sprzysiężenie Podchorążych"
+        },
+        {
+          "id": "f",
+          "left": "członkowie tej organizacji byli inicjatorami powstania listopadowego",
+          "right": "Sprzysiężenie Podchorążych"
+        },
+        {
+          "id": "a",
+          "left": "założyciel organizacji po jej rozbiciu dożywotnio pozostał w więzieniu",
+          "right": "Towarzystwo Patriotyczne"
+        },
+        {
+          "id": "c",
+          "left": "dążenie do odbudowy państwa polskiego w granicach przedrozbiorowych",
+          "right": "Towarzystwo Patriotyczne"
+        },
+        {
+          "id": "b",
+          "left": "organizacja studencka, której celem było samokształcenie",
+          "right": "Towarzystwo Filomatów"
+        },
+        {
+          "id": "g",
+          "left": "działalność w Wilnie",
+          "right": "Towarzystwo Filomatów"
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-wielkopolska-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Do którego państwa należała większość Wielkopolski w okresie powstania listopadowego?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Królestwa Polskiego",
+          "is_correct": false
+        },
+        {
+          "text": "Cesarstwa Rosyjskiego",
+          "is_correct": false
+        },
+        {
+          "text": "Królestwa Pruskiego",
+          "is_correct": true
+        },
+        {
+          "text": "Cesarstwa Austriackiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-kaliszanie-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Jak nazywano grupę posłów opozycyjną wobec cara, której przewodzili bracia Niemojowscy?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "radomianami",
+          "is_correct": false
+        },
+        {
+          "text": "kaliszanami",
+          "is_correct": true
+        },
+        {
+          "text": "kielczanami",
+          "is_correct": false
+        },
+        {
+          "text": "łowiczanami",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-konstanty-romanow-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Który członek rodu Romanowów był naczelnym wodzem armii Królestwa Polskiego, a jego brat Mikołaj I zbrojnie stłumił powstanie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Aleksander I",
+          "is_correct": false
+        },
+        {
+          "text": "Konstanty",
+          "is_correct": true
+        },
+        {
+          "text": "Mikołaj I",
+          "is_correct": false
+        },
+        {
+          "text": "Aleksander II",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-zasieg-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Którego obszaru nie objęło powstanie listopadowe?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Litwy",
+          "is_correct": false
+        },
+        {
+          "text": "Wołynia i Podola",
+          "is_correct": false
+        },
+        {
+          "text": "Królestwa Polskiego",
+          "is_correct": false
+        },
+        {
+          "text": "Wielkiego Księstwa Poznańskiego",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-goszczynski-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Oceń, czy zdania o opisanej nocy listopadowej są prawdziwe.",
+      "selection_type": "true_false",
+      "context": {
+        "text": "Wkroczyliśmy wreszcie na Nowy Świat. [...] Weszliśmy jakby w pustkę, jakby w atmosferę grobu. Żadnego ruchu, żadnego życia; domy pozamykane, okna podobnież. Na próżno wołamy „do broni”, bijemy w drzwi i okiennice kolbami karabinów. Żaden głos, żaden ruch życia nie odpowiada. Smutek, oburzenie, w końcu pewna wściekłość opanowuje nasz oddział. Wchodzimy na Krakowskie Przedmieście. Oblicze i atmosfera ta sama.",
+        "source": "Seweryn Goszczyński, „Noc listopadowa”, w: Wiek XIX w źródłach, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 2002, s. 176."
+      },
+      "answers": [
+        {
+          "text": "Autor wspomnień był członkiem sprzysiężenia Piotra Wysockiego.",
+          "is_correct": true
+        },
+        {
+          "text": "Opisane wydarzenia rozegrały się w Królestwie Polskim.",
+          "is_correct": true
+        },
+        {
+          "text": "Mieszkańcy Krakowskiego Przedmieścia wsparli powstańców wzywających do walki.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-wybuch-miasto-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "W którym mieście wybuchło powstanie listopadowe?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Kraków",
+          "is_correct": false
+        },
+        {
+          "text": "Warszawa",
+          "is_correct": true
+        },
+        {
+          "text": "Wilno",
+          "is_correct": false
+        },
+        {
+          "text": "Poznań",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-lukasinski-organizacja-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Którą organizację założył Walerian Łukasiński?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Towarzystwo Patriotyczne",
+          "is_correct": true
+        },
+        {
+          "text": "Towarzystwo Filaretów",
+          "is_correct": false
+        },
+        {
+          "text": "Towarzystwo Filomatów",
+          "is_correct": false
+        },
+        {
+          "text": "Sprzysiężenie Podchorążych",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-wybuch-rok-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "W którym roku wybuchło powstanie listopadowe?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "1830",
+          "is_correct": true
+        },
+        {
+          "text": "1831",
+          "is_correct": false
+        },
+        {
+          "text": "1829",
+          "is_correct": false
+        },
+        {
+          "text": "1832",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-mickiewicz-organizacja-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "W której organizacji działał Adam Mickiewicz?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Towarzystwo Patriotyczne",
+          "is_correct": false
+        },
+        {
+          "text": "Towarzystwo Filomatów",
+          "is_correct": true
+        },
+        {
+          "text": "Sprzysiężenie Podchorążych",
+          "is_correct": false
+        },
+        {
+          "text": "Towarzystwo Rolnicze",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-uchwala-skutki-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Jakie były skutki przyjęcia przez sejm uchwały opisanej w tekście źródłowym?",
+      "selection_type": "llm",
+      "context": {
+        "text": "Długie cierpienia Nasze znane Światu całemu, przysięgą zaręczone przez dwóch Panujących, a pogwałcone tylekroć swobody, nawzajem i Naród Polski od wierności dziś Panującemu uwalniają. [...] Naród zatem Polski na Sejm zebrany oświadcza: iż jest niepodległym Ludem i że ma prawo temu Koronę Polską oddać, którego godnym jej uzna; po którym z pewnością będzie się mógł spodziewać, iż mu zaprzysiężonej wiary i zaprzysiężonych swobód święcie i bez uszczerbku dochowa.",
+        "source": "Uchwała o detronizacji Mikołaja I, w: Wiek XIX w źródłach, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 2002, s. 181."
+      },
+      "explanation": "Detronizacja Mikołaja I doprowadziła do wojny polsko-rosyjskiej. Po klęsce powstania nastąpiły represje wobec Polaków.",
+      "accepted_answers": [
+        "Detronizacja Mikołaja I doprowadziła do wojny polsko-rosyjskiej, a następnie do upadku powstania listopadowego i represji wobec Polaków."
+      ]
+    },
+    {
+      "id": "q-powstanie-uchwala-przyczyna-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Dlaczego sejm przyjął uchwałę opisaną w tekście źródłowym?",
+      "selection_type": "llm",
+      "context": {
+        "text": "Długie cierpienia Nasze znane Światu całemu, przysięgą zaręczone przez dwóch Panujących, a pogwałcone tylekroć swobody, nawzajem i Naród Polski od wierności dziś Panującemu uwalniają. [...] Naród zatem Polski na Sejm zebrany oświadcza: iż jest niepodległym Ludem i że ma prawo temu Koronę Polską oddać, którego godnym jej uzna; po którym z pewnością będzie się mógł spodziewać, iż mu zaprzysiężonej wiary i zaprzysiężonych swobód święcie i bez uszczerbku dochowa.",
+        "source": "Uchwała o detronizacji Mikołaja I, w: Wiek XIX w źródłach, oprac. M. Sobańska-Bondaruk, S.B. Lenard, Warszawa 2002, s. 181."
+      },
+      "explanation": "Przyczyną był brak porozumienia między carem a władzami polskimi po wybuchu powstania.",
+      "accepted_answers": [
+        "Przyczyną był brak porozumienia między carem a władzami polskimi powstałymi po wybuchu powstania listopadowego."
+      ]
+    },
+    {
+      "id": "q-powstanie-chronologia-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Ułóż wydarzenia powstania listopadowego w kolejności chronologicznej.",
+      "selection_type": "order",
+      "explanation": "Zdobycie Arsenału, detronizacja Mikołaja I, Olszynka Grochowska, Ostrołęka, zajęcie Warszawy.",
+      "order_items": [
+        {
+          "id": "arsenal",
+          "text": "zdobycie Arsenału przez powstańców",
+          "position": 1
+        },
+        {
+          "id": "detronizacja",
+          "text": "ogłoszenie detronizacji cara Mikołaja I",
+          "position": 2
+        },
+        {
+          "id": "olszynka",
+          "text": "bitwa o Olszynkę Grochowską",
+          "position": 3
+        },
+        {
+          "id": "ostroleka",
+          "text": "bitwa pod Ostrołęką",
+          "position": 4
+        },
+        {
+          "id": "warszawa",
+          "text": "zajęcie Warszawy przez Rosjan",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-mapa-terytoria-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Dopasuj numery na mapie do nazw terytoriów.",
+      "selection_type": "matching",
+      "image": "/static/images/history/powstanie-listopadowe-mapa-1815.png",
+      "explanation": "1: Królestwo Polskie, 2: Wielkie Księstwo Poznańskie, 3: Rzeczpospolita Krakowska.",
+      "matching_pairs": [
+        {
+          "id": "1",
+          "left": "1",
+          "right": "Królestwo Polskie"
+        },
+        {
+          "id": "2",
+          "left": "2",
+          "right": "Wielkie Księstwo Poznańskie"
+        },
+        {
+          "id": "3",
+          "left": "3",
+          "right": "Rzeczpospolita Krakowska"
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-podzial-1815-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Jaki był polityczny skutek podziału ziem polskich w 1815 roku?",
+      "selection_type": "llm",
+      "image": "/static/images/history/powstanie-listopadowe-mapa-1815.png",
+      "explanation": "Ziemie polskie znalazły się w granicach trzech państw. Nie istniało niepodległe państwo polskie.",
+      "accepted_answers": [
+        "Ziemie polskie znalazły się w granicach trzech odrębnych państw. Niektóre obszary miały ograniczoną autonomię, ale Polacy nie mieli niepodległego państwa."
+      ]
+    },
+    {
+      "id": "q-powstanie-mapa-obszar-1830-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Na którym terytorium zaznaczonym na mapie wybuchło powstanie w 1830 roku?",
+      "selection_type": "single",
+      "image": "/static/images/history/powstanie-listopadowe-mapa-1815.png",
+      "answers": [
+        {
+          "text": "Królestwo Polskie",
+          "is_correct": true
+        },
+        {
+          "text": "Wielkie Księstwo Poznańskie",
+          "is_correct": false
+        },
+        {
+          "text": "Rzeczpospolita Krakowska",
+          "is_correct": false
+        },
+        {
+          "text": "Galicja",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-szanse-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Które argumenty przemawiały za możliwością powodzenia powstania listopadowego?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "dobre wyszkolenie armii polskiej",
+          "is_correct": true
+        },
+        {
+          "text": "udział zawodowych żołnierzy",
+          "is_correct": true
+        },
+        {
+          "text": "duży talent dowódczy oficerów niższych rangą",
+          "is_correct": true
+        },
+        {
+          "text": "możliwości mobilizacyjne Polaków i szansa na zdobycie broni z garnizonów rosyjskich",
+          "is_correct": true
+        },
+        {
+          "text": "sprzeciw państw Świętego Przymierza wobec powstania",
+          "is_correct": false
+        },
+        {
+          "text": "brak programu reform, dzięki któremu do powstania dołączyliby chłopi",
+          "is_correct": false
+        },
+        {
+          "text": "błędy polskich dowódców, zwłaszcza najwyższego szczebla",
+          "is_correct": false
+        },
+        {
+          "text": "przewaga liczebna armii rosyjskiej",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-powstanie-trudnosci-test",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Które argumenty przemawiały za klęską powstania listopadowego?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "dobre wyszkolenie armii polskiej",
+          "is_correct": false
+        },
+        {
+          "text": "udział zawodowych żołnierzy",
+          "is_correct": false
+        },
+        {
+          "text": "duży talent dowódczy oficerów niższych rangą",
+          "is_correct": false
+        },
+        {
+          "text": "możliwości mobilizacyjne Polaków i szansa na zdobycie broni z garnizonów rosyjskich",
+          "is_correct": false
+        },
+        {
+          "text": "sprzeciw państw Świętego Przymierza wobec powstania",
+          "is_correct": true
+        },
+        {
+          "text": "brak programu reform, dzięki któremu do powstania dołączyliby chłopi",
+          "is_correct": true
+        },
+        {
+          "text": "błędy polskich dowódców, zwłaszcza najwyższego szczebla",
+          "is_correct": true
+        },
+        {
+          "text": "przewaga liczebna armii rosyjskiej",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}
