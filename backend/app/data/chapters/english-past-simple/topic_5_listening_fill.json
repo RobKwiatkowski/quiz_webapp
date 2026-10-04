@@ -1,0 +1,166 @@
+{
+  "topic_id": "listening-fill",
+  "topic_title": "Słuchanie – Past Simple",
+  "is_active": false,
+  "max_questions_per_quiz": 1,
+  "questions": [
+    {
+      "id": "ps-listening-01",
+      "is_active": true,
+      "text": "Yesterday I {{verb}} to {{place}}.",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-01.wav",
+      "spoken_text": "Yesterday I went to school.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "went"
+          ],
+          "options": []
+        },
+        {
+          "id": "place",
+          "accepted_answers": [
+            "school"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: Yesterday I went to school."
+    },
+    {
+      "id": "ps-listening-02",
+      "is_active": true,
+      "text": "She {{verb}} a new {{object}} yesterday.",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-02.wav",
+      "spoken_text": "She bought a new book yesterday.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "bought"
+          ],
+          "options": []
+        },
+        {
+          "id": "object",
+          "accepted_answers": [
+            "book"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: She bought a new book yesterday."
+    },
+    {
+      "id": "ps-listening-03",
+      "is_active": true,
+      "text": "We {{verb}} our {{people}} in town.",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-03.wav",
+      "spoken_text": "We saw our friends in town.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "saw"
+          ],
+          "options": []
+        },
+        {
+          "id": "people",
+          "accepted_answers": [
+            "friends"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: We saw our friends in town."
+    },
+    {
+      "id": "ps-listening-04",
+      "is_active": true,
+      "text": "Tom {{auxiliary}} {{verb}} football yesterday.",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-04.wav",
+      "spoken_text": "Tom didn't play football yesterday.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "auxiliary",
+          "accepted_answers": [
+            "didn't",
+            "didnt",
+            "did not"
+          ],
+          "options": []
+        },
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "play"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: Tom didn't play football yesterday."
+    },
+    {
+      "id": "ps-listening-05",
+      "is_active": true,
+      "text": "{{auxiliary}} Anna {{verb}} her grandma?",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-05.wav",
+      "spoken_text": "Did Anna visit her grandma?",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "auxiliary",
+          "accepted_answers": [
+            "Did"
+          ],
+          "options": []
+        },
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "visit"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: Did Anna visit her grandma?"
+    },
+    {
+      "id": "ps-listening-06",
+      "is_active": true,
+      "text": "They {{verb}} {{feeling}} after school.",
+      "selection_type": "listening_fill",
+      "audio": "/static/audio/english/past-simple/ps-listening-06.wav",
+      "spoken_text": "They were tired after school.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "verb",
+          "accepted_answers": [
+            "were"
+          ],
+          "options": []
+        },
+        {
+          "id": "feeling",
+          "accepted_answers": [
+            "tired"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Pełne zdanie: They were tired after school."
+    }
+  ]
+}

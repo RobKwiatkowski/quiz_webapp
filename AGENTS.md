@@ -59,6 +59,12 @@ Before finishing:
 - Keep the canonical skill in-repo at `skills/quiz-question-authoring/SKILL.md`.
 - If `quiz-question-authoring` is not listed in the current session skills, load `skills/quiz-question-authoring/SKILL.md` directly and follow it as mandatory instructions instead of failing the task.
 - If a global/user-level copy and the in-repo copy differ, prefer the in-repo copy.
+- For creating or editing prerecorded two-gap listening questions, also use
+  `skills/listening-fill-question-authoring/SKILL.md`.
+- Keep the canonical listening-question skill in-repo at
+  `skills/listening-fill-question-authoring/SKILL.md`. If it is not listed in
+  the current session skills, load it directly and follow it as mandatory
+  instructions.
 
 ## Python environment
 - On Windows, do not use `python` directly.

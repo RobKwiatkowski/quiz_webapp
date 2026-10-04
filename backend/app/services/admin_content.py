@@ -578,8 +578,15 @@ def normalize_admin_question(
             "source": str(hotspot_config.get("source", "")).strip(),
             "target_hotspot_id": str(hotspot_config.get("target_hotspot_id", "")).strip(),
         }
-    elif selection_type == "fill":
-        question["fill_mode"] = str(payload.get("fill_mode", "")).strip()
+    elif selection_type in {"fill", "listening_fill"}:
+        question["fill_mode"] = (
+            "open"
+            if selection_type == "listening_fill"
+            else str(payload.get("fill_mode", "")).strip()
+        )
+        if selection_type == "listening_fill":
+            question["audio"] = str(payload.get("audio", "")).strip()
+            question["spoken_text"] = str(payload.get("spoken_text", "")).strip()
         question["fill_blanks"] = [
             {
                 "id": str(blank.get("id", "")).strip(),

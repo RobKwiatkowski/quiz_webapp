@@ -22,6 +22,7 @@ export type SelectionType =
   | "hotspot"
   | "century"
   | "fill"
+  | "listening_fill"
   | "written_multiplication"
   | "written_division"
   | "timed_multiplication"
@@ -145,6 +146,8 @@ export interface QuizQuestion {
   source_text?: string | null;
   context?: QuestionContext | null;
   image?: string | null;
+  audio?: string | null;
+  spoken_text?: string | null;
   explanation?: string | null;
   selection_type: SelectionType;
   answers: Answer[];

@@ -560,7 +560,80 @@
         "Eufratem",
         "nad Eufratem"
       ]
+    },
+    {
+      "id": "q-image-china-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-china-city-street.png",
+      "explanation": "To Starożytne Chiny. Pomagają rozpoznać je drewniana architektura, dachy i stroje mieszkańców.",
+      "answers": [
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-image-egypt-city",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Którą starożytną cywilizację przedstawia obraz?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/ancient-egypt-nile-city-street.png",
+      "explanation": "To Starożytny Egipt. Pomagają rozpoznać go Nil, obeliski i wielka świątynia.",
+      "answers": [
+        {
+          "text": "Starożytny Egipt",
+          "is_correct": true
+        },
+        {
+          "text": "Mezopotamia",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytny Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Indie",
+          "is_correct": false
+        },
+        {
+          "text": "Starożytne Chiny",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "map-mesopotamia",
+      "topic_id": "miasta-panstwa-mezopotamii",
+      "text": "Wskaż na mapie Mezopotamię.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "mesopotamia"
+      },
+      "explanation": "Mezopotamia leżała między rzekami Tygrys i Eufrat."
     }
   ],
-  "is_active": false
+  "is_active": true
 }

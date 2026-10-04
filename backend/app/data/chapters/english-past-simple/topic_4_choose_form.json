@@ -1,19 +1,82 @@
 {
   "topic_id": "choose-form",
   "topic_title": "Wybór poprawnej formy",
-  "is_active": true,
+  "is_active": false,
+  "max_questions_per_quiz": 1,
   "questions": [
     {
       "id": "ps-choice-mean",
       "text": "What did this word ___ in the story?",
       "selection_type": "single",
       "answers": [
-        {"text": "mean", "is_correct": true},
-        {"text": "meant", "is_correct": false},
-        {"text": "did meant", "is_correct": false},
-        {"text": "means", "is_correct": false}
+        {
+          "text": "mean",
+          "is_correct": true
+        },
+        {
+          "text": "meant",
+          "is_correct": false
+        },
+        {
+          "text": "did meant",
+          "is_correct": false
+        },
+        {
+          "text": "means",
+          "is_correct": false
+        }
       ],
       "explanation": "Po „did” używamy formy podstawowej „mean”, a nie „meant”."
+    },
+    {
+      "id": "q-0add0b2c",
+      "topic_id": "choose-form",
+      "is_active": true,
+      "text": "I __ with my friends yesterday.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "speak",
+          "is_correct": false
+        },
+        {
+          "text": "spoke",
+          "is_correct": true
+        },
+        {
+          "text": "spook",
+          "is_correct": false
+        },
+        {
+          "text": "spoked",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-a2187df0",
+      "topic_id": "choose-form",
+      "is_active": true,
+      "text": "We __ very busy yesterday.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "were",
+          "is_correct": true
+        },
+        {
+          "text": "was",
+          "is_correct": false
+        },
+        {
+          "text": "been",
+          "is_correct": false
+        },
+        {
+          "text": "br",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

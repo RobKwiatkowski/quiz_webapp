@@ -21,6 +21,7 @@ ALLOWED_SELECTION_TYPES = {
     "hotspot",
     "century",
     "fill",
+    "listening_fill",
     "written_multiplication",
     "written_division",
     "timed_multiplication",
@@ -72,6 +73,27 @@ def validate_image_path(
         return
 
     result.errors.append(f"{context}: image must start with '/static/', 'http://', or 'https://'")
+
+
+def validate_audio_path(
+    audio_path: str,
+    result: ValidationResult,
+    context: str,
+    static_dir: Path,
+) -> None:
+    """Validates a local audio reference and checks that its file exists."""
+    if not audio_path.startswith("/static/"):
+        result.errors.append(f"{context}: audio must be a local path starting with '/static/'")
+        return
+
+    file_path = resolve_static_path(audio_path, static_dir).resolve()
+    static_root = static_dir.resolve()
+    if not file_path.is_relative_to(static_root):
+        result.errors.append(f"{context}: audio must stay inside /static/")
+    elif file_path.suffix.lower() not in {".wav", ".mp3", ".ogg", ".opus"}:
+        result.errors.append(f"{context}: audio must use wav, mp3, ogg, or opus format")
+    elif not file_path.is_file():
+        result.errors.append(f"{context}: audio file does not exist: {audio_path}")
 
 
 def resolve_static_path(static_reference: str, static_dir: Path) -> Path:
@@ -682,6 +704,8 @@ def validate_question(
     question_context = question.get("context")
     selection_type = question.get("selection_type")
     image = question.get("image")
+    audio = question.get("audio")
+    spoken_text = question.get("spoken_text")
     explanation = question.get("explanation")
     question_topic_id = question.get("topic_id")
     is_active = question.get("is_active", True)
@@ -928,6 +952,38 @@ def validate_question(
         if not is_non_empty_string(explanation):
             result.errors.append(f"{context}: explanation must be a non-empty string")
         validate_fill_blanks_structure(text, fill_mode, fill_blanks, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+            ],
+        )
+
+    elif selection_type == "listening_fill":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        if not is_non_empty_string(spoken_text):
+            result.errors.append(f"{context}: spoken_text must be a non-empty string")
+        elif len(spoken_text.rstrip(".!?").split()) > 6:
+            result.errors.append(f"{context}: spoken_text must contain at most 6 words")
+        if not is_non_empty_string(audio):
+            result.errors.append(f"{context}: audio must be a non-empty string")
+        else:
+            validate_audio_path(audio, result, context, static_dir)
+        if fill_mode != "open":
+            result.errors.append(f"{context}: listening_fill must use open fill_mode")
+        validate_fill_blanks_structure(text, fill_mode, fill_blanks, result, context)
+        if isinstance(fill_blanks, list) and len(fill_blanks) != 2:
+            result.errors.append(f"{context}: listening_fill must contain exactly 2 blanks")
         warn_unexpected(
             question,
             result,

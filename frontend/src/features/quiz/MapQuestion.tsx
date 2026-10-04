@@ -43,6 +43,8 @@ interface ViewBox {
 const geoJsonCache = new Map<string, Promise<GeoJsonData>>();
 const LINE_SELECTION_TOLERANCE_PX = 48;
 const LINE_AMBIGUITY_DELTA_PX = 2;
+const ANCIENT_CIVILIZATIONS_SOURCE = "/static/maps/ancient-civilizations-regions.geojson";
+const ANCIENT_WEST_IDS = new Set(["ancient_egypt", "ancient_israel", "mesopotamia"]);
 
 export function MapQuestion({ question, disabled, onComplete }: Props) {
   const [state, setState] = useState<
@@ -52,6 +54,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
   >({ status: "loading" });
   const [selectedFeatureId, setSelectedFeatureId] = useState<string | null>(null);
   const [selectionHint, setSelectionHint] = useState("");
+  const [westZoomed, setWestZoomed] = useState(false);
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   const config = question.map_config;
@@ -67,6 +70,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     setState({ status: "loading" });
     setSelectedFeatureId(null);
     setSelectionHint("");
+    setWestZoomed(false);
 
     Promise.all([
       loadMapGeoJson(config.source),
@@ -96,9 +100,20 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
     return <p className="map-status map-status-error">Nie udało się załadować mapy.</p>;
   }
 
-  const bounds = getGeoJsonBounds(state.geojson);
+  const isAncientMap = config.source === ANCIENT_CIVILIZATIONS_SOURCE && config.mode === "select" && interaction === "region";
+  const visibleGeojson = isAncientMap && westZoomed
+    ? { features: state.geojson.features?.filter((feature) => ANCIENT_WEST_IDS.has(getFeatureId(feature))) }
+    : state.geojson;
+  const bounds = getGeoJsonBounds(visibleGeojson);
+  if (isAncientMap && !westZoomed) {
+    bounds.minLatitude = Math.min(bounds.minLatitude, 5);
+    bounds.maxLatitude = Math.max(bounds.maxLatitude, 55);
+  }
   const viewBox = getMapViewBox(bounds);
   const targetFeature = state.geojson.features?.find((feature) => getFeatureId(feature) === config.target_feature_id);
+  const ancientVisibleFeatures = isAncientMap
+    ? state.geojson.features?.filter((feature) => ANCIENT_WEST_IDS.has(getFeatureId(feature)) === westZoomed) ?? []
+    : [];
 
   const selectFeature = (featureId: string) => {
     if (disabled || selectedFeatureId) return;
@@ -165,7 +180,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
 
   return (
     <div className={`map-question map-question-${config.mode}`}>
-      <div className="map-frame">
+      <div className={`map-frame ${isAncientMap ? "map-frame-ancient" : ""}`}>
         <svg
           ref={svgRef}
           className="map-svg"
@@ -188,7 +203,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
               const featureId = getFeatureId(feature);
               if (!featureId) return null;
               const isLineInteractionFeature = interaction === "line" && isAnswerLineFeature(feature);
-              const isSelectableRegion = interaction === "region" && config.mode === "select";
+              const isSelectableRegion = interaction === "region" && config.mode === "select" && !isAncientMap;
               const isTarget = featureId === config.target_feature_id;
               const isSelected = featureId === selectedFeatureId;
               const resultClass = selectedFeatureId
@@ -196,7 +211,7 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
                 : "";
               const className = isLineInteractionFeature
                 ? `map-line ${resultClass}`
-                : `${interaction === "line" ? getBackgroundClassName(feature) : "map-region"} ${config.mode === "identify" && isTarget ? "target" : ""} ${resultClass}`;
+                : `${interaction === "line" ? getBackgroundClassName(feature) : "map-region"} ${isAncientMap ? "map-region-static" : ""} ${config.mode === "identify" && isTarget ? "target" : ""} ${resultClass}`;
 
               return (
                 <MapLayerPath
@@ -215,7 +230,53 @@ export function MapQuestion({ question, disabled, onComplete }: Props) {
             })}
           </g>
         </svg>
+        {isAncientMap && westZoomed && (
+          <button className="map-zoom-back" type="button" onClick={() => setWestZoomed(false)}>
+            ← Cała mapa
+          </button>
+        )}
+        {isAncientMap && !westZoomed && (
+          <button
+            className={`map-marker map-marker-cluster ${selectedFeatureId && ANCIENT_WEST_IDS.has(config.target_feature_id) ? "correct" : selectedFeatureId && ANCIENT_WEST_IDS.has(selectedFeatureId) ? "incorrect" : ""}`}
+            type="button"
+            aria-label="Powiększ zachodnią część mapy"
+            style={getMarkerPosition([36, 31.5], bounds, viewBox)}
+            onClick={() => setWestZoomed(true)}
+          >
+            +
+          </button>
+        )}
+        {ancientVisibleFeatures.map((feature, index) => {
+          const featureId = getFeatureId(feature);
+          const markerCoordinates = getMarkerCoordinates(feature);
+          if (!featureId || !markerCoordinates) return null;
+          const isTarget = featureId === config.target_feature_id;
+          const isSelected = featureId === selectedFeatureId;
+          const resultClass = selectedFeatureId
+            ? isTarget ? "correct" : isSelected ? "incorrect" : "locked"
+            : "";
+          const number = westZoomed ? index + 1 : index + 4;
+          return (
+            <button
+              key={featureId}
+              className={`map-marker ${resultClass}`}
+              type="button"
+              aria-label={`Wybierz obszar ${number}`}
+              style={getMarkerPosition(markerCoordinates, bounds, viewBox)}
+              disabled={disabled || Boolean(selectedFeatureId)}
+              onClick={() => selectFeature(featureId)}
+            >
+              {number}
+            </button>
+          );
+        })}
       </div>
+      {isAncientMap && !westZoomed && !selectedFeatureId && (
+        <p className="map-selection-hint">Kliknij +, aby przybliżyć zachodnią część mapy.</p>
+      )}
+      {isAncientMap && selectedFeatureId && targetFeature && (
+        <p className="map-selection-result">Poprawny obszar: {getFeatureName(targetFeature)}.</p>
+      )}
       {selectionHint && <p className="map-selection-hint">{selectionHint}</p>}
       {interaction === "line" && selectedFeatureId && targetFeature && (
         <p className="map-selection-result">Poprawna linia: {getFeatureName(targetFeature)}.</p>
@@ -321,6 +382,21 @@ function getFeatureName(feature: GeoJsonFeature): string {
   if (typeof name === "string" && name.trim()) return name;
 
   return getFeatureId(feature);
+}
+
+function getMarkerCoordinates(feature: GeoJsonFeature): [number, number] | null {
+  const coordinates = feature.properties?.marker_coordinates;
+  return Array.isArray(coordinates)
+    && coordinates.length === 2
+    && typeof coordinates[0] === "number"
+    && typeof coordinates[1] === "number"
+    ? [coordinates[0], coordinates[1]]
+    : null;
+}
+
+function getMarkerPosition(coordinates: [number, number], bounds: Bounds, viewBox: ViewBox) {
+  const point = projectCoordinate(coordinates[0], coordinates[1], bounds, viewBox);
+  return { left: `${(point.x / viewBox.width) * 100}%`, top: `${(point.y / viewBox.height) * 100}%` };
 }
 
 function isAnswerLineFeature(feature: GeoJsonFeature): boolean {

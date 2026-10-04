@@ -2,6 +2,7 @@
   "topic_id": "questions",
   "topic_title": "Pytania",
   "is_active": true,
+  "max_questions_per_quiz": 1,
   "questions": [
     {
       "id": "ps-question-leave",

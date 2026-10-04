@@ -170,7 +170,7 @@ export function QuizPage() {
       return;
     }
 
-    if (question.selection_type === "fill") {
+    if (question.selection_type === "fill" || question.selection_type === "listening_fill") {
       if (session.fillAnswers.length !== question.fill_blanks.length || session.fillAnswers.some((answer) => !answer?.trim())) {
         setValidationMessage("Uzupełnij wszystkie luki.");
         return;
@@ -215,7 +215,11 @@ export function QuizPage() {
         <AnimatedProgressBar progress={progress} />
         <p className="question-progress-percent">{progress}%</p>
         <QuestionContext question={question} />
-        <h2 id="question-text">{question.selection_type === "fill" ? "Uzupełnij tekst." : question.text}</h2>
+        <h2 id="question-text">
+          {question.selection_type === "listening_fill"
+            ? "Posłuchaj i uzupełnij dwie luki."
+            : question.selection_type === "fill" ? "Uzupełnij tekst." : question.text}
+        </h2>
         <QuestionImage question={question} />
         <QuestionRenderer
           question={question}
@@ -252,7 +256,7 @@ export function QuizPage() {
         />
         {validationMessage && <p className="feedback warning-feedback">{validationMessage}</p>}
         {session.feedback && showFeedbackPanel && <FeedbackPanel feedback={session.feedback} />}
-        {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open" || question.selection_type === "fill") && (
+        {!session.hasAnswered && (question.selection_type === "multiple" || question.selection_type === "open" || question.selection_type === "fill" || question.selection_type === "listening_fill") && (
           <button id="check-button" type="button" onClick={handleCheck}>Sprawdź</button>
         )}
         {session.hasAnswered && (
@@ -287,7 +291,11 @@ function QuestionRenderer(props: QuestionRendererProps) {
   }
 
   if (props.question.selection_type === "fill") {
-    return <FillQuestion {...props} />;
+    return <FillQuestion key={props.question.id} {...props} />;
+  }
+
+  if (props.question.selection_type === "listening_fill") {
+    return <ListeningFillQuestion key={props.question.id} {...props} />;
   }
 
   if (props.question.selection_type === "true_false") {
@@ -400,6 +408,7 @@ function FillQuestion({ question, fillAnswers, hasAnswered, onFillAnswerChange, 
         return (
           <input
             aria-label={`Luka ${index + 1}`}
+            autoFocus={index === 0}
             className="fill-blank-input"
             disabled={hasAnswered}
             key={blank.id}
@@ -415,6 +424,25 @@ function FillQuestion({ question, fillAnswers, hasAnswered, onFillAnswerChange, 
           />
         );
       })}
+    </div>
+  );
+}
+
+function ListeningFillQuestion(props: QuestionRendererProps) {
+  const { question } = props;
+  const audioUrl = question.audio
+    ? `${window.CONFIG?.API_BASE_URL ?? ""}${question.audio}`
+    : "";
+
+  return (
+    <div className="listening-fill-question">
+      <div className="listening-audio-panel">
+        <span aria-hidden="true" className="listening-audio-icon">🔊</span>
+        <audio aria-label="Nagranie zdania po angielsku" controls preload="metadata" src={audioUrl}>
+          Twoja przeglądarka nie obsługuje odtwarzania dźwięku.
+        </audio>
+      </div>
+      <FillQuestion {...props} />
     </div>
   );
 }

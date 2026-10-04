@@ -4,66 +4,6 @@
   "is_active": true,
   "questions": [
     {
-      "id": "q-image-egypt-city",
-      "topic_id": "starozytny-egipt",
-      "text": "Którą starożytną cywilizację przedstawia obraz?",
-      "selection_type": "single",
-      "image": "/static/images/history/first-civilizations/ancient-egypt-nile-city-street.png",
-      "explanation": "To Starożytny Egipt. Pomagają rozpoznać go Nil, obeliski i wielka świątynia.",
-      "answers": [
-        {
-          "text": "Starożytny Egipt",
-          "is_correct": true
-        },
-        {
-          "text": "Mezopotamia",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Izrael",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Indie",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Chiny",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q-image-china-city",
-      "topic_id": "starozytny-egipt",
-      "text": "Którą starożytną cywilizację przedstawia obraz?",
-      "selection_type": "single",
-      "image": "/static/images/history/first-civilizations/ancient-china-city-street.png",
-      "explanation": "To Starożytne Chiny. Pomagają rozpoznać je drewniana architektura, dachy i stroje mieszkańców.",
-      "answers": [
-        {
-          "text": "Starożytne Chiny",
-          "is_correct": true
-        },
-        {
-          "text": "Mezopotamia",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Egipt",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytny Izrael",
-          "is_correct": false
-        },
-        {
-          "text": "Starożytne Indie",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": "q-2ec49c83",
       "topic_id": "starozytny-egipt",
       "text": "Kiedy powstał Egipt?",
@@ -210,9 +150,9 @@
       "is_active": true,
       "text": "Jaka grupa społeczna była najliczniejsza w Egipcie?",
       "selection_type": "open",
-      "explanation": "Byli to rolnicy.",
+      "explanation": "Byli to chłopi.",
       "accepted_answers": [
-        "rolnicy"
+        "chłopi"
       ]
     },
     {
@@ -246,24 +186,10 @@
       "topic_id": "starozytny-egipt",
       "is_active": true,
       "text": "Jak nazywamy wierzenia w wielu bogów?",
-      "selection_type": "single",
-      "answers": [
-        {
-          "text": "politeizm",
-          "is_correct": true
-        },
-        {
-          "text": "monoteizm",
-          "is_correct": false
-        },
-        {
-          "text": "multiteizm",
-          "is_correct": false
-        },
-        {
-          "text": "parateizm",
-          "is_correct": false
-        }
+      "selection_type": "open",
+      "explanation": "Jest to politeizm",
+      "accepted_answers": [
+        "politeizm"
       ]
     },
     {
@@ -353,24 +279,28 @@
       "id": "q-egypt-mummification-sequence",
       "topic_id": "starozytny-egipt",
       "is_active": true,
-      "text": "Który ciąg prawidłowo przedstawia etapy mumifikacji i pochówku opisane w podręczniku?",
+      "text": "Jaki był pierwszy etap mumifikacji zwłok?",
       "selection_type": "single",
       "explanation": "Najpierw usuwano wnętrzności, następnie ciało balsamowano i owijano bandażami. Mumię składano w trumnie, którą umieszczano w sarkofagu, a ten w grobowcu.",
       "answers": [
         {
-          "text": "Balsamowanie → usunięcie wnętrzności → złożenie w grobowcu → owinięcie bandażami",
+          "text": "Balsamowanie",
           "is_correct": false
         },
         {
-          "text": "Usunięcie wnętrzności → balsamowanie → owinięcie bandażami → złożenie w trumnie i sarkofagu → umieszczenie w grobowcu",
+          "text": "Usunięcie wnętrzności",
           "is_correct": true
         },
         {
-          "text": "Owinięcie bandażami → balsamowanie → spalenie ciała → złożenie w sarkofagu",
+          "text": "Owinięcie bandażam",
           "is_correct": false
         },
         {
-          "text": "Usunięcie wnętrzności → owinięcie bandażami → zatopienie w Nilu → złożenie w grobowcu",
+          "text": "Ucięcie głowy",
+          "is_correct": false
+        },
+        {
+          "text": "Zanurzenie w Nilu",
           "is_correct": false
         }
       ]
@@ -397,74 +327,6 @@
         },
         {
           "text": "Był świątynią poświęconą bogu Słońca Ra.",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q-egypt-pyramid-construction-methods",
-      "topic_id": "starozytny-egipt",
-      "is_active": true,
-      "text": "Które sposoby wykorzystywali Egipcjanie podczas transportowania i ustawiania kamiennych bloków przy budowie piramid?",
-      "selection_type": "multiple",
-      "explanation": "Kamienne bloki przewożono Nilem, a następnie przemieszczano po rampach i podnoszono za pomocą dźwigni.",
-      "answers": [
-        {
-          "text": "Przewozili bloki Nilem na statkach.",
-          "is_correct": true
-        },
-        {
-          "text": "Przeciągali bloki po stopniowo podwyższanych rampach.",
-          "is_correct": true
-        },
-        {
-          "text": "Podnosili ciężkie bloki za pomocą dźwigni.",
-          "is_correct": true
-        },
-        {
-          "text": "Wciągali bloki żelaznymi dźwigami napędzanymi silnikami.",
-          "is_correct": false
-        },
-        {
-          "text": "Wylewali bloki z betonu bezpośrednio na kolejnych poziomach.",
-          "is_correct": false
-        },
-        {
-          "text": "Transportowali bloki wyłącznie na grzbietach zwierząt.",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": "q-egypt-afterlife-burial-practices",
-      "topic_id": "starozytny-egipt",
-      "is_active": true,
-      "text": "Które działania Egipcjan wynikały z wiary w życie pozagrobowe?",
-      "selection_type": "multiple",
-      "explanation": "Egipcjanie uważali, że po śmierci dusza nadal istnieje, dlatego dbali o zachowanie ciała i odpowiednio przygotowywali grobowiec.",
-      "answers": [
-        {
-          "text": "Starali się zachować ciało zmarłego w nienaruszonym stanie.",
-          "is_correct": true
-        },
-        {
-          "text": "Mumifikowali ciała faraonów i wysokich dostojników.",
-          "is_correct": true
-        },
-        {
-          "text": "Umieszczali mumie w sarkofagach składanych w grobowcach.",
-          "is_correct": true
-        },
-        {
-          "text": "Palili ciała zmarłych, aby uwolnić ich dusze.",
-          "is_correct": false
-        },
-        {
-          "text": "Wrzucali kosztowności zmarłego do Nilu.",
-          "is_correct": false
-        },
-        {
-          "text": "Pozostawiali ciała dostojników bez zabezpieczenia.",
           "is_correct": false
         }
       ]
@@ -730,6 +592,150 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-4a9778b5",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jaką funkcję miał faraon?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był władcą absolutnym",
+          "is_correct": true
+        },
+        {
+          "text": "był głównym sedzią",
+          "is_correct": true
+        },
+        {
+          "text": "był głównym kapłanem",
+          "is_correct": true
+        },
+        {
+          "text": "był zwierzchnikiem wojska",
+          "is_correct": true
+        },
+        {
+          "text": "był rolnikiem",
+          "is_correct": false
+        },
+        {
+          "text": "był urzędnikiem",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-7fac342a",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Która grupa społeczna prowadziła obserwacje astronomiczne i inne badania naukowe?",
+      "selection_type": "open",
+      "explanation": "Byli to kapłani.",
+      "accepted_answers": [
+        "kapłani"
+      ]
+    },
+    {
+      "id": "q-0f76d3ce",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Wybierz prawda/fałsz.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Żołnierze wywodzili się spośród chłopów i urzędników.",
+          "is_correct": true
+        },
+        {
+          "text": "Niewolnicy byli najlicznieszą grupą społeczną",
+          "is_correct": false
+        },
+        {
+          "text": "Kapłani doradzali faraonowi",
+          "is_correct": true
+        },
+        {
+          "text": "Urzędnicy nie potrafili pisać i czytać",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-69f981cc",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Jak nazywa się proces robienia mumi?",
+      "selection_type": "open",
+      "explanation": "Jest to mumifikacja.",
+      "accepted_answers": [
+        "mumifikacja"
+      ]
+    },
+    {
+      "id": "q-0343dfc3",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Na podstawie mapy powiedz jakie miasto leżało najbardziej na południu Egiptu?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/egipt-w-pierwszej-polowie-ii-tysiaclecia-p-n-e.png",
+      "answers": [
+        {
+          "text": "Giza",
+          "is_correct": false
+        },
+        {
+          "text": "Heliopolis",
+          "is_correct": false
+        },
+        {
+          "text": "Abu Simbel",
+          "is_correct": true
+        },
+        {
+          "text": "Teby",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-bb9fe0ad",
+      "topic_id": "starozytny-egipt",
+      "is_active": true,
+      "text": "Dlaczego Egipt rozwinął się wzdłuż Nilu?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "ponieważ wylewy Nilu nanosiły żyzny muł",
+          "is_correct": true
+        },
+        {
+          "text": "ponieważ wszędzie poza Nilem była pustynia",
+          "is_correct": true
+        },
+        {
+          "text": "ponieważ wszędzie indziej były inne cywilizacje",
+          "is_correct": false
+        },
+        {
+          "text": "ponieważ w Nilu były krokodyle które uważano za święte",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "map-ancient-egypt",
+      "topic_id": "starozytny-egipt",
+      "text": "Wskaż na mapie starożytny Egipt.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_egypt"
+      },
+      "explanation": "To przybliżony region starożytnego Egiptu, rozwijającego się nad Nilem."
     }
   ]
 }

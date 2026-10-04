@@ -508,6 +508,8 @@ Fields:
   "source_text": null,
   "context": null,
   "image": null,
+  "audio": null,
+  "spoken_text": null,
   "explanation": "Optional feedback explanation",
   "selection_type": "single",
   "answers": [],
@@ -552,12 +554,15 @@ Fields:
   source/context questions
 - `image`: `null`, a `/static/...` path, an `http://`/`https://` URL, or a list
   of those image references
+- `audio`: local `/static/...` audio asset used by `listening_fill`
+- `spoken_text`: source transcript used to generate a `listening_fill` asset;
+  it is limited to six whitespace-delimited words
 - `explanation`: feedback text shown after an incorrect answer; optional for
   `single`, `multiple`, and `true_false`, required for `open`, `llm`, `order`, `matching`,
-  `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`,
+  `hotspot`, `century`, `fill`, `listening_fill`, `written_multiplication`, `written_division`,
   `timed_multiplication`, `timed_division`, and `operation_order`
 - `selection_type`: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`,
-  `map`, `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`,
+  `map`, `hotspot`, `century`, `fill`, `listening_fill`, `written_multiplication`, `written_division`,
   `timed_multiplication`, `timed_division`, or `operation_order`
 - `answers`: answer options for `single` and `multiple` questions, or statements
   for `true_false` questions where `is_correct` means the statement is true
@@ -567,6 +572,8 @@ Fields:
 - `fill_mode`: `select` or `open` interaction for `fill` questions
 - `fill_blanks`: named gaps for `fill` questions, referenced in `text` using
   `{{id}}`
+- `listening_fill` uses the same named-gap structure as `fill`, but requires
+  `fill_mode: open`, exactly two gaps, a local `audio` asset, and `spoken_text`
 - `century_config`: source range for a generated `century` question
 - `century_year`: generated signed year returned in a quiz payload; negative is p.n.e.
 - `correct_century`: generated correct century number returned in a quiz payload
@@ -773,7 +780,7 @@ Scores are point-based. Maximum points are derived from question structure:
 - `true_false`: 1 point
 - one-field `open`: 1 point
 - multi-slot `open`: one point when every answer slot is correct
-- `llm`, `order`, `matching`, `map`, `hotspot`, `century`, `fill`,
+- `llm`, `order`, `matching`, `map`, `hotspot`, `century`, `fill`, `listening_fill`,
   `written_multiplication`, `written_division`, `timed_multiplication`, and
   `timed_division`, and `operation_order`: 1 point
 
@@ -796,12 +803,14 @@ Scores are point-based. Maximum points are derived from question structure:
 
 - the user clicks one answer
 - the answer is checked immediately
+- newly authored questions offer at least four distinct answer options
 - exactly one answer must have `is_correct: true`
 - after the answer is clicked, all answer buttons are locked
 
 `multiple`:
 
 - the user selects one or more answers
+- newly authored questions offer at least four distinct answer options
 - the answer is checked after clicking the localized check button
 - the result is correct only if the user selects all correct answers and no
   incorrect answers
@@ -866,10 +875,22 @@ Scores are point-based. Maximum points are derived from question structure:
   `Ameryka Północna leży na {{direction}} od Europy.`
 - in `select` mode every blank is a choice list; accepted values must appear in
   that blank's `options`
+- each newly authored `select` blank offers at least four distinct options
 - in `open` mode every blank is a text field and uses the same normalization as
   `open` questions
 - every gap must be filled and correct in its declared position to earn 1 point;
   a partial answer earns 0 points
+
+`listening_fill`:
+
+- the learner plays a prerecorded English sentence and types the two missing words
+- the interaction and scoring rules are the same as open-mode `fill`
+- the sentence is at most six words long and is stored in `spoken_text` so the
+  committed audio can be regenerated deterministically
+- audio is generated during development and deployed as a static asset; TTS is
+  not part of the backend or frontend runtime
+- the project generator is `backend/scripts/generate_listening_audio.py`; it uses
+  Kokoro through sherpa-onnx and defaults to speaker id 21 (`bf_emma`)
 
 `order`:
 
@@ -904,6 +925,18 @@ Scores are point-based. Maximum points are derived from question structure:
 - each Feature uses `id` or `properties.id` as the stable technical identifier
   and may use `properties.name` or `properties.name_pl` as a visible/source label
 - `select` mode lets the user answer by clicking one SVG-rendered region
+- the ancient-civilizations map uses one shared GeoJSON region layer with five
+  approximate educational regions: Egypt, Israel and Judah, Mesopotamia, the
+  Indus valley, and early China around the Yellow River; its GeoJSON background
+  covers northeast Africa through East Asia
+- that map initially shows one overview; a neutral `+` control zooms the same
+  SVG into Egypt, Israel and Judah, and Mesopotamia, with a control to return to
+  the overview. Zoom controls do not submit an answer
+- numbered map buttons provide at least 44 px click targets for visible regions;
+  the overview groups the three western regions behind the zoom control, while
+  the Indus valley and China can be selected directly. The correct region name
+  is revealed after answering, and the existing one-region, one-point scoring
+  remains unchanged
 - `select` mode may use `interaction: "line"` when the source GeoJSON contains
   answer LineString or MultiLineString features; in that case the user answers
   by clicking near a line. The frontend uses a generous pointer tolerance and,
@@ -1027,7 +1060,7 @@ The validator checks:
 - no duplicate `topic_id` values within a chapter
 - no duplicate question IDs within a topic or chapter
 - required non-empty `explanation` on `open`, `llm`, `order`, `matching`,
-  `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`, and
+  `hotspot`, `century`, `fill`, `listening_fill`, `written_multiplication`, `written_division`, and
   `timed_multiplication`, `timed_division`, and `operation_order` questions; optional `explanation` on `single`,
   `multiple`, and `true_false` questions
 - valid `selection_type`
@@ -1046,6 +1079,8 @@ The validator checks:
 - valid `century_config` for `century`
 - valid `fill_mode`, `fill_blanks`, and one matching `{{id}}` token per blank
   for `fill`
+- local existing audio, non-empty transcript of at most six words, open fill
+  mode, and exactly two gaps for `listening_fill`
 - valid factor limits from `10` to `9999` and a satisfiable combined limit of
   at most six factor digits for `written_multiplication`
 - valid divisor and quotient ranges that can produce an exact division with a
@@ -1057,6 +1092,7 @@ The validator checks:
 - valid concept family for `operation_order`
 - valid local SVG source, unique SVG hotspot IDs, and existing target for `hotspot`
 - local image path format and file existence, including every item in image lists
+- local listening audio path format and file existence
 
 The validator emits warnings for content that can still run but is likely
 inconsistent, such as fields that do not match the question type or a total
@@ -1073,7 +1109,7 @@ Rules:
 - each chapter must have `meta.json`
 - each topic is a separate JSON file referenced by `meta.json`
 - question IDs must be unique within the whole chapter
-- `true_false`, `open`, `llm`, `order`, `matching`, `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`, `timed_multiplication`, `timed_division`, and `operation_order` questions must include a
+- `true_false`, `open`, `llm`, `order`, `matching`, `hotspot`, `century`, `fill`, `listening_fill`, `written_multiplication`, `written_division`, `timed_multiplication`, `timed_division`, and `operation_order` questions must include a
   non-empty `explanation`; `single` and `multiple` questions may omit it
 - do not change the JSON schema without updating this specification, the backend
   models, and the validator
@@ -1086,7 +1122,10 @@ Rules:
   labels; right labels may repeat for category-style matching
 - century questions use `century_config`; a generated year must never be zero
 - fill questions use `fill_mode` and `fill_blanks`; include every `{{id}}` once
-  in the question text and provide at least two options for `select` blanks
+  in the question text; newly authored `select` blanks provide at least four
+  distinct options
+- listening-fill questions use two open blanks, a local static audio path, and a
+  source transcript of at most six words; generate audio before validation
 - written multiplication questions use `written_multiplication_config`; the
   backend generates fresh factors for every quiz attempt, and the combined
   number of factor digits never exceeds `max_total_digits`; easy mode also
@@ -1115,8 +1154,15 @@ Rules:
 - open questions should include all required variants in `accepted_answers`
 - multi-slot open questions should include all required variants in each
   `answer_slots[].accepted_answers`
-- closed questions should usually have four answers, but the model only requires
-  a valid answer list and the correct number of correct answers
+- when creating questions from a new test, check that each `single`, `multiple`,
+  or `map` question in `identify` mode has at least four distinct answer options,
+  and each `fill` blank in `select` mode has at least four distinct options
+- if four meaningful options are unavailable, use a suitable interaction without
+  a short choice list, such as `open` or `order`
+- `true_false` uses binary P/F decisions and is separate from this option rule
+- run `backend/scripts/check_choice_options.py` for new topic files, or use
+  `--question-id` to check only newly authored questions in an existing topic;
+  the regular validator continues to accept older content with shorter lists
 - prefer ASCII-safe `topic_id`, filenames, and question IDs
 
 The current repository contains these chapter directories:

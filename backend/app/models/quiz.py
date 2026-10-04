@@ -256,6 +256,8 @@ class Question(BaseModel):
         source_text: Optional source passage shown above the question.
         context: Optional plain text context passage with source attribution.
         image: Optional image path, URL, or list of image references.
+        audio: Optional local audio path for listening questions.
+        spoken_text: Source transcript used to generate listening audio.
         explanation: Optional explanation shown after an incorrect answer.
         selection_type: Interaction type.
         answers: Options for single/multiple and true/false questions.
@@ -280,9 +282,11 @@ class Question(BaseModel):
     source_text: Optional[str] = None
     context: Optional[QuestionContext] = None
     image: str | List[str] | None = None
+    audio: Optional[str] = None
+    spoken_text: Optional[str] = None
     explanation: Optional[str] = None
     selection_type: Literal[
-        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill", "written_multiplication", "written_division", "timed_multiplication", "timed_division", "operation_order"
+        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill", "listening_fill", "written_multiplication", "written_division", "timed_multiplication", "timed_division", "operation_order"
     ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)

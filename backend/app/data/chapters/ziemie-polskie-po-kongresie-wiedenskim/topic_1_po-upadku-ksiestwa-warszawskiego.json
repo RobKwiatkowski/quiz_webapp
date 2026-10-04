@@ -1,7 +1,7 @@
 {
   "topic_id": "po-upadku-ksiestwa-warszawskiego",
   "topic_title": "Po upadku Księstwa Warszawskiego",
-  "is_active": false,
+  "is_active": true,
   "questions": [
     {
       "id": "q-eb7252f7",
@@ -228,6 +228,319 @@
         },
         {
           "text": "decydowanie o polityce zagranicznej przez polskiego ministra",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b095029a",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jak nazywał się car z którym Królestwo Polskie było związane unią personalną?",
+      "selection_type": "open",
+      "explanation": "Był to car Aleksander I",
+      "accepted_answers": [
+        "Aleksander I"
+      ]
+    },
+    {
+      "id": "q-7021bb2e",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jak inaczej nazywano Królestwo Polskie?",
+      "selection_type": "open",
+      "explanation": "Nazywano Kongresówką",
+      "accepted_answers": [
+        "Kongresówka"
+      ]
+    },
+    {
+      "id": "q-f9e06f58",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jaki status w prusach miało Wielkie Księstwo Poznańskie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "autonomii",
+          "is_correct": false
+        },
+        {
+          "text": "protektoratu",
+          "is_correct": true
+        },
+        {
+          "text": "enklawy",
+          "is_correct": false
+        },
+        {
+          "text": "wolnego miasta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-e5a5acd8",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jakie języki były urzędowe w Wielkim Księstwie Poznańskim?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "polski",
+          "is_correct": true
+        },
+        {
+          "text": "niemiecki",
+          "is_correct": true
+        },
+        {
+          "text": "rosyjski",
+          "is_correct": false
+        },
+        {
+          "text": "francuski",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f39a3702",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Jaki był język urzędowy w Królestwie Polskim po jego utworzeniu?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "polski",
+          "is_correct": true
+        },
+        {
+          "text": "rosyjski",
+          "is_correct": false
+        },
+        {
+          "text": "niemiecki",
+          "is_correct": false
+        },
+        {
+          "text": "francuski",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-4ac5f378",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Rzeczpospolita Krakowska była protektoratem czyli:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "pod kontrolą Królestwa Polskiego",
+          "is_correct": false
+        },
+        {
+          "text": "pod kontrolą trzech zaborców",
+          "is_correct": true
+        },
+        {
+          "text": "pod kontrolą Prus",
+          "is_correct": false
+        },
+        {
+          "text": "pod kontrolą Rosji",
+          "is_correct": false
+        },
+        {
+          "text": "pod kontrolą Rosji i Prus",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-7b33365f",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Kim był Franciszek Ksawery Duchnicki-Lubecki?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "ministrem przemysłu",
+          "is_correct": false
+        },
+        {
+          "text": "ministrem finansów",
+          "is_correct": false
+        },
+        {
+          "text": "ministrem skarbu",
+          "is_correct": true
+        },
+        {
+          "text": "ministrem obrony narodowej",
+          "is_correct": false
+        },
+        {
+          "text": "ministrem edukacji",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-798db5a7",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Gdzie żył Franciszek Ksawery Duchnicki-Lubecki?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "w Królestwie Polskim",
+          "is_correct": true
+        },
+        {
+          "text": "w Wielkim Księstwie Poznańskim",
+          "is_correct": false
+        },
+        {
+          "text": "w Rzeczpospolitej Krakowskiej",
+          "is_correct": false
+        },
+        {
+          "text": "w Królestwie Rosyjskim",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-0d3b1b6a",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Poznań leżał w:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Królestwie Polskim",
+          "is_correct": false
+        },
+        {
+          "text": "Królestwie Rosyjskim",
+          "is_correct": false
+        },
+        {
+          "text": "Wielkim Księstwie Wielkopolskim",
+          "is_correct": true
+        },
+        {
+          "text": "w Królestwie Pruskim",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-37885235",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Z kim sąsiadowało Królestwo Polskie na południu?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Rzeczpospolitą Krakowską",
+          "is_correct": true
+        },
+        {
+          "text": "Cesarstwem Austriackim",
+          "is_correct": true
+        },
+        {
+          "text": "Królestwem Pruskim",
+          "is_correct": false
+        },
+        {
+          "text": "Cesarstwem Rosyjskim",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-1657ba55",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co jest prawdą/fałszem o Królestwie Polskim?",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "miało dostęp do morza",
+          "is_correct": false
+        },
+        {
+          "text": "obejmowało Łódzki Okręg Przemysłowy",
+          "is_correct": true
+        },
+        {
+          "text": "nie miało górnictwa",
+          "is_correct": false
+        },
+        {
+          "text": "gospodarka opierała się na rolnictwie",
+          "is_correct": true
+        },
+        {
+          "text": "obejmowało również Górny Śląsk",
+          "is_correct": false
+        },
+        {
+          "text": "chłopi mieli wolność osobistą",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-877b983c",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co stanowiło władze wykonawczą w Królestwie Polskim?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "sejm",
+          "is_correct": false
+        },
+        {
+          "text": "senat",
+          "is_correct": false
+        },
+        {
+          "text": "car",
+          "is_correct": true
+        },
+        {
+          "text": "Rada Administracyjna",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-53609624",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Co stanowiło władze ustawodawcząw Królestwie Polskim?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "sejm",
+          "is_correct": true
+        },
+        {
+          "text": "senat",
+          "is_correct": false
+        },
+        {
+          "text": "car",
+          "is_correct": false
+        },
+        {
+          "text": "Rada Administracyjna",
           "is_correct": false
         }
       ]

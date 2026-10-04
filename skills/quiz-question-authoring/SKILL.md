@@ -36,6 +36,13 @@ Before editing, read:
 # Authoring rules
 - single: exactly 1 correct answer
 - multiple: at least 2 correct answers
+- When authoring questions from a new test, check that every `single`,
+  `multiple`, and `map` question in `identify` mode has at least four distinct
+  answer options. Apply the same check to each `fill` blank in `select` mode.
+  `true_false` uses a separate P/F interaction.
+- If the source gives fewer than four meaningful options, propose additional
+  distractors for review or use a suitable interaction without a short choice
+  list. Never add a placeholder option solely to reach four.
 - open: accepted_answers must be non-empty
 - For open questions, include natural accepted answer variants a child may type.
   For dates, include both bare dates and phrased forms, for example `1795` and
@@ -49,8 +56,11 @@ Before editing, read:
 When editing files:
 1. update the correct topic JSON
 2. preserve valid formatting
-3. report what was added or changed
-4. run the validator if available
+3. run `backend/scripts/check_choice_options.py` on new topic files, or pass
+   `--question-id` for each newly authored question in an existing topic file;
+   use the bundled Python runtime in Codex
+4. report what was added or changed
+5. run the validator if available
 
 # Interaction mode
 When creating quiz questions, use a clarification-first workflow.
