@@ -1,0 +1,433 @@
+{
+  "topic_id": "w-starozytnym-izraelu",
+  "topic_title": "W starożytnym Izraelu",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-94b9ef40",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak inaczej nazywamy Izraelitów?",
+      "selection_type": "open",
+      "explanation": "Nazywamy ich Żydami.",
+      "accepted_answers": [
+        "Żydzi",
+        "Żydami"
+      ]
+    },
+    {
+      "id": "q-8d7c8248",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Ułóż słowa związane z Izraelem w kolejności chronologicznej",
+      "selection_type": "order",
+      "explanation": "Opuszczenie Mezopotamii, Dotarcie do Kanaan wraz z Abrahamem, Opuszczenie Palestyny, Niewola Egipska, Dotarcie do Kanaan z Mojżeszem, Rządy Dawida i Salomona, Niewola Babilońska, Upadek Babilonii, Powrót do Palestyny i najazd Rzymian, Wypędzenie Żydów z Palestyny przez Rzymian",
+      "order_items": [
+        {
+          "id": "opuszczenie-mezopotamii",
+          "text": "Opuszczenie Mezopotamii",
+          "position": 1
+        },
+        {
+          "id": "dotarcie-do-kanaan-wraz-z-mojzeszem",
+          "text": "Dotarcie do Kanaan wraz z Abrahamem",
+          "position": 2
+        },
+        {
+          "id": "opuszczenie-palestyny",
+          "text": "Opuszczenie Palestyny",
+          "position": 3
+        },
+        {
+          "id": "niewola-egipska",
+          "text": "Niewola Egipska",
+          "position": 4
+        },
+        {
+          "id": "dotarcie-do-kanaan-z-mojzeszem",
+          "text": "Dotarcie do Kanaan z Mojżeszem",
+          "position": 5
+        },
+        {
+          "id": "rzady-dawida-i-salomona",
+          "text": "Rządy Dawida i Salomona",
+          "position": 6
+        },
+        {
+          "id": "niewola-babilonska",
+          "text": "Niewola Babilońska",
+          "position": 7
+        },
+        {
+          "id": "wypedzenie-zydow-z-palestyny-przez-rzymian",
+          "text": "Wypędzenie Żydów z Palestyny przez Rzymian",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "id": "q-a34b8a14",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jakie tereny obejmowała Palestyna?",
+      "selection_type": "llm",
+      "explanation": "Obejmowała wąski pas ziemi między rzeką Jordan a wybrzeżem Morza Śródziemnego.",
+      "accepted_answers": [
+        "Obejmowała wąski pas ziemi między rzeką Jordan a wybrzeżem Morza Śródziemnego.",
+        "Teren między rzeką Jordan i Morzem Śródziemnym."
+      ]
+    },
+    {
+      "id": "q-f94f614a",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Religia Żydów to:",
+      "selection_type": "open",
+      "explanation": "Judaizm",
+      "accepted_answers": [
+        "Judaizm"
+      ]
+    },
+    {
+      "id": "q-2f7eb338",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak nazywamy wiarę w jednego boga?",
+      "selection_type": "open",
+      "explanation": "Jest to monoteizm.",
+      "accepted_answers": [
+        "monoteizm"
+      ]
+    },
+    {
+      "id": "q-f2d8386c",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak nazywa się pięć najważniejszych ksiąg świętej Biblii hebrajskiej?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "tora",
+          "is_correct": true
+        },
+        {
+          "text": "tara",
+          "is_correct": false
+        },
+        {
+          "text": "torora",
+          "is_correct": false
+        },
+        {
+          "text": "tera",
+          "is_correct": false
+        },
+        {
+          "text": "tura",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-9b27ba33",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Dziesięć Przykazań nazywanych też jest:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "decylogiem",
+          "is_correct": false
+        },
+        {
+          "text": "dekalogiem",
+          "is_correct": true
+        },
+        {
+          "text": "dendrologiem",
+          "is_correct": false
+        },
+        {
+          "text": "Kodeksem Hammurabiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-af6f907a",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Kto zgodnie z Biblią jest ojcem narodu Żydowskiego?",
+      "selection_type": "open",
+      "explanation": "Abraham",
+      "accepted_answers": [
+        "Abraham"
+      ]
+    },
+    {
+      "id": "q-7718bf60",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "W którym wieku Izraelici opuścili Egipt pod wodzą Mojżesza?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "XIII p.n.e",
+          "is_correct": true
+        },
+        {
+          "text": "XII p.n.e",
+          "is_correct": false
+        },
+        {
+          "text": "XI p.n.e",
+          "is_correct": false
+        },
+        {
+          "text": "X p.n.e",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-10e49860",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak Żydzi nazywają swojego boga?",
+      "selection_type": "open",
+      "explanation": "Jahwe",
+      "accepted_answers": [
+        "Jahwe"
+      ]
+    },
+    {
+      "id": "q-2555f9cf",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak nazywa się ten przedmiot?",
+      "selection_type": "single",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Menorah_0307.jpg?utm_source=pl.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "answers": [
+        {
+          "text": "melisa",
+          "is_correct": false
+        },
+        {
+          "text": "menora",
+          "is_correct": true
+        },
+        {
+          "text": "memora",
+          "is_correct": false
+        },
+        {
+          "text": "menisk",
+          "is_correct": false
+        },
+        {
+          "text": "meniska",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-ff9a9c10",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak nazywa się święta księga Żydów?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Biblia hebrajska",
+          "is_correct": true
+        },
+        {
+          "text": "Biblia babilońska",
+          "is_correct": false
+        },
+        {
+          "text": "Biblia izraelska",
+          "is_correct": false
+        },
+        {
+          "text": "Biblia judajska",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-c7c98242",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Przez około ile lat Żydzi nie mieli własnego państwa?",
+      "selection_type": "open",
+      "explanation": "Przez około 2 000 lat.",
+      "accepted_answers": [
+        "2 000",
+        "2000"
+      ]
+    },
+    {
+      "id": "q-84c01cc8",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Według wierzeń Żydowskich kto ma wyzwolić ich naród i utworzyć potężny Izrael?",
+      "selection_type": "open",
+      "explanation": "Mesjasz",
+      "accepted_answers": [
+        "Mesjasz"
+      ]
+    },
+    {
+      "id": "q-d2a14881",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Gdzie wg Biblii Mojżesz dostał dekalog?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "na górze Synaj",
+          "is_correct": true
+        },
+        {
+          "text": "w Egipcie",
+          "is_correct": false
+        },
+        {
+          "text": "nad Morzem Czerwonym",
+          "is_correct": false
+        },
+        {
+          "text": "w Jerozolimie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-4ee7ef05",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Jak nazywa się skrzynia w której umieszczano kamienne tablice z dekalogiem?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "arka przymierza",
+          "is_correct": true
+        },
+        {
+          "text": "tora",
+          "is_correct": false
+        },
+        {
+          "text": "sarkofag świętych",
+          "is_correct": false
+        },
+        {
+          "text": "kanaan",
+          "is_correct": false
+        },
+        {
+          "text": "skrzynia prawdy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-bf184623",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Na bazie mapy odpowiedz gdzie leży Egipt względem Izraela?",
+      "selection_type": "single",
+      "image": "/static/images/history/first-civilizations/mapa-wybrzeza-tyru-i-akki.png",
+      "answers": [
+        {
+          "text": "NE",
+          "is_correct": false
+        },
+        {
+          "text": "NW",
+          "is_correct": false
+        },
+        {
+          "text": "W",
+          "is_correct": false
+        },
+        {
+          "text": "SE",
+          "is_correct": false
+        },
+        {
+          "text": "S",
+          "is_correct": false
+        },
+        {
+          "text": "SW",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-51d995d4",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Na bazie mapy powiedz jakie morze było wewnątrz państwa Izrael?",
+      "selection_type": "open",
+      "explanation": "Morze Martwe",
+      "image": "/static/images/history/first-civilizations/mapa-wybrzeza-tyru-i-akki-2.png",
+      "accepted_answers": [
+        "Morze Martwe",
+        "Martwe"
+      ]
+    },
+    {
+      "id": "q-a6f91e51",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Na bazie mapy powiedz z jakiego miasta uciekali Izraelici.",
+      "selection_type": "open",
+      "explanation": "Z miasta Ramzes",
+      "image": "/static/images/history/first-civilizations/mapa-wybrzeza-tyru-i-akki-3.png",
+      "accepted_answers": [
+        "Ramzes"
+      ]
+    },
+    {
+      "id": "q-506dd2c8",
+      "topic_id": "w-starozytnym-izraelu",
+      "is_active": true,
+      "text": "Kto wybudował świątynię w Jerozolimie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Abraham",
+          "is_correct": false
+        },
+        {
+          "text": "Mojżesz",
+          "is_correct": false
+        },
+        {
+          "text": "król Dawid",
+          "is_correct": false
+        },
+        {
+          "text": "król Salomon",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "map-ancient-israel",
+      "topic_id": "w-starozytnym-izraelu",
+      "text": "Wskaż na mapie region starożytnego Izraela i Judy.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_israel"
+      },
+      "explanation": "To przybliżony region starożytnego Izraela i Judy nad wschodnim wybrzeżem Morza Śródziemnego."
+    }
+  ]
+}

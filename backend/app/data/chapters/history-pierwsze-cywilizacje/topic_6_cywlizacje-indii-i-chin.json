@@ -1,0 +1,449 @@
+{
+  "topic_id": "cywlizacje-indii-i-chin",
+  "topic_title": "Cywlizacje Indii i Chin",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-20296507",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Najstarsza cywilizacja w Azji Środkowej rozwinęła się w dolinie jakiej rzeki?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Gangesu",
+          "is_correct": false
+        },
+        {
+          "text": "Indusu",
+          "is_correct": true
+        },
+        {
+          "text": "Eufratu",
+          "is_correct": false
+        },
+        {
+          "text": "Tygrysu",
+          "is_correct": false
+        },
+        {
+          "text": "Jangcy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-82160c42",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jaki charakter miała cywilizacja doliny Indusu?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "wiejski",
+          "is_correct": false
+        },
+        {
+          "text": "miejski",
+          "is_correct": true
+        },
+        {
+          "text": "koczowniczy",
+          "is_correct": false
+        },
+        {
+          "text": "nie wiadomo",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-93315612",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Wybierz P/F w temacie cywilizacji doliny Indusu.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "w miastach była kanalizacja",
+          "is_correct": true
+        },
+        {
+          "text": "w miastach były wodociągi",
+          "is_correct": true
+        },
+        {
+          "text": "ich pismo jest obecnie łatwo tłumaczone",
+          "is_correct": false
+        },
+        {
+          "text": "w 2500 r. p.n.e. zostali podbici przez Arianów",
+          "is_correct": false
+        },
+        {
+          "text": "powstała w póżniej niż Izrael",
+          "is_correct": false
+        },
+        {
+          "text": "powstała wcześniej niż Egipt",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f6145ab9",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywał się lud który podbił dolinę Indusu?",
+      "selection_type": "open",
+      "explanation": "Byli to Ariowie",
+      "accepted_answers": [
+        "Ariowie"
+      ]
+    },
+    {
+      "id": "q-5d9ea7b1",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Co wprowadzili w społeczeństwie Ariowie w dolinie Indusu co przetrwało w Indiach do dzisiaj?",
+      "selection_type": "open",
+      "explanation": "Wprowadzili system kastowy.",
+      "accepted_answers": [
+        "system kastowy",
+        "kasty"
+      ]
+    },
+    {
+      "id": "q-4c89fd1a",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Co jest prawdziwe a co nie w temacie kast?",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "były dziedziczone",
+          "is_correct": true
+        },
+        {
+          "text": "zakazane były małżeństwa między kastami",
+          "is_correct": true
+        },
+        {
+          "text": "wytworzyło się około 1000 kast w Indiach",
+          "is_correct": false
+        },
+        {
+          "text": "system kast został usunięty we współczesnych Indiach",
+          "is_correct": false
+        },
+        {
+          "text": "osoby w jednej kaście mały ten sam zawód i podobne obyczaje",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-76f4f2d6",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Dopasuje nazwy bóstw hinduskich do ich roli.",
+      "selection_type": "matching",
+      "explanation": "Brahma - stwórca świata\nWisznu - bóg utrzymujący Świat przy życiu\nSziwa - bóg śmierci i zagłady",
+      "matching_pairs": [
+        {
+          "id": "brahma",
+          "left": "Brahma",
+          "right": "stwórca świata"
+        },
+        {
+          "id": "wisznu",
+          "left": "Wisznu",
+          "right": "bóg utrzymujący Świat przy życiu"
+        },
+        {
+          "id": "sziwa",
+          "left": "Sziwa",
+          "right": "bóg śmierci i zagłady"
+        }
+      ]
+    },
+    {
+      "id": "q-a6b40181",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywamy religię w której wierzy się w tych bogów?",
+      "selection_type": "open",
+      "explanation": "Jest to Hinduizm.",
+      "image": "/static/images/history/first-civilizations/trimurti-brahma-wisznu-i-siwa.png",
+      "accepted_answers": [
+        "Hinduizm"
+      ]
+    },
+    {
+      "id": "q-6690b9d0",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Co wprowadziła cywilizacja Indii do matematyki, wykorzystywane do teraz?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "system dziesiętny",
+          "is_correct": true
+        },
+        {
+          "text": "system dwójkowy",
+          "is_correct": false
+        },
+        {
+          "text": "system dwunastkowy",
+          "is_correct": false
+        },
+        {
+          "text": "podstawy geometrii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-59305edc",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Nad jakimi rzekami powstała cywilizacja chińska?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Huang He",
+          "is_correct": true
+        },
+        {
+          "text": "Jangcy",
+          "is_correct": true
+        },
+        {
+          "text": "Indus",
+          "is_correct": false
+        },
+        {
+          "text": "Ganges",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-61595b86",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Kiedy powstała cywilizacja chińska?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "ok. 4 tysięcy lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 3 tysięcy lat p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "ok. 2 tysięcy lat p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 1 tysiąca lat p.n.e.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2421b480",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Co głównie uprawiano w starożytnych Chinach?",
+      "selection_type": "open",
+      "explanation": "Uprawiano głównie ryż.",
+      "image": "/static/images/history/first-civilizations/chiny-ryz.png",
+      "accepted_answers": [
+        "ryż"
+      ]
+    },
+    {
+      "id": "q-696f845b",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Wybierz prawda/fałsz w temacie starożytnych Chin.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Chiny były na początku podzielone na wrogie królestwa",
+          "is_correct": true
+        },
+        {
+          "text": "Chiny zjednoczono w III wieku p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "Na czele państwa stanął wielki kapłan",
+          "is_correct": false
+        },
+        {
+          "text": "Największe zagrożenie stanowiły najazdy koczowników z południa",
+          "is_correct": false
+        },
+        {
+          "text": "Aby bronić Chin przed koczownikami wymudowano Wielki Mur Chiński",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-c8ead88d",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Daleki wschód - tak nazywamy fragment Azji który leży nad jakim oceanem?",
+      "selection_type": "open",
+      "explanation": "Nad Oceanem Spokojnym",
+      "accepted_answers": [
+        "Spokojnym"
+      ]
+    },
+    {
+      "id": "q-e8be282b",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Co wynaleźli Chińczycy?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "papier",
+          "is_correct": true
+        },
+        {
+          "text": "proch strzelniczy",
+          "is_correct": true
+        },
+        {
+          "text": "porcelanę",
+          "is_correct": true
+        },
+        {
+          "text": "igłę magnetyczną",
+          "is_correct": true
+        },
+        {
+          "text": "żagiel",
+          "is_correct": false
+        },
+        {
+          "text": "pismo klinowe",
+          "is_correct": false
+        },
+        {
+          "text": "katapultę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-69ddb1c6",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywała się ta osoba w Starożytnych Chinach?",
+      "selection_type": "open",
+      "explanation": "Jest to cesarz.",
+      "image": "/static/images/history/first-civilizations/cesarzchin.png",
+      "accepted_answers": [
+        "cesarz",
+        "cesarzem"
+      ]
+    },
+    {
+      "id": "q-9411a748",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Kiedy Ariowie najechali dolinę Indusu?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "ok. 2 500 lat p.n.e",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 2 000 lat p.n.e",
+          "is_correct": false
+        },
+        {
+          "text": "ok. 1 500 lat p.n.e",
+          "is_correct": true
+        },
+        {
+          "text": "ok. 1 000 lat p.n.e",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-0667a7e4",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywa się ten materiał którym handlowano w Chinach i był bardzo dochodowy?",
+      "selection_type": "open",
+      "explanation": "Jest to jedwab",
+      "image": "/static/images/history/first-civilizations/jedwab.png",
+      "accepted_answers": [
+        "jedwab"
+      ]
+    },
+    {
+      "id": "q-54867937",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywa się bardzo dochodowy szlak handlowy z Chin do Europy?",
+      "selection_type": "open",
+      "explanation": "Jest to Szlak Jedwabny lub Jedwabny Szlak",
+      "accepted_answers": [
+        "Szlak Jedwabny",
+        "Jedwabny Szlak"
+      ]
+    },
+    {
+      "id": "q-bb412e48",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywa się taka chińska świątynia?",
+      "selection_type": "open",
+      "explanation": "Jest to pagoda.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Horyu-ji09s3200.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "accepted_answers": [
+        "pagoda"
+      ]
+    },
+    {
+      "id": "map-ancient-indus",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Wskaż na mapie dolinę Indusu, gdzie rozwinęła się starożytna cywilizacja.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_indus"
+      },
+      "explanation": "Cywilizacja doliny Indusu rozwijała się na obszarze dzisiejszego Pakistanu, między innymi w Mohendżo-Daro i Harappie."
+    },
+    {
+      "id": "map-ancient-china",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Wskaż na mapie obszar starożytnych Chin.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/ancient-civilizations-regions.geojson",
+        "background_source": "/static/maps/ancient-civilizations-basemap.geojson",
+        "mode": "select",
+        "target_feature_id": "ancient_china"
+      },
+      "explanation": "Wczesne cywilizacje chińskie rozwijały się między innymi w dorzeczu Huang He."
+    }
+  ]
+}
