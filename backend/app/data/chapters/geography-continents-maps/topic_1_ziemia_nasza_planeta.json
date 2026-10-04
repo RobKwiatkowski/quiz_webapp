@@ -770,6 +770,90 @@
         }
       ],
       "explanation": "Afryka leży na południe od Europy."
+    },
+    {
+      "id": "geo-land-surface-share",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Jaką przybliżoną część powierzchni Ziemi zajmują lądy?",
+      "selection_type": "open",
+      "explanation": "Lądy zajmują około jednej trzeciej powierzchni Ziemi, a wody około dwóch trzecich.",
+      "accepted_answers": [
+        "1/3",
+        "około 1/3",
+        "ok. 1/3",
+        "jedna trzecia",
+        "jedną trzecią",
+        "około jednej trzeciej",
+        "30%",
+        "około 30%",
+        "ok. 30%"
+      ]
+    },
+    {
+      "id": "geo-continent-ocean-count",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Na Ziemi wyróżniamy {{continents}} kontynentów i {{oceans}} oceanów.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "continents", "accepted_answers": ["7", "siedem"]},
+        {"id": "oceans", "accepted_answers": ["5", "pięć", "piec"]}
+      ],
+      "explanation": "Wyróżniamy siedem kontynentów i pięć oceanów."
+    },
+    {
+      "id": "geo-largest-continent",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Który kontynent jest największy?",
+      "selection_type": "single",
+      "explanation": "Największym kontynentem jest Azja.",
+      "answers": [
+        {"text": "Azja", "is_correct": true},
+        {"text": "Afryka", "is_correct": false},
+        {"text": "Europa", "is_correct": false},
+        {"text": "Ameryka Północna", "is_correct": false},
+        {"text": "Ameryka Południowa", "is_correct": false},
+        {"text": "Australia", "is_correct": false},
+        {"text": "Antarktyda", "is_correct": false}
+      ]
+    },
+    {
+      "id": "geo-largest-ocean",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Który ocean jest największy?",
+      "selection_type": "single",
+      "explanation": "Największy jest Ocean Spokojny, nazywany też Pacyfikiem.",
+      "answers": [
+        {"text": "Ocean Spokojny", "is_correct": true},
+        {"text": "Ocean Atlantycki", "is_correct": false},
+        {"text": "Ocean Indyjski", "is_correct": false},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ]
+    },
+    {
+      "id": "geo-equator-is-parallel",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Czy równik jest równoleżnikiem czy południkiem?",
+      "selection_type": "open",
+      "explanation": "Równik jest równoleżnikiem o szerokości geograficznej 0°.",
+      "accepted_answers": ["równoleżnik", "równoleżnikiem", "to równoleżnik", "jest równoleżnikiem"]
+    },
+    {
+      "id": "geo-arctic-circle-continents",
+      "topic_id": "ziemia-nasza-planeta",
+      "text": "Przez które kontynenty przechodzi koło podbiegunowe północne? Zaznacz wszystkie poprawne odpowiedzi.",
+      "selection_type": "multiple",
+      "explanation": "Koło podbiegunowe północne przebiega przez Amerykę Północną, Europę i Azję.",
+      "answers": [
+        {"text": "Ameryka Północna", "is_correct": true},
+        {"text": "Europa", "is_correct": true},
+        {"text": "Azja", "is_correct": true},
+        {"text": "Ameryka Południowa", "is_correct": false},
+        {"text": "Afryka", "is_correct": false},
+        {"text": "Australia", "is_correct": false},
+        {"text": "Antarktyda", "is_correct": false}
+      ]
     }
   ],
   "is_active": true

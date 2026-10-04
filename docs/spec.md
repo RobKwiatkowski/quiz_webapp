@@ -900,6 +900,8 @@ Scores are point-based. Maximum points are derived from question structure:
 - items are checked after clicking the localized check button
 - the result is correct only if every item is in the exact position declared by
   `order_items[].position`
+- after checking, each item in its declared position is highlighted green and
+  labeled as correctly placed, even when the complete sequence is incorrect
 - `order_items` must contain at least two items
 - positions must be consecutive integers from `1` to the number of items
 - answer order is randomized before display

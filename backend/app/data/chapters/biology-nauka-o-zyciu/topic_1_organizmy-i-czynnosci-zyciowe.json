@@ -1,0 +1,165 @@
+{
+  "topic_id": "organizmy-i-czynnosci-zyciowe",
+  "topic_title": "Organizmy i czynności życiowe",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "bio-life-01-biology-scope",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Czym między innymi zajmuje się biologia?",
+      "selection_type": "single",
+      "explanation": "Biologia bada organizmy oraz ich funkcjonowanie i związki ze środowiskiem.",
+      "answers": [
+        {"text": "Wpływem światła na wzrost i rozwój roślin", "is_correct": true},
+        {"text": "Badaniem skał i minerałów", "is_correct": false},
+        {"text": "Ruchem ciał niebieskich", "is_correct": false},
+        {"text": "Wyznaczaniem kierunku północnego", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-life-02-ecology",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Jak nazywa się dziedzina biologii badająca zależności między organizmami a środowiskiem?",
+      "selection_type": "open",
+      "explanation": "Ekologia bada zależności między organizmami i ich środowiskiem.",
+      "accepted_answers": ["ekologia", "ekologią", "ekologie"]
+    },
+    {
+      "id": "bio-life-03-fields",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Połącz dziedzinę biologii z tym, czym się zajmuje.",
+      "selection_type": "matching",
+      "explanation": "Anatomia bada budowę wewnętrzną, botanika rośliny, zoologia zwierzęta, a fizjologia czynności życiowe.",
+      "matching_pairs": [
+        {"id": "anatomy", "left": "anatomia", "right": "budowa wewnętrzna organizmów"},
+        {"id": "botany", "left": "botanika", "right": "rośliny"},
+        {"id": "zoology", "left": "zoologia", "right": "zwierzęta"},
+        {"id": "physiology", "left": "fizjologia", "right": "czynności życiowe organizmów"}
+      ]
+    },
+    {
+      "id": "bio-life-04-nutrition",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Na czym polega odżywianie się organizmu?",
+      "selection_type": "single",
+      "explanation": "Odżywianie polega na dostarczaniu organizmowi składników pokarmowych.",
+      "answers": [
+        {"text": "Na dostarczaniu organizmowi składników pokarmowych", "is_correct": true},
+        {"text": "Na usuwaniu zbędnych substancji", "is_correct": false},
+        {"text": "Na zwiększaniu masy ciała", "is_correct": false},
+        {"text": "Na przemieszczaniu całego ciała", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-life-05-process-definitions",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Połącz czynność życiową z jej opisem.",
+      "selection_type": "matching",
+      "explanation": "Oddychanie uwalnia energię z pokarmu, wydalanie usuwa zbędne substancje, a rozmnażanie prowadzi do powstania potomstwa.",
+      "matching_pairs": [
+        {"id": "respiration", "left": "oddychanie", "right": "uwalnianie energii z pokarmu"},
+        {"id": "excretion", "left": "wydalanie", "right": "usuwanie zbędnych substancji"},
+        {"id": "reproduction", "left": "rozmnażanie się", "right": "wydawanie na świat potomstwa"},
+        {"id": "growth", "left": "wzrost", "right": "zwiększanie rozmiarów i masy ciała"}
+      ]
+    },
+    {
+      "id": "bio-life-06-true-false",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Oceń prawdziwość stwierdzeń dotyczących czynności życiowych.",
+      "selection_type": "true_false",
+      "explanation": "Wzrost zwiększa rozmiar i masę ciała. Wydalanie usuwa zbędne substancje, a nie transportuje tlen.",
+      "answers": [
+        {"text": "Wzrost polega na zwiększaniu rozmiarów i masy ciała.", "is_correct": true},
+        {"text": "Wydalanie polega na dostarczaniu tlenu z płuc do komórek.", "is_correct": false},
+        {"text": "Rozmnażanie prowadzi do zwiększenia liczby organizmów.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "bio-life-07-life-examples",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Połącz opis zachowania kota z właściwą czynnością życiową.",
+      "selection_type": "matching",
+      "explanation": "Zjadanie pokarmu to odżywianie, narodziny kociąt to rozmnażanie, a bieganie to ruch.",
+      "matching_pairs": [
+        {"id": "eating", "left": "Kot zjada upolowaną mysz.", "right": "odżywianie się"},
+        {"id": "kittens", "left": "Kotka wydaje na świat kocięta.", "right": "rozmnażanie się"},
+        {"id": "running", "left": "Kot biegnie z dużą prędkością.", "right": "ruch"}
+      ]
+    },
+    {
+      "id": "bio-life-08-sunflower",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Słoneczniki w ciągu dnia zwracają kwiaty w kierunku słońca. Jaką czynność życiową opisuje to zdanie?",
+      "selection_type": "single",
+      "explanation": "Jest to ruch rośliny będący reakcją na bodziec świetlny.",
+      "answers": [
+        {"text": "Ruch", "is_correct": true},
+        {"text": "Wydalanie", "is_correct": false},
+        {"text": "Rozmnażanie", "is_correct": false},
+        {"text": "Odżywianie", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-life-09-organization-order",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Ułóż ilustracje A-D od najmniej do najbardziej złożonego poziomu organizacji budowy organizmu.",
+      "selection_type": "order",
+      "image": "/static/images/biology/nauka-o-zyciu/organization-levels.png",
+      "explanation": "B to komórka nerwowa, C to mózg, D to układ nerwowy, a A to cały organizm.",
+      "order_items": [
+        {"id": "cell", "text": "B", "position": 1},
+        {"id": "organ", "text": "C", "position": 2},
+        {"id": "system", "text": "D", "position": 3},
+        {"id": "organism", "text": "A", "position": 4}
+      ]
+    },
+    {
+      "id": "bio-life-10-cell-tissue-organ",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Uzupełnij zdanie: Tkanka to zespół {{a}} o podobnej budowie, które pełnią określone funkcje. Tkanki tworzą {{b}}.",
+      "selection_type": "fill",
+      "explanation": "Tkanka jest zbudowana z komórek, a wyspecjalizowane tkanki tworzą narządy.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "a", "accepted_answers": ["komórek", "komorek"]},
+        {"id": "b", "accepted_answers": ["narządy", "narzady"]}
+      ]
+    },
+    {
+      "id": "bio-life-11-reproduction",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Zaznacz wszystkie prawdziwe informacje o rozmnażaniu.",
+      "selection_type": "multiple",
+      "explanation": "Rozmnażanie płciowe zachodzi z udziałem komórek rozrodczych i zwiększa liczbę organizmów.",
+      "answers": [
+        {"text": "Rozmnażanie płciowe zachodzi z udziałem komórek rozrodczych.", "is_correct": true},
+        {"text": "Rozmnażanie prowadzi do zwiększenia liczby organizmów.", "is_correct": true},
+        {"text": "Rozmnażanie polega na zwiększaniu masy jednego organizmu.", "is_correct": false},
+        {"text": "Rozmnażanie jest tym samym co wydalanie.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-life-12-botanical-garden",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "O czym dostarczają przede wszystkim informacji obserwacje okazów w ogrodzie botanicznym?",
+      "selection_type": "single",
+      "explanation": "Ogród botaniczny prezentuje przede wszystkim rośliny.",
+      "answers": [
+        {"text": "O roślinach", "is_correct": true},
+        {"text": "O planetach", "is_correct": false},
+        {"text": "O skałach", "is_correct": false},
+        {"text": "O maszynach", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-life-13-running-dog",
+      "topic_id": "organizmy-i-czynnosci-zyciowe",
+      "text": "Jaką czynność życiową przedstawia ilustracja psa?",
+      "selection_type": "open",
+      "image": "/static/images/biology/nauka-o-zyciu/running-dog.png",
+      "explanation": "Biegnący pies wykonuje ruch.",
+      "accepted_answers": ["ruch", "poruszanie się", "poruszanie sie", "przemieszczanie się", "przemieszczanie sie"]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "topic_id": "badanie-przyrody",
+  "topic_title": "Badanie przyrody",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "bio-research-01-observation-or-experiment",
+      "topic_id": "badanie-przyrody",
+      "text": "Które działanie jest doświadczeniem, a nie obserwacją?",
+      "selection_type": "single",
+      "explanation": "W doświadczeniu celowo zmienia się jeden czynnik i sprawdza jego wpływ.",
+      "answers": [
+        {"text": "Sprawdzanie wpływu wody z proszkiem do prania na wzrost żyta", "is_correct": true},
+        {"text": "Oglądanie skrzydeł motyla przez lupę", "is_correct": false},
+        {"text": "Liczenie saren widzianych przez lornetkę", "is_correct": false},
+        {"text": "Obserwowanie jeża podczas spaceru", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-02-method-order",
+      "topic_id": "badanie-przyrody",
+      "text": "Ułóż etapy metody naukowej w prawidłowej kolejności.",
+      "selection_type": "order",
+      "explanation": "Po obserwacji formułuje się problem, hipotezę, wykonuje doświadczenie, analizuje wyniki i zapisuje wniosek.",
+      "order_items": [
+        {"id": "observation", "text": "obserwacja", "position": 1},
+        {"id": "problem", "text": "sformułowanie problemu badawczego", "position": 2},
+        {"id": "hypothesis", "text": "postawienie hipotezy", "position": 3},
+        {"id": "experiment", "text": "przeprowadzenie doświadczenia", "position": 4},
+        {"id": "analysis", "text": "analiza wyników", "position": 5},
+        {"id": "conclusion", "text": "sformułowanie wniosku", "position": 6}
+      ]
+    },
+    {
+      "id": "bio-research-03-method-terms",
+      "topic_id": "badanie-przyrody",
+      "text": "Połącz element metody naukowej z jego definicją.",
+      "selection_type": "matching",
+      "explanation": "Problem jest pytaniem, hipoteza możliwą odpowiedzią, a wniosek potwierdza albo odrzuca hipotezę.",
+      "matching_pairs": [
+        {"id": "problem", "left": "problem badawczy", "right": "pytanie, na które chcemy znaleźć odpowiedź"},
+        {"id": "hypothesis", "left": "hipoteza", "right": "jedna z możliwych odpowiedzi na problem"},
+        {"id": "conclusion", "left": "wniosek", "right": "potwierdzenie lub odrzucenie hipotezy"}
+      ]
+    },
+    {
+      "id": "bio-research-04-control-salt",
+      "topic_id": "badanie-przyrody",
+      "context": {"text": "Tomek badał, czy sól wpływa na kiełkowanie nasion pszenicy. Nasiona w doniczce 1 podlewał czystą wodą, a w doniczce 2 wodą z solą."},
+      "text": "Która doniczka była próbą kontrolną?",
+      "selection_type": "single",
+      "explanation": "Próba kontrolna nie zawiera badanego czynnika, czyli soli.",
+      "answers": [
+        {"text": "Doniczka 1 z czystą wodą", "is_correct": true},
+        {"text": "Doniczka 2 z wodą z solą", "is_correct": false},
+        {"text": "Obie doniczki", "is_correct": false},
+        {"text": "Żadna doniczka", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-05-control-rule",
+      "topic_id": "badanie-przyrody",
+      "text": "Jak powinny różnić się próba kontrolna i próba badawcza w prawidłowym doświadczeniu?",
+      "selection_type": "single",
+      "explanation": "Aby porównać wynik, zmienia się tylko jeden badany czynnik.",
+      "answers": [
+        {"text": "Jednym badanym czynnikiem", "is_correct": true},
+        {"text": "Wszystkimi warunkami naraz", "is_correct": false},
+        {"text": "Liczbą obserwatorów", "is_correct": false},
+        {"text": "Nazwą doświadczenia", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-06-water-wilting",
+      "topic_id": "badanie-przyrody",
+      "context": {"text": "Dwa cięte kwiaty umieszczono w takich samych warunkach. Jeden stał w wazonie z wodą, a drugi w pustym wazonie. Przez trzy dni obserwowano, który szybciej więdnie."},
+      "text": "Jaki wniosek można sformułować, gdy kwiat bez wody zwiędnął szybciej?",
+      "selection_type": "single",
+      "image": "/static/images/biology/nauka-o-zyciu/wilting-flowers.png",
+      "explanation": "Wynik pokazuje, że brak wody wpływa na szybsze więdnięcie roślin ciętych.",
+      "answers": [
+        {"text": "Brak wody przyspiesza więdnięcie roślin ciętych.", "is_correct": true},
+        {"text": "Woda nie ma wpływu na rośliny.", "is_correct": false},
+        {"text": "Kwiaty nie potrzebują światła.", "is_correct": false},
+        {"text": "Wszystkie rośliny więdną w tym samym tempie.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-07-potato-hypothesis",
+      "topic_id": "badanie-przyrody",
+      "context": {"text": "Uczniowie sprawdzali, czy dostęp powietrza wpływa na ciemnienie obranych ziemniaków. Jeden zestaw pozostawili na powietrzu, a drugi zalali wodą."},
+      "text": "Które zdanie jest poprawną hipotezą do tego doświadczenia?",
+      "selection_type": "single",
+      "explanation": "Hipoteza jest możliwą odpowiedzią na problem badawczy i można ją sprawdzić doświadczeniem.",
+      "answers": [
+        {"text": "Dostęp powietrza wpływa na ciemnienie ziemniaków.", "is_correct": true},
+        {"text": "Ziemniaki są warzywami.", "is_correct": false},
+        {"text": "Obrane ziemniaki są jasne.", "is_correct": false},
+        {"text": "Uczniowie użyli dwóch misek.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-08-researcher-traits",
+      "topic_id": "badanie-przyrody",
+      "text": "Zaznacz cechy dobrego badacza przyrody.",
+      "selection_type": "multiple",
+      "explanation": "Badacz powinien być m.in. cierpliwy, systematyczny i rzetelny.",
+      "answers": [
+        {"text": "Cierpliwość", "is_correct": true},
+        {"text": "Systematyczność", "is_correct": true},
+        {"text": "Rzetelność", "is_correct": true},
+        {"text": "Lekceważenie wyników", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-09-systematic",
+      "topic_id": "badanie-przyrody",
+      "text": "Dlaczego systematyczność jest przydatna w pracy badacza?",
+      "selection_type": "single",
+      "explanation": "Regularny zapis wyników pozwala dokładnie je później porównać i ocenić.",
+      "answers": [
+        {"text": "Pozwala regularnie zapisywać i porównywać wyniki badań.", "is_correct": true},
+        {"text": "Pozwala pomijać niewygodne wyniki.", "is_correct": false},
+        {"text": "Zastępuje wykonanie doświadczenia.", "is_correct": false},
+        {"text": "Eliminuje potrzebę obserwacji.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-10-sources",
+      "topic_id": "badanie-przyrody",
+      "text": "Który zestaw zawiera wyłącznie źródła wiedzy przyrodniczej?",
+      "selection_type": "single",
+      "explanation": "Wiedzę przyrodniczą czerpiemy m.in. z obserwacji, doświadczeń, książek i filmów edukacyjnych.",
+      "answers": [
+        {"text": "Książki, filmy edukacyjne, obserwacje i doświadczenia", "is_correct": true},
+        {"text": "Plotki, przypadkowe zgadywanie i reklamy", "is_correct": false},
+        {"text": "Tylko gry komputerowe i komiksy", "is_correct": false},
+        {"text": "Wyłącznie własne przypuszczenia", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-11-field-observation",
+      "topic_id": "badanie-przyrody",
+      "text": "Jaki przyrząd najlepiej wykorzystać do obserwacji dzikiego zwierzęcia z daleka, aby go nie płoszyć?",
+      "selection_type": "single",
+      "explanation": "Lornetka pozwala obserwować zwierzę z bezpiecznej odległości.",
+      "answers": [
+        {"text": "Lornetkę", "is_correct": true},
+        {"text": "Mikroskop", "is_correct": false},
+        {"text": "Igłę preparacyjną", "is_correct": false},
+        {"text": "Szkiełko nakrywkowe", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-12-turtle-problem",
+      "topic_id": "badanie-przyrody",
+      "context": {"text": "Naukowcy porównali kiełkowanie nasion wydalonych przez żółwie z kiełkowaniem nasion wyjętych bezpośrednio z owoców."},
+      "text": "Który problem badawczy odpowiada temu doświadczeniu?",
+      "selection_type": "single",
+      "explanation": "Problem badawczy ma formę pytania o wpływ badanego czynnika na wynik.",
+      "answers": [
+        {"text": "Czy nasiona zjedzone i wydalone przez żółwie szybciej kiełkują?", "is_correct": true},
+        {"text": "Czy żółwie są zwierzętami?", "is_correct": false},
+        {"text": "Jakiego koloru są owoce?", "is_correct": false},
+        {"text": "Ile waży jeden żółw?", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-research-13-salt-trial",
+      "topic_id": "badanie-przyrody",
+      "text": "Dorota sprawdza, czy sól przyspiesza wzrost pszenicy. Która ilustracja przedstawia próbę badawczą?",
+      "selection_type": "open",
+      "image": "/static/images/biology/nauka-o-zyciu/wheat-salt-trials.png",
+      "explanation": "Próba B zawiera badany czynnik, czyli sól dodaną do wody.",
+      "accepted_answers": ["B", "próba B", "proba B", "ilustracja B"]
+    },
+    {
+      "id": "bio-research-14-light-control",
+      "topic_id": "badanie-przyrody",
+      "text": "Uczniowie badają wpływ światła na kiełkowanie nasion. Która z pokazanych prób odcina nasionom dostęp do światła?",
+      "selection_type": "open",
+      "image": "/static/images/biology/nauka-o-zyciu/seed-light-trials.png",
+      "explanation": "W próbie 2 czarny papier odcina nasionom dostęp do światła.",
+      "accepted_answers": ["2", "próba 2", "proba 2", "druga", "druga próba", "druga proba"]
+    }
+  ]
+}

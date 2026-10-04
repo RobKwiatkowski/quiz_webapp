@@ -533,6 +533,14 @@ textarea {
   min-width: 0;
 }
 
+.order-position-feedback {
+  display: block;
+  margin-top: 0.25rem;
+  color: #166534;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .order-drag-handle {
   color: #0f766e;
   font-size: 1.6rem;
@@ -1740,6 +1748,17 @@ body[data-page="quiz"] {
 .quiz-play-shell .order-position {
   background: #eef7f4;
   color: #147d78;
+}
+
+.quiz-play-shell .order-row.is-correct-position {
+  border-color: #5fb48b;
+  background: #e4f7ec;
+  animation: none;
+}
+
+.quiz-play-shell .order-row.is-correct-position .order-position {
+  background: #bbebcf;
+  color: #166534;
 }
 
 .quiz-play-shell .answer-btn {

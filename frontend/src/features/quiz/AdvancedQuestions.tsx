@@ -132,17 +132,20 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
         {items.map((item, index) => {
           const isKeyboardDragging = keyboardDraggedItemId === item.id && !disabled;
           const isDropTarget = dropTargetIndex === index;
+          const isCorrectPosition = disabled && item.position === index + 1;
 
           return (
             <div className="order-list-item" key={`position-${index}`} role="listitem">
               <span className="order-position" aria-label={`Miejsce ${index + 1} od góry`}>{index + 1}</span>
               <motion.div
                 key={item.id}
-                className={`order-row ${draggedItemId === item.id ? "is-dragging" : ""} ${isKeyboardDragging ? "is-keyboard-dragging" : ""} ${isDropTarget ? "is-drop-target" : ""} ${landedItemId === item.id ? "has-landed" : ""}`}
+                className={`order-row ${draggedItemId === item.id ? "is-dragging" : ""} ${isKeyboardDragging ? "is-keyboard-dragging" : ""} ${isDropTarget ? "is-drop-target" : ""} ${landedItemId === item.id ? "has-landed" : ""} ${isCorrectPosition ? "is-correct-position" : ""}`}
                 tabIndex={disabled ? -1 : 0}
                 draggable={!disabled}
                 aria-grabbed={isKeyboardDragging}
-                aria-label={`Pozycja ${index + 1} z ${items.length}: ${item.text}. Przeciągnij, aby zmienić kolejność.`}
+                aria-label={disabled
+                  ? `Pozycja ${index + 1} z ${items.length}: ${item.text}. ${isCorrectPosition ? "Właściwe miejsce." : "Niewłaściwe miejsce."}`
+                  : `Pozycja ${index + 1} z ${items.length}: ${item.text}. Przeciągnij, aby zmienić kolejność.`}
                 onDragStartCapture={(event) => handleDragStart(event, item.id)}
                 onDragEnter={(event) => handleDragOver(event, index)}
                 onDragOver={(event) => handleDragOver(event, index)}
@@ -154,7 +157,10 @@ export function OrderQuestion({ question, disabled, onComplete }: Props) {
                 onKeyDown={(event) => handleKeyboardMove(event, item.id, index)}
               >
                 <span className="order-drag-handle" aria-hidden="true">⠿</span>
-                <span className="order-item-text">{item.text}</span>
+                <span className="order-item-text">
+                  {item.text}
+                  {isCorrectPosition && <span className="order-position-feedback">✓ Właściwe miejsce</span>}
+                </span>
                 <span className="order-actions" aria-label={`Przesuń ${item.text}`}>
                   <button aria-label={`Przesuń ${item.text} wyżej`} disabled={disabled || index === 0} draggable={false} onClick={() => moveItemByOffset(item.id, -1)} type="button">↑</button>
                   <button aria-label={`Przesuń ${item.text} niżej`} disabled={disabled || index === items.length - 1} draggable={false} onClick={() => moveItemByOffset(item.id, 1)} type="button">↓</button>

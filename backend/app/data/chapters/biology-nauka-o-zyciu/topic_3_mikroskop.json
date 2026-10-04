@@ -1,0 +1,219 @@
+{
+  "topic_id": "mikroskop",
+  "topic_title": "Mikroskop",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "bio-microscope-01-magnification",
+      "topic_id": "mikroskop",
+      "text": "Okular mikroskopu powiększa obraz 5 razy, a obiektyw 30 razy. Jakie jest całkowite powiększenie?",
+      "selection_type": "single",
+      "explanation": "Całkowite powiększenie to iloczyn powiększenia okularu i obiektywu: 5 × 30 = 150.",
+      "answers": [
+        {"text": "150 razy", "is_correct": true},
+        {"text": "35 razy", "is_correct": false},
+        {"text": "25 razy", "is_correct": false},
+        {"text": "900 razy", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-02-parts-functions",
+      "topic_id": "mikroskop",
+      "text": "Połącz element mikroskopu z jego funkcją.",
+      "selection_type": "matching",
+      "explanation": "Okular i obiektyw powiększają obraz, rewolwer zmienia obiektyw, a źródło światła oświetla preparat.",
+      "matching_pairs": [
+        {"id": "eyepiece", "left": "okular", "right": "powiększa obraz wytworzony przez obiektyw"},
+        {"id": "revolver", "left": "rewolwer", "right": "umożliwia zmianę obiektywu"},
+        {"id": "fine-focus", "left": "śruba mikrometryczna", "right": "służy do ustawienia ostrości obrazu"},
+        {"id": "light", "left": "źródło światła", "right": "oświetla obiekt obserwacji"}
+      ]
+    },
+    {
+      "id": "bio-microscope-03-preparation-order",
+      "topic_id": "mikroskop",
+      "text": "Ułóż czynności wykonywane podczas przygotowania preparatu mikroskopowego.",
+      "selection_type": "order",
+      "explanation": "Najpierw przygotowuje się obiekt, potem kroplę wody i umieszcza w niej obiekt, a na końcu nakrywa go szkiełkiem nakrywkowym.",
+      "order_items": [
+        {"id": "prepare", "text": "przygotowanie obiektu do obserwacji", "position": 1},
+        {"id": "water", "text": "naniesienie kropli wody na szkiełko podstawowe", "position": 2},
+        {"id": "object", "text": "umieszczenie obiektu w kropli wody", "position": 3},
+        {"id": "cover", "text": "przykrycie obiektu szkiełkiem nakrywkowym", "position": 4},
+        {"id": "stage", "text": "umieszczenie preparatu na stoliku mikroskopu", "position": 5}
+      ]
+    },
+    {
+      "id": "bio-microscope-04-slides",
+      "topic_id": "mikroskop",
+      "text": "Na którym szkiełku umieszcza się obiekt obserwacji w kropli wody?",
+      "selection_type": "single",
+      "explanation": "Obiekt umieszcza się na szkiełku podstawowym, a następnie przykrywa szkiełkiem nakrywkowym.",
+      "answers": [
+        {"text": "Na szkiełku podstawowym", "is_correct": true},
+        {"text": "Na szkiełku nakrywkowym", "is_correct": false},
+        {"text": "Na okularze", "is_correct": false},
+        {"text": "Na rewolwerze", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-05-starting-observation",
+      "topic_id": "mikroskop",
+      "text": "Od którego obiektywu należy rozpocząć obserwację mikroskopową?",
+      "selection_type": "single",
+      "explanation": "Obserwację rozpoczyna się od obiektywu o najmniejszym powiększeniu.",
+      "answers": [
+        {"text": "Od obiektywu o najmniejszym powiększeniu", "is_correct": true},
+        {"text": "Od obiektywu o największym powiększeniu", "is_correct": false},
+        {"text": "Od samego okularu bez obiektywu", "is_correct": false},
+        {"text": "Od źródła światła", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-06-cover-slip",
+      "topic_id": "mikroskop",
+      "context": {"text": "Kasia umieściła kroplę wody z kałuży na szkiełku podstawowym i zaczęła obserwację. Obraz był niewyraźny mimo ustawiania ostrości."},
+      "text": "Jakiego ważnego elementu preparatu Kasia nie wykorzystała?",
+      "selection_type": "single",
+      "explanation": "Preparat należy przykryć szkiełkiem nakrywkowym.",
+      "answers": [
+        {"text": "Szkiełka nakrywkowego", "is_correct": true},
+        {"text": "Lornetki", "is_correct": false},
+        {"text": "Termometru", "is_correct": false},
+        {"text": "Mapy", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-07-observable",
+      "topic_id": "mikroskop",
+      "text": "Które obiekty można obserwować za pomocą mikroskopu?",
+      "selection_type": "multiple",
+      "explanation": "Mikroskop pozwala oglądać bardzo małe obiekty, np. komórki i składniki krwi.",
+      "answers": [
+        {"text": "Komórki cebuli", "is_correct": true},
+        {"text": "Składniki krwi", "is_correct": true},
+        {"text": "Ogon kota z daleka", "is_correct": false},
+        {"text": "Całe jabłko", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-08-tool-for-aphids",
+      "topic_id": "mikroskop",
+      "text": "Jakiego przyrządu użyjesz do obserwacji mszyc na krzaku róży?",
+      "selection_type": "single",
+      "explanation": "Lupa powiększa małe obiekty, które można obserwować bezpośrednio w terenie.",
+      "answers": [
+        {"text": "Lupy", "is_correct": true},
+        {"text": "Lunety", "is_correct": false},
+        {"text": "Lornetki", "is_correct": false},
+        {"text": "Mikroskopu", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-09-microorganisms",
+      "topic_id": "mikroskop",
+      "text": "Jakiego przyrządu użyjesz do obserwacji mikroorganizmów w kropli wody?",
+      "selection_type": "single",
+      "explanation": "Mikroorganizmy są zwykle zbyt małe, aby obserwować je lupą.",
+      "answers": [
+        {"text": "Mikroskopu", "is_correct": true},
+        {"text": "Lupy", "is_correct": false},
+        {"text": "Lornetki", "is_correct": false},
+        {"text": "Kompasu", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-10-true-false",
+      "topic_id": "mikroskop",
+      "text": "Oceń prawdziwość stwierdzeń dotyczących mikroskopu optycznego.",
+      "selection_type": "true_false",
+      "explanation": "Tubus jest częścią, na której osadzony jest okular. Rewolwer służy do zmiany obiektywów, nie do mocowania preparatu.",
+      "answers": [
+        {"text": "Tubus to część mikroskopu, na której osadzony jest okular.", "is_correct": true},
+        {"text": "Rewolwer służy do mocowania preparatu na stoliku.", "is_correct": false},
+        {"text": "Przez mikroskop optyczny można oglądać obiekty żywe i martwe.", "is_correct": true}
+      ]
+    },
+    {
+      "id": "bio-microscope-11-calculate-objective",
+      "topic_id": "mikroskop",
+      "text": "Obraz był powiększony 400 razy, a okular powiększał 10 razy. Ile razy powiększał obiektyw?",
+      "selection_type": "single",
+      "explanation": "Powiększenie obiektywu obliczamy: 400 ÷ 10 = 40.",
+      "answers": [
+        {"text": "40 razy", "is_correct": true},
+        {"text": "4 razy", "is_correct": false},
+        {"text": "390 razy", "is_correct": false},
+        {"text": "4 000 razy", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-12-structure",
+      "topic_id": "mikroskop",
+      "text": "Połącz element mikroskopu z opisem jego położenia lub funkcji.",
+      "selection_type": "matching",
+      "explanation": "Obiektyw jest przy preparacie, stolik podtrzymuje preparat, a śruba makrometryczna służy do wstępnego ustawiania ostrości.",
+      "matching_pairs": [
+        {"id": "objective", "left": "obiektyw", "right": "powiększa obraz oglądanego przedmiotu"},
+        {"id": "stage", "left": "stolik", "right": "umieszcza się na nim badany preparat"},
+        {"id": "coarse-focus", "left": "śruba makrometryczna", "right": "służy do wstępnego ustawienia ostrości"},
+        {"id": "light", "left": "źródło światła", "right": "podświetla oglądany obiekt"}
+      ]
+    },
+    {
+      "id": "bio-microscope-13-pointed-objective",
+      "topic_id": "mikroskop",
+      "text": "Który element mikroskopu wskazuje strzałka na ilustracji?",
+      "selection_type": "single",
+      "image": "/static/images/biology/nauka-o-zyciu/microscope-objective.png",
+      "explanation": "Strzałka wskazuje obiektyw znajdujący się blisko preparatu.",
+      "answers": [
+        {"text": "Okular", "is_correct": false},
+        {"text": "Obiektyw", "is_correct": true},
+        {"text": "Stolik", "is_correct": false},
+        {"text": "Śruba makrometryczna", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-14-pointed-eyepiece",
+      "topic_id": "mikroskop",
+      "text": "Który element mikroskopu wskazuje strzałka na ilustracji?",
+      "selection_type": "single",
+      "image": "/static/images/biology/nauka-o-zyciu/microscope-eyepiece.png",
+      "explanation": "Strzałka wskazuje okular, przez który patrzymy do mikroskopu.",
+      "answers": [
+        {"text": "Okular", "is_correct": true},
+        {"text": "Obiektyw", "is_correct": false},
+        {"text": "Stolik", "is_correct": false},
+        {"text": "Śruba makrometryczna", "is_correct": false}
+      ]
+    },
+    {
+      "id": "bio-microscope-15-three-arrows",
+      "topic_id": "mikroskop",
+      "text": "Połącz strzałki na ilustracji z funkcjami wskazanych elementów mikroskopu.",
+      "selection_type": "matching",
+      "image": "/static/images/biology/nauka-o-zyciu/microscope-three-arrows.png",
+      "explanation": "Górna strzałka wskazuje obiektyw, środkowa śrubę ostrości, a dolna źródło światła.",
+      "matching_pairs": [
+        {"id": "top", "left": "strzałka górna", "right": "powiększa obraz oglądanego obiektu"},
+        {"id": "middle", "left": "strzałka środkowa", "right": "służy do regulowania ostrości obrazu"},
+        {"id": "bottom", "left": "strzałka dolna", "right": "umożliwia podświetlenie oglądanego obiektu"}
+      ]
+    },
+    {
+      "id": "bio-microscope-16-microscopic-view",
+      "topic_id": "mikroskop",
+      "text": "Który rysunek przedstawia obraz widoczny pod mikroskopem?",
+      "selection_type": "single",
+      "image": "/static/images/biology/nauka-o-zyciu/microscopic-view-options.png",
+      "explanation": "Rysunek A przedstawia powiększony obraz komórek, których nie można tak zobaczyć gołym okiem.",
+      "answers": [
+        {"text": "A", "is_correct": true},
+        {"text": "B", "is_correct": false},
+        {"text": "C", "is_correct": false},
+        {"text": "D", "is_correct": false}
+      ]
+    }
+  ]
+}

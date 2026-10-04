@@ -114,6 +114,46 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "geo-columbus-atlantic",
+      "topic_id": "odkrycia-geograficzne",
+      "text": "Przez który ocean płynął Krzysztof Kolumb, aby dotrzeć do Bahamów?",
+      "selection_type": "open",
+      "explanation": "Kolumb przepłynął Ocean Atlantycki.",
+      "accepted_answers": [
+        "Ocean Atlantycki",
+        "Atlantyk",
+        "Atlantycki",
+        "przez Ocean Atlantycki",
+        "przez Atlantyk"
+      ]
+    },
+    {
+      "id": "geo-magellan-oceans",
+      "topic_id": "odkrycia-geograficzne",
+      "text": "Przez jakie oceany prowadziła wyprawa Magellana dookoła świata? Zaznacz wszystkie poprawne odpowiedzi.",
+      "selection_type": "multiple",
+      "explanation": "Wyprawa płynęła przez Ocean Atlantycki, Spokojny i Indyjski.",
+      "answers": [
+        {"text": "Ocean Atlantycki", "is_correct": true},
+        {"text": "Ocean Spokojny", "is_correct": true},
+        {"text": "Ocean Indyjski", "is_correct": true},
+        {"text": "Ocean Arktyczny", "is_correct": false},
+        {"text": "Ocean Południowy", "is_correct": false}
+      ]
+    },
+    {
+      "id": "geo-da-gama-cape",
+      "topic_id": "odkrycia-geograficzne",
+      "text": "Jaki przylądek na południu Afryki opłynęła wyprawa Vasco da Gamy w drodze do Indii?",
+      "selection_type": "open",
+      "explanation": "Wyprawa opłynęła Przylądek Dobrej Nadziei.",
+      "accepted_answers": [
+        "Przylądek Dobrej Nadziei",
+        "Przyladek Dobrej Nadziei",
+        "Dobrej Nadziei"
+      ]
     }
   ],
   "is_active": true

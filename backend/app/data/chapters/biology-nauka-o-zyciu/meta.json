@@ -1,0 +1,15 @@
+{
+  "id": "biology-nauka-o-zyciu",
+  "title": "Biologia - nauka o życiu",
+  "description": "Powtórka z biologii: organizmy, metoda naukowa i mikroskop.",
+  "category": "biology",
+  "age_group": "10-12",
+  "chapter_number": 1,
+  "target_question_count": 20,
+  "questions_per_topic": 8,
+  "topics": [
+    "topic_1_organizmy-i-czynnosci-zyciowe.json",
+    "topic_2_badanie-przyrody.json",
+    "topic_3_mikroskop.json"
+  ]
+}
