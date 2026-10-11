@@ -1,0 +1,47 @@
+{
+  "topic_id": "present-perfect-and-past-simple",
+  "topic_title": "Present Perfect and Past Simple",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "u1-grammar-01",
+      "text": "I {{answer}} lunch yet.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["haven't had"], "options": ["haven't had", "didn't have", "don't have", "hasn't had"]}],
+      "explanation": "Z „yet” w tym zdaniu używamy Present Perfect: haven't had."
+    },
+    {
+      "id": "u1-grammar-02",
+      "text": "Can we watch something different? I {{answer}} this film.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["have already seen"], "options": ["have already seen", "already saw", "have see", "did already see"]}],
+      "explanation": "„Already” i brak określonego czasu wskazują na Present Perfect."
+    },
+    {
+      "id": "u1-grammar-03",
+      "text": "We {{answer}} my aunt two days ago.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["visited"], "options": ["visited", "have visited", "have visit", "were visiting"]}],
+      "explanation": "„Two days ago” wskazuje na Past Simple."
+    },
+    {
+      "id": "u1-grammar-04",
+      "text": "Jamie isn't here. He {{answer}} to a friend's house.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["has gone"], "options": ["has gone", "has been", "went", "goes"]}],
+      "explanation": "Has gone oznacza, że Jamie poszedł tam i jeszcze nie wrócił."
+    },
+    {
+      "id": "u1-grammar-05",
+      "text": "{{answer}} you ever been snorkelling?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["Have"], "options": ["Have", "Did", "Has", "Were"]}],
+      "explanation": "Pytamy o doświadczenie: Have you ever been ...?"
+    }
+  ]
+}

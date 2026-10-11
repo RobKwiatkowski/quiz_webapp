@@ -1,0 +1,17 @@
+{
+  "id": "english-unit-1-experiences",
+  "title": "Unit 1: Experiences and phobias",
+  "description": "Słownictwo o doświadczeniach i fobiach oraz Present Perfect, Past Simple i pytania.",
+  "category": "english",
+  "age_group": "10-12",
+  "chapter_number": 2,
+  "target_question_count": 20,
+  "questions_per_topic": 4,
+  "topics": [
+    "topic_1_experiences.json",
+    "topic_2_adjectives_and_phobias.json",
+    "topic_3_present_perfect_and_past_simple.json",
+    "topic_4_questions_and_suggestions.json",
+    "topic_5_reading.json"
+  ]
+}

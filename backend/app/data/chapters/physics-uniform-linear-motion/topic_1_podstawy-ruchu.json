@@ -1,0 +1,72 @@
+{
+  "topic_id": "podstawy-ruchu",
+  "topic_title": "Podstawy ruchu",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "physics-motion-01-relative-motion",
+      "topic_id": "podstawy-ruchu",
+      "text": "Autobus jedzie po prostej drodze ze stałą prędkością. Pasażer siedzi na swoim miejscu. Względem kogo pasażer jest w ruchu?",
+      "selection_type": "single",
+      "explanation": "Pasażer nie zmienia położenia względem siedzenia, kierowcy ani plecaka, ale zmienia położenie względem osoby idącej przez autobus.",
+      "answers": [
+        {"text": "Względem kierowcy autobusu", "is_correct": false},
+        {"text": "Względem pasażera siedzącego obok", "is_correct": false},
+        {"text": "Względem plecaka trzymanego na kolanach", "is_correct": false},
+        {"text": "Względem pasażera przechodzącego obok", "is_correct": true}
+      ]
+    },
+    {
+      "id": "physics-motion-02-basic-concepts",
+      "topic_id": "podstawy-ruchu",
+      "text": "Połącz pojęcie z jego opisem.",
+      "selection_type": "matching",
+      "explanation": "Układ odniesienia pomaga opisać położenie i ruch. Tor to linia zakreślana przez ciało, a droga to długość przebytego odcinka.",
+      "matching_pairs": [
+        {"id": "reference-frame", "left": "układ odniesienia", "right": "ciało lub układ ciał, względem którego opisujemy ruch"},
+        {"id": "trajectory", "left": "tor ruchu", "right": "linia zakreślana przez poruszające się ciało"},
+        {"id": "distance", "left": "droga", "right": "długość odcinka przebytego przez ciało"},
+        {"id": "speed", "left": "prędkość", "right": "droga przebyta w jednostce czasu"}
+      ]
+    },
+    {
+      "id": "physics-motion-03-distance-units",
+      "topic_id": "podstawy-ruchu",
+      "text": "Wybierz zbiór zawierający tylko jednostki drogi.",
+      "selection_type": "single",
+      "explanation": "Metr, kilometr, milimetr i centymetr są jednostkami długości, czyli także drogi.",
+      "answers": [
+        {"text": "km, mm, m, cm", "is_correct": true},
+        {"text": "m/s, h, Pa, s", "is_correct": false},
+        {"text": "mm, kN, dag, km", "is_correct": false},
+        {"text": "kg, m, m/s², Pa", "is_correct": false}
+      ]
+    },
+    {
+      "id": "physics-motion-04-speed-units",
+      "topic_id": "podstawy-ruchu",
+      "text": "Wybierz zbiór zawierający tylko jednostki prędkości.",
+      "selection_type": "single",
+      "explanation": "Jednostka prędkości ma postać jednostki drogi podzielonej przez jednostkę czasu.",
+      "answers": [
+        {"text": "m/h, m/s², km/h, m/min", "is_correct": false},
+        {"text": "km/h, N/cm², m/s², m/s", "is_correct": false},
+        {"text": "m/h, km/h, km/s, cm/h", "is_correct": true},
+        {"text": "km/s², N/cm², m/s, m/s²", "is_correct": false}
+      ]
+    },
+    {
+      "id": "physics-motion-05-straight-trajectory",
+      "topic_id": "podstawy-ruchu",
+      "text": "Jaki tor ma ciało poruszające się ruchem jednostajnym prostoliniowym?",
+      "selection_type": "single",
+      "explanation": "Słowo „prostoliniowy” oznacza, że tor ruchu jest linią prostą.",
+      "answers": [
+        {"text": "Linię prostą", "is_correct": true},
+        {"text": "Okrąg", "is_correct": false},
+        {"text": "Dowolną linię krzywą", "is_correct": false},
+        {"text": "Zygzak", "is_correct": false}
+      ]
+    }
+  ]
+}

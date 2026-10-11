@@ -1,0 +1,15 @@
+{
+  "id": "physics-uniform-linear-motion",
+  "title": "Ruch jednostajny prostoliniowy",
+  "description": "Powtórka z ruchu, prędkości, drogi i czasu.",
+  "category": "physics",
+  "age_group": "10-12",
+  "chapter_number": 1,
+  "target_question_count": 17,
+  "questions_per_topic": 5,
+  "topics": [
+    "topic_1_podstawy-ruchu.json",
+    "topic_2_wykresy-i-wlasciwosci.json",
+    "topic_3_obliczenia.json"
+  ]
+}

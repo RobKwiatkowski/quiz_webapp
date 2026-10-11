@@ -1,0 +1,31 @@
+{
+  "topic_id": "family",
+  "topic_title": "Rodzina",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-family-a",
+      "text": "Dopasuj polskie wyrażenia do ich niemieckich tłumaczeń.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "grandfather", "left": "twój dziadek", "right": "dein Großvater"},
+        {"id": "grandson", "left": "mój wnuczek", "right": "mein Enkel"},
+        {"id": "aunt", "left": "twoja ciocia", "right": "deine Tante"},
+        {"id": "daughter", "left": "moja córka", "right": "meine Tochter"}
+      ],
+      "explanation": "Zwróć uwagę: dein zmienia się na deine przed żeńskim rzeczownikiem."
+    },
+    {
+      "id": "gfd-family-b",
+      "text": "Dopasuj polskie wyrażenia do ich niemieckich tłumaczeń.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "grandmother", "left": "twoja babcia", "right": "deine Großmutter"},
+        {"id": "uncle", "left": "mój wujek", "right": "mein Onkel"},
+        {"id": "son", "left": "twój syn", "right": "dein Sohn"},
+        {"id": "sister", "left": "moja siostra", "right": "meine Schwester"}
+      ],
+      "explanation": "Zwróć uwagę na rodzaj rzeczownika i formę zaimka."
+    }
+  ]
+}

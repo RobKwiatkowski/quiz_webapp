@@ -1,0 +1,62 @@
+{
+  "topic_id": "obliczenia",
+  "topic_title": "Obliczenia w ruchu jednostajnym",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "physics-calc-01-convert-speed",
+      "topic_id": "obliczenia",
+      "text": "Samochód jedzie ze stałą prędkością 108 km/h. Wyraź tę prędkość w m/s.",
+      "selection_type": "open",
+      "explanation": "Aby zamienić km/h na m/s, dzielimy przez 3,6. 108 : 3,6 = 30 m/s.",
+      "accepted_answers": ["30", "30 m/s", "30m/s"]
+    },
+    {
+      "id": "physics-calc-02-tunnel-distance",
+      "topic_id": "obliczenia",
+      "text": "Lokomotywa jedzie ruchem jednostajnym z prędkością 5 m/s przez 40 s. Jaką długość ma tunel, przez który przejechała?",
+      "selection_type": "open",
+      "explanation": "Korzystamy ze wzoru s = v · t. 5 m/s · 40 s = 200 m.",
+      "accepted_answers": ["200", "200 m", "200m"]
+    },
+    {
+      "id": "physics-calc-03-complete-table",
+      "topic_id": "obliczenia",
+      "text": "Uzupełnij trzy brakujące wartości. Ciało A przebyło 60 m w 20 s. Ciało B jechało z prędkością 10 m/s i przebyło 200 m. Ciało C jechało z prędkością 2 m/s przez 15 s. Wpisz kolejno: prędkość A, czas B, drogę C.",
+      "selection_type": "open",
+      "explanation": "A: 60 m : 20 s = 3 m/s. B: 200 m : 10 m/s = 20 s. C: 2 m/s · 15 s = 30 m.",
+      "answer_slots": [
+        {"accepted_answers": ["3", "3 m/s", "3m/s"]},
+        {"accepted_answers": ["20", "20 s", "20s"]},
+        {"accepted_answers": ["30", "30 m", "30m"]}
+      ]
+    },
+    {
+      "id": "physics-calc-04-read-graph-data",
+      "topic_id": "obliczenia",
+      "text": "Na wykresie drogi od czasu punkt (3 s, 6 m) leży na prostej wychodzącej z punktu (0 s, 0 m). Z jaką prędkością poruszało się ciało?",
+      "selection_type": "open",
+      "explanation": "Prędkość obliczamy ze wzoru v = s : t. 6 m : 3 s = 2 m/s.",
+      "accepted_answers": ["2", "2 m/s", "2m/s"]
+    },
+    {
+      "id": "physics-calc-05-relative-speed",
+      "topic_id": "obliczenia",
+      "text": "Pociąg osobowy jedzie ze stałą prędkością 80 km/h naprzeciw pociągu towarowego jadącego ze stałą prędkością 35 km/h. Jaka jest prędkość pociągu osobowego względem pociągu towarowego?",
+      "selection_type": "open",
+      "explanation": "Gdy pojazdy jadą naprzeciw siebie, dodajemy wartości prędkości: 80 km/h + 35 km/h = 115 km/h.",
+      "accepted_answers": ["115", "115 km/h", "115km/h"]
+    },
+    {
+      "id": "physics-calc-06-table-analysis",
+      "topic_id": "obliczenia",
+      "text": "Dane ruchu ciała: po 0 s przebyło 0 m, po 1 s — 3 m, po 2 s — 6 m, po 4 s — 12 m. Podaj kolejno prędkość ciała i rodzaj ruchu.",
+      "selection_type": "open",
+      "explanation": "W każdej sekundzie droga zwiększa się o 3 m. Prędkość wynosi więc 3 m/s, a ruch jest jednostajny prostoliniowy.",
+      "answer_slots": [
+        {"accepted_answers": ["3", "3 m/s", "3m/s"]},
+        {"accepted_answers": ["ruch jednostajny prostoliniowy", "jednostajny prostoliniowy", "ruch jednostajny"]}
+      ]
+    }
+  ]
+}

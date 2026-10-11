@@ -1,0 +1,114 @@
+{
+  "topic_id": "mieszaniny",
+  "topic_title": "Mieszaniny",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "chem-substances-01-separatory-funnel",
+      "topic_id": "mieszaniny",
+      "text": "Którą mieszaninę można rozdzielić za pomocą rozdzielacza?",
+      "selection_type": "single",
+      "explanation": "Woda i benzyna nie mieszają się ze sobą, więc tworzą warstwy możliwe do rozdzielenia rozdzielaczem.",
+      "answers": [
+        {"text": "Woda i piasek", "is_correct": false},
+        {"text": "Opiłki żelaza i sproszkowana siarka", "is_correct": false},
+        {"text": "Woda i benzyna", "is_correct": true},
+        {"text": "Woda i alkohol", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-02-magnetic-substance",
+      "topic_id": "mieszaniny",
+      "text": "Który schemat przedstawia substancję stałą przyciąganą przez magnes?",
+      "image": "/static/images/chemistry/substances-and-transformations/magnetic-substances.png",
+      "selection_type": "single",
+      "explanation": "Magnes przyciąga opiłki żelaza, pokazane na schemacie I.",
+      "answers": [
+        {"text": "Schemat I", "is_correct": true},
+        {"text": "Schemat II", "is_correct": false},
+        {"text": "Schemat III", "is_correct": false},
+        {"text": "Schemat IV", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-03-homogeneous-mixture",
+      "topic_id": "mieszaniny",
+      "text": "Który schemat przedstawia otrzymywanie mieszaniny jednorodnej?",
+      "image": "/static/images/chemistry/substances-and-transformations/mixture-schemes.png",
+      "selection_type": "single",
+      "explanation": "Sól kuchenna rozpuszcza się w wodzie, tworząc mieszaninę jednorodną. To schemat II.",
+      "answers": [
+        {"text": "Schemat I", "is_correct": false},
+        {"text": "Schemat II", "is_correct": true},
+        {"text": "Schemat III", "is_correct": false},
+        {"text": "Schemat IV", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-04-separation-methods",
+      "topic_id": "mieszaniny",
+      "text": "Połącz mieszaninę z odpowiednią metodą jej rozdzielania.",
+      "selection_type": "matching",
+      "explanation": "Wybór metody zależy od właściwości składników, na przykład od ich rozpuszczalności albo przyciągania przez magnes.",
+      "matching_pairs": [
+        {"id": "water-sand", "left": "woda i piasek", "right": "sączenie"},
+        {"id": "iron-sulfur", "left": "opiłki żelaza i siarka", "right": "użycie magnesu"},
+        {"id": "water-gasoline", "left": "woda i benzyna", "right": "rozdzielacz"},
+        {"id": "salt-water", "left": "woda z solą kuchenną", "right": "odparowanie wody"}
+      ]
+    },
+    {
+      "id": "chem-substances-05-heterogeneous-mixtures",
+      "topic_id": "mieszaniny",
+      "text": "Wybierz wszystkie mieszaniny niejednorodne.",
+      "selection_type": "multiple",
+      "explanation": "W mieszaninie niejednorodnej można rozróżnić składniki lub ich warstwy.",
+      "answers": [
+        {"text": "Woda i piasek", "is_correct": true},
+        {"text": "Woda i benzyna", "is_correct": true},
+        {"text": "Woda z rozpuszczoną solą kuchenną", "is_correct": false},
+        {"text": "Woda z rozpuszczonym cukrem", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-21-nonmetals-on-diagram",
+      "topic_id": "mieszaniny",
+      "text": "Wybierz schematy przedstawiające niemetale.",
+      "image": "/static/images/chemistry/substances-and-transformations/magnetic-substances.png",
+      "selection_type": "multiple",
+      "explanation": "Jod i węgiel są niemetalami. Są pokazane odpowiednio na schematach II i IV.",
+      "answers": [
+        {"text": "Schemat I", "is_correct": false},
+        {"text": "Schemat II", "is_correct": true},
+        {"text": "Schemat III", "is_correct": false},
+        {"text": "Schemat IV", "is_correct": true}
+      ]
+    },
+    {
+      "id": "chem-substances-22-water-alcohol-separation",
+      "topic_id": "mieszaniny",
+      "text": "Jaką metodę stosuje się do rozdzielenia mieszaniny wody i alkoholu?",
+      "selection_type": "single",
+      "explanation": "Woda i alkohol tworzą mieszaninę jednorodną, ale mają różne temperatury wrzenia. Można je rozdzielić przez destylację.",
+      "answers": [
+        {"text": "Destylację", "is_correct": true},
+        {"text": "Użycie magnesu", "is_correct": false},
+        {"text": "Sączenie", "is_correct": false},
+        {"text": "Użycie rozdzielacza", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-23-mixture-classification",
+      "topic_id": "mieszaniny",
+      "text": "Która mieszanina jest jednorodna?",
+      "selection_type": "single",
+      "explanation": "Po rozpuszczeniu soli w wodzie nie widać oddzielnych składników, więc powstaje mieszanina jednorodna.",
+      "answers": [
+        {"text": "Woda z piaskiem", "is_correct": false},
+        {"text": "Woda z kredą", "is_correct": false},
+        {"text": "Woda z solą kuchenną", "is_correct": true},
+        {"text": "Opiłki żelaza z siarką", "is_correct": false}
+      ]
+    }
+  ]
+}

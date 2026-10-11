@@ -1,0 +1,33 @@
+{
+  "topic_id": "professions",
+  "topic_title": "Zawody",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-professions-a",
+      "text": "Dopasuj polskie nazwy zawodów do niemieckich nazw z rodzajnikiem określonym.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "painter", "left": "malarka", "right": "die Malerin"},
+        {"id": "bus-driver", "left": "kierowca autobusu", "right": "der Busfahrer"},
+        {"id": "it-specialist", "left": "informatyk", "right": "der Informatiker"},
+        {"id": "hairdresser", "left": "fryzjerka", "right": "die Friseurin"},
+        {"id": "politician", "left": "polityk", "right": "der Politiker"}
+      ],
+      "explanation": "Zapamiętaj rodzajniki: der dla tych męskich i die dla tych żeńskich."
+    },
+    {
+      "id": "gfd-professions-b",
+      "text": "Dopasuj polskie nazwy zawodów do niemieckich nazw z rodzajnikiem określonym.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "model", "left": "model(ka)", "right": "das Model"},
+        {"id": "vet", "left": "weterynarz", "right": "der Tierarzt"},
+        {"id": "waitress", "left": "kelnerka", "right": "die Kellnerin"},
+        {"id": "architect", "left": "architekt", "right": "der Architekt"},
+        {"id": "policewoman", "left": "policjantka", "right": "die Polizistin"}
+      ],
+      "explanation": "Zapamiętaj rodzajniki razem z nazwą zawodu."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "topic_id": "questions",
+  "topic_title": "Układanie pytań",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-question-a",
+      "text": "Zapytaj kolegę lub koleżankę po niemiecku o miejsce zamieszkania.",
+      "selection_type": "open",
+      "accepted_answers": ["Wo wohnst du?", "Wo wohnst du"],
+      "explanation": "Pytanie o miejsce zamieszkania brzmi: „Wo wohnst du?”"
+    },
+    {
+      "id": "gfd-question-b",
+      "text": "Zapytaj kolegę lub koleżankę po niemiecku o pochodzenie.",
+      "selection_type": "open",
+      "accepted_answers": ["Woher kommst du?", "Woher kommst du"],
+      "explanation": "Pytanie o kraj pochodzenia brzmi: „Woher kommst du?”"
+    }
+  ]
+}

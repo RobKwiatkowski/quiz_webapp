@@ -1,0 +1,99 @@
+{
+  "topic_id": "metale-i-korozja",
+  "topic_title": "Metale i korozja",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "chem-substances-11-fastest-corrosion",
+      "topic_id": "metale-i-korozja",
+      "text": "W której probówce korozja żelaza zajdzie najszybciej?",
+      "image": "/static/images/chemistry/substances-and-transformations/iron-corrosion-experiment.png",
+      "selection_type": "single",
+      "explanation": "W probówce II żelazo jest w roztworze chlorku sodu. Sól przyspiesza korozję żelaza.",
+      "answers": [
+        {"text": "Probówka I", "is_correct": false},
+        {"text": "Probówka II", "is_correct": true},
+        {"text": "Probówka III", "is_correct": false},
+        {"text": "Probówka IV", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-12-corrosion-conditions",
+      "topic_id": "metale-i-korozja",
+      "text": "Co jest potrzebne, aby żelazo rdzewiało?",
+      "selection_type": "multiple",
+      "explanation": "Do powstawania rdzy potrzebne są woda i tlen. Sól może tylko przyspieszać ten proces.",
+      "answers": [
+        {"text": "Woda", "is_correct": true},
+        {"text": "Tlen z powietrza", "is_correct": true},
+        {"text": "Sól kuchenna", "is_correct": false},
+        {"text": "Światło słoneczne", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-13-corrosion-protection",
+      "topic_id": "metale-i-korozja",
+      "text": "Które działanie najlepiej ochroni stalowy płot przed korozją?",
+      "selection_type": "single",
+      "explanation": "Warstwa farby odcina metal od wody i tlenu, które są potrzebne do korozji.",
+      "answers": [
+        {"text": "Pomalowanie go farbą ochronną", "is_correct": true},
+        {"text": "Posypanie go solą", "is_correct": false},
+        {"text": "Zanurzenie go w wodzie", "is_correct": false},
+        {"text": "Przecieranie go mokrą gąbką", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-14-metals-and-nonmetals",
+      "topic_id": "metale-i-korozja",
+      "text": "Połącz substancję z właściwym opisem.",
+      "selection_type": "matching",
+      "explanation": "Żelazo i magnez są metalami, a siarka i tlen są niemetalami.",
+      "matching_pairs": [
+        {"id": "iron", "left": "żelazo", "right": "metal przyciągany przez magnes"},
+        {"id": "magnesium", "left": "magnez", "right": "metal o metalicznym połysku"},
+        {"id": "sulfur", "left": "siarka", "right": "niemetal"},
+        {"id": "oxygen", "left": "tlen", "right": "niemetal będący gazem"}
+      ]
+    },
+    {
+      "id": "chem-substances-15-iron-and-salt-water",
+      "topic_id": "metale-i-korozja",
+      "text": "Dlaczego żelazo w słonej wodzie rdzewieje szybciej niż w wodzie destylowanej?",
+      "selection_type": "single",
+      "explanation": "Rozpuszczona sól przyspiesza korozję żelaza.",
+      "answers": [
+        {"text": "Sól przyspiesza korozję", "is_correct": true},
+        {"text": "Sól zamienia żelazo w plastik", "is_correct": false},
+        {"text": "Woda destylowana nie zawiera wody", "is_correct": false},
+        {"text": "Żelazo nie reaguje z wodą destylowaną", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-26-magnesium-properties",
+      "topic_id": "metale-i-korozja",
+      "text": "Która substancja jest dobrym przewodnikiem ciepła, ma połysk i jest kowalna?",
+      "selection_type": "single",
+      "explanation": "Magnez jest metalem. Metale zwykle mają połysk, przewodzą ciepło i są kowalne.",
+      "answers": [
+        {"text": "Siarka", "is_correct": false},
+        {"text": "Magnez", "is_correct": true},
+        {"text": "Krzem", "is_correct": false},
+        {"text": "Tlen", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-27-corrosion-experiment",
+      "topic_id": "metale-i-korozja",
+      "text": "Badacz porównuje korozję żelaza w wodzie destylowanej i w roztworze soli. Co powinno pozostać takie samo w obu probówkach, aby porównanie było uczciwe?",
+      "selection_type": "multiple",
+      "explanation": "W doświadczeniu zmieniamy tylko jeden czynnik, tutaj rodzaj cieczy. Pozostałe warunki powinny być takie same.",
+      "answers": [
+        {"text": "Wielkość kawałka żelaza", "is_correct": true},
+        {"text": "Czas trwania doświadczenia", "is_correct": true},
+        {"text": "Rodzaj cieczy", "is_correct": false},
+        {"text": "Liczba probówek", "is_correct": false}
+      ]
+    }
+  ]
+}

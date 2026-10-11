@@ -1,0 +1,37 @@
+{
+  "topic_id": "reading",
+  "topic_title": "Czytanie ze zrozumieniem",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-reading-a",
+      "text": "1. Anna kommt aus {{country}}. 2. Die Mutter ist {{mother_age}} Jahre alt. 3. Der Vater heißt {{father_name}}. 4. Der Bruder spielt gern {{sport}}. 5. Die Großeltern wohnen in {{city}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "context": {"text": "Hallo, ich heiße Anna Baum und bin 14. Ich komme aus Deutschland. Meine Familie und ich wohnen in Warschau. Meine Mutter heißt Susanne. Sie ist 43 Jahre alt und Lehrerin von Beruf. Sie ist sehr sympathisch. Mein Vater ist 45, er heißt Paul und ist Journalist. Er spielt gern Volleyball und ist sehr intelligent. Und mein Bruder, er heißt Lukas, ist 17. Er spielt gern Basketball. Meine Großeltern wohnen nicht in Warschau, sie wohnen in Berlin. Sie sind 70 Jahre alt."},
+      "fill_blanks": [
+        {"id": "country", "accepted_answers": ["Deutschland"], "options": []},
+        {"id": "mother_age", "accepted_answers": ["dreiundvierzig"], "options": []},
+        {"id": "father_name", "accepted_answers": ["Paul"], "options": []},
+        {"id": "sport", "accepted_answers": ["Basketball"], "options": []},
+        {"id": "city", "accepted_answers": ["Berlin"], "options": []}
+      ],
+      "explanation": "Odpowiedzi znajdziesz w tekście. Liczbę 43 zapisujemy: dreiundvierzig."
+    },
+    {
+      "id": "gfd-reading-b",
+      "text": "1. Anna wohnt in {{city}}. 2. Die Mutter ist sehr {{adjective}}. 3. Der Vater ist {{profession}} von Beruf. 4. Der Bruder heißt {{brother_name}}. 5. Die Großeltern sind {{grandparents_age}} Jahre alt.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "context": {"text": "Hallo, ich heiße Anna Baum und bin 14. Ich komme aus Deutschland. Meine Familie und ich wohnen in Warschau. Meine Mutter heißt Susanne. Sie ist 43 Jahre alt und Lehrerin von Beruf. Sie ist sehr sympathisch. Mein Vater ist 45, er heißt Paul und ist Journalist. Er spielt gern Volleyball und ist sehr intelligent. Und mein Bruder, er heißt Lukas, ist 17. Er spielt gern Basketball. Meine Großeltern wohnen nicht in Warschau, sie wohnen in Berlin. Sie sind 70 Jahre alt."},
+      "fill_blanks": [
+        {"id": "city", "accepted_answers": ["Warschau"], "options": []},
+        {"id": "adjective", "accepted_answers": ["sympathisch"], "options": []},
+        {"id": "profession", "accepted_answers": ["Journalist"], "options": []},
+        {"id": "brother_name", "accepted_answers": ["Lukas"], "options": []},
+        {"id": "grandparents_age", "accepted_answers": ["siebzig"], "options": []}
+      ],
+      "explanation": "Odpowiedzi znajdziesz w tekście. Liczbę 70 zapisujemy: siebzig."
+    }
+  ]
+}

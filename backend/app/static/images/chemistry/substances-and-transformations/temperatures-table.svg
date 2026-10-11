@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="390" viewBox="0 0 880 390" role="img" aria-labelledby="title description">
+  <title id="title">Temperatury topnienia i wrzenia wybranych substancji</title>
+  <desc id="description">Tabela z trzema wierszami: toluen, propen i metan oraz temperaturami topnienia i wrzenia w stopniach Celsjusza.</desc>
+  <rect width="880" height="390" fill="#ffffff"/>
+  <rect x="40" y="40" width="800" height="310" rx="14" fill="#ffffff" stroke="#29465b" stroke-width="3"/>
+  <rect x="40" y="40" width="800" height="80" rx="14" fill="#e8f3f2"/>
+  <path d="M340 40V350M600 40V350M40 120H840M40 197H840M40 274H840" fill="none" stroke="#29465b" stroke-width="2"/>
+  <g fill="#17324a" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="190" y="89" font-size="25" font-weight="700">Nazwa substancji</text>
+    <text x="470" y="76" font-size="23" font-weight="700">Temperatura</text>
+    <text x="470" y="103" font-size="22" font-weight="700">topnienia, °C</text>
+    <text x="720" y="76" font-size="23" font-weight="700">Temperatura</text>
+    <text x="720" y="103" font-size="22" font-weight="700">wrzenia, °C</text>
+    <g font-size="26">
+      <text x="190" y="167">toluen</text>
+      <text x="470" y="167">−95</text>
+      <text x="720" y="167">111</text>
+      <text x="190" y="244">propen</text>
+      <text x="470" y="244">−185</text>
+      <text x="720" y="244">−48</text>
+      <text x="190" y="321">metan</text>
+      <text x="470" y="321">−182</text>
+      <text x="720" y="321">−161</text>
+    </g>
+  </g>
+</svg>

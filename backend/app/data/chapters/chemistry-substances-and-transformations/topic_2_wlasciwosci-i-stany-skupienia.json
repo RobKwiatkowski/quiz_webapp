@@ -1,0 +1,85 @@
+{
+  "topic_id": "wlasciwosci-i-stany-skupienia",
+  "topic_title": "Właściwości i stany skupienia",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "chem-substances-06-liquid-normal-conditions",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Na podstawie tabeli wskaż substancję, która w warunkach normalnych jest cieczą.",
+      "image": "/static/images/chemistry/substances-and-transformations/temperatures-table.svg",
+      "selection_type": "single",
+      "explanation": "Temperatura 0°C leży między temperaturą topnienia i wrzenia toluenu, więc toluen jest wtedy cieczą.",
+      "answers": [
+        {"text": "Toluen", "is_correct": true},
+        {"text": "Propen", "is_correct": false},
+        {"text": "Metan", "is_correct": false},
+        {"text": "Każda z tych substancji", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-07-water-states",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Jakie stany skupienia wody oznaczono na diagramie literami A, B i C?",
+      "image": "/static/images/chemistry/substances-and-transformations/water-state-changes.png",
+      "selection_type": "single",
+      "explanation": "Parowanie prowadzi od cieczy do gazu, a topnienie od substancji stałej do cieczy. Dlatego A to ciecz, B to gaz, a C to substancja stała.",
+      "answers": [
+        {"text": "A – ciecz, B – gaz, C – substancja stała", "is_correct": true},
+        {"text": "A – gaz, B – ciecz, C – substancja stała", "is_correct": false},
+        {"text": "A – substancja stała, B – gaz, C – ciecz", "is_correct": false},
+        {"text": "A – ciecz, B – substancja stała, C – gaz", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-08-mercury-properties",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Która substancja dobrze przewodzi ciepło i prąd, w warunkach normalnych jest cieczą i dawniej stosowano ją w termometrach?",
+      "selection_type": "single",
+      "explanation": "Rtęć jest metalem, który w warunkach normalnych występuje jako ciecz.",
+      "answers": [
+        {"text": "Ołów", "is_correct": false},
+        {"text": "Brom", "is_correct": false},
+        {"text": "Rtęć", "is_correct": true},
+        {"text": "Chlor", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-09-metal-properties",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Wybierz właściwości typowe dla metali.",
+      "selection_type": "multiple",
+      "explanation": "Metale zwykle mają połysk, dobrze przewodzą ciepło i prąd oraz można je kształtować bez kruszenia.",
+      "answers": [
+        {"text": "Charakterystyczny połysk", "is_correct": true},
+        {"text": "Dobre przewodnictwo ciepła", "is_correct": true},
+        {"text": "Kowalność", "is_correct": true},
+        {"text": "Zawsze są gazami", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-10-fuel-mass",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Paliwo ma gęstość 720 g/dm³. Ile kilogramów paliwa zmieści się w zbiorniku o pojemności 5 dm³?",
+      "selection_type": "open",
+      "accepted_answers": ["3,6 kg", "3.6 kg", "3,6", "3.6", "3600 g"],
+      "explanation": "m = d × V = 720 g/dm³ × 5 dm³ = 3600 g, czyli 3,6 kg."
+    },
+    {
+      "id": "chem-substances-24-fuel-canister-volume",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "W kanistrze mieści się 3,6 kg benzyny o gęstości 720 g/dm³. Jaką pojemność ma kanister w dm³?",
+      "selection_type": "open",
+      "accepted_answers": ["5 dm³", "5 dm3", "5"],
+      "explanation": "3,6 kg to 3600 g. Objętość obliczamy: V = m ÷ d = 3600 g ÷ 720 g/dm³ = 5 dm³."
+    },
+    {
+      "id": "chem-substances-25-density-calculation",
+      "topic_id": "wlasciwosci-i-stany-skupienia",
+      "text": "Paliwo o masie 3600 g zajmuje objętość 5 dm³. Jaka jest jego gęstość?",
+      "selection_type": "open",
+      "accepted_answers": ["720 g/dm³", "720 g/dm3", "720"],
+      "explanation": "Gęstość obliczamy ze wzoru d = m ÷ V. 3600 g ÷ 5 dm³ = 720 g/dm³."
+    }
+  ]
+}

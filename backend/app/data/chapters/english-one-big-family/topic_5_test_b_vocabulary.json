@@ -1,0 +1,90 @@
+{
+  "topic_id": "test-b-vocabulary",
+  "topic_title": "Vocabulary – test B",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-test-b-vocabulary-01",
+      "text": "My niece's brother is my {{answer}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["nephew"],
+          "options": ["daughter", "great-grandfather", "great-grandmother", "husband", "nephew", "stepmother"]
+        }
+      ],
+      "explanation": "Poprawna odpowiedź: nephew."
+    },
+    {
+      "id": "obf-test-b-vocabulary-02",
+      "text": "His stepbrother's mum is his {{answer}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["stepmother"],
+          "options": ["daughter", "great-grandfather", "great-grandmother", "husband", "nephew", "stepmother"]
+        }
+      ],
+      "explanation": "Poprawna odpowiedź: stepmother."
+    },
+    {
+      "id": "obf-test-b-vocabulary-03",
+      "text": "Alex's sister is his mother's {{answer}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["daughter"],
+          "options": ["daughter", "great-grandfather", "great-grandmother", "husband", "nephew", "stepmother"]
+        }
+      ],
+      "explanation": "Poprawna odpowiedź: daughter."
+    },
+    {
+      "id": "obf-test-b-vocabulary-04",
+      "text": "Max's uncle is his aunt's {{answer}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["husband"],
+          "options": ["daughter", "great-grandfather", "great-grandmother", "husband", "nephew", "stepmother"]
+        }
+      ],
+      "explanation": "Poprawna odpowiedź: husband."
+    },
+    {
+      "id": "obf-test-b-vocabulary-05",
+      "text": "My mum's grandmother is my {{answer}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["great-grandmother"],
+          "options": ["daughter", "great-grandfather", "great-grandmother", "husband", "nephew", "stepmother"]
+        }
+      ],
+      "explanation": "Poprawna odpowiedź: great-grandmother."
+    },
+    {
+      "id": "obf-test-b-vocabulary-match",
+      "text": "Dopasuj zdania.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "marta-naughty", "left": "People don't like Marta.", "right": "She's very naughty."},
+        {"id": "mark-quiet", "left": "Mark isn't noisy.", "right": "He's quiet!"},
+        {"id": "tom-sporty", "left": "Tom loves football.", "right": "He's sporty."},
+        {"id": "megan-short", "left": "Megan's hair isn't long.", "right": "It's short."},
+        {"id": "pippa-green-eyes", "left": "Pippa hasn't got blue eyes.", "right": "She's got green eyes."}
+      ],
+      "explanation": "Połącz każde zdanie z pasującą informacją ze sprawdzianu."
+    }
+  ]
+}

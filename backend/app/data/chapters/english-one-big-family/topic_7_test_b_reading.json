@@ -1,0 +1,22 @@
+{
+  "topic_id": "test-b-reading",
+  "topic_title": "Reading – test B",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-test-b-reading-01",
+      "text": "Przeczytaj e-mail od Olivii do jej przyjaciela Alexa. Oznacz literą T (true) zdania prawdziwe, a literą F (false) zdania fałszywe.",
+      "context": {
+        "text": "To: Alex\nFrom: Olivia\n\nHi Alex!\n\nThanks for your email.\n\nI have got a big brother, too. His name is Tom and he's 18 years old! He has got short, straight, brown hair and a brown beard. He looks like my dad! He's friendly and sporty and he loves playing basketball and football. I'm not sporty and I can't stand football. He also likes music and he sings songs with me!\n\nI also live with my mum, stepfather and stepsister at home. My stepsister looks like me. We've got long hair and blue eyes and we love dancing. We're very noisy and our parents can't stand it!\n\nWe visit our cousins at the weekend. They live near our house and we love seeing them!\n\nWhat do you like doing?\n\nOlivia"
+      },
+      "selection_type": "true_false",
+      "answers": [
+        {"text": "Tom is Olivia's dad.", "is_correct": false},
+        {"text": "Tom likes sport.", "is_correct": true},
+        {"text": "Tom plays basketball with Olivia.", "is_correct": false},
+        {"text": "Olivia's stepsister has got long hair and blue eyes.", "is_correct": true},
+        {"text": "Olivia and her stepsister like visiting their cousins.", "is_correct": true}
+      ]
+    }
+  ]
+}

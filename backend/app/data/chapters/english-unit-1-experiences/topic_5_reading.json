@@ -1,0 +1,47 @@
+{
+  "topic_id": "reading",
+  "topic_title": "Reading: rollercoasters",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "u1-reading-01",
+      "text": "Which rollercoaster is the fastest?",
+      "context": {"text": "A: Expedition GeForce is in a forest in Germany. It is 53 metres high in places, its track is 1.2 km long, and its top speed is 120 km per hour. B: Takabisha is in Japan. Its track is one kilometre long, the ride reaches 110 km per hour, and halfway through the track goes down at an angle of more than 120 degrees."},
+      "selection_type": "single",
+      "answers": [{"text": "A — Expedition GeForce", "is_correct": true}, {"text": "B — Takabisha", "is_correct": false}, {"text": "Both are equally fast", "is_correct": false}, {"text": "The text does not say", "is_correct": false}],
+      "explanation": "120 km/h jest większe niż 110 km/h."
+    },
+    {
+      "id": "u1-reading-02",
+      "text": "Which rollercoaster passes through a forest?",
+      "context": {"text": "A: Expedition GeForce is in a forest in Germany. It is 53 metres high in places, its track is 1.2 km long, and its top speed is 120 km per hour. B: Takabisha is in Japan. Its track is one kilometre long, the ride reaches 110 km per hour, and halfway through the track goes down at an angle of more than 120 degrees."},
+      "selection_type": "single",
+      "answers": [{"text": "A — Expedition GeForce", "is_correct": true}, {"text": "B — Takabisha", "is_correct": false}, {"text": "Both rollercoasters", "is_correct": false}, {"text": "Neither rollercoaster", "is_correct": false}],
+      "explanation": "W opisie A jest informacja, że kolejka jest w lesie."
+    },
+    {
+      "id": "u1-reading-03",
+      "text": "Which rollercoaster is frightening in the middle of the ride?",
+      "context": {"text": "A: Expedition GeForce is in a forest in Germany. It is 53 metres high in places, its track is 1.2 km long, and its top speed is 120 km per hour. B: Takabisha is in Japan. Its track is one kilometre long, the ride reaches 110 km per hour, and halfway through the track goes down at an angle of more than 120 degrees."},
+      "selection_type": "single",
+      "answers": [{"text": "B — Takabisha", "is_correct": true}, {"text": "A — Expedition GeForce", "is_correct": false}, {"text": "Both rollercoasters", "is_correct": false}, {"text": "Neither rollercoaster", "is_correct": false}],
+      "explanation": "W połowie trasy B tor opada pod bardzo dużym kątem."
+    },
+    {
+      "id": "u1-reading-04",
+      "text": "Which rollercoaster has the longer track?",
+      "context": {"text": "A: Expedition GeForce is in a forest in Germany. It is 53 metres high in places, its track is 1.2 km long, and its top speed is 120 km per hour. B: Takabisha is in Japan. Its track is one kilometre long, the ride reaches 110 km per hour, and halfway through the track goes down at an angle of more than 120 degrees."},
+      "selection_type": "single",
+      "answers": [{"text": "A — Expedition GeForce", "is_correct": true}, {"text": "B — Takabisha", "is_correct": false}, {"text": "Their tracks are equally long", "is_correct": false}, {"text": "The text does not say", "is_correct": false}],
+      "explanation": "1.2 km jest dłuższe niż 1 km."
+    },
+    {
+      "id": "u1-reading-05",
+      "text": "Which country is Takabisha in?",
+      "context": {"text": "A: Expedition GeForce is in a forest in Germany. It is 53 metres high in places, its track is 1.2 km long, and its top speed is 120 km per hour. B: Takabisha is in Japan. Its track is one kilometre long, the ride reaches 110 km per hour, and halfway through the track goes down at an angle of more than 120 degrees."},
+      "selection_type": "single",
+      "answers": [{"text": "Japan", "is_correct": true}, {"text": "Germany", "is_correct": false}, {"text": "Poland", "is_correct": false}, {"text": "Spain", "is_correct": false}],
+      "explanation": "Takabisha znajduje się w Japonii."
+    }
+  ]
+}

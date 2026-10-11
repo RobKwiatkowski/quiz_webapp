@@ -1,0 +1,137 @@
+{
+  "topic_id": "test-b-grammar",
+  "topic_title": "Grammar – test B",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-test-b-grammar-01",
+      "text": "I {{answer}} studying maths.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["hate"],
+          "options": ["hate", "hates", "climbing", "doing"]
+        }
+      ],
+      "explanation": "Poprawna forma ze sprawdzianu: hate."
+    },
+    {
+      "id": "obf-test-b-grammar-02",
+      "text": "I don't like {{answer}} trees.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["climbing"],
+          "options": ["climbing", "climb", "hates", "doing"]
+        }
+      ],
+      "explanation": "Poprawna forma ze sprawdzianu: climbing."
+    },
+    {
+      "id": "obf-test-b-grammar-03",
+      "text": "What activities do they like {{answer}}?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["doing"],
+          "options": ["doing", "do", "climbing", "climb"]
+        }
+      ],
+      "explanation": "Poprawna forma ze sprawdzianu: doing."
+    },
+    {
+      "id": "obf-test-b-grammar-04",
+      "text": "What school subjects {{answer}}?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["do they like"],
+          "options": ["do they like", "are they like", "do your daughters look like", "does she look like"]
+        }
+      ],
+      "explanation": "Poprawna forma ze sprawdzianu: do they like."
+    },
+    {
+      "id": "obf-test-b-grammar-05",
+      "text": "I can't {{answer}} comics!",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "answer",
+          "accepted_answers": ["stand"],
+          "options": ["stand", "like", "hates", "doing"]
+        }
+      ],
+      "explanation": "Stały fragment zdania to „I can't”, dlatego poprawna forma ze sprawdzianu to „stand”."
+    },
+    {
+      "id": "obf-test-b-answer-01",
+      "text": "What are you like?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "You're naughty.", "is_correct": false},
+        {"text": "I've got curly hair.", "is_correct": false},
+        {"text": "I'm noisy!", "is_correct": true},
+        {"text": "He's sporty.", "is_correct": false}
+      ],
+      "explanation": "Pytanie dotyczy twoich cech, dlatego poprawna odpowiedź to „I'm noisy!”."
+    },
+    {
+      "id": "obf-test-b-answer-02",
+      "text": "What do your daughters look like?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "They're noisy.", "is_correct": false},
+        {"text": "They've got straight hair.", "is_correct": true},
+        {"text": "He's got short hair.", "is_correct": false},
+        {"text": "She's got long, blonde hair.", "is_correct": false}
+      ],
+      "explanation": "Pytanie dotyczy wyglądu kilku osób."
+    },
+    {
+      "id": "obf-test-b-answer-03",
+      "text": "What does she look like?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "He's got straight hair.", "is_correct": false},
+        {"text": "She's got long, blonde hair.", "is_correct": true},
+        {"text": "She's friendly.", "is_correct": false},
+        {"text": "She's very naughty.", "is_correct": false}
+      ],
+      "explanation": "Pytanie dotyczy jej wyglądu."
+    },
+    {
+      "id": "obf-test-b-answer-04",
+      "text": "What's your stepfather like?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "He's got a beard.", "is_correct": false},
+        {"text": "He's sporty.", "is_correct": true},
+        {"text": "He's got big ears.", "is_correct": false},
+        {"text": "She's got green eyes.", "is_correct": false}
+      ],
+      "explanation": "Pytanie dotyczy cech ojczyma."
+    },
+    {
+      "id": "obf-test-b-answer-05",
+      "text": "What are they like?",
+      "selection_type": "single",
+      "answers": [
+        {"text": "They're noisy.", "is_correct": true},
+        {"text": "They've got green eyes.", "is_correct": false},
+        {"text": "We're sporty.", "is_correct": false},
+        {"text": "He's quiet!", "is_correct": false}
+      ],
+      "explanation": "Pytanie dotyczy cech kilku osób."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "topic_id": "numbers",
+  "topic_title": "Liczebniki",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-numbers-a",
+      "text": "Dopasuj liczby do ich niemieckiego zapisu słownego.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "fifteen", "left": "15", "right": "fünfzehn"},
+        {"id": "eighty-three", "left": "83", "right": "dreiundachtzig"},
+        {"id": "twenty-four", "left": "24", "right": "vierundzwanzig"},
+        {"id": "twelve", "left": "12", "right": "zwölf"}
+      ],
+      "explanation": "W liczbach 21–99 najpierw mówimy jedności, potem „und”, a na końcu dziesiątki."
+    },
+    {
+      "id": "gfd-numbers-b",
+      "text": "Dopasuj liczby do ich niemieckiego zapisu słownego.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "fourteen", "left": "14", "right": "vierzehn"},
+        {"id": "ninety-three", "left": "93", "right": "dreiundneunzig"},
+        {"id": "twenty-five", "left": "25", "right": "fünfundzwanzig"},
+        {"id": "seventeen", "left": "17", "right": "siebzehn"}
+      ],
+      "explanation": "Pisz liczebniki jako jedno słowo."
+    }
+  ]
+}

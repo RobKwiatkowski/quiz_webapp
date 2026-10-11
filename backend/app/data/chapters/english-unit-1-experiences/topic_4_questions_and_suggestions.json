@@ -1,0 +1,44 @@
+{
+  "topic_id": "questions-and-suggestions",
+  "topic_title": "Questions and suggestions",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "u1-question-01",
+      "text": "Ułóż pytanie z wyrazów: How often / you go / shopping?",
+      "selection_type": "open",
+      "accepted_answers": ["How often do you go shopping?", "How often do you go shopping"],
+      "explanation": "Pytanie w Present Simple tworzymy: How often + do + you + czasownik."
+    },
+    {
+      "id": "u1-question-02",
+      "text": "Ułóż pytanie z wyrazów: How many times / you try / foreign food?",
+      "selection_type": "open",
+      "accepted_answers": ["How many times have you tried foreign food?", "How many times have you tried foreign food"],
+      "explanation": "Pytamy o doświadczenie: How many times have you tried ...?"
+    },
+    {
+      "id": "u1-question-03",
+      "text": "Ułóż pytanie z wyrazów: Who / you see / this morning?",
+      "selection_type": "open",
+      "accepted_answers": ["Who did you see this morning?", "Who did you see this morning"],
+      "explanation": "Dla zakończonego czasu używamy: Who did you see ...?"
+    },
+    {
+      "id": "u1-suggestion-01",
+      "text": "Complete the suggestion: {{answer}} go to the beach?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["Shall we"], "options": ["Shall we", "Are we", "Do we", "Have we"]}],
+      "explanation": "Shall we ...? to propozycja zrobienia czegoś razem."
+    },
+    {
+      "id": "u1-suggestion-02",
+      "text": "Complete the reaction: That {{answer}} great!",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["sounds"], "options": ["sounds", "sound", "is sounding", "sounded"]}],
+      "explanation": "Stałe wyrażenie to: That sounds great!"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "topic_id": "experiences",
+  "topic_title": "Experiences",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "u1-exp-01",
+      "text": "Choose the correct verb: {{answer}} a selfie with a celebrity.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["take"], "options": ["take", "go", "act", "climb"]}],
+      "explanation": "Mówimy: take a selfie."
+    },
+    {
+      "id": "u1-exp-02",
+      "text": "Choose the correct verb: {{answer}} in a play.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["act"], "options": ["act", "go", "take", "climb"]}],
+      "explanation": "Mówimy: act in a play."
+    },
+    {
+      "id": "u1-exp-03",
+      "text": "Choose the correct verb: {{answer}} snorkelling.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["go"], "options": ["go", "take", "act", "climb"]}],
+      "explanation": "Mówimy: go snorkelling."
+    },
+    {
+      "id": "u1-exp-04",
+      "text": "Choose the correct verb: {{answer}} a mountain.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["climb"], "options": ["climb", "go", "act", "take"]}],
+      "explanation": "Mówimy: climb a mountain."
+    },
+    {
+      "id": "u1-exp-05",
+      "text": "Choose the correct verb: {{answer}} a competition.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["win"], "options": ["win", "take", "go", "act"]}],
+      "explanation": "Mówimy: win a competition."
+    }
+  ]
+}

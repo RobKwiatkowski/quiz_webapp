@@ -1,0 +1,116 @@
+{
+  "topic_id": "pracownia-chemiczna",
+  "topic_title": "Pracownia chemiczna i bezpieczeństwo",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "chem-substances-16-flask",
+      "topic_id": "pracownia-chemiczna",
+      "text": "Jak nazywa się przedstawione szkło laboratoryjne?",
+      "image": "/static/images/chemistry/substances-and-transformations/flask.png",
+      "selection_type": "single",
+      "explanation": "To kolba stożkowa. Ma szerokie dno i zwężoną szyjkę.",
+      "answers": [
+        {"text": "Kolba stożkowa", "is_correct": true},
+        {"text": "Probówka", "is_correct": false},
+        {"text": "Cylinder miarowy", "is_correct": false},
+        {"text": "Łyżka do spalań", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-17-corrosive-pictogram",
+      "topic_id": "pracownia-chemiczna",
+      "text": "O jakim zagrożeniu informuje ten piktogram?",
+      "image": "/static/images/chemistry/substances-and-transformations/corrosive-pictogram.png",
+      "selection_type": "single",
+      "explanation": "Piktogram oznacza substancje żrące, które mogą uszkodzić skórę i korodować metale.",
+      "answers": [
+        {"text": "Substancje żrące oraz korodujące metale", "is_correct": true},
+        {"text": "Substancje wybuchowe", "is_correct": false},
+        {"text": "Substancje toksyczne", "is_correct": false},
+        {"text": "Substancje łatwo palne", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-18-lab-safety",
+      "topic_id": "pracownia-chemiczna",
+      "text": "Wybierz zasady bezpiecznej pracy w pracowni chemicznej.",
+      "selection_type": "multiple",
+      "explanation": "W pracowni chemicznej trzeba stosować polecenia nauczyciela, chronić oczy i nie próbować substancji.",
+      "answers": [
+        {"text": "Zakładam okulary ochronne, gdy są potrzebne", "is_correct": true},
+        {"text": "Wącham substancję bezpośrednio nad naczyniem", "is_correct": false},
+        {"text": "Nie próbuję substancji chemicznych", "is_correct": true},
+        {"text": "Wykonuję doświadczenie zgodnie z instrukcją", "is_correct": true}
+      ]
+    },
+    {
+      "id": "chem-substances-19-lab-equipment",
+      "topic_id": "pracownia-chemiczna",
+      "text": "Połącz sprzęt laboratoryjny z jego zastosowaniem.",
+      "selection_type": "matching",
+      "explanation": "Każdy element szkła i sprzętu laboratoryjnego ma określone zastosowanie.",
+      "matching_pairs": [
+        {"id": "test-tube", "left": "probówka", "right": "wykonywanie niewielkich doświadczeń"},
+        {"id": "graduated-cylinder", "left": "cylinder miarowy", "right": "odmierzanie objętości cieczy"},
+        {"id": "watch-glass", "left": "szkiełko zegarkowe", "right": "umieszczanie małej ilości substancji stałej"},
+        {"id": "combustion-spoon", "left": "łyżka do spalań", "right": "spalanie małej porcji substancji"}
+      ]
+    },
+    {
+      "id": "chem-substances-20-density-unit",
+      "topic_id": "pracownia-chemiczna",
+      "text": "Gęstość paliwa wynosi 720 g/dm³. Jaka jednostka została użyta do zapisania gęstości?",
+      "selection_type": "single",
+      "explanation": "Gęstość paliwa podano jako 720 gramów na decymetr sześcienny, czyli g/dm³.",
+      "answers": [
+        {"text": "g/dm³", "is_correct": true},
+        {"text": "kg", "is_correct": false},
+        {"text": "dm³", "is_correct": false},
+        {"text": "g·dm³", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-28-test-tube",
+      "topic_id": "pracownia-chemiczna",
+      "text": "Jak nazywa się przedstawione szkło laboratoryjne?",
+      "image": "/static/images/chemistry/substances-and-transformations/test-tube.png",
+      "selection_type": "single",
+      "explanation": "To probówka. Służy do wykonywania doświadczeń z małymi ilościami substancji.",
+      "answers": [
+        {"text": "Probówka", "is_correct": true},
+        {"text": "Kolba stożkowa", "is_correct": false},
+        {"text": "Szkiełko zegarkowe", "is_correct": false},
+        {"text": "Łyżka do spalań", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-29-explosive-pictogram",
+      "topic_id": "pracownia-chemiczna",
+      "text": "O jakim zagrożeniu informuje ten piktogram?",
+      "image": "/static/images/chemistry/substances-and-transformations/explosive-pictogram.png",
+      "selection_type": "single",
+      "explanation": "Wybuchająca bomba oznacza substancje wybuchowe.",
+      "answers": [
+        {"text": "Substancje wybuchowe", "is_correct": true},
+        {"text": "Substancje żrące", "is_correct": false},
+        {"text": "Substancje toksyczne", "is_correct": false},
+        {"text": "Substancje drażniące", "is_correct": false}
+      ]
+    },
+    {
+      "id": "chem-substances-30-toxic-pictogram",
+      "topic_id": "pracownia-chemiczna",
+      "text": "O jakim zagrożeniu informuje piktogram z czaszką i skrzyżowanymi piszczelami?",
+      "image": "/static/images/chemistry/substances-and-transformations/toxic-pictogram.png",
+      "selection_type": "single",
+      "explanation": "Czaszka i skrzyżowane piszczele oznaczają substancje toksyczne.",
+      "answers": [
+        {"text": "Substancje toksyczne", "is_correct": true},
+        {"text": "Substancje łatwo palne", "is_correct": false},
+        {"text": "Substancje wybuchowe", "is_correct": false},
+        {"text": "Substancje niebezpieczne dla środowiska", "is_correct": false}
+      ]
+    }
+  ]
+}

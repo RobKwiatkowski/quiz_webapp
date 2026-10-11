@@ -1,0 +1,37 @@
+{
+  "topic_id": "sein",
+  "topic_title": "Czasownik sein",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-sein-a",
+      "text": "Ich {{one}} Paula und das {{two}} Karl. Karl {{three}} mein Freund. Wir {{four}} aus Polen. Und wie {{five}} ihr? Woher {{six}} ihr?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {"id": "one", "accepted_answers": ["heiße"], "options": ["heiße", "heißt", "heißen"]},
+        {"id": "two", "accepted_answers": ["ist"], "options": ["bin", "bist", "ist"]},
+        {"id": "three", "accepted_answers": ["ist"], "options": ["bist", "ist", "bin"]},
+        {"id": "four", "accepted_answers": ["sind"], "options": ["ist", "sind", "seid"]},
+        {"id": "five", "accepted_answers": ["heißt"], "options": ["heiße", "heißt", "heißen"]},
+        {"id": "six", "accepted_answers": ["seid"], "options": ["ist", "sind", "seid"]}
+      ],
+      "explanation": "Ich heiße, das ist, Karl ist, wir sind, ihr heißt, ihr seid."
+    },
+    {
+      "id": "gfd-sein-b",
+      "text": "Wir {{one}} Paula und Lukas. Wir {{two}} aus Polen. Ich {{three}} 14 Jahre alt. Paula {{four}} 13. Und wie {{five}} du? Woher {{six}} du?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {"id": "one", "accepted_answers": ["heißen"], "options": ["heiße", "heißt", "heißen"]},
+        {"id": "two", "accepted_answers": ["sind"], "options": ["sind", "seid", "ist"]},
+        {"id": "three", "accepted_answers": ["bin"], "options": ["bin", "ist", "bist"]},
+        {"id": "four", "accepted_answers": ["ist"], "options": ["bist", "ist", "bin"]},
+        {"id": "five", "accepted_answers": ["heißt"], "options": ["heiße", "heißt", "heißen"]},
+        {"id": "six", "accepted_answers": ["bist"], "options": ["bist", "ist", "bin"]}
+      ],
+      "explanation": "Wir heißen i wir sind, ich bin, Paula ist, du heißt i du bist."
+    }
+  ]
+}

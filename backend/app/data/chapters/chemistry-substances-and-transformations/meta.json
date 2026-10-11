@@ -1,0 +1,16 @@
+{
+  "id": "chemistry-substances-and-transformations",
+  "title": "Substancje i ich przemiany",
+  "description": "Powtórka o mieszaninach, właściwościach substancji, korozji i bezpieczeństwie w pracowni chemicznej.",
+  "category": "chemistry",
+  "age_group": "10-12",
+  "chapter_number": 1,
+  "target_question_count": 30,
+  "questions_per_topic": 7,
+  "topics": [
+    "topic_1_mieszaniny.json",
+    "topic_2_wlasciwosci-i-stany-skupienia.json",
+    "topic_3_metale-i-korozja.json",
+    "topic_4_pracownia-chemiczna.json"
+  ]
+}

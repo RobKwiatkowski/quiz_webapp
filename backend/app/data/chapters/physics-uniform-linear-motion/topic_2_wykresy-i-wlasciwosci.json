@@ -1,0 +1,111 @@
+{
+  "topic_id": "wykresy-i-wlasciwosci",
+  "topic_title": "Wykresy i właściwości ruchu",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "physics-uniform-01-distance-time",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Dokończ zdanie: W ruchu jednostajnym prostoliniowym droga...",
+      "selection_type": "single",
+      "explanation": "Przy stałej prędkości w równych odstępach czasu ciało pokonuje równe drogi. Dlatego droga jest wprost proporcjonalna do czasu.",
+      "answers": [
+        {"text": "jest wprost proporcjonalna do czasu, a tor jest linią prostą", "is_correct": true},
+        {"text": "nie zmienia się z upływem czasu, a tor jest linią prostą", "is_correct": false},
+        {"text": "jest wprost proporcjonalna do kwadratu czasu", "is_correct": false},
+        {"text": "jest wprost proporcjonalna do czasu, a tor jest linią krzywą", "is_correct": false}
+      ]
+    },
+    {
+      "id": "physics-uniform-02-speed-time-graph",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Prędkość jest stała. Jak nazywa się taki rodzaj ruchu?",
+      "selection_type": "single",
+      "explanation": "Gdy prędkość nie zmienia się, ciało porusza się ruchem jednostajnym. Ponieważ tor jest prosty, jest to ruch jednostajny prostoliniowy.",
+      "answers": [
+        {"text": "Ruch jednostajny prostoliniowy", "is_correct": true},
+        {"text": "Ruch przyspieszony", "is_correct": false},
+        {"text": "Ruch opóźniony", "is_correct": false},
+        {"text": "Ruch po okręgu", "is_correct": false}
+      ]
+    },
+    {
+      "id": "physics-uniform-03-distance-time-graph",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Na podstawie tabeli narysuj wykres zależności drogi od czasu.",
+      "selection_type": "graph",
+      "explanation": "W każdej sekundzie droga zwiększa się o 3 m. Wykres s(t) jest więc rosnącą linią prostą przechodzącą przez punkty z tabeli.",
+      "graph_config": {
+        "x_axis": "czas [s]",
+        "y_axis": "droga [m]",
+        "x_axis_options": ["czas [s]", "prędkość [m/s]"],
+        "y_axis_options": ["droga [m]", "prędkość [m/s]"],
+        "x_max": 4,
+        "y_max": 12,
+        "y_values": [0, 3, 6, 9, 12],
+        "points": [
+          {"x": 0, "y": 0},
+          {"x": 1, "y": 3},
+          {"x": 2, "y": 6},
+          {"x": 3, "y": 9},
+          {"x": 4, "y": 12}
+        ],
+        "data_table": {
+          "headers": ["t [s]", "s [m]"],
+          "rows": [["0", "0"], ["1", "3"], ["2", "6"], ["3", "9"], ["4", "12"]]
+        }
+      }
+    },
+    {
+      "id": "physics-uniform-04-constant-speed-statements",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Oceń prawdziwość stwierdzeń o ruchu jednostajnym prostoliniowym.",
+      "selection_type": "true_false",
+      "explanation": "W tym ruchu prędkość jest stała, a w równych odstępach czasu ciało pokonuje równe drogi.",
+      "answers": [
+        {"text": "Prędkość nie zmienia się w kolejnych sekundach ruchu.", "is_correct": true},
+        {"text": "W równych odstępach czasu ciało pokonuje równe drogi.", "is_correct": true},
+        {"text": "Prędkość rośnie w każdej kolejnej sekundzie o tę samą wartość.", "is_correct": false},
+        {"text": "Tor ruchu musi być linią krzywą.", "is_correct": false}
+      ]
+    },
+    {
+      "id": "physics-uniform-05-formula",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Uzupełnij wzór na drogę w ruchu jednostajnym prostoliniowym: s = {{speed}} · {{time}}.",
+      "selection_type": "fill",
+      "explanation": "Droga jest iloczynem prędkości i czasu: s = v · t.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "speed", "accepted_answers": ["v", "prędkość", "predkosc"]},
+        {"id": "time", "accepted_answers": ["t", "czas"]}
+      ]
+    },
+    {
+      "id": "physics-uniform-06-draw-speed-graph",
+      "topic_id": "wykresy-i-wlasciwosci",
+      "text": "Na podstawie tabeli narysuj wykres zależności prędkości od czasu.",
+      "selection_type": "graph",
+      "explanation": "Prędkość wynosi 3 m/s w każdej sekundzie. Na osi poziomej zaznaczamy czas, a na pionowej prędkość. Wykres v(t) jest poziomą linią na wysokości 3 m/s.",
+      "graph_config": {
+        "x_axis": "czas [s]",
+        "y_axis": "prędkość [m/s]",
+        "x_axis_options": ["czas [s]", "droga [m]"],
+        "y_axis_options": ["prędkość [m/s]", "czas [s]"],
+        "x_max": 4,
+        "y_max": 4,
+        "points": [
+          {"x": 0, "y": 3},
+          {"x": 1, "y": 3},
+          {"x": 2, "y": 3},
+          {"x": 3, "y": 3},
+          {"x": 4, "y": 3}
+        ],
+        "data_table": {
+          "headers": ["t [s]", "s [m]"],
+          "rows": [["0", "0"], ["1", "3"], ["2", "6"], ["3", "9"], ["4", "12"]]
+        }
+      }
+    }
+  ]
+}

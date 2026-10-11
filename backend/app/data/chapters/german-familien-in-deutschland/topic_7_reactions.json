@@ -1,0 +1,31 @@
+{
+  "topic_id": "reactions",
+  "topic_title": "Właściwe reakcje",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-reactions-a",
+      "text": "Dopasuj pytanie do właściwej odpowiedzi.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "origin", "left": "Woher kommt sie?", "right": "Aus Deutschland."},
+        {"id": "home", "left": "Wohnst du in Wien?", "right": "Ja, ich wohne in Wien."},
+        {"id": "job", "left": "Was ist er von Beruf?", "right": "Er ist Koch."},
+        {"id": "age", "left": "Wie alt bist du?", "right": "Ich bin dreizehn."}
+      ],
+      "explanation": "Używaj „aus” przy kraju pochodzenia, a „in” przy miejscu zamieszkania."
+    },
+    {
+      "id": "gfd-reactions-b",
+      "text": "Dopasuj pytanie do właściwej odpowiedzi.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {"id": "katrin-age", "left": "Wie alt ist Katrin?", "right": "Sie ist zwölf."},
+        {"id": "where-lives", "left": "Wo wohnt sie?", "right": "In Hamburg."},
+        {"id": "from-poland", "left": "Kommst du aus Polen?", "right": "Ja, ich komme aus Polen."},
+        {"id": "her-job", "left": "Was ist sie von Beruf?", "right": "Sie ist Köchin."}
+      ],
+      "explanation": "Dobierz odpowiedź do osoby i do słowa pytającego."
+    }
+  ]
+}

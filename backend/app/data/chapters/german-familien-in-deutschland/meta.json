@@ -1,0 +1,19 @@
+{
+  "id": "german-familien-in-deutschland",
+  "title": "Familien in Deutschland",
+  "description": "Powtórka po rozdziale 1: rodzina, zawody, liczebniki i podstawowe czasowniki.",
+  "category": "german",
+  "age_group": "10-12",
+  "target_question_count": 16,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1_reading.json",
+    "topic_2_professions.json",
+    "topic_3_family.json",
+    "topic_4_sein.json",
+    "topic_5_mogen.json",
+    "topic_6_numbers.json",
+    "topic_7_reactions.json",
+    "topic_8_questions.json"
+  ]
+}

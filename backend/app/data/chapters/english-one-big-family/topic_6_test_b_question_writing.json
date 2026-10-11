@@ -1,0 +1,42 @@
+{
+  "topic_id": "test-b-question-writing",
+  "topic_title": "Pytania do odpowiedzi – test B",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "obf-test-b-question-writing-01",
+      "text": "Napisz pytanie pasujące do odpowiedzi:\n\nShe's got brown hair and blue eyes.",
+      "selection_type": "open",
+      "accepted_answers": ["What does she look like?"],
+      "explanation": "Poprawne pytanie: What does she look like?"
+    },
+    {
+      "id": "obf-test-b-question-writing-02",
+      "text": "Napisz pytanie pasujące do odpowiedzi:\n\nHe's noisy.",
+      "selection_type": "open",
+      "accepted_answers": ["What's he like?", "What is he like?"],
+      "explanation": "Poprawne pytanie: What's he like?"
+    },
+    {
+      "id": "obf-test-b-question-writing-03",
+      "text": "Napisz pytanie pasujące do odpowiedzi:\n\nWe've got long, straight hair.",
+      "selection_type": "open",
+      "accepted_answers": ["What do you look like?"],
+      "explanation": "Poprawne pytanie: What do you look like?"
+    },
+    {
+      "id": "obf-test-b-question-writing-04",
+      "text": "Napisz pytanie pasujące do odpowiedzi:\n\nJack's quiet and friendly.",
+      "selection_type": "open",
+      "accepted_answers": ["What's Jack like?", "What is Jack like?"],
+      "explanation": "Poprawne pytanie: What's Jack like?"
+    },
+    {
+      "id": "obf-test-b-question-writing-05",
+      "text": "Napisz pytanie pasujące do odpowiedzi:\n\nI'm sporty.",
+      "selection_type": "open",
+      "accepted_answers": ["What are you like?"],
+      "explanation": "Poprawne pytanie: What are you like?"
+    }
+  ]
+}

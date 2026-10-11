@@ -1,0 +1,33 @@
+{
+  "topic_id": "mogen",
+  "topic_title": "Czasownik mögen",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "gfd-mogen-a",
+      "text": "Ich {{one}} Rockmusik. Meine Eltern {{two}} Jazz. Meine Schwester {{three}} Popmusik. {{four}} du auch Musik?",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "one", "accepted_answers": ["mag"], "options": []},
+        {"id": "two", "accepted_answers": ["mögen"], "options": []},
+        {"id": "three", "accepted_answers": ["mag"], "options": []},
+        {"id": "four", "accepted_answers": ["Magst"], "options": []}
+      ],
+      "explanation": "Ich mag, meine Eltern mögen, meine Schwester mag, magst du?"
+    },
+    {
+      "id": "gfd-mogen-b",
+      "text": "{{one}} ihr Musik? Ich {{two}} Popmusik. Meine Großeltern {{three}} Jazz. Mein Bruder {{four}} Rockmusik.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {"id": "one", "accepted_answers": ["Mögt"], "options": []},
+        {"id": "two", "accepted_answers": ["mag"], "options": []},
+        {"id": "three", "accepted_answers": ["mögen"], "options": []},
+        {"id": "four", "accepted_answers": ["mag"], "options": []}
+      ],
+      "explanation": "Mögt ihr?, ich mag, meine Großeltern mögen, mein Bruder mag."
+    }
+  ]
+}

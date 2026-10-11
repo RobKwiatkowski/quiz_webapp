@@ -1,0 +1,45 @@
+{
+  "topic_id": "adjectives-and-phobias",
+  "topic_title": "Adjectives and phobias",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "u1-phobia-01",
+      "text": "Kevin is afraid {{answer}} heights.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["of"], "options": ["of", "at", "in", "about"]}],
+      "explanation": "Mówimy: afraid of."
+    },
+    {
+      "id": "u1-phobia-02",
+      "text": "Amy is interested {{answer}} art.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["in"], "options": ["in", "of", "at", "about"]}],
+      "explanation": "Mówimy: interested in."
+    },
+    {
+      "id": "u1-phobia-03",
+      "text": "Becky isn't very good {{answer}} maths.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [{"id": "answer", "accepted_answers": ["at"], "options": ["at", "in", "of", "about"]}],
+      "explanation": "Mówimy: good at."
+    },
+    {
+      "id": "u1-phobia-04",
+      "text": "They are hairy and have too many legs. Which phobia is it?",
+      "selection_type": "single",
+      "answers": [{"text": "Fear of spiders", "is_correct": true}, {"text": "Fear of birds", "is_correct": false}, {"text": "Fear of snakes", "is_correct": false}, {"text": "Fear of flying", "is_correct": false}],
+      "explanation": "Opis dotyczy pająków."
+    },
+    {
+      "id": "u1-phobia-05",
+      "text": "A person cannot become a pilot because of this fear. Which phobia is it?",
+      "selection_type": "single",
+      "answers": [{"text": "Fear of flying", "is_correct": true}, {"text": "Fear of the dark", "is_correct": false}, {"text": "Fear of dogs", "is_correct": false}, {"text": "Fear of enclosed spaces", "is_correct": false}],
+      "explanation": "Pilot musi móc latać, więc chodzi o fear of flying."
+    }
+  ]
+}
