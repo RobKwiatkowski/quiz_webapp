@@ -54,6 +54,7 @@ const questionTypeLabels: Record<SelectionType, { label: string; title: string }
   matching: { label: "PARY", title: "Dopasowywanie par" },
   map: { label: "MAPA", title: "Pytanie na mapie" },
   hotspot: { label: "PUNKT", title: "Wskaż punkt" },
+  graph: { label: "WYKRES", title: "Rysowanie wykresu" },
   century: { label: "WIEK", title: "Określanie wieku" },
   fill: { label: "UZUP.", title: "Uzupełnianie luk" },
   listening_fill: { label: "SŁUCH.", title: "Słuchanie i uzupełnianie luk" },

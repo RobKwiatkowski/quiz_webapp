@@ -1141,6 +1141,10 @@ textarea {
   --subject-accent: #2563eb;
 }
 
+.home-card-german {
+  --subject-accent: #ca8a04;
+}
+
 .home-subject-label {
   color: var(--subject-accent, #0f766e);
   font-size: 0.82rem;
@@ -1526,6 +1530,14 @@ body[data-page="quiz"] {
 
 .home-card-math {
   --subject-accent: #6d4cc4;
+}
+
+.home-card-physics {
+  --subject-accent: #2563eb;
+}
+
+.home-card-chemistry {
+  --subject-accent: #c2410c;
 }
 
 .quiz-reset-button {
@@ -2561,6 +2573,31 @@ body[data-page="quiz"] {
   font-weight: 800;
 }
 
+.graph-question { display: grid; gap: 1rem; margin-top: 1rem; }
+.graph-data-table-wrap { overflow-x: auto; }
+.graph-data-table { width: min(100%, 34rem); margin: 0 auto; border-collapse: collapse; color: #24364b; text-align: center; }
+.graph-data-table caption { margin-bottom: 0.45rem; color: #52667c; font-weight: 800; text-align: left; }
+.graph-data-table th, .graph-data-table td { border: 1px solid #b8cbc8; padding: 0.45rem 0.7rem; }
+.graph-data-table th { background: #e6f4f1; }
+.graph-instruction { margin: 0; color: #52667c; font-weight: 750; }
+.graph-axis-selectors { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.graph-axis-selectors fieldset { display: grid; gap: 0.45rem; margin: 0; border: 1px solid rgba(36, 54, 75, 0.16); border-radius: 14px; padding: 0.9rem; }
+.graph-axis-selectors legend { padding: 0 0.3rem; color: #52667c; font-weight: 800; }
+.graph-axis-selectors label { display: flex; align-items: center; gap: 0.5rem; color: #24364b; font-weight: 700; }
+.graph-grid-wrap { position: relative; padding: 1.7rem 0.4rem 1.9rem 2.8rem; }
+.graph-grid { position: relative; display: grid; max-width: 34rem; margin: 0 auto; border-left: 2px solid #24364b; border-bottom: 2px solid #24364b; }
+.graph-corner, .graph-x-tick, .graph-y-tick { display: grid; place-items: center; min-height: 1.8rem; color: #52667c; font-size: 0.8rem; font-weight: 800; }
+.graph-cell { aspect-ratio: 1; min-height: 2.25rem; border: 1px solid #c9d8db; background: #fff; cursor: pointer; }
+.graph-cell:hover:not(:disabled), .graph-cell:focus-visible { background: #e6f4f1; outline: 2px solid #147d78; outline-offset: -2px; }
+.graph-cell { position: relative; z-index: 1; }
+.graph-cell span { display: block; width: 0.7rem; height: 0.7rem; margin: auto; border-radius: 50%; background: transparent; }
+.graph-cell-selected span { background: #147d78; }
+.graph-line-overlay { position: absolute; z-index: 2; top: 1.8rem; right: 0; bottom: 0; left: 1.8rem; width: calc(100% - 1.8rem); height: calc(100% - 1.8rem); pointer-events: none; }
+.graph-line-overlay polyline { fill: none; stroke: #147d78; stroke-linecap: round; stroke-linejoin: round; stroke-width: 0.13; vector-effect: non-scaling-stroke; }
+.graph-x-label { position: absolute; right: 0.4rem; bottom: 0.25rem; color: #24364b; font-weight: 800; }
+.graph-y-label { position: absolute; left: 0.1rem; top: 50%; color: #24364b; font-weight: 800; transform: translateY(-50%) rotate(-90deg); transform-origin: left top; white-space: nowrap; }
+.graph-question > .quiz-action { justify-self: start; min-height: 46px; border: 0; border-radius: 14px; padding: 14px 16px; background: #147d78; color: #fff; font-weight: 800; }
+
 @media (max-width: 700px) {
   .division-quotient-row > span,
   .division-final-row > span { display: none; }
@@ -2572,6 +2609,7 @@ body[data-page="quiz"] {
   .multiplication-result-row { padding-right: 0; }
   .multiplication-row-label { display: none; }
   .operation-order-answer { grid-template-columns: 1fr; }
+  .graph-axis-selectors { grid-template-columns: 1fr; }
   .operation-order-answer input { width: 100%; }
 }
 

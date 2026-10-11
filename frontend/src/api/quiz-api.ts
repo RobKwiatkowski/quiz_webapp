@@ -20,6 +20,7 @@ export type SelectionType =
   | "matching"
   | "map"
   | "hotspot"
+  | "graph"
   | "century"
   | "fill"
   | "listening_fill"
@@ -134,6 +135,28 @@ export interface HotspotConfig {
   target_hotspot_id: string;
 }
 
+export interface GraphPoint {
+  x: number;
+  y: number;
+}
+
+export interface GraphDataTable {
+  headers: string[];
+  rows: string[][];
+}
+
+export interface GraphConfig {
+  x_axis: string;
+  y_axis: string;
+  x_axis_options: string[];
+  y_axis_options: string[];
+  x_max: number;
+  y_max: number;
+  y_values?: number[] | null;
+  points: GraphPoint[];
+  data_table?: GraphDataTable | null;
+}
+
 export interface QuestionContext {
   text: string;
   source?: string | null;
@@ -177,6 +200,7 @@ export interface QuizQuestion {
   matching_pairs: MatchingPair[];
   map_config?: MapConfig | null;
   hotspot_config?: HotspotConfig | null;
+  graph_config?: GraphConfig | null;
   case_sensitive?: boolean;
 }
 

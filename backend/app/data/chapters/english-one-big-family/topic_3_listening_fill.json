@@ -1,78 +1,12 @@
 {
-  "topic_id": "listening-fill",
-  "topic_title": "Słuchanie – uzupełnianie luk",
+  "topic_id": "test-question-writing",
+  "topic_title": "Pytania do odpowiedzi",
   "is_active": true,
-  "max_questions_per_quiz": 2,
   "questions": [
-    {
-      "id": "obf-listening-01",
-      "is_active": true,
-      "text": "My sister has {{hair_length}} {{hair_colour}} hair.",
-      "selection_type": "listening_fill",
-      "audio": "/static/audio/english/one-big-family/obf-listening-01.wav",
-      "spoken_text": "My sister has long blonde hair.",
-      "fill_mode": "open",
-      "fill_blanks": [
-        { "id": "hair_length", "accepted_answers": ["long"], "options": [] },
-        { "id": "hair_colour", "accepted_answers": ["blonde", "blond"], "options": [] }
-      ],
-      "explanation": "Pełne zdanie: My sister has long blonde hair."
-    },
-    {
-      "id": "obf-listening-02",
-      "is_active": true,
-      "text": "Her {{relative}} is friendly and {{personality}}.",
-      "selection_type": "listening_fill",
-      "audio": "/static/audio/english/one-big-family/obf-listening-02.wav",
-      "spoken_text": "Her stepbrother is friendly and sporty.",
-      "fill_mode": "open",
-      "fill_blanks": [
-        { "id": "relative", "accepted_answers": ["stepbrother", "step-brother", "step brother"], "options": [] },
-        { "id": "personality", "accepted_answers": ["sporty"], "options": [] }
-      ],
-      "explanation": "Pełne zdanie: Her stepbrother is friendly and sporty."
-    },
-    {
-      "id": "obf-listening-03",
-      "is_active": true,
-      "text": "We eat {{meal}} in the {{room}}.",
-      "selection_type": "listening_fill",
-      "audio": "/static/audio/english/one-big-family/obf-listening-03.wav",
-      "spoken_text": "We eat dinner in the kitchen.",
-      "fill_mode": "open",
-      "fill_blanks": [
-        { "id": "meal", "accepted_answers": ["dinner"], "options": [] },
-        { "id": "room", "accepted_answers": ["kitchen"], "options": [] }
-      ],
-      "explanation": "Pełne zdanie: We eat dinner in the kitchen."
-    },
-    {
-      "id": "obf-listening-04",
-      "is_active": true,
-      "text": "My {{relative}} has a long {{feature}}.",
-      "selection_type": "listening_fill",
-      "audio": "/static/audio/english/one-big-family/obf-listening-04.wav",
-      "spoken_text": "My grandfather has a long beard.",
-      "fill_mode": "open",
-      "fill_blanks": [
-        { "id": "relative", "accepted_answers": ["grandfather", "granddad", "grandad"], "options": [] },
-        { "id": "feature", "accepted_answers": ["beard"], "options": [] }
-      ],
-      "explanation": "Pełne zdanie: My grandfather has a long beard."
-    },
-    {
-      "id": "obf-listening-05",
-      "is_active": true,
-      "text": "They like {{activity}} their {{relative}}.",
-      "selection_type": "listening_fill",
-      "audio": "/static/audio/english/one-big-family/obf-listening-05.wav",
-      "spoken_text": "They like visiting their great-grandmother.",
-      "fill_mode": "open",
-      "fill_blanks": [
-        { "id": "activity", "accepted_answers": ["visiting"], "options": [] },
-        { "id": "relative", "accepted_answers": ["great-grandmother", "great grandmother"], "options": [] }
-      ],
-      "explanation": "Pełne zdanie: They like visiting their great-grandmother."
-    }
+    {"id": "obf-test-question-writing-01", "text": "Napisz pytanie pasujące do odpowiedzi:\n\nThey've got blonde hair.", "selection_type": "open", "accepted_answers": ["What do they look like?"], "explanation": "Poprawne pytanie: What do they look like?"},
+    {"id": "obf-test-question-writing-02", "text": "Napisz pytanie pasujące do odpowiedzi:\n\nLily's friendly and sporty.", "selection_type": "open", "accepted_answers": ["What's Lily like?", "What is Lily like?"], "explanation": "Poprawne pytanie: What's Lily like?"},
+    {"id": "obf-test-question-writing-03", "text": "Napisz pytanie pasujące do odpowiedzi:\n\nHe's got black hair and a beard.", "selection_type": "open", "accepted_answers": ["What does he look like?"], "explanation": "Poprawne pytanie: What does he look like?"},
+    {"id": "obf-test-question-writing-04", "text": "Napisz pytanie pasujące do odpowiedzi:\n\nI'm quiet.", "selection_type": "open", "accepted_answers": ["What are you like?"], "explanation": "Poprawne pytanie: What are you like?"},
+    {"id": "obf-test-question-writing-05", "text": "Napisz pytanie pasujące do odpowiedzi:\n\nI've got short, curly hair.", "selection_type": "open", "accepted_answers": ["What do you look like?"], "explanation": "Poprawne pytanie: What do you look like?"}
   ]
 }

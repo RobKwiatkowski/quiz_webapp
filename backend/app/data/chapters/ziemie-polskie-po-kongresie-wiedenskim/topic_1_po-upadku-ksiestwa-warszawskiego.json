@@ -544,6 +544,159 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "po-upadku-kozmian-rosja-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Według Kajetana Koźmiana po 1815 roku przywiązanie się do Rosji było konieczne dla",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Galicji",
+          "is_correct": false
+        },
+        {
+          "text": "Rzeczypospolitej Krakowskiej",
+          "is_correct": false
+        },
+        {
+          "text": "Królestwa Polskiego",
+          "is_correct": true
+        },
+        {
+          "text": "Wielkiego Księstwa Poznańskiego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "po-upadku-namiestnik-zajaczek-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Kto był namiestnikiem Królestwa Polskiego?",
+      "selection_type": "single",
+      "explanation": "Namiestnikiem Królestwa Polskiego był Józef Zajączek.",
+      "answers": [
+        {
+          "text": "Wielki książę Konstanty",
+          "is_correct": false
+        },
+        {
+          "text": "Józef Zajączek",
+          "is_correct": true
+        },
+        {
+          "text": "Franciszek Ksawery Drucki-Lubecki",
+          "is_correct": false
+        },
+        {
+          "text": "Adam Jerzy Czartoryski",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "po-upadku-galicja-panszczyzna-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "W zaborze austriackim pańszczyznę zniesiono w {{rok}} roku.",
+      "selection_type": "fill",
+      "explanation": "W zaborze austriackim pańszczyznę zniesiono w 1848 roku.",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "rok",
+          "accepted_answers": [
+            "1848"
+          ],
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "po-upadku-zabory-gospodarka-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Połącz informacje o rolnictwie i przemyśle z właściwym zaborem w pierwszej połowie XIX wieku.",
+      "selection_type": "matching",
+      "explanation": "W zaborze rosyjskim rozwijały się okręgi przemysłowe, w pruskim - przemysł przetwórczy, a w austriackim działały kopalnie soli w Wieliczce i Bochni.",
+      "matching_pairs": [
+        {
+          "id": "rosyjski-rolnictwo",
+          "left": "Modernizacja majątków szlacheckich, ale bez uwłaszczenia chłopów.",
+          "right": "zabór rosyjski - rolnictwo"
+        },
+        {
+          "id": "pruski-rolnictwo",
+          "left": "Rozpoczęcie uwłaszczenia chłopów i modernizacja rolnictwa.",
+          "right": "zabór pruski - rolnictwo"
+        },
+        {
+          "id": "austriacki-rolnictwo",
+          "left": "Uwłaszczenie chłopów w 1848 roku oraz biedne, rozdrobnione gospodarstwa.",
+          "right": "zabór austriacki - rolnictwo"
+        },
+        {
+          "id": "rosyjski-przemysl",
+          "left": "Okręgi przemysłowe z włókiennictwem i przemysłem wydobywczym.",
+          "right": "zabór rosyjski - przemysł"
+        },
+        {
+          "id": "pruski-przemysl",
+          "left": "Rozwój przemysłu przetwórczego.",
+          "right": "zabór pruski - przemysł"
+        },
+        {
+          "id": "austriacki-przemysl",
+          "left": "Słaby rozwój przemysłu; działały kopalnie soli w Wieliczce i Bochni.",
+          "right": "zabór austriacki - przemysł"
+        }
+      ]
+    },
+    {
+      "id": "po-upadku-skarb-krolestwa-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Oceń, czy zdania o sytuacji finansowej Królestwa Polskiego po jego utworzeniu są prawdziwe.",
+      "selection_type": "true_false",
+      "explanation": "Początkowo podatki nie wpływały regularnie, a dochody nie wystarczały nawet na utrzymanie wojska.",
+      "answers": [
+        {
+          "text": "Dochody Królestwa Polskiego nie wystarczały nawet na opłacenie wojska.",
+          "is_correct": true
+        },
+        {
+          "text": "Podatki od początku regularnie zasilały skarb Królestwa Polskiego.",
+          "is_correct": false
+        },
+        {
+          "text": "Rada Administracyjna zaproponowała zmniejszenie wojska.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "po-upadku-lubecki-finanse-test",
+      "topic_id": "po-upadku-ksiestwa-warszawskiego",
+      "is_active": true,
+      "text": "Oceń, czy zdania o działalności Franciszka Ksawerego Druckiego-Lubeckiego jako ministra finansów są prawdziwe.",
+      "selection_type": "true_false",
+      "explanation": "Reformy Druckiego-Lubeckiego zwiększyły dochody Królestwa Polskiego, pozwoliły gromadzić rezerwę w skarbie i finansować roboty publiczne.",
+      "answers": [
+        {
+          "text": "Zaproponował reformę zarządzania finansami Królestwa Polskiego.",
+          "is_correct": true
+        },
+        {
+          "text": "Za jego urzędowania dochody Królestwa Polskiego wzrosły.",
+          "is_correct": true
+        },
+        {
+          "text": "Jego działania doprowadziły do likwidacji robót publicznych.",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

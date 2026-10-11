@@ -31,7 +31,10 @@ SUPPORTED_SUBJECTS = {
     "biology": "Biologia",
     "polish": "Język polski",
     "english": "Język angielski",
+    "german": "Język niemiecki",
     "math": "Matematyka",
+    "physics": "Fizyka",
+    "chemistry": "Chemia",
 }
 MATH_ONLY_SELECTION_TYPES = {
     "operation_order",

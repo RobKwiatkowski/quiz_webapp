@@ -1,6 +1,6 @@
 import type { QuizListItem } from "../../api/quiz-api";
 
-export type SubjectId = "history" | "geography" | "biology" | "polish" | "english" | "math";
+export type SubjectId = "history" | "geography" | "biology" | "polish" | "english" | "german" | "math" | "physics" | "chemistry";
 
 export interface SubjectConfig {
   id: SubjectId;
@@ -46,12 +46,33 @@ export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
     emptyText: "Brak dostępnych quizów z języka angielskiego.",
     categories: ["english"],
   },
+  german: {
+    id: "german",
+    title: "Język niemiecki",
+    description: "Ćwicz słownictwo, liczebniki i podstawową gramatykę w języku niemieckim.",
+    emptyText: "Brak dostępnych quizów z języka niemieckiego.",
+    categories: ["german"],
+  },
   math: {
     id: "math",
     title: "Matematyka",
     description: "Ćwicz rachunki i poznawaj sposoby rozwiązywania zadań krok po kroku.",
     emptyText: "Brak dostępnych quizów z matematyki.",
     categories: ["math"],
+  },
+  physics: {
+    id: "physics",
+    title: "Fizyka",
+    description: "Poznawaj ruch, prędkość i zjawiska fizyczne w krótkich zadaniach.",
+    emptyText: "Brak dostępnych quizów z fizyki.",
+    categories: ["physics"],
+  },
+  chemistry: {
+    id: "chemistry",
+    title: "Chemia",
+    description: "Poznaj substancje, ich właściwości i przemiany w krótkich zadaniach.",
+    emptyText: "Brak dostępnych quizów z chemii.",
+    categories: ["chemistry"],
   },
 };
 

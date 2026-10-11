@@ -25,6 +25,7 @@ import { WrittenDivisionQuestion } from "../features/quiz/WrittenDivisionQuestio
 import { TimedMultiplicationQuestion } from "../features/quiz/TimedMultiplicationQuestion";
 import { TimedDivisionQuestion } from "../features/quiz/TimedDivisionQuestion";
 import { OperationOrderQuestion } from "../features/quiz/OperationOrderQuestion";
+import { GraphQuestion } from "../features/quiz/GraphQuestion";
 
 const PERFECT_SCORE_AUDIO_URL = "/assets/sounds/perfect-score-crowd.mp3";
 
@@ -308,6 +309,7 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} quizCategory={props.quizCategory} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "graph") return <GraphQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "written_multiplication") return <WrittenMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "written_division") return <WrittenDivisionQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "timed_multiplication") return <TimedMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
@@ -600,7 +602,10 @@ function getSubjectGenitive(section: string): string {
   if (section === "biology") return "biologii";
   if (section === "polish") return "języka polskiego";
   if (section === "english") return "języka angielskiego";
+  if (section === "german") return "języka niemieckiego";
   if (section === "math") return "matematyki";
+  if (section === "physics") return "fizyki";
+  if (section === "chemistry") return "chemii";
   return "historii";
 }
 

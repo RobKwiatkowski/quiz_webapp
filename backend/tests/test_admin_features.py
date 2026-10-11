@@ -383,6 +383,7 @@ def test_admin_subjects_and_chapter_filtering(tmp_path, monkeypatch):
         {"id": "polish", "title": "Język polski"},
         {"id": "english", "title": "Język angielski"},
         {"id": "math", "title": "Matematyka"},
+        {"id": "physics", "title": "Fizyka"},
     ]
 
     response = client.post(

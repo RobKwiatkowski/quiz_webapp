@@ -10,7 +10,10 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
   biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
   polish: { label: "Lektury, język i opowieści", accent: "home-card-polish" },
   english: { label: "Words, grammar and practice", accent: "home-card-english" },
+  german: { label: "Wörter, Grammatik und Übungen", accent: "home-card-german" },
   math: { label: "Liczby, działania i logika", accent: "home-card-math" },
+  physics: { label: "Ruch, prędkość i siły", accent: "home-card-physics" },
+  chemistry: { label: "Substancje i przemiany", accent: "home-card-chemistry" },
 };
 
 const subjectStartImages: Record<SubjectId, readonly string[]> = {
@@ -19,7 +22,10 @@ const subjectStartImages: Record<SubjectId, readonly string[]> = {
   biology: ["biology-hero.webp"],
   polish: ["polish-hero.webp"],
   english: ["polish-hero.webp"],
+  german: ["polish-hero.webp"],
   math: ["math_pixelart.png", "math-hero.webp"],
+  physics: ["math-hero.webp"],
+  chemistry: ["biology-hero.webp"],
 };
 
 const allStartImages = Object.values(subjectStartImages).flat();

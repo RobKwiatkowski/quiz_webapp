@@ -212,7 +212,7 @@
     {
       "id": "q-powstanie-organizacje-test",
       "topic_id": "powstanie-listopadowe",
-      "is_active": true,
+      "is_active": false,
       "text": "Dopasuj informacje do właściwych organizacji.",
       "selection_type": "matching",
       "explanation": "Sprzysiężenie Podchorążych: D, E, F. Towarzystwo Patriotyczne: A, C. Towarzystwo Filomatów: B, G.",
@@ -259,6 +259,7 @@
       "topic_id": "powstanie-listopadowe",
       "is_active": true,
       "text": "Do którego państwa należała większość Wielkopolski w okresie powstania listopadowego?",
+      "image": "/static/images/history/powstanie-listopadowe-mapa-z-testu.png",
       "selection_type": "single",
       "answers": [
         {
@@ -334,6 +335,7 @@
       "topic_id": "powstanie-listopadowe",
       "is_active": true,
       "text": "Którego obszaru nie objęło powstanie listopadowe?",
+      "image": "/static/images/history/powstanie-listopadowe-mapa-z-testu.png",
       "selection_type": "single",
       "answers": [
         {
@@ -482,7 +484,7 @@
     {
       "id": "q-powstanie-uchwala-skutki-test",
       "topic_id": "powstanie-listopadowe",
-      "is_active": true,
+      "is_active": false,
       "text": "Jakie były skutki przyjęcia przez sejm uchwały opisanej w tekście źródłowym?",
       "selection_type": "llm",
       "context": {
@@ -497,7 +499,7 @@
     {
       "id": "q-powstanie-uchwala-przyczyna-test",
       "topic_id": "powstanie-listopadowe",
-      "is_active": true,
+      "is_active": false,
       "text": "Dlaczego sejm przyjął uchwałę opisaną w tekście źródłowym?",
       "selection_type": "llm",
       "context": {
@@ -573,7 +575,7 @@
     {
       "id": "q-powstanie-podzial-1815-test",
       "topic_id": "powstanie-listopadowe",
-      "is_active": true,
+      "is_active": false,
       "text": "Jaki był polityczny skutek podziału ziem polskich w 1815 roku?",
       "selection_type": "llm",
       "image": "/static/images/history/powstanie-listopadowe-mapa-1815.png",

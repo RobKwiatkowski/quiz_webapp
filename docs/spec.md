@@ -4,7 +4,7 @@
 
 Edu Quiz for Kids is a lightweight educational quiz application for home learning,
 designed for a child aged about 10-12. The first production version supports
-single-player school revision for history, geography, biology, Polish, English, and math, plus a
+single-player school revision for history, geography, biology, chemistry, Polish, English, German, math, and physics, plus a
 minimal single-admin authoring panel for editing JSON-backed questions.
 
 The application should be easy to run on a home server, including Raspberry Pi 3,
@@ -39,14 +39,14 @@ In scope:
 
 - subject menu and subject-specific quiz list pages
 - one quiz represents one school book chapter
-- history, geography, biology, Polish, English, and math use the same chapter/topic/question learning
+- history, geography, biology, chemistry, Polish, English, German, math, and physics use the same chapter/topic/question learning
   method
 - each playable chapter contains one or more topics; a newly created admin
   chapter may temporarily contain no topics
 - each topic is stored in a separate JSON file
 - backend assembles ready quiz payloads from chapter metadata and topic files
 - frontend renders ready quiz data returned by the backend
-- question types: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `century`, `fill`, `written_multiplication`, `written_division`, `timed_multiplication`, `timed_division`, and `operation_order`
+- question types: `single`, `multiple`, `true_false`, `open`, `llm`, `order`, `matching`, `map`, `hotspot`, `graph`, `century`, `fill`, `written_multiplication`, `written_division`, `timed_multiplication`, `timed_division`, and `operation_order`
 - optional source text passages on questions
 - optional structured context passages with source attribution on questions
 - optional images on questions, including multiple alternative images for one
@@ -210,6 +210,10 @@ authentication.
 ## 7. Data Models
 
 Backend models are defined in `backend/app/models/quiz.py`.
+
+### `GraphConfig`
+
+Graph questions ask the learner to select labels for both axes and mark the expected points. An optional `data_table` contains a `headers` array and equally wide `rows`, and is displayed above the interactive graph. Use optional `y_values` for a labeled vertical scale with larger regular steps; it starts at `0` and ends at `y_max`. The frontend connects selected points with a continuous line so a drawn relationship is easy to read.
 
 ### `Answer`
 
@@ -665,7 +669,7 @@ Fields:
 - `title`: title shown on the list and quiz pages
 - `description`: description shown in the UI
 - `category`: subject/category identifier; JSON-backed school subjects are
-  `history`, `geography`, `biology`, `polish`, `english`, and `math`
+  `history`, `geography`, `biology`, `chemistry`, `polish`, `english`, `math`, and `physics`
 - `age_group`: intended age group
 - `chapter_number`: optional positive integer displayed as the `Rozdział X` badge on
   the quiz card; omit it or set it to `null` to hide the badge
@@ -735,7 +739,7 @@ The frontend is responsible for:
 
 - showing the main subject menu
 - loading the quiz list
-- filtering history, geography, biology, Polish, English, and math quiz lists by chapter category
+- filtering history, geography, biology, chemistry, Polish, English, math, and physics quiz lists by chapter category
 - keeping one-shot LLM quizzes on the history section page
 - rendering generated written-multiplication questions with carry scratch fields,
   partial-product rows, place-value offsets, and a final result row
@@ -1211,7 +1215,7 @@ Enter works globally on the quiz screen:
 The admin interface is intentionally plain and functional:
 
 - it uses React/TypeScript while preserving the existing admin API contract
-- it starts with a subject selector for history, geography, biology, Polish, English, and math
+- it starts with a subject selector for history, geography, biology, chemistry, Polish, English, math, and physics
 - it starts with a chapter list, then a topic list, then questions for one topic
 - it supports creating chapters inside the currently selected subject by
   entering only a chapter name

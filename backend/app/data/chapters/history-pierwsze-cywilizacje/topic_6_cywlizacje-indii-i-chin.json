@@ -444,6 +444,28 @@
         "target_feature_id": "ancient_china"
       },
       "explanation": "Wczesne cywilizacje chińskie rozwijały się między innymi w dorzeczu Huang He."
+    },
+    {
+      "id": "q-97e63d9a",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jaką dziedzinę medycyny rozwinęły chiny?",
+      "selection_type": "open",
+      "explanation": "Rozwinęły bardzo zielarstwo.",
+      "accepted_answers": [
+        "zielarstwo"
+      ]
+    },
+    {
+      "id": "q-8e3d23fe",
+      "topic_id": "cywlizacje-indii-i-chin",
+      "is_active": true,
+      "text": "Jak nazywamy wysokiej jakości chińską ceramikę taką jak wazony, dzbanki, talerze?",
+      "selection_type": "open",
+      "explanation": "Jest to porcelana",
+      "accepted_answers": [
+        "porcelana"
+      ]
     }
   ]
 }

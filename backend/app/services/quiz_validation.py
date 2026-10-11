@@ -19,6 +19,7 @@ ALLOWED_SELECTION_TYPES = {
     "matching",
     "map",
     "hotspot",
+    "graph",
     "century",
     "fill",
     "listening_fill",
@@ -684,6 +685,98 @@ def validate_matching_pairs_structure(
             result.errors.append(f"{pair_context}: right must be a non-empty string")
 
 
+def validate_graph_config(graph_config: Any, result: ValidationResult, context: str) -> None:
+    """Validates an interactive graph configuration."""
+    if not isinstance(graph_config, dict):
+        result.errors.append(f"{context}: graph_config must be an object")
+        return
+
+    for field_name in ("x_axis", "y_axis"):
+        if not is_non_empty_string(graph_config.get(field_name)):
+            result.errors.append(f"{context}: graph_config.{field_name} must be a non-empty string")
+
+    for field_name in ("x_axis_options", "y_axis_options"):
+        options = graph_config.get(field_name)
+        if not isinstance(options, list) or len(options) < 2 or any(not is_non_empty_string(option) for option in options):
+            result.errors.append(f"{context}: graph_config.{field_name} must contain at least 2 non-empty strings")
+        elif len(set(options)) != len(options):
+            result.errors.append(f"{context}: graph_config.{field_name} must not contain duplicates")
+
+    x_axis, y_axis = graph_config.get("x_axis"), graph_config.get("y_axis")
+    x_options, y_options = graph_config.get("x_axis_options"), graph_config.get("y_axis_options")
+    if isinstance(x_options, list) and x_axis not in x_options:
+        result.errors.append(f"{context}: graph_config.x_axis must be one of x_axis_options")
+    if isinstance(y_options, list) and y_axis not in y_options:
+        result.errors.append(f"{context}: graph_config.y_axis must be one of y_axis_options")
+
+    limits: dict[str, int] = {}
+    for field_name in ("x_max", "y_max"):
+        value = graph_config.get(field_name)
+        if isinstance(value, bool) or not isinstance(value, int) or not 1 <= value <= 12:
+            result.errors.append(f"{context}: graph_config.{field_name} must be an integer from 1 to 12")
+        else:
+            limits[field_name] = value
+
+    y_values = graph_config.get("y_values")
+    if y_values is not None:
+        if not isinstance(y_values, list) or len(y_values) < 2 or any(
+            isinstance(value, bool) or not isinstance(value, int) for value in y_values
+        ):
+            result.errors.append(f"{context}: graph_config.y_values must contain at least 2 integers")
+        elif y_values != sorted(set(y_values)):
+            result.errors.append(f"{context}: graph_config.y_values must be unique and sorted from low to high")
+        elif "y_max" in limits and (y_values[0] != 0 or y_values[-1] != limits["y_max"]):
+            result.errors.append(f"{context}: graph_config.y_values must start at 0 and end at y_max")
+
+    points = graph_config.get("points")
+    if not isinstance(points, list) or len(points) < 2:
+        result.errors.append(f"{context}: graph_config.points must contain at least 2 points")
+        return
+
+    seen_points: set[tuple[int, int]] = set()
+    for index, point in enumerate(points):
+        point_context = f"{context}: graph_config.points[{index}]"
+        if not isinstance(point, dict):
+            result.errors.append(f"{point_context} must be an object")
+            continue
+        x, y = point.get("x"), point.get("y")
+        if isinstance(x, bool) or not isinstance(x, int) or x < 0:
+            result.errors.append(f"{point_context}.x must be a non-negative integer")
+        if isinstance(y, bool) or not isinstance(y, int) or y < 0:
+            result.errors.append(f"{point_context}.y must be a non-negative integer")
+        if isinstance(x, int) and isinstance(y, int):
+            if (x, y) in seen_points:
+                result.errors.append(f"{point_context} duplicates another graph point")
+            seen_points.add((x, y))
+            if "x_max" in limits and x > limits["x_max"]:
+                result.errors.append(f"{point_context}.x must not exceed x_max")
+            if "y_max" in limits and y > limits["y_max"]:
+                result.errors.append(f"{point_context}.y must not exceed y_max")
+            if isinstance(y_values, list) and y not in y_values:
+                result.errors.append(f"{point_context}.y must be included in graph_config.y_values")
+
+    data_table = graph_config.get("data_table")
+    if data_table is None:
+        return
+    if not isinstance(data_table, dict):
+        result.errors.append(f"{context}: graph_config.data_table must be an object")
+        return
+
+    headers = data_table.get("headers")
+    rows = data_table.get("rows")
+    if not isinstance(headers, list) or len(headers) < 2 or any(not is_non_empty_string(header) for header in headers):
+        result.errors.append(f"{context}: graph_config.data_table.headers must contain at least 2 non-empty strings")
+        return
+    if not isinstance(rows, list) or not rows:
+        result.errors.append(f"{context}: graph_config.data_table.rows must be a non-empty list")
+        return
+    for index, row in enumerate(rows):
+        if not isinstance(row, list) or len(row) != len(headers) or any(not is_non_empty_string(value) for value in row):
+            result.errors.append(
+                f"{context}: graph_config.data_table.rows[{index}] must contain {len(headers)} non-empty strings"
+            )
+
+
 def validate_question(
     question: Any,
     result: ValidationResult,
@@ -794,6 +887,7 @@ def validate_question(
     matching_pairs = question.get("matching_pairs")
     map_config = question.get("map_config")
     hotspot_config = question.get("hotspot_config")
+    graph_config = question.get("graph_config")
     century_config = question.get("century_config")
     fill_mode = question.get("fill_mode")
     fill_blanks = question.get("fill_blanks")
@@ -926,6 +1020,27 @@ def validate_question(
                 "order_items",
                 "matching_pairs",
                 "map_config",
+            ],
+        )
+
+    elif selection_type == "graph":
+        if not is_non_empty_string(explanation):
+            result.errors.append(f"{context}: explanation must be a non-empty string")
+        validate_graph_config(graph_config, result, context)
+        warn_unexpected(
+            question,
+            result,
+            context,
+            [
+                "answers",
+                "accepted_answers",
+                "answer_slots",
+                "order_items",
+                "matching_pairs",
+                "map_config",
+                "hotspot_config",
+                "century_config",
+                "fill_blanks",
             ],
         )
 

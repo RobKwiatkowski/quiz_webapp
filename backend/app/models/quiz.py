@@ -246,6 +246,63 @@ class HotspotConfig(BaseModel):
     target_hotspot_id: str
 
 
+class GraphPoint(BaseModel):
+    """One integer point plotted on an interactive graph."""
+
+    x: int = Field(ge=0)
+    y: int = Field(ge=0)
+
+
+class GraphDataTable(BaseModel):
+    """Optional source data shown above an interactive graph."""
+
+    headers: List[str] = Field(min_length=2)
+    rows: List[List[str]] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def validate_table(self) -> "GraphDataTable":
+        """Ensures that every displayed data row matches the table width."""
+        if any(len(row) != len(self.headers) for row in self.rows):
+            raise ValueError("graph data table rows must match the number of headers")
+        return self
+
+
+class GraphConfig(BaseModel):
+    """Configuration for an axis-selection and point-plotting question."""
+
+    x_axis: str
+    y_axis: str
+    x_axis_options: List[str] = Field(min_length=2)
+    y_axis_options: List[str] = Field(min_length=2)
+    x_max: int = Field(ge=1, le=10)
+    y_max: int = Field(ge=1, le=12)
+    y_values: List[int] | None = Field(default=None, min_length=2)
+    points: List[GraphPoint] = Field(min_length=2)
+    data_table: GraphDataTable | None = None
+
+    @model_validator(mode="after")
+    def validate_graph(self) -> "GraphConfig":
+        """Ensures the axes and points can be rendered on the configured grid."""
+        if self.x_axis not in self.x_axis_options or self.y_axis not in self.y_axis_options:
+            raise ValueError("correct graph axes must be included in their options")
+        if len(set(self.x_axis_options)) != len(self.x_axis_options):
+            raise ValueError("x_axis_options must not contain duplicates")
+        if len(set(self.y_axis_options)) != len(self.y_axis_options):
+            raise ValueError("y_axis_options must not contain duplicates")
+        if self.y_values is not None:
+            if self.y_values != sorted(set(self.y_values)):
+                raise ValueError("y_values must be unique and sorted from low to high")
+            if self.y_values[0] != 0 or self.y_values[-1] != self.y_max:
+                raise ValueError("y_values must start at 0 and end at y_max")
+        if any(point.x > self.x_max or point.y > self.y_max for point in self.points):
+            raise ValueError("graph points must fit inside the configured grid")
+        if self.y_values is not None and any(point.y not in self.y_values for point in self.points):
+            raise ValueError("graph point y values must be available on the configured scale")
+        if len({(point.x, point.y) for point in self.points}) != len(self.points):
+            raise ValueError("graph points must not contain duplicates")
+        return self
+
+
 class Question(BaseModel):
     """Question schema supporting all quiz answer interaction types.
 
@@ -273,6 +330,7 @@ class Question(BaseModel):
         matching_pairs: Left/right pairs for matching questions.
         map_config: Configuration for map questions.
         hotspot_config: Configuration for interactive SVG diagram questions.
+        graph_config: Configuration for interactive graph questions.
         topic_id: Optional topic identifier used by the admin editor.
     """
 
@@ -286,7 +344,7 @@ class Question(BaseModel):
     spoken_text: Optional[str] = None
     explanation: Optional[str] = None
     selection_type: Literal[
-        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "century", "fill", "listening_fill", "written_multiplication", "written_division", "timed_multiplication", "timed_division", "operation_order"
+        "single", "multiple", "true_false", "open", "llm", "order", "matching", "map", "hotspot", "graph", "century", "fill", "listening_fill", "written_multiplication", "written_division", "timed_multiplication", "timed_division", "operation_order"
     ] = "single"
     answers: List[Answer] = Field(default_factory=list)
     accepted_answers: List[str] = Field(default_factory=list)
@@ -315,6 +373,7 @@ class Question(BaseModel):
     matching_pairs: List[MatchingPair] = Field(default_factory=list)
     map_config: Optional[MapConfig] = None
     hotspot_config: Optional[HotspotConfig] = None
+    graph_config: Optional[GraphConfig] = None
     topic_id: Optional[str] = None
 
 
