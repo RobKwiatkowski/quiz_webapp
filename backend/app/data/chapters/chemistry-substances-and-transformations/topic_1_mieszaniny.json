@@ -10,10 +10,22 @@
       "selection_type": "single",
       "explanation": "Woda i benzyna nie mieszają się ze sobą, więc tworzą warstwy możliwe do rozdzielenia rozdzielaczem.",
       "answers": [
-        {"text": "Woda i piasek", "is_correct": false},
-        {"text": "Opiłki żelaza i sproszkowana siarka", "is_correct": false},
-        {"text": "Woda i benzyna", "is_correct": true},
-        {"text": "Woda i alkohol", "is_correct": false}
+        {
+          "text": "Woda i piasek",
+          "is_correct": false
+        },
+        {
+          "text": "Opiłki żelaza i sproszkowana siarka",
+          "is_correct": false
+        },
+        {
+          "text": "Woda i benzyna",
+          "is_correct": true
+        },
+        {
+          "text": "Woda i alkohol",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -24,10 +36,22 @@
       "selection_type": "single",
       "explanation": "Magnes przyciąga opiłki żelaza, pokazane na schemacie I.",
       "answers": [
-        {"text": "Schemat I", "is_correct": true},
-        {"text": "Schemat II", "is_correct": false},
-        {"text": "Schemat III", "is_correct": false},
-        {"text": "Schemat IV", "is_correct": false}
+        {
+          "text": "Schemat I",
+          "is_correct": true
+        },
+        {
+          "text": "Schemat II",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat III",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat IV",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -38,10 +62,22 @@
       "selection_type": "single",
       "explanation": "Sól kuchenna rozpuszcza się w wodzie, tworząc mieszaninę jednorodną. To schemat II.",
       "answers": [
-        {"text": "Schemat I", "is_correct": false},
-        {"text": "Schemat II", "is_correct": true},
-        {"text": "Schemat III", "is_correct": false},
-        {"text": "Schemat IV", "is_correct": false}
+        {
+          "text": "Schemat I",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat II",
+          "is_correct": true
+        },
+        {
+          "text": "Schemat III",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat IV",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -51,10 +87,26 @@
       "selection_type": "matching",
       "explanation": "Wybór metody zależy od właściwości składników, na przykład od ich rozpuszczalności albo przyciągania przez magnes.",
       "matching_pairs": [
-        {"id": "water-sand", "left": "woda i piasek", "right": "sączenie"},
-        {"id": "iron-sulfur", "left": "opiłki żelaza i siarka", "right": "użycie magnesu"},
-        {"id": "water-gasoline", "left": "woda i benzyna", "right": "rozdzielacz"},
-        {"id": "salt-water", "left": "woda z solą kuchenną", "right": "odparowanie wody"}
+        {
+          "id": "water-sand",
+          "left": "woda i piasek",
+          "right": "sączenie"
+        },
+        {
+          "id": "iron-sulfur",
+          "left": "opiłki żelaza i siarka",
+          "right": "użycie magnesu"
+        },
+        {
+          "id": "water-gasoline",
+          "left": "woda i benzyna",
+          "right": "rozdzielacz"
+        },
+        {
+          "id": "salt-water",
+          "left": "woda z solą kuchenną",
+          "right": "odparowanie wody"
+        }
       ]
     },
     {
@@ -64,10 +116,22 @@
       "selection_type": "multiple",
       "explanation": "W mieszaninie niejednorodnej można rozróżnić składniki lub ich warstwy.",
       "answers": [
-        {"text": "Woda i piasek", "is_correct": true},
-        {"text": "Woda i benzyna", "is_correct": true},
-        {"text": "Woda z rozpuszczoną solą kuchenną", "is_correct": false},
-        {"text": "Woda z rozpuszczonym cukrem", "is_correct": false}
+        {
+          "text": "Woda i piasek",
+          "is_correct": true
+        },
+        {
+          "text": "Woda i benzyna",
+          "is_correct": true
+        },
+        {
+          "text": "Woda z rozpuszczoną solą kuchenną",
+          "is_correct": false
+        },
+        {
+          "text": "Woda z rozpuszczonym cukrem",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -78,11 +142,24 @@
       "selection_type": "multiple",
       "explanation": "Jod i węgiel są niemetalami. Są pokazane odpowiednio na schematach II i IV.",
       "answers": [
-        {"text": "Schemat I", "is_correct": false},
-        {"text": "Schemat II", "is_correct": true},
-        {"text": "Schemat III", "is_correct": false},
-        {"text": "Schemat IV", "is_correct": true}
-      ]
+        {
+          "text": "Schemat I",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat II",
+          "is_correct": true
+        },
+        {
+          "text": "Schemat III",
+          "is_correct": false
+        },
+        {
+          "text": "Schemat IV",
+          "is_correct": true
+        }
+      ],
+      "is_active": false
     },
     {
       "id": "chem-substances-22-water-alcohol-separation",
@@ -91,10 +168,22 @@
       "selection_type": "single",
       "explanation": "Woda i alkohol tworzą mieszaninę jednorodną, ale mają różne temperatury wrzenia. Można je rozdzielić przez destylację.",
       "answers": [
-        {"text": "Destylację", "is_correct": true},
-        {"text": "Użycie magnesu", "is_correct": false},
-        {"text": "Sączenie", "is_correct": false},
-        {"text": "Użycie rozdzielacza", "is_correct": false}
+        {
+          "text": "Destylację",
+          "is_correct": true
+        },
+        {
+          "text": "Użycie magnesu",
+          "is_correct": false
+        },
+        {
+          "text": "Sączenie",
+          "is_correct": false
+        },
+        {
+          "text": "Użycie rozdzielacza",
+          "is_correct": false
+        }
       ]
     },
     {
@@ -104,10 +193,22 @@
       "selection_type": "single",
       "explanation": "Po rozpuszczeniu soli w wodzie nie widać oddzielnych składników, więc powstaje mieszanina jednorodna.",
       "answers": [
-        {"text": "Woda z piaskiem", "is_correct": false},
-        {"text": "Woda z kredą", "is_correct": false},
-        {"text": "Woda z solą kuchenną", "is_correct": true},
-        {"text": "Opiłki żelaza z siarką", "is_correct": false}
+        {
+          "text": "Woda z piaskiem",
+          "is_correct": false
+        },
+        {
+          "text": "Woda z kredą",
+          "is_correct": false
+        },
+        {
+          "text": "Woda z solą kuchenną",
+          "is_correct": true
+        },
+        {
+          "text": "Opiłki żelaza z siarką",
+          "is_correct": false
+        }
       ]
     }
   ]

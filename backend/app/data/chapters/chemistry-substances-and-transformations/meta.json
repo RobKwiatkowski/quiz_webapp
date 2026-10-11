@@ -5,7 +5,7 @@
   "category": "chemistry",
   "age_group": "10-12",
   "chapter_number": 1,
-  "target_question_count": 30,
+  "target_question_count": 18,
   "questions_per_topic": 7,
   "topics": [
     "topic_1_mieszaniny.json",
