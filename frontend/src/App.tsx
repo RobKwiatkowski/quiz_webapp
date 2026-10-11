@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { SubjectQuizList } from "./features/subjects/SubjectQuizList";
-import { getSubjectFromPath, subjectConfigs, type SubjectId } from "./features/subjects/subject-config";
+import {
+  getSubjectFromPath,
+  subjectConfigs,
+  type GradeConfig,
+  type SubjectConfig,
+  type SubjectId,
+} from "./features/subjects/subject-config";
 import { AdminPage } from "./pages/AdminPage";
 import { QuizPage } from "./pages/QuizPage";
 
@@ -39,6 +45,7 @@ export function App() {
   const isQuizPage = window.location.pathname.toLowerCase().endsWith("quiz.html");
   const isAdminPage = window.location.pathname.toLowerCase().startsWith("/admin");
   const [startImage] = useState(() => chooseStartImage(subjectId ? subjectStartImages[subjectId] : allStartImages));
+  const [selectedGrade, setSelectedGrade] = useState<GradeConfig | null>(null);
 
   useEffect(() => {
     if (isQuizPage) {
@@ -78,14 +85,48 @@ export function App() {
             <p>{subject.description}</p>
           </div>
         </section>
-        <section aria-label="Lista quizów">
-          <SubjectQuizList subject={subject} />
-        </section>
+        {subject.grades && !selectedGrade ? (
+          <GradePicker subject={subject} onSelect={setSelectedGrade} />
+        ) : (
+          <section aria-label="Lista quizów">
+            {selectedGrade && (
+              <div className="grade-list-heading">
+                <button className="grade-back-button" type="button" onClick={() => setSelectedGrade(null)}>
+                  <span aria-hidden="true">←</span> Wybierz inną klasę
+                </button>
+                <h2>{selectedGrade.label}</h2>
+              </div>
+            )}
+            <SubjectQuizList subject={subject} grade={selectedGrade ?? undefined} />
+          </section>
+        )}
       </main>
     );
   }
 
   return <HomeScreen startImage={startImage} />;
+}
+
+function GradePicker({ subject, onSelect }: { subject: SubjectConfig; onSelect: (grade: GradeConfig) => void }) {
+  return (
+    <section className="grade-picker" aria-labelledby="grade-picker-title">
+      <h2 id="grade-picker-title">Wybierz klasę</h2>
+      <p>Wybierz swoją klasę, aby zobaczyć odpowiednie quizy z historii.</p>
+      <div className="grade-picker-grid">
+        {subject.grades?.map((grade) => (
+          <button
+            className={`grade-choice grade-choice-${grade.color}`}
+            key={grade.id}
+            type="button"
+            onClick={() => onSelect(grade)}
+          >
+            <span className="grade-choice-label">{grade.label}</span>
+            <span className="grade-choice-action">Zobacz quizy <span aria-hidden="true">→</span></span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 function HomeScreen({ startImage }: { startImage: string }) {

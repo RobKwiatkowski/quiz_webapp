@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { getQuizzes, type QuizDifficulty, type QuizListItem } from "../../api/quiz-api";
 import {
   filterQuizzesForSubject,
+  filterQuizzesForGrade,
   getChapterLabel,
+  type GradeConfig,
   type SubjectConfig,
 } from "./subject-config";
 
@@ -13,9 +15,10 @@ type LoadState =
 
 interface SubjectQuizListProps {
   subject: SubjectConfig;
+  grade?: GradeConfig;
 }
 
-export function SubjectQuizList({ subject }: SubjectQuizListProps) {
+export function SubjectQuizList({ subject, grade }: SubjectQuizListProps) {
   const [loadState, setLoadState] = useState<LoadState>({ status: "loading" });
 
   useEffect(() => {
@@ -26,7 +29,9 @@ export function SubjectQuizList({ subject }: SubjectQuizListProps) {
       .then((quizzes) => {
         setLoadState({
           status: "ready",
-          quizzes: filterQuizzesForSubject(quizzes, subject),
+          quizzes: grade
+            ? filterQuizzesForGrade(filterQuizzesForSubject(quizzes, subject), grade)
+            : filterQuizzesForSubject(quizzes, subject),
         });
       })
       .catch((error: unknown) => {
@@ -41,7 +46,7 @@ export function SubjectQuizList({ subject }: SubjectQuizListProps) {
       });
 
     return () => controller.abort();
-  }, [subject]);
+  }, [subject, grade]);
 
   if (loadState.status === "loading") {
     return <p className="subject-status">Ładowanie quizów...</p>;
@@ -52,7 +57,7 @@ export function SubjectQuizList({ subject }: SubjectQuizListProps) {
   }
 
   if (loadState.quizzes.length === 0) {
-    return <p className="subject-status">{subject.emptyText}</p>;
+    return <p className="subject-status">{grade ? `Brak dostępnych quizów dla ${grade.label.toLowerCase()}.` : subject.emptyText}</p>;
   }
 
   return (

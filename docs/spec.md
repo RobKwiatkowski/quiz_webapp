@@ -38,6 +38,7 @@ the learning experience localized for the target child.
 In scope:
 
 - subject menu and subject-specific quiz list pages
+- the History subject first shows a grade selector, then the quiz list configured for the selected grade; grade IV is blue, V green, VI yellow, and VII red
 - one quiz represents one school book chapter
 - history, geography, biology, chemistry, Polish, English, German, math, and physics use the same chapter/topic/question learning
   method
@@ -740,6 +741,7 @@ The frontend is responsible for:
 - showing the main subject menu
 - loading the quiz list
 - filtering history, geography, biology, chemistry, Polish, English, math, and physics quiz lists by chapter category
+- showing the configured grade selector before the History quiz list and filtering its existing quiz metadata by the selected grade
 - keeping one-shot LLM quizzes on the history section page
 - rendering generated written-multiplication questions with carry scratch fields,
   partial-product rows, place-value offsets, and a final result row

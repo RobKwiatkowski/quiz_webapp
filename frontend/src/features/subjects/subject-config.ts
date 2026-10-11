@@ -8,6 +8,14 @@ export interface SubjectConfig {
   description: string;
   emptyText: string;
   categories: readonly string[];
+  grades?: readonly GradeConfig[];
+}
+
+export interface GradeConfig {
+  id: "4" | "5" | "6" | "7";
+  label: string;
+  color: "blue" | "green" | "yellow" | "red";
+  quizIds: readonly string[];
 }
 
 export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
@@ -17,6 +25,35 @@ export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
     description: "Poznaj wydarzenia, które zmieniły świat. Wybierz temat i sprawdź, co już wiesz.",
     emptyText: "Brak dostępnych quizów z historii.",
     categories: ["history", "llm"],
+    grades: [
+      {
+        id: "4",
+        label: "Klasa IV",
+        color: "blue",
+        quizIds: ["history-chapter-6"],
+      },
+      {
+        id: "5",
+        label: "Klasa V",
+        color: "green",
+        quizIds: ["history-liczenie-wiekow", "history-pierwsze-cywilizacje"],
+      },
+      {
+        id: "6",
+        label: "Klasa VI",
+        color: "yellow",
+        quizIds: [
+          "history-konfederacja-upadek-rzeczypospolitej",
+          "history-napoleon-rewolucja-francuska",
+        ],
+      },
+      {
+        id: "7",
+        label: "Klasa VII",
+        color: "red",
+        quizIds: ["europa-po-kongresie-wiedenskim", "ziemie-polskie-po-kongresie-wiedenskim"],
+      },
+    ],
   },
   geography: {
     id: "geography",
@@ -87,6 +124,17 @@ export function filterQuizzesForSubject(
   subject: SubjectConfig,
 ): QuizListItem[] {
   return quizzes.filter((quiz) => subject.categories.includes(quiz.category));
+}
+
+export function filterQuizzesForGrade(
+  quizzes: QuizListItem[],
+  grade: GradeConfig,
+): QuizListItem[] {
+  const quizzesById = new Map(quizzes.map((quiz) => [quiz.id, quiz]));
+  return grade.quizIds.flatMap((quizId) => {
+    const quiz = quizzesById.get(quizId);
+    return quiz ? [quiz] : [];
+  });
 }
 
 export function getChapterLabel(quiz: QuizListItem): string | null {
