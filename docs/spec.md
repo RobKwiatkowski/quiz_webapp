@@ -4,7 +4,7 @@
 
 Edu Quiz for Kids is a lightweight educational quiz application for home learning,
 designed for a child aged about 10-12. The first production version supports
-single-player school revision for history, geography, biology, chemistry, Polish, English, German, math, and physics, plus a
+single-player school revision for history, geography, biology, chemistry, Polish, English, German, math, physics, and competitions, plus a
 minimal single-admin authoring panel for editing JSON-backed questions.
 
 The application should be easy to run on a home server, including Raspberry Pi 3,
@@ -40,7 +40,7 @@ In scope:
 - subject menu and subject-specific quiz list pages
 - the History subject first shows a grade selector, then the quiz list configured for the selected grade; grade IV is blue, V green, VI yellow, and VII red
 - one quiz represents one school book chapter
-- history, geography, biology, chemistry, Polish, English, German, math, and physics use the same chapter/topic/question learning
+- history, geography, biology, chemistry, Polish, English, German, math, physics, and competitions use the same chapter/topic/question learning
   method
 - each playable chapter contains one or more topics; a newly created admin
   chapter may temporarily contain no topics
@@ -886,6 +886,8 @@ Scores are point-based. Maximum points are derived from question structure:
   `open` questions
 - every gap must be filled and correct in its declared position to earn 1 point;
   a partial answer earns 0 points
+- after checking, each gap is marked correct or incorrect; incorrect gaps show
+  the first accepted answer next to the learner's answer
 
 `listening_fill`:
 

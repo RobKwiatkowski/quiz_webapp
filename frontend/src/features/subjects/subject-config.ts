@@ -1,6 +1,6 @@
 import type { QuizListItem } from "../../api/quiz-api";
 
-export type SubjectId = "history" | "geography" | "biology" | "polish" | "english" | "german" | "math" | "physics" | "chemistry";
+export type SubjectId = "history" | "geography" | "biology" | "polish" | "english" | "german" | "math" | "physics" | "chemistry" | "competitions";
 
 export interface SubjectConfig {
   id: SubjectId;
@@ -19,6 +19,13 @@ export interface GradeConfig {
 }
 
 export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
+  competitions: {
+    id: "competitions",
+    title: "Konkursy",
+    description: "Przygotuj się do konkursów, rozwiązując zadania z poprzednich lat.",
+    emptyText: "Brak dostępnych quizów konkursowych.",
+    categories: ["competitions"],
+  },
   history: {
     id: "history",
     title: "Historia",

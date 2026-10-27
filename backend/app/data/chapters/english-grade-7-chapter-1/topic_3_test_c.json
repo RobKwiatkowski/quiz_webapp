@@ -1,0 +1,501 @@
+{
+  "topic_id": "test-c",
+  "topic_title": "Unit test C",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "g7c-01-collocations",
+      "text": "Match the verbs to make correct collocations.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "climb",
+          "left": "climb",
+          "right": "a mountain"
+        },
+        {
+          "id": "do",
+          "left": "do",
+          "right": "a parachute jump"
+        },
+        {
+          "id": "act",
+          "left": "act",
+          "right": "in a play"
+        },
+        {
+          "id": "take",
+          "left": "take",
+          "right": "a selfie"
+        },
+        {
+          "id": "sleep",
+          "left": "sleep",
+          "right": "in an ice hotel"
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7c-02-prepositions",
+      "text": "Choose the correct preposition for each sentence.\n\n1. Becky isn't very good {{one}} maths.\n2. Amy is interested {{two}} art.\n3. They're worried {{three}} their son.\n4. Kevin is afraid {{four}} heights.\n5. I'm not keen {{five}} swimming.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "at"
+          ],
+          "options": [
+            "at",
+            "of",
+            "about",
+            "in",
+            "on"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "in"
+          ],
+          "options": [
+            "in",
+            "at",
+            "of",
+            "about",
+            "on"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "about"
+          ],
+          "options": [
+            "about",
+            "in",
+            "at",
+            "of",
+            "on"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "of"
+          ],
+          "options": [
+            "of",
+            "at",
+            "in",
+            "about",
+            "on"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "on"
+          ],
+          "options": [
+            "on",
+            "of",
+            "about",
+            "in",
+            "at"
+          ]
+        }
+      ],
+      "explanation": "good at, interested in, worried about, afraid of, keen on.",
+      "topic_id": "test-c"
+    },
+    {
+      "id": "g7c-03-phobias",
+      "text": "Choose the correct phobia for each description.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "birds",
+          "left": "They fly near me and I get scared.",
+          "right": "fear of birds"
+        },
+        {
+          "id": "dark",
+          "left": "As a child, I slept with the light on.",
+          "right": "fear of the dark"
+        },
+        {
+          "id": "spiders",
+          "left": "They are hairy and have too many legs.",
+          "right": "fear of spiders"
+        },
+        {
+          "id": "enclosed",
+          "left": "Small indoor places make me nervous.",
+          "right": "fear of enclosed spaces"
+        },
+        {
+          "id": "flying",
+          "left": "He could not become a pilot.",
+          "right": "fear of flying"
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7c-04-grammar",
+      "text": "Choose the correct form in each sentence.\n\n1. My sister {{one}} on TV last night.\n2. Can we watch something different? {{two}} this film.\n3. We {{three}} my aunt two days ago.\n4. They {{four}} lots of photos while they were on holiday.\n5. {{five}} snorkelling?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "was"
+          ],
+          "options": [
+            "was",
+            "has been",
+            "is",
+            "were"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "I've already seen",
+            "I already saw"
+          ],
+          "options": [
+            "I've already seen",
+            "I already saw",
+            "I have see",
+            "I was seeing"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "visited",
+            "were visiting"
+          ],
+          "options": [
+            "visited",
+            "have visited",
+            "were visiting",
+            "have visit"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "took"
+          ],
+          "options": [
+            "took",
+            "have taken",
+            "take",
+            "were take"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "Have you ever been",
+            "Did you ever go"
+          ],
+          "options": [
+            "Have you ever been",
+            "Did you ever go",
+            "Has you ever been",
+            "Were you ever"
+          ]
+        }
+      ],
+      "explanation": "The test expects was, I've already seen, visited, took and Have you ever been. Other grammatical options already on the lists are accepted too.",
+      "topic_id": "test-c"
+    },
+    {
+      "id": "g7c-05-questions",
+      "text": "Put the words in the correct order to make questions. Write one complete question under each set of words.\n\n1. a snake / have you / ever held?\n{{one}}\n\n2. did they / what time / get home?\n{{two}}\n\n3. waiting for / who / are you?\n{{three}}\n\n4. enjoy the party / your friends / did?\n{{four}}\n\n5. good at / are you / what subjects?\n{{five}}",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "Have you ever held a snake?"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "What time did they get home?"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "Who are you waiting for?"
+          ],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "Did your friends enjoy the party?"
+          ],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "What subjects are you good at?"
+          ],
+          "options": []
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "Correct questions: Have you ever held a snake? What time did they get home? Who are you waiting for? Did your friends enjoy the party? What subjects are you good at?"
+    },
+    {
+      "id": "g7c-06-reading",
+      "text": "Read the rollercoaster text and choose A or B for each statement.",
+      "context": {
+        "text": "A: Expedition GeForce is at Holiday Park in Hassloch, Germany. It is 53 metres high in places, making it one of the tallest rides in Europe. It is in a forest, has a 1.2 km track, takes 75 seconds and reaches 120 km/h.\n\nB: Takabisha is at Fuji-Q Highland Amusement Park in Japan. Its one-kilometre ride takes just under two minutes, reaches 110 km/h, and halfway through the track goes down at an angle of more than 120 degrees. Mount Fuji can be seen from it."
+      },
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "high-place",
+          "left": "is near a very high place",
+          "right": "B"
+        },
+        {
+          "id": "fastest",
+          "left": "is the fastest",
+          "right": "A"
+        },
+        {
+          "id": "middle",
+          "left": "is frightening in the middle",
+          "right": "B"
+        },
+        {
+          "id": "forest",
+          "left": "passes through a forest",
+          "right": "A"
+        },
+        {
+          "id": "highest",
+          "left": "is described as one of the tallest rides in Europe",
+          "right": "A"
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "A is in a forest, reaches 120 km/h and is described as one of Europe's tallest rides. B is near Mount Fuji and has a steep drop halfway through."
+    },
+    {
+      "id": "g7c-08-speaking",
+      "text": "Complete the conversation by choosing an expression for each gap.\n\nA: Are you doing anything on Saturday, Linda?\nB: No, I haven't got any plans.\nA: Let's go to the beach! {{one}} go snorkelling.\nB: I'm {{two}} about that. It'll be a cold day.\nA: Oh, {{three}} we go shopping?\nB: I don't like {{four}}. I haven't got any money.\nA: What about going to the science museum?\nB: All right. How much is it to get in?\nA: I think it's free.\nB: {{five}} great! What time?\nA: Eleven o'clock outside the science museum.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "We could"
+          ],
+          "options": [
+            "Why don't we",
+            "We could",
+            "That sounds",
+            "Not sure",
+            "That idea"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "not sure"
+          ],
+          "options": [
+            "not sure",
+            "that idea",
+            "we could",
+            "why don't",
+            "that sounds"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "why don't"
+          ],
+          "options": [
+            "why don't",
+            "we could",
+            "not sure",
+            "that sounds",
+            "that idea"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "that idea"
+          ],
+          "options": [
+            "that idea",
+            "not sure",
+            "we could",
+            "why don't",
+            "that sounds"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "That sounds"
+          ],
+          "options": [
+            "That sounds",
+            "We could",
+            "That idea",
+            "Not sure",
+            "Why don't"
+          ]
+        }
+      ],
+      "explanation": "We could and why don't make suggestions; that sounds gives a positive reaction.",
+      "topic_id": "test-c"
+    },
+    {
+      "id": "g7c-09-blog",
+      "is_active": false,
+      "text": "Write a 50-120 word blog entry about your most exciting experience. Include what you did and when, where you were and who you were with, and how you felt.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "A personal blog entry of 50-120 words that describes an exciting experience, includes time, place, company and feelings."
+      ],
+      "topic_id": "test-c",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7c-10-idioms",
+      "text": "Choose the missing word in each idiom.\n\n1. cost an arm and a {{one}}\n2. let your {{two}} down\n3. laugh your {{three}} off\n4. be in safe {{four}}\n5. get cold {{five}}",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "leg"
+          ],
+          "options": [
+            "leg",
+            "head",
+            "hair",
+            "hands",
+            "feet"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "hair"
+          ],
+          "options": [
+            "hair",
+            "leg",
+            "head",
+            "hands",
+            "feet"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "head"
+          ],
+          "options": [
+            "head",
+            "hair",
+            "leg",
+            "hands",
+            "feet"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "hands"
+          ],
+          "options": [
+            "hands",
+            "head",
+            "hair",
+            "leg",
+            "feet"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "feet"
+          ],
+          "options": [
+            "feet",
+            "hands",
+            "head",
+            "hair",
+            "leg"
+          ]
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "The complete idioms are: cost an arm and a leg; let your hair down; laugh your head off; be in safe hands; get cold feet."
+    },
+    {
+      "id": "g7c-11-completion",
+      "text": "Complete each sentence with one word. Use each word once: never, top, ever, out, face.\n\n1. My sister has {{one}} been to Paris, so she's very excited about her trip.\n2. Don't take it too seriously. I just said it off the {{two}} of my head.\n3. Have you {{three}} eaten snake?\n4. I'm not particularly stressed {{four}} about the exams.\n5. I know you don't like heights, but you have to {{five}} your fears.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": ["never"],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": ["top"],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": ["ever"],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": ["out"],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": ["face"],
+          "options": []
+        }
+      ],
+      "topic_id": "test-c",
+      "explanation": "The missing words are: 1. never; 2. top; 3. ever; 4. out; 5. face."
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import {
   getFinalGrade,
   getFinalMessage,
   getFillAnswerPoints,
+  getFillBlankResults,
   getOpenAnswerPoints,
   getQuestionMaxPoints,
   getQuizMaxPoints,
@@ -379,53 +380,73 @@ function OpenQuestion({ question, openAnswers, hasAnswered, onOpenAnswerChange, 
 
 function FillQuestion({ question, fillAnswers, hasAnswered, onFillAnswerChange, onSubmitOpen }: QuestionRendererProps) {
   const blankById = new Map(question.fill_blanks.map((blank, index) => [blank.id, { blank, index }]));
-  const parts = question.text.split(/(\{\{[a-z0-9][a-z0-9_-]*\}\})/gi);
+  const blankResults = hasAnswered ? getFillBlankResults(question, fillAnswers) : [];
+  const lines = question.text.split(/\r?\n/);
+  const hasStandaloneAnswers = question.fill_mode === "open" && /\n\{\{[a-z0-9][a-z0-9_-]*\}\}/i.test(question.text);
 
   return (
-    <div className="fill-text" aria-label="Tekst z lukami">
-      {parts.map((part, partIndex) => {
-        const match = /^\{\{([a-z0-9][a-z0-9_-]*)\}\}$/i.exec(part);
-        if (!match) return <span key={partIndex}>{part}</span>;
+    <div className={`fill-text${hasStandaloneAnswers ? " fill-text--standalone-answers" : ""}`} aria-label="Tekst z lukami">
+      {lines.map((line, lineIndex) => (
+        <div className={`fill-text-line${line ? "" : " fill-text-line--empty"}`} key={lineIndex}>
+          {line.split(/(\{\{[a-z0-9][a-z0-9_-]*\}\})/gi).map((part, partIndex) => {
+            const match = /^\{\{([a-z0-9][a-z0-9_-]*)\}\}$/i.exec(part);
+            if (!match) {
+              return <span key={partIndex}>{part}</span>;
+            }
 
-        const entry = blankById.get(match[1]);
-        if (!entry) return <span key={partIndex}>{part}</span>;
-        const { blank, index } = entry;
+            const entry = blankById.get(match[1]);
+            if (!entry) return <span key={partIndex}>{part}</span>;
+            const { blank, index } = entry;
+            const resultClass = hasAnswered ? (blankResults[index] ? " is-correct" : " is-incorrect") : "";
+            const correction = hasAnswered && (
+              <span className={`fill-blank-result${blankResults[index] ? " is-correct" : " is-incorrect"}`}>
+                {blankResults[index] ? "✓ Dobrze" : `✗ Poprawnie: ${blank.accepted_answers[0]}`}
+              </span>
+            );
 
-        if (question.fill_mode === "select") {
-          return (
-            <select
-              aria-label={`Luka ${index + 1}`}
-              className="fill-blank-select"
-              disabled={hasAnswered}
-              key={blank.id}
-              value={fillAnswers[index] ?? ""}
-              onChange={(event) => onFillAnswerChange(index, event.target.value)}
-            >
-              <option value="">Wybierz…</option>
-              {blank.options.map((option) => <option key={option} value={option}>{option}</option>)}
-            </select>
-          );
-        }
+            if (question.fill_mode === "select") {
+              return (
+                <span className="fill-blank-control" key={blank.id}>
+                  <select
+                    aria-label={`Luka ${index + 1}`}
+                    aria-invalid={hasAnswered && !blankResults[index]}
+                    className={`fill-blank-select${resultClass}`}
+                    disabled={hasAnswered}
+                    value={fillAnswers[index] ?? ""}
+                    onChange={(event) => onFillAnswerChange(index, event.target.value)}
+                  >
+                    <option value="">Wybierz…</option>
+                    {blank.options.map((option) => <option key={option} value={option}>{option}</option>)}
+                  </select>
+                  {correction}
+                </span>
+              );
+            }
 
-        return (
-          <input
-            aria-label={`Luka ${index + 1}`}
-            autoFocus={index === 0}
-            className="fill-blank-input"
-            disabled={hasAnswered}
-            key={blank.id}
-            type="text"
-            value={fillAnswers[index] ?? ""}
-            onChange={(event) => onFillAnswerChange(index, event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                onSubmitOpen();
-              }
-            }}
-          />
-        );
-      })}
+            return (
+              <span className="fill-blank-control" key={blank.id}>
+                <input
+                  aria-label={`Luka ${index + 1}`}
+                  aria-invalid={hasAnswered && !blankResults[index]}
+                  autoFocus={index === 0}
+                  className={`fill-blank-input${resultClass}`}
+                  disabled={hasAnswered}
+                  type="text"
+                  value={fillAnswers[index] ?? ""}
+                  onChange={(event) => onFillAnswerChange(index, event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      event.preventDefault();
+                      onSubmitOpen();
+                    }
+                  }}
+                />
+                {correction}
+              </span>
+            );
+          })}
+        </div>
+      ))}
     </div>
   );
 }
@@ -598,6 +619,7 @@ function ResultScreen({ quiz, score, section, onRestart }: { quiz: Quiz; score: 
 }
 
 function getSubjectGenitive(section: string): string {
+  if (section === "competitions") return "konkursów";
   if (section === "geography") return "geografii";
   if (section === "biology") return "biologii";
   if (section === "polish") return "języka polskiego";

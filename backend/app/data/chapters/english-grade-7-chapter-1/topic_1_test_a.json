@@ -1,0 +1,427 @@
+{
+  "topic_id": "test-a",
+  "topic_title": "Unit test A",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "g7a-01-collocations",
+      "text": "Match the verbs to make correct collocations.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "take",
+          "left": "take",
+          "right": "a selfie with a celebrity"
+        },
+        {
+          "id": "act",
+          "left": "act",
+          "right": "in a play"
+        },
+        {
+          "id": "be",
+          "left": "be",
+          "right": "on TV"
+        },
+        {
+          "id": "go",
+          "left": "go",
+          "right": "snorkelling"
+        },
+        {
+          "id": "climb",
+          "left": "climb",
+          "right": "a mountain"
+        }
+      ],
+      "explanation": "Learn the complete collocations.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-02-prepositions",
+      "text": "Match each adjective to its correct preposition.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "afraid",
+          "left": "afraid",
+          "right": "of"
+        },
+        {
+          "id": "bad",
+          "left": "bad",
+          "right": "at"
+        },
+        {
+          "id": "crazy",
+          "left": "crazy",
+          "right": "about"
+        },
+        {
+          "id": "fascinated",
+          "left": "fascinated",
+          "right": "by"
+        },
+        {
+          "id": "interested",
+          "left": "interested",
+          "right": "in"
+        }
+      ],
+      "explanation": "These adjective-preposition pairs are fixed expressions.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-03-phobias",
+      "text": "Complete the sentences with the correct words: dentist, birds, dark, open spaces, flying.\n\n1. I don't like going to the {{one}}, but I have to because my teeth hurt.\n2. My sister is afraid of {{two}} if they fly near her.\n3. Some people don't like the {{three}} and can only sleep with the light on.\n4. I don't understand people who are afraid of {{four}}. I love going outside.\n5. You can't become an airline pilot if you're afraid of {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "dentist"
+          ],
+          "options": [
+            "dentist",
+            "hospital",
+            "cinema",
+            "museum"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "birds"
+          ],
+          "options": [
+            "birds",
+            "dogs",
+            "snakes",
+            "spiders"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "dark"
+          ],
+          "options": [
+            "dark",
+            "rain",
+            "music",
+            "water"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "open spaces"
+          ],
+          "options": [
+            "open spaces",
+            "small rooms",
+            "lifts",
+            "heights"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "flying"
+          ],
+          "options": [
+            "flying",
+            "swimming",
+            "running",
+            "driving"
+          ]
+        }
+      ],
+      "explanation": "1 dentist, 2 birds, 3 dark, 4 open spaces, 5 flying.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-04-present-perfect",
+      "text": "Look at the information and complete the sentences using the Present Perfect.\n\n✓ means: has done it.  ✗ means: has not done it.\nAnia: ✓ go zip-lining; ✗ win a competition.\nMaja: ✓ sleep in an ice hotel; ✗ swim with dolphins.\nSzymon: ✓ fly in a glider; ✗ run a marathon.\n\nAnia has gone zip-lining.\n1. She hasn't {{one}}.\n2. Maja has {{two}}.\n3. She hasn't {{three}}.\n4. Szymon has {{four}}.\n5. He hasn't {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "accepted_answers": [
+            "won a competition"
+          ],
+          "id": "one",
+          "options": []
+        },
+        {
+          "accepted_answers": [
+            "slept in an ice hotel"
+          ],
+          "id": "two",
+          "options": []
+        },
+        {
+          "accepted_answers": [
+            "swum with dolphins"
+          ],
+          "id": "three",
+          "options": []
+        },
+        {
+          "accepted_answers": [
+            "flown in a glider"
+          ],
+          "id": "four",
+          "options": []
+        },
+        {
+          "accepted_answers": [
+            "run a marathon"
+          ],
+          "id": "five",
+          "options": []
+        }
+      ],
+      "explanation": "Use has/haven't + past participle.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-05-questions",
+      "text": "Make questions using the prompts. Add auxiliary verbs where needed. Write one complete question in each answer field.\n\n1. How often / you go / shopping?\n{{one}}\n\n2. What / you want to do / this weekend?\n{{two}}\n\n3. How many times / you try / foreign food?\n{{three}}\n\n4. Who / you see / this morning?\n{{four}}\n\n5. Where / you study / last night?\n{{five}}",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "How often do you go shopping?",
+            "How often do you go shopping"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "What do you want to do this weekend?",
+            "What do you want to do this weekend"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "How many times have you tried foreign food?",
+            "How many times have you tried foreign food"
+          ],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "Who did you see this morning?",
+            "Who did you see this morning"
+          ],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "Where did you study last night?",
+            "Where did you study last night"
+          ],
+          "options": []
+        }
+      ],
+      "explanation": "Use do for routines, have for experience and did for finished past time.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-06-reading",
+      "text": "Read the forum discussion about phobias. Decide if each statement is true or false.",
+      "context": {
+        "text": "Sunny: Fear can protect us, but phobias can make ordinary life difficult because we may fear things that are not really dangerous. Some people are so afraid of open spaces that they will not go to the park or out of the house.\n\nFreddy: Fear of animals like snakes comes from an old human instinct because some snakes are dangerous.\n\nMary Lou: A small dog scared me when I was very young, so now I want to run away whenever I see a dog."
+      },
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Sunny thinks phobias can protect us from danger.",
+          "is_correct": false
+        },
+        {
+          "text": "People afraid of open spaces do not leave their homes.",
+          "is_correct": true
+        },
+        {
+          "text": "Freddy thinks all snakes are dangerous.",
+          "is_correct": false
+        },
+        {
+          "text": "Mary Lou is a little child now.",
+          "is_correct": false
+        },
+        {
+          "text": "Mary Lou does not like dogs.",
+          "is_correct": true
+        }
+      ],
+      "topic_id": "test-a",
+      "explanation": "Sunny says fear can protect us, but phobias can make life difficult. Freddy says some snakes are dangerous, not all of them. Mary Lou is now afraid of dogs."
+    },
+    {
+      "id": "g7a-08-dialogue-order",
+      "text": "Put the dialogue in the correct order.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "one",
+          "text": "Elena: Hey Mina, how about going shopping this afternoon?",
+          "position": 1
+        },
+        {
+          "id": "two",
+          "text": "Mina: Sure, that sounds great! Why don't we meet at the shopping centre?",
+          "position": 4
+        },
+        {
+          "id": "three",
+          "text": "Elena: Good idea. What about 10 a.m. at the entrance?",
+          "position": 5
+        },
+        {
+          "id": "four",
+          "text": "Mina: Sorry, Elena, I have to finish my homework.",
+          "position": 2
+        },
+        {
+          "id": "five",
+          "text": "Elena: That's OK. How about tomorrow morning?",
+          "position": 3
+        },
+        {
+          "id": "six",
+          "text": "Mina: Yes, that sounds fine. See you tomorrow!",
+          "position": 6
+        }
+      ],
+      "topic_id": "test-a",
+      "explanation": "Elena invites Mina; Mina cannot go today; Elena suggests tomorrow; Mina agrees and suggests the shopping centre; Elena suggests 10 a.m.; Mina confirms."
+    },
+    {
+      "id": "g7a-09-blog",
+      "text": "Write a 50-120 word blog entry about your most exciting experience. Include what you did and when, where you were and who you were with, and how you felt.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "A personal blog entry of 50-120 words that describes an exciting experience, includes time, place, company and feelings."
+      ],
+      "explanation": "Use clear past-tense sentences and include all three requested details.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-10-idioms",
+      "is_active": false,
+      "text": "Match each sentence to the correct idiom.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "top-of-head",
+          "left": "I can't think of the answer right now.",
+          "right": "off the top of my head"
+        },
+        {
+          "id": "hair-down",
+          "left": "You have studied a lot. It's time to relax.",
+          "right": "let your hair down"
+        },
+        {
+          "id": "laugh-head",
+          "left": "The joke was very funny.",
+          "right": "laugh your head off"
+        },
+        {
+          "id": "cold-feet",
+          "left": "I wanted to fly in a glider, but then I changed my mind.",
+          "right": "get cold feet"
+        },
+        {
+          "id": "safe-hands",
+          "left": "Don't worry, we can take care of you.",
+          "right": "be in safe hands"
+        }
+      ],
+      "explanation": "These are the idioms from test A.",
+      "topic_id": "test-a"
+    },
+    {
+      "id": "g7a-11-completion",
+      "is_active": false,
+      "text": "Complete the sentences with suitable words or phrases.\n\n1. When I was a child, I was afraid {{one}}.\n2. His new phone cost {{two}}.\n3. I have never {{three}}.\n4. Have you ever {{four}}?\n5. My friend is good {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "of the dark"
+          ],
+          "options": [
+            "of the dark",
+            "of flying",
+            "of dogs",
+            "of open spaces"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "an arm and a leg"
+          ],
+          "options": [
+            "an arm and a leg",
+            "a piece of cake",
+            "a lot of money",
+            "a new phone"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "won a competition"
+          ],
+          "options": [
+            "won a competition",
+            "been on TV",
+            "climbed a mountain",
+            "gone snorkelling"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "acted in a play"
+          ],
+          "options": [
+            "acted in a play",
+            "flown in a glider",
+            "slept in an ice hotel",
+            "taken a selfie with a celebrity"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "at maths"
+          ],
+          "options": [
+            "at maths",
+            "in maths",
+            "on maths",
+            "about maths"
+          ]
+        }
+      ],
+      "explanation": "Use: afraid of the dark, cost an arm and a leg, have never won a competition, have you ever acted in a play, and good at maths.",
+      "topic_id": "test-a"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "topic_id": "wielka-emigracja-i-kultura",
+  "topic_title": "Wielka Emigracja i kultura pod zaborami",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "emigracja-ugrupowania-programy-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj ugrupowanie Wielkiej Emigracji do jego programu.",
+      "selection_type": "matching",
+      "explanation": "Hôtel Lambert odwoływał się do Konstytucji 3 maja, Towarzystwo Demokratyczne Polskie chciało demokratycznej republiki, a Gromady Ludu Polskiego dążyły do równości społecznej.",
+      "matching_pairs": [
+        {
+          "id": "hotel-lambert",
+          "left": "Hôtel Lambert",
+          "right": "monarchia konstytucyjna i nawiązanie do Konstytucji 3 maja"
+        },
+        {
+          "id": "tdp",
+          "left": "Towarzystwo Demokratyczne Polskie",
+          "right": "demokratyczna republika, równość obywateli i uwłaszczenie chłopów"
+        },
+        {
+          "id": "glp",
+          "left": "Gromady Ludu Polskiego",
+          "right": "równość społeczna i wspólna własność ziemi"
+        }
+      ]
+    },
+    {
+      "id": "emigracja-czartoryski-hotel-lambert-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Na czele którego ugrupowania Wielkiej Emigracji stał Adam Jerzy Czartoryski?",
+      "selection_type": "single",
+      "explanation": "Adam Jerzy Czartoryski stał na czele obozu Hôtel Lambert w Paryżu.",
+      "answers": [
+        {
+          "text": "Hôtel Lambert",
+          "is_correct": true
+        },
+        {
+          "text": "Gromady Ludu Polskiego",
+          "is_correct": false
+        },
+        {
+          "text": "Towarzystwo Patriotyczne",
+          "is_correct": false
+        },
+        {
+          "text": "Sprzysiężenie Podchorążych",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "emigracja-postacie-kultury-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj postacie do właściwych opisów.",
+      "selection_type": "matching",
+      "explanation": "Chopin był kompozytorem, Towiański - działaczem religijnym i filozofem, Dembowski - działaczem powstania krakowskiego, a Grottger - malarzem romantycznym.",
+      "matching_pairs": [
+        {
+          "id": "chopin",
+          "left": "Fryderyk Chopin",
+          "right": "wybitny polski kompozytor i pianista na emigracji"
+        },
+        {
+          "id": "towianski",
+          "left": "Andrzej Towiański",
+          "right": "działacz religijny i filozof, twórca idei mesjanizmu"
+        },
+        {
+          "id": "dembowski",
+          "left": "Edward Dembowski",
+          "right": "działacz powstania krakowskiego"
+        },
+        {
+          "id": "grottger",
+          "left": "Artur Grottger",
+          "right": "malarz romantyczny, autor prac o powstaniu styczniowym"
+        }
+      ]
+    },
+    {
+      "id": "emigracja-instytucje-kultury-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj instytucje kultury do miejsc, w których działały.",
+      "selection_type": "matching",
+      "explanation": "Towarzystwo Przyjaciół Nauk działało w Warszawie, Zakład Narodowy im. Ossolińskich we Lwowie, a Biblioteka Kórnicka w Kórniku pod Poznaniem.",
+      "matching_pairs": [
+        {
+          "id": "tpn",
+          "left": "Towarzystwo Przyjaciół Nauk",
+          "right": "Warszawa"
+        },
+        {
+          "id": "ossolinscy",
+          "left": "Zakład Narodowy im. Ossolińskich",
+          "right": "Lwów"
+        },
+        {
+          "id": "kornik",
+          "left": "Biblioteka Kórnicka",
+          "right": "Kórnik pod Poznaniem"
+        }
+      ]
+    },
+    {
+      "id": "emigracja-uwlaszczenie-galicja-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Do uwłaszczenia chłopów w Galicji doszło w wyniku:",
+      "selection_type": "single",
+      "explanation": "W 1848 roku, podczas Wiosny Ludów, władze austriackie uwłaszczyły chłopów w Galicji.",
+      "answers": [
+        {
+          "text": "Wiosny Ludów",
+          "is_correct": true
+        },
+        {
+          "text": "powstania listopadowego",
+          "is_correct": false
+        },
+        {
+          "text": "kongresu wiedeńskiego",
+          "is_correct": false
+        },
+        {
+          "text": "powstania styczniowego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "emigracja-statut-organiczny-przyczyna-skutek-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Wpisz jedną przyczynę i jeden skutek wprowadzenia Statutu organicznego.",
+      "selection_type": "open",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "klęska powstania listopadowego",
+            "upadek powstania listopadowego",
+            "po klęsce powstania listopadowego"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "likwidacja autonomii Królestwa Polskiego",
+            "ograniczenie autonomii Królestwa Polskiego",
+            "zniesienie konstytucji Królestwa Polskiego",
+            "likwidacja sejmu Królestwa Polskiego"
+          ]
+        }
+      ],
+      "explanation": "Statut organiczny wprowadzono po klęsce powstania listopadowego. Ograniczył on autonomię Królestwa Polskiego i zniósł jego konstytucję oraz sejm."
+    },
+    {
+      "id": "emigracja-prawda-falsz-instytucje-pdf",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o instytucjach kultury i Wielkiej Emigracji są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Zakład Narodowy im. Ossolińskich był ośrodkiem polskiej kultury we Lwowie.",
+          "is_correct": true
+        },
+        {
+          "text": "Biblioteka Kórnicka działała w Galicji.",
+          "is_correct": false
+        },
+        {
+          "text": "Wielka Emigracja nastąpiła po klęsce powstania listopadowego.",
+          "is_correct": true
+        },
+        {
+          "text": "Gromady Ludu Polskiego broniły dominującej roli szlachty.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Ossolineum działało we Lwowie, a Biblioteka Kórnicka w Kórniku. Wielka Emigracja rozpoczęła się po upadku powstania listopadowego."
+    }
+  ]
+}

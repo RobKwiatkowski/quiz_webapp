@@ -1,0 +1,10 @@
+{
+  "id": "competitions-mythology-olympiad",
+  "title": "Olimpiada Mitologiczna",
+  "description": "Zadania z Olimpiady Mitologicznej z poprzednich lat.",
+  "category": "competitions",
+  "age_group": "10-12",
+  "target_question_count": 20,
+  "questions_per_topic": 20,
+  "topics": ["topic_1_past_tests.json"]
+}

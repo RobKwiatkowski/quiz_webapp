@@ -1,0 +1,2076 @@
+{
+  "topic_id": "zeszle-testy",
+  "topic_title": "Zeszłe testy",
+  "questions": [
+    {
+      "id": "mitologia-2023-01",
+      "text": "Helios zasiadał na tronie w otoczeniu:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Dni",
+          "is_correct": true
+        },
+        {
+          "text": "Miesięcy",
+          "is_correct": true
+        },
+        {
+          "text": "Lat",
+          "is_correct": true
+        },
+        {
+          "text": "Stuleci",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-02",
+      "text": "Księżniczką ani królewną nie była:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Arachne",
+          "is_correct": false
+        },
+        {
+          "text": "Baucis",
+          "is_correct": true
+        },
+        {
+          "text": "Ariadna",
+          "is_correct": false
+        },
+        {
+          "text": "Kallisto",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-03",
+      "text": "O Faetonie wiadomo, że:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był szczególnie czczony na wyspie Rodos",
+          "is_correct": false
+        },
+        {
+          "text": "jego matką była złotowłosa Klymena",
+          "is_correct": true
+        },
+        {
+          "text": "zginął w rzece Erydan",
+          "is_correct": true
+        },
+        {
+          "text": "zamienił się w Feniksa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-04",
+      "text": "Hermes okazał się szczególnie przydatny Zeusowi i innym bogom, bo był:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "dyskretny",
+          "is_correct": true
+        },
+        {
+          "text": "waleczny",
+          "is_correct": false
+        },
+        {
+          "text": "sprytny",
+          "is_correct": true
+        },
+        {
+          "text": "uczciwy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-05",
+      "text": "Na sklepieniu niebieskim starożytni Grecy widzieli gwiazdy przypominające przedmioty związane z bogami i herosami, takie jak:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "okręt",
+          "is_correct": true
+        },
+        {
+          "text": "delfin",
+          "is_correct": true
+        },
+        {
+          "text": "jeleń",
+          "is_correct": false
+        },
+        {
+          "text": "strzała",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-06",
+      "text": "Poprawną informacją jest:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Eos to bogini jutrzenki",
+          "is_correct": true
+        },
+        {
+          "text": "Hera to bogini księżyca",
+          "is_correct": false
+        },
+        {
+          "text": "Iris to pokojówka Hery",
+          "is_correct": true
+        },
+        {
+          "text": "Kasjopea to matka Andromedy",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-07",
+      "text": "Prawdą jest, że kaduceusz:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "służył do walki",
+          "is_correct": false
+        },
+        {
+          "text": "był podarunkiem od Apollina",
+          "is_correct": true
+        },
+        {
+          "text": "miał moc łagodzenia sporów",
+          "is_correct": true
+        },
+        {
+          "text": "został wykonany z drewna wierzbowego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-08",
+      "text": "Do groźnych wiatrów zaliczano:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Boreasza",
+          "is_correct": true
+        },
+        {
+          "text": "harpie",
+          "is_correct": true
+        },
+        {
+          "text": "Eola",
+          "is_correct": false
+        },
+        {
+          "text": "Syriusza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-09",
+      "text": "Zeus rozgniewał się na:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Hefajstosa",
+          "is_correct": true
+        },
+        {
+          "text": "Faetona",
+          "is_correct": true
+        },
+        {
+          "text": "Hermesa",
+          "is_correct": true
+        },
+        {
+          "text": "Atenę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-10",
+      "text": "Głębiny morskie były domem dla:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Posejdona",
+          "is_correct": true
+        },
+        {
+          "text": "Skylli",
+          "is_correct": false
+        },
+        {
+          "text": "Glaukosa",
+          "is_correct": true
+        },
+        {
+          "text": "Proteusza",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-11",
+      "text": "Z łukiem i strzałami przedstawiano w sztuce:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Afrodytę",
+          "is_correct": false
+        },
+        {
+          "text": "Artemidę",
+          "is_correct": true
+        },
+        {
+          "text": "Apollina",
+          "is_correct": true
+        },
+        {
+          "text": "Hermesa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-12",
+      "text": "Cytry Apollina dotyczą informacje:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "była wykonana ze skorupy żółwia",
+          "is_correct": true
+        },
+        {
+          "text": "została podarowana Apollinowi przez siostrę Artemidę",
+          "is_correct": false
+        },
+        {
+          "text": "Apollo rozbił instrument po przegranym pojedynku z Marsjasem",
+          "is_correct": false
+        },
+        {
+          "text": "Bóg przygrywał na niej muzom do śpiewu",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-13",
+      "text": "O Tezeuszu wiadomo, że:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "był wierny Ariadnie",
+          "is_correct": false
+        },
+        {
+          "text": "urodził się w Koryncie",
+          "is_correct": false
+        },
+        {
+          "text": "był synem władcy",
+          "is_correct": true
+        },
+        {
+          "text": "wygnał Minotaura z Aten",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-14",
+      "text": "Surowa, wysoka i dumna była:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Hera",
+          "is_correct": true
+        },
+        {
+          "text": "Atena",
+          "is_correct": true
+        },
+        {
+          "text": "Afrodyta",
+          "is_correct": false
+        },
+        {
+          "text": "Demeter",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-15",
+      "text": "Wykreśl słowa związane z Herą: peplos, kukułka, sowa, wóz zaprzężony w pawie, drzewo oliwne, czapka z psiej skóry, jabłko granatu, Partenos, widły. Pozostałe wyrazy odnoszą się do:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Afrodyty",
+          "is_correct": false
+        },
+        {
+          "text": "Ateny",
+          "is_correct": true
+        },
+        {
+          "text": "Hadesa",
+          "is_correct": true
+        },
+        {
+          "text": "Hefajstosa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-16",
+      "text": "Łania ceryntyjska:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "zginęła z rąk Heraklesa",
+          "is_correct": false
+        },
+        {
+          "text": "wyrządzała szkody rolnikom",
+          "is_correct": false
+        },
+        {
+          "text": "była przemienionym Akteonem",
+          "is_correct": false
+        },
+        {
+          "text": "była ulubienicą Artemidy",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-17",
+      "text": "Służba Heraklesa u króla Eurysteusa była wynikiem:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "nienawiści Hery",
+          "is_correct": false
+        },
+        {
+          "text": "rady wyroczni delfickiej",
+          "is_correct": true
+        },
+        {
+          "text": "nudy Heraklesa",
+          "is_correct": false
+        },
+        {
+          "text": "zamordowania żony i dzieci przez Heraklesa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-18",
+      "text": "Sekretu nie potrafił dochować:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "król Syzyf",
+          "is_correct": true
+        },
+        {
+          "text": "fryzjer króla Midasa",
+          "is_correct": true
+        },
+        {
+          "text": "Hiakintos",
+          "is_correct": false
+        },
+        {
+          "text": "Geriones",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-19",
+      "text": "Prometeusz został przykuty do skały, bo:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "oszukał Zeusa w sprawie ofiar ze zwierząt",
+          "is_correct": true
+        },
+        {
+          "text": "nauczył ludzi obrabiać metale",
+          "is_correct": false
+        },
+        {
+          "text": "wykradł ogień z niebieskiego spichlerza",
+          "is_correct": false
+        },
+        {
+          "text": "dał ludziom lekarstwa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-20",
+      "text": "Podniebny lot Dedala i Ikara:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "nie został zauważony przez ludzi na ziemi",
+          "is_correct": false
+        },
+        {
+          "text": "odbył się za zgodą króla Minosa",
+          "is_correct": false
+        },
+        {
+          "text": "był spowodowany tęsknotą Dedala za ojczyzną",
+          "is_correct": true
+        },
+        {
+          "text": "miał na celu ucieczkę",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-21",
+      "text": "W czasie uczt na Olimpie:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "jedzono ambrozję",
+          "is_correct": true
+        },
+        {
+          "text": "bogowie biesiadowali leżąc na łożach z kości słoniowej",
+          "is_correct": true
+        },
+        {
+          "text": "Apollo zabawiał zebranych bogów muzyką",
+          "is_correct": true
+        },
+        {
+          "text": "bogów obsługiwali bogini Eos i Adonis",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-22",
+      "text": "„(...) nie była miastem, lecz jakby osadą świątyń, dookoła których kapłani spełniali nakazane obrządki. Ożywiała się jedynie raz na cztery lata [...]” – cytat dotyczy:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Olimpii",
+          "is_correct": true
+        },
+        {
+          "text": "Dodony",
+          "is_correct": false
+        },
+        {
+          "text": "Trojzeny",
+          "is_correct": false
+        },
+        {
+          "text": "Arkadii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-23",
+      "text": "Wyrazem zazdrości Hery o swoją urodę było:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "przemienienie Dafne w drzewo",
+          "is_correct": false
+        },
+        {
+          "text": "zesłanie szaleństwa na piękne córki króla Projtosa",
+          "is_correct": true
+        },
+        {
+          "text": "zamiana zarozumiałych panien w kamienne schody",
+          "is_correct": true
+        },
+        {
+          "text": "wysłanie Pandory na ziemię",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-24",
+      "text": "Afrodyta:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "chętnie przebywała na Cyprze",
+          "is_correct": true
+        },
+        {
+          "text": "zakochała się w Pigmalionie",
+          "is_correct": false
+        },
+        {
+          "text": "przybyła na Olimp wozem zaprzężonym w gołębie",
+          "is_correct": true
+        },
+        {
+          "text": "żadna z bogiń na Olimpie nie darzyła jej sympatią",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-25",
+      "text": "W krainie umarłych można było zobaczyć:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Tartar",
+          "is_correct": true
+        },
+        {
+          "text": "Pole Elizejskie",
+          "is_correct": true
+        },
+        {
+          "text": "Parnas",
+          "is_correct": false
+        },
+        {
+          "text": "Okeanos",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-26",
+      "text": "Herakles w dzieciństwie:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "udusił jadowite węże",
+          "is_correct": true
+        },
+        {
+          "text": "zabił nauczyciela",
+          "is_correct": true
+        },
+        {
+          "text": "był posłuszny rodzicom",
+          "is_correct": false
+        },
+        {
+          "text": "zabił lwa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-27",
+      "text": "Hermes był patronem:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "złodziei",
+          "is_correct": true
+        },
+        {
+          "text": "kupców",
+          "is_correct": true
+        },
+        {
+          "text": "mówców",
+          "is_correct": true
+        },
+        {
+          "text": "ćwiczeń fizycznych",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-28",
+      "text": "W Tracji:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "zamieszkiwały wiatry",
+          "is_correct": true
+        },
+        {
+          "text": "były dzikie góry",
+          "is_correct": true
+        },
+        {
+          "text": "urodziła się Afrodyta",
+          "is_correct": false
+        },
+        {
+          "text": "śpiewał Orfeusz",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-29",
+      "text": "Jednym z nielicznych, którym udało się opuścić królestwo Hadesa, był:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Orfeusz",
+          "is_correct": true
+        },
+        {
+          "text": "Midas",
+          "is_correct": false
+        },
+        {
+          "text": "Marsjas",
+          "is_correct": false
+        },
+        {
+          "text": "Syzyf",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2023-30",
+      "text": "Wydarzenie dotyczące Zeusa to:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "odwiedziny w chatce Filemona i Baucis",
+          "is_correct": true
+        },
+        {
+          "text": "zamiana Arachne w pająka",
+          "is_correct": false
+        },
+        {
+          "text": "przyprawianie Midasowi oślich uszu",
+          "is_correct": false
+        },
+        {
+          "text": "związanie Hery złotym łańcuchem i przykucie do skał Olimpu",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-01",
+      "text": "Przestronny pałac Zeusa:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "wznosił się pod najwyższym szczytem Olimpu",
+          "is_correct": true
+        },
+        {
+          "text": "był otoczony śnieżnymi zaspami",
+          "is_correct": false
+        },
+        {
+          "text": "mogli odwiedzać podczas zebrań tylko najważniejsi z bogów",
+          "is_correct": false
+        },
+        {
+          "text": "zbudowano ze złota i drogich kamieni",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-02",
+      "text": "Każdy cudzoziemiec i wędrowiec mógł się w starożytnej Grecji czuć bezpiecznie:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "w orszaku Dionizosa",
+          "is_correct": false
+        },
+        {
+          "text": "dotykając brzegu ogniska w greckim domu",
+          "is_correct": true
+        },
+        {
+          "text": "tylko w Atenach",
+          "is_correct": false
+        },
+        {
+          "text": "bo jego patronem był Zeus",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-03",
+      "text": "Z boginią Ateną wiąże się:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "taniec pirryjski",
+          "is_correct": true
+        },
+        {
+          "text": "zamiana Galatei w żywą kobietę",
+          "is_correct": false
+        },
+        {
+          "text": "zranienie włócznią Aresa",
+          "is_correct": true
+        },
+        {
+          "text": "uwięzienie na złotym mechanicznym krześle",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-04",
+      "text": "Na rydwanie ciągniętym przez rumaki przedstawiano:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Aresa",
+          "is_correct": true
+        },
+        {
+          "text": "Artemidę",
+          "is_correct": false
+        },
+        {
+          "text": "Heliosa",
+          "is_correct": true
+        },
+        {
+          "text": "Erosa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-05",
+      "text": "Odpowiedzialność za organizację i obsługę uczt na Olimpie spoczywała na:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Charyt",
+          "is_correct": true
+        },
+        {
+          "text": "Hebe",
+          "is_correct": true
+        },
+        {
+          "text": "Ganimedesa",
+          "is_correct": true
+        },
+        {
+          "text": "Erosa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-06",
+      "text": "Ku czci Dionizosa świętowano:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Adonie",
+          "is_correct": false
+        },
+        {
+          "text": "Lampadoforie",
+          "is_correct": false
+        },
+        {
+          "text": "Lenaje",
+          "is_correct": true
+        },
+        {
+          "text": "Antesterie",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-07",
+      "text": "Zwierzęce cechy wyglądu miał:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Pan",
+          "is_correct": true
+        },
+        {
+          "text": "Satyr",
+          "is_correct": true
+        },
+        {
+          "text": "Chejron",
+          "is_correct": true
+        },
+        {
+          "text": "Narcyz",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-08",
+      "text": "Kara Zeusa spadła na:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Asklepiosa",
+          "is_correct": true
+        },
+        {
+          "text": "Prometeusza",
+          "is_correct": true
+        },
+        {
+          "text": "Hermesa",
+          "is_correct": true
+        },
+        {
+          "text": "Hefajstosa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-09",
+      "text": "Bogini Atena:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "nauczyła Pandorę robót kobiecych",
+          "is_correct": true
+        },
+        {
+          "text": "mogła używać pioruna Zeusa",
+          "is_correct": true
+        },
+        {
+          "text": "przyszła na świat w niezwykły sposób",
+          "is_correct": true
+        },
+        {
+          "text": "nosiła przydomek Promachos",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-10",
+      "text": "Na zboczu Akropolu znajdowała się świątynia:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Dionizosa",
+          "is_correct": true
+        },
+        {
+          "text": "Hestii",
+          "is_correct": false
+        },
+        {
+          "text": "Demeter",
+          "is_correct": false
+        },
+        {
+          "text": "Hermesa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-11",
+      "text": "W starożytnej Grecji asklepidami nazywano:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "lekarzy",
+          "is_correct": true
+        },
+        {
+          "text": "rzeźbiarzy",
+          "is_correct": false
+        },
+        {
+          "text": "pasterzy",
+          "is_correct": false
+        },
+        {
+          "text": "muzyków",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-12",
+      "text": "Akteon został zamieniony w jelenia:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "podczas kąpieli w rzece",
+          "is_correct": false
+        },
+        {
+          "text": "nad jeziorem",
+          "is_correct": false
+        },
+        {
+          "text": "kiedy spotkał samotnie polującą boginię",
+          "is_correct": false
+        },
+        {
+          "text": "ukrywając się w krzakach",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-13",
+      "text": "O Sylenie wiadomo, że:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "wychowywał Dionizosa",
+          "is_correct": true
+        },
+        {
+          "text": "unikał wizyt na Olimpie",
+          "is_correct": false
+        },
+        {
+          "text": "nie znosił podróży",
+          "is_correct": false
+        },
+        {
+          "text": "usnął w ogrodzie króla Midasa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-14",
+      "text": "Z Panem, synem Hermesa, ma związek:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "pasterz",
+          "is_correct": true
+        },
+        {
+          "text": "fletnia Pana",
+          "is_correct": true
+        },
+        {
+          "text": "okręt",
+          "is_correct": false
+        },
+        {
+          "text": "sosna",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-15",
+      "text": "Demeter, Dionizosa i Artemidę łączy to, że:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "ich domeną była przyroda",
+          "is_correct": true
+        },
+        {
+          "text": "byli dziećmi Zeusa",
+          "is_correct": false
+        },
+        {
+          "text": "mieli dzieci",
+          "is_correct": false
+        },
+        {
+          "text": "wędrowali po ziemi",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-16",
+      "text": "Bóg Hades:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "dał Persefonie czarodziejski owoc granatu",
+          "is_correct": true
+        },
+        {
+          "text": "był synem Zeusa",
+          "is_correct": false
+        },
+        {
+          "text": "był ukazywany w sztuce z widłami w ręce",
+          "is_correct": true
+        },
+        {
+          "text": "miał wóz zaprzężony w czarne rumaki",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-17",
+      "text": "Greckie gospodynie szczególnie zabiegały o przychylność:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Demeter",
+          "is_correct": true
+        },
+        {
+          "text": "Hestii",
+          "is_correct": true
+        },
+        {
+          "text": "Afrodyty",
+          "is_correct": false
+        },
+        {
+          "text": "Persefony",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-18",
+      "text": "Wykreśl nazwy atrybutów bogów olimpijskich z ciągu: AKADUCEUSZMTRÓJZABB RMŁOTOŁUKZJKUKUŁKAA. Pozostałe litery tworzą nazwę:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "wina olimpijskiego",
+          "is_correct": false
+        },
+        {
+          "text": "pokarmu dającego nieśmiertelność",
+          "is_correct": true
+        },
+        {
+          "text": "słodyczy dostępnej tylko bogom",
+          "is_correct": true
+        },
+        {
+          "text": "imienia nimfy leśnej",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-19",
+      "text": "O bezwzględności i surowości urażonych bogów świadczy los:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "mieszkańców miasta, nieopodal którego żyli Filemon i Baucis",
+          "is_correct": true
+        },
+        {
+          "text": "Arachne",
+          "is_correct": true
+        },
+        {
+          "text": "Marsjasza",
+          "is_correct": true
+        },
+        {
+          "text": "Syzyfa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-20",
+      "text": "Na dworze króla Minosa na Krecie Tezeusz:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "został serdecznie ugoszczony",
+          "is_correct": false
+        },
+        {
+          "text": "skradł serce córki królewskiej",
+          "is_correct": true
+        },
+        {
+          "text": "wymyślił sposób wyjścia z labiryntu",
+          "is_correct": false
+        },
+        {
+          "text": "przebrał się za dziewczynę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-21",
+      "text": "Ateńczycy otrzymali w prezencie od rywalizujących ze sobą bogów:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Akropol",
+          "is_correct": false
+        },
+        {
+          "text": "peplos",
+          "is_correct": false
+        },
+        {
+          "text": "drzewo oliwne",
+          "is_correct": true
+        },
+        {
+          "text": "konia",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-22",
+      "text": "Król Minos posiadał:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "potężną flotę",
+          "is_correct": true
+        },
+        {
+          "text": "wszechstronnie uzdolnionego budowniczego",
+          "is_correct": true
+        },
+        {
+          "text": "dar zamiany wszystkich przedmiotów w złoto",
+          "is_correct": false
+        },
+        {
+          "text": "syna",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-23",
+      "text": "Podczas swojej podróży Dedal i Ikar lecieli nad:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Morzem Ikaryjskim",
+          "is_correct": true
+        },
+        {
+          "text": "wyspami Samos, Paros i Delos",
+          "is_correct": true
+        },
+        {
+          "text": "wyspą Naksos",
+          "is_correct": false
+        },
+        {
+          "text": "Olimpem",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-24",
+      "text": "Król Syzyf:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "z tarasu swojego pałacu w Koryncie podziwiał zatokę i port",
+          "is_correct": true
+        },
+        {
+          "text": "nie był żonaty",
+          "is_correct": false
+        },
+        {
+          "text": "uwięził Tanatosa na wieży zamkowej",
+          "is_correct": false
+        },
+        {
+          "text": "zapraszał bogów na uczty",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-25",
+      "text": "Małżeństwem byli:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Afrodyta i Hefajstos",
+          "is_correct": true
+        },
+        {
+          "text": "Eros i Psyche",
+          "is_correct": true
+        },
+        {
+          "text": "Epimeteusz i Pandora",
+          "is_correct": true
+        },
+        {
+          "text": "Dionizos i Ariadna",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-26",
+      "text": "W Tracji, krainie dzikich gór:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "żył król Diomedes",
+          "is_correct": true
+        },
+        {
+          "text": "lubił przebywać bóg Ares",
+          "is_correct": true
+        },
+        {
+          "text": "mieszkały Muzy Apollina",
+          "is_correct": false
+        },
+        {
+          "text": "zrozpaczona Demeter została opiekunką królewicza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-27",
+      "text": "Prawdziwa informacja na temat tytanów to:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "związali Herę złotym łańcuchem",
+          "is_correct": false
+        },
+        {
+          "text": "wykuwali pioruny dla Zeusa",
+          "is_correct": false
+        },
+        {
+          "text": "należał do nich Prometeusz",
+          "is_correct": true
+        },
+        {
+          "text": "jeden z nich wychowywał boga Aresa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-28",
+      "text": "Istoty kochające życie, brzydzące się złem to:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Amazonki",
+          "is_correct": false
+        },
+        {
+          "text": "nimfy",
+          "is_correct": true
+        },
+        {
+          "text": "bachantki",
+          "is_correct": false
+        },
+        {
+          "text": "Hesperydy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-29",
+      "text": "Herakles pracował u:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Augiasza",
+          "is_correct": true
+        },
+        {
+          "text": "królowej Omfali",
+          "is_correct": true
+        },
+        {
+          "text": "królowej Hipolity",
+          "is_correct": false
+        },
+        {
+          "text": "króla Admeta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2024-30",
+      "text": "Krwiożerczymi zwierzętami były:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "woły Gerionesa",
+          "is_correct": false
+        },
+        {
+          "text": "ptaki stymfalijskie",
+          "is_correct": true
+        },
+        {
+          "text": "klacze Diomedesa",
+          "is_correct": true
+        },
+        {
+          "text": "krowy Apollina",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-01",
+      "text": "Chaos:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był na początku",
+          "is_correct": true
+        },
+        {
+          "text": "z niego wyłonił się świat",
+          "is_correct": true
+        },
+        {
+          "text": "to bożek nieporządku",
+          "is_correct": false
+        },
+        {
+          "text": "to opiekun filozofów",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-02",
+      "text": "Boginie zemsty, zrodzone z krwi rannego Uranosa to:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "nimfy",
+          "is_correct": false
+        },
+        {
+          "text": "driady",
+          "is_correct": false
+        },
+        {
+          "text": "Erynie",
+          "is_correct": true
+        },
+        {
+          "text": "Eris",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-03",
+      "text": "Ile było bogiń zemsty?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "jedna",
+          "is_correct": false
+        },
+        {
+          "text": "dwie",
+          "is_correct": false
+        },
+        {
+          "text": "trzy",
+          "is_correct": true
+        },
+        {
+          "text": "cztery",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-04",
+      "text": "Zaznacz odpowiedzi, które nie dotyczą kozy Amaltei.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "swoim mlekiem karmiła Zeusa",
+          "is_correct": false
+        },
+        {
+          "text": "z jej skóry powstała egida",
+          "is_correct": false
+        },
+        {
+          "text": "róg obfitości",
+          "is_correct": false
+        },
+        {
+          "text": "strażniczka Tartaru",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-05",
+      "text": "„Czapkę z psiej skóry, która czyniła go niewidzialnym” miał:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zeus",
+          "is_correct": false
+        },
+        {
+          "text": "Hades",
+          "is_correct": true
+        },
+        {
+          "text": "Hermes",
+          "is_correct": false
+        },
+        {
+          "text": "Herkules",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-06",
+      "text": "Pandora została żoną:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Prometeusza",
+          "is_correct": false
+        },
+        {
+          "text": "Odyseusza",
+          "is_correct": false
+        },
+        {
+          "text": "Epimeteusza",
+          "is_correct": true
+        },
+        {
+          "text": "Tezeusza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-07",
+      "text": "Zeus:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był władcą Olimpu",
+          "is_correct": true
+        },
+        {
+          "text": "miał dwóch braci",
+          "is_correct": true
+        },
+        {
+          "text": "miał żonę Herę",
+          "is_correct": true
+        },
+        {
+          "text": "był najmłodszym dzieckiem Kronosa i Rei",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-08",
+      "text": "Zeus był ojcem:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Herkulesa",
+          "is_correct": true
+        },
+        {
+          "text": "Hefajstosa",
+          "is_correct": true
+        },
+        {
+          "text": "Hermesa",
+          "is_correct": true
+        },
+        {
+          "text": "Okeanosa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-09",
+      "text": "Wykradł trzodę, którą opiekował się Apollo.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Admet z Tesalii",
+          "is_correct": false
+        },
+        {
+          "text": "Hermes",
+          "is_correct": true
+        },
+        {
+          "text": "Hefajstos",
+          "is_correct": false
+        },
+        {
+          "text": "Herkules",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-10",
+      "text": "Kaduceusz:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był laseczką z leszczyny, którą w prezencie otrzymał Hermes",
+          "is_correct": true
+        },
+        {
+          "text": "był cytrą ze skorupy żółwia",
+          "is_correct": false
+        },
+        {
+          "text": "był oszczepem wykutym przez Hefajstosa",
+          "is_correct": false
+        },
+        {
+          "text": "miał cudowną właściwość godzenia nieprzyjaciół",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-11",
+      "text": "Afrodyta, bogini miłości:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "narodziła się z morskiej piany",
+          "is_correct": true
+        },
+        {
+          "text": "była żoną Hadesa",
+          "is_correct": false
+        },
+        {
+          "text": "narodziła się z białego obłoku",
+          "is_correct": false
+        },
+        {
+          "text": "była żoną Hefajstosa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-12",
+      "text": "O Hefajstosie wiemy, że:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "był synem Hery i Zeusa",
+          "is_correct": true
+        },
+        {
+          "text": "wykuwał tarcze, miecze",
+          "is_correct": true
+        },
+        {
+          "text": "po złamaniu nóg kulał",
+          "is_correct": true
+        },
+        {
+          "text": "był bogiem ognia i opiekunem kowali",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-13",
+      "text": "Opiekunami Heraklesa byli:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zeus i Alkmena",
+          "is_correct": false
+        },
+        {
+          "text": "Hera i Zeus",
+          "is_correct": false
+        },
+        {
+          "text": "Amfitrion i Alkmena",
+          "is_correct": true
+        },
+        {
+          "text": "Alkmena i Hades",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-14",
+      "text": "Kwiaty „zwodnicze, poświęcone bóstwom podziemnym” to:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "narcyzy",
+          "is_correct": true
+        },
+        {
+          "text": "lilie",
+          "is_correct": false
+        },
+        {
+          "text": "stokrotki",
+          "is_correct": false
+        },
+        {
+          "text": "róże",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-15",
+      "text": "Persefona każdej jesieni powraca do Hadesu, ponieważ:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "pokutuje tam za swe uczynki",
+          "is_correct": false
+        },
+        {
+          "text": "pokochała boga podziemi",
+          "is_correct": false
+        },
+        {
+          "text": "wypiła wodę z rzeki zapomnienia",
+          "is_correct": false
+        },
+        {
+          "text": "zjadła kilka ziaren granatu",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-16",
+      "text": "Demeter dla Persefony była:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "matką",
+          "is_correct": true
+        },
+        {
+          "text": "córką",
+          "is_correct": false
+        },
+        {
+          "text": "siostrą",
+          "is_correct": false
+        },
+        {
+          "text": "przyjaciółką",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-17",
+      "text": "Gdy Narcyz nachylił się nad strumieniem, by napić się wody:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "zakochał się sam w sobie",
+          "is_correct": true
+        },
+        {
+          "text": "potknął się i utonął",
+          "is_correct": false
+        },
+        {
+          "text": "zachwycił się swoim odbiciem",
+          "is_correct": true
+        },
+        {
+          "text": "został porwany przez nimfy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-18",
+      "text": "Obol to:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "starożytne naczynie",
+          "is_correct": false
+        },
+        {
+          "text": "pieniążek dla Charona",
+          "is_correct": true
+        },
+        {
+          "text": "nazwa wyroczni",
+          "is_correct": false
+        },
+        {
+          "text": "amulet Cerbera",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-19",
+      "text": "Cerber to:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "strażnik w Hadesie",
+          "is_correct": true
+        },
+        {
+          "text": "psisko o trzech paszczach",
+          "is_correct": true
+        },
+        {
+          "text": "Kerberos",
+          "is_correct": true
+        },
+        {
+          "text": "pomocnik Hermesa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-20",
+      "text": "Pole Elizejskie to:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "miejsce biesiad w krainie wiecznej szczęśliwości",
+          "is_correct": true
+        },
+        {
+          "text": "sala biesiadna na Olimpie",
+          "is_correct": false
+        },
+        {
+          "text": "miejsce urodzenia Pandory",
+          "is_correct": false
+        },
+        {
+          "text": "kryjówka Uranosa",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-21",
+      "text": "„Skałą Smutku” nazwano kamień:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "który Syzyf za karę wtaczał na szczyt góry",
+          "is_correct": false
+        },
+        {
+          "text": "do którego w górach przykuto Prometeusza",
+          "is_correct": false
+        },
+        {
+          "text": "pod którym znaleziono martwą Amalteję",
+          "is_correct": false
+        },
+        {
+          "text": "na którym spoczęła Demeter szukająca córki",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-22",
+      "text": "Wskaż atrybuty Demeter.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "kłos zboża",
+          "is_correct": true
+        },
+        {
+          "text": "kosz owoców",
+          "is_correct": false
+        },
+        {
+          "text": "kapelusz",
+          "is_correct": false
+        },
+        {
+          "text": "pierścionek",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-23",
+      "text": "Posejdon nie był opiekunem:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "żeglarzy",
+          "is_correct": false
+        },
+        {
+          "text": "rybaków",
+          "is_correct": false
+        },
+        {
+          "text": "kowali",
+          "is_correct": true
+        },
+        {
+          "text": "kupców",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-24",
+      "text": "Wskaż poprawnie zapisany plan wydarzeń mitu o Orfeuszu i Eurydyce.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "ukąszenie Eurydyki przez żmiję, Eurydyka w Hadesie, śpiew Orfeusza w Hadesie, obejrzenie się Orfeusza za siebie",
+          "is_correct": true
+        },
+        {
+          "text": "obejrzenie się Orfeusza za siebie, śpiew Orfeusza w Hadesie, ukąszenie Eurydyki przez żmiję, Eurydyka w Hadesie",
+          "is_correct": false
+        },
+        {
+          "text": "Eurydyka w Hadesie, śpiew Orfeusza w Hadesie, ukąszenie Eurydyki przez żmiję, odwrócenie się Orfeusza",
+          "is_correct": false
+        },
+        {
+          "text": "ukąszenie Eurydyki przez żmiję, śpiew Orfeusza w Hadesie, Eurydyka w Hadesie, odwrócenie się Orfeusza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-25",
+      "text": "Skąd na świecie wzięły się choroby i nieszczęścia?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "przyniósł je Prometeusz",
+          "is_correct": false
+        },
+        {
+          "text": "rozsypała je Demeter po porwaniu Persefony",
+          "is_correct": false
+        },
+        {
+          "text": "wydostały się z puszki, którą Pandora otrzymała od bogów",
+          "is_correct": true
+        },
+        {
+          "text": "zrodziły się z walki Uranosa z Kronosem",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-26",
+      "text": "„Brzydki i niechlujny dziad, zrzęda i gbur, syn Nocy, stoi w czarnej łodzi i żerdzią odpycha garnący się ku niemu tłum dusz. Wpuszcza tylko tych, którzy mają czym zapłacić”. Cytat opisuje:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Hadesa",
+          "is_correct": false
+        },
+        {
+          "text": "Cerbera",
+          "is_correct": false
+        },
+        {
+          "text": "Heliosa",
+          "is_correct": false
+        },
+        {
+          "text": "Charona",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-27",
+      "text": "Co współcześnie oznacza powiedzenie „być pod czyjąś egidą”?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "być pod czyjąś opieką",
+          "is_correct": true
+        },
+        {
+          "text": "być przez kogoś krzywdzonym",
+          "is_correct": false
+        },
+        {
+          "text": "mieć dużo pieniędzy",
+          "is_correct": false
+        },
+        {
+          "text": "wieść szczęśliwe życie na Wyspie Błogosławionych",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-28",
+      "text": "Co współcześnie oznacza powiedzenie „róg obfitości”?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "rodzinne ciepło",
+          "is_correct": false
+        },
+        {
+          "text": "poroże jelenia",
+          "is_correct": false
+        },
+        {
+          "text": "dostatek, bogactwo",
+          "is_correct": true
+        },
+        {
+          "text": "lek na przeziębienie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-29",
+      "text": "Wskaż błędne użycie powiedzeń.",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Po kłótni z Alą zaczęły się problemy – to była łyżka Pandory.",
+          "is_correct": true
+        },
+        {
+          "text": "Ochrona, jak Cerber, pilnuje sejfu.",
+          "is_correct": false
+        },
+        {
+          "text": "Mama dba o domowe ognisko.",
+          "is_correct": false
+        },
+        {
+          "text": "Tomek wciąż zachwyca się sobą – jest tulipanem.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "mitologia-2025-30",
+      "text": "Bogiem olimpijskim nie był:",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Narcyz",
+          "is_correct": true
+        },
+        {
+          "text": "Orfeusz",
+          "is_correct": true
+        },
+        {
+          "text": "Posejdon",
+          "is_correct": false
+        },
+        {
+          "text": "Prometeusz",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

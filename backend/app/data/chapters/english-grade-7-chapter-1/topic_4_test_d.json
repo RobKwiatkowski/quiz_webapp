@@ -1,0 +1,418 @@
+{
+  "topic_id": "test-d",
+  "topic_title": "Unit test D",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "g7d-01-collocations",
+      "text": "Match the verbs to make correct collocations.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "plant",
+          "left": "plant",
+          "right": "a tree"
+        },
+        {
+          "id": "take",
+          "left": "take",
+          "right": "a selfie"
+        },
+        {
+          "id": "fly",
+          "left": "fly",
+          "right": "in a glider"
+        },
+        {
+          "id": "do",
+          "left": "do",
+          "right": "a parachute jump"
+        },
+        {
+          "id": "act",
+          "left": "act",
+          "right": "in a play"
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-02-prepositions",
+      "is_active": false,
+      "text": "Choose the correct preposition for each sentence.\n\n1. Kevin is afraid {{one}} heights.\n2. I'm not keen {{two}} swimming.\n3. They're worried {{three}} their son.\n4. Becky isn't very good {{four}} maths.\n5. Amy is interested {{five}} art.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "of"
+          ],
+          "options": [
+            "of",
+            "on",
+            "at",
+            "about",
+            "in"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "on"
+          ],
+          "options": [
+            "on",
+            "of",
+            "at",
+            "about",
+            "in"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "about"
+          ],
+          "options": [
+            "about",
+            "on",
+            "of",
+            "at",
+            "in"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "at"
+          ],
+          "options": [
+            "at",
+            "on",
+            "of",
+            "about",
+            "in"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "in"
+          ],
+          "options": [
+            "in",
+            "at",
+            "on",
+            "of",
+            "about"
+          ]
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-03-phobias",
+      "is_active": false,
+      "text": "Choose the correct phobia for each description.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "spiders",
+          "left": "They are hairy and have too many legs.",
+          "right": "fear of spiders"
+        },
+        {
+          "id": "dark",
+          "left": "As a child, I slept with the light on.",
+          "right": "fear of the dark"
+        },
+        {
+          "id": "enclosed",
+          "left": "Small indoor places make me nervous.",
+          "right": "fear of enclosed spaces"
+        },
+        {
+          "id": "birds",
+          "left": "They fly near me and I get scared.",
+          "right": "fear of birds"
+        },
+        {
+          "id": "flying",
+          "left": "He could not become a pilot.",
+          "right": "fear of flying"
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-04-grammar",
+      "text": "Choose the correct form in each sentence.\n\n1. I'm hungry. I {{one}} lunch yet.\n2. They {{two}} lots of photos while they were on holiday last week.\n3. Jamie isn't here. He {{three}} to a friend's house.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "haven't had",
+            "didn't have"
+          ],
+          "options": [
+            "haven't had",
+            "didn't have",
+            "don't have",
+            "hasn't had"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "took",
+            "were taking"
+          ],
+          "options": [
+            "took",
+            "have taken",
+            "take",
+            "were taking"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "has gone",
+            "went"
+          ],
+          "options": [
+            "has gone",
+            "has been",
+            "went",
+            "goes"
+          ]
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "The test expects haven't had, took and has gone. Didn't have, were taking and went also form grammatical sentences here, so they are accepted too."
+    },
+    {
+      "id": "g7d-05-questions",
+      "text": "Put the words in the correct order to make questions. Write one complete question under each set of words.\n\n1. did you / what time / get home?\n{{one}}\n\n2. have you / been to / which countries?\n{{two}}\n\n3. why has / gone to Brazil / your mother?\n{{three}}",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "What time did you get home?"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "Which countries have you been to?"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "Why has your mother gone to Brazil?"
+          ],
+          "options": []
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Correct questions: What time did you get home? Which countries have you been to? Why has your mother gone to Brazil?"
+    },
+    {
+      "id": "g7d-06-reading",
+      "is_active": false,
+      "text": "Read the rollercoaster text and choose A or B for each statement.",
+      "context": {
+        "text": "A: Expedition GeForce is at Holiday Park in Hassloch, Germany. It is 53 metres high in places, is in a forest, has a 1.2 km track, takes 75 seconds and reaches 120 km/h. B: Takabisha is at Fuji-Q Highland Amusement Park in Japan. Its one-kilometre ride takes just under two minutes, reaches 110 km/h, and halfway through the track goes down at an angle of more than 120 degrees. Mount Fuji can be seen from it."
+      },
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "fastest",
+          "left": "is the fastest",
+          "right": "A"
+        },
+        {
+          "id": "middle",
+          "left": "is frightening in the middle",
+          "right": "B"
+        },
+        {
+          "id": "forest",
+          "left": "passes through a forest",
+          "right": "A"
+        },
+        {
+          "id": "high-place",
+          "left": "is near a very high place",
+          "right": "B"
+        },
+        {
+          "id": "highest",
+          "left": "is the highest",
+          "right": "A"
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-08-speaking",
+      "text": "Choose a suitable expression to complete each suggestion.\n\n1. {{one}} go to the beach?\n2. {{two}} going to the science museum?",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "Shall we"
+          ],
+          "options": [
+            "Shall we",
+            "What about",
+            "That sounds",
+            "Not sure",
+            "That idea"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "What about"
+          ],
+          "options": [
+            "What about",
+            "Shall we",
+            "That sounds",
+            "Not sure",
+            "That idea"
+          ]
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Shall we go to the beach? and What about going to the science museum? are two ways to make suggestions."
+    },
+    {
+      "id": "g7d-09-blog",
+      "is_active": false,
+      "text": "Write a 50-120 word blog entry about your most exciting experience. Include what you did and when, where you were and who you were with, and how you felt.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "A personal blog entry of 50-120 words that describes an exciting experience, includes time, place, company and feelings."
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-10-idioms",
+      "is_active": false,
+      "text": "Choose the missing word in each idiom.\n\n1. be in safe {{one}}\n2. off the top of my {{two}}\n3. let your {{three}} down\n4. cost an {{four}} and a leg\n5. get cold {{five}}",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "hands"
+          ],
+          "options": [
+            "hands",
+            "head",
+            "hair",
+            "arm",
+            "feet"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "head"
+          ],
+          "options": [
+            "head",
+            "hands",
+            "hair",
+            "arm",
+            "feet"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "hair"
+          ],
+          "options": [
+            "hair",
+            "head",
+            "hands",
+            "arm",
+            "feet"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "arm"
+          ],
+          "options": [
+            "arm",
+            "head",
+            "hair",
+            "hands",
+            "feet"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "feet"
+          ],
+          "options": [
+            "feet",
+            "arm",
+            "head",
+            "hair",
+            "hands"
+          ]
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7d-11-completion",
+      "text": "Complete each sentence with one word. Use each word once: by, never, ever.\n\n1. I'm fascinated {{one}} ancient history.\n2. I have {{two}} tried the soup. Is it good?\n3. Have you {{three}} been to Paris?",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": ["by"],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": ["never"],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": ["ever"],
+          "options": []
+        }
+      ],
+      "topic_id": "test-d",
+      "explanation": "The missing words are: 1. by; 2. never; 3. ever."
+    }
+  ]
+}

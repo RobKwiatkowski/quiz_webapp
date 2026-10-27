@@ -1,0 +1,11 @@
+{
+  "id": "english-grade-7-chapter-1",
+  "title": "Grade 7 - Chapter 1: Experiences and phobias",
+  "description": "Unit 1 practice from tests A-D: vocabulary, grammar, reading, speaking, writing and extra tasks.",
+  "category": "english",
+  "age_group": "12-13",
+  "chapter_number": 1,
+  "target_question_count": 29,
+  "questions_per_topic": 7,
+  "topics": ["topic_1_test_a.json", "topic_2_test_b.json", "topic_3_test_c.json", "topic_4_test_d.json"]
+}

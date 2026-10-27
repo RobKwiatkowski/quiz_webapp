@@ -26,6 +26,7 @@ STATIC_DIR = Path(__file__).resolve().parents[1] / "static"
 ALLOWED_IMAGE_EXTENSIONS = {".gif", ".jpeg", ".jpg", ".png", ".webp"}
 MAX_IMAGE_UPLOAD_BYTES = 5 * 1024 * 1024
 SUPPORTED_SUBJECTS = {
+    "competitions": "Konkursy",
     "history": "Historia",
     "geography": "Geografia",
     "biology": "Biologia",

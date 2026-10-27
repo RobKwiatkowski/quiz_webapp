@@ -11,6 +11,7 @@ import { AdminPage } from "./pages/AdminPage";
 import { QuizPage } from "./pages/QuizPage";
 
 const homeCards: Record<SubjectId, { label: string; accent: string }> = {
+  competitions: { label: "Konkursy i olimpiady", accent: "home-card-history" },
   history: { label: "Opowieści, daty i decyzje", accent: "home-card-history" },
   geography: { label: "Mapy, miejsca i świat", accent: "home-card-geography" },
   biology: { label: "Przyroda, ciało i życie", accent: "home-card-biology" },
@@ -23,6 +24,7 @@ const homeCards: Record<SubjectId, { label: string; accent: string }> = {
 };
 
 const subjectStartImages: Record<SubjectId, readonly string[]> = {
+  competitions: ["history-hero.webp"],
   history: ["start_image_1.png", "start_image_2.png", "arsenal_fight.png", "history-hero.webp"],
   geography: ["geography-hero.webp"],
   biology: ["biology-hero.webp"],

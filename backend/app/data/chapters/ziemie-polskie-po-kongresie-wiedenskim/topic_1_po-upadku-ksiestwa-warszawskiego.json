@@ -362,7 +362,7 @@
       "id": "q-7b33365f",
       "topic_id": "po-upadku-ksiestwa-warszawskiego",
       "is_active": true,
-      "text": "Kim był Franciszek Ksawery Duchnicki-Lubecki?",
+      "text": "Kim był Franciszek Ksawery Drucki-Lubecki?",
       "selection_type": "single",
       "answers": [
         {
@@ -374,7 +374,7 @@
           "is_correct": false
         },
         {
-          "text": "ministrem skarbu",
+          "text": "ministrem skarbu Królestwa Polskiego",
           "is_correct": true
         },
         {

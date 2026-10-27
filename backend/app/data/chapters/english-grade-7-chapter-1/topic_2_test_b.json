@@ -1,0 +1,447 @@
+{
+  "topic_id": "test-b",
+  "topic_title": "Unit test B",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "g7b-01-collocations",
+      "text": "Match the verbs to make correct collocations.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "climb",
+          "left": "climb",
+          "right": "a mountain"
+        },
+        {
+          "id": "go",
+          "left": "go",
+          "right": "snorkelling"
+        },
+        {
+          "id": "travel",
+          "left": "travel",
+          "right": "to a foreign country"
+        },
+        {
+          "id": "win",
+          "left": "win",
+          "right": "a competition"
+        },
+        {
+          "id": "take",
+          "left": "take",
+          "right": "a selfie with a celebrity"
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-02-prepositions",
+      "text": "Match each adjective to its correct preposition.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "excited",
+          "left": "excited",
+          "right": "about"
+        },
+        {
+          "id": "good",
+          "left": "good",
+          "right": "at"
+        },
+        {
+          "id": "keen",
+          "left": "keen",
+          "right": "on"
+        },
+        {
+          "id": "scared",
+          "left": "scared",
+          "right": "of"
+        },
+        {
+          "id": "stressed",
+          "left": "stressed",
+          "right": "out about"
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-03-phobias",
+      "text": "Complete the sentences with the correct phobia words.\n\n1. I don't like {{one}}, so I always stay on the ground.\n2. My brother is afraid of {{two}} because he says they have too many legs.\n3. My mother has a phobia of {{three}}, especially the long, green ones that are in the grass.\n4. I don't understand people who are afraid of {{four}}. They're man's best friend and so cute when they're puppies.\n5. You can't go in a lift if you're afraid of {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "flying"
+          ],
+          "options": [
+            "flying",
+            "swimming",
+            "driving",
+            "running"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "spiders"
+          ],
+          "options": [
+            "spiders",
+            "birds",
+            "snakes",
+            "dogs"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "snakes"
+          ],
+          "options": [
+            "snakes",
+            "spiders",
+            "birds",
+            "dogs"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "dogs"
+          ],
+          "options": [
+            "dogs",
+            "birds",
+            "spiders",
+            "snakes"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "enclosed spaces"
+          ],
+          "options": [
+            "enclosed spaces",
+            "open spaces",
+            "heights",
+            "the dark"
+          ]
+        }
+      ],
+      "explanation": "The answers are flying, spiders, snakes, dogs and enclosed spaces.",
+      "topic_id": "test-b"
+    },
+    {
+      "id": "g7b-04-present-perfect",
+      "text": "Look at the information and complete the sentences using the Present Perfect.\n\n✓ means: has done it.  ✗ means: has not done it.\nAnia: ✓ go zip-lining; ✗ be on TV.\nMaja: ✓ do a parachute jump; ✗ act in a play.\nSzymon: ✓ learn how to surf; ✗ make a YouTube video.\n\nAnia has gone zip-lining.\n1. She hasn't {{one}}.\n2. Maja has {{two}}.\n3. She hasn't {{three}}.\n4. Szymon has {{four}}.\n5. He hasn't {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "been on TV"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "done a parachute jump"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "acted in a play"
+          ],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "learnt how to surf",
+            "learned how to surf"
+          ],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "made a YouTube video"
+          ],
+          "options": []
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-05-questions",
+      "text": "Make questions using the prompts. Add auxiliary verbs where needed. Write one complete question in each answer field.\n\n1. How often / you go / to the cinema?\n{{one}}\n\n2. What / you want to study / when you finish school?\n{{two}}\n\n3. How many times / you travel / to a foreign country?\n{{three}}\n\n4. Who / you speak to / last night?\n{{four}}\n\n5. Where / you go / on holiday last summer?\n{{five}}",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "How often do you go to the cinema?",
+            "How often do you go to the cinema"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "What do you want to study when you finish school?",
+            "What do you want to study when you finish school"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "How many times have you travelled to a foreign country?",
+            "How many times have you traveled to a foreign country?",
+            "How many times have you travelled to a foreign country",
+            "How many times have you traveled to a foreign country"
+          ],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "Who did you speak to last night?",
+            "Who did you speak to last night"
+          ],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "Where did you go on holiday last summer?",
+            "Where did you go on holiday last summer"
+          ],
+          "options": []
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-06-reading",
+      "is_active": false,
+      "text": "Read the forum discussion about phobias. Decide if each statement is true or false.",
+      "context": {
+        "text": "Sunny says fear can protect us, but phobias can make ordinary life difficult. Some people are so afraid of open spaces that they will not go to the park or out of the house. Freddy says fear of snakes comes from an old human instinct because some snakes are dangerous. Mary Lou was scared by a small dog when she was very young and now wants to run away whenever she sees a dog."
+      },
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Sunny thinks phobias can help us.",
+          "is_correct": false
+        },
+        {
+          "text": "People afraid of open spaces enjoy going to the park.",
+          "is_correct": false
+        },
+        {
+          "text": "Freddy thinks fear of snakes is natural to humans.",
+          "is_correct": true
+        },
+        {
+          "text": "Mary Lou is not a little child.",
+          "is_correct": true
+        },
+        {
+          "text": "Mary Lou loves dogs.",
+          "is_correct": false
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-08-dialogue-order",
+      "is_active": false,
+      "text": "Put the dialogue in the correct order.",
+      "selection_type": "order",
+      "order_items": [
+        {
+          "id": "one",
+          "text": "Elena: Hey Mina, how about going shopping this afternoon?",
+          "position": 1
+        },
+        {
+          "id": "two",
+          "text": "Mina: Sure, that sounds great! Why don't we meet at the shopping centre?",
+          "position": 4
+        },
+        {
+          "id": "three",
+          "text": "Elena: Good idea. What about 10 a.m. at the entrance?",
+          "position": 5
+        },
+        {
+          "id": "four",
+          "text": "Mina: Sorry, Elena, I have to finish my homework.",
+          "position": 2
+        },
+        {
+          "id": "five",
+          "text": "Elena: That's OK. How about tomorrow morning?",
+          "position": 3
+        },
+        {
+          "id": "six",
+          "text": "Mina: Yes, that sounds fine. See you tomorrow!",
+          "position": 6
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-09-blog",
+      "is_active": false,
+      "text": "Write a 50-120 word blog entry about your most exciting experience. Include what you did and when, where you were and who you were with, and how you felt.",
+      "selection_type": "llm",
+      "accepted_answers": [
+        "A personal blog entry of 50-120 words that describes an exciting experience, includes time, place, company and feelings."
+      ],
+      "topic_id": "test-b",
+      "explanation": "Check your answer and practise the target language."
+    },
+    {
+      "id": "g7b-10-idioms",
+      "text": "Choose an idiom from each drop-down menu to complete the sentence.\n\n1. You have studied a lot. Tonight you can {{one}}.\n2. I wanted to fly in a glider, but I began to {{two}}.\n3. With this experienced instructor, you will {{three}}.\n4. I can't remember the answer {{four}}.\n5. This joke is so funny that you will {{five}}.",
+      "selection_type": "fill",
+      "fill_mode": "select",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "let your hair down"
+          ],
+          "options": [
+            "let your hair down",
+            "get cold feet",
+            "be in safe hands",
+            "laugh your head off"
+          ]
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "get cold feet"
+          ],
+          "options": [
+            "get cold feet",
+            "let your hair down",
+            "off the top of my head",
+            "an arm and a leg"
+          ]
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "be in safe hands"
+          ],
+          "options": [
+            "be in safe hands",
+            "laugh your head off",
+            "get cold feet",
+            "let your hair down"
+          ]
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "off the top of my head"
+          ],
+          "options": [
+            "off the top of my head",
+            "an arm and a leg",
+            "be in safe hands",
+            "laugh your head off"
+          ]
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "laugh your head off"
+          ],
+          "options": [
+            "laugh your head off",
+            "get cold feet",
+            "let your hair down",
+            "be in safe hands"
+          ]
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "1. let your hair down = relax; 2. get cold feet = become too nervous to do something; 3. be in safe hands = be well cared for; 4. off the top of my head = without checking; 5. laugh your head off = laugh a lot."
+    },
+    {
+      "id": "g7b-11-reorder",
+      "text": "Put the words in the correct order to make sentences. Write one complete sentence in each answer field.\n\n1. a child / when I was / of the dark / I was afraid\n{{one}}\n\n2. cost him / an arm and a leg / his new phone\n{{two}}\n\n3. never won / I have / a competition\n{{three}}\n\n4. ever acted / in a play / have you?\n{{four}}\n\n5. maths / my friend / is good at\n{{five}}",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "one",
+          "accepted_answers": [
+            "I was afraid of the dark when I was a child.",
+            "I was afraid of the dark when I was a child"
+          ],
+          "options": []
+        },
+        {
+          "id": "two",
+          "accepted_answers": [
+            "His new phone cost him an arm and a leg.",
+            "His new phone cost him an arm and a leg"
+          ],
+          "options": []
+        },
+        {
+          "id": "three",
+          "accepted_answers": [
+            "I have never won a competition.",
+            "I have never won a competition"
+          ],
+          "options": []
+        },
+        {
+          "id": "four",
+          "accepted_answers": [
+            "Have you ever acted in a play?",
+            "Have you ever acted in a play"
+          ],
+          "options": []
+        },
+        {
+          "id": "five",
+          "accepted_answers": [
+            "My friend is good at maths.",
+            "My friend is good at maths"
+          ],
+          "options": []
+        }
+      ],
+      "topic_id": "test-b",
+      "explanation": "Use the Past Simple in sentences 1-2, the Present Perfect in 3-4 (Have you ever...? in a question), and the expression good at maths in 5."
+    }
+  ]
+}
