@@ -316,6 +316,234 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-paleolit-neolit-01",
+      "text": "Który okres epoki kamienia był najwcześniejszy?",
+      "selection_type": "single",
+      "explanation": "Paleolit poprzedzał mezolit i neolit.",
+      "answers": [
+        {
+          "text": "Paleolit",
+          "is_correct": true
+        },
+        {
+          "text": "Mezolit",
+          "is_correct": false
+        },
+        {
+          "text": "Neolit",
+          "is_correct": false
+        },
+        {
+          "text": "Wszystkie rozpoczęły się w tym samym czasie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-paleolit-neolit-02",
+      "text": "W jaki sposób ludzie w paleolicie zdobywali pożywienie?",
+      "selection_type": "multiple",
+      "explanation": "Ludzie zdobywali pożywienie przez łowiectwo, zbieractwo i rybołówstwo.",
+      "answers": [
+        {
+          "text": "Polowali na zwierzęta",
+          "is_correct": true
+        },
+        {
+          "text": "Zbierali dziko rosnące rośliny",
+          "is_correct": true
+        },
+        {
+          "text": "Łowili ryby",
+          "is_correct": true
+        },
+        {
+          "text": "Uprawiali udomowione odmiany zbóż",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-paleolit-neolit-03",
+      "text": "Dlaczego wiele grup ludzi w paleolicie prowadziło wędrowny tryb życia?",
+      "selection_type": "single",
+      "explanation": "Ludzie przemieszczali się między innymi w poszukiwaniu zwierząt i roślin.",
+      "answers": [
+        {
+          "text": "Przemieszczały się w poszukiwaniu pożywienia",
+          "is_correct": true
+        },
+        {
+          "text": "Musiały regularnie przenosić pola uprawne",
+          "is_correct": false
+        },
+        {
+          "text": "Podróżowały między stałymi targowiskami",
+          "is_correct": false
+        },
+        {
+          "text": "Szukały nowych terenów pod hodowlę bydła",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-paleolit-neolit-04",
+      "text": "Jak nazywamy tryb życia, w którym ludzie mieszkają przez dłuższy czas w jednym miejscu?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "osiadły",
+        "osiadły tryb życia",
+        "tryb osiadły",
+        "osiadly",
+        "osiadly tryb zycia",
+        "tryb osiadly"
+      ],
+      "explanation": "To osiadły tryb życia."
+    },
+    {
+      "id": "q-paleolit-neolit-05",
+      "text": "Które zmiany w sposobie zdobywania pożywienia wiążemy z neolitem?",
+      "selection_type": "multiple",
+      "explanation": "W neolicie ludzie zaczęli uprawiać rośliny i hodować zwierzęta.",
+      "answers": [
+        {
+          "text": "Uprawę roślin",
+          "is_correct": true
+        },
+        {
+          "text": "Hodowlę zwierząt",
+          "is_correct": true
+        },
+        {
+          "text": "Pierwsze polowania na dzikie zwierzęta",
+          "is_correct": false
+        },
+        {
+          "text": "Pierwsze zbieranie dziko rosnących owoców",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-paleolit-neolit-06",
+      "text": "Jaką korzyść dawało mieszkańcom neolitycznych osad przechowywanie nadwyżek żywności?",
+      "selection_type": "single",
+      "explanation": "Zapasy pomagały przetrwać okresy niedoboru pożywienia.",
+      "answers": [
+        {
+          "text": "Pozwalało korzystać z zapasów w okresach gorszych zbiorów",
+          "is_correct": true
+        },
+        {
+          "text": "Sprawiało, że uprawa roślin przestawała być potrzebna",
+          "is_correct": false
+        },
+        {
+          "text": "Gwarantowało ochronę zbiorów przed suszą",
+          "is_correct": false
+        },
+        {
+          "text": "Pozwalało przechowywać każdą żywność bez ryzyka zepsucia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-paleolit-neolit-07",
+      "text": "Do czego ludzie w neolicie wykorzystywali gliniane naczynia?",
+      "selection_type": "single",
+      "explanation": "Naczynia służyły między innymi do przechowywania i przygotowywania żywności.",
+      "answers": [
+        {
+          "text": "Do przechowywania i przygotowywania żywności",
+          "is_correct": true
+        },
+        {
+          "text": "Przede wszystkim do spulchniania ziemi",
+          "is_correct": false
+        },
+        {
+          "text": "Do ścinania drzew pod uprawę",
+          "is_correct": false
+        },
+        {
+          "text": "Przede wszystkim jako groty oszczepów",
+          "is_correct": false
+        }
+      ],
+      "image": "/static/images/history/first-civilizations/neolithic-pot.svg"
+    },
+    {
+      "id": "q-paleolit-neolit-08",
+      "text": "Z jakiego materiału wykonywano wiele narzędzi zarówno w paleolicie, jak i w neolicie?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "kamień",
+        "kamienia",
+        "z kamienia",
+        "kamien",
+        "z kamien",
+        "z krzemienia",
+        "krzemień",
+        "krzemien"
+      ],
+      "explanation": "W obu okresach wykonywano narzędzia z kamienia, na przykład z krzemienia."
+    },
+    {
+      "id": "q-paleolit-neolit-09",
+      "text": "Który sposób obróbki kamienia szczególnie rozpowszechnił się w neolicie?",
+      "selection_type": "single",
+      "explanation": "W neolicie rozpowszechniło się gładzenie i szlifowanie narzędzi kamiennych.",
+      "answers": [
+        {
+          "text": "Gładzenie i szlifowanie",
+          "is_correct": true
+        },
+        {
+          "text": "Wyłącznie łupanie dużych brył kamienia",
+          "is_correct": false
+        },
+        {
+          "text": "Wytapianie kamienia w piecach",
+          "is_correct": false
+        },
+        {
+          "text": "Formowanie kamienia jak mokrej gliny",
+          "is_correct": false
+        }
+      ],
+      "image": "/static/images/history/first-civilizations/stone-tools-comparison.svg"
+    },
+    {
+      "id": "q-paleolit-neolit-10",
+      "text": "Ułóż okresy i epoki w kolejności od najwcześniejszego do najpóźniejszego.",
+      "selection_type": "order",
+      "explanation": "Najpierw był paleolit, następnie neolit, epoka brązu i epoka żelaza.",
+      "order_items": [
+        {
+          "id": "paleolit",
+          "text": "Paleolit",
+          "position": 1
+        },
+        {
+          "id": "neolit",
+          "text": "Neolit",
+          "position": 2
+        },
+        {
+          "id": "epoka-brazu",
+          "text": "Epoka brązu",
+          "position": 3
+        },
+        {
+          "id": "epoka-zelaza",
+          "text": "Epoka żelaza",
+          "position": 4
+        }
+      ]
     }
   ],
   "is_active": true

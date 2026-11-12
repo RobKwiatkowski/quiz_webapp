@@ -1,0 +1,681 @@
+{
+  "topic_id": "bogowie-olimpijscy",
+  "topic_title": "Bogowie Olimpijscy",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "ares-rozpoznanie-bitwa",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na ilustracji?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/ares-battle-anime.png",
+      "answers": [
+        {
+          "text": "Ares",
+          "is_correct": true
+        },
+        {
+          "text": "Apollo",
+          "is_correct": false
+        },
+        {
+          "text": "Hermes",
+          "is_correct": false
+        },
+        {
+          "text": "Posejdon",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "eros-psyche-postacie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Kto jest przedstawiony na ilustracji?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/eros-psyche-lamp.png",
+      "answers": [
+        {
+          "text": "Eros",
+          "is_correct": true
+        },
+        {
+          "text": "Psyche",
+          "is_correct": true
+        },
+        {
+          "text": "Apollo",
+          "is_correct": false
+        },
+        {
+          "text": "Dafne",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "eros-psyche-lampka",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Co wydarzyło się po tym, jak Psyche oświetliła śpiącego Erosa?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/eros-psyche-lamp.png",
+      "answers": [
+        {
+          "text": "Kropla gorącej oliwy spadła na Erosa.",
+          "is_correct": true
+        },
+        {
+          "text": "Eros obudził się i odleciał.",
+          "is_correct": true
+        },
+        {
+          "text": "Zamek, w którym mieszkała Psyche, zniknął.",
+          "is_correct": true
+        },
+        {
+          "text": "Psyche została zamieniona w wawrzyn.",
+          "is_correct": false
+        },
+        {
+          "text": "Eros podarował Psyche lampkę oliwną.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "apollo-dafne-postacie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Które postacie są przedstawione na obrazku?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/apollo-daphne-cartoon-v3.png",
+      "answers": [
+        {
+          "text": "Apollo",
+          "is_correct": true
+        },
+        {
+          "text": "Dafne",
+          "is_correct": true
+        },
+        {
+          "text": "Amor",
+          "is_correct": true
+        },
+        {
+          "text": "Marsjasz",
+          "is_correct": false
+        },
+        {
+          "text": "Artemida",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "narodziny-afrodyty-cypr",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Z którą boginią i wyspą mit wiąże scenę przedstawioną na obrazie?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/aphrodite-birth.png",
+      "answers": [
+        {
+          "text": "Afrodyta",
+          "is_correct": true
+        },
+        {
+          "text": "Cypr",
+          "is_correct": true
+        },
+        {
+          "text": "Hera",
+          "is_correct": false
+        },
+        {
+          "text": "Kreta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "pojedynek-apollo-marsjasz",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Kto bierze udział w muzycznym pojedynku przedstawionym na obrazie? Zaznacz dwie odpowiedzi.",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/apollo-marsyas.png",
+      "answers": [
+        {
+          "text": "Apollo",
+          "is_correct": true
+        },
+        {
+          "text": "Marsjasz",
+          "is_correct": true
+        },
+        {
+          "text": "Pan",
+          "is_correct": false
+        },
+        {
+          "text": "Dionizos",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "bogini-waza-hera",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Która bogini jest przedstawiona na wazie?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/hera.png",
+      "answers": [
+        {
+          "text": "Hera",
+          "is_correct": true
+        },
+        {
+          "text": "Atena",
+          "is_correct": false
+        },
+        {
+          "text": "Afrodyta",
+          "is_correct": false
+        },
+        {
+          "text": "Demeter",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "bogini-waza-atena",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Która bogini jest przedstawiona na wazie?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/athena.png",
+      "answers": [
+        {
+          "text": "Demeter",
+          "is_correct": false
+        },
+        {
+          "text": "Atena",
+          "is_correct": true
+        },
+        {
+          "text": "Hera",
+          "is_correct": false
+        },
+        {
+          "text": "Afrodyta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "bogini-waza-afrodyta",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Która bogini jest przedstawiona na wazie?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/aphrodite.png",
+      "answers": [
+        {
+          "text": "Atena",
+          "is_correct": false
+        },
+        {
+          "text": "Demeter",
+          "is_correct": false
+        },
+        {
+          "text": "Afrodyta",
+          "is_correct": true
+        },
+        {
+          "text": "Hera",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "bogini-waza-demeter",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Która bogini jest przedstawiona na wazie?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/demeter.png",
+      "answers": [
+        {
+          "text": "Afrodyta",
+          "is_correct": false
+        },
+        {
+          "text": "Hera",
+          "is_correct": false
+        },
+        {
+          "text": "Demeter",
+          "is_correct": true
+        },
+        {
+          "text": "Atena",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f99df1fa",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Jakie atrybuty wyglądu ma Hera?",
+      "selection_type": "multiple",
+      "explanation": "Jeździła złotym powozem z diademem z gwiazd na głowie.",
+      "answers": [
+        {
+          "text": "diadem z gwiazd",
+          "is_correct": true
+        },
+        {
+          "text": "złoty powóz",
+          "is_correct": true
+        },
+        {
+          "text": "diamentowy miecz",
+          "is_correct": false
+        },
+        {
+          "text": "korona z piorunów",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-61bb3a46",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Co jest prawdą o Herze?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "była córką Kronosa",
+          "is_correct": true
+        },
+        {
+          "text": "była siostrą Zeusa",
+          "is_correct": true
+        },
+        {
+          "text": "była żoną Zeusa",
+          "is_correct": true
+        },
+        {
+          "text": "była matką Rei",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-900b22b0",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Jak Hera karała dziewczęta które uważały, że dorównują jej pięknością?",
+      "selection_type": "multiple",
+      "explanation": "Kiedy córki króla Projtosa twierdziły, że nie ustępują jej urodą, Hera zesłała na nie szaleństwo. Inne dziewczęta, które również uznały się za równie piękne, zamieniła w kamienne schody.",
+      "answers": [
+        {
+          "text": "zsyłała na nie szaleństwo",
+          "is_correct": true
+        },
+        {
+          "text": "zamieniała w kamienne schody",
+          "is_correct": true
+        },
+        {
+          "text": "zabijała we śnie",
+          "is_correct": false
+        },
+        {
+          "text": "porywała i topiła w falach morza",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-3b30ca39",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Komu jako jedynemu Zeus pozwalał korzystać ze swoje broni - pioruna?",
+      "selection_type": "single",
+      "explanation": "Ulubionej córce - Atenie.",
+      "answers": [
+        {
+          "text": "apollowi",
+          "is_correct": false
+        },
+        {
+          "text": "atenie",
+          "is_correct": true
+        },
+        {
+          "text": "herze",
+          "is_correct": false
+        },
+        {
+          "text": "aresowi",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-429e2d29",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "W jakim ziemiośle była bardzo dobra Atena, za co ją bardzo ceniono na Olimpe?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "kowalstwie",
+          "is_correct": false
+        },
+        {
+          "text": "tkactwie",
+          "is_correct": true
+        },
+        {
+          "text": "rzeźbiarstwie",
+          "is_correct": false
+        },
+        {
+          "text": "malarstwie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-bbb63659",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Jaki był ulubiony przydomek Ateny nadany jej przez ludzi?",
+      "selection_type": "single",
+      "explanation": "Partenos czyli Dziewica",
+      "answers": [
+        {
+          "text": "Ergane",
+          "is_correct": false
+        },
+        {
+          "text": "Promachos",
+          "is_correct": false
+        },
+        {
+          "text": "Pallas",
+          "is_correct": false
+        },
+        {
+          "text": "Partenos",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-d803e481",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Kim byli rodzice Apolla?",
+      "selection_type": "multiple",
+      "explanation": "Zeus + Latona",
+      "answers": [
+        {
+          "text": "Zeus",
+          "is_correct": true
+        },
+        {
+          "text": "Ares",
+          "is_correct": false
+        },
+        {
+          "text": "Latona",
+          "is_correct": true
+        },
+        {
+          "text": "Dafne",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-ecf6058e",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Z czym/kim jest związany Aktajon i jego historia?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "Artemida",
+          "is_correct": true
+        },
+        {
+          "text": "zamiana w Jelenia",
+          "is_correct": true
+        },
+        {
+          "text": "Atena",
+          "is_correct": false
+        },
+        {
+          "text": "zamiana w trzcinę",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-9ffacd5f",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Jak zginął Akteon?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zabiła go Artemida",
+          "is_correct": false
+        },
+        {
+          "text": "Został rozszarpany przez własne psy",
+          "is_correct": true
+        },
+        {
+          "text": "Zabiła go Atena",
+          "is_correct": false
+        },
+        {
+          "text": "Utonął w rzece Panateos",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "hermes-fresk-rozpoznanie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na fresku?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/hermes-fresco.png",
+      "answers": [
+        { "text": "Hermes", "is_correct": true },
+        { "text": "Apollo", "is_correct": false },
+        { "text": "Ares", "is_correct": false },
+        { "text": "Posejdon", "is_correct": false }
+      ]
+    },
+    {
+      "id": "hefajstos-fresk-rozpoznanie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na fresku?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/hephaestus-fresco.png",
+      "answers": [
+        { "text": "Hefajstos", "is_correct": true },
+        { "text": "Zeus", "is_correct": false },
+        { "text": "Dionizos", "is_correct": false },
+        { "text": "Hades", "is_correct": false }
+      ]
+    },
+    {
+      "id": "apollo-fresk-rozpoznanie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na fresku?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/apollo-fresco.png",
+      "answers": [
+        { "text": "Apollo", "is_correct": true },
+        { "text": "Hermes", "is_correct": false },
+        { "text": "Posejdon", "is_correct": false },
+        { "text": "Hefajstos", "is_correct": false }
+      ]
+    },
+    {
+      "id": "eros-fresk-rozpoznanie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na fresku?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/eros-fresco.png",
+      "answers": [
+        { "text": "Eros", "is_correct": true },
+        { "text": "Apollo", "is_correct": false },
+        { "text": "Hermes", "is_correct": false },
+        { "text": "Dionizos", "is_correct": false }
+      ]
+    },
+    {
+      "id": "ares-fresk-rozpoznanie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który grecki bóg został przedstawiony na fresku?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/ares-fresco.png",
+      "answers": [
+        { "text": "Ares", "is_correct": true },
+        { "text": "Hefajstos", "is_correct": false },
+        { "text": "Posejdon", "is_correct": false },
+        { "text": "Zeus", "is_correct": false }
+      ]
+    },
+    {
+      "id": "afrodyta-adonis-postacie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Które postacie przedstawia obraz?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/aphrodite-adonis-baroque-v2.png",
+      "answers": [
+        { "text": "Afrodyta", "is_correct": true },
+        { "text": "Adonis", "is_correct": true },
+        { "text": "Artemida", "is_correct": false },
+        { "text": "Apollo", "is_correct": false }
+      ]
+    },
+    {
+      "id": "afrodyta-adonis-mit",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Które informacje dotyczą mitu o Afrodycie i Adonisie?",
+      "selection_type": "multiple",
+      "image": "/static/images/mythology/aphrodite-adonis-baroque-v2.png",
+      "answers": [
+        { "text": "Afrodyta pokochała Adonisa.", "is_correct": true },
+        { "text": "Adonis został śmiertelnie ranny podczas polowania na dzika.", "is_correct": true },
+        { "text": "Adonis został zamieniony przez Afrodytę w jelenia.", "is_correct": false },
+        { "text": "Afrodyta podarowała Adonisowi skrzydła z wosku.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "artemida-aktajon-wina",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Dlaczego Artemida ukarała myśliwego przedstawionego na animacji?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/artemis-actaeon.gif",
+      "answers": [
+        { "text": "Ponieważ podglądał ją podczas kąpieli.", "is_correct": true },
+        { "text": "Ponieważ ukradł jej łuk.", "is_correct": false },
+        { "text": "Ponieważ zgubił się w lesie.", "is_correct": false },
+        { "text": "Ponieważ zerwał święte kwiaty.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "artemida-aktajon-imie",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Jak miał na imię myśliwy, którego Artemida zamieniła w jelenia?",
+      "selection_type": "single",
+      "image": "/static/images/mythology/artemis-actaeon.gif",
+      "answers": [
+        { "text": "Orfeusz", "is_correct": false },
+        { "text": "Perseusz", "is_correct": false },
+        { "text": "Aktajon", "is_correct": true },
+        { "text": "Tezeusz", "is_correct": false }
+      ]
+    },
+    {
+      "id": "q-60046b74",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Która bogini nosiła przydomek Hekate?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Atena",
+          "is_correct": false
+        },
+        {
+          "text": "Artemis",
+          "is_correct": true
+        },
+        {
+          "text": "Hera",
+          "is_correct": false
+        },
+        {
+          "text": "Afrodyta",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-941b26b8",
+      "topic_id": "bogowie-olimpijscy",
+      "is_active": true,
+      "text": "Który bóg jako niemowlak ukradł i ukrył krowy Appollowi?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Hermes",
+          "is_correct": true
+        },
+        {
+          "text": "Hefajstos",
+          "is_correct": false
+        },
+        {
+          "text": "Posejdon",
+          "is_correct": false
+        },
+        {
+          "text": "Ares",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

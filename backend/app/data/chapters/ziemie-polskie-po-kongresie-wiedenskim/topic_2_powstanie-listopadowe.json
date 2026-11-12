@@ -691,6 +691,34 @@
           "is_correct": true
         }
       ]
+    },
+    {
+      "id": "powstanie-lukasinski-cel-towarzystwa",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Do czego dążyło Towarzystwo Patriotyczne założone przez Waleriana Łukasińskiego?",
+      "selection_type": "single",
+      "explanation": "Towarzystwo Patriotyczne było tajną organizacją, która dążyła do odzyskania przez Polskę niepodległości.",
+      "answers": [
+        { "text": "do odzyskania niepodległości Polski", "is_correct": true },
+        { "text": "do wprowadzenia rosyjskiego języka w szkołach", "is_correct": false },
+        { "text": "do poparcia rozbiorów Polski", "is_correct": false },
+        { "text": "do likwidacji armii polskiej", "is_correct": false }
+      ]
+    },
+    {
+      "id": "powstanie-lukasinski-los",
+      "topic_id": "powstanie-listopadowe",
+      "is_active": true,
+      "text": "Co spotkało Waleriana Łukasińskiego za działalność konspiracyjną?",
+      "selection_type": "single",
+      "explanation": "Walerian Łukasiński został aresztowany przez władze rosyjskie i przez wiele lat był więziony.",
+      "answers": [
+        { "text": "został uwięziony przez władze rosyjskie", "is_correct": true },
+        { "text": "został królem Królestwa Polskiego", "is_correct": false },
+        { "text": "został wysłany jako ambasador do Francji", "is_correct": false },
+        { "text": "został dowódcą armii rosyjskiej", "is_correct": false }
+      ]
     }
   ]
 }

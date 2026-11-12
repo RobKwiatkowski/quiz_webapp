@@ -185,6 +185,476 @@
         }
       ],
       "explanation": "Ossolineum działało we Lwowie, a Biblioteka Kórnicka w Kórniku. Wielka Emigracja rozpoczęła się po upadku powstania listopadowego."
+    },
+    {
+      "id": "emigracja-tdp-ustroj",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jakiego ustroju dla przyszłej Polski chciało Towarzystwo Demokratyczne Polskie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "demokratycznej republiki", "is_correct": true },
+        { "text": "monarchii absolutnej", "is_correct": false },
+        { "text": "państwa bez praw obywatelskich", "is_correct": false },
+        { "text": "przyłączenia Polski do Rosji", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-tdp-chlopi",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jaki postulat dotyczący chłopów wysuwało Towarzystwo Demokratyczne Polskie?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "uwłaszczenie chłopów", "is_correct": true },
+        { "text": "zwiększenie pańszczyzny", "is_correct": false },
+        { "text": "odebranie chłopom ziemi", "is_correct": false },
+        { "text": "zakaz nauki dla chłopów", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-uwlaszczenie-galicja-rok",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "W którym roku uwłaszczono chłopów w Galicji?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "1848", "is_correct": true },
+        { "text": "1815", "is_correct": false },
+        { "text": "1830", "is_correct": false },
+        { "text": "1863", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-uwlaszczenie-znaczenie",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Co oznaczało uwłaszczenie chłopów?",
+      "selection_type": "single",
+      "explanation": "Po uwłaszczeniu chłopi otrzymali na własność ziemię, którą uprawiali.",
+      "answers": [
+        { "text": "otrzymanie na własność uprawianej ziemi", "is_correct": true },
+        { "text": "obowiązek bezpłatnej pracy u właściciela ziemi", "is_correct": false },
+        { "text": "zakaz posiadania gospodarstwa", "is_correct": false },
+        { "text": "przeniesienie do miast", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-chopin-zawod",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Kim był Fryderyk Chopin?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "polskim kompozytorem i pianistą", "is_correct": true },
+        { "text": "dowódcą powstania listopadowego", "is_correct": false },
+        { "text": "malarzem romantycznym", "is_correct": false },
+        { "text": "namiestnikiem Królestwa Polskiego", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-chopin-emigracja",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Dlaczego Fryderyk Chopin tworzył poza ziemiami polskimi?",
+      "selection_type": "single",
+      "explanation": "Chopin przebywał poza krajem, gdy wybuchło powstanie listopadowe, a później pozostał na emigracji.",
+      "answers": [
+        { "text": "pozostał na emigracji po powstaniu listopadowym", "is_correct": true },
+        { "text": "był carem Rosji", "is_correct": false },
+        { "text": "przeniósł stolicę Polski do Paryża", "is_correct": false },
+        { "text": "został wysłany do Galicji jako urzędnik", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-towianski-kolo",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jak nazywała się grupa religijna założona przez Andrzeja Towiańskiego?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Koło Sprawy Bożej", "is_correct": true },
+        { "text": "Towarzystwo Patriotyczne", "is_correct": false },
+        { "text": "Sprzysiężenie Podchorążych", "is_correct": false },
+        { "text": "Hôtel Lambert", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-towianski-dzialalnosc",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Z jaką dziedziną działalności był związany Andrzej Towiański?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "religijną i filozoficzną", "is_correct": true },
+        { "text": "wojskową", "is_correct": false },
+        { "text": "przemysłową", "is_correct": false },
+        { "text": "kartograficzną", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-dembowski-powstanie",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "W którym wydarzeniu uczestniczył Edward Dembowski?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "w powstaniu krakowskim", "is_correct": true },
+        { "text": "w kongresie wiedeńskim", "is_correct": false },
+        { "text": "w insurekcji kościuszkowskiej", "is_correct": false },
+        { "text": "w powstaniu wielkopolskim 1918 roku", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-dembowski-smierc",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jak zginął Edward Dembowski w 1846 roku?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "został zastrzelony podczas procesji w Podgórzu", "is_correct": true },
+        { "text": "zginął w bitwie pod Grunwaldem", "is_correct": false },
+        { "text": "utonął podczas przeprawy przez Wisłę", "is_correct": false },
+        { "text": "zmarł na emigracji w Paryżu", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-grottger-zawod",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jaką dziedziną sztuki zajmował się Artur Grottger?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "malarstwem", "is_correct": true },
+        { "text": "muzyką", "is_correct": false },
+        { "text": "architekturą", "is_correct": false },
+        { "text": "rzeźbą", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-grottger-tematyka",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jakie wydarzenia przedstawiał Artur Grottger w swoich cyklach obrazów?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "losy Polaków i powstanie styczniowe", "is_correct": true },
+        { "text": "odkrycia geograficzne", "is_correct": false },
+        { "text": "dzieje starożytnego Egiptu", "is_correct": false },
+        { "text": "podboje Napoleona w Hiszpanii", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-biblioteka-kornicka-miejsce",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Gdzie znajduje się Biblioteka Kórnicka?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "w Kórniku pod Poznaniem", "is_correct": true },
+        { "text": "w Warszawie", "is_correct": false },
+        { "text": "we Lwowie", "is_correct": false },
+        { "text": "w Krakowie", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-biblioteka-kornicka-rola",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jaką rolę pełniła Biblioteka Kórnicka?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "gromadziła i chroniła polskie książki oraz pamiątki narodowe", "is_correct": true },
+        { "text": "była siedzibą rosyjskiego namiestnika", "is_correct": false },
+        { "text": "szkoliła wyłącznie żołnierzy", "is_correct": false },
+        { "text": "pobierała podatki w Galicji", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-tpn-miejsce",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "W jakim mieście działało Towarzystwo Przyjaciół Nauk?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "w Warszawie", "is_correct": true },
+        { "text": "w Kórniku", "is_correct": false },
+        { "text": "w Paryżu", "is_correct": false },
+        { "text": "w Wiedniu", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-tpn-cel",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Jaki był cel Towarzystwa Przyjaciół Nauk?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "rozwijanie nauki i kultury polskiej", "is_correct": true },
+        { "text": "organizowanie rosyjskiej administracji", "is_correct": false },
+        { "text": "prowadzenie tajnej armii", "is_correct": false },
+        { "text": "zarządzanie kopalniami soli", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-statut-organiczny-rok",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "W którym roku wprowadzono Statut organiczny dla Królestwa Polskiego?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "1832", "is_correct": true },
+        { "text": "1815", "is_correct": false },
+        { "text": "1830", "is_correct": false },
+        { "text": "1848", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-statut-organiczny-skutek",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Który skutek przyniosło wprowadzenie Statutu organicznego?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "zniesienie konstytucji i sejmu Królestwa Polskiego", "is_correct": true },
+        { "text": "odzyskanie pełnej niepodległości przez Polskę", "is_correct": false },
+        { "text": "utworzenie Wielkiego Księstwa Poznańskiego", "is_correct": false },
+        { "text": "uwłaszczenie chłopów w Galicji", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-stronnictwa-programy",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj stronnictwo Wielkiej Emigracji do jego programu.",
+      "explanation": "Stronnictwa Wielkiej Emigracji różniły się programem, ale wszystkie dążyły do odzyskania niepodległości Polski.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "hotel-lambert",
+          "left": "Hôtel Lambert",
+          "right": "monarchia konstytucyjna i odzyskanie niepodległości głównie drogą dyplomacji"
+        },
+        {
+          "id": "tdp",
+          "left": "Towarzystwo Demokratyczne Polskie",
+          "right": "demokratyczna republika, równość obywateli i uwłaszczenie chłopów"
+        },
+        {
+          "id": "glp",
+          "left": "Gromady Ludu Polskiego",
+          "right": "równość społeczna i wspólna własność ziemi"
+        }
+      ]
+    },
+    {
+      "id": "emigracja-hotel-lambert-przywodca",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Kto stał na czele obozu Hôtel Lambert?",
+      "selection_type": "single",
+      "answers": [
+        { "text": "Adam Jerzy Czartoryski", "is_correct": true },
+        { "text": "Joachim Lelewel", "is_correct": false },
+        { "text": "Walerian Łukasiński", "is_correct": false },
+        { "text": "Piotr Wysocki", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-prawda-falsz-stronnictwa",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o stronnictwach Wielkiej Emigracji są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Hôtel Lambert należał do stronnictw Wielkiej Emigracji.", "is_correct": true },
+        { "text": "Towarzystwo Demokratyczne Polskie popierało uwłaszczenie chłopów.", "is_correct": true },
+        { "text": "Gromady Ludu Polskiego dążyły do zachowania dominującej roli szlachty.", "is_correct": false },
+        { "text": "Wszystkie stronnictwa Wielkiej Emigracji miały dokładnie taki sam program.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "emigracja-prawda-falsz-hotel-lambert",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Hôtel Lambert są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Przywódcą Hôtel Lambert był Adam Jerzy Czartoryski.", "is_correct": true },
+        { "text": "Hôtel Lambert opowiadał się za monarchią konstytucyjną.", "is_correct": true },
+        { "text": "Hôtel Lambert chciał odzyskać niepodległość wyłącznie przez natychmiastowe powstanie w kraju.", "is_correct": false },
+        { "text": "Nazwa ugrupowania pochodziła od paryskiej siedziby Czartoryskiego.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "emigracja-prawda-falsz-nowy-zakres",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania z nowo dodanego zakresu są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Walerian Łukasiński założył Towarzystwo Patriotyczne.", "is_correct": true },
+        { "text": "Fryderyk Chopin był polskim kompozytorem i pianistą.", "is_correct": true },
+        { "text": "Artur Grottger był dowódcą powstania listopadowego.", "is_correct": false },
+        { "text": "Statut organiczny zniósł konstytucję i sejm Królestwa Polskiego.", "is_correct": true },
+        { "text": "Uwłaszczenie chłopów w Galicji nastąpiło w 1848 roku.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-stronnictwa-emigracji",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o stronnictwach Wielkiej Emigracji są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Hôtel Lambert należał do stronnictw Wielkiej Emigracji.", "is_correct": true },
+        { "text": "Towarzystwo Demokratyczne Polskie popierało uwłaszczenie chłopów.", "is_correct": true },
+        { "text": "Gromady Ludu Polskiego chciały zachować dominację szlachty.", "is_correct": false },
+        { "text": "Wszystkie stronnictwa Wielkiej Emigracji miały taki sam program.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-hotel-lambert",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Hôtel Lambert są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Przywódcą Hôtel Lambert był Adam Jerzy Czartoryski.", "is_correct": true },
+        { "text": "Hôtel Lambert opowiadał się za monarchią konstytucyjną.", "is_correct": true },
+        { "text": "Hôtel Lambert chciał odzyskać niepodległość głównie drogą dyplomacji.", "is_correct": true },
+        { "text": "Hôtel Lambert dążył do wspólnej własności całej ziemi.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-tdp",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Towarzystwie Demokratycznym Polskim są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Towarzystwo Demokratyczne Polskie chciało demokratycznej republiki.", "is_correct": true },
+        { "text": "Opowiadało się za równością obywateli.", "is_correct": true },
+        { "text": "Sprzeciwiało się uwłaszczeniu chłopów.", "is_correct": false },
+        { "text": "Było ugrupowaniem Wielkiej Emigracji.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-lukasinski",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Walerianie Łukasińskim są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Założył Towarzystwo Patriotyczne.", "is_correct": true },
+        { "text": "Został uwięziony przez władze rosyjskie.", "is_correct": true },
+        { "text": "Był przywódcą Hôtel Lambert.", "is_correct": false },
+        { "text": "Działał w tajnej organizacji niepodległościowej.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-uwlaszczenie-galicja",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o uwłaszczeniu chłopów w Galicji są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Nastąpiło w 1848 roku.", "is_correct": true },
+        { "text": "Wiązało się z Wiosną Ludów.", "is_correct": true },
+        { "text": "Przeprowadziły je władze austriackie.", "is_correct": true },
+        { "text": "Oznaczało odebranie chłopom uprawianej ziemi.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-chopin",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Fryderyku Chopinie są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Był polskim kompozytorem i pianistą.", "is_correct": true },
+        { "text": "Pozostał na emigracji po powstaniu listopadowym.", "is_correct": true },
+        { "text": "Był malarzem romantycznym.", "is_correct": false },
+        { "text": "Jest zaliczany do najwybitniejszych twórców muzyki romantycznej.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-towianski",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Andrzeju Towiańskim są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Był związany z działalnością religijną i filozoficzną.", "is_correct": true },
+        { "text": "Założył Koło Sprawy Bożej.", "is_correct": true },
+        { "text": "Był naczelnym wodzem powstania listopadowego.", "is_correct": false },
+        { "text": "Jego idee miały zwolenników wśród polskich emigrantów.", "is_correct": true }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-dembowski-grottger",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Edwardzie Dembowskim i Arturze Grottgerze są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Edward Dembowski uczestniczył w powstaniu krakowskim.", "is_correct": true },
+        { "text": "Edward Dembowski zginął w 1846 roku.", "is_correct": true },
+        { "text": "Artur Grottger był malarzem.", "is_correct": true },
+        { "text": "Artur Grottger dowodził powstaniem listopadowym.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-instytucje-kultury",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o instytucjach kultury są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Towarzystwo Przyjaciół Nauk działało w Warszawie.", "is_correct": true },
+        { "text": "Biblioteka Kórnicka działała w Kórniku pod Poznaniem.", "is_correct": true },
+        { "text": "Ossolineum było ważnym ośrodkiem kultury polskiej we Lwowie.", "is_correct": true },
+        { "text": "Biblioteka Kórnicka znajdowała się w Paryżu.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-statut-organiczny",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o Statucie organicznym są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Wprowadzono go po klęsce powstania listopadowego.", "is_correct": true },
+        { "text": "Wprowadzono go w 1832 roku.", "is_correct": true },
+        { "text": "Zniósł konstytucję i sejm Królestwa Polskiego.", "is_correct": true },
+        { "text": "Poszerzył autonomię Królestwa Polskiego.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-powstanie-listopadowe-skutki",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o powstaniu listopadowym i jego skutkach są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Powstanie listopadowe wybuchło w Warszawie w 1830 roku.", "is_correct": true },
+        { "text": "Po jego klęsce rozpoczęła się Wielka Emigracja.", "is_correct": true },
+        { "text": "Jednym ze skutków było wprowadzenie Statutu organicznego.", "is_correct": true },
+        { "text": "Po upadku powstania Królestwo Polskie odzyskało pełną niepodległość.", "is_correct": false }
+      ]
+    },
+    {
+      "id": "przekrojowe-pf-ziemie-po-kongresie",
+      "topic_id": "wielka-emigracja-i-kultura",
+      "is_active": true,
+      "text": "Oceń, czy zdania o ziemiach polskich po kongresie wiedeńskim są prawdziwe.",
+      "selection_type": "true_false",
+      "answers": [
+        { "text": "Galicja znajdowała się pod zaborem austriackim.", "is_correct": true },
+        { "text": "Kórnik leżał na terenach zaboru pruskiego.", "is_correct": true },
+        { "text": "Królestwo Polskie było związane z Rosją unią personalną.", "is_correct": true },
+        { "text": "Rzeczpospolita Krakowska była całkowicie niezależna od państw zaborczych.", "is_correct": false }
+      ]
     }
   ]
 }

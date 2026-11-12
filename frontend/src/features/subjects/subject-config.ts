@@ -43,7 +43,7 @@ export const subjectConfigs: Record<SubjectId, SubjectConfig> = {
         id: "5",
         label: "Klasa V",
         color: "green",
-        quizIds: ["history-liczenie-wiekow", "history-pierwsze-cywilizacje"],
+        quizIds: ["history-liczenie-wiekow", "history-pierwsze-cywilizacje", "starozytna-grecja"],
       },
       {
         id: "6",
