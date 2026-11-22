@@ -30,6 +30,7 @@ from app.services.admin_content import (
     list_admin_topics,
     move_question,
     save_uploaded_chapter_image,
+    update_chapter_grade,
     update_chapter_number,
     update_topic_active,
     update_target_question_count,
@@ -60,6 +61,12 @@ class ChapterCreateRequest(NameRequest):
     """Request payload for creating a chapter in a selected subject."""
 
     subject: str = "history"
+
+
+class ChapterGradeRequest(BaseModel):
+    """Grade assignment override for a History chapter."""
+
+    school_grade: int | None = Field(ge=4, le=7, strict=True)
 
 
 class ChapterNumberRequest(BaseModel):
@@ -161,6 +168,12 @@ def get_chapters(subject: str | None = None):
 def post_chapter(payload: ChapterCreateRequest):
     """Creates a new empty chapter."""
     return create_chapter(payload.model_dump())
+
+
+@router.put("/chapters/{chapter_id}/school-grade", dependencies=[Depends(require_admin)])
+def put_chapter_grade(chapter_id: str, payload: ChapterGradeRequest):
+    """Updates the grade assignment for a History chapter."""
+    return update_chapter_grade(chapter_id, payload.school_grade)
 
 
 @router.put("/chapters/{chapter_id}/chapter-number", dependencies=[Depends(require_admin)])

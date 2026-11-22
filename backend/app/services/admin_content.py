@@ -84,6 +84,7 @@ def list_admin_chapters(subject: str | None = None) -> list[dict[str, Any]]:
                 "title": meta.title,
                 "subject": meta.category,
                 "chapter_number": meta.chapter_number,
+                "school_grade": meta.school_grade,
                 "target_question_count": meta.target_question_count,
             }
         )
@@ -166,6 +167,29 @@ def update_chapter_number(chapter_id: str, chapter_number: int | None) -> dict[s
         "title": meta.title,
         "subject": meta.category,
         "chapter_number": meta.chapter_number,
+        "school_grade": meta.school_grade,
+        "target_question_count": meta.target_question_count,
+    }
+
+
+def update_chapter_grade(chapter_id: str, school_grade: int | None) -> dict[str, Any]:
+    """Sets the grade shown in the History quiz list."""
+    chapter_dir = get_chapter_dir(chapter_id)
+    with (chapter_dir / "meta.json").open(encoding="utf-8") as file:
+        meta_data = json.load(file)
+
+    if meta_data["category"] != "history":
+        raise HTTPException(status_code=400, detail="Grade assignment is supported for History only")
+
+    meta_data["school_grade"] = school_grade
+    meta = ChapterMeta.model_validate(meta_data)
+    save_meta_data(chapter_dir, meta_data)
+    return {
+        "id": meta.id,
+        "title": meta.title,
+        "subject": meta.category,
+        "chapter_number": meta.chapter_number,
+        "school_grade": meta.school_grade,
         "target_question_count": meta.target_question_count,
     }
 
@@ -186,6 +210,7 @@ def update_target_question_count(chapter_id: str, target_question_count: int) ->
         "title": meta.title,
         "subject": meta.category,
         "chapter_number": meta.chapter_number,
+        "school_grade": meta.school_grade,
         "target_question_count": meta.target_question_count,
     }
 

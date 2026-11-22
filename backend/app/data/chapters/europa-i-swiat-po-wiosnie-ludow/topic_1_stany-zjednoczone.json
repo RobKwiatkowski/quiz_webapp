@@ -1,0 +1,397 @@
+{
+  "topic_id": "stany-zjednoczone",
+  "topic_title": "Stany Zjednoczone",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-39641e57",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jakie było ostatnie terytorium dołączone do USA?",
+      "selection_type": "open",
+      "explanation": "Alaska",
+      "accepted_answers": [
+        "Alaska"
+      ]
+    },
+    {
+      "id": "q-dedc6335",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Co było społecznym efektem napływu imigrantó z Europy do USA?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "zubożenie społeczeństwa",
+          "is_correct": false
+        },
+        {
+          "text": "wzrost przestępczości",
+          "is_correct": false
+        },
+        {
+          "text": "wielokulturowość",
+          "is_correct": true
+        },
+        {
+          "text": "utrata suwerenności",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-f4267c36",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Dokąd wysiedlono podbitych Indian?",
+      "selection_type": "open",
+      "explanation": "do rezerwatów",
+      "accepted_answers": [
+        "do rezerwatów",
+        "rezerwatów",
+        "rezerwaty"
+      ]
+    },
+    {
+      "id": "q-5d4c9f01",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "USA dzieliły się gospodarczo na strefy. Która strefa była rolnicza?",
+      "selection_type": "open",
+      "explanation": "Południowe USA",
+      "accepted_answers": [
+        "południe",
+        "południowa",
+        "południowe USA"
+      ]
+    },
+    {
+      "id": "q-7fe7b80f",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "USA dzieliły się gospodarczo na strefy. Która strefa była przemysłowa?",
+      "selection_type": "open",
+      "explanation": "północne USA",
+      "accepted_answers": [
+        "północ",
+        "północna",
+        "półnoicne USA"
+      ]
+    },
+    {
+      "id": "q-9e8cc4a4",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jak nazywa się ruch dążący do całkowitego zniesienia niewolnictwa?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "aborcjonizm",
+          "is_correct": false
+        },
+        {
+          "text": "abolicjonizm",
+          "is_correct": true
+        },
+        {
+          "text": "prohibicja",
+          "is_correct": false
+        },
+        {
+          "text": "antagonizm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b0950bfe",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Co było głównym towarem eksportowym Południa?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "wełna",
+          "is_correct": false
+        },
+        {
+          "text": "bawełna",
+          "is_correct": true
+        },
+        {
+          "text": "jedwab",
+          "is_correct": false
+        },
+        {
+          "text": "poliester",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-25d0e0d5",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jak nazywał się prezydent USA który wygrał wybory w 1860 i był zwolennikiem likwidacji niewolnictwa?",
+      "selection_type": "open",
+      "explanation": "Abraham Lincoln",
+      "accepted_answers": [
+        "Abraham Lincoln"
+      ]
+    },
+    {
+      "id": "q-2a95195b",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Co to jest secesja?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "odłączenie się od kraju",
+          "is_correct": true
+        },
+        {
+          "text": "przyłączenie się do kraju",
+          "is_correct": false
+        },
+        {
+          "text": "zdrada kraju",
+          "is_correct": false
+        },
+        {
+          "text": "przejęcie władzy w kraju",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-05d159ef",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Które stany postanowiły dokonać secesji?",
+      "selection_type": "open",
+      "explanation": "południowe",
+      "accepted_answers": [
+        "południowe",
+        "południe"
+      ]
+    },
+    {
+      "id": "q-88700ee8",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jak skrótowo nazywano Skonfederowane Stany Ameryki?",
+      "selection_type": "open",
+      "explanation": "Konfederacja",
+      "accepted_answers": [
+        "Konfederacja"
+      ]
+    },
+    {
+      "id": "q-a63cc34b",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jak po secesji nazywano stany północne?",
+      "selection_type": "open",
+      "explanation": "Unia",
+      "accepted_answers": [
+        "Unia"
+      ]
+    },
+    {
+      "id": "q-4c9dd6e0",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Kto zaatakował pierwszy w wojnie secesyjnej?",
+      "selection_type": "open",
+      "explanation": "Konfederacja",
+      "accepted_answers": [
+        "Południe",
+        "Konfederacja"
+      ]
+    },
+    {
+      "id": "q-234ac821",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Kim nazywano Jankesami?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Północ",
+          "is_correct": true
+        },
+        {
+          "text": "Południe",
+          "is_correct": false
+        },
+        {
+          "text": "Indian",
+          "is_correct": false
+        },
+        {
+          "text": "europejczyków",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-6c919a07",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Ułóż chronologicznie wydarzenia wojny secesyjnej.",
+      "selection_type": "order",
+      "explanation": "Fort Sumert, blokada, dekret, bitwa pod Gettysburgiem, spalona ziemia",
+      "order_items": [
+        {
+          "id": "atak-na-fort-sumert",
+          "text": "atak na Fort Sumert",
+          "position": 1
+        },
+        {
+          "id": "blokada-morska-portow-konfederacji",
+          "text": "blokada morska portów Konfederacji",
+          "position": 2
+        },
+        {
+          "id": "ogloszenie-dekretu-o-zniesieniu-niewolnictwa",
+          "text": "ogłoszenie dekretu o zniesieniu niewolnictwa",
+          "position": 3
+        },
+        {
+          "id": "bitwa-pod-gettysburgiem",
+          "text": "bitwa pod Gettysburgiem",
+          "position": 4
+        },
+        {
+          "id": "zastosowanie-taktyki-spalonej-ziemii-przez-unie",
+          "text": "zastosowanie taktyki spalonej ziemii przez Unię",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "id": "q-7e03b3b1",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "W którym roku rozpoczęła się wojna secesyjna?",
+      "selection_type": "open",
+      "explanation": "1861",
+      "accepted_answers": [
+        "1861"
+      ]
+    },
+    {
+      "id": "q-62370739",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Ile lat trwałą wojna secesyjna?",
+      "selection_type": "open",
+      "explanation": "4 lata",
+      "accepted_answers": [
+        "4",
+        "4 lata"
+      ]
+    },
+    {
+      "id": "q-0775ec9e",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Kto wygrał wojnę secesyjną?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Unia",
+          "is_correct": true
+        },
+        {
+          "text": "Konfederacja",
+          "is_correct": false
+        },
+        {
+          "text": "nie było zwycięzcy",
+          "is_correct": false
+        },
+        {
+          "text": "Kanada",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-d12e61a9",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Wybierz prawda/fałsz.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "generał Robert Lee stał po stronie Unii",
+          "is_correct": false
+        },
+        {
+          "text": "generał Ulysses Grant stał po stronie Unii",
+          "is_correct": true
+        },
+        {
+          "text": "pod Gettysburgiem Konfederacii wygrali",
+          "is_correct": false
+        },
+        {
+          "text": "wojna secesyjna zakończyła się w 1865",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-6cb26978",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jak zginął Abraham Lincoln?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "w wypadku",
+          "is_correct": false
+        },
+        {
+          "text": "na chorobę",
+          "is_correct": false
+        },
+        {
+          "text": "w zamachu",
+          "is_correct": true
+        },
+        {
+          "text": "w bitwie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-af5798b0",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "W wyniku zniesienia niewolnictwa w USA, około ilu niewolników odzyskało wolność.",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "3 miliony",
+          "is_correct": false
+        },
+        {
+          "text": "4 miliony",
+          "is_correct": true
+        },
+        {
+          "text": "5 milionów",
+          "is_correct": false
+        },
+        {
+          "text": "6 milonów",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

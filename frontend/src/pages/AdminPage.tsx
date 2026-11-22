@@ -211,7 +211,7 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
     <Breadcrumb subject={subject} chapter={chapter} topic={topic} onChapters={() => { setChapter(null); setTopic(null); setEditorQuestion(undefined); }} onTopics={() => { setTopic(null); setEditorQuestion(undefined); }} />
     {message && <p className="status">{message}</p>}{error && <p className="status error">{error}</p>}
     {!isQuestionEditorOpen && view === "chapters" && <section className="admin-panel"><div className="subject-tabs" aria-label="Przedmiot">{subjects.map((item) => <button aria-pressed={item.id === subject?.id} className="subject-tab" key={item.id} onClick={() => setSubject(item)} type="button">{item.title}</button>)}</div><div className="section-header"><h2>Rozdziały: {subject?.title ?? "Przedmiot"}</h2><button onClick={addChapter} type="button">+ Dodaj rozdział</button></div><ItemList empty="Brak rozdziałów. Dodaj pierwszy rozdział." items={chapters} onSelect={chooseChapter} /></section>}
-    {!isQuestionEditorOpen && view === "topics" && chapter && <><div className="chapter-settings-grid"><ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><TargetQuestionCountEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano liczbę losowanych pytań."); }} /></div><section className="admin-panel"><div className="section-header"><div><h2>{chapter.title}</h2><p className="question-count">Do quizu trafiają tylko pytania z aktywnych tematów.</p></div><button onClick={() => { setError(""); setIsTopicDialogOpen(true); }} type="button">+ Dodaj temat</button></div><TopicList items={topics} onDelete={setTopicToDelete} onSelect={chooseTopic} onToggle={toggleTopic} /></section></>}
+    {!isQuestionEditorOpen && view === "topics" && chapter && <><div className="chapter-settings-grid">{chapter.subject === "history" && <ChapterGradeEditor key={chapter.id} chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano klasę rozdziału."); }} />}<ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><TargetQuestionCountEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano liczbę losowanych pytań."); }} /></div><section className="admin-panel"><div className="section-header"><div><h2>{chapter.title}</h2><p className="question-count">Do quizu trafiają tylko pytania z aktywnych tematów.</p></div><button onClick={() => { setError(""); setIsTopicDialogOpen(true); }} type="button">+ Dodaj temat</button></div><TopicList items={topics} onDelete={setTopicToDelete} onSelect={chooseTopic} onToggle={toggleTopic} /></section></>}
     {!isQuestionEditorOpen && view === "questions" && <section className="admin-panel"><div className="section-header"><div><h2>{topic?.title ?? "Pytania"}</h2><p className="question-count">{formatQuestionCount(questions.length)}</p></div><button onClick={() => setEditorQuestion(null)} type="button">+ Dodaj pytanie</button></div>{questions.length === 0 ? <p className="empty-state">Ten temat nie ma jeszcze pytań. Dodaj pierwsze pytanie.</p> : <div className="question-list">{questions.map((item, index) => {
       const isActive = item.is_active !== false;
       return <div className={`question-row${isActive ? "" : " question-row-inactive"}`} key={item.id}>
@@ -354,6 +354,43 @@ function DeleteTopicDialog({ topic, onCancel, onDelete }: { topic: AdminTopic; o
 
 function Breadcrumb({ subject, chapter, topic, onChapters, onTopics }: { subject: AdminSubject | null; chapter: AdminChapter | null; topic: AdminTopic | null; onChapters: () => void; onTopics: () => void }) {
   return <nav className="breadcrumb" aria-label="Ścieżka">{chapter || topic ? <button className="link-button" onClick={onChapters} type="button">{subject?.title ?? "Przedmiot"}</button> : <span aria-current="page">{subject?.title ?? "Przedmiot"}</span>}{chapter && <><span className="breadcrumb-separator">/</span>{topic ? <button className="link-button" onClick={onTopics} type="button">{chapter.title}</button> : <span aria-current="page">{chapter.title}</span>}</>}{topic && <><span className="breadcrumb-separator">/</span><span aria-current="page">{topic.title}</span></>}</nav>;
+}
+
+function ChapterGradeEditor({ chapter, onUpdated }: { chapter: AdminChapter; onUpdated: (chapter: AdminChapter) => void }) {
+  const [grade, setGrade] = useState(chapter.school_grade?.toString() ?? "");
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
+
+  const save = async () => {
+    setSaving(true);
+    setError("");
+    try {
+      onUpdated(await adminApi.updateChapterGrade(chapter.id, grade ? Number(grade) : null));
+    } catch {
+      setError("Nie udało się zapisać klasy rozdziału.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <section className="admin-panel chapter-number-panel">
+      <h2>Klasa rozdziału</h2>
+      <p>W tej klasie pojawi się quiz z aktywnymi tematami rozdziału.</p>
+      <label className="form-field compact-field">
+        Klasa
+        <select disabled={saving} onChange={(event) => setGrade(event.target.value)} value={grade}>
+          <option value="">Domyślne przypisanie</option>
+          <option value="4">Klasa IV</option>
+          <option value="5">Klasa V</option>
+          <option value="6">Klasa VI</option>
+          <option value="7">Klasa VII</option>
+        </select>
+      </label>
+      <button disabled={saving} onClick={save} type="button">Zapisz klasę</button>
+      {error && <p className="status error">{error}</p>}
+    </section>
+  );
 }
 
 function ChapterNumberEditor({ chapter, onUpdated }: { chapter: AdminChapter; onUpdated: (chapter: AdminChapter) => void }) {

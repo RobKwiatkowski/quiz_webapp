@@ -397,6 +397,7 @@ class Quiz(BaseModel):
     category: str
     age_group: str
     chapter_number: Optional[int] = None
+    school_grade: Optional[int] = Field(default=None, ge=4, le=7, strict=True)
     difficulty_levels: List[Literal["easy", "medium", "pro"]] = Field(default_factory=list)
     questions: List[Question]
 
@@ -420,6 +421,7 @@ class QuizListItem(BaseModel):
     category: str
     age_group: str
     chapter_number: Optional[int] = None
+    school_grade: Optional[int] = Field(default=None, ge=4, le=7, strict=True)
     difficulty_levels: List[Literal["easy", "medium", "pro"]] = Field(default_factory=list)
 
 
@@ -463,6 +465,7 @@ class ChapterMeta(BaseModel):
     category: str
     age_group: str
     chapter_number: Optional[int] = Field(default=None, ge=1)
+    school_grade: Optional[int] = Field(default=None, ge=4, le=7, strict=True)
     difficulty_levels: List[Literal["easy", "medium", "pro"]] = Field(default_factory=list)
     target_question_count: int = 12
     questions_per_topic: int = 2

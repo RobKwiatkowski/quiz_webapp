@@ -169,6 +169,8 @@ Endpoints:
 - `GET /api/admin/chapters` lists editable chapters
 - `GET /api/admin/chapters?subject={subject}` lists editable chapters for one subject
 - `POST /api/admin/chapters` creates a chapter
+- `PUT /api/admin/chapters/{chapter_id}/school-grade` sets the History chapter's
+  grade override (IV–VII); null restores the default assignment
 - `PUT /api/admin/chapters/{chapter_id}/chapter-number` sets or clears the optional
   chapter badge number
 - `PUT /api/admin/chapters/{chapter_id}/target-question-count` sets the number of
@@ -207,6 +209,12 @@ Admin authentication is deliberately minimal. There is exactly one administrator
 The backend verifies the configured password hash and stores the authenticated
 admin state in a signed HTTP-only session cookie. Admin write endpoints require
 authentication.
+
+History grade lists use the optional `school_grade` integer (4–7) from chapter
+metadata, exposed in the quiz API. Missing or null values preserve existing
+configured grade assignments. New chapters without a default assignment appear
+after an admin chooses a grade. The assignment applies to the entire chapter;
+topic and question activation continue to control which questions can be drawn.
 
 ## 7. Data Models
 

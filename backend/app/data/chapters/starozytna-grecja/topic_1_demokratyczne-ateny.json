@@ -1,0 +1,402 @@
+{
+  "topic_id": "demokratyczne-ateny",
+  "topic_title": "Demokratyczne Ateny",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-9be4ee6f",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak starożytni grecy nazywali samych siebie?",
+      "selection_type": "open",
+      "explanation": "Hellenami",
+      "accepted_answers": [
+        "Hellenami",
+        "Hellenowie"
+      ]
+    },
+    {
+      "id": "q-11656554",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jaki był ustrój polityczny w Starożytnej Grecji?",
+      "selection_type": "open",
+      "explanation": "Demokracja",
+      "accepted_answers": [
+        "demokracja",
+        "demokratyczny"
+      ]
+    },
+    {
+      "id": "q-18e563a2",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano greckie miast-państwa?",
+      "selection_type": "open",
+      "explanation": "polis",
+      "accepted_answers": [
+        "polis"
+      ]
+    },
+    {
+      "id": "q-1ab53480",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jakie greckie polis było najbogatsze?",
+      "selection_type": "open",
+      "explanation": "Ateny",
+      "accepted_answers": [
+        "Ateny"
+      ]
+    },
+    {
+      "id": "q-cccdf817",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Nad jakim morzem leży Grecja?",
+      "selection_type": "open",
+      "explanation": "Śródziemnym",
+      "accepted_answers": [
+        "Śródziemnym",
+        "Morzem Śródziemnym",
+        "Morze Śródziemne"
+      ]
+    },
+    {
+      "id": "q-e96160b9",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Skąd pochodził Perykles?",
+      "selection_type": "open",
+      "explanation": "Ateny",
+      "accepted_answers": [
+        "z Aten",
+        "Aten"
+      ]
+    },
+    {
+      "id": "q-1fbb4fc3",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Gdzie podejmowano najwyższe decyzje polityczne w Atenach?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "na zgromadzeniu ludowym",
+          "is_correct": true
+        },
+        {
+          "text": "na trybunie ludowej",
+          "is_correct": false
+        },
+        {
+          "text": "na Parteonie",
+          "is_correct": false
+        },
+        {
+          "text": "w sejmie ateńskim",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-9e0fa081",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywa się wzgórze górujące nad Atenami?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Agora",
+          "is_correct": false
+        },
+        {
+          "text": "Akropol",
+          "is_correct": true
+        },
+        {
+          "text": "Parteon",
+          "is_correct": false
+        },
+        {
+          "text": "Koloseum",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-grecja-2026-01",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak Grecy nazywali ziemie zamieszkane przez Greków?",
+      "selection_type": "open",
+      "explanation": "Hellada",
+      "accepted_answers": [
+        "Hellada",
+        "Helladą"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-02",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywał się główny plac w greckim mieście?",
+      "selection_type": "open",
+      "explanation": "agora",
+      "accepted_answers": [
+        "agora",
+        "agorą"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-03",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Spójrz na mapę. Jak nazywa się miasto zaznaczone punktem, w którym rozwinęła się demokracja?",
+      "selection_type": "open",
+      "explanation": "Ateny",
+      "accepted_answers": [
+        "Ateny",
+        "Atenami"
+      ],
+      "image": "/static/images/history/ancient-greece/map-athens.svg"
+    },
+    {
+      "id": "q-grecja-2026-04",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Spójrz na mapę. Jak nazywa się półwysep zaznaczony na południu Grecji?",
+      "selection_type": "open",
+      "explanation": "Peloponez",
+      "accepted_answers": [
+        "Peloponez",
+        "Peloponezem"
+      ],
+      "image": "/static/images/history/ancient-greece/map-peloponnese.svg"
+    },
+    {
+      "id": "q-grecja-2026-05",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywamy zakładanie przez Greków nowych osad na odległych terenach?",
+      "selection_type": "open",
+      "explanation": "kolonizacja",
+      "accepted_answers": [
+        "kolonizacja",
+        "kolonizacją"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-06",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano nową osadę zakładaną przez greckich osadników?",
+      "selection_type": "open",
+      "explanation": "kolonia",
+      "accepted_answers": [
+        "kolonia",
+        "kolonią",
+        "kolonię"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-07",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "W jakim okresie trwała kolonizacja grecka?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "od IX do VI wieku p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "od VI do IX wieku n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "od III do I wieku p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "od XI do XIV wieku n.e.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Kolonizacja grecka trwała od IX do VI wieku p.n.e."
+    },
+    {
+      "id": "q-grecja-2026-08",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywa się ustrój, którego nazwa oznacza „władzę ludu”?",
+      "selection_type": "open",
+      "explanation": "demokracja",
+      "accepted_answers": [
+        "demokracja",
+        "demokracją"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-09",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak brzmi greckie słowo oznaczające lud?",
+      "selection_type": "open",
+      "explanation": "demos",
+      "accepted_answers": [
+        "demos"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-10",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak brzmi greckie słowo oznaczające władzę?",
+      "selection_type": "open",
+      "explanation": "kratos",
+      "accepted_answers": [
+        "kratos"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-11",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano mieszkańca Aten, który miał pełnię praw politycznych?",
+      "selection_type": "open",
+      "explanation": "obywatel",
+      "accepted_answers": [
+        "obywatel",
+        "obywatelem",
+        "obywatela"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-12",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywało się zgromadzenie, które było najważniejszym organem władzy w demokratycznych Atenach?",
+      "selection_type": "open",
+      "explanation": "Zgromadzenie Ludowe",
+      "accepted_answers": [
+        "Zgromadzenie Ludowe",
+        "zgromadzeniem ludowym",
+        "ludowe"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-13",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywał się czas, na który wybierano ateńskiego urzędnika?",
+      "selection_type": "open",
+      "explanation": "kadencja",
+      "accepted_answers": [
+        "kadencja",
+        "kadencją"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-14",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jaki sposób wyboru urzędników polegał na zdaniu się na przypadek?",
+      "selection_type": "open",
+      "explanation": "losowanie",
+      "accepted_answers": [
+        "losowanie",
+        "losowaniem"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-15",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywał się sposób wyboru urzędnika, w którym obywatele oddawali głosy?",
+      "selection_type": "open",
+      "explanation": "głosowanie",
+      "accepted_answers": [
+        "głosowanie",
+        "głosowaniem"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-16",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano ateńskiego urzędnika, który zajmował się polityką zagraniczną i dowodził armią?",
+      "selection_type": "open",
+      "explanation": "strateg",
+      "accepted_answers": [
+        "strateg",
+        "strategiem",
+        "stratega"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-17",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Ilu strategów pełniło najważniejsze urzędy w Atenach?",
+      "selection_type": "open",
+      "explanation": "dziesięciu",
+      "accepted_answers": [
+        "dziesięciu",
+        "dziesięć",
+        "10"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-18",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano osobę, która wydawała wyroki zgodnie z prawem?",
+      "selection_type": "open",
+      "explanation": "sędzia",
+      "accepted_answers": [
+        "sędzia",
+        "sędzią",
+        "sędziego"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-19",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano mieszkańca Aten pochodzącego z innego kraju lub polis, który nie był ateńskim obywatelem?",
+      "selection_type": "open",
+      "explanation": "cudzoziemiec",
+      "accepted_answers": [
+        "cudzoziemiec",
+        "cudzoziemcem",
+        "cudzoziemca"
+      ]
+    },
+    {
+      "id": "q-grecja-2026-20",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Jak nazywano głosowanie, w którym obywatele mogli wykluczyć z państwa osobę uznaną za zagrożenie dla demokracji?",
+      "selection_type": "open",
+      "explanation": "ostracyzm",
+      "accepted_answers": [
+        "ostracyzm",
+        "ostracyzmem"
+      ]
+    },
+    {
+      "id": "q-grecja-sparta-mapa",
+      "topic_id": "demokratyczne-ateny",
+      "is_active": true,
+      "text": "Spójrz na mapę. Jak nazywa się miasto zaznaczone punktem na Peloponezie?",
+      "selection_type": "open",
+      "image": "/static/images/history/ancient-greece/map-sparta.svg",
+      "accepted_answers": [
+        "Sparta",
+        "Spartą"
+      ],
+      "explanation": "Sparta leżała na Peloponezie."
+    }
+  ]
+}

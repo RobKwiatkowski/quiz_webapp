@@ -1,0 +1,14 @@
+{
+  "id": "europa-i-swiat-po-wiosnie-ludow",
+  "title": "Europa i Świat po Wiośnie Ludów",
+  "description": "Powtórka z rozdziału Europa i Świat po Wiośnie Ludów.",
+  "category": "history",
+  "age_group": "10-12",
+  "chapter_number": 3,
+  "school_grade": 7,
+  "target_question_count": 15,
+  "questions_per_topic": 2,
+  "topics": [
+    "topic_1_stany-zjednoczone.json"
+  ]
+}

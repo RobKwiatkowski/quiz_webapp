@@ -409,6 +409,7 @@ def build_quiz_from_chapter(chapter_dir: Path, difficulty: Difficulty = "easy") 
             category=meta.category,
             age_group=meta.age_group,
             chapter_number=meta.chapter_number,
+            school_grade=meta.school_grade,
             difficulty_levels=meta.difficulty_levels,
             questions=[],
         )
@@ -489,6 +490,7 @@ def build_quiz_from_chapter(chapter_dir: Path, difficulty: Difficulty = "easy") 
         category=meta.category,
         age_group=meta.age_group,
         chapter_number=meta.chapter_number,
+        school_grade=meta.school_grade,
         difficulty_levels=meta.difficulty_levels,
         questions=selected_questions,
     )
@@ -517,6 +519,7 @@ def load_quiz_list() -> list[QuizListItem]:
             category=quiz.category,
             age_group=quiz.age_group,
             chapter_number=quiz.chapter_number,
+            school_grade=quiz.school_grade,
             difficulty_levels=quiz.difficulty_levels,
         )
         for quiz in load_all_quizzes()

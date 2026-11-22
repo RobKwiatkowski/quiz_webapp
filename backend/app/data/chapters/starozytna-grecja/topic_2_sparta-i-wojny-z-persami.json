@@ -1,0 +1,292 @@
+{
+  "topic_id": "sparta-i-wojny-z-persami",
+  "topic_title": "Sparta i wojny z Persami",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-sparta-persja-01",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Na jakim półwyspie leżała Sparta, zaznaczona na mapie?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Peloponez",
+        "Peloponezie",
+        "na Peloponezie"
+      ],
+      "image": "/static/images/history/ancient-greece/map-sparta.svg",
+      "explanation": "Peloponez"
+    },
+    {
+      "id": "q-sparta-persja-02",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Z czego przede wszystkim słynęła starożytna Sparta?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "z silnej armii",
+        "silna armia",
+        "armia",
+        "wojsko",
+        "z wojska",
+        "z armii",
+        "silne wojsko"
+      ],
+      "explanation": "z silnej armii"
+    },
+    {
+      "id": "q-sparta-persja-03",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Do jakiej służby przygotowywano spartańskich chłopców?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "wojskowej",
+        "do wojska",
+        "wojskowa",
+        "służby wojskowej",
+        "do służby wojskowej"
+      ],
+      "explanation": "wojskowej"
+    },
+    {
+      "id": "q-sparta-persja-04",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Ile lat miał chłopiec, gdy zaczynał spartańskie wychowanie państwowe?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "siedem",
+        "siedmiu",
+        "7",
+        "7 lat",
+        "siedem lat"
+      ],
+      "explanation": "siedem"
+    },
+    {
+      "id": "q-sparta-persja-05",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywał się system wychowania i szkolenia chłopców w Sparcie?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "agoge"
+      ],
+      "explanation": "agoge"
+    },
+    {
+      "id": "q-sparta-persja-06",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywano podbitą ludność, która pracowała na ziemi dla Spartan?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "heloci",
+        "helotów",
+        "helotami",
+        "helot",
+        "helota"
+      ],
+      "explanation": "heloci"
+    },
+    {
+      "id": "q-sparta-persja-07",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Ilu królów jednocześnie stało na czele Sparty?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "dwóch",
+        "dwaj",
+        "2",
+        "dwóch królów",
+        "2 królów"
+      ],
+      "explanation": "dwóch"
+    },
+    {
+      "id": "q-sparta-persja-08",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywano ciężkozbrojnego greckiego żołnierza piechoty?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "hoplita",
+        "hoplitę",
+        "hoplitą",
+        "hoplity"
+      ],
+      "explanation": "hoplita"
+    },
+    {
+      "id": "q-sparta-persja-09",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywał się zwarty szyk bojowy greckich piechurów?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "falanga",
+        "falangą"
+      ],
+      "explanation": "falanga"
+    },
+    {
+      "id": "q-sparta-persja-10",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywała się duża osłona, którą hoplita chronił się w walce?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "tarcza",
+        "tarczą"
+      ],
+      "explanation": "tarcza"
+    },
+    {
+      "id": "q-sparta-persja-11",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywało się państwo, które walczyło z Grekami w wojnach grecko-perskich?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Persja",
+        "Persją"
+      ],
+      "explanation": "Persja"
+    },
+    {
+      "id": "q-sparta-persja-12",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywano mieszkańców Persji walczących z Grekami?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Persowie",
+        "Persów",
+        "Persami"
+      ],
+      "explanation": "Persowie"
+    },
+    {
+      "id": "q-sparta-persja-13",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywał się perski władca, którego wojska zaatakowały Grecję w 480 r. p.n.e.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Kserkses",
+        "Kserksesa"
+      ],
+      "explanation": "Kserkses"
+    },
+    {
+      "id": "q-sparta-persja-14",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywała się bitwa, w której ateńscy hoplici pokonali Persów w 490 r. p.n.e.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Maraton",
+        "Maratonem",
+        "pod Maratonem"
+      ],
+      "image": "/static/images/history/ancient-greece/battle-marathon.png",
+      "explanation": "Maraton"
+    },
+    {
+      "id": "q-sparta-persja-15",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "W którym roku odbyła się bitwa pod Maratonem?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "490 r. p.n.e.",
+          "is_correct": true
+        },
+        {
+          "text": "480 r. p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "479 r. p.n.e.",
+          "is_correct": false
+        },
+        {
+          "text": "490 r. n.e.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Bitwa pod Maratonem odbyła się w 490 r. p.n.e."
+    },
+    {
+      "id": "q-sparta-persja-16",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywał się wąski przesmyk, zaznaczony na mapie, którego Grecy bronili przed Persami w 480 r. p.n.e.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Termopile",
+        "Termopilami",
+        "pod Termopilami"
+      ],
+      "image": "/static/images/history/ancient-greece/map-thermopylae.svg",
+      "explanation": "Termopile"
+    },
+    {
+      "id": "q-sparta-persja-17",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak miał na imię król Sparty, który dowodził Grekami pod Termopilami?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Leonidas",
+        "Leonidasa"
+      ],
+      "explanation": "Leonidas"
+    },
+    {
+      "id": "q-sparta-persja-18",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywała się bitwa morska, w której grecka flota pokonała Persów w 480 r. p.n.e.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Salamina",
+        "Salaminą",
+        "pod Salaminą"
+      ],
+      "image": "/static/images/history/ancient-greece/battle-salamis.png",
+      "explanation": "Salamina"
+    },
+    {
+      "id": "q-sparta-persja-19",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Czy bitwa pod Salaminą była bitwą lądową, czy morską?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "morską",
+        "morska",
+        "bitwą morską",
+        "bitwa morska"
+      ],
+      "explanation": "morską"
+    },
+    {
+      "id": "q-sparta-persja-20",
+      "topic_id": "sparta-i-wojny-z-persami",
+      "is_active": true,
+      "text": "Jak nazywała się bitwa lądowa, w której Grecy pokonali Persów w 479 r. p.n.e.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Plateje",
+        "Platejami",
+        "pod Platejami"
+      ],
+      "image": "/static/images/history/ancient-greece/battle-plataea.png",
+      "explanation": "Plateje"
+    }
+  ]
+}

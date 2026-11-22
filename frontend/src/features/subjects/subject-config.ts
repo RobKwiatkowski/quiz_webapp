@@ -138,10 +138,14 @@ export function filterQuizzesForGrade(
   grade: GradeConfig,
 ): QuizListItem[] {
   const quizzesById = new Map(quizzes.map((quiz) => [quiz.id, quiz]));
-  return grade.quizIds.flatMap((quizId) => {
+  const configuredQuizzes = grade.quizIds.flatMap((quizId) => {
     const quiz = quizzesById.get(quizId);
-    return quiz ? [quiz] : [];
+    return quiz && (quiz.school_grade == null || quiz.school_grade === Number(grade.id)) ? [quiz] : [];
   });
+  const assignedQuizzes = quizzes.filter((quiz) =>
+    quiz.school_grade === Number(grade.id) && !grade.quizIds.includes(quiz.id),
+  );
+  return [...configuredQuizzes, ...assignedQuizzes];
 }
 
 export function getChapterLabel(quiz: QuizListItem): string | null {

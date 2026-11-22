@@ -7,6 +7,7 @@ export interface QuizListItem {
   category: string;
   age_group: string;
   chapter_number?: number | null;
+  school_grade?: number | null;
   difficulty_levels: QuizDifficulty[];
 }
 

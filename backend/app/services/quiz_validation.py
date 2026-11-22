@@ -1345,6 +1345,12 @@ def validate_meta_data(
     ):
         result.errors.append(f"{meta_name}: chapter_number must be null or a positive integer")
 
+    school_grade = data.get("school_grade")
+    if school_grade is not None and (
+        type(school_grade) is not int or not 4 <= school_grade <= 7
+    ):
+        result.errors.append(f"{meta_name}: school_grade must be null or an integer from 4 to 7")
+
     allowed_difficulties = {"easy", "medium", "pro"}
     if not isinstance(difficulty_levels, list):
         result.errors.append(f"{meta_name}: difficulty_levels must be a list")

@@ -2,7 +2,7 @@ import { getRuntimeConfig } from "../runtime-config";
 import type { QuizQuestion, SelectionType } from "./quiz-api";
 
 export interface AdminSubject { id: string; title: string; }
-export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; target_question_count: number; }
+export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; school_grade?: number | null; target_question_count: number; }
 export interface AdminTopic { id: string; title: string; is_active: boolean; question_count: number; }
 export interface AdminQuestion extends QuizQuestion { id: string; }
 export interface AdminImageAsset { path: string; filename: string; folder: string; }
@@ -42,6 +42,9 @@ export const adminApi = {
   chapters: (subject: string) => request<AdminChapter[]>(`/api/admin/chapters?subject=${encodeURIComponent(subject)}`),
   createChapter: (name: string, subject: string) => request<AdminChapter>("/api/admin/chapters", {
     method: "POST", body: JSON.stringify({ name, subject }),
+  }),
+  updateChapterGrade: (chapterId: string, schoolGrade: number | null) => request<AdminChapter>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/school-grade`, {
+    method: "PUT", body: JSON.stringify({ school_grade: schoolGrade }),
   }),
   updateChapterNumber: (chapterId: string, chapterNumber: number | null) => request<AdminChapter>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/chapter-number`, {
     method: "PUT", body: JSON.stringify({ chapter_number: chapterNumber }),
