@@ -1,0 +1,540 @@
+{
+  "topic_id": "zjednoczenie-wloch-i-niemiec",
+  "topic_title": "Zjednoczenie Włoch i Niemiec",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-unification-2026-01",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Które państwo włoskie zapoczątkowało zjednoczenie Włoch?",
+      "selection_type": "single",
+      "explanation": "Zjednoczenie Włoch zapoczątkowało Królestwo Sardynii, zwane też Piemontem.",
+      "answers": [
+        {
+          "text": "Królestwo Sardynii (Piemont)",
+          "is_correct": true
+        },
+        {
+          "text": "Królestwo Obojga Sycylii",
+          "is_correct": false
+        },
+        {
+          "text": "Państwo Kościelne",
+          "is_correct": false
+        },
+        {
+          "text": "Wielkie Księstwo Toskanii",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-02",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Która część ziem włoskich była w połowie XIX w. lepiej rozwinięta gospodarczo?",
+      "selection_type": "open",
+      "explanation": "Ziemie północne były gospodarczo lepiej rozwinięte niż południowe.",
+      "accepted_answers": [
+        "północ",
+        "północna",
+        "północna część",
+        "północna część Włoch",
+        "północ Włoch",
+        "północne Włochy"
+      ]
+    },
+    {
+      "id": "q-unification-2026-03",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Jakie państwo wsparło Piemont w wojnie z Austrią w 1859 r.?",
+      "selection_type": "single",
+      "explanation": "Francja walczyła po stronie Piemontu.",
+      "answers": [
+        {
+          "text": "Francja",
+          "is_correct": true
+        },
+        {
+          "text": "Prusy",
+          "is_correct": false
+        },
+        {
+          "text": "Rosja",
+          "is_correct": false
+        },
+        {
+          "text": "Wielka Brytania",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-04",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Jakie dwa terytoria Piemont przekazał Francji w zamian za poparcie?",
+      "selection_type": "single",
+      "explanation": "Francja otrzymała Sabaudię i Niceę.",
+      "answers": [
+        {
+          "text": "Sabaudię i Niceę",
+          "is_correct": true
+        },
+        {
+          "text": "Lombardię i Wenecję",
+          "is_correct": false
+        },
+        {
+          "text": "Toskanię i Modenę",
+          "is_correct": false
+        },
+        {
+          "text": "Sycylię i Sardynię",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-05",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Jaką krainę Piemont otrzymał po zwycięstwach pod Magentą i Solferino?",
+      "selection_type": "single",
+      "explanation": "Po wojnie z Austrią w 1859 r. Piemont otrzymał Lombardię.",
+      "answers": [
+        {
+          "text": "Lombardię",
+          "is_correct": true
+        },
+        {
+          "text": "Wenecję",
+          "is_correct": false
+        },
+        {
+          "text": "Toskanię",
+          "is_correct": false
+        },
+        {
+          "text": "Sycylię",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-06",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kto dowodził wyprawą „tysiąca czerwonych koszul”?",
+      "selection_type": "open",
+      "explanation": "Wyprawą dowodził Giuseppe Garibaldi.",
+      "accepted_answers": [
+        "Giuseppe Garibaldi",
+        "Garibaldi"
+      ]
+    },
+    {
+      "id": "q-unification-2026-07",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Za czym zagłosowali mieszkańcy Królestwa Obojga Sycylii w plebiscycie w 1860 r.?",
+      "selection_type": "single",
+      "explanation": "W plebiscycie poparto przyłączenie do Piemontu.",
+      "answers": [
+        {
+          "text": "Za przyłączeniem do Piemontu",
+          "is_correct": true
+        },
+        {
+          "text": "Za utrzymaniem odrębnego królestwa",
+          "is_correct": false
+        },
+        {
+          "text": "Za przyłączeniem do Francji",
+          "is_correct": false
+        },
+        {
+          "text": "Za przyłączeniem do Państwa Kościelnego",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-08",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "W którym roku powstało Królestwo Włoch?",
+      "selection_type": "open",
+      "explanation": "Królestwo Włoch powstało w 1861 r.",
+      "accepted_answers": [
+        "1861",
+        "w 1861",
+        "1861 r.",
+        "w 1861 r.",
+        "1861 roku",
+        "w 1861 roku"
+      ]
+    },
+    {
+      "id": "q-unification-2026-09",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kto został pierwszym królem zjednoczonych Włoch?",
+      "selection_type": "open",
+      "explanation": "Pierwszym królem zjednoczonych Włoch był Wiktor Emanuel II.",
+      "accepted_answers": [
+        "Wiktor Emanuel II",
+        "Wiktor Emanuel 2",
+        "Wiktor Emanuel Drugi",
+        "Vittorio Emanuele II"
+      ]
+    },
+    {
+      "id": "q-unification-2026-10",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Które miasto przyłączono do Włoch w 1870 r., a rok później uczyniono stolicą?",
+      "selection_type": "open",
+      "explanation": "Rzym przyłączono w 1870 r. i został stolicą Włoch w 1871 r.",
+      "accepted_answers": [
+        "Rzym",
+        "Roma"
+      ]
+    },
+    {
+      "id": "q-unification-2026-11",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Która kolejność wydarzeń związanych ze zjednoczeniem Włoch jest poprawna?",
+      "selection_type": "single",
+      "explanation": "Lombardię przyłączono w 1859 r. Wyprawa Garibaldiego odbyła się w 1860 r., a królestwo powstało w 1861 r. Wenecję przyłączono w 1866 r., a Rzym w 1870 r.",
+      "answers": [
+        {
+          "text": "Przyłączenie Lombardii → wyprawa Garibaldiego → powstanie Królestwa Włoch → przyłączenie Wenecji → przyłączenie Rzymu",
+          "is_correct": true
+        },
+        {
+          "text": "wyprawa Garibaldiego → Przyłączenie Lombardii → powstanie Królestwa Włoch → przyłączenie Wenecji → przyłączenie Rzymu",
+          "is_correct": false
+        },
+        {
+          "text": "Przyłączenie Lombardii → powstanie Królestwa Włoch → wyprawa Garibaldiego → przyłączenie Wenecji → przyłączenie Rzymu",
+          "is_correct": false
+        },
+        {
+          "text": "Przyłączenie Lombardii → wyprawa Garibaldiego → powstanie Królestwa Włoch → przyłączenie Rzymu → przyłączenie Wenecji",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-12",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Które dwa państwa rywalizowały o przewodnictwo wśród państw niemieckich po kongresie wiedeńskim?",
+      "selection_type": "single",
+      "explanation": "O przewodnictwo rywalizowały Prusy i Austria.",
+      "answers": [
+        {
+          "text": "Prusy i Austria",
+          "is_correct": true
+        },
+        {
+          "text": "Prusy i Bawaria",
+          "is_correct": false
+        },
+        {
+          "text": "Austria i Saksonia",
+          "is_correct": false
+        },
+        {
+          "text": "Bawaria i Saksonia",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-13",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "explanation": "Związek zniósł bariery celne między swoimi członkami. Austria do niego nie przystąpiła.",
+      "answers": [
+        {
+          "text": "Niemiecki Związek Celny zniósł bariery celne między swoimi członkami.",
+          "is_correct": true
+        },
+        {
+          "text": "Austria należała do Niemieckiego Związku Celnego.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-14",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Co w planie Bismarcka oznaczało zjednoczenie Niemiec „krwią i żelazem”?",
+      "selection_type": "single",
+      "explanation": "Bismarck zakładał zjednoczenie Niemiec poprzez działania zbrojne pod przewodnictwem Prus.",
+      "answers": [
+        {
+          "text": "Zjednoczenie poprzez działania zbrojne",
+          "is_correct": true
+        },
+        {
+          "text": "Zjednoczenie przez zniesienie ceł",
+          "is_correct": false
+        },
+        {
+          "text": "Zjednoczenie przez plebiscyty",
+          "is_correct": false
+        },
+        {
+          "text": "Zjednoczenie przez małżeństwa dynastyczne",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-15",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "W jakiej kolejności Prusy stoczyły wojny prowadzące do zjednoczenia Niemiec?",
+      "selection_type": "single",
+      "explanation": "Wojny toczyły się z Danią w 1864 r., z Austrią w 1866 r. i z Francją w latach 1870–1871.",
+      "answers": [
+        {
+          "text": "Z Danią → z Austrią → z Francją",
+          "is_correct": true
+        },
+        {
+          "text": "Z Austrią → z Danią → z Francją",
+          "is_correct": false
+        },
+        {
+          "text": "Z Danią → z Francją → z Austrią",
+          "is_correct": false
+        },
+        {
+          "text": "Z Francją → z Austrią → z Danią",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-16",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Pod jaką miejscowością Prusy pokonały Austrię w decydującej bitwie w 1866 r.?",
+      "selection_type": "open",
+      "explanation": "Prusy zwyciężyły pod Sadową.",
+      "accepted_answers": [
+        "Sadowa",
+        "Sadową",
+        "pod Sadową"
+      ]
+    },
+    {
+      "id": "q-unification-2026-17",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Jak nazywał się związek utworzony w 1867 r., który połączył część państw niemieckich pod przewodnictwem Prus?",
+      "selection_type": "single",
+      "explanation": "W 1867 r. powstał Związek Północnoniemiecki.",
+      "answers": [
+        {
+          "text": "Związek Północnoniemiecki",
+          "is_correct": true
+        },
+        {
+          "text": "Niemiecki Związek Celny",
+          "is_correct": false
+        },
+        {
+          "text": "Związek Niemiecki",
+          "is_correct": false
+        },
+        {
+          "text": "Cesarstwo Niemieckie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-18",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Które obszary Francja utraciła po wojnie z lat 1870–1871?",
+      "selection_type": "single",
+      "explanation": "Francja utraciła Alzację i część Lotaryngii.",
+      "answers": [
+        {
+          "text": "Alzację i część Lotaryngii",
+          "is_correct": true
+        },
+        {
+          "text": "Szlezwik i Holsztyn",
+          "is_correct": false
+        },
+        {
+          "text": "Sabaudię i Niceę",
+          "is_correct": false
+        },
+        {
+          "text": "Lombardię i Wenecję",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-19",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "W którym roku ogłoszono powstanie Cesarstwa Niemieckiego?",
+      "selection_type": "open",
+      "explanation": "Cesarstwo Niemieckie proklamowano w 1871 r.",
+      "accepted_answers": [
+        "1871",
+        "w 1871",
+        "1871 r.",
+        "w 1871 r.",
+        "1871 roku",
+        "w 1871 roku"
+      ]
+    },
+    {
+      "id": "q-unification-2026-20",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "W jakiej miejscowości ogłoszono powstanie Cesarstwa Niemieckiego?",
+      "selection_type": "open",
+      "explanation": "Powstanie cesarstwa ogłoszono we francuskim Wersalu.",
+      "accepted_answers": [
+        "Wersal",
+        "w Wersalu",
+        "Versailles",
+        "w Versailles"
+      ]
+    },
+    {
+      "id": "q-unification-2026-21",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "explanation": "Austria i Węgry miały wspólną armię, lecz odrębne parlamenty.",
+      "answers": [
+        {
+          "text": "Po powstaniu Austro-Węgier Austria i Węgry miały wspólną armię.",
+          "is_correct": true
+        },
+        {
+          "text": "Austria i Węgry miały wspólny parlament.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-unification-2026-22",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kliknij wyspę, na której wylądowali ochotnicy Garibaldiego w 1860 r.",
+      "selection_type": "map",
+      "explanation": "Ochotnicy Garibaldiego wylądowali na Sycylii, w Marsali.",
+      "map_config": {
+        "source": "/static/maps/italian-unification-islands.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "select",
+        "target_feature_id": "sicily"
+      }
+    },
+    {
+      "id": "q-unification-2026-23",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kliknij stolicę Królestwa Bawarii, które w 1871 r. weszło w skład Cesarstwa Niemieckiego.",
+      "selection_type": "map",
+      "explanation": "Stolicą Królestwa Bawarii było Monachium.",
+      "map_config": {
+        "source": "/static/maps/german-unification-cities.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "select",
+        "target_feature_id": "munich"
+      }
+    },
+    {
+      "id": "q-unification-2026-24",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kogo przedstawia ilustracja?",
+      "selection_type": "single",
+      "explanation": "Otto von Bismarck był kanclerzem Prus, a potem Cesarstwa Niemieckiego.",
+      "answers": [
+        {
+          "text": "Ottona von Bismarcka",
+          "is_correct": true
+        },
+        {
+          "text": "Wilhelma I",
+          "is_correct": false
+        },
+        {
+          "text": "Napoleona III",
+          "is_correct": false
+        },
+        {
+          "text": "Wiktora Emanuela II",
+          "is_correct": false
+        }
+      ],
+      "image": "/static/images/history/italy-germany-unification/bismarck.jpg"
+    },
+    {
+      "id": "q-unification-2026-25",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Kogo przedstawia ilustracja?",
+      "selection_type": "single",
+      "explanation": "Wilhelm I był królem Prus, a w 1871 r. został cesarzem niemieckim.",
+      "answers": [
+        {
+          "text": "Wilhelma I",
+          "is_correct": true
+        },
+        {
+          "text": "Ottona von Bismarcka",
+          "is_correct": false
+        },
+        {
+          "text": "Wiktora Emanuela II",
+          "is_correct": false
+        },
+        {
+          "text": "Giuseppe Garibaldiego",
+          "is_correct": false
+        }
+      ],
+      "image": "/static/images/history/italy-germany-unification/wilhelm-i.jpg"
+    },
+    {
+      "id": "q-unification-2026-26",
+      "topic_id": "zjednoczenie-wloch-i-niemiec",
+      "is_active": true,
+      "text": "Czyj herb rodowy znajduje się na najmniejszej tarczy pośrodku?",
+      "selection_type": "open",
+      "explanation": "Środkowa tarcza przedstawia herb rodu Habsburgów.",
+      "accepted_answers": [
+        "Habsburgów",
+        "Habsburgowie",
+        "dynastii Habsburgów",
+        "rodu Habsburgów",
+        "herb Habsburgów"
+      ],
+      "image": "/static/images/history/italy-germany-unification/austria-hungary-arms.jpg"
+    }
+  ]
+}

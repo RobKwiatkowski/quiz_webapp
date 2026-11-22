@@ -1,0 +1,748 @@
+{
+  "topic_id": "kolonializm",
+  "topic_title": "Kolonializm",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-6859c505",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Co było przyczynami ekspansji kolonialnej?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "chęć zbobycia nowych ziem i surowców",
+          "is_correct": true
+        },
+        {
+          "text": "dążenie do zmiejszenia zysków",
+          "is_correct": false
+        },
+        {
+          "text": "próby opanowania szlaków handlowych",
+          "is_correct": true
+        },
+        {
+          "text": "chęć poznania nowych kultur i zacerpnięcia z nich wiedzy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-a1b5cf2a",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak mieszkańcy kolonii nazywali państwo do którego należy kolonia?",
+      "selection_type": "open",
+      "explanation": "metropolią",
+      "accepted_answers": [
+        "metropolia"
+      ]
+    },
+    {
+      "id": "q-f41b540f",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak nazywamy dążenie kraju do powiększania swojego terytorium oraz wpływów?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "eksterminacja",
+          "is_correct": false
+        },
+        {
+          "text": "ekspansja",
+          "is_correct": true
+        },
+        {
+          "text": "impansja",
+          "is_correct": false
+        },
+        {
+          "text": "anihilacja",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-27b2664c",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak nazywały się osady chandlowe zakładane przez europejczyków w Afryce?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "kolonie",
+          "is_correct": false
+        },
+        {
+          "text": "faktorie",
+          "is_correct": true
+        },
+        {
+          "text": "fabryki",
+          "is_correct": false
+        },
+        {
+          "text": "stany",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-colonialism-01",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Na czym polegał kolonializm?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Na podporządkowywaniu obcych terytoriów i wykorzystywaniu ich na rzecz metropolii.",
+          "is_correct": true
+        },
+        {
+          "text": "Na współpracy niepodległych państw na równych warunkach.",
+          "is_correct": false
+        },
+        {
+          "text": "Na przyznawaniu podbitym terytoriom pełnej niezależności.",
+          "is_correct": false
+        },
+        {
+          "text": "Na obronie własnych granic przed zajęciem przez inne kraje.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Na podporządkowywaniu obcych terytoriów i wykorzystywaniu ich na rzecz metropolii."
+    },
+    {
+      "id": "q-colonialism-02",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Które dwa państwa europejskie opanowały największą część Afryki w okresie kolonialnym?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Wielka Brytania i Francja.",
+          "is_correct": true
+        },
+        {
+          "text": "Belgia i Portugalia.",
+          "is_correct": false
+        },
+        {
+          "text": "Niemcy i Włochy.",
+          "is_correct": false
+        },
+        {
+          "text": "Hiszpania i Holandia.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Wielka Brytania i Francja."
+    },
+    {
+      "id": "q-colonialism-03",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Dlaczego rozbudowa kolei w koloniach mogła zwiększać zyski metropolii?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Ułatwiała przewóz surowców z głębi lądu do portów.",
+          "is_correct": true
+        },
+        {
+          "text": "Zmniejszała ilość surowców, które dało się wywieźć z kolonii.",
+          "is_correct": false
+        },
+        {
+          "text": "Zastępowała transport morski między kolonią a metropolią.",
+          "is_correct": false
+        },
+        {
+          "text": "Przekazywała miejscowym władzom kontrolę nad handlem zagranicznym.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Ułatwiała przewóz surowców z głębi lądu do portów."
+    },
+    {
+      "id": "q-colonialism-04",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Czym po wojnach opiumowych różniła się sytuacja Chin od sytuacji Indii pod panowaniem brytyjskim?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Chiny zachowały własne państwo, ale mocarstwa uzyskały w nim strefy wpływów.",
+          "is_correct": true
+        },
+        {
+          "text": "Chiny stały się w całości kolonią Francji.",
+          "is_correct": false
+        },
+        {
+          "text": "Wielka Brytania objęła rządami całe Chiny tak jak swoje posiadłości w Indiach.",
+          "is_correct": false
+        },
+        {
+          "text": "Chiny zamknęły wszystkie porty dla zagranicznego handlu.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Chiny zachowały własne państwo, ale mocarstwa uzyskały w nim strefy wpływów."
+    },
+    {
+      "id": "q-colonialism-05",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Kto przejął władzę nad brytyjskimi posiadłościami Kompanii Wschodnioindyjskiej w 1858 r.?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Rząd Wielkiej Brytanii.",
+          "is_correct": true
+        },
+        {
+          "text": "Rząd Francji.",
+          "is_correct": false
+        },
+        {
+          "text": "Rząd Holandii.",
+          "is_correct": false
+        },
+        {
+          "text": "Władze odrodzonego Cesarstwa Wielkich Mogołów.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Rząd Wielkiej Brytanii."
+    },
+    {
+      "id": "q-colonialism-06",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak Japonia zareagowała po wymuszonym otwarciu na kontakty z zagranicą?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Zmodernizowała gospodarkę i armię, a później sama rozpoczęła podboje.",
+          "is_correct": true
+        },
+        {
+          "text": "Oddała sprawowanie rządów przedstawicielom Stanów Zjednoczonych.",
+          "is_correct": false
+        },
+        {
+          "text": "Natychmiast zamknęła wszystkie porty i wróciła do izolacji.",
+          "is_correct": false
+        },
+        {
+          "text": "Zlikwidowała własną armię i powierzyła obronę Wielkiej Brytanii.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zmodernizowała gospodarkę i armię, a później sama rozpoczęła podboje."
+    },
+    {
+      "id": "q-colonialism-07",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Co John Ruskin uważał za główne zadanie brytyjskich kolonistów?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Umacnianie potęgi swojego państwa na lądzie i na morzu.",
+          "is_correct": true
+        },
+        {
+          "text": "Oddawanie zajętych ziem miejscowym władzom.",
+          "is_correct": false
+        },
+        {
+          "text": "Pomaganie koloniom w odłączeniu się od Wielkiej Brytanii.",
+          "is_correct": false
+        },
+        {
+          "text": "Zakładanie osad niezależnych od wszystkich państw europejskich.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Umacnianie potęgi swojego państwa na lądzie i na morzu."
+    },
+    {
+      "id": "q-colonialism-08",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Przeciw czyjej władzy skierowane było powstanie Mahdiego w Sudanie?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Przeciw władzy egipskiej wspieranej przez Brytyjczyków.",
+          "is_correct": true
+        },
+        {
+          "text": "Przeciw władzy belgijskiej w Kongu.",
+          "is_correct": false
+        },
+        {
+          "text": "Przeciw władzy holenderskiej w Indonezji.",
+          "is_correct": false
+        },
+        {
+          "text": "Przeciw władzy francuskiej w Algierii.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Przeciw władzy egipskiej wspieranej przez Brytyjczyków."
+    },
+    {
+      "id": "q-colonialism-09",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jakie bogactwa naturalne zaostrzyły rywalizację o ziemie Burów?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "Złoto i diamenty.",
+          "is_correct": true
+        },
+        {
+          "text": "Węgiel i rudy żelaza.",
+          "is_correct": false
+        },
+        {
+          "text": "Miedź i cyna.",
+          "is_correct": false
+        },
+        {
+          "text": "Sól i srebro.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Złoto i diamenty."
+    },
+    {
+      "id": "q-colonialism-10",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "W XIX w. ważnymi obszarami ekspansji kolonialnej były Afryka i Azja.",
+          "is_correct": true
+        },
+        {
+          "text": "Przewaga militarna Europejczyków utrudniała im podboje.",
+          "is_correct": false
+        },
+        {
+          "text": "Kolonizatorzy uzasadniali ekspansję przekonaniem o wyższości własnej kultury.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Przewaga militarna ułatwiała podboje. Jednym z uzasadnień ekspansji było przekonanie kolonizatorów o wyższości ich kultury."
+    },
+    {
+      "id": "q-colonialism-11",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Przed połową XIX w. Europejczycy kontrolowali już większość wnętrza Afryki.",
+          "is_correct": false
+        },
+        {
+          "text": "Europejskie placówki handlowe powstawały na afrykańskich wybrzeżach.",
+          "is_correct": true
+        },
+        {
+          "text": "Pod koniec XIX w. Liberia była kolonią brytyjską.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Przed połową XIX w. europejskie placówki skupiały się głównie na wybrzeżach Afryki. Liberia zachowała niepodległość."
+    },
+    {
+      "id": "q-colonialism-12",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Najsilniejsze kompanie handlowe mogły mieć własną flotę i wojsko.",
+          "is_correct": true
+        },
+        {
+          "text": "Kompanie finansowały wyprawy w poszukiwaniu surowców.",
+          "is_correct": true
+        },
+        {
+          "text": "Kompanie handlowe nigdy nie uczestniczyły w podboju terytoriów.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Niektóre kompanie uczestniczyły w podbojach. Przykładem jest brytyjska Kompania Wschodnioindyjska."
+    },
+    {
+      "id": "q-colonialism-13",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Wielka Brytania stworzyła największe imperium kolonialne XIX w.",
+          "is_correct": true
+        },
+        {
+          "text": "W XIX w. Kanada zerwała więzi z Wielką Brytanią tak jak wcześniej USA.",
+          "is_correct": false
+        },
+        {
+          "text": "Do brytyjskich kolonii w Australii wysyłano skazańców.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Kanada pozostała związana z imperium brytyjskim. Do Australii wysyłano skazańców."
+    },
+    {
+      "id": "q-colonialism-14",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "W koloniach budowano porty i linie kolejowe.",
+          "is_correct": true
+        },
+        {
+          "text": "Wydobycie surowców w koloniach nie przynosiło zysków metropoliom.",
+          "is_correct": false
+        },
+        {
+          "text": "Inwestycje kolonialne mogły przyspieszać niszczenie środowiska.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Kolej i porty ułatwiały wywóz surowców, a ich sprzedaż przynosiła zyski. Rozbudowa infrastruktury mogła szkodzić środowisku."
+    },
+    {
+      "id": "q-colonialism-15",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Kolonizatorzy zawsze pozostawiali miejscowej ludności swobodę rządzenia.",
+          "is_correct": false
+        },
+        {
+          "text": "Ekspansja kolonialna przyczyniała się do zaniku części lokalnych tradycji.",
+          "is_correct": true
+        },
+        {
+          "text": "Kolonizatorzy dopuszczali się masowego wyniszczania grup ludności.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Podbój odbierał społecznościom samodzielność i zagrażał ich kulturze oraz życiu."
+    },
+    {
+      "id": "q-colonialism-16",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Francja i Holandia miały posiadłości w Azji.",
+          "is_correct": true
+        },
+        {
+          "text": "Europejczycy podporządkowali sobie całą Azję.",
+          "is_correct": false
+        },
+        {
+          "text": "Syberia należała do Rosji.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Europejskie mocarstwa zajęły część Azji, a niektóre państwa, np. Japonia, zachowały samodzielność."
+    },
+    {
+      "id": "q-colonialism-17",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Chińskie władze popierały sprowadzanie opium przez Brytyjczyków.",
+          "is_correct": false
+        },
+        {
+          "text": "Władze Chin skonfiskowały sprowadzone opium.",
+          "is_correct": true
+        },
+        {
+          "text": "Powstanie bokserów zakończyło się zwycięstwem powstańców.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Władze Chin próbowały powstrzymać handel opium. Powstanie bokserów zostało stłumione."
+    },
+    {
+      "id": "q-colonialism-18",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Przed otwarciem na świat Japonia ograniczała kontakty z zagranicą.",
+          "is_correct": true
+        },
+        {
+          "text": "Japonię do otwarcia na kontakty handlowe zmusiła Rosja.",
+          "is_correct": false
+        },
+        {
+          "text": "Stany Zjednoczone wysłały w tym celu flotę wojenną.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Do otwarcia portów doprowadziła presja Stanów Zjednoczonych."
+    },
+    {
+      "id": "q-colonialism-19",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Oceń każde zdanie jako prawdziwe albo fałszywe.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Burowie byli potomkami osadników holenderskich.",
+          "is_correct": true
+        },
+        {
+          "text": "W drugiej wojnie burskiej Brytyjczycy nie zakładali obozów dla ludności cywilnej.",
+          "is_correct": false
+        },
+        {
+          "text": "Po klęsce Burów ich republiki weszły w skład imperium brytyjskiego.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "W drugiej wojnie burskiej Brytyjczycy zakładali obozy, w których więzili także kobiety i dzieci."
+    },
+    {
+      "id": "q-colonialism-20",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Połącz konflikt z miejscem jego przebiegu.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "pair-1",
+          "left": "Powstanie sipajów",
+          "right": "Indie"
+        },
+        {
+          "id": "pair-2",
+          "left": "Powstanie Mahdiego",
+          "right": "Sudan"
+        },
+        {
+          "id": "pair-3",
+          "left": "Powstanie bokserów",
+          "right": "Chiny"
+        },
+        {
+          "id": "pair-4",
+          "left": "Wojny burskie",
+          "right": "południowa Afryka"
+        }
+      ],
+      "explanation": "Powstania sipajów, Mahdiego i bokserów miały miejsce odpowiednio w Indiach, Sudanie i Chinach. Wojny burskie toczyły się w południowej Afryce."
+    },
+    {
+      "id": "q-colonialism-21",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Połącz pojęcie z definicją.",
+      "selection_type": "matching",
+      "matching_pairs": [
+        {
+          "id": "pair-1",
+          "left": "Monopol",
+          "right": "wyłączne prawo do danej działalności"
+        },
+        {
+          "id": "pair-2",
+          "left": "Rynek zbytu",
+          "right": "obszar, na którym można sprzedawać towary"
+        },
+        {
+          "id": "pair-3",
+          "left": "Eksploatacja zasobów",
+          "right": "wydobywanie lub wykorzystywanie bogactw naturalnych"
+        },
+        {
+          "id": "pair-4",
+          "left": "Eksterminacja",
+          "right": "masowe wyniszczanie ludności"
+        }
+      ],
+      "explanation": "Metropolie szukały rynków zbytu i wykorzystywały zasoby kolonii. Eksterminacja oznacza masowe wyniszczanie ludności."
+    },
+    {
+      "id": "q-colonialism-22",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Wskaż państwo, na którego terytorium leży Kanał Sueski.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/colonialism-suez.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "select",
+        "target_feature_id": "egy"
+      },
+      "explanation": "Kanał Sueski znajduje się w Egipcie."
+    },
+    {
+      "id": "q-colonialism-23",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Wskaż wyspiarskie państwo we wschodniej Azji, które w połowie XIX w. otworzyło porty pod naciskiem USA.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/colonialism-east-asia.geojson",
+        "background_source": "/static/maps/world-continents.geojson",
+        "mode": "select",
+        "target_feature_id": "jpn"
+      },
+      "explanation": "Stany Zjednoczone wymusiły otwarcie portów Japonii."
+    },
+    {
+      "id": "q-colonialism-24",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Kogo nazywano sipajami?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "indyjskich żołnierzy",
+        "żołnierzy indyjskich",
+        "żołnierzy z Indii",
+        "indyjskich żołnierzy w armii brytyjskiej",
+        "indyjskich żołnierzy służących pod brytyjskim dowództwem",
+        "Indusów służących w armii brytyjskiej",
+        "indyjscy żołnierze"
+      ],
+      "explanation": "Sipajowie byli miejscowymi żołnierzami w Indiach, służącymi pod brytyjskim dowództwem."
+    },
+    {
+      "id": "q-colonialism-25",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak nazywała się brytyjska kompania handlowa, która prowadziła ekspansję w Indiach?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Kompania Wschodnioindyjska",
+        "Brytyjska Kompania Wschodnioindyjska",
+        "Angielska Kompania Wschodnioindyjska"
+      ],
+      "explanation": "Brytyjską ekspansję w Indiach prowadziła Kompania Wschodnioindyjska."
+    },
+    {
+      "id": "q-colonialism-26",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "W którym roku wybuchła pierwsza wojna opiumowa?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1839",
+        "w 1839",
+        "1839 r.",
+        "w 1839 r.",
+        "1839 roku",
+        "w 1839 roku"
+      ],
+      "explanation": "Pierwsza wojna opiumowa wybuchła w 1839 r."
+    },
+    {
+      "id": "q-colonialism-27",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "W którym roku zakończyła się druga wojna burska?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "1902",
+        "w 1902",
+        "1902 r.",
+        "w 1902 r.",
+        "1902 roku",
+        "w 1902 roku"
+      ],
+      "explanation": "Druga wojna burska zakończyła się w 1902 r."
+    },
+    {
+      "id": "q-colonialism-28",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Która brytyjska królowa stała się symbolem potęgi imperium w drugiej połowie XIX w.?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Wiktoria",
+        "królowa Wiktoria",
+        "Wiktoria Hanowerska"
+      ],
+      "explanation": "Była to królowa Wiktoria."
+    },
+    {
+      "id": "q-colonialism-29",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jakie dwa morza łączy Kanał Sueski?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "Morze Śródziemne i Morze Czerwone",
+        "Morze Czerwone i Morze Śródziemne",
+        "Śródziemne i Czerwone",
+        "Czerwone i Śródziemne",
+        "Morze Śródziemne z Morzem Czerwonym",
+        "Morze Czerwone z Morzem Śródziemnym",
+        "Morze Śródziemne, Morze Czerwone",
+        "Morze Czerwone, Morze Śródziemne",
+        "Śródziemne, Czerwone",
+        "Czerwone, Śródziemne"
+      ],
+      "explanation": "Kanał Sueski łączy Morze Śródziemne z Morzem Czerwonym."
+    },
+    {
+      "id": "q-colonialism-30",
+      "topic_id": "kolonializm",
+      "is_active": true,
+      "text": "Jak nazywano Indie ze względu na ich znaczenie dla imperium brytyjskiego?",
+      "selection_type": "open",
+      "accepted_answers": [
+        "perła Korony brytyjskiej",
+        "perłą Korony brytyjskiej",
+        "perła w Koronie brytyjskiej",
+        "perłą w Koronie brytyjskiej",
+        "perła Korony",
+        "perłą Korony",
+        "perła w Koronie",
+        "perłą w Koronie"
+      ],
+      "explanation": "Indie nazywano perłą Korony brytyjskiej, ponieważ były najcenniejszą posiadłością imperium."
+    }
+  ]
+}

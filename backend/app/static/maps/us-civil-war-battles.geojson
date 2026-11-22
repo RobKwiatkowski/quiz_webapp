@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "shiloh",
+      "properties": {
+        "name": "Shiloh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.342,
+          35.153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gettysburg",
+      "properties": {
+        "name": "Gettysburg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.231,
+          39.812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "appomattox",
+      "properties": {
+        "name": "Appomattox Court House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.796,
+          37.377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fort-sumter",
+      "properties": {
+        "name": "Fort Sumter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.874,
+          32.752
+        ]
+      }
+    }
+  ]
+}

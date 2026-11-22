@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "berlin",
+      "properties": {
+        "name": "Berlin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.405,
+          52.52
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dresden",
+      "properties": {
+        "name": "Drezno"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.738,
+          51.05
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stuttgart",
+      "properties": {
+        "name": "Stuttgart"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.182,
+          48.776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "munich",
+      "properties": {
+        "name": "Monachium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.575,
+          48.137
+        ]
+      }
+    }
+  ]
+}

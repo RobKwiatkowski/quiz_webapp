@@ -1,0 +1,14 @@
+.leaflet-quiz-map {
+  height: clamp(320px, 55vh, 560px);
+  background: #d7ebf4;
+  border: 1px solid #bacdd7;
+  border-radius: 12px;
+}
+
+.leaflet-quiz-map path[role="button"]:focus-visible {
+  outline: 3px solid #16263b;
+}
+
+.leaflet-quiz-map path[aria-disabled="true"] {
+  cursor: default;
+}
