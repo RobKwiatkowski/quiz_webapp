@@ -133,10 +133,10 @@ export function filterQuizzesForSubject(
   return quizzes.filter((quiz) => subject.categories.includes(quiz.category));
 }
 
-export function filterQuizzesForGrade(
-  quizzes: QuizListItem[],
+export function filterQuizzesForGrade<T extends Pick<QuizListItem, "id" | "school_grade">>(
+  quizzes: readonly T[],
   grade: GradeConfig,
-): QuizListItem[] {
+): T[] {
   const quizzesById = new Map(quizzes.map((quiz) => [quiz.id, quiz]));
   const configuredQuizzes = grade.quizIds.flatMap((quizId) => {
     const quiz = quizzesById.get(quizId);

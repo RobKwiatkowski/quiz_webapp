@@ -97,6 +97,9 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, Any]:
     if not name:
         raise HTTPException(status_code=400, detail="Chapter name cannot be empty")
     subject = normalize_subject(payload.get("subject", "history"))
+    school_grade = payload.get("school_grade")
+    if school_grade is not None and subject != "history":
+        raise HTTPException(status_code=400, detail="Only History supports grade assignment")
 
     chapters_dir = Path(settings.quiz_data_dir)
     chapters_dir.mkdir(parents=True, exist_ok=True)
@@ -119,6 +122,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, Any]:
         "category": subject,
         "age_group": "10-12",
         "chapter_number": None,
+        "school_grade": school_grade,
         "target_question_count": 12,
         "questions_per_topic": 2,
         "topics": [],
@@ -136,6 +140,7 @@ def create_chapter(payload: dict[str, Any]) -> dict[str, Any]:
         "title": name,
         "subject": subject,
         "chapter_number": None,
+        "school_grade": school_grade,
         "target_question_count": 12,
     }
 
@@ -226,13 +231,19 @@ def get_topic_filename(chapter_dir: Path, topic_id: str) -> str:
 
 
 def list_admin_topics(chapter_id: str) -> list[dict[str, Any]]:
-    """Returns topic titles and activation states for an existing chapter."""
+    """Returns topic metadata and counts of all saved questions."""
     chapter_dir = get_chapter_dir(chapter_id)
     meta = load_chapter_meta(chapter_dir)
     topics = []
     for topic_filename in meta.topics:
         topic = load_topic_file(chapter_dir, topic_filename)
-        topics.append({"id": topic.topic_id, "title": topic.topic_title, "is_active": topic.is_active, "question_count": len(topic.questions)})
+        topics.append({
+            "id": topic.topic_id,
+            "title": topic.topic_title,
+            "is_active": topic.is_active,
+            "question_count": len(topic.questions),
+            "question_counts_by_type": dict(Counter(question.selection_type for question in topic.questions)),
+        })
     return topics
 
 

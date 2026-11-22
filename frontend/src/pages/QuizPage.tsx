@@ -20,6 +20,7 @@ import {
 import { CenturyQuestion, LlmQuestion, MatchingQuestion, OrderQuestion } from "../features/quiz/AdvancedQuestions";
 import { HotspotQuestion } from "../features/quiz/HotspotQuestion";
 import { MapQuestion } from "../features/quiz/MapQuestion";
+import { LeafletMapQuestion, usesLeafletMap } from "../features/quiz/LeafletMapQuestion";
 import { TrueFalseQuestion } from "../features/quiz/TrueFalseQuestion";
 import { WrittenMultiplicationQuestion } from "../features/quiz/WrittenMultiplicationQuestion";
 import { WrittenDivisionQuestion } from "../features/quiz/WrittenDivisionQuestion";
@@ -308,7 +309,10 @@ function QuestionRenderer(props: QuestionRendererProps) {
   if (props.question.selection_type === "century") return <CenturyQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "matching") return <MatchingQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "llm") return <LlmQuestion key={props.question.id} question={props.question} quizCategory={props.quizCategory} disabled={props.hasAnswered} onComplete={props.onComplete} />;
-  if (props.question.selection_type === "map") return <MapQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  if (props.question.selection_type === "map") {
+    const Map = usesLeafletMap(props.question) ? LeafletMapQuestion : MapQuestion;
+    return <Map key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
+  }
   if (props.question.selection_type === "hotspot") return <HotspotQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "graph") return <GraphQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;
   if (props.question.selection_type === "written_multiplication") return <WrittenMultiplicationQuestion key={props.question.id} question={props.question} disabled={props.hasAnswered} onComplete={props.onComplete} />;

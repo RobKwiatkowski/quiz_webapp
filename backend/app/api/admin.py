@@ -61,6 +61,7 @@ class ChapterCreateRequest(NameRequest):
     """Request payload for creating a chapter in a selected subject."""
 
     subject: str = "history"
+    school_grade: int | None = Field(default=None, ge=4, le=7, strict=True)
 
 
 class ChapterGradeRequest(BaseModel):

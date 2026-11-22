@@ -168,14 +168,17 @@ Endpoints:
 - `GET /api/admin/subjects` lists editable JSON-backed subjects
 - `GET /api/admin/chapters` lists editable chapters
 - `GET /api/admin/chapters?subject={subject}` lists editable chapters for one subject
-- `POST /api/admin/chapters` creates a chapter
+- `POST /api/admin/chapters` creates a chapter, with an optional `school_grade`
+  (4–7) for History
 - `PUT /api/admin/chapters/{chapter_id}/school-grade` sets the History chapter's
   grade override (IV–VII); null restores the default assignment
 - `PUT /api/admin/chapters/{chapter_id}/chapter-number` sets or clears the optional
   chapter badge number
 - `PUT /api/admin/chapters/{chapter_id}/target-question-count` sets the number of
   questions randomly selected for the chapter quiz
-- `GET /api/admin/chapters/{chapter_id}/topics` lists editable topics
+- `GET /api/admin/chapters/{chapter_id}/topics` lists editable topics with
+  `question_count` and `question_counts_by_type`. The chapter statistics card
+  combines these counts across all topics, including inactive topics and questions.
 - `GET /api/admin/chapters/{chapter_id}/images` lists reusable subject images and
   identifies the folder most commonly referenced by the current chapter
 - `POST /api/admin/chapters/{chapter_id}/images` uploads a local image immediately
@@ -215,6 +218,13 @@ metadata, exposed in the quiz API. Missing or null values preserve existing
 configured grade assignments. New chapters without a default assignment appear
 after an admin chooses a grade. The assignment applies to the entire chapter;
 topic and question activation continue to control which questions can be drawn.
+
+The admin starts at the subject list. History adds a grade selection step before
+the quiz list. Other subjects go directly to their quiz lists. Each quiz
+corresponds to one chapter and opens its topics. A quiz created within a History
+grade is assigned to that grade on creation. History quizzes with no effective
+assignment are editable from a separate admin list. The configured subjects and
+History grades are the same as in the learner navigation.
 
 ## 7. Data Models
 
@@ -357,6 +367,12 @@ Fields:
 - `interaction`: optional target shape for `select` mode; `region` is the
   default, `line` lets the learner click the nearest answer line within a
   generous pointer tolerance
+
+The Italian unification islands, German unification cities, U.S. Civil War, and
+colonialism maps use a locally bundled Leaflet renderer in select mode. The U.S. questions
+use present-day state outlines as a geographic reference. The state question
+hides visual labels and the battle question labels selectable point locations.
+The renderer reports one point for selecting the configured feature id.
 
 ### `HotspotConfig`
 

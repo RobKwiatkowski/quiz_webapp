@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { filterQuizzesForGrade, subjectConfigs, type GradeConfig } from "../features/subjects/subject-config";
 import type { FormEvent } from "react";
 import { adminApi, type AdminChapter, type AdminImageLibrary, type AdminQuestion, type AdminQuestionPayload, type AdminSubject, type AdminTopic, type ImageUpload } from "../api/admin-api";
 import type { Answer, AnswerSlot, FillBlank, HotspotConfig, MapConfig, MatchingPair, OperationOrderConfig, OrderItem, SelectionType, TimedDivisionConfig, TimedMultiplicationConfig, WrittenDivisionConfig, WrittenMultiplicationConfig } from "../api/quiz-api";
@@ -32,6 +33,12 @@ type Draft = {
 };
 
 const mapPresets: Record<string, Pick<MapConfig, "mode" | "background_source" | "interaction">> = {
+  "/static/maps/us-contiguous-states.geojson": { mode: "select", background_source: "", interaction: "region" },
+  "/static/maps/colonialism-suez.geojson": { mode: "select", background_source: "/static/maps/world-continents.geojson", interaction: "region" },
+  "/static/maps/colonialism-east-asia.geojson": { mode: "select", background_source: "/static/maps/world-continents.geojson", interaction: "region" },
+  "/static/maps/us-civil-war-battles.geojson": { mode: "select", background_source: "/static/maps/us-contiguous-states.geojson", interaction: "region" },
+  "/static/maps/italian-unification-islands.geojson": { mode: "select", background_source: "/static/maps/world-continents.geojson", interaction: "region" },
+  "/static/maps/german-unification-cities.geojson": { mode: "select", background_source: "/static/maps/world-continents.geojson", interaction: "region" },
   "/static/maps/ancient-civilizations-regions.geojson": { mode: "select", background_source: "/static/maps/ancient-civilizations-basemap.geojson", interaction: "region" },
   "/static/maps/poland-voivodeships.geojson": { mode: "select", background_source: "", interaction: "region" },
   "/static/maps/poland-neighbours.geojson": { mode: "select", background_source: "", interaction: "region" },
@@ -143,9 +150,12 @@ function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
 function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; message: string; setMessage: (value: string) => void }) {
   const [subjects, setSubjects] = useState<AdminSubject[]>([]);
   const [subject, setSubject] = useState<AdminSubject | null>(null);
+  const [gradeId, setGradeId] = useState<GradeConfig["id"] | "unassigned" | null>(null);
   const [chapters, setChapters] = useState<AdminChapter[]>([]);
+  const [chaptersLoaded, setChaptersLoaded] = useState(false);
   const [chapter, setChapter] = useState<AdminChapter | null>(null);
   const [topics, setTopics] = useState<AdminTopic[]>([]);
+  const [topicListStatus, setTopicListStatus] = useState<"loading" | "ready" | "error">("loading");
   const [topic, setTopic] = useState<AdminTopic | null>(null);
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [editorQuestion, setEditorQuestion] = useState<AdminQuestion | null | undefined>(undefined);
@@ -153,22 +163,75 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
   const [topicToDelete, setTopicToDelete] = useState<AdminTopic | null>(null);
   const [error, setError] = useState("");
   const [isTopicDialogOpen, setIsTopicDialogOpen] = useState(false);
+  const [isQuizDialogOpen, setIsQuizDialogOpen] = useState(false);
 
   const fail = (reason: unknown) => setError(reason instanceof Error ? reason.message : "Operacja nie powiodła się.");
-  const loadChapters = async (nextSubject: AdminSubject) => { const values = await adminApi.chapters(nextSubject.id); setChapters(values); };
   const loadTopics = async (nextChapter: AdminChapter) => { const values = await adminApi.topics(nextChapter.id); setTopics(values); };
   const loadQuestions = async (nextChapter: AdminChapter, nextTopic: AdminTopic) => { const values = await adminApi.questions(nextChapter.id, nextTopic.id); setQuestions(values); };
 
-  useEffect(() => { adminApi.subjects().then((values) => { setSubjects(values); setSubject(values.find((item) => item.id === "history") ?? values[0] ?? null); }).catch(fail); }, []);
+  useEffect(() => { adminApi.subjects().then(setSubjects).catch(fail); }, []);
   useEffect(() => {
     if (!subject) return;
-    setChapter(null); setTopic(null); setTopics([]); setQuestions([]); setEditorQuestion(undefined);
-    loadChapters(subject).catch(fail);
+    let current = true;
+    adminApi.chapters(subject.id).then((values) => {
+      if (current) {
+        setChapters(values);
+        setChaptersLoaded(true);
+      }
+    }).catch((reason: unknown) => { if (current) fail(reason); });
+    return () => { current = false; };
   }, [subject?.id]);
 
-  const chooseChapter = async (nextChapter: AdminChapter) => { setError(""); setChapter(nextChapter); setTopic(null); setQuestions([]); setEditorQuestion(undefined); try { await loadTopics(nextChapter); } catch (reason) { fail(reason); } };
+  const chapterId = chapter?.id;
+  const topicId = topic?.id;
+  useEffect(() => {
+    if (!chapterId || topicId) return;
+    let current = true;
+    setTopicListStatus("loading");
+    adminApi.topics(chapterId).then((values) => {
+      if (!current) return;
+      setTopics(values);
+      setTopicListStatus("ready");
+    }).catch((reason: unknown) => {
+      if (!current) return;
+      setTopicListStatus("error");
+      fail(reason);
+    });
+    return () => { current = false; };
+  }, [chapterId, topicId]);
+
+  const chooseSubject = (nextSubject: AdminSubject | null) => {
+    setError("");
+    setSubject(nextSubject);
+    setGradeId(null);
+    setChapters([]);
+    setChaptersLoaded(false);
+    setChapter(null);
+    setTopic(null);
+    setTopics([]);
+    setQuestions([]);
+    setEditorQuestion(undefined);
+  };
+
+  const chooseChapter = (nextChapter: AdminChapter) => {
+    setError("");
+    setChapter(nextChapter);
+    setTopic(null);
+    setTopics([]);
+    setTopicListStatus("loading");
+    setQuestions([]);
+    setEditorQuestion(undefined);
+  };
   const chooseTopic = async (nextTopic: AdminTopic) => { if (!chapter) return; setError(""); setTopic(nextTopic); setEditorQuestion(undefined); try { await loadQuestions(chapter, nextTopic); } catch (reason) { fail(reason); } };
-  const addChapter = async () => { if (!subject) return; const name = window.prompt("Podaj nazwę rozdziału:")?.trim(); if (!name) return; try { const created = await adminApi.createChapter(name, subject.id); await loadChapters(subject); await chooseChapter(created); setMessage("Dodano rozdział."); } catch (reason) { fail(reason); } };
+  const addQuiz = async (name: string) => {
+    if (!subject) return;
+    const schoolGrade = gradeId && gradeId !== "unassigned" ? Number(gradeId) : null;
+    const created = await adminApi.createChapter(name, subject.id, schoolGrade);
+    setChapters((current) => [...current, created].sort((a, b) => a.id.localeCompare(b.id)));
+    setIsQuizDialogOpen(false);
+    chooseChapter(created);
+    setMessage("Dodano quiz.");
+  };
   const addTopic = async (name: string) => {
     if (!chapter) return;
     const created = await adminApi.createTopic(chapter.id, name);
@@ -177,7 +240,7 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
     setMessage("Dodano temat.");
     setIsTopicDialogOpen(false);
   };
-  const toggleTopic = async (nextTopic: AdminTopic) => { if (!chapter) return; setError(""); try { const updated = await adminApi.updateTopicActive(chapter.id, nextTopic.id, !nextTopic.is_active); setTopics((current) => current.map((item) => item.id === updated.id ? updated : item)); setTopic((current) => current?.id === updated.id ? updated : current); setMessage(updated.is_active ? "Aktywowano temat." : "Wyłączono temat."); } catch (reason) { fail(reason); } };
+  const toggleTopic = async (nextTopic: AdminTopic) => { if (!chapter) return; setError(""); try { const updated = await adminApi.updateTopicActive(chapter.id, nextTopic.id, !nextTopic.is_active); setTopics((current) => current.map((item) => item.id === updated.id ? { ...item, ...updated } : item)); setTopic((current) => current?.id === updated.id ? updated : current); setMessage(updated.is_active ? "Aktywowano temat." : "Wyłączono temat."); } catch (reason) { fail(reason); } };
   const toggleQuestion = async (question: AdminQuestion) => {
     if (!chapter || !topic) return;
     setError("");
@@ -199,19 +262,60 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
   const moveQuestionToTopic = async (targetTopicId: string) => { if (!chapter || !topic || !questionToMove) return; const targetTopic = topics.find((item) => item.id === targetTopicId); await adminApi.moveQuestion(chapter.id, topic.id, questionToMove.id, targetTopicId); await loadQuestions(chapter, topic); setQuestionToMove(null); setMessage(`Przeniesiono pytanie do tematu „${targetTopic?.title ?? targetTopicId}”.`); };
   const logout = async () => { try { await adminApi.logout(); } finally { onLogout(); } };
 
-  const view = topic ? "questions" : chapter ? "topics" : "chapters";
+  const grades = subject?.id === "history" ? subjectConfigs.history.grades : undefined;
+  const selectedGrade = grades?.find((grade) => grade.id === gradeId);
+  const assignedIds = new Set(grades?.flatMap((grade) => filterQuizzesForGrade(chapters, grade).map((item) => item.id)));
+  const unassigned = grades ? chapters.filter((item) => !assignedIds.has(item.id)) : [];
+  const visibleQuizzes = selectedGrade ? filterQuizzesForGrade(chapters, selectedGrade)
+    : gradeId === "unassigned" ? unassigned : chapters;
+  const gradeTitle = selectedGrade?.label ?? (gradeId === "unassigned" ? "Bez przypisanej klasy" : null);
+  const view = !subject ? "subjects" : grades && !gradeId ? "grades"
+    : topic ? "questions" : chapter ? "topics" : "quizzes";
   const isQuestionEditorOpen = editorQuestion !== undefined && Boolean(chapter && topic);
+  const goToQuizzes = () => { setChapter(null); setTopic(null); setEditorQuestion(undefined); };
+  const updateChapterGrade = (updated: AdminChapter) => {
+    setChapter(updated);
+    setChapters((current) => current.map((item) => item.id === updated.id ? updated : item));
+    const nextGrade = grades?.find((grade) => filterQuizzesForGrade([updated], grade).length > 0);
+    setGradeId(nextGrade?.id ?? "unassigned");
+    setMessage("Zapisano klasę quizu.");
+  };
 
   useEffect(() => {
     if (isQuestionEditorOpen) window.scrollTo({ top: 0, behavior: "smooth" });
   }, [isQuestionEditorOpen]);
 
   return <main className="admin-shell">
-    <header className="admin-header"><div><h1>Panel admina</h1><p>Zarządzaj rozdziałami, tematami i pytaniami per przedmiot.</p></div><button className="secondary-button" onClick={logout} type="button">Wyloguj</button></header>
-    <Breadcrumb subject={subject} chapter={chapter} topic={topic} onChapters={() => { setChapter(null); setTopic(null); setEditorQuestion(undefined); }} onTopics={() => { setTopic(null); setEditorQuestion(undefined); }} />
+    <header className="admin-header"><div><h1>Panel admina</h1><p>Zarządzaj quizami, tematami i pytaniami.</p></div><button className="secondary-button" onClick={logout} type="button">Wyloguj</button></header>
+    <Breadcrumb
+      subject={subject} gradeTitle={gradeTitle} chapter={chapter} topic={topic}
+      onSubjects={() => chooseSubject(null)}
+      onSubject={() => { goToQuizzes(); setGradeId(null); }}
+      onQuizzes={goToQuizzes}
+      onTopics={() => { setTopicListStatus("loading"); setTopic(null); setEditorQuestion(undefined); }}
+    />
     {message && <p className="status">{message}</p>}{error && <p className="status error">{error}</p>}
-    {!isQuestionEditorOpen && view === "chapters" && <section className="admin-panel"><div className="subject-tabs" aria-label="Przedmiot">{subjects.map((item) => <button aria-pressed={item.id === subject?.id} className="subject-tab" key={item.id} onClick={() => setSubject(item)} type="button">{item.title}</button>)}</div><div className="section-header"><h2>Rozdziały: {subject?.title ?? "Przedmiot"}</h2><button onClick={addChapter} type="button">+ Dodaj rozdział</button></div><ItemList empty="Brak rozdziałów. Dodaj pierwszy rozdział." items={chapters} onSelect={chooseChapter} /></section>}
-    {!isQuestionEditorOpen && view === "topics" && chapter && <><div className="chapter-settings-grid">{chapter.subject === "history" && <ChapterGradeEditor key={chapter.id} chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano klasę rozdziału."); }} />}<ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><TargetQuestionCountEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano liczbę losowanych pytań."); }} /></div><section className="admin-panel"><div className="section-header"><div><h2>{chapter.title}</h2><p className="question-count">Do quizu trafiają tylko pytania z aktywnych tematów.</p></div><button onClick={() => { setError(""); setIsTopicDialogOpen(true); }} type="button">+ Dodaj temat</button></div><TopicList items={topics} onDelete={setTopicToDelete} onSelect={chooseTopic} onToggle={toggleTopic} /></section></>}
+    {view === "subjects" && <section className="admin-panel">
+      <h2>Przedmioty</h2>
+      <ItemList empty="Brak dostępnych przedmiotów." items={subjects} onSelect={chooseSubject} />
+    </section>}
+    {view === "grades" && <section className="admin-panel">
+      <h2>Wybierz klasę</h2>
+      <div className="item-list">
+        {grades?.map((grade) => <button className="item-button" key={grade.id} onClick={() => setGradeId(grade.id)} type="button">{grade.label}</button>)}
+        {unassigned.length > 0 && <button className="item-button" onClick={() => setGradeId("unassigned")} type="button">Bez przypisanej klasy</button>}
+      </div>
+    </section>}
+    {view === "quizzes" && <section className="admin-panel">
+      <div className="section-header">
+        <h2>Quizy</h2>
+        {gradeId !== "unassigned" && <button disabled={!chaptersLoaded} onClick={() => setIsQuizDialogOpen(true)} type="button">+ Dodaj quiz</button>}
+      </div>
+      {chaptersLoaded
+        ? <ItemList empty="Brak quizów na tej liście." items={visibleQuizzes} onSelect={chooseChapter} />
+        : !error && <p role="status">Ładowanie quizów…</p>}
+    </section>}
+    {!isQuestionEditorOpen && view === "topics" && chapter && <><div className="chapter-settings-grid">{chapter.subject === "history" && <ChapterGradeEditor key={chapter.id} chapter={chapter} onUpdated={updateChapterGrade} />}<ChapterNumberEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano numer rozdziału."); }} /><TargetQuestionCountEditor chapter={chapter} onUpdated={(updated) => { setChapter(updated); setChapters((current) => current.map((item) => item.id === updated.id ? updated : item)); setMessage("Zapisano liczbę losowanych pytań."); }} /><ChapterQuestionStats topics={topics} status={topicListStatus} /></div><section className="admin-panel"><div className="section-header"><div><h2>{chapter.title}</h2><p className="question-count">Do quizu trafiają tylko pytania z aktywnych tematów.</p></div><button onClick={() => { setError(""); setIsTopicDialogOpen(true); }} type="button">+ Dodaj temat</button></div><TopicList items={topics} onDelete={setTopicToDelete} onSelect={chooseTopic} onToggle={toggleTopic} /></section></>}
     {!isQuestionEditorOpen && view === "questions" && <section className="admin-panel"><div className="section-header"><div><h2>{topic?.title ?? "Pytania"}</h2><p className="question-count">{formatQuestionCount(questions.length)}</p></div><button onClick={() => setEditorQuestion(null)} type="button">+ Dodaj pytanie</button></div>{questions.length === 0 ? <p className="empty-state">Ten temat nie ma jeszcze pytań. Dodaj pierwsze pytanie.</p> : <div className="question-list">{questions.map((item, index) => {
       const isActive = item.is_active !== false;
       return <div className={`question-row${isActive ? "" : " question-row-inactive"}`} key={item.id}>
@@ -229,9 +333,18 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
       </div>;
     })}</div>}</section>}
     {isQuestionEditorOpen && chapter && topic && <QuestionEditor question={editorQuestion} subject={subject} chapter={chapter} topic={topic} onCancel={() => setEditorQuestion(undefined)} onSave={async (payload) => { try { if (editorQuestion) await adminApi.updateQuestion(chapter.id, topic.id, editorQuestion.id, payload); else await adminApi.createQuestion(chapter.id, topic.id, payload); await loadQuestions(chapter, topic); setEditorQuestion(undefined); setMessage("Zapisano pytanie."); } catch (reason) { throw reason; } }} />}
+    {isQuizDialogOpen && subject && (
+      <CreateNamedItemDialog
+        kind="quiz"
+        context={[subject.title, gradeTitle].filter(Boolean).join(" / ")}
+        onCancel={() => setIsQuizDialogOpen(false)}
+        onCreate={addQuiz}
+      />
+    )}
     {isTopicDialogOpen && chapter && (
-      <CreateTopicDialog
-        chapterTitle={chapter.title}
+      <CreateNamedItemDialog
+        kind="topic"
+        context={chapter.title}
         onCancel={() => setIsTopicDialogOpen(false)}
         onCreate={addTopic}
       />
@@ -241,7 +354,14 @@ function AdminEditor({ onLogout, message, setMessage }: { onLogout: () => void; 
   </main>;
 }
 
-function CreateTopicDialog({ chapterTitle, onCancel, onCreate }: { chapterTitle: string; onCancel: () => void; onCreate: (name: string) => Promise<void> }) {
+function CreateNamedItemDialog({ kind, context, onCancel, onCreate }: {
+  kind: "quiz" | "topic";
+  context: string;
+  onCancel: () => void;
+  onCreate: (name: string) => Promise<void>;
+}) {
+  const item = kind === "quiz" ? "quiz" : "temat";
+  const nameLabel = kind === "quiz" ? "Nazwa quizu" : "Nazwa tematu";
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
@@ -258,7 +378,7 @@ function CreateTopicDialog({ chapterTitle, onCancel, onCreate }: { chapterTitle:
     event.preventDefault();
     const trimmedName = name.trim();
     if (!trimmedName) {
-      setError("Wpisz nazwę tematu.");
+      setError("Wpisz nazwę.");
       return;
     }
 
@@ -267,7 +387,7 @@ function CreateTopicDialog({ chapterTitle, onCancel, onCreate }: { chapterTitle:
     try {
       await onCreate(trimmedName);
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : "Nie udało się dodać tematu.");
+      setError(reason instanceof Error ? reason.message : "Nie udało się zapisać.");
       setSaving(false);
     }
   };
@@ -275,8 +395,8 @@ function CreateTopicDialog({ chapterTitle, onCancel, onCreate }: { chapterTitle:
   return (
     <div className="admin-modal-backdrop" onMouseDown={() => { if (!saving) onCancel(); }}>
       <section
-        aria-describedby="create-topic-description"
-        aria-labelledby="create-topic-title"
+        aria-describedby="create-item-description"
+        aria-labelledby="create-item-title"
         aria-modal="true"
         className="admin-modal"
         onMouseDown={(event) => event.stopPropagation()}
@@ -284,25 +404,24 @@ function CreateTopicDialog({ chapterTitle, onCancel, onCreate }: { chapterTitle:
       >
         <div className="admin-modal-icon" aria-hidden="true">+</div>
         <div className="admin-modal-heading">
-          <h2 id="create-topic-title">Dodaj nowy temat</h2>
-          <p id="create-topic-description">Utwórz temat w rozdziale „{chapterTitle}”.</p>
+          <h2 id="create-item-title">Dodaj {item}</h2>
+          <p id="create-item-description">{context}</p>
         </div>
         <form onSubmit={submit}>
           <label className="form-field">
-            Nazwa tematu
+            {nameLabel}
             <input
               autoFocus
               disabled={saving}
               maxLength={120}
               onChange={(event) => { setName(event.target.value); setError(""); }}
-              placeholder="np. Konsekwencje położenia geograficznego"
               value={name}
             />
           </label>
           {error && <p className="admin-modal-error" role="alert">{error}</p>}
           <div className="admin-modal-actions">
             <button className="secondary-button" disabled={saving} onClick={onCancel} type="button">Anuluj</button>
-            <button disabled={saving} type="submit">{saving ? "Dodawanie…" : "Dodaj temat"}</button>
+            <button disabled={saving} type="submit">{saving ? "Dodawanie…" : `Dodaj ${item}`}</button>
           </div>
         </form>
       </section>
@@ -352,8 +471,32 @@ function DeleteTopicDialog({ topic, onCancel, onDelete }: { topic: AdminTopic; o
   return <div className="admin-modal-backdrop" onMouseDown={() => { if (!saving) onCancel(); }}><section aria-describedby="delete-topic-description" aria-labelledby="delete-topic-title" aria-modal="true" className="admin-modal" onMouseDown={(event) => event.stopPropagation()} role="dialog"><div className="admin-modal-icon delete-modal-icon" aria-hidden="true">!</div><div className="admin-modal-heading"><h2 id="delete-topic-title">Usunąć temat?</h2><p id="delete-topic-description">Temat „{topic.title}” zawiera {formatQuestionCount(topic.question_count)}. Zniknie z rozdziału razem ze swoimi pytaniami. Kopia danych zostanie zachowana na wypadek pomyłki.</p></div>{error && <p className="admin-modal-error" role="alert">{error}</p>}<div className="admin-modal-actions"><button className="secondary-button" disabled={saving} onClick={onCancel} type="button">Anuluj</button><button className="danger-button" disabled={saving} onClick={remove} type="button">{saving ? "Usuwanie…" : "Usuń temat"}</button></div></section></div>;
 }
 
-function Breadcrumb({ subject, chapter, topic, onChapters, onTopics }: { subject: AdminSubject | null; chapter: AdminChapter | null; topic: AdminTopic | null; onChapters: () => void; onTopics: () => void }) {
-  return <nav className="breadcrumb" aria-label="Ścieżka">{chapter || topic ? <button className="link-button" onClick={onChapters} type="button">{subject?.title ?? "Przedmiot"}</button> : <span aria-current="page">{subject?.title ?? "Przedmiot"}</span>}{chapter && <><span className="breadcrumb-separator">/</span>{topic ? <button className="link-button" onClick={onTopics} type="button">{chapter.title}</button> : <span aria-current="page">{chapter.title}</span>}</>}{topic && <><span className="breadcrumb-separator">/</span><span aria-current="page">{topic.title}</span></>}</nav>;
+function Breadcrumb({ subject, gradeTitle, chapter, topic, onSubjects, onSubject, onQuizzes, onTopics }: {
+  subject: AdminSubject | null;
+  gradeTitle: string | null;
+  chapter: AdminChapter | null;
+  topic: AdminTopic | null;
+  onSubjects: () => void;
+  onSubject: () => void;
+  onQuizzes: () => void;
+  onTopics: () => void;
+}) {
+  const steps = [{ title: "Przedmioty", onClick: onSubjects }];
+  if (subject) steps.push({ title: subject.title, onClick: onSubject });
+  if (gradeTitle) steps.push({ title: gradeTitle, onClick: onQuizzes });
+  if (chapter) steps.push({ title: chapter.title, onClick: onTopics });
+  if (topic) steps.push({ title: topic.title, onClick: onTopics });
+
+  return <nav className="breadcrumb" aria-label="Ścieżka">
+    {steps.map(({ title, onClick }, index) => (
+      <span key={index}>
+        {index > 0 && <span className="breadcrumb-separator">/</span>}
+        {index === steps.length - 1
+          ? <span aria-current="page">{title}</span>
+          : <button className="link-button" onClick={onClick} type="button">{title}</button>}
+      </span>
+    ))}
+  </nav>;
 }
 
 function ChapterGradeEditor({ chapter, onUpdated }: { chapter: AdminChapter; onUpdated: (chapter: AdminChapter) => void }) {
@@ -440,6 +583,34 @@ function TargetQuestionCountEditor({ chapter, onUpdated }: { chapter: AdminChapt
   return <section className="admin-panel chapter-number-panel"><h2>Liczba losowanych pytań</h2><p>Quiz wylosuje tyle pytań ze wszystkich tematów tego rozdziału, o ile dostępnych jest ich wystarczająco dużo.</p><label className="form-field compact-field">Liczba pytań<input min="1" onChange={(event) => setValue(event.target.value)} type="number" value={value} /></label><button disabled={saving} onClick={save} type="button">Zapisz liczbę pytań</button>{error && <p className="status error">{error}</p>}</section>;
 }
 
+function ChapterQuestionStats({ topics, status }: {
+  topics: AdminTopic[];
+  status: "loading" | "ready" | "error";
+}) {
+  const total = topics.reduce((sum, topic) => sum + topic.question_count, 0);
+  const counts = (Object.keys(questionTypeLabels) as SelectionType[]).map((type) => ({
+    type,
+    count: topics.reduce((sum, topic) => sum + (topic.question_counts_by_type?.[type] ?? 0), 0),
+  })).filter(({ count }) => count > 0);
+  const hasBreakdown = topics.every((topic) => topic.question_count === 0 || topic.question_counts_by_type);
+
+  return <section className="admin-panel chapter-number-panel chapter-question-stats">
+    <h2>Statystyki pytań</h2>
+    {status === "loading" && <p role="status">Ładowanie statystyk…</p>}
+    {status === "error" && <p role="status">Nie udało się wczytać statystyk.</p>}
+    {status === "ready" && <>
+      <p>Wszystkie zapisane pytania, także nieaktywne.</p>
+      <dl>
+        <div><dt>Łącznie</dt><dd>{total}</dd></div>
+        {hasBreakdown && counts.map(({ type, count }) => (
+          <div key={type}><dt>{questionTypeLabels[type].title}</dt><dd>{count}</dd></div>
+        ))}
+      </dl>
+      {!hasBreakdown && <p>Podział według typów jest niedostępny.</p>}
+    </>}
+  </section>;
+}
+
 function ItemList<T extends { id: string; title: string }>({ empty, items, onSelect }: { empty: string; items: T[]; onSelect: (item: T) => void }) {
   if (!items.length) return <p className="empty-state">{empty}</p>;
   return <div className="item-list">{items.map((item) => <button className="item-button" key={item.id} onClick={() => onSelect(item)} type="button">{item.title}</button>)}</div>;
@@ -509,7 +680,7 @@ function QuestionEditor({ question, subject, chapter, topic, onCancel, onSave }:
     {(type === "fill" || type === "listening_fill") && <section className="editor-card"><h3>Luki w tekście</h3><p>Każda luka ma swój znacznik, np. <code>{"{{luka_1}}"}</code>. Wstaw go dokładnie raz w treści pytania.</p>{type === "fill" && <label className="form-field compact-field">Sposób udzielania odpowiedzi<select value={draft.fill_mode} onChange={(event) => changeFillMode(event.target.value as "select" | "open")}><option value="select">Uczeń wybiera odpowiedź z listy</option><option value="open">Uczeń sam wpisuje odpowiedź</option></select></label>}<div className="section-header"><h3>Definicje luk</h3>{type === "fill" && <button className="secondary-button" onClick={addFillBlank} type="button">+ Dodaj lukę</button>}</div><div className="fill-blank-list">{draft.fill_blanks.map((blank, index) => { const token = `{{${blank.id}}}`; const markerCount = blank.id ? draft.text.split(token).length - 1 : 0; return <FillBlankEditor blank={blank} index={index} key={index} markerCount={markerCount} mode={type === "listening_fill" ? "open" : draft.fill_mode} onChange={(nextBlank) => updateFillBlank(index, nextBlank)} onIdChange={(id) => updateFillBlankId(index, id)} onInsertToken={() => insertFillToken(blank.id)} onRemove={() => type === "fill" && update({ fill_blanks: draft.fill_blanks.filter((_, itemIndex) => itemIndex !== index) })} />; })}</div></section>}
     {type === "order" && <section className="editor-card"><div className="section-header"><h3>Elementy w poprawnej kolejności</h3><button className="secondary-button" onClick={() => update({ order_items: [...draft.order_items, blankOrderItem()] })} type="button">+ Element</button></div><div className="row-stack">{draft.order_items.map((item, index) => <div className="order-item-row" key={index}><input placeholder="Element w kolejności" value={item.text} onChange={(event) => update({ order_items: draft.order_items.map((row, rowIndex) => rowIndex === index ? { ...row, text: event.target.value } : row) })} /><button className="secondary-button" disabled={index === 0} onClick={() => update({ order_items: moveItem(draft.order_items, index, -1) })} type="button">Wyżej</button><button className="secondary-button" disabled={index === draft.order_items.length - 1} onClick={() => update({ order_items: moveItem(draft.order_items, index, 1) })} type="button">Niżej</button><button className="secondary-button" onClick={() => update({ order_items: draft.order_items.filter((_, rowIndex) => rowIndex !== index) })} type="button">Usuń</button></div>)}</div></section>}
     {type === "matching" && <section className="editor-card"><div className="section-header"><h3>Pary do dopasowania</h3><button className="secondary-button" onClick={() => update({ matching_pairs: [...draft.matching_pairs, blankMatchingPair()] })} type="button">+ Para</button></div><p>Ta sama wartość może wystąpić w więcej niż jednej parze, np. jedna ideologia może mieć kilku myślicieli.</p><div className="row-stack">{draft.matching_pairs.map((pair, index) => <div className="matching-pair-row" key={index}><input placeholder="Lewy element" value={pair.left} onChange={(event) => update({ matching_pairs: draft.matching_pairs.map((row, rowIndex) => rowIndex === index ? { ...row, left: event.target.value } : row) })} /><input placeholder="Dopasowanie" value={pair.right} onChange={(event) => update({ matching_pairs: draft.matching_pairs.map((row, rowIndex) => rowIndex === index ? { ...row, right: event.target.value } : row) })} /><button className="secondary-button" onClick={() => update({ matching_pairs: draft.matching_pairs.filter((_, rowIndex) => rowIndex !== index) })} type="button">Usuń</button></div>)}</div></section>}
-    {type === "map" && <section className="editor-card"><h3>Konfiguracja mapy</h3><label className="form-field">Mapa<select value={draft.map_config.source} onChange={(event) => chooseMapSource(event.target.value)}><option value="/static/maps/ancient-civilizations-regions.geojson">Starożytne cywilizacje</option><option value="/static/maps/poland-voivodeships.geojson">Województwa Polski</option><option value="/static/maps/poland-neighbours.geojson">Polska i państwa sąsiadujące</option><option value="/static/maps/world-continents.geojson">Kontynenty świata</option><option value="/static/maps/world-lines.geojson">Linie geograficzne świata</option></select></label><label className="form-field">Tryb odpowiedzi<select value={draft.map_config.mode} onChange={(event) => update({ map_config: { ...draft.map_config, mode: event.target.value as MapConfig["mode"] } })}><option value="select">Wskazanie regionu</option><option value="identify">Rozpoznanie zaznaczonego regionu</option></select></label><label className="form-field">Interakcja<select value={draft.map_config.interaction ?? "region"} onChange={(event) => update({ map_config: { ...draft.map_config, interaction: event.target.value as MapConfig["interaction"] } })}><option value="region">Region</option><option value="line">Linia</option></select></label><label className="form-field">Identyfikator poprawnego regionu lub linii<input value={draft.map_config.target_feature_id} onChange={(event) => update({ map_config: { ...draft.map_config, target_feature_id: event.target.value } })} placeholder="np. ancient_egypt albo equator" /></label><label className="form-field">Podkład GeoJSON (opcjonalnie)<input value={draft.map_config.background_source ?? ""} onChange={(event) => update({ map_config: { ...draft.map_config, background_source: event.target.value } })} placeholder="/static/maps/..." /></label></section>}
+    {type === "map" && <section className="editor-card"><h3>Konfiguracja mapy</h3><label className="form-field">Mapa<select value={draft.map_config.source} onChange={(event) => chooseMapSource(event.target.value)}><option value="/static/maps/ancient-civilizations-regions.geojson">Starożytne cywilizacje</option><option value="/static/maps/poland-voivodeships.geojson">Województwa Polski</option><option value="/static/maps/poland-neighbours.geojson">Polska i państwa sąsiadujące</option><option value="/static/maps/world-continents.geojson">Kontynenty świata</option><option value="/static/maps/world-lines.geojson">Linie geograficzne świata</option><option value="/static/maps/italian-unification-islands.geojson">Wyprawa Garibaldiego</option><option value="/static/maps/german-unification-cities.geojson">Zjednoczenie Niemiec – miasta</option><option value="/static/maps/us-contiguous-states.geojson">USA – stany</option><option value="/static/maps/us-civil-war-battles.geojson">Wojna secesyjna – bitwy</option><option value="/static/maps/colonialism-suez.geojson">Kolonializm – okolice Kanału Sueskiego</option><option value="/static/maps/colonialism-east-asia.geojson">Kolonializm – Azja Wschodnia</option></select></label><label className="form-field">Tryb odpowiedzi<select value={draft.map_config.mode} onChange={(event) => update({ map_config: { ...draft.map_config, mode: event.target.value as MapConfig["mode"] } })}><option value="select">Wskazanie regionu</option><option value="identify">Rozpoznanie zaznaczonego regionu</option></select></label><label className="form-field">Interakcja<select value={draft.map_config.interaction ?? "region"} onChange={(event) => update({ map_config: { ...draft.map_config, interaction: event.target.value as MapConfig["interaction"] } })}><option value="region">Region</option><option value="line">Linia</option></select></label><label className="form-field">Identyfikator poprawnego regionu lub linii<input value={draft.map_config.target_feature_id} onChange={(event) => update({ map_config: { ...draft.map_config, target_feature_id: event.target.value } })} placeholder="np. ancient_egypt albo equator" /></label><label className="form-field">Podkład GeoJSON (opcjonalnie)<input value={draft.map_config.background_source ?? ""} onChange={(event) => update({ map_config: { ...draft.map_config, background_source: event.target.value } })} placeholder="/static/maps/..." /></label></section>}
     {type === "hotspot" && <section className="editor-card"><h3>Konfiguracja diagramu</h3><label className="form-field">Plik SVG<input value={draft.hotspot_config.source} onChange={(event) => update({ hotspot_config: { ...draft.hotspot_config, source: event.target.value } })} /></label><label className="form-field">Identyfikator poprawnego obszaru<input value={draft.hotspot_config.target_hotspot_id} onChange={(event) => update({ hotspot_config: { ...draft.hotspot_config, target_hotspot_id: event.target.value } })} placeholder="np. NW" /></label></section>}
     {type === "written_multiplication" && <section className="editor-card"><h3>Zakres losowanych liczb</h3><p>Ustawienia podstawowe dotyczą trybu trudnego. Tryb łatwy dodatkowo ogranicza rozmiar działania i wyniki cząstkowe.</p><div className="compact-settings-grid"><label className="form-field">Najmniejsza liczba<input min={10} max={9999} type="number" value={draft.written_multiplication_config.min_factor} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, min_factor: Number(event.target.value) } })} /></label><label className="form-field">Największa liczba<input min={10} max={9999} type="number" value={draft.written_multiplication_config.max_factor} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, max_factor: Number(event.target.value) } })} /></label><label className="form-field">Maksymalna łączna liczba cyfr — trudny<input min={4} max={6} type="number" value={draft.written_multiplication_config.max_total_digits} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, max_total_digits: Number(event.target.value) } })} /></label><label className="form-field">Maksymalna łączna liczba cyfr — łatwy<input min={4} max={6} type="number" value={draft.written_multiplication_config.easy_max_total_digits} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, easy_max_total_digits: Number(event.target.value) } })} /></label><label className="form-field">Maksymalny wynik cząstkowy — łatwy<input min={10} max={9999} type="number" value={draft.written_multiplication_config.easy_max_partial_product} onChange={(event) => update({ written_multiplication_config: { ...draft.written_multiplication_config, easy_max_partial_product: Number(event.target.value) } })} /></label></div></section>}
     {type === "timed_multiplication" && <section className="editor-card"><h3>Tabliczka mnożenia na czas</h3><p>Czynniki 1, 2 i 10 są wykluczone. Działanie zostanie wylosowane z ustawionego zakresu.</p><div className="compact-settings-grid"><label className="form-field">Najmniejszy czynnik<input min={3} max={9} type="number" value={draft.timed_multiplication_config.min_factor} onChange={(event) => update({ timed_multiplication_config: { ...draft.timed_multiplication_config, min_factor: Number(event.target.value) } })} /></label><label className="form-field">Największy czynnik<input min={3} max={9} type="number" value={draft.timed_multiplication_config.max_factor} onChange={(event) => update({ timed_multiplication_config: { ...draft.timed_multiplication_config, max_factor: Number(event.target.value) } })} /></label><label className="form-field">Czas na odpowiedź (sekundy)<input min={1} max={60} type="number" value={draft.timed_multiplication_config.time_limit_seconds} onChange={(event) => update({ timed_multiplication_config: { ...draft.timed_multiplication_config, time_limit_seconds: Number(event.target.value) } })} /></label></div></section>}

@@ -3,7 +3,13 @@ import type { QuizQuestion, SelectionType } from "./quiz-api";
 
 export interface AdminSubject { id: string; title: string; }
 export interface AdminChapter { id: string; title: string; subject: string; chapter_number?: number | null; school_grade?: number | null; target_question_count: number; }
-export interface AdminTopic { id: string; title: string; is_active: boolean; question_count: number; }
+export interface AdminTopic {
+  id: string;
+  title: string;
+  is_active: boolean;
+  question_count: number;
+  question_counts_by_type?: Partial<Record<SelectionType, number>>;
+}
 export interface AdminQuestion extends QuizQuestion { id: string; }
 export interface AdminImageAsset { path: string; filename: string; folder: string; }
 export interface AdminImageLibrary { default_folder: string; folders: string[]; images: AdminImageAsset[]; }
@@ -40,8 +46,8 @@ export const adminApi = {
   logout: () => request<{ status: string }>("/api/admin/logout", { method: "POST" }),
   subjects: () => request<AdminSubject[]>("/api/admin/subjects"),
   chapters: (subject: string) => request<AdminChapter[]>(`/api/admin/chapters?subject=${encodeURIComponent(subject)}`),
-  createChapter: (name: string, subject: string) => request<AdminChapter>("/api/admin/chapters", {
-    method: "POST", body: JSON.stringify({ name, subject }),
+  createChapter: (name: string, subject: string, schoolGrade: number | null = null) => request<AdminChapter>("/api/admin/chapters", {
+    method: "POST", body: JSON.stringify({ name, subject, school_grade: schoolGrade }),
   }),
   updateChapterGrade: (chapterId: string, schoolGrade: number | null) => request<AdminChapter>(`/api/admin/chapters/${encodeURIComponent(chapterId)}/school-grade`, {
     method: "PUT", body: JSON.stringify({ school_grade: schoolGrade }),

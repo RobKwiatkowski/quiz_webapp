@@ -392,6 +392,102 @@
           "is_correct": false
         }
       ]
+    },
+    {
+      "id": "q-usa-first-secession-map",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Kliknij stan, który jako pierwszy wystąpił z Unii.",
+      "explanation": "Karolina Południowa wystąpiła z Unii 20 grudnia 1860 r.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/us-contiguous-states.geojson",
+        "mode": "select",
+        "target_feature_id": "SC"
+      }
+    },
+    {
+      "id": "q-usa-appomattox-map",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Wskaż miejsce bitwy, po której generał Robert E. Lee poddał swoją armię generałowi Ulyssesowi Grantowi.",
+      "explanation": "Lee poddał swoją armię Grantowi 9 kwietnia 1865 r. w Appomattox Court House w Wirginii.",
+      "selection_type": "map",
+      "map_config": {
+        "source": "/static/maps/us-civil-war-battles.geojson",
+        "mode": "select",
+        "target_feature_id": "appomattox",
+        "background_source": "/static/maps/us-contiguous-states.geojson"
+      }
+    },
+    {
+      "id": "q-usa-cotton-image",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Jaką roślinę przedstawia zdjęcie? W XIX wieku uprawiano ją na wielką skalę na południu USA.",
+      "explanation": "Na zdjęciu widać bawełnę. Białe włókna wydostają się z dojrzałej torebki nasiennej.",
+      "selection_type": "open",
+      "accepted_answers": [
+        "bawełna",
+        "bawełnę",
+        "to bawełna",
+        "jest to bawełna"
+      ],
+      "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/COTTON_BOLL_close_up_%2849168758266%29.jpg/960px-COTTON_BOLL_close_up_%2849168758266%29.jpg"
+    },
+    {
+      "id": "q-usa-uniform-confederacy",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Która postać przedstawia żołnierza Konfederacji?",
+      "explanation": "Postać 4 ma krótką szarą kurtkę i szare kepi.",
+      "selection_type": "single",
+      "image": "/static/images/history/civil-war-uniforms.png",
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "text": "2",
+          "is_correct": false
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-usa-uniform-union",
+      "topic_id": "stany-zjednoczone",
+      "is_active": true,
+      "text": "Która postać przedstawia żołnierza Unii?",
+      "explanation": "Postać 2 ma granatową kurtkę i jasnoniebieskie spodnie.",
+      "selection_type": "single",
+      "image": "/static/images/history/civil-war-uniforms.png",
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        }
+      ]
     }
   ]
 }

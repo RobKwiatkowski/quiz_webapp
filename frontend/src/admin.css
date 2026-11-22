@@ -20,6 +20,10 @@
 .chapter-settings-grid .admin-panel { min-width: 0; }
 .chapter-number-panel { display: grid; gap: 12px; }
 .chapter-number-panel h2, .chapter-number-panel p { margin: 0; }
+.chapter-question-stats { align-content: start; }
+.chapter-question-stats dl { margin: 0; }
+.chapter-question-stats dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid #e2e8f0; }
+.chapter-question-stats dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
 .login-panel { margin-top: 0; }
 .subject-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .subject-tab { border: 1px solid #cbd5e1 !important; background: #fff !important; color: #1e293b !important; }
