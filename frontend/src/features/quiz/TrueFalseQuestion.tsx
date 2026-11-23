@@ -9,8 +9,16 @@ interface Props {
 }
 
 export function TrueFalseQuestion({ question, disabled, onComplete }: Props) {
+  const [statements] = useState(() => {
+    const shuffled = [...question.answers];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const other = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[other]] = [shuffled[other], shuffled[index]];
+    }
+    return shuffled;
+  });
   const [answers, setAnswers] = useState<Array<boolean | null>>(
-    () => question.answers.map(() => null),
+    () => statements.map(() => null),
   );
   const [message, setMessage] = useState("");
 
@@ -26,7 +34,7 @@ export function TrueFalseQuestion({ question, disabled, onComplete }: Props) {
       return;
     }
 
-    const isCorrect = question.answers.every((statement, index) => answers[index] === statement.is_correct);
+    const isCorrect = statements.every((statement, index) => answers[index] === statement.is_correct);
     onComplete({
       isCorrect,
       explanation: question.explanation ?? "",
@@ -43,7 +51,7 @@ export function TrueFalseQuestion({ question, disabled, onComplete }: Props) {
           <span>P</span>
           <span>F</span>
         </div>
-        {question.answers.map((statement, index) => {
+        {statements.map((statement, index) => {
           const selectedAnswer = answers[index];
           const isCorrect = disabled && selectedAnswer === statement.is_correct;
           const isIncorrect = disabled && selectedAnswer !== null && selectedAnswer !== statement.is_correct;

@@ -850,6 +850,8 @@ Scores are point-based. Maximum points are derived from question structure:
 
 `true_false`:
 
+- statement order is randomized when the question is displayed and remains stable
+  while the learner answers and reviews feedback
 - the learner evaluates every displayed statement as `P` (true) or `F` (false)
 - the answer is checked after clicking the localized check button
 - the learner earns 1 point only when every statement is evaluated correctly

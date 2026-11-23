@@ -1,0 +1,460 @@
+{
+  "topic_id": "przemiany-polityczno-spoleczne",
+  "topic_title": "Przemiany polityczno-społeczne",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-2b9261ae",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Społeczeństwo przemysłowe to inaczej:",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "industrialne",
+          "is_correct": true
+        },
+        {
+          "text": "fabrykanckie",
+          "is_correct": false
+        },
+        {
+          "text": "demokratyczne",
+          "is_correct": false
+        },
+        {
+          "text": "kolonialne",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-154b6266",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Demokratyzacja polega na wprowadzenie trójpodziału władzy, czyli władzy ... :",
+      "selection_type": "open",
+      "explanation": "ustawodawczej, wykonawczej i sądowniczej",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "ustawodawczej"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "wykonawczej"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "sądowniczej"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q-727438e1",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Kto tracił swoją pozycję społeczną w XIX wieku?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "burżuazja",
+          "is_correct": false
+        },
+        {
+          "text": "inteligencja",
+          "is_correct": false
+        },
+        {
+          "text": "szlachta",
+          "is_correct": true
+        },
+        {
+          "text": "ziemiaństwo",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-f876c33f",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Kto zyskiwał swoją pozycję społeczną w XIX wieku?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "szlachta",
+          "is_correct": false
+        },
+        {
+          "text": "burżuazja",
+          "is_correct": true
+        },
+        {
+          "text": "ziemiaństwo",
+          "is_correct": false
+        },
+        {
+          "text": "inteligencja",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": "q-9bf517ee",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak nazywamy wykształconych mieszkańców miast w XIX wieku?",
+      "selection_type": "open",
+      "explanation": "Inteligencją",
+      "accepted_answers": [
+        "inteligencją"
+      ]
+    },
+    {
+      "id": "q-dd413e67",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jaki ustrój rozpowszechniał się w Europie Zachodniej?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "demokracja parlamentarna",
+          "is_correct": false
+        },
+        {
+          "text": "monarchia parlamentarna",
+          "is_correct": true
+        },
+        {
+          "text": "monarchia absolutna",
+          "is_correct": false
+        },
+        {
+          "text": "komunizm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-dc451b5c",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jaki ustrój w XIX wieku miała Wielka Brytania?",
+      "selection_type": "open",
+      "explanation": "monarchia parlamentarna",
+      "accepted_answers": [
+        "monarchia parlamentarna"
+      ]
+    },
+    {
+      "id": "q-c6320233",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jaki ustrój pod koniec XIX wieku miała Francja?",
+      "selection_type": "open",
+      "explanation": "republikański",
+      "accepted_answers": [
+        "republika",
+        "republikański"
+      ]
+    },
+    {
+      "id": "q-88fa636e",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Kto powołał do życia Międzynarodówkę?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "komuniści",
+          "is_correct": true
+        },
+        {
+          "text": "konserwatyści",
+          "is_correct": false
+        },
+        {
+          "text": "republikanie",
+          "is_correct": false
+        },
+        {
+          "text": "faszyści",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-aa2236e5",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Oceń prawda/fałsz.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "Eduard Bernstein był komunistą",
+          "is_correct": false
+        },
+        {
+          "text": "Michał Bakunin był anarchistą",
+          "is_correct": true
+        },
+        {
+          "text": "Karol Marks był komunistą",
+          "is_correct": true
+        },
+        {
+          "text": "Międzynarodówka była powołana przez socjaldemokratów",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-65806890",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Z jakich ruchów składał się ogólny ruch robotniczy?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "komunizm",
+          "is_correct": true
+        },
+        {
+          "text": "socjaldemokracja",
+          "is_correct": true
+        },
+        {
+          "text": "anarchizm",
+          "is_correct": true
+        },
+        {
+          "text": "chadecja",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-2569b95a",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Która ideologia chciała całkowitego zniszczenia państwa i życia bez władzy?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "komunizm",
+          "is_correct": false
+        },
+        {
+          "text": "anarchizm",
+          "is_correct": true
+        },
+        {
+          "text": "liberalizm",
+          "is_correct": false
+        },
+        {
+          "text": "chadecja",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-29f6cb5d",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak w skrócie nazywa się Chrześcijańską Demokrację?",
+      "selection_type": "open",
+      "explanation": "chadecją",
+      "accepted_answers": [
+        "chadecja"
+      ]
+    },
+    {
+      "id": "q-77a2776d",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak nazywamy ruch który stawia dobro narodu wyżej niż dobro jednostki lub obywatela?",
+      "selection_type": "open",
+      "explanation": "nacjonalizm",
+      "accepted_answers": [
+        "nacjonalizm"
+      ]
+    },
+    {
+      "id": "q-2e4b84b5",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jaki ruch dzieli narody na lepsze i gorsze?",
+      "selection_type": "open",
+      "explanation": "szowinizm",
+      "accepted_answers": [
+        "szowinizm"
+      ]
+    },
+    {
+      "id": "q-b40e855e",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak nazywamy żydowski nacjonalizm?",
+      "selection_type": "open",
+      "explanation": "syjonizm",
+      "accepted_answers": [
+        "syjonizm",
+        "syjonizmem"
+      ]
+    },
+    {
+      "id": "q-d35f57cb",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Kogo krytykowała chadecja?",
+      "selection_type": "multiple",
+      "answers": [
+        {
+          "text": "komunizm",
+          "is_correct": true
+        },
+        {
+          "text": "socjalizm",
+          "is_correct": true
+        },
+        {
+          "text": "liberalizm",
+          "is_correct": true
+        },
+        {
+          "text": "monarchię",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-c6013572",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jaki ruch zapoczątkował papież  Leon XIII?",
+      "selection_type": "open",
+      "explanation": "chadecję",
+      "accepted_answers": [
+        "chadecję",
+        "chadecja"
+      ]
+    },
+    {
+      "id": "q-9065f0d2",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak nazywały się kobiety dążące do równouprawnienia z mężczyznami?",
+      "selection_type": "open",
+      "explanation": "emancypantki",
+      "accepted_answers": [
+        "emancypantki"
+      ]
+    },
+    {
+      "id": "q-92c6c4e3",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Jak nazywamy kobiety które dążyły do uzyskania praw wyborczych dla wszystkich kobiet?",
+      "selection_type": "open",
+      "explanation": "sufrażystki",
+      "accepted_answers": [
+        "sufrażystki"
+      ]
+    },
+    {
+      "id": "q-6e3e0379",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "W jakim kraju doszło do słumienia prostestów robotniczych na których cześć obchodzimy Święto Pracy?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "USA",
+          "is_correct": true
+        },
+        {
+          "text": "Rosja",
+          "is_correct": false
+        },
+        {
+          "text": "Francja",
+          "is_correct": false
+        },
+        {
+          "text": "Prusy",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-9a854766",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Kto uważał, że należy obalić system za pomocą siły?",
+      "selection_type": "single",
+      "answers": [
+        {
+          "text": "socjaliści",
+          "is_correct": false
+        },
+        {
+          "text": "komuniści",
+          "is_correct": true
+        },
+        {
+          "text": "chadecy",
+          "is_correct": false
+        },
+        {
+          "text": "liberałowie",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": "q-b183b987",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Międzynarodowe Stowarzyszenie Robotników to inaczej:",
+      "selection_type": "open",
+      "explanation": "Międzynarodówka",
+      "accepted_answers": [
+        "Międzynarodówka"
+      ]
+    },
+    {
+      "id": "q-85ec4765",
+      "topic_id": "przemiany-polityczno-spoleczne",
+      "is_active": true,
+      "text": "Określ Prawda/Fałsz.",
+      "selection_type": "true_false",
+      "answers": [
+        {
+          "text": "komunizm krytykował liberalizm",
+          "is_correct": true
+        },
+        {
+          "text": "socjaldemokracja krytykowała komunizm",
+          "is_correct": true
+        },
+        {
+          "text": "chadecja krytykowała socjaldemokrację",
+          "is_correct": true
+        },
+        {
+          "text": "anarchizm krytykował wolność jednostki",
+          "is_correct": false
+        },
+        {
+          "text": "chadecja krytykowała godność człowieka",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

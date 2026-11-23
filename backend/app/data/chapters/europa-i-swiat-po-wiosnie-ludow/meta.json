@@ -6,11 +6,13 @@
   "age_group": "10-12",
   "chapter_number": 3,
   "school_grade": 7,
-  "target_question_count": 15,
+  "target_question_count": 20,
   "questions_per_topic": 2,
   "topics": [
     "topic_1_stany-zjednoczone.json",
     "topic_2_zjednoczenie-wloch-i-niemiec.json",
-    "topic_3_kolonializm.json"
+    "topic_3_kolonializm.json",
+    "topic_4_przemiany-polityczno-spoleczne.json",
+    "topic_5_postep-techniczny-i-kultura.json"
   ]
 }

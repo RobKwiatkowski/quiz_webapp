@@ -1,0 +1,72 @@
+{
+  "topic_id": "postep-techniczny-i-kultura",
+  "topic_title": "Postęp techniczny i kultura",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "q-bb4ebeed",
+      "topic_id": "postep-techniczny-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj badaczy do odkryć.",
+      "selection_type": "matching",
+      "explanation": "Karol Darwin/teoria ewolucji, Ludwik Pasteur/pasteryzacja, Dymitr Mendelejew/układ okresowy pierwiastków, Wilhelm Roentgen/promieniowanie X, Maria Skłodowska-Curie/polon i rad",
+      "matching_pairs": [
+        {
+          "id": "karol-darwin",
+          "left": "Karol Darwin",
+          "right": "teoria ewolucji"
+        },
+        {
+          "id": "ludwik-pasteur",
+          "left": "Ludwik Pasteur",
+          "right": "pasteryzacja"
+        },
+        {
+          "id": "dymitr-mendelejew",
+          "left": "Dymitr Mendelejew",
+          "right": "układ okresowy pierwiastków"
+        },
+        {
+          "id": "wilhelm-roentgen",
+          "left": "Wilhelm Roentgen",
+          "right": "promieniowanie X"
+        },
+        {
+          "id": "maria-sklodowska-curie",
+          "left": "Maria Skłodowska-Curie",
+          "right": "polon i rad"
+        }
+      ]
+    },
+    {
+      "id": "q-348ca9d8",
+      "topic_id": "postep-techniczny-i-kultura",
+      "is_active": true,
+      "text": "Dopasuj inżynierów do maszyn",
+      "selection_type": "matching",
+      "explanation": "Karl Benz - samochód, Ferdynand Zeppelin - sterowiec, Rudolf Diesel - silnik wysokoprężny, Orville Wright - samolot",
+      "matching_pairs": [
+        {
+          "id": "karl-benz",
+          "left": "Karl Benz",
+          "right": "samochód"
+        },
+        {
+          "id": "ferdynand-zeppelin",
+          "left": "Ferdynand Zeppelin",
+          "right": "sterowiec"
+        },
+        {
+          "id": "rudolf-diesel",
+          "left": "Rudolf Diesel",
+          "right": "silnik wysokoprężny"
+        },
+        {
+          "id": "orville-wright",
+          "left": "Orville Wright",
+          "right": "samolot"
+        }
+      ]
+    }
+  ]
+}

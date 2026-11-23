@@ -11,7 +11,7 @@
       "selection_type": "multiple",
       "answers": [
         {
-          "text": "chęć zbobycia nowych ziem i surowców",
+          "text": "chęć zdobycia nowych ziem i surowców",
           "is_correct": true
         },
         {
@@ -712,19 +712,19 @@
       "is_active": true,
       "text": "Jakie dwa morza łączy Kanał Sueski?",
       "selection_type": "open",
-      "accepted_answers": [
-        "Morze Śródziemne i Morze Czerwone",
-        "Morze Czerwone i Morze Śródziemne",
-        "Śródziemne i Czerwone",
-        "Czerwone i Śródziemne",
-        "Morze Śródziemne z Morzem Czerwonym",
-        "Morze Czerwone z Morzem Śródziemnym",
-        "Morze Śródziemne, Morze Czerwone",
-        "Morze Czerwone, Morze Śródziemne",
-        "Śródziemne, Czerwone",
-        "Czerwone, Śródziemne"
-      ],
-      "explanation": "Kanał Sueski łączy Morze Śródziemne z Morzem Czerwonym."
+      "explanation": "Kanał Sueski łączy Morze Śródziemne z Morzem Czerwonym.",
+      "answer_slots": [
+        {
+          "accepted_answers": [
+            "śródziemne"
+          ]
+        },
+        {
+          "accepted_answers": [
+            "czerwone"
+          ]
+        }
+      ]
     },
     {
       "id": "q-colonialism-30",
