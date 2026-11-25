@@ -151,6 +151,19 @@ frontend:
 In that setup Caddy should strip `/quiz` before proxying to the frontend and
 strip `/quiz-api` before proxying to the backend.
 
+To exclude questions that require LLM answer checking on an installation without
+an LLM service or API key, set this environment variable on its **backend**
+service and recreate the backend container:
+
+```yaml
+environment:
+  LLM_QUESTIONS_ENABLED: "false"
+```
+
+The default is `true`. When disabled, other available questions fill the quiz;
+quizzes with no eligible questions are empty. Existing questions remain in the
+content files and in the admin editor. This flag does not disable the LLM service.
+
 `expose` is enough only when Caddy runs as a container on the same Docker
 network. If Caddy runs directly on the Raspberry Pi host, bind the services to
 localhost with `ports`, for example `127.0.0.1:8081:80` for the frontend and

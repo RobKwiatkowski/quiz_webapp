@@ -44,7 +44,7 @@ let leafletPromise: Promise<Leaflet> | undefined;
 
 export function usesLeafletMap(question: QuizQuestion): boolean {
   const config = question.map_config;
-  return config?.mode === "select" && Object.hasOwn(views, config.source);
+  return config?.mode === "select" && Object.prototype.hasOwnProperty.call(views, config.source);
 }
 
 function loadLeaflet(): Promise<Leaflet> {
@@ -171,8 +171,9 @@ export function LeafletMapQuestion({ question, disabled, onComplete }: {
         });
       }
       setStatus("ready");
-    }).catch(() => {
+    }).catch((error: unknown) => {
       if (signal.aborted) return;
+      console.error("Failed to load the interactive map", error);
       map?.remove();
       map = undefined;
       setStatus("error");

@@ -422,7 +422,10 @@ def build_quiz_from_chapter(chapter_dir: Path, difficulty: Difficulty = "easy") 
     selected_question_count = 0
 
     for _topic_filename, topic in active_topics:
-        topic_questions = [question for question in topic.questions if question.is_active]
+        topic_questions = [
+            question for question in topic.questions
+            if question.is_active and (settings.llm_questions_enabled or question.selection_type != "llm")
+        ]
         random.shuffle(topic_questions)
 
         topic_selection_limit = topic.max_questions_per_quiz or len(topic_questions)

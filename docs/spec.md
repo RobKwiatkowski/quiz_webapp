@@ -202,6 +202,9 @@ Configuration:
 
 - `APP_ENV`, default: `dev`
 - `QUIZ_DATA_DIR`, default: `backend/app/data/chapters`
+- `LLM_QUESTIONS_ENABLED`, default: `true`; set to `false`, `0`, `no`, or
+  `off` to exclude LLM-checked questions from learner quizzes. Restart the
+  backend container after changing it. Admin content remains editable.
 - `ADMIN_USERNAME`, required for admin login
 - `ADMIN_PASSWORD_HASH`, required for admin login; plaintext passwords must not
   be stored in the repository
@@ -725,8 +728,9 @@ For each chapter, the backend:
 
 5. For each active topic, in `meta.json` order:
    - loads the topic file
-   - removes questions whose `is_active` value is `false`, then shuffles the
-     remaining questions
+   - removes questions whose `is_active` value is `false` and, when
+     `LLM_QUESTIONS_ENABLED` is disabled, questions of type `llm`, then
+     shuffles the remaining questions
    - takes the base quota from the shuffled topic list without exceeding the
      optional `max_questions_per_quiz` topic limit
    - keeps remaining topic questions as fallback questions for that topic
