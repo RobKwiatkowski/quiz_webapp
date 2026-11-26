@@ -1,0 +1,11 @@
+{
+  "id": "english-vocabulary-unit-2",
+  "title": "Vocabulary Unit 2",
+  "description": "Uzupełnianie luk w tekstach po angielsku. Klasa 7, poziom A1–A2.",
+  "category": "english",
+  "age_group": "12-13",
+  "target_question_count": 20,
+  "topics": [
+    "topic_1_open_cloze.json"
+  ]
+}

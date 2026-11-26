@@ -1,0 +1,1647 @@
+{
+  "topic_id": "open-cloze",
+  "topic_title": "Vocabulary Unit 2 – teksty z lukami",
+  "is_active": true,
+  "questions": [
+    {
+      "id": "vocabulary-unit-2-01",
+      "text": "A new school\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast September, my family moved to a new town. On my first day at school, I felt very {{gap1}} because I didn't know anyone. I put my books in my {{gap2}} and left home early.\n\nAt the school gate, I met a girl called Emma. She showed me where my {{gap3}} was and introduced me to our teacher. We sat together during the first {{gap4}}, which was English.\n\nAt lunchtime, Emma invited me to eat with her {{gap5}}. They were friendly and asked me about my old school. After lunch, we played football in the school {{gap6}}.\n\nA few weeks later, I joined the school music {{gap7}} because I love playing the guitar. I also started to {{gap8}} new friends. Now I am happy at my new school, and I {{gap9}} forward to seeing my classmates every morning. I usually {{gap10}} the bus to school, but sometimes Emma and I {{gap11}} there together. Our homes are only fifteen minutes away on {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "nervous"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "bag"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "classroom"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "lesson"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "friends"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "playground"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "club"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "make"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "look"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "take"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "walk"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "foot"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. nervous, 2. bag, 3. classroom, 4. lesson, 5. friends, 6. playground, 7. club, 8. make, 9. look, 10. take, 11. walk, 12. foot."
+    },
+    {
+      "id": "vocabulary-unit-2-02",
+      "text": "My grandfather's story\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nMy grandfather was {{gap1}} in a small village in 1955. He lived there with his parents and two sisters. When he was seven, he learned to {{gap2}} a bike, and he rode it to school every day.\n\nAt eighteen, he decided to {{gap3}} school and find a job. He wanted to work with animals, so he found a {{gap4}} on a farm. A few years later, he {{gap5}} my grandmother at a village party.\n\nThey fell in {{gap6}} and got married in 1980. After their wedding, they bought a small {{gap7}} with a garden. They had two {{gap8}}: my father and my aunt.\n\nMy grandfather worked on the farm for many years. He finally decided to {{gap9}} when he was sixty-five. Now he has more {{gap10}} time. He likes growing vegetables and going for long {{gap11}} with his dog. He also loves telling us stories about his {{gap12}} when he was a boy.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "born"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "ride"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "leave"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "job"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "met"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "love"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "house"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "children"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "retire"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "free"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "walks"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "life"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. born, 2. ride, 3. leave, 4. job, 5. met, 6. love, 7. house, 8. children, 9. retire, 10. free, 11. walks, 12. life."
+    },
+    {
+      "id": "vocabulary-unit-2-03",
+      "text": "A birthday surprise\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast Saturday was my sister's birthday. She turned thirteen, and we wanted to give her a {{gap1}}. My parents asked her to go shopping with our aunt, so we had time to prepare.\n\nFirst, I cleaned the living {{gap2}} and put some flowers on the table. My brother bought colourful balloons and put them on the {{gap3}}. Mum made a chocolate {{gap4}} and put thirteen candles on it.\n\nAt four o'clock, my sister's friends arrived. They brought small {{gap5}} and hid behind the sofa. When my sister came home, we all shouted, \"Happy {{gap6}}!\"\n\nShe was very surprised and had a big smile on her {{gap7}}. We sang a song, and she blew {{gap8}} the candles. Then we ate cake and played games.\n\nLater, my sister opened her presents. Her favourite was a book about horses because she loves {{gap9}}. In the evening, she thanked everyone for coming. She said it was the {{gap10}} birthday party of her life. After the guests left, we helped Mum {{gap11}} up, and then we all went to {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "surprise"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "room"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "walls"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "cake"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "presents"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "birthday"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "face"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "out"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "animals"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "best"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "tidy"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "bed"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. surprise, 2. room, 3. walls, 4. cake, 5. presents, 6. birthday, 7. face, 8. out, 9. animals, 10. best, 11. tidy, 12. bed."
+    },
+    {
+      "id": "vocabulary-unit-2-04",
+      "text": "A trip to the seaside\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast summer, my family went to the {{gap1}} for a week. We stayed in a small hotel near the beach. Every morning, I woke up early and looked out of the {{gap2}} to check the weather.\n\nOn the first day, it was sunny and warm. We put on our swimming costumes and walked to the {{gap3}}. My sister made a sandcastle while I swam in the {{gap4}} with Dad.\n\nAt lunchtime, we bought fish and chips from a small {{gap5}}. In the afternoon, we played volleyball and took lots of {{gap6}}. I wanted to remember our holiday.\n\nOne day, it started to {{gap7}}, so we visited a museum instead. I learned about the boats and animals that live near the coast. The next morning, the sun came {{gap8}} again.\n\nOn our last evening, we watched the sunset together. I felt a little {{gap9}} because I didn't want to go home. Before we left, I bought a postcard and {{gap10}} it to my best friend. We travelled home by {{gap11}}, and I read a book during the long {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "seaside"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "window"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "beach"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "sea"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "restaurant"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "photos"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "rain"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "out"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "sad"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "sent"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "train"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "journey"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. seaside, 2. window, 3. beach, 4. sea, 5. restaurant, 6. photos, 7. rain, 8. out, 9. sad, 10. sent, 11. train, 12. journey."
+    },
+    {
+      "id": "vocabulary-unit-2-05",
+      "text": "Learning to cook\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nMy name is Tom, and I love food. Last month, I decided to learn how to {{gap1}}. At first, I could only make a sandwich or boil an egg.\n\nOne Saturday, Mum showed me how to make vegetable soup. First, we washed the vegetables and cut them into small {{gap2}}. Then we put them in a large {{gap3}} with some water.\n\nWhile the soup was cooking, I helped Mum set the {{gap4}}. I put a bowl, a spoon and a glass in front of each chair. After thirty minutes, we added some salt and tried the soup. It tasted {{gap5}}!\n\nThe following week, I made pasta for my family. I followed a recipe from a cookery {{gap6}}. I was careful because the water was very {{gap7}}.\n\nEveryone enjoyed the meal, and I felt {{gap8}} of myself. Now I try to cook something new every weekend. I always wash my {{gap9}} before I start, and I clean the kitchen when I {{gap10}}. Next Saturday, I want to {{gap11}} an apple cake. I hope it will taste as {{gap12}} as Mum's!",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "cook"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "pieces"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "pot"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "table"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "delicious"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "book"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "hot"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "proud"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "hands"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "finish"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "make"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "good"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. cook, 2. pieces, 3. pot, 4. table, 5. delicious, 6. book, 7. hot, 8. proud, 9. hands, 10. finish, 11. make, 12. good."
+    },
+    {
+      "id": "vocabulary-unit-2-06",
+      "text": "A day at the zoo\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nYesterday, our class went on a school {{gap1}} to the zoo. We met outside school at eight o'clock and travelled there by {{gap2}}. The journey took about an hour.\n\nFirst, we saw the lions. They were sleeping in the {{gap3}} because the day was warm. Then we visited the monkeys. One of them climbed a tree and jumped from one {{gap4}} to another.\n\nAt midday, we sat down to eat our packed {{gap5}}. I had a cheese sandwich, an apple and a bottle of {{gap6}}. After lunch, a zoo worker told us about elephants. We learned that they use their long trunks to pick up {{gap7}} and drink water.\n\nMy favourite animals were the penguins. They looked funny when they walked, but they were excellent {{gap8}}. I watched them swimming for a long {{gap9}}.\n\nBefore we went home, I bought a small gift for my little brother. He loves animals, so I chose a toy {{gap10}}. We arrived back at school at five. I was tired, but I had a great {{gap11}}. I hope we can visit the zoo {{gap12}} next year.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "trip"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "bus"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "sun"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "branch"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "lunch"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "water"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "food"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "swimmers"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "time"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "penguin"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "day"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "again"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. trip, 2. bus, 3. sun, 4. branch, 5. lunch, 6. water, 7. food, 8. swimmers, 9. time, 10. penguin, 11. day, 12. again."
+    },
+    {
+      "id": "vocabulary-unit-2-07",
+      "text": "My best friend\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nI met my best friend, Olivia, when we were six. We were in the same {{gap1}} at primary school. On the first day, she sat next to me, and we started to {{gap2}} about our favourite games.\n\nOlivia is kind and funny. She always makes me {{gap3}} when I feel sad. She is also good at sport, especially basketball. She plays for a local {{gap4}} and trains twice a week.\n\nWe don't have all the same interests. I prefer reading, while Olivia loves watching {{gap5}} at the cinema. However, we both enjoy listening to music and going for bike {{gap6}}.\n\nLast year, Olivia moved to a different part of town. At first, I was worried that we wouldn't see each {{gap7}} often. Luckily, we still go to the same school and meet at the {{gap8}}.\n\nSometimes we have small arguments, but we always talk and say {{gap9}} afterwards. I know I can ask Olivia for {{gap10}} when I have a problem. She listens to me and gives me good advice. I hope we will be friends for many {{gap11}} to come. I'm very happy to have her in my {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "class"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "talk"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "laugh"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "team"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "films"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "rides"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "other"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "weekend"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "sorry"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "help"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "years"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "life"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. class, 2. talk, 3. laugh, 4. team, 5. films, 6. rides, 7. other, 8. weekend, 9. sorry, 10. help, 11. years, 12. life."
+    },
+    {
+      "id": "vocabulary-unit-2-08",
+      "text": "A rainy Saturday\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast Saturday, I planned to go cycling with my cousin. We wanted to ride to the lake and have a {{gap1}} there. Unfortunately, when I woke up, it was raining very {{gap2}}.\n\nI called my cousin and told her about the weather. We decided to stay at home and find something fun to {{gap3}}. She arrived at ten o'clock with a board {{gap4}} and a bag of popcorn.\n\nFirst, we played the game in the living room. I won the first game, but my cousin won the {{gap5}} one. Then we made sandwiches and watched a funny {{gap6}} on television.\n\nIn the afternoon, the rain stopped. We put on our coats and went for a short {{gap7}} in the park. There were puddles everywhere, so we had to be {{gap8}} not to get our shoes wet.\n\nWhen we returned, we made hot chocolate. My cousin went home before {{gap9}} because her family was having dinner. Although we couldn't go cycling, we still had a lovely {{gap10}} together. We decided to visit the lake the following {{gap11}}, if the weather was {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "picnic"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "hard"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "do"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "game"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "second"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "film"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "walk"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "careful"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "evening"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "time"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "weekend"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "good"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. picnic, 2. hard, 3. do, 4. game, 5. second, 6. film, 7. walk, 8. careful, 9. evening, 10. time, 11. weekend, 12. good."
+    },
+    {
+      "id": "vocabulary-unit-2-09",
+      "text": "Helping at home\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nIn my family, everyone helps with the housework. My parents both work, so my brother and I have some jobs to {{gap1}} every week.\n\nI usually make my {{gap2}} in the morning and tidy my room on Saturdays. My brother takes the rubbish {{gap3}} and feeds our cat. After dinner, we help clear the {{gap4}} and put the plates in the kitchen.\n\nOn Sundays, Dad often does the shopping. He makes a {{gap5}} before he goes to the supermarket so that he doesn't forget anything. Mum usually cooks, but sometimes Dad makes our favourite pasta {{gap6}}.\n\nLast weekend, my parents were very busy, so my brother and I decided to surprise them. We cleaned the living room and washed the {{gap7}}. Then we made lunch together.\n\nWe were a little {{gap8}} that Mum and Dad wouldn't like it, but they were very pleased. They thanked us for our {{gap9}}. After lunch, we all went to the park because nobody needed to stay at home and {{gap10}}. I think sharing housework is a good {{gap11}}. It gives everyone more free {{gap12}} to spend together.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "do"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "bed"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "out"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "table"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "list"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "dish"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "dishes"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "worried"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "help"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "clean"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "idea"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "time"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. do, 2. bed, 3. out, 4. table, 5. list, 6. dish, 7. dishes, 8. worried, 9. help, 10. clean, 11. idea, 12. time."
+    },
+    {
+      "id": "vocabulary-unit-2-10",
+      "text": "The school play\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast term, our school put on a play. My friend encouraged me to take {{gap1}}, but I was afraid to speak in front of many people. In the end, I decided to try.\n\nOur teacher gave me the part of a young king. I had to learn my {{gap2}} and practise them at home. Every Tuesday, we met after school to practise together.\n\nAt first, I often forgot what to {{gap3}}. My classmates were patient and helped me remember. My mother also listened to me when I practised in my {{gap4}}.\n\nOn the day of the play, I felt very {{gap5}}. There were parents, teachers and students in the school hall. Before we started, our teacher told us to take a deep {{gap6}} and enjoy ourselves.\n\nWhen I walked onto the stage, I saw my family in the front {{gap7}}. They smiled at me, and I began to feel more {{gap8}}. I remembered all my words, and the audience laughed at the funny parts.\n\nAt the end, everyone stood up and {{gap9}} their hands. I felt proud of the whole {{gap10}}. After the play, my parents took a {{gap11}} of me in my costume. I would love to be in another play next {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "part"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "lines"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "say"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "room"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "nervous"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "breath"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "row"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "confident"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "clapped"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "team"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "photo"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "year"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. part, 2. lines, 3. say, 4. room, 5. nervous, 6. breath, 7. row, 8. confident, 9. clapped, 10. team, 11. photo, 12. year."
+    },
+    {
+      "id": "vocabulary-unit-2-11",
+      "text": "A new pet\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nFor years, I wanted to have a pet. My parents said I had to show that I was ready to look {{gap1}} an animal. I began by helping my neighbour feed her cat when she was away.\n\nLast spring, my parents took me to an animal shelter. We met a small brown dog with long {{gap2}} and a friendly face. He was a little shy at first, but soon he came over and sat next to {{gap3}}.\n\nWe decided to take him home and called him Max. Before he arrived, we bought a {{gap4}} for him to sleep in, two bowls and some dog food.\n\nNow I take Max for a {{gap5}} every morning before school. My dad walks him in the evening. I also make sure that Max always has clean {{gap6}} to drink.\n\nAt weekends, we go to the park and play with a {{gap7}}. Max loves running after it and bringing it back. When he is tired, he likes to lie on the floor and {{gap8}}.\n\nHaving a dog is a lot of {{gap9}}, but Max makes our family happy. I am glad we gave him a new {{gap10}}. He is more than a pet: he is also a good {{gap11}}. I can't imagine life {{gap12}} him.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "after"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "ears"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "me"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "bed"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "walk"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "water"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "ball"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "sleep"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "work"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "home"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "friend"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "without"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. after, 2. ears, 3. me, 4. bed, 5. walk, 6. water, 7. ball, 8. sleep, 9. work, 10. home, 11. friend, 12. without."
+    },
+    {
+      "id": "vocabulary-unit-2-12",
+      "text": "A visit to the doctor\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast Monday, I woke up with a headache and a sore {{gap1}}. I felt tired and didn't want to get out of bed. Mum checked my temperature and saw that I had a {{gap2}}.\n\nShe called the doctor and made an {{gap3}} for the afternoon. I stayed at home from school and drank warm tea with honey. Mum also told me to get some {{gap4}}.\n\nAt the doctor's, I explained how I felt. The doctor looked at my throat and listened to my {{gap5}}. She said I needed to stay at home for a few days and drink plenty of {{gap6}}.\n\nShe also gave me some medicine and told me when to {{gap7}} it. I was disappointed because I had to miss football practice, but I knew I needed time to get {{gap8}}.\n\nMy best friend sent me a message after school and told me about our lessons. I thanked him and asked him to bring me the homework when I was ready to {{gap9}} again.\n\nAfter three days, my temperature went {{gap10}}, and I felt much better. By Friday, I was well enough to go back to {{gap11}}. I was happy to see my friends and teachers {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "throat"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "fever"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "appointment"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "rest"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "heart"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "water"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "take"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "better"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "study"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "down"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "school"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "again"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. throat, 2. fever, 3. appointment, 4. rest, 5. heart, 6. water, 7. take, 8. better, 9. study, 10. down, 11. school, 12. again."
+    },
+    {
+      "id": "vocabulary-unit-2-13",
+      "text": "The football match\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nOur school football team had an important match last Friday. We played {{gap1}} a team from another school. All week, we trained hard after our lessons.\n\nOn Friday morning, I packed my football boots and a bottle of {{gap2}}. After school, our teacher drove us to the sports centre. We changed our clothes and went outside to warm {{gap3}}.\n\nThe other team scored the first goal. We were disappointed, but our captain told us not to give {{gap4}}. Just before half-time, my friend Leo scored, and the score was one {{gap5}}.\n\nIn the second half, both teams played well. With only a few minutes left, Leo passed the ball to me. I kicked it towards the goal, but the goalkeeper caught {{gap6}}.\n\nSoon afterwards, another player on our team scored. When the match ended, we had {{gap7}} two-one! We shook {{gap8}} with the other team and thanked them for the game.\n\nOur teacher was very {{gap9}} of us. She said we had worked well as a {{gap10}}. We celebrated by having pizza together. I was tired when I got home, but I couldn't stop {{gap11}}. It was a day I will always {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "against"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "water"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "up"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "up"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "all"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "it"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "won"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "hands"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "proud"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "team"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "smiling"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "remember"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. against, 2. water, 3. up, 4. up, 5. all, 6. it, 7. won, 8. hands, 9. proud, 10. team, 11. smiling, 12. remember."
+    },
+    {
+      "id": "vocabulary-unit-2-14",
+      "text": "Moving house\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nTwo months ago, my family moved to a new {{gap1}}. Our old flat was too small, and my parents wanted a place with a garden.\n\nBefore moving day, we put our clothes, books and toys into big {{gap2}}. I found some old photos in my room and showed them to my sister. We laughed when we saw what we looked {{gap3}} as little children.\n\nOn Saturday, a large van arrived outside our building. The workers carried our furniture downstairs and put it in the {{gap4}}. Then we drove to our new home.\n\nMy new room is upstairs, next to the {{gap5}}. It has a big window and enough space for my bed and {{gap6}}. I use the desk to do my homework.\n\nAt first, I missed my old home and my neighbours. However, the people on our new street were very {{gap7}}. A boy called Ben lives next door, and we often play basketball {{gap8}} school.\n\nLast weekend, we invited our grandparents to {{gap9}} us. Mum made lunch, and we ate it in the garden. Everyone liked the new house. I'm happy here now, and I'm starting to {{gap10}} at home. I still see my old friends, and I have made a new {{gap11}} too. Moving was a big {{gap12}} for our family.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "house"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "boxes"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "like"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "van"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "bathroom"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "desk"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "friendly"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "after"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "visit"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "feel"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "friend"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "change"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. house, 2. boxes, 3. like, 4. van, 5. bathroom, 6. desk, 7. friendly, 8. after, 9. visit, 10. feel, 11. friend, 12. change."
+    },
+    {
+      "id": "vocabulary-unit-2-15",
+      "text": "A visit to the library\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nWhen I was younger, I didn't enjoy reading very much. I preferred playing computer games or watching {{gap1}}. That changed when my teacher took our class to the local library.\n\nThe librarian showed us where to find books about different {{gap2}}. There were stories about animals, sport, space and history. I chose a book about a boy who travels to another {{gap3}}.\n\nTo borrow it, I needed a library {{gap4}}. The librarian helped me fill in a form and told me to bring the book {{gap5}} after three weeks.\n\nI started reading that evening. The story was so interesting that I didn't want to put the book {{gap6}}. I finished it in four days and returned to the library for another one.\n\nNow I visit the library almost every {{gap7}}. Sometimes I go with my best friend, and we tell each other about the books we have {{gap8}}. I also use the library to find information for school projects.\n\nMy favourite place is a quiet chair near the {{gap9}}. On rainy days, I can sit there and read for an {{gap10}}. I'm glad my teacher introduced me to the library. Reading helps me learn new {{gap11}} and imagine different {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "television"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "topics"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "planet"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "card"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "back"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "down"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "week"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "read"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "window"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "hour"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "words"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "worlds"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. television, 2. topics, 3. planet, 4. card, 5. back, 6. down, 7. week, 8. read, 9. window, 10. hour, 11. words, 12. worlds."
+    },
+    {
+      "id": "vocabulary-unit-2-16",
+      "text": "A school competition\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nOur English teacher told us about a competition at school. Students had to write a short story in English. The winner would receive a book and a small {{gap1}}.\n\nI wanted to enter, but I didn't know what to {{gap2}} about. My sister suggested a story about a girl who finds a secret door. I liked her {{gap3}} and started writing that evening.\n\nAt first, I wrote everything in a notebook. Then I checked the spelling in a {{gap4}} and typed the story on my computer. My teacher had asked us to write about 300 {{gap5}}.\n\nI finished the story a day before the competition closed. I read it one more time and sent it to my {{gap6}}. After that, I had to wait two weeks for the result.\n\nOn the day of the announcement, I felt very {{gap7}}. I was surprised when the head teacher called my name. I had won first {{gap8}}!\n\nMy classmates clapped, and my best friend gave me a big {{gap9}}. At home, my parents were very {{gap10}} of me. The prize was a book by my favourite writer. I put it on the shelf next to my {{gap11}} and started reading it that night. The competition made me want to write more {{gap12}} in the future.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "prize"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "write"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "idea"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "dictionary"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "words"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "teacher"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "nervous"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "prize"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "hug"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "proud"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "bed"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "stories"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. prize, 2. write, 3. idea, 4. dictionary, 5. words, 6. teacher, 7. nervous, 8. prize, 9. hug, 10. proud, 11. bed, 12. stories."
+    },
+    {
+      "id": "vocabulary-unit-2-17",
+      "text": "Travelling by train\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nDuring the school holidays, my brother and I visited our grandparents. They live in another city, so we travelled by {{gap1}}. Mum bought our tickets online the day before.\n\nOn the morning of the journey, we arrived at the station early. We looked at the big screen to find the right {{gap2}}. Then we waited for the train with our bags.\n\nWhen the train arrived, we found our seats next to a {{gap3}}. I put my bag above my seat and took out a book. My brother listened to music on his {{gap4}}.\n\nThe journey took two hours. We travelled through small towns and saw fields, rivers and {{gap5}} from the window. Halfway through the journey, we ate the sandwiches Mum had made for {{gap6}}.\n\nWhen we arrived, our grandfather was waiting at the station. He helped us carry our {{gap7}} to his car. Grandma had made a cake, and we had some with a cup of {{gap8}}.\n\nWe stayed with them for three days. We visited a museum, played cards and went for a long {{gap9}} by the river. On the last day, Grandma gave us some biscuits for the journey {{gap10}}. We thanked our grandparents and said goodbye. I hope we can visit them {{gap11}} during the next school {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "train"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "platform"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "window"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "phone"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "villages"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "us"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "bags"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "tea"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "walk"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "home"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "again"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "holidays"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. train, 2. platform, 3. window, 4. phone, 5. villages, 6. us, 7. bags, 8. tea, 9. walk, 10. home, 11. again, 12. holidays."
+    },
+    {
+      "id": "vocabulary-unit-2-18",
+      "text": "My first camping trip\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nLast July, I went camping with my uncle and cousin. It was my first time sleeping in a {{gap1}}, so I was excited. We drove to a campsite near a lake and arrived in the afternoon.\n\nFirst, my uncle showed us how to put {{gap2}} the tent. It took some time because we had never done it before. Then we put our sleeping {{gap3}} inside and explored the campsite.\n\nThe lake was beautiful, but the water was too {{gap4}} for me to swim. Instead, we walked around it and saw ducks and other {{gap5}}. My cousin took some photos with her phone.\n\nIn the evening, we cooked sausages over a fire. My uncle reminded us to be {{gap6}} near it. After dinner, we sat together and looked at the {{gap7}} in the sky.\n\nAt night, I heard a strange noise outside the tent. I was a little {{gap8}}, but my uncle said it was probably a small animal. Soon I fell {{gap9}}.\n\nThe next morning, we woke up early and had breakfast outside. Before leaving, we put all our rubbish in a {{gap10}} and left the campsite clean. I had a wonderful time and would love to go camping {{gap11}}. Next time, I want to stay for a whole {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "tent"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "up"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "bags"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "cold"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "birds"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "careful"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "stars"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "scared"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "asleep"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "bin"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "again"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "week"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. tent, 2. up, 3. bags, 4. cold, 5. birds, 6. careful, 7. stars, 8. scared, 9. asleep, 10. bin, 11. again, 12. week."
+    },
+    {
+      "id": "vocabulary-unit-2-19",
+      "text": "A busy morning\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nYesterday morning, everything went wrong. My alarm clock didn't ring, so I woke up thirty minutes {{gap1}} than usual. I looked at the time and jumped out of {{gap2}}.\n\nI got dressed quickly, but I couldn't find my school shoes. After looking under the bed, I found one shoe. The other was near the front {{gap3}} because our dog had taken it there.\n\nI didn't have time to sit down for breakfast, so Mum gave me a banana to {{gap4}} on the way. I ran to the bus stop, but the bus had already {{gap5}}. Luckily, Dad offered to drive me to school.\n\nWhen I arrived, I saw my classmates going into the {{gap6}}. I ran upstairs and reached the door just before the {{gap7}} started. I was out of breath, but I wasn't late!\n\nDuring the first lesson, I opened my bag and realised I had forgotten my pencil {{gap8}}. My friend lent me a pen, and I thanked {{gap9}}. At lunchtime, I finally had time to relax and tell my friends about my morning.\n\nThat evening, I packed my bag and put my shoes by the {{gap10}}. I also checked my alarm clock before going to {{gap11}}. The next morning, I woke up on {{gap12}} and had a much calmer start to the day.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "later"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "bed"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "door"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "eat"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "left"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "school"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "lesson"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "case"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "him"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "door"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "bed"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "time"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. later, 2. bed, 3. door, 4. eat, 5. left, 6. school, 7. lesson, 8. case, 9. him, 10. door, 11. bed, 12. time."
+    },
+    {
+      "id": "vocabulary-unit-2-20",
+      "text": "Plans for the future\n\nUzupełnij każdą lukę jednym angielskim słowem.\n\nOur teacher recently asked us to think about our future. She wanted to know what we would like to {{gap1}} when we grow up. Some students wanted to be doctors, teachers or football players.\n\nI have always loved animals, so I would like to become a vet. A vet helps animals when they are ill or {{gap2}}. I know that the job can be difficult, but I think it would be very interesting.\n\nTo become a vet, I will need to study hard at {{gap3}} and later go to university. Science is my favourite {{gap4}}, so I enjoy learning about the natural world.\n\nMy friend Lily has a different dream. She wants to travel around the {{gap5}} and take photographs. She would like to visit Japan first because she is interested in its food and {{gap6}}.\n\nWe both know that our plans might {{gap7}} as we get older. For now, we want to try new things and learn as much as we {{gap8}}. This summer, I hope to help at a local animal shelter. Lily is going to join a photography {{gap9}}.\n\nWe sometimes talk about our dreams after school. It is fun to imagine what our {{gap10}} might be like in ten years. Whatever we choose to do, I hope we will stay good {{gap11}} and support each {{gap12}}.",
+      "selection_type": "fill",
+      "fill_mode": "open",
+      "fill_blanks": [
+        {
+          "id": "gap1",
+          "accepted_answers": [
+            "do"
+          ]
+        },
+        {
+          "id": "gap2",
+          "accepted_answers": [
+            "hurt"
+          ]
+        },
+        {
+          "id": "gap3",
+          "accepted_answers": [
+            "school"
+          ]
+        },
+        {
+          "id": "gap4",
+          "accepted_answers": [
+            "subject"
+          ]
+        },
+        {
+          "id": "gap5",
+          "accepted_answers": [
+            "world"
+          ]
+        },
+        {
+          "id": "gap6",
+          "accepted_answers": [
+            "culture"
+          ]
+        },
+        {
+          "id": "gap7",
+          "accepted_answers": [
+            "change"
+          ]
+        },
+        {
+          "id": "gap8",
+          "accepted_answers": [
+            "can"
+          ]
+        },
+        {
+          "id": "gap9",
+          "accepted_answers": [
+            "club"
+          ]
+        },
+        {
+          "id": "gap10",
+          "accepted_answers": [
+            "lives"
+          ]
+        },
+        {
+          "id": "gap11",
+          "accepted_answers": [
+            "friends"
+          ]
+        },
+        {
+          "id": "gap12",
+          "accepted_answers": [
+            "other"
+          ]
+        }
+      ],
+      "topic_id": "open-cloze",
+      "explanation": "Odpowiedzi: 1. do, 2. hurt, 3. school, 4. subject, 5. world, 6. culture, 7. change, 8. can, 9. club, 10. lives, 11. friends, 12. other."
+    }
+  ]
+}
