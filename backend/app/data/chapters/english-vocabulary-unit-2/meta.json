@@ -1,10 +1,11 @@
 {
   "id": "english-vocabulary-unit-2",
   "title": "Vocabulary Unit 2",
-  "description": "Uzupełnianie luk w tekstach po angielsku. Klasa 7, poziom A1–A2.",
+  "description": "Uzupełnij po 10 luk w dwóch tekstach. Każda luka jest warta 0,5 punktu.",
   "category": "english",
   "age_group": "12-13",
-  "target_question_count": 20,
+  "target_question_count": 2,
+  "questions_per_topic": 2,
   "topics": [
     "topic_1_open_cloze.json"
   ]

@@ -28,6 +28,9 @@ export function normalizeOpenAnswer(question: QuizQuestion, value: string): stri
 }
 
 export function getQuestionMaxPoints(question: QuizQuestion, quizCategory?: string): number {
+  if (question.selection_type === "fill" && question.id.startsWith("vocabulary-unit-2-")) {
+    return question.fill_blanks.length / 2;
+  }
   return question.selection_type === "llm" && quizCategory === "english" ? 3 : 1;
 }
 
@@ -75,6 +78,9 @@ export function getFillBlankResults(question: QuizQuestion, rawValues: string[])
 }
 
 export function getFillAnswerPoints(question: QuizQuestion, rawValues: string[]): number {
+  if (question.selection_type === "fill" && question.id.startsWith("vocabulary-unit-2-")) {
+    return getFillBlankResults(question, rawValues).filter(Boolean).length / 2;
+  }
   if (rawValues.length !== question.fill_blanks.length) return 0;
   return getFillBlankResults(question, rawValues).every(Boolean) ? 1 : 0;
 }

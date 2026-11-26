@@ -817,6 +817,8 @@ Scores are point-based. Maximum points are derived from question structure:
 - `llm`, `order`, `matching`, `map`, `hotspot`, `century`, `fill`, `listening_fill`,
   `written_multiplication`, `written_division`, `timed_multiplication`, and
   `timed_division`, and `operation_order`: 1 point
+- Exception: `vocabulary-unit-2-` fill questions award 0.5 point per correct
+  gap. Two randomly selected ten-gap texts yield a maximum of 10 points.
 
 `operation_order`:
 
@@ -915,7 +917,8 @@ Scores are point-based. Maximum points are derived from question structure:
 - in `open` mode every blank is a text field and uses the same normalization as
   `open` questions
 - every gap must be filled and correct in its declared position to earn 1 point;
-  a partial answer earns 0 points
+  a partial answer earns 0 points, except for `vocabulary-unit-2-` questions,
+  which award 0.5 point per correct gap
 - after checking, each gap is marked correct or incorrect; incorrect gaps show
   the first accepted answer next to the learner's answer
 

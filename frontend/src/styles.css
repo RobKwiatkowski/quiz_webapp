@@ -1892,6 +1892,22 @@ body[data-page="quiz"] {
   height: 0.5em;
 }
 
+.quiz-play-shell .fill-text--vocabulary-unit-2 .fill-text-title {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.quiz-play-shell .fill-text--vocabulary-unit-2 .fill-text-instruction {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(36, 54, 75, 0.2);
+  color: #526478;
+}
+
+.quiz-play-shell .fill-text--vocabulary-unit-2 .fill-blank-input {
+  width: calc(12ch + 24px);
+  min-width: 0;
+}
+
 .quiz-play-shell .fill-text--standalone-answers .fill-blank-control {
   width: min(100%, 32rem);
 }

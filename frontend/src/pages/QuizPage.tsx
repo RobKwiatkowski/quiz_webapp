@@ -387,11 +387,12 @@ function FillQuestion({ question, fillAnswers, hasAnswered, onFillAnswerChange, 
   const blankResults = hasAnswered ? getFillBlankResults(question, fillAnswers) : [];
   const lines = question.text.split(/\r?\n/);
   const hasStandaloneAnswers = question.fill_mode === "open" && /\n\{\{[a-z0-9][a-z0-9_-]*\}\}/i.test(question.text);
+  const isVocabularyUnit2 = question.id.startsWith("vocabulary-unit-2-");
 
   return (
-    <div className={`fill-text${hasStandaloneAnswers ? " fill-text--standalone-answers" : ""}`} aria-label="Tekst z lukami">
+    <div className={`fill-text${hasStandaloneAnswers ? " fill-text--standalone-answers" : ""}${isVocabularyUnit2 ? " fill-text--vocabulary-unit-2" : ""}`} aria-label="Tekst z lukami">
       {lines.map((line, lineIndex) => (
-        <div className={`fill-text-line${line ? "" : " fill-text-line--empty"}`} key={lineIndex}>
+        <div className={`fill-text-line${line ? "" : " fill-text-line--empty"}${isVocabularyUnit2 && lineIndex === 0 ? " fill-text-title" : ""}${isVocabularyUnit2 && lineIndex === 2 ? " fill-text-instruction" : ""}`} key={lineIndex}>
           {line.split(/(\{\{[a-z0-9][a-z0-9_-]*\}\})/gi).map((part, partIndex) => {
             const match = /^\{\{([a-z0-9][a-z0-9_-]*)\}\}$/i.exec(part);
             if (!match) {
